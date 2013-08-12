@@ -8,6 +8,6 @@
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem>test.js</ProjectItem>
+    <ProjectItem>template.js</ProjectItem>
   </TemplateContent>
 </VSTemplate>
