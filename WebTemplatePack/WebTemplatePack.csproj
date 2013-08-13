@@ -4,6 +4,9 @@
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(DevEnvDir)\devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -42,19 +45,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Item Templates\JavaScript\RequireJs\Web.VB.vstemplate">
+    <Content Include="Item Templates\JavaScript\RequireJs\Definitions\Web.VB.vstemplate">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Item Templates\JavaScript\RequireJs\VB.vstemplate">
+    <Content Include="Item Templates\JavaScript\RequireJs\Definitions\VB.vstemplate">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Item Templates\JavaScript\RequireJs\CSharp.vstemplate">
+    <Content Include="Item Templates\JavaScript\RequireJs\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Item Templates\JavaScript\RequireJs\icon.png" />
+    <Content Include="Item Templates\Misc\RobotsTxt\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Item Templates\Misc\RobotsTxt\Definitions\VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Item Templates\Misc\RobotsTxt\Definitions\Web.csharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Item Templates\Misc\RobotsTxt\Definitions\Web.VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Item Templates\Misc\RobotsTxt\icon.png" />
     <Content Include="Output\Item Templates\CSharp\Web\requirejs.web.csharp.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -71,13 +84,13 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Item Templates\Misc\RobotsTxt\robots.txt" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="Item Templates\JavaScript\RequireJs\Web.csharp.vstemplate">
+    <Content Include="Item Templates\JavaScript\RequireJs\Definitions\Web.csharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Item Templates\JavaScript\RequireJs\template.js" />
