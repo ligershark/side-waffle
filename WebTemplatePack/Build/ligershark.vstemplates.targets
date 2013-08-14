@@ -75,20 +75,27 @@
     <Delete Files="@(_ls-FilesToDelete)" />   
     <MakeDir Directories="$(_ls-IntermediateItemTemplateFolder)"/>
 
+    <ItemGroup>
+      <ls-temp-FilesCopied Remove="@(ls-temp-FilesCopied)" />
+    </ItemGroup>
     <!-- Copy over the .vstemplate to the root folder and then copy all files -->
     <Copy SourceFiles="%(_ls-ItemTemplatesOutputs.VsTemplateSourcePath)"
-          DestinationFiles="$(_ls-IntermediateItemTemplateFolder)%(_ls-ItemTemplatesOutputs.Filename).vstemplate" />
-    
+          DestinationFiles="$(_ls-IntermediateItemTemplateFolder)%(_ls-ItemTemplatesOutputs.Filename).vstemplate">
+      <Output TaskParameter ="CopiedFiles" ItemName="ls-temp-FilesCopied"/>
+    </Copy>
+
     <Copy SourceFiles="@(_ls-ItemsToZip)"
           DestinationFiles="@(_ls-ItemsToZip->'$(_ls-IntermediateItemTemplateFolder)%(RecursiveDir)%(Filename)%(Extension)')"
-          UseHardLinksIfPossible="$(ls-UseHardLinksForItemTemplatesCopy)"/>
+          UseHardLinksIfPossible="$(ls-UseHardLinksForItemTemplatesCopy)">
+      <Output TaskParameter ="CopiedFiles" ItemName="ls-temp-FilesCopied"/>
+    </Copy>
     
     <!-- TODO: Does the .vstemplate file need to go into the .zip file? -->
     <MSBuild.ExtensionPack.Compression.Zip
       TaskAction="Create"
-      CompressFiles="%(_ls-ItemTemplatesOutputs.VsTemplateSourcePath);@(_ls-ItemsToZip)"
+      CompressFiles="@(ls-temp-FilesCopied)"
       ZipFileName="%(_ls-ItemTemplatesOutputs.Identity)"
-      RemoveRoot="%(_ls-ItemTemplatesOutputs.ItemTemplateFolder)"
+      RemoveRoot="$(_ls-IntermediateItemTemplateFolder)"
       CompressionLevel="BestCompression" />
   </Target>
 
@@ -127,8 +134,17 @@
 
     <Message Text="_ls-ItemTemplatesOutputs.VsTemplateSourcePath: %(_ls-ItemTemplatesOutputs.VsTemplateSourcePath)" />
   </Target>
+
+  <PropertyGroup>
+    <ls-AddCreatedItemTemplateZipFilesToProjectDependsOn>
+      $(ls-AddCreatedItemTemplateZipFilesToProjectDependsOn);
+      ls-CreateZipForEachItemTemplate;
+    </ls-AddCreatedItemTemplateZipFilesToProjectDependsOn>
+  </PropertyGroup>
   
-  
+  <Target Name="ls-AddCreatedItemTemplateZipFilesToProject;" DependsOnTargets="$(ls-AddCreatedItemTemplateZipFilesToProjectDependsOn)" > 
+      
+  </Target>
   
   
   <!-- Tasks defined below -->
@@ -136,8 +152,10 @@
     <ParameterGroup>
       <VstemplateFilePath ParameterType="System.String" Required="true"/>
       
+      <!-- Outputs -->
       <ItemTemplateName ParameterType="System.String" Output="true"/>
       <ItemTemplateFolder ParameterType="System.String" Output="true"/>
+      <ZipfileName ParameterType="System.String" Output="true"/>
     </ParameterGroup>
     <Task>
       <Reference Include="System.Core" />
@@ -148,10 +166,16 @@
       <Using Namespace="Microsoft.Build.Utilities" />
       <Code Type="Fragment" Language="cs">
         <![CDATA[
-                System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(VstemplateFilePath);
-                ItemTemplateName = di.Parent.Parent.Name;
-                ItemTemplateFolder = di.Parent.Parent.FullName + @"\";
-                return true;
+                System.IO.FileInfo fi = new System.IO.FileInfo(VstemplateFilePath);
+                System.IO.DirectoryInfo di = fi.Directory;
+                ItemTemplateName = di.Parent.Name;
+                ItemTemplateFolder = di.Parent.FullName + @"\";
+
+                ZipfileName = string.Format(
+                  "{0}{1}.zip",
+                  ItemTemplateName,
+                  fi.Name);
+                return true;               
             ]]>
       </Code>
     </Task>
