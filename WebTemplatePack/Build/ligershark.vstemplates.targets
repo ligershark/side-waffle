@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  
+  <!--
+  1. Discover all .vstemplate files
+  2. For each .vstemplate file, go up one folder and create a .zip from the content (exluding the Definitions folder)
+  -->
+
+  <PropertyGroup>
+    <!-- Constants -->
+    <ls-ItemTemplateRoot Condition=" '$(ls-ItemTemplateRoot)'=='' ">$(MSBuildProjectDirectory)\Item Templates\</ls-ItemTemplateRoot>
+    <ls-ItemTemplateOutputRoot Condition=" '$(ls-ItemTemplateOutputRoot)'=='' ">$(IntermediateOutputPath)ls-ItemTemplates\</ls-ItemTemplateOutputRoot>
+    <ls-BuildRoot Condition=" '$(ls-BuildRoot)'=='' ">$(MSBuildProjectDirectory)\Build\</ls-BuildRoot>
+    <ls-BuildLib Condition=" '$(ls-BuildLib)'=='' ">$(ls-BuildRoot)Lib\</ls-BuildLib>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ls-UseHardLinksForItemTemplatesCopy Condition=" '$(ls-UseHardLinksForItemTemplatesCopy)'=='' ">true</ls-UseHardLinksForItemTemplatesCopy>
+  </PropertyGroup>
+  
+  <UsingTask AssemblyFile="$(ls-BuildLib)MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.Compression.Zip" />
+    
+  <Target Name="ls-DiscoverItemTemplateFiles">
+    <!-- Look through Item Templates folder for all .vstemplate files in the project (as Content) -->
+    <ItemGroup>
+      <ls-ItemTemplates Include="$(ls-ItemTemplateRoot)**\*.vstemplate" />     
+    </ItemGroup>
+    
+    <Message Text="Item Templates found: @(ls-ItemTemplates)" />
+  </Target>
+
+  <PropertyGroup>
+    <ls-CreateZipForEachItemTemplateDependsOn>
+      $(ls-CreateZipForEachItemTemplateDependsOn);
+      ls-DiscoverItemTemplateFiles;
+      ls-InitalizeItemTemplateOutputFolder;
+      ls-CalculateItemGroupOutputsForItemTemplates;
+    </ls-CreateZipForEachItemTemplateDependsOn>
+  </PropertyGroup>
+  
+  <!-- This target will run once per value in @(ls-ItemTemplatesOutputs) -->
+  <Target Name="ls-CreateZipForEachItemTemplate" 
+          Inputs="%(_ls-ItemTemplatesOutputs.VsTemplateSourcePath)" 
+          Outputs="%(_ls-ItemTemplatesOutputs.Identity)"
+          DependsOnTargets="$(ls-CreateZipForEachItemTemplateDependsOn)">
+
+    <PropertyGroup>
+      <_ls-temp-VsTemplateSourcePath></_ls-temp-VsTemplateSourcePath>
+    </PropertyGroup>
+    <Message Text="Determining files to incude in Item Template .zip file for [%(_ls-ItemTemplatesOutputs.VsTemplateSourcePath)]"/>
+
+    <!-- 
+    Grab all the files from the folder (excluding any .vstemplate file and any files under Definitions\)
+    and create a .zip file from it in the output folder.    
+    -->
+    <ItemGroup>
+      <_ls-ItemsToZip Remove="@(_ls-ItemsToZip)"/>
+      <_ls-ItemsToZip Include="%(_ls-ItemTemplatesOutputs.ItemTemplateFolder)**\*" 
+                      Exclude="%(_ls-ItemTemplatesOutputs.ItemTemplateFolder)Definitions\**\*;%(_ls-ItemTemplatesOutputs.ItemTemplateFolder)**\*.vstemplate">        
+      </_ls-ItemsToZip>
+    </ItemGroup>
+
+    <Message Text="Creating Item Template .zip file at [%(_ls-ItemTemplatesOutputs.Identity)]" />
+    
+    <!-- We need to copy the files into a subfolder under obj\ and then create the .zip file from that -->
+    <PropertyGroup>
+      <_ls-IntermediateItemTemplateFolder>$(ls-ItemTemplateOutputRoot)%(_ls-ItemTemplatesOutputs.ItemTemplateName)\</_ls-IntermediateItemTemplateFolder>
+    </PropertyGroup>
+
+    <!-- delete the old content and copy it over from the source -->
+    <ItemGroup>
+      <_ls-FilesToDelete Remove="@(_ls-FilesToDelete)"/>
+      <_ls-FilesToDelete Include="$(_ls-IntermediateItemTemplateFolder)"/>
+    </ItemGroup>
+    <Delete Files="@(_ls-FilesToDelete)" />   
+    <MakeDir Directories="$(_ls-IntermediateItemTemplateFolder)"/>
+
+    <!-- Copy over the .vstemplate to the root folder and then copy all files -->
+    <Copy SourceFiles="%(_ls-ItemTemplatesOutputs.VsTemplateSourcePath)"
+          DestinationFiles="$(_ls-IntermediateItemTemplateFolder)%(_ls-ItemTemplatesOutputs.Filename).vstemplate" />
+    
+    <Copy SourceFiles="@(_ls-ItemsToZip)"
+          DestinationFiles="@(_ls-ItemsToZip->'$(_ls-IntermediateItemTemplateFolder)%(RecursiveDir)%(Filename)%(Extension)')"
+          UseHardLinksIfPossible="$(ls-UseHardLinksForItemTemplatesCopy)"/>
+    
+    <!-- TODO: Does the .vstemplate file need to go into the .zip file? -->
+    <MSBuild.ExtensionPack.Compression.Zip
+      TaskAction="Create"
+      CompressFiles="%(_ls-ItemTemplatesOutputs.VsTemplateSourcePath);@(_ls-ItemsToZip)"
+      ZipFileName="%(_ls-ItemTemplatesOutputs.Identity)"
+      RemoveRoot="%(_ls-ItemTemplatesOutputs.ItemTemplateFolder)"
+      CompressionLevel="BestCompression" />
+  </Target>
+
+  <Target Name="ls-InitalizeItemTemplateOutputFolder">
+    <MakeDir Directories="$(ls-ItemTemplateOutputRoot)"/>
+  </Target>
+
+  <PropertyGroup>
+    <ls-CalculateItemGroupOutputsForItemTemplates>
+      $(ls-CalculateItemGroupOutputsForItemTemplates);
+      ls-DiscoverItemTemplateFiles
+    </ls-CalculateItemGroupOutputsForItemTemplates>
+  </PropertyGroup>
+  <!-- This target will run once per value in @(ls-ItemTemplateOutputRoot) -->
+  <Target Name="ls-CalculateItemGroupOutputsForItemTemplates" 
+          Inputs="%(ls-ItemTemplates.Identity)"
+          Outputs="%(ls-ItemTemplates.Identity);All"
+          DependsOnTargets="$(ls-CalculateItemGroupOutputsForItemTemplates)">
+
+    <Message Text="ls-CalculateItemGroupOutputsForItemTemplates. ls-ItemTemplates:[ @(ls-ItemTemplates)]" />
+    <!-- By the time this target is called the item ls-DiscoverItemTemplateFiles should be fully populated. 
+    No additions after this point -->
+
+    <GetItemTemplateNameFromVSTemplatePath VstemplateFilePath="@(ls-ItemTemplates)">
+      <Output TaskParameter="ItemTemplateName" PropertyName="_ls-ItemTemplateName" />
+      <Output TaskParameter="ItemTemplateFolder" PropertyName="_ls-ItemTemplateFolder" />
+    </GetItemTemplateNameFromVSTemplatePath>
+    
+    <ItemGroup>
+      <_ls-ItemTemplatesOutputs Include="@(ls-ItemTemplates->'$(ls-ItemTemplateOutputRoot)$(_ls-ItemTemplateName).zip')">
+        <ItemTemplateName>$(_ls-ItemTemplateName)</ItemTemplateName>
+        <VsTemplateSourcePath>%(ls-ItemTemplates.Identity)</VsTemplateSourcePath>
+        <ItemTemplateFolder>$(_ls-ItemTemplateFolder)</ItemTemplateFolder>
+      </_ls-ItemTemplatesOutputs>
+    </ItemGroup>
+
+    <Message Text="_ls-ItemTemplatesOutputs.VsTemplateSourcePath: %(_ls-ItemTemplatesOutputs.VsTemplateSourcePath)" />
+  </Target>
+  
+  
+  
+  
+  <!-- Tasks defined below -->
+  <UsingTask TaskName="GetItemTemplateNameFromVSTemplatePath" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+    <ParameterGroup>
+      <VstemplateFilePath ParameterType="System.String" Required="true"/>
+      
+      <ItemTemplateName ParameterType="System.String" Output="true"/>
+      <ItemTemplateFolder ParameterType="System.String" Output="true"/>
+    </ParameterGroup>
+    <Task>
+      <Reference Include="System.Core" />
+      <Using Namespace="System" />
+      <Using Namespace="System.IO" />
+      <Using Namespace="System.Net" />
+      <Using Namespace="Microsoft.Build.Framework" />
+      <Using Namespace="Microsoft.Build.Utilities" />
+      <Code Type="Fragment" Language="cs">
+        <![CDATA[
+                System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(VstemplateFilePath);
+                ItemTemplateName = di.Parent.Parent.Name;
+                ItemTemplateFolder = di.Parent.Parent.FullName + @"\";
+                return true;
+            ]]>
+      </Code>
+    </Task>
+  </UsingTask>
+</Project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
