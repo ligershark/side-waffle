@@ -12,14 +12,35 @@
     <ls-ItemTemplateOutputRoot Condition=" '$(ls-ItemTemplateOutputRoot)'=='' ">$(IntermediateOutputPath)ls-ItemTemplates\</ls-ItemTemplateOutputRoot>
     <ls-BuildRoot Condition=" '$(ls-BuildRoot)'=='' ">$(MSBuildProjectDirectory)\Build\</ls-BuildRoot>
     <ls-BuildLib Condition=" '$(ls-BuildLib)'=='' ">$(ls-BuildRoot)Lib\</ls-BuildLib>
+    <ls-ItemTemplatesExtendBuild Condition=" '$(ls-ItemTemplatesExtendBuild)'=='' ">true</ls-ItemTemplatesExtendBuild>
   </PropertyGroup>
 
   <PropertyGroup>
     <ls-UseHardLinksForItemTemplatesCopy Condition=" '$(ls-UseHardLinksForItemTemplatesCopy)'=='' ">true</ls-UseHardLinksForItemTemplatesCopy>
   </PropertyGroup>
-  
+
+  <!-- This hooks up the ItemTemplate targets to the Build Process -->
+  <PropertyGroup>
+    <CoreCompileDependsOn Condition=" '$(ls-ItemTemplatesExtendBuild)'=='true' ">
+      $(CoreCompileDependsOn);
+      ls-ProcessItemTemplates;
+    </CoreCompileDependsOn>
+  </PropertyGroup>
+   
   <UsingTask AssemblyFile="$(ls-BuildLib)MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.Compression.Zip" />
-    
+
+  <PropertyGroup>
+    <ls-ProcessItemTemplatesDependsOn>
+      $(ls-ProcessItemTemplatesDependsOn);
+      ls-DiscoverItemTemplateFiles;
+      ls-AddCreatedItemTemplateZipFilesToProject;
+    </ls-ProcessItemTemplatesDependsOn>
+  </PropertyGroup>
+  <Target Name="ls-ProcessItemTemplates" DependsOnTargets="$(ls-ProcessItemTemplatesDependsOn)" />
+  
+  
+  
+  
   <Target Name="ls-DiscoverItemTemplateFiles">
     <!-- Look through Item Templates folder for all .vstemplate files in the project (as Content) -->
     <ItemGroup>
@@ -83,7 +104,6 @@
           DestinationFiles="$(_ls-IntermediateItemTemplateFolder)%(_ls-ItemTemplatesOutputs.Filename).vstemplate">
       <Output TaskParameter ="CopiedFiles" ItemName="ls-temp-FilesCopied"/>
     </Copy>
-
     <Copy SourceFiles="@(_ls-ItemsToZip)"
           DestinationFiles="@(_ls-ItemsToZip->'$(_ls-IntermediateItemTemplateFolder)%(RecursiveDir)%(Filename)%(Extension)')"
           UseHardLinksIfPossible="$(ls-UseHardLinksForItemTemplatesCopy)">
@@ -97,6 +117,11 @@
       ZipFileName="%(_ls-ItemTemplatesOutputs.Identity)"
       RemoveRoot="$(_ls-IntermediateItemTemplateFolder)"
       CompressionLevel="BestCompression" />
+
+    <ItemGroup>
+      <ls-ItemTempZipIntermediateFiles Include="%(_ls-ItemTemplatesOutputs.Identity)"/>
+    </ItemGroup>
+    
   </Target>
 
   <Target Name="ls-InitalizeItemTemplateOutputFolder">
@@ -142,8 +167,12 @@
     </ls-AddCreatedItemTemplateZipFilesToProjectDependsOn>
   </PropertyGroup>
   
-  <Target Name="ls-AddCreatedItemTemplateZipFilesToProject;" DependsOnTargets="$(ls-AddCreatedItemTemplateZipFilesToProjectDependsOn)" > 
-      
+  <Target Name="ls-AddCreatedItemTemplateZipFilesToProject" DependsOnTargets="$(ls-AddCreatedItemTemplateZipFilesToProjectDependsOn)" >
+    <Message Text="Adding the following files to Content: [@(ls-ItemTempZipIntermediateFiles)]" />
+    <!-- Add the produced .zip files to Content so that they are included in the package -->
+    <ItemGroup>
+      <Content Include="@(ls-ItemTempZipIntermediateFiles)" />
+    </ItemGroup>
   </Target>
   
   
