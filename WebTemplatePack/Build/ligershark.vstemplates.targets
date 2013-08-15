@@ -169,9 +169,15 @@
   
   <Target Name="ls-AddCreatedItemTemplateZipFilesToProject" DependsOnTargets="$(ls-AddCreatedItemTemplateZipFilesToProjectDependsOn)" >
     <Message Text="Adding the following files to Content: [@(ls-ItemTempZipIntermediateFiles)]" />
+    
+    <!-- TODO: add this to VSIXSourceItem-->
     <!-- Add the produced .zip files to Content so that they are included in the package -->
     <ItemGroup>
-      <Content Include="@(ls-ItemTempZipIntermediateFiles)" />
+      <Content Include="%(ls-ItemTempZipIntermediateFiles.Identity)">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <IncludeInVSIX>true</IncludeInVSIX>
+        <!--<TargetPath>Output\%(ls-ItemTempZipIntermediateFiles.RecursiveDir)%(ls-ItemTempZipIntermediateFiles.Filename)%(ls-ItemTempZipIntermediateFiles.Extension)</TargetPath>-->
+      </Content>
     </ItemGroup>
   </Target>
   
