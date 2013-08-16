@@ -13,10 +13,13 @@
     <ls-BuildRoot Condition=" '$(ls-BuildRoot)'=='' ">$(MSBuildProjectDirectory)\Build\</ls-BuildRoot>
     <ls-BuildLib Condition=" '$(ls-BuildLib)'=='' ">$(ls-BuildRoot)Lib\</ls-BuildLib>
     <ls-ItemTemplatesExtendBuild Condition=" '$(ls-ItemTemplatesExtendBuild)'=='' ">true</ls-ItemTemplatesExtendBuild>
-  </PropertyGroup>
+    <!-- This is where all the Item Template .zip files will be located -->
+    <ls-ItemTemplateZipRootFolder Condition=" '$(ls-ItemTemplateZipRootFolder)'=='' ">Output\</ls-ItemTemplateZipRootFolder>
+  
+</PropertyGroup>
 
   <PropertyGroup>
-    <ls-UseHardLinksForItemTemplatesCopy Condition=" '$(ls-UseHardLinksForItemTemplatesCopy)'=='' ">true</ls-UseHardLinksForItemTemplatesCopy>
+    <ls-UseHardLinksForItemTemplatesCopy Condition=" '$(ls-UseHardLinksForItemTemplatesCopy)'=='' ">false</ls-UseHardLinksForItemTemplatesCopy>
   </PropertyGroup>
 
   <!-- This hooks up the ItemTemplate targets to the Build Process -->
@@ -62,7 +65,7 @@
   <!-- This target will run once per value in @(ls-ItemTemplatesOutputs) -->
   <Target Name="ls-CreateZipForEachItemTemplate" 
           Inputs="%(_ls-ItemTemplatesOutputs.VsTemplateSourcePath)" 
-          Outputs="%(_ls-ItemTemplatesOutputs.Identity)"
+          Outputs="%(_ls-ItemTemplatesOutputs.OutputPathWithFileName)"
           DependsOnTargets="$(ls-CreateZipForEachItemTemplateDependsOn)">
 
     <PropertyGroup>
@@ -81,7 +84,7 @@
       </_ls-ItemsToZip>
     </ItemGroup>
 
-    <Message Text="Creating Item Template .zip file at [%(_ls-ItemTemplatesOutputs.Identity)]" />
+    <Message Text="Creating Item Template .zip file at [%(_ls-ItemTemplatesOutputs.OutputPathWithFileName)]" />
     
     <!-- We need to copy the files into a subfolder under obj\ and then create the .zip file from that -->
     <PropertyGroup>
@@ -95,6 +98,7 @@
     </ItemGroup>
     <Delete Files="@(_ls-FilesToDelete)" />   
     <MakeDir Directories="$(_ls-IntermediateItemTemplateFolder)"/>
+    <MakeDir Directories="" />
 
     <ItemGroup>
       <ls-temp-FilesCopied Remove="@(ls-temp-FilesCopied)" />
@@ -109,12 +113,15 @@
           UseHardLinksIfPossible="$(ls-UseHardLinksForItemTemplatesCopy)">
       <Output TaskParameter ="CopiedFiles" ItemName="ls-temp-FilesCopied"/>
     </Copy>
-    
+
+    <Message Text="Zipping the following files for Item Template: @(ls-temp-FilesCopied)" Importance="high"/>
+    <Message Text="***: _ls-ItemTemplatesOutputs.OutputPathWithFileName:[%(_ls-ItemTemplatesOutputs.OutputPathWithFileName)]" Importance="high"/>
+    <Message Text="***: _ls-IntermediateItemTemplateFolder:[$(_ls-IntermediateItemTemplateFolder)]" Importance="high" />
     <!-- TODO: Does the .vstemplate file need to go into the .zip file? -->
     <MSBuild.ExtensionPack.Compression.Zip
       TaskAction="Create"
       CompressFiles="@(ls-temp-FilesCopied)"
-      ZipFileName="%(_ls-ItemTemplatesOutputs.Identity)"
+      ZipFileName="%(_ls-ItemTemplatesOutputs.OutputPathWithFileName)"
       RemoveRoot="$(_ls-IntermediateItemTemplateFolder)"
       CompressionLevel="BestCompression" />
 
@@ -144,9 +151,12 @@
     <!-- By the time this target is called the item ls-DiscoverItemTemplateFiles should be fully populated. 
     No additions after this point -->
 
-    <GetItemTemplateNameFromVSTemplatePath VstemplateFilePath="@(ls-ItemTemplates)">
+    <!-- ls-ItemTemplateOutputRoot -->
+
+    <GetItemTemplateNameFromVSTemplatePath VstemplateFilePath="@(ls-ItemTemplates)" ItemTemplateZipRootFolder="$(ls-ItemTemplateZipRootFolder)">
       <Output TaskParameter="ItemTemplateName" PropertyName="_ls-ItemTemplateName" />
       <Output TaskParameter="ItemTemplateFolder" PropertyName="_ls-ItemTemplateFolder" />
+      <Output TaskParameter="OutputPathWithFileName" PropertyName="OutputPathWithFileName" />
     </GetItemTemplateNameFromVSTemplatePath>
     
     <ItemGroup>
@@ -154,9 +164,15 @@
         <ItemTemplateName>$(_ls-ItemTemplateName)</ItemTemplateName>
         <VsTemplateSourcePath>%(ls-ItemTemplates.Identity)</VsTemplateSourcePath>
         <ItemTemplateFolder>$(_ls-ItemTemplateFolder)</ItemTemplateFolder>
+
+        <OutputPathWithFileName>$(OutputPathWithFileName)</OutputPathWithFileName>
       </_ls-ItemTemplatesOutputs>
     </ItemGroup>
 
+    <Message Text="ls-ItemTemplateZipRootFolder: $(ls-ItemTemplateZipRootFolder)" Importance="high" />
+    <Message Text="OutputPathWithFileName:$(OutputPathWithFileName)" Importance="high"/>
+    <Message Text="%(_ls-ItemTemplatesOutputs.OutputPathWithFileName)" Importance="high"/>
+    <!--<Error Text="************ stopping build *********************" />-->
     <Message Text="_ls-ItemTemplatesOutputs.VsTemplateSourcePath: %(_ls-ItemTemplatesOutputs.VsTemplateSourcePath)" />
   </Target>
 
@@ -191,12 +207,15 @@
   <UsingTask TaskName="GetItemTemplateNameFromVSTemplatePath" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
     <ParameterGroup>
       <VstemplateFilePath ParameterType="System.String" Required="true"/>
+      <!-- If provided this value should end in a '\' -->
+      <ItemTemplateZipRootFolder ParameterType="System.String" Required="false"/>
       
       <!-- Outputs -->
       <ItemTemplateName ParameterType="System.String" Output="true"/>
       <ItemTemplateFolder ParameterType="System.String" Output="true"/>
       <ZipfileName ParameterType="System.String" Output="true"/>
-      <OutputFolder ParameterType="System.String" Output="true" />
+      <OutputPathFolder ParameterType="System.String" Output="true"/>
+      <OutputPathWithFileName ParameterType="System.String" Output="true" />
     </ParameterGroup>
     <Task>
       <Reference Include="System.Core" />
@@ -211,6 +230,10 @@
                 System.IO.DirectoryInfo di = fi.Directory;
                 ItemTemplateName = di.Parent.Name;
                 ItemTemplateFolder = di.Parent.FullName + @"\";
+        
+                if(ItemTemplateZipRootFolder == null){
+                  ItemTemplateZipRootFolder = string.Empty;
+                }
 
                 ZipfileName = string.Format(
                   "{0}{1}.zip",
@@ -220,32 +243,31 @@
                   // set OutputFolder
                   // if the name is 
                   //  'CSharp.vstemplate' -> CSharp\
-                  //  'CSharp.vstemplate' -> CSharp\Web\
-                  //  'VB.vstemplate' -> VisualBasic
-                  //  'Web.VB.vstemplate' ->
-                  
-                  
-                  
-                return true;               
+                  //  'Web.CSharp.vstemplate' -> CSharp\Web\
+                  //  'VB.vstemplate' -> VisualBasic\
+                  //  'Web.VB.vstemplate' -> VisualBasic\Web\
+                  if(string.Compare(@"CSharp.vstemplate", fi.Name,StringComparison.OrdinalIgnoreCase)==0){
+                    OutputPathFolder = string.Format(@"{0}CSharp\", ItemTemplateZipRootFolder);
+	                  OutputPathWithFileName = string.Format(@"{0}CSharp\{1}.csharp.zip", ItemTemplateZipRootFolder, ItemTemplateName);
+                  }
+                  else if(string.Compare(@"Web.CSharp.vstemplate", fi.Name,StringComparison.OrdinalIgnoreCase)==0){
+                    OutputPathFolder = string.Format(@"{0}CSharp\Web\", ItemTemplateZipRootFolder);
+	                  OutputPathWithFileName = string.Format(@"{0}CSharp\Web\{1}.web.csharp.zip",ItemTemplateZipRootFolder, ItemTemplateName);
+                  }
+                  else if(string.Compare(@"VB.vstemplate", fi.Name,StringComparison.OrdinalIgnoreCase)==0){
+                    OutputPathFolder = string.Format(@"{0}VisualBasic\", ItemTemplateZipRootFolder);
+	                  OutputPathWithFileName = string.Format(@"{0}VisualBasic\{1}.VB.zip", ItemTemplateZipRootFolder, ItemTemplateName);
+                  }
+                  else if(string.Compare(@"Web.VB.vstemplate", fi.Name,StringComparison.OrdinalIgnoreCase)==0){
+                    OutputPathFolder = string.Format(@"{0}VisualBasic\Web\", ItemTemplateZipRootFolder);
+	                  OutputPathWithFileName = string.Format(@"{0}VisualBasic\Web\{1}.web.VB.zip", ItemTemplateZipRootFolder, ItemTemplateName);
+                  }
+                  else{
+	                  Log.LogError("Unknown value for ItemTemplateName: [{0}]. Supported values include 'CSharp.vstemplate','Web.CSharp.vstemplate','VB.vstemplate' and 'Web.VB.vstemplate' ",fi.Name);
+	                  return false;
+                  }
             ]]>
       </Code>
     </Task>
   </UsingTask>
 </Project>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
