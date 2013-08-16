@@ -173,11 +173,16 @@
     <!-- TODO: add this to VSIXSourceItem-->
     <!-- Add the produced .zip files to Content so that they are included in the package -->
     <ItemGroup>
-      <Content Include="%(ls-ItemTempZipIntermediateFiles.Identity)">
+      <!--<Content Include="%(ls-ItemTempZipIntermediateFiles.Identity)">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         <IncludeInVSIX>true</IncludeInVSIX>
-        <!--<TargetPath>Output\%(ls-ItemTempZipIntermediateFiles.RecursiveDir)%(ls-ItemTempZipIntermediateFiles.Filename)%(ls-ItemTempZipIntermediateFiles.Extension)</TargetPath>-->
-      </Content>
+        --><!--<TargetPath>Output\%(ls-ItemTempZipIntermediateFiles.RecursiveDir)%(ls-ItemTempZipIntermediateFiles.Filename)%(ls-ItemTempZipIntermediateFiles.Extension)</TargetPath>--><!--
+      </Content>-->
+
+      <VSIXSourceItem Include="%(ls-ItemTempZipIntermediateFiles.Identity)">
+        <VSIXSubPath Condition="'%(Content.Link)'==''">Output\Item Templates\CSharp\</VSIXSubPath>
+      </VSIXSourceItem>
+
     </ItemGroup>
   </Target>
   
@@ -191,6 +196,7 @@
       <ItemTemplateName ParameterType="System.String" Output="true"/>
       <ItemTemplateFolder ParameterType="System.String" Output="true"/>
       <ZipfileName ParameterType="System.String" Output="true"/>
+      <OutputFolder ParameterType="System.String" Output="true" />
     </ParameterGroup>
     <Task>
       <Reference Include="System.Core" />
@@ -210,6 +216,16 @@
                   "{0}{1}.zip",
                   ItemTemplateName,
                   fi.Name);
+                  
+                  // set OutputFolder
+                  // if the name is 
+                  //  'CSharp.vstemplate' -> CSharp\
+                  //  'CSharp.vstemplate' -> CSharp\Web\
+                  //  'VB.vstemplate' -> VisualBasic
+                  //  'Web.VB.vstemplate' ->
+                  
+                  
+                  
                 return true;               
             ]]>
       </Code>
