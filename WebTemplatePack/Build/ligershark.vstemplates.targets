@@ -252,19 +252,19 @@
                   //  'VB.vstemplate' -> VisualBasic\
                   //  'Web.VB.vstemplate' -> VisualBasic\Web\
                   if(string.Compare(@"CSharp.vstemplate", fi.Name,StringComparison.OrdinalIgnoreCase)==0){
-                    ItemTemplateName = string.Format("{0}.csharp.zip",itRootFileName);
+                    ItemTemplateName = string.Format("{0}.csharp",itRootFileName);
                     OutputPathFolder = string.Format(@"{0}CSharp\", ItemTemplateZipRootFolder);	                  
                   }
                   else if(string.Compare(@"Web.CSharp.vstemplate", fi.Name,StringComparison.OrdinalIgnoreCase)==0){
-                    ItemTemplateName = string.Format("{0}.web.csharp.zip",itRootFileName);
+                    ItemTemplateName = string.Format("{0}.web.csharp",itRootFileName);
                     OutputPathFolder = string.Format(@"{0}CSharp\Web\", ItemTemplateZipRootFolder);
                   }
                   else if(string.Compare(@"VB.vstemplate", fi.Name,StringComparison.OrdinalIgnoreCase)==0){
-                    ItemTemplateName = string.Format("{0}.VB.zip",itRootFileName);
+                    ItemTemplateName = string.Format("{0}.VB",itRootFileName);
                     OutputPathFolder = string.Format(@"{0}VisualBasic\", ItemTemplateZipRootFolder);
                   }
                   else if(string.Compare(@"Web.VB.vstemplate", fi.Name,StringComparison.OrdinalIgnoreCase)==0){
-                    ItemTemplateName = string.Format("{0}.web.VB.zip",itRootFileName);
+                    ItemTemplateName = string.Format("{0}.web.VB",itRootFileName);
                     OutputPathFolder = string.Format(@"{0}VisualBasic\Web\", ItemTemplateZipRootFolder);
                   }
                   else{
