@@ -52,13 +52,7 @@
     <Content Include="Item Templates\Misc\RobotsTxt\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Item Templates\Misc\RobotsTxt\Definitions\VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Item Templates\Misc\RobotsTxt\Definitions\Web.csharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Item Templates\Misc\RobotsTxt\Definitions\Web.VB.vstemplate">
+    <Content Include="Item Templates\Misc\RobotsTxt\Definitions\Web.vstemplate">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Item Templates\Misc\RobotsTxt\icon.png" />
