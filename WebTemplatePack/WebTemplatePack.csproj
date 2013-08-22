@@ -90,7 +90,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Item Templates\JavaScript\RequireJs\Definitions\Web.csharp.vstemplate">
+    <Content Include="Item Templates\JavaScript\RequireJs\Definitions\Web.CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Item Templates\JavaScript\RequireJs\template.js" />
