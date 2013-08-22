@@ -2,7 +2,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
     <Identity Id="VSIXProject1..e6e2a48e-387d-4af2-9072-86a5276da6d4" Version="1.0" Language="en-US" Publisher="LigerShark" />
-    <DisplayName>VSIXProject1</DisplayName>
+    <DisplayName>Web Template Pack</DisplayName>
     <Description>Empty VSIX Project.</Description>
   </Metadata>
   <Installation>
@@ -12,9 +12,6 @@
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.5" />
   </Dependencies>
   <Assets>
-    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" d:TargetPath="Output\Item Templates\CSharp\Web\requirejs.csharp.zip" />
-    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" d:TargetPath="Output\Item Templates\CSharp\Web\requirejs.web.csharp.zip" />
-    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" d:TargetPath="Output\Item Templates\VisualBasic\Web\requirejs.vb.zip" />
-    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" d:TargetPath="Output\Item Templates\VisualBasic\Web\requirejs.web.vb.zip" />
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="Output\ItemTemplates" d:TargetPath="ItemTemplates\CSharp\Web\requirejs.csharp.zip" />
   </Assets>
 </PackageManifest>
