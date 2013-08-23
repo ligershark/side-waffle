@@ -2,7 +2,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
     <Identity Id="VSIXProject1..e6e2a48e-387d-4af2-9072-86a5276da6d4" Version="1.0" Language="en-US" Publisher="LigerShark" />
-    <DisplayName>VSIXProject1</DisplayName>
+    <DisplayName>Web Template Pack</DisplayName>
     <Description>Empty VSIX Project.</Description>
   </Metadata>
   <Installation>
