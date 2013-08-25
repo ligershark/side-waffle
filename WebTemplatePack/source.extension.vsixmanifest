@@ -2,11 +2,12 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
     <Identity Id="VSIXProject1..e6e2a48e-387d-4af2-9072-86a5276da6d4" Version="1.0" Language="en-US" Publisher="LigerShark" />
-    <DisplayName>Web Template Pack</DisplayName>
-    <Description>Empty VSIX Project.</Description>
+    <DisplayName>SideWaffle for Web</DisplayName>
+    <Description>A side dish filled with item templates for building websites.</Description>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="12.0" />
   </Installation>
   <Dependencies>
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.5" />
