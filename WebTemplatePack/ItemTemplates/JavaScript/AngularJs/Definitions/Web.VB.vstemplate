@@ -1,0 +1,14 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>controller.js</DefaultName>
+    <Name>AngularJs Controller File</Name>
+    <Description>AngularJs Controller: minification ready, starter dependencies, using 'Controller As' syntax. By John Papa, http://johnpapa.net</Description>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>VisualBasic</ProjectSubType>
+    <Icon>icon.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem>controller.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
