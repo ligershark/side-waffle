@@ -8,6 +8,6 @@
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem>directive.js</ProjectItem>
+    <ProjectItem ReplaceParameters="true">directive.js</ProjectItem>
   </TemplateContent>
 </VSTemplate>

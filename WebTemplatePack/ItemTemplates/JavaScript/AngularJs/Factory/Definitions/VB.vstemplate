@@ -8,6 +8,6 @@
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem>factory.js</ProjectItem>
+    <ProjectItem ReplaceParameters="true">factory.js</ProjectItem>
   </TemplateContent>
 </VSTemplate>
