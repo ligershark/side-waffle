@@ -85,6 +85,20 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ItemTemplates\JavaScript\RequireJs\icon.png" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <Content Include="ItemTemplates\Misc\HumansTxt\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
