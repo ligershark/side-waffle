@@ -8,6 +8,6 @@
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem ReplaceParameters="true">service.js</ProjectItem>
+    <ProjectItem ReplaceParameters="true">main.js</ProjectItem>
   </TemplateContent>
 </VSTemplate>
