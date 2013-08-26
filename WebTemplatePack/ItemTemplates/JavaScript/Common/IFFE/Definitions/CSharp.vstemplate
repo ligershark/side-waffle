@@ -5,6 +5,7 @@
     <Description>JavaScript IFFE: Immediately Invoked Function Expression. By John Papa, http://johnpapa.net</Description>
     <ProjectType>CSharp</ProjectType>
     <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <References />

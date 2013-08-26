@@ -5,6 +5,7 @@
     <Description>DurandalJs Service: Includes common structure and starter dependencies. By John Papa, http://johnpapa.net</Description>
     <ProjectType>CSharp</ProjectType>
     <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <References />
