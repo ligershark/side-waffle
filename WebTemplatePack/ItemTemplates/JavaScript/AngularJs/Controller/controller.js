@@ -19,7 +19,7 @@
         // Using 'Controller As' syntax, so we assign this to the vm variable (for viewmodel).
         var vm = this;
 
-        // Bindable properties and functions are plaed on vm.
+        // Bindable properties and functions are placed on vm.
         vm.activate = activate;
 
         function activate() {

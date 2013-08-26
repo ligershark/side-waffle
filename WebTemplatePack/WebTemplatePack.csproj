@@ -45,12 +45,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="ItemTemplates\JavaScript\AngularJs\controller.js" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\icon.png" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller\controller.js" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller\icon.png" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Directive\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Directive\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Directive\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Directive\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Directive\directive.js" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Directive\icon.png" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Factory\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Factory\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Factory\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Factory\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Factory\factory.js" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Factory\icon.png" />
     <Content Include="ItemTemplates\JavaScript\RequireJs\Definitions\Web.VB.vstemplate">
       <SubType>Designer</SubType>
     </Content>
