@@ -1,7 +1,9 @@
 #SideWaffle for Visual Studio
 
-A collection of Item- and Project Templates for Visual Studio 2012/2013 
-that makes any web developer's life much easier
+##The ultimate web developer template pack
+
+A collection of Item Templates for Visual Studio 2012/2013 
+that makes any web developer's life much easier.
 
 ##Add new templates##
 
