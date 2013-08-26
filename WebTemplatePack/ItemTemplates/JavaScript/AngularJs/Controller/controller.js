@@ -1,9 +1,4 @@
-﻿/*
-* John Papa
-* http://johnpapa.net
-* AngularJS Controller
-**/
-(function () {
+﻿(function () {
     'use strict';
 
     // Controller name is handy for logging

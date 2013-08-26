@@ -1,10 +1,4 @@
-﻿/*
-* John Papa
-* http://johnpapa.net
-* AngularJS Factory
-**/
-
-(function () {
+﻿(function () {
     'use strict';
 
     // Factory name is handy for logging

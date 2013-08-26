@@ -1,9 +1,4 @@
-﻿/*
-* John Papa
-* http://johnpapa.net
-* AngularJS Directive
-**/
-(function() {
+﻿(function() {
     'use strict';
 
     // Define the directive on the module.

@@ -1,0 +1,13 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>main.js</DefaultName>
+    <Name>DurandalJs main.js</Name>
+    <Description>DurandalJs main.js: Includes common structure and starter dependencies. By John Papa, http://johnpapa.net</Description>
+    <ProjectType>VisualBasic</ProjectType>
+    <Icon>icon.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">service.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
