@@ -1,5 +1,4 @@
-SideWaffle Template Packs for Visual Studio
-============
+#SideWaffle for Visual Studio
 
 A collection of Item- and Project Templates for Visual Studio 2012/2013
 
