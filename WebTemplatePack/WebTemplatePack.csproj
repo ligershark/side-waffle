@@ -69,6 +69,12 @@
     <Content Include="ItemTemplates\JavaScript\AngularJs\Module\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\JavaScript\AngularJs\Module\icon.png" />
     <Content Include="ItemTemplates\JavaScript\AngularJs\Module\module.js" />
+    <Content Include="ItemTemplates\JavaScript\Durandal\ViewModel\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\Durandal\ViewModel\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\Durandal\ViewModel\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\Durandal\ViewModel\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\Durandal\ViewModel\icon.png" />
+    <Content Include="ItemTemplates\JavaScript\Durandal\ViewModel\viewmodel.js" />
     <Content Include="ItemTemplates\JavaScript\RequireJs\Definitions\Web.VB.vstemplate">
       <SubType>Designer</SubType>
     </Content>
