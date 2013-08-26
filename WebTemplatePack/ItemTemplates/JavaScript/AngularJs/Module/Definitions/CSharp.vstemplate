@@ -1,0 +1,13 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>app.js</DefaultName>
+    <Name>AngularJs Module File</Name>
+    <Description>AngularJs Module: ready with common modules and starter dependencies. By John Papa, http://johnpapa.net</Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon>icon.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">module.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
