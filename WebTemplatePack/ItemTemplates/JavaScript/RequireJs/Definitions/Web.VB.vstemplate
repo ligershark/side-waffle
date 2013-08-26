@@ -9,6 +9,6 @@
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem>template.js</ProjectItem>
+    <ProjectItem ReplaceParameters="true">template.js</ProjectItem>
   </TemplateContent>
 </VSTemplate>

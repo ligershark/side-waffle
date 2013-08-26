@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="ItemTemplates\JavaScript\AngularJs\controller.js" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\AngularJs\icon.png" />
     <Content Include="ItemTemplates\JavaScript\RequireJs\Definitions\Web.VB.vstemplate">
       <SubType>Designer</SubType>
     </Content>

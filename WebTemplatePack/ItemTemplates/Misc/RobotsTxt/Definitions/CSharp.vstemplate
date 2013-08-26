@@ -8,6 +8,6 @@
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem>robots.txt</ProjectItem>
+    <ProjectItem ReplaceParameters="true">robots.txt</ProjectItem>
   </TemplateContent>
 </VSTemplate>

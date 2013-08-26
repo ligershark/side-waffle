@@ -9,6 +9,6 @@
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem>humans.txt</ProjectItem>
+    <ProjectItem ReplaceParameters="true">humans.txt</ProjectItem>
   </TemplateContent>
 </VSTemplate>

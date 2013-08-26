@@ -1,13 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
-	<TemplateData>
+  <TemplateData>
     <DefaultName>humans.txt</DefaultName>
     <Name>Humans.txt File</Name>
     <Description>Because we're not all robots!!</Description>
-		<ProjectType>VisualBasic</ProjectType>
-		<Icon>icon.png</Icon>
-	</TemplateData>
-	<TemplateContent>
-		<References />
-		<ProjectItem>humans.txt</ProjectItem>
-	</TemplateContent>
+    <ProjectType>VisualBasic</ProjectType>
+    <Icon>icon.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">humans.txt</ProjectItem>
+  </TemplateContent>
 </VSTemplate>
