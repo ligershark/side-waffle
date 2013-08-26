@@ -1,0 +1,13 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>factory.js</DefaultName>
+    <Name>AngularJs Factory File</Name>
+    <Description>AngularJs Factory: minification ready with starter dependencies. By John Papa, http://johnpapa.net</Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon>icon.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem>factory.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
