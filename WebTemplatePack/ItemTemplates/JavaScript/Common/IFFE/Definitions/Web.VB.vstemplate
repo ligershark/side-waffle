@@ -1,14 +1,14 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <DefaultName>robots.txt</DefaultName>
-    <Name>Robots.txt</Name>
-    <Description>A file for search engine crawlers about how to index your site.</Description>
+    <DefaultName>iffe.js</DefaultName>
+    <Name>JavaScript IFFE</Name>
+    <Description>JavaScript IFFE: Immediately Invoked Function Expression. By John Papa, http://johnpapa.net</Description>
     <ProjectType>Web</ProjectType>
     <ProjectSubType>VisualBasic</ProjectSubType>
     <Icon>icon.png</Icon>
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem ReplaceParameters="true">robots.txt</ProjectItem>
+    <ProjectItem ReplaceParameters="true">iffe.js</ProjectItem>
   </TemplateContent>
 </VSTemplate>
