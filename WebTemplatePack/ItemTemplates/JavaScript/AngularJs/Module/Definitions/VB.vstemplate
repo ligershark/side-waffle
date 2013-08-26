@@ -5,6 +5,7 @@
     <Description>AngularJs Module: ready with common modules and starter dependencies. By John Papa, http://johnpapa.net</Description>
     <ProjectType>VisualBasic</ProjectType>
     <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <References />

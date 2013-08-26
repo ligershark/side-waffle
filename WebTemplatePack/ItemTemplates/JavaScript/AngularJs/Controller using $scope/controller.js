@@ -11,12 +11,9 @@
         ['$scope', $safeitemname$]);
 
     function $safeitemname$($scope) {
-        // Using 'Controller As' syntax, so we assign this to the vm variable (for viewmodel).
-        var vm = this;
-
         // Bindable properties and functions are placed on vm.
-        vm.activate = activate;
-        vm.title = '$safeitemname$';
+        $scope.title = '$safeitemname$';
+        $scope.activate = activate;
 
         function activate() {
         }
