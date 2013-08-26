@@ -5,6 +5,7 @@
     <Description>Because we're not all robots!!</Description>
     <ProjectType>VisualBasic</ProjectType>
     <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <References />

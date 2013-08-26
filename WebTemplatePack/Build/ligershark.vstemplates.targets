@@ -253,19 +253,19 @@
                   //  'Web.VB.vstemplate' -> VisualBasic\Web\
                   if(string.Compare(@"CSharp.vstemplate", fi.Name,StringComparison.OrdinalIgnoreCase)==0){
                     ItemTemplateName = string.Format("{0}.csharp",itRootFileName);
-                    OutputPathFolder = string.Format(@"{0}CSharp\Web\", ItemTemplateZipRootFolder);	                  
+                    OutputPathFolder = string.Format(@"{0}CSharp\Web\SideWaffle", ItemTemplateZipRootFolder);	                  
                   }
                   else if(string.Compare(@"Web.CSharp.vstemplate", fi.Name,StringComparison.OrdinalIgnoreCase)==0){
                     ItemTemplateName = string.Format("{0}.web.csharp",itRootFileName);
-                    OutputPathFolder = string.Format(@"{0}CSharp\Web\", ItemTemplateZipRootFolder);
+                    OutputPathFolder = string.Format(@"{0}CSharp\Web\\SideWaffle", ItemTemplateZipRootFolder);
                   }
                   else if(string.Compare(@"VB.vstemplate", fi.Name,StringComparison.OrdinalIgnoreCase)==0){
                     ItemTemplateName = string.Format("{0}.VB",itRootFileName);
-                    OutputPathFolder = string.Format(@"{0}VisualBasic\Web\", ItemTemplateZipRootFolder);
+                    OutputPathFolder = string.Format(@"{0}VisualBasic\Web\\SideWaffle", ItemTemplateZipRootFolder);
                   }
                   else if(string.Compare(@"Web.VB.vstemplate", fi.Name,StringComparison.OrdinalIgnoreCase)==0){
                     ItemTemplateName = string.Format("{0}.web.VB",itRootFileName);
-                    OutputPathFolder = string.Format(@"{0}VisualBasic\Web\", ItemTemplateZipRootFolder);
+                    OutputPathFolder = string.Format(@"{0}VisualBasic\Web\\SideWaffle", ItemTemplateZipRootFolder);
                   }
                   else{
 	                  Log.LogError("Unknown value for ItemTemplateName: [{0}]. Supported values include 'CSharp.vstemplate','Web.CSharp.vstemplate','VB.vstemplate' and 'Web.VB.vstemplate' ",fi.Name);

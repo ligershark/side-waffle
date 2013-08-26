@@ -5,6 +5,7 @@
     <Description>A file for search engine crawlers about how to index your site.</Description>
     <ProjectType>CSharp</ProjectType>
     <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <References />
