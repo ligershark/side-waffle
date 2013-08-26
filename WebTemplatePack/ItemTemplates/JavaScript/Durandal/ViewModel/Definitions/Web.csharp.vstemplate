@@ -1,0 +1,14 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>viewmodel.js</DefaultName>
+    <Name>DurandalJs ViewModel File</Name>
+    <Description>DurandalJs ViewModel: Includes common structure, events, and starter dependencies. By John Papa, http://johnpapa.net</Description>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <Icon>icon.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">viewmodel.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
