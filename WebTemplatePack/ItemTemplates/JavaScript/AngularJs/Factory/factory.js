@@ -1,7 +1,7 @@
 ﻿/*
 * John Papa
 * http://johnpapa.net
-* AngularJS Factory File
+* AngularJS Factory
 **/
 
 (function () {

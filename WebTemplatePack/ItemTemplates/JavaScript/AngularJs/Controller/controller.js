@@ -1,7 +1,7 @@
 ﻿/*
 * John Papa
 * http://johnpapa.net
-* AngularJS Controller File
+* AngularJS Controller
 **/
 (function () {
     'use strict';
