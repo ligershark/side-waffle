@@ -1,10 +1,4 @@
-﻿/*
-* John Papa
-* http://johnpapa.net
-* AngularJS Module
-**/
-
-(function () {
+﻿(function () {
     'use strict';
 
     // Module name is handy for logging
