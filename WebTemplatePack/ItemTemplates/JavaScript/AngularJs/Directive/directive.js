@@ -1,7 +1,7 @@
 ﻿/*
 * John Papa
 * http://johnpapa.net
-* AngularJS Directive File
+* AngularJS Directive
 **/
 (function() {
     'use strict';

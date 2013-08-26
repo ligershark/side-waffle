@@ -1,7 +1,7 @@
 ﻿/*
 * John Papa
 * http://johnpapa.net
-* AngularJS App Module File
+* AngularJS Module
 **/
 
 (function () {
