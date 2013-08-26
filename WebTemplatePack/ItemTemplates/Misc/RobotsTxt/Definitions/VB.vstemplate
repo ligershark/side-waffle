@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <DefaultName>robots.txt</DefaultName>
-    <Name>Robots.txt File</Name>
+    <Name>Robots.txt</Name>
     <Description>A file for search engine crawlers about how to index your site.</Description>
     <ProjectType>VisualBasic</ProjectType>
     <Icon>icon.png</Icon>
