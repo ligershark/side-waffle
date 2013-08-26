@@ -1,11 +1,10 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <DefaultName>viewmodel.js</DefaultName>
-    <Name>DurandalJs Controller File</Name>
+    <Name>DurandalJs Controller</Name>
     <Description>DurandalJs ViewModel: Includes common structure, events, and starter dependencies. By John Papa, http://johnpapa.net</Description>
     <ProjectType>VisualBasic</ProjectType>
     <Icon>icon.png</Icon>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <References />
