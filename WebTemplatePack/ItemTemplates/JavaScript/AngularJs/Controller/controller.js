@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    // Controller name is handy inside of a controller for logging
+    // Controller name is handy for logging
     var controllerId = '$safeitemname$';
 
     // Define the controller on the module.

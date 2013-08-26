@@ -7,15 +7,15 @@
 (function () {
     'use strict';
 
-    // Factory name is handy inside of a factory for logging
-    var serviceId = '$safeitemname$Service';
+    // Factory name is handy for logging
+    var serviceId = '$safeitemname$';
 
     // Define the factory on the module.
     // Inject the dependencies. 
     // Point to the factory definition function.
-    angular.module('app').factory(serviceId, ['config', $safeitemname$Service]);
+    angular.module('app').factory(serviceId, ['config', $safeitemname$]);
 
-    function $safeitemname$Service(config) {
+    function $safeitemname$(config) {
         // Define the functions and properties to reveal.
         var service = {
             getData: getData
