@@ -1,9 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="e6e2a48e-387d-4af2-9072-86a5276da6d4" Version="1.0.1" Language="en-US" Publisher="LigerShark" />
+    <Identity Id="e6e2a48e-387d-4af2-9072-86a5276da6d4" Version="1.0.3" Language="en-US" Publisher="LigerShark" />
     <DisplayName>SideWaffle for Web</DisplayName>
     <Description>A side dish filled with item templates for building websites.</Description>
+    <MoreInfo>http://sidewaffle.com</MoreInfo>
+    <GettingStartedGuide>http://sidewaffle.com</GettingStartedGuide>
+    <Icon>logo.png</Icon>
+    <PreviewImage>logo.png</PreviewImage>
+    <Tags>templates</Tags>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />

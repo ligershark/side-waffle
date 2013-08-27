@@ -2,10 +2,17 @@
     max-width: 970px;
     margin: 0 auto;
     font-family: 'Century Gothic', futura, 'URW Gothic L', Verdana, sans-serif;
+    padding: 0 1em;
+}
+
+img{
+    max-width: 100%;
 }
 
 header {
     margin: 1em 0;
+    background: url(/img/logo.png) no-repeat right;
+    padding-right: 120px;
 }
 
     header h1 {

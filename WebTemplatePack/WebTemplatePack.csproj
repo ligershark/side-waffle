@@ -128,6 +128,10 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
+    <Content Include="logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <Content Include="ItemTemplates\Misc\HumansTxt\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
