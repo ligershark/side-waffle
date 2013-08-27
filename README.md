@@ -1,5 +1,7 @@
 #SideWaffle for Visual Studio
 
+[SideWaffle.com](http://sidewaffle.com) - download the extension
+
 ##The ultimate web developer template pack
 
 A collection of Item Templates for Visual Studio 2012/2013 
