@@ -115,6 +115,20 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ItemTemplates\JavaScript\RequireJs\icon.png" />
+    <Content Include="ItemTemplates\Misc\Favicon\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Misc\Favicon\Definitions\VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Misc\Favicon\Definitions\Web.csharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Misc\Favicon\Definitions\Web.VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Misc\Favicon\favicon.ico" />
+    <Content Include="ItemTemplates\Misc\Favicon\icon.ico" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
