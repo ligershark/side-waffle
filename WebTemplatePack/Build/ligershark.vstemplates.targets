@@ -11,6 +11,7 @@
     <ls-ItemTemplateRoot Condition=" '$(ls-ItemTemplateRoot)'=='' ">$(MSBuildProjectDirectory)\ItemTemplates\</ls-ItemTemplateRoot>
     <ls-ItemTemplateOutputRoot Condition=" '$(ls-ItemTemplateOutputRoot)'=='' ">$(IntermediateOutputPath)ls-ItemTemplates\</ls-ItemTemplateOutputRoot>
     <ls-BuildRoot Condition=" '$(ls-BuildRoot)'=='' ">$(MSBuildProjectDirectory)\Build\</ls-BuildRoot>
+    <ls-BuildLib Condition=" '$(ls-BuildLib)'=='' and Exists('$(MSBuildThisFileDirectory)\ligershark.vstemplates.targets')">$(MSBuildThisFileDirectory)\</ls-BuildLib>
     <ls-BuildLib Condition=" '$(ls-BuildLib)'=='' ">$(ls-BuildRoot)Lib\</ls-BuildLib>
     <ls-ItemTemplatesExtendBuild Condition=" '$(ls-ItemTemplatesExtendBuild)'=='' ">true</ls-ItemTemplatesExtendBuild>
     <!-- This is where all the Item Template .zip files will be located -->

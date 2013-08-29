@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--  
+        This file was added by the SideWaffle NuGet Package http://nuget.org/packages/SideWaffle.
+        You can specify SideWaffle settings in this file.
+        
+        After editing this file you may need to restart Visual Studio for the changes take effect.
+  -->
+
+  <PropertyGroup>
+    <!-- 
+          Custom properties will be included here
+    -->
+  </PropertyGroup>
+</Project>

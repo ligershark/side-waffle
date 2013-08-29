@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SideWaffle</id>
+    <version>1.0.0-beta</version>
+    <authors>Sayed Ibrahim Hashimi</authors>
+    <owners>Sayed Ibrahim Hashimi</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://github.com/ligershark/side-waffle</projectUrl>
+    <!--<iconUrl>http://msbuildbook.com/images/vsix-compress.png</iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      A NuGet package which can be used to easily create item and project templates for Visual Studio.
+    </description>
+    <!-- <releaseNotes></releaseNotes> -->
+    <copyright>Copyright 2013 Sayed Ibrahim Hashimi</copyright>
+    <tags>Side Waffle SideWaffle VSIX VisualStudio Visual Studio Extensibility</tags>
+    <!--<dependencies>
+      <dependency id="SampleDependency" version="1.0" />
+    </dependencies>-->
+  </metadata>
+</package>
