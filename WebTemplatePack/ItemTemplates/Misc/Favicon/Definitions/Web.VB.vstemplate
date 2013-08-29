@@ -1,15 +1,15 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <DefaultName>readme.md</DefaultName>
-    <Name>Readme.md File</Name>
-    <Description>Adding a README to help give people an overview of your project.</Description>
+    <DefaultName>favicon.ico</DefaultName>
+    <Name>Favicon .ico File</Name>
+    <Description>An image icon that shows up in the browser address bar.</Description>
     <ProjectType>Web</ProjectType>
-    <ProjectSubType>CSharp</ProjectSubType>
-    <Icon>icon.png</Icon>
+    <ProjectSubType>VisualBasic</ProjectSubType>
+    <Icon>icon.ico</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem ReplaceParameters="true">readme.md</ProjectItem>
+    <ProjectItem ReplaceParameters="true">favicon.ico</ProjectItem>
   </TemplateContent>
 </VSTemplate>

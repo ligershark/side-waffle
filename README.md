@@ -1,5 +1,7 @@
 #SideWaffle for Visual Studio
 
+[SideWaffle.com](http://sidewaffle.com) - download the extension
+
 ##The ultimate web developer template pack
 
 A collection of Item Templates for Visual Studio 2012/2013 
@@ -16,6 +18,7 @@ The result of a search for "angular" in the "Add new item" dialog
 4. Open the solution in Visual Studio
 5. Watch [this video tutorial](http://youtu.be/h4VaORKgrOw)
 6. After adding your templates, send us a pull request
+ * Only high quality templates with broad appeal will be accepted
 
 Please notice that you need Visual Studio 2012 and the SDK to open the project, 
 but the templates can be installed in both Visual Studio 2012 and 2013.

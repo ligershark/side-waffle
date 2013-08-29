@@ -46,6 +46,7 @@ x64/
 *.pidb
 *.log
 *.scc
+*.publishproj
 
 # Visual C++ cache files
 ipch/
