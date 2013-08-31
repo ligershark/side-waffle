@@ -11,5 +11,6 @@
     <!-- 
           Custom properties will be included here
     -->
+    <ls-TemplateSubFolder>SideWaffle</ls-TemplateSubFolder>
   </PropertyGroup>
 </Project>

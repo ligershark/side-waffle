@@ -9,7 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		build.proj = build.proj
 		tools\Install.ps1 = tools\Install.ps1
 		LICENSE.md = LICENSE.md
-		WebTemplatePack\Build\ligershark.vstemplates.targets = WebTemplatePack\Build\ligershark.vstemplates.targets
 		README.md = README.md
 		screenshot.png = screenshot.png
 		side-waffle.nuspec = side-waffle.nuspec
@@ -22,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CF6C5B
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "http://localhost:20650", "{E176621F-1349-42BD-83A4-2A9AC590F091}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website(1)", "http://localhost:20650", "{E176621F-1349-42BD-83A4-2A9AC590F091}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"

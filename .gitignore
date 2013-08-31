@@ -1,4 +1,6 @@
 OutputRoot/
+packages/
+PrecompiledWeb/
 #################
 ## Visual Studio
 #################
