@@ -181,7 +181,9 @@
     <Content Include="ItemTemplates\Misc\RobotsTxt\icon.png" />
     <Content Include="ItemTemplates\Misc\RobotsTxt\robots.txt" />
     <None Include="packages.config" />
-    <None Include="Properties\template-builder.props" />
+    <None Include="Properties\template-builder.props">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
