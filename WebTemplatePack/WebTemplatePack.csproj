@@ -116,12 +116,14 @@
     <Content Include="ItemTemplates\JavaScript\jQuery\Plugin\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\JavaScript\jQuery\Plugin\icon.png" />
     <Content Include="ItemTemplates\JavaScript\jQuery\Plugin\jqueryPlugin.js" />
-    <Content Include="ItemTemplates\JavaScript\KnockoutJS\CustomBinding\binding.js" />
-    <Content Include="ItemTemplates\JavaScript\KnockoutJS\CustomBinding\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\KnockoutJS\CustomBinding\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\KnockoutJS\CustomBinding\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\KnockoutJS\CustomBinding\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\KnockoutJS\CustomBinding\knockoutjs.png" />
+    <Content Include="ItemTemplates\JavaScript\Knockout\CustomBinding\binding.js" />
+    <Content Include="ItemTemplates\JavaScript\Knockout\CustomBinding\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\Knockout\CustomBinding\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\Knockout\CustomBinding\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\Knockout\CustomBinding\Definitions\Web.VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\JavaScript\Knockout\CustomBinding\icon.png" />
     <Content Include="ItemTemplates\JavaScript\RequireJs\Definitions\Web.VB.vstemplate">
       <SubType>Designer</SubType>
     </Content>
