@@ -84,14 +84,12 @@
     <Content Include="ItemTemplates\JavaScript\AngularJs\Module\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\JavaScript\AngularJs\Module\icon.png" />
     <Content Include="ItemTemplates\JavaScript\AngularJs\Module\module.js" />
-    <Content Include="ItemTemplates\JavaScript\Common\IFFE\Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\JavaScript\Common\IFFE\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Common\IFFE\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Common\IFFE\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Common\IFFE\icon.png" />
-    <Content Include="ItemTemplates\JavaScript\Common\IFFE\iffe.js" />
+    <Content Include="ItemTemplates\JavaScript\Common\IIFE\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\Common\IIFE\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\Common\IIFE\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\Common\IIFE\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\JavaScript\Common\IIFE\icon.png" />
+    <Content Include="ItemTemplates\JavaScript\Common\IIFE\iife.js" />
     <Content Include="ItemTemplates\JavaScript\Durandal\Main\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\JavaScript\Durandal\Main\Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\JavaScript\Durandal\Main\Definitions\Web.csharp.vstemplate" />
