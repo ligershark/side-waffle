@@ -11,6 +11,7 @@
     <OutputRoot Condition=" '$(OutputRoot)'=='' ">$(OutputRootNoTrailingSlash)\</OutputRoot>
     <DevFolder Condition=" '$(DevFolder)'=='' ">c:\temp\msbuild\</DevFolder>
     <RestorePackages Condition=" '$(RestorePackages)'=='' ">true</RestorePackages>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)'=='' ">11.0</VisualStudioVersion>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -24,7 +25,7 @@
       <DestDir>%(RecursiveDir)</DestDir>
     </ContentItems>
 
-    <ProjectsToBuild Include="$(SourceRoot)TemplatePack.sln" />
+    <ProjectsToBuild Include="$(SourceRoot)WebTemplatePack\WebTemplatePack.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -35,7 +36,7 @@
 
   <Target Name="FullBuild" DependsOnTargets="$(FullBuildDependsOn)"/>
   <Target Name="CoreFullBuild">
-    <MSBuild Projects="@(ProjectsToBuild)" Properties="Configuration=$(Configuration);OutputPath=$(OutputRoot);RestorePackages=$(RestorePackages)"/>
+    <MSBuild Projects="@(ProjectsToBuild)" Properties="VisualStudioVersion=$(VisualStudioVersion);Configuration=$(Configuration);OutputPath=$(OutputRoot);RestorePackages=$(RestorePackages)"/>
   </Target>
   
   <Target Name="CleanAndInitalize">
