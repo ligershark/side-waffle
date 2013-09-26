@@ -69,6 +69,9 @@
     <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\icon.png" />
+    <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\icon.png" />
+    <None Include="ItemTemplates\Extensibility\HtmlSmartTag\AddClassSmartTag.cs" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\controller.js" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\VB.vstemplate" />
