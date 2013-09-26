@@ -19,6 +19,7 @@
   </Dependencies>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.ItemTemplate" Path="Output\ItemTemplates" />
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" Path="Output\ProjectTemplates" />
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="feed.pkgdef" />
   </Assets>
 </PackageManifest>
