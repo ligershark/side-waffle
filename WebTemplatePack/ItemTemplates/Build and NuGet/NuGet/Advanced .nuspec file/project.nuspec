@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  For more info on this file format visit http://docs.nuget.org/docs/reference/nuspec-reference.
+-->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">  
+  <metadata>
+    <id>sample</id>
+    <version>1.2.3</version>
+    <authors>Kim Abercrombie, Franck Halmaert</authors>
+    <description>Sample exists only to show a sample .nuspec file.</description>
+    <language>en-US</language>
+    <projectUrl>http://xunit.codeplex.com/</projectUrl>
+    <licenseUrl>http://xunit.codeplex.com/license</licenseUrl>
+
+    <dependencies>
+      <dependency id="another-package" version="3.0.0" />
+      <dependency id="yet-another-package"/>
+    </dependencies>
+
+    <references>
+      <reference file="xunit.dll" />
+      <reference file="xunit.extensions.dll" />
+      <group targetFramework="net45">
+        <reference file="a.dll" />
+      </group>
+      <group targetFramework="netcore45">
+        <reference file="b.dll" />
+      </group>
+      <group>
+        <reference file="c.dll" />
+      </group>
+    </references>
+
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
+      <frameworkAssembly assemblyName="System.Net" targetFramework="net40-client, net40" />
+      <frameworkAssembly assemblyName="Microsoft.Devices.Sensors" targetFramework="sl4-wp" />
+      <frameworkAssembly assemblyName="System.Json" targetFramework="sl3" />
+    </frameworkAssemblies>
+    
+    <files>
+      <file src="bin\Debug\*.dll" target="lib" />
+      <file src="bin\Debug\*.pdb" target="lib" />
+      <file src="tools\**\*.*" exclude="**\*.log" />
+    </files>
+    
+  </metadata>
+</package>

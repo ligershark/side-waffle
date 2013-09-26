@@ -54,6 +54,21 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\icon.png" />
+    <Content Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\icon.png" />
+    <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\controller.js" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\VB.vstemplate" />
@@ -153,6 +168,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\build.proj" />
+    <None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\project.nuspec" />
+    <None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\project.nuspec" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\readme.md" />
     <None Include="packages.config" />

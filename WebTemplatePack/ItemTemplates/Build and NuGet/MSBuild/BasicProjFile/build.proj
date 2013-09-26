@@ -1,0 +1,13 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+
+  <PropertyGroup>
+    <BuildDependsOn>
+      $(BuildDependsOn);
+    </BuildDependsOn>
+    
+  </PropertyGroup>
+  <Target Name="Build" DependsOnTargets="$(BuildDependsOn)">
+    
+  </Target>
+  
+</Project>
