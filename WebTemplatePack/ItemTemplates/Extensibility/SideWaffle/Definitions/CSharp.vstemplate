@@ -1,0 +1,22 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>CSharp</ProjectType>
+    
+    <DefaultName>TemplateName</DefaultName>
+    <Name>SideWaffle template</Name>
+    <Description>This will create a folder with the name that you specify as the file name below.
+In that folder you will have all the files you need for a SideWaffle Item Template.
+    </Description>    
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\CSharp.vstemplat-" ItemType="None" OpenInEditor="true">CSharp.vstemplat-</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\VB.vstemplat-" ItemType="None" OpenInEditor="true">VB.vstemplat-</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\Web.csharp.vstemplat-" ItemType="None" OpenInEditor="true">Web.csharp.vstemplat-</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\Web.VB.vstemplat-" ItemType="None" OpenInEditor="true">Web.VB.vstemplat-</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\icon.png">file-icon.png</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\readme.txt" ItemType="None" OpenInEditor="true">readme.txt</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
