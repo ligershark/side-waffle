@@ -1,0 +1,40 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Browser Link Extension</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>BrowserLinkProject</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>logo.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$projectname$.csproj" File="BrowserLinkExtensionTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$.vsct">BrowserLinkExtensionTemplate.vsct</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$Package.cs">BrowserLinkExtensionTemplatePackage.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Guids.cs">Guids.cs</ProjectItem>
+      <Folder Name="Intellisense" TargetFolderName="Intellisense">
+        <ProjectItem ReplaceParameters="false" TargetFileName="browserlink.intellisense.js">browserlink.intellisense.js</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="jquery-1.8.2.intellisense.js">jquery-1.8.2.intellisense.js</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="jquery-1.8.2.js">jquery-1.8.2.js</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$.cs" OpenInEditor="true">MyExtension.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="PkgCmdID.cs">PkgCmdID.cs</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Resources" TargetFolderName="Resources">
+        <ProjectItem ReplaceParameters="false" TargetFileName="Images.png">Images.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="Package.ico">Package.ico</ProjectItem>
+      </Folder>
+      <Folder Name="Scripts" TargetFolderName="Scripts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$.js">MyExtension.js</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="source.extension.vsixmanifest">_source.extension.vsixmanifest</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="VSPackage.resx">VSPackage.resx</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
