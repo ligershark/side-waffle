@@ -47,151 +47,121 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.2\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.3-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller\controller.js" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller\icon.png" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller using %24scope\controller.js" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller using %24scope\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller using %24scope\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller using %24scope\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller using %24scope\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Controller using %24scope\icon.png" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Directive\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Directive\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Directive\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Directive\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Directive\directive.js" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Directive\icon.png" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Factory\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Factory\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Factory\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Factory\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Factory\factory.js" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Factory\icon.png" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Module\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Module\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Module\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Module\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Module\icon.png" />
-    <Content Include="ItemTemplates\JavaScript\AngularJs\Module\module.js" />
-    <Content Include="ItemTemplates\JavaScript\Common\IIFE\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Common\IIFE\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Common\IIFE\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Common\IIFE\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Common\IIFE\icon.png" />
-    <Content Include="ItemTemplates\JavaScript\Common\IIFE\iife.js" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\Main\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\Main\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\Main\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\Main\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\Main\icon.png" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\Main\main.js" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\Service\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\Service\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\Service\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\Service\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\Service\icon.png" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\Service\service.js" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\ViewModel\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\ViewModel\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\ViewModel\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\ViewModel\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\ViewModel\icon.png" />
-    <Content Include="ItemTemplates\JavaScript\Durandal\ViewModel\viewmodel.js" />
-    <Content Include="ItemTemplates\JavaScript\jQuery\Plugin\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\jQuery\Plugin\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\jQuery\Plugin\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\jQuery\Plugin\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\jQuery\Plugin\icon.png" />
-    <Content Include="ItemTemplates\JavaScript\jQuery\Plugin\jqueryPlugin.js" />
-    <Content Include="ItemTemplates\JavaScript\Knockout\CustomBinding\binding.js" />
-    <Content Include="ItemTemplates\JavaScript\Knockout\CustomBinding\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Knockout\CustomBinding\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Knockout\CustomBinding\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\JavaScript\Knockout\CustomBinding\Definitions\Web.VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\JavaScript\Knockout\CustomBinding\icon.png" />
-    <Content Include="ItemTemplates\JavaScript\RequireJs\Definitions\Web.VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\JavaScript\RequireJs\Definitions\VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\JavaScript\RequireJs\Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\JavaScript\RequireJs\icon.png" />
-    <Content Include="ItemTemplates\Misc\Favicon\Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\Favicon\Definitions\VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\Favicon\Definitions\Web.csharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\Favicon\Definitions\Web.VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\Favicon\favicon.ico" />
-    <Content Include="ItemTemplates\Misc\Favicon\icon.ico" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\controller.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller\controller.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\directive.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\factory.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Module\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Module\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Module\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Module\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Module\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Module\module.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE\iife.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\Main\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\Main\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\Main\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\Main\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\Main\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\Main\main.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\Service\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\Service\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\Service\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\Service\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\Service\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\Service\service.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\viewmodel.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\jqueryPlugin.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\binding.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\RequireJs\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\RequireJs\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\RequireJs\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\RequireJs\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\RequireJs\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\RequireJs\template.js" />
+    <Content Include="ItemTemplates\Web\Misc\Favicon\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\Favicon\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\Favicon\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\Favicon\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\Favicon\favicon.ico" />
+    <Content Include="ItemTemplates\Web\Misc\Favicon\icon.ico" />
+    <Content Include="ItemTemplates\Web\Misc\HumansTxt\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\HumansTxt\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\HumansTxt\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\HumansTxt\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\HumansTxt\humans.txt" />
+    <Content Include="ItemTemplates\Web\Misc\HumansTxt\icon.png" />
+    <Content Include="ItemTemplates\Web\Misc\ReadmeMd\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\ReadmeMd\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\ReadmeMd\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\ReadmeMd\icon.png" />
+    <Content Include="ItemTemplates\Web\Misc\RobotsTxt\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\RobotsTxt\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\RobotsTxt\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\RobotsTxt\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\RobotsTxt\icon.png" />
+    <Content Include="ItemTemplates\Web\Misc\RobotsTxt\robots.txt" />
     <Content Include="logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
-    <Content Include="ItemTemplates\Misc\HumansTxt\Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\HumansTxt\Definitions\VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\HumansTxt\Definitions\Web.csharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\HumansTxt\Definitions\Web.VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\HumansTxt\icon.png" />
-    <Content Include="ItemTemplates\Misc\HumansTxt\humans.txt" />
-    <Content Include="ItemTemplates\Misc\RobotsTxt\Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\RobotsTxt\Definitions\VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\RobotsTxt\Definitions\Web.csharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\RobotsTxt\Definitions\Web.VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Misc\RobotsTxt\icon.png" />
-    <Content Include="ItemTemplates\Misc\RobotsTxt\robots.txt" />
+    <None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.pdn" />
+    <None Include="ItemTemplates\Web\Misc\ReadmeMd\readme.md" />
     <None Include="packages.config" />
     <None Include="Properties\template-builder.props">
       <SubType>Designer</SubType>
@@ -199,12 +169,6 @@
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ItemTemplates\JavaScript\RequireJs\Definitions\Web.csharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\JavaScript\RequireJs\template.js" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
