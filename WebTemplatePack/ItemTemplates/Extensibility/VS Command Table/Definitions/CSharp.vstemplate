@@ -1,0 +1,78 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>CSharp</ProjectType>    
+    <DefaultName>Package.vsct</DefaultName>
+    <Name>VS Command Table (.vsct)</Name>
+    <Description>A standard .vsct file with a button. Also includes Guids.cs and PkgCmdID.cs</Description>    
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.OLE.Interop</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.Shell.Interop</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.Shell.Interop.8.0</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.Shell.Interop.9.0</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.Shell.Interop.10.0</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.Shell.Interop.11.0</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.TextManager.Interop</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.Shell.11.0</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.Shell.Immutable.10.0</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.Shell.Immutable.11.0</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.TextManager.Interop</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>EnvDTE</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>EnvDTE100</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>EnvDTE80</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>EnvDTE90</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.Design</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.Core</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.CommandBars</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>stdole</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootnamespace$.vsct">VSPackage.vsct</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$rootnamespace$Package.cs">VSPackagePackage.cs</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="Guids.cs">Guids.cs</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="PkgCmdID.cs">PkgCmdID.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
