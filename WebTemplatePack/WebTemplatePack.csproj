@@ -74,6 +74,11 @@
     <Content Include="ItemTemplates\Extensibility\BrowserLink\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Extensibility\BrowserLink\icon.png" />
     <Content Include="ItemTemplates\Extensibility\BrowserLink\MyExtension.js" />
+    <Content Include="ItemTemplates\Extensibility\CodeSnippet\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\CodeSnippet\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\CodeSnippet\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\CodeSnippet\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\CodeSnippet\icon.png" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\icon.png" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Intellisense\browserlink.intellisense.js" />
@@ -83,6 +88,8 @@
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Resources\Images.png" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Resources\Package.ico" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Scripts\MyExtension.js" />
+    <None Include="ItemTemplates\Extensibility\CodeSnippet\CSharpSnippet.snippet" />
+    <None Include="ItemTemplates\Extensibility\CodeSnippet\VBSnippet.snippet" />
     <None Include="ItemTemplates\Extensibility\HtmlSmartTag\AddClassSmartTag.cs" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\file-icon.png" />
