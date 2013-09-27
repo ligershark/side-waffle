@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.3-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.7-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -73,18 +73,16 @@
     <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\icon.png" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\icon.png" />
-    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Intellisense\browserlink.intellisense.js" />
-    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Intellisense\jquery-1.8.2.intellisense.js" />
-    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Intellisense\jquery-1.8.2.js" />
-    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\MyTemplate.vstemplate" />
-    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Resources\Images.png" />
-    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Resources\Package.ico" />
-    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Scripts\MyExtension.js" />
     <None Include="ItemTemplates\Extensibility\HtmlSmartTag\AddClassSmartTag.cs" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\file-icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\readme.txt" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\controller.js" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\VB.vstemplate" />
@@ -191,19 +189,11 @@
     <None Include="ItemTemplates\Extensibility\SideWaffle\VB.vstemplat-" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\Web.csharp.vstemplat-" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\Web.VB.vstemplat-" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\readme.md" />
     <None Include="packages.config" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.vsct" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplatePackage.cs" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Guids.cs" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\logo.png" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\MyExtension.cs" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\PkgCmdID.cs" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Properties\AssemblyInfo.cs" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\_source.extension.vsixmanifest" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\VSPackage.resx" />
     <None Include="Properties\template-builder.props">
       <SubType>Designer</SubType>
     </None>
