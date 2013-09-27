@@ -81,10 +81,15 @@
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\icon.png" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\icon.png" />
+    <Content Include="ItemTemplates\Extensibility\Package Definition\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\VSPackage.vsct" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\icon.png" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.vsct" />
+    <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Intellisense\browserlink.intellisense.js" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Intellisense\jquery-1.8.2.intellisense.js" />
@@ -100,7 +105,9 @@
     <None Include="ItemTemplates\Extensibility\CodeSnippet\CSharpSnippet.snippet" />
     <None Include="ItemTemplates\Extensibility\CodeSnippet\VBSnippet.snippet" />
     <None Include="ItemTemplates\Extensibility\HtmlSmartTag\AddClassSmartTag.cs" />
-    <Content Include="ItemTemplates\Extensibility\SideWaffle\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ItemTemplates\Extensibility\SideWaffle\file-icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\readme.txt" />

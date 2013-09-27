@@ -3,7 +3,7 @@
     <ProjectType>CSharp</ProjectType>
     
     <DefaultName>TemplateName</DefaultName>
-    <Name>SideWaffle template</Name>
+    <Name>SideWaffle Item Template</Name>
     <Description>This will create a folder with the name that you specify as the file name below.
 In that folder you will have all the files you need for a SideWaffle Item Template.
     </Description>    
