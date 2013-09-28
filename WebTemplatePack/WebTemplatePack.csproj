@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.7-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.9-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -84,12 +84,20 @@
     <Content Include="ItemTemplates\Extensibility\Package Definition\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\VSPackage.vsct" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\icon.png" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
+    <None Include="packages.config" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.vsct" />
     <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\aspnet.ico" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\SignalR\BasicHubAndPage\aspnet.ico" />
@@ -105,6 +113,7 @@
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Scripts\MyExtension.js" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\_source.extension.vsixmanifest" />
     <Content Include="ProjectTemplates\Web\SampleWeb\Definitions\CSharp.vstemplate" />
+    <Content Include="ProjectTemplates\Web\SampleWeb\Definitions\templateinfo.xml" />
     <Content Include="ProjectTemplates\Web\SampleWeb\SampleWeb.csproj">
       <SubType>Designer</SubType>
     </Content>
@@ -118,11 +127,6 @@
     <Content Include="ItemTemplates\Extensibility\SideWaffle\file-icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\readme.txt" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\controller.js" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\VB.vstemplate" />
@@ -230,11 +234,8 @@
     <None Include="ItemTemplates\Extensibility\SideWaffle\Web.csharp.vstemplat-" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\Web.VB.vstemplat-" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\readme.md" />
-    <None Include="packages.config" />
     <None Include="ProjectTemplates\Web\SampleWeb\Web.config" />
     <None Include="ProjectTemplates\Web\SampleWeb\Web.Debug.config" />
     <None Include="ProjectTemplates\Web\SampleWeb\Web.Release.config" />
