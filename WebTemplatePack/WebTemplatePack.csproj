@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.9-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.10-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -98,12 +98,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\icon.png" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
-    <Content Include="ItemTemplates\Extensibility\SideWaffle\icon.png" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\aspnet.ico" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\SignalR\BasicHubAndPage\aspnet.ico" />
