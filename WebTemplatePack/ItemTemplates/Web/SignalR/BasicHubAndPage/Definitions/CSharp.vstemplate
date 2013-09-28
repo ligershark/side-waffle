@@ -1,0 +1,14 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>BasicSignalRHubAndClientPage</DefaultName>
+    <Name>Basic SignalR Hub and HTML Client Page</Name>
+    <Description>Adds a simple SignalR Hub class and an HTML file that consumes the Hub to any existing VSIX project.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon>aspnet.ico</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.cs">HitCounterHub.cs</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Client.html">HitCounterHubClient.html</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
