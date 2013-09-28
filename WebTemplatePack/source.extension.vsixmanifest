@@ -6,8 +6,8 @@
     <Description>A side dish filled with item templates for building websites.</Description>
     <MoreInfo>http://sidewaffle.com</MoreInfo>
     <GettingStartedGuide>http://sidewaffle.com</GettingStartedGuide>
-    <Icon>logo.png</Icon>
-    <PreviewImage>logo.png</PreviewImage>
+    <Icon>logo_small.png</Icon>
+    <PreviewImage>logo_big.png</PreviewImage>
     <Tags>templates</Tags>
   </Metadata>
   <Installation>
