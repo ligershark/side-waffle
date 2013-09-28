@@ -90,8 +90,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
+    <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\aspnet.ico" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\icon.png" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Intellisense\browserlink.intellisense.js" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Intellisense\jquery-1.8.2.intellisense.js" />

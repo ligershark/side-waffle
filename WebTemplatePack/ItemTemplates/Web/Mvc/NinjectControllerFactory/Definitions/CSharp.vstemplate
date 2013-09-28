@@ -4,7 +4,7 @@
     <Name>Ninect Controller Factory</Name>
     <Description>Adds an MVC Controller Factory class backed by a Ninject IoC container to any existing VSIX project.</Description>
     <ProjectType>CSharp</ProjectType>
-    <Icon>icon.png</Icon>
+    <Icon>aspnet.ico</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
