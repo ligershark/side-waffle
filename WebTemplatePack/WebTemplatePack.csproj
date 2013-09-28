@@ -79,6 +79,11 @@
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\icon.png" />
+    <Content Include="ItemTemplates\Extensibility\Editor Drop Handler\icon.png" />
+    <Content Include="ItemTemplates\Extensibility\Editor Drop Handler\Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\Extensibility\Editor Drop Handler\MyDropHandler.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\icon.png" />
     <Content Include="ItemTemplates\Extensibility\Package Definition\Definitions\CSharp.vstemplate" />
