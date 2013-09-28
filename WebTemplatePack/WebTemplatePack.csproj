@@ -93,7 +93,9 @@
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Scripts\MyExtension.js" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\_source.extension.vsixmanifest" />
     <Content Include="ProjectTemplates\Web\SampleWeb\Definitions\CSharp.vstemplate" />
-    <Content Include="ProjectTemplates\Web\SampleWeb\SampleWeb.csproj" />
+    <Content Include="ProjectTemplates\Web\SampleWeb\SampleWeb.csproj">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ProjectTemplates\Web\SampleWeb\__TemplateIcon.ico" />
     <None Include="ItemTemplates\Extensibility\CodeSnippet\CSharpSnippet.snippet" />
     <None Include="ItemTemplates\Extensibility\CodeSnippet\VBSnippet.snippet" />
