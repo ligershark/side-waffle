@@ -90,6 +90,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
+    <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\icon.png" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Intellisense\browserlink.intellisense.js" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Intellisense\jquery-1.8.2.intellisense.js" />
@@ -247,11 +249,15 @@
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\MyExtension.cs" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\PkgCmdID.cs" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Properties\AssemblyInfo.cs" />
+    <None Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\NinjectControllerFactory.cs" />
     <Compile Include="ProjectTemplates\Web\SampleWeb\Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\VSPackage.resx" />
     <None Include="ItemTemplates\Extensibility\BrowserLink\MyExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
