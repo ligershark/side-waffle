@@ -25,7 +25,7 @@
 
   <!--The Commands section is where we the commands, menus and menu groups are defined.
       This section uses a Guid to identify the package that provides the command defined inside it. -->
-  <Commands package="guidVSPackage1Pkg">
+  <Commands package="guid$rootnamespace$Pkg">
     <!-- Inside this section we have different sub-sections: one for the menus, another  
     for the menu groups, one for the buttons (the actual commands), one for the combos 
     and the last one for the bitmaps used. Each element is identified by a command id that  
@@ -92,10 +92,10 @@
 
   <Symbols>
     <!-- This is the package guid. -->
-    <GuidSymbol name="guidVSPackage1Pkg" value="{$guid1$}" />
+    <GuidSymbol name="guid$rootnamespace$Pkg" value="{$guid1$}" />
     
     <!-- This is the guid used to group the menu commands together -->
-    <GuidSymbol name="guidVSPackage1CmdSet" value="{$guid2$}">
+    <GuidSymbol name="guid$rootnamespace$CmdSet" value="{$guid2$}">
 
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="cmdidMyCommand" value="0x0100" />

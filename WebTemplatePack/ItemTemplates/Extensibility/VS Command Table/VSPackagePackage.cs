@@ -29,7 +29,7 @@ namespace $rootnamespace$
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
     // This attribute is needed to let the shell know that this package exposes some menus.
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    [Guid(GuidList.guidMyPackagePkgString)]
+    [Guid(GuidList.guid$rootnamespace$PkgString)]
     public sealed class $safeitemname$ : Package
     {
         /// <summary>
@@ -64,7 +64,7 @@ namespace $rootnamespace$
             if ( null != mcs )
             {
                 // Create the command for the menu item.
-                CommandID menuCommandID = new CommandID(GuidList.guidMyPackageCmdSet, (int)PkgCmdIDList.cmdidMyCommand);
+                CommandID menuCommandID = new CommandID(GuidList.guid$rootnamespace$CmdSet, (int)PkgCmdIDList.cmdidMyCommand);
                 MenuCommand menuItem = new MenuCommand(MenuItemCallback, menuCommandID );
                 mcs.AddCommand( menuItem );
             }
@@ -85,7 +85,7 @@ namespace $rootnamespace$
             Microsoft.VisualStudio.ErrorHandler.ThrowOnFailure(uiShell.ShowMessageBox(
                        0,
                        ref clsid,
-                       "$safeitemname$",
+                       "$rootnamespace$",
                        string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.ToString()),
                        string.Empty,
                        0,
