@@ -1,0 +1,13 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>TableStorageEntity</DefaultName>
+    <Name>Windows Azure Table Storage Entity</Name>
+    <Description>Adds a class file to any existing VSIX project that provides entity representation of data stored in Windows Azure Storage Tables.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon>azure-icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.cs">TableStorageEntity.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
