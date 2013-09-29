@@ -12,7 +12,9 @@
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>__TemplateIcon.ico</Icon>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    
+    <!-- Indicates how many parent folders this item template should appear in -->
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="$projectname$.csproj" File="SampleWeb.csproj" ReplaceParameters="true">

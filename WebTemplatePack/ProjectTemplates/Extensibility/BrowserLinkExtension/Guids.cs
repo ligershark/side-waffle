@@ -2,7 +2,7 @@
 // MUST match guids.h
 using System;
 
-namespace $safeprojectname$
+namespace $rootnamespace$
 {
     static class GuidList
     {

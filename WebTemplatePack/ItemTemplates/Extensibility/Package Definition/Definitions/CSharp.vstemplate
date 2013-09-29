@@ -1,0 +1,14 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>CSharp</ProjectType>    
+    <DefaultName>project.pkgdef</DefaultName>
+    <Name>Package Definition (.pkgdef)</Name>
+    <Description>Package Definition files lets you add registry keys to the VS hive.</Description>    
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">project.pkgdef</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

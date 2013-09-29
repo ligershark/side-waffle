@@ -1,0 +1,45 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>CSharp</ProjectType>    
+    <DefaultName>MyDropHandler.cs</DefaultName>
+    <Name>Editor Drop Handler class</Name>
+    <Description>Used to control what happens when files are dragged on to the editor surface.</Description>    
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.CoreUtility, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.Text.Data, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.Text.Logic, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.Text.UI, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.VisualStudio.Text.UI.Wpf, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.Collections</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>System.ComponentModel.Composition</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>WindowsBase</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>PresentationCore</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true">MyDropHandler.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
