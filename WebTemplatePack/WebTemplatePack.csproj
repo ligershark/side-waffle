@@ -114,6 +114,10 @@
     <Content Include="ItemTemplates\Web\SignalR\BasicHubAndPage\aspnet.ico" />
     <Content Include="ItemTemplates\Web\SignalR\BasicHubAndPage\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\SignalR\BasicHubAndPage\HitCounterHubClient.html" />
+    <Content Include="ItemTemplates\Azure\BlobUploadHelper\azure-icon.png" />
+    <Content Include="ItemTemplates\Azure\BlobUploadHelper\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Azure\TableStorageEntity\azure-icon.png" />
+    <Content Include="ItemTemplates\Azure\TableStorageEntity\Definitions\CSharp.vstemplate" />
     <Content Include="logo_big.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -273,6 +277,8 @@
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Properties\AssemblyInfo.cs" />
     <None Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\NinjectControllerFactory.cs" />
     <None Include="ItemTemplates\Web\SignalR\BasicHubAndPage\HitCounterHub.cs" />
+    <None Include="ItemTemplates\Azure\BlobUploadHelper\BlobUploadHelper.cs" />
+    <None Include="ItemTemplates\Azure\TableStorageEntity\TableStorageEntity.cs" />
     <Compile Include="ProjectTemplates\Web\SampleWeb\Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
