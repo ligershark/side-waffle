@@ -1,0 +1,13 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>BlobUploadHelper</DefaultName>
+    <Name>Windows Azure Blob Upload Helper</Name>
+    <Description>Adds a class file to any existing VSIX project that provides convenience utilities for upload files to Windows Azure Blob Storage.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon>azure-icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.cs">BlobUploadHelper.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
