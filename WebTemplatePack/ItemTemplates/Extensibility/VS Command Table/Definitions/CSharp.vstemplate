@@ -40,9 +40,6 @@
         <Assembly>Microsoft.VisualStudio.Shell.Immutable.11.0</Assembly>
       </Reference>
       <Reference>
-        <Assembly>Microsoft.VisualStudio.TextManager.Interop</Assembly>
-      </Reference>
-      <Reference>
         <Assembly>EnvDTE</Assembly>
       </Reference>
       <Reference>

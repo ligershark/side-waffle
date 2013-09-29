@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.7-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.10-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -79,22 +79,49 @@
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\icon.png" />
+    <Content Include="ItemTemplates\Extensibility\Editor Drop Handler\icon.png" />
+    <Content Include="ItemTemplates\Extensibility\Editor Drop Handler\Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\Extensibility\Editor Drop Handler\MyDropHandler.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\icon.png" />
     <Content Include="ItemTemplates\Extensibility\Package Definition\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\VSPackage.vsct" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\icon.png" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
+    <None Include="ItemTemplates\Test\readme.md" />
+    <None Include="ItemTemplates\Windows Phone\readme.md" />
+    <None Include="ItemTemplates\Windows Store\readme.md" />
+    <None Include="ItemTemplates\WPF\readme.md" />
+    <None Include="packages.config" />
+    <None Include="ProjectTemplates\Cloud\readme.md" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.vsct" />
     <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\icon.png" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\aspnet.ico" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\SignalR\BasicHubAndPage\aspnet.ico" />
     <Content Include="ItemTemplates\Web\SignalR\BasicHubAndPage\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\SignalR\BasicHubAndPage\HitCounterHubClient.html" />
+    <Content Include="logo_big.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="logo_small.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Intellisense\browserlink.intellisense.js" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Intellisense\jquery-1.8.2.intellisense.js" />
@@ -105,7 +132,10 @@
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Scripts\MyExtension.js" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\_source.extension.vsixmanifest" />
     <Content Include="ProjectTemplates\Web\SampleWeb\Definitions\CSharp.vstemplate" />
-    <Content Include="ProjectTemplates\Web\SampleWeb\SampleWeb.csproj" />
+    <Content Include="ProjectTemplates\Web\SampleWeb\Definitions\templateinfo.xml" />
+    <Content Include="ProjectTemplates\Web\SampleWeb\SampleWeb.csproj">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ProjectTemplates\Web\SampleWeb\__TemplateIcon.ico" />
     <None Include="ItemTemplates\Extensibility\CodeSnippet\CSharpSnippet.snippet" />
     <None Include="ItemTemplates\Extensibility\CodeSnippet\VBSnippet.snippet" />
@@ -114,13 +144,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ItemTemplates\Extensibility\SideWaffle\file-icon.png" />
-    <Content Include="ItemTemplates\Extensibility\SideWaffle\icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\readme.txt" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\controller.js" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\VB.vstemplate" />
@@ -216,10 +240,6 @@
     <Content Include="ItemTemplates\Web\Misc\RobotsTxt\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\RobotsTxt\icon.png" />
     <Content Include="ItemTemplates\Web\Misc\RobotsTxt\robots.txt" />
-    <Content Include="logo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\build.proj" />
     <None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\project.nuspec" />
     <None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\project.nuspec" />
@@ -228,14 +248,13 @@
     <None Include="ItemTemplates\Extensibility\SideWaffle\Web.csharp.vstemplat-" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\Web.VB.vstemplat-" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\readme.md" />
-    <None Include="packages.config" />
     <None Include="ProjectTemplates\Web\SampleWeb\Web.config" />
     <None Include="ProjectTemplates\Web\SampleWeb\Web.Debug.config" />
     <None Include="ProjectTemplates\Web\SampleWeb\Web.Release.config" />
+    <None Include="ProjectTemplates\Windows Phone\readme.md" />
+    <None Include="ProjectTemplates\Windows Store\readme.md" />
     <None Include="Properties\template-builder.props">
       <SubType>Designer</SubType>
     </None>
@@ -263,6 +282,7 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
