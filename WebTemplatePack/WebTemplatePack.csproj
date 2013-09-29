@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.7-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.11-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -81,6 +81,11 @@
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\icon.png" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\icon.png" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.vsct" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Definitions\CSharp.vstemplate" />
@@ -102,11 +107,6 @@
     <Content Include="ItemTemplates\Extensibility\SideWaffle\file-icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\readme.txt" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\controller.js" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\VB.vstemplate" />
