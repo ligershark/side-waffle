@@ -87,6 +87,10 @@
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\icon.png" />
     <Content Include="ItemTemplates\Extensibility\Package Definition\Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\CSharp.vstemplat-" />
+    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\VB.vstemplat-" />
+    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\Web.csharp.vstemplat-" />
+    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\Web.VB.vstemplat-" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\VSPackage.vsct" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\icon.png" />
     <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
@@ -98,7 +102,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
-    <Content Include="ItemTemplates\Extensibility\SideWaffle\icon.png" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\file-icon.png" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\icon.png" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\readme.txt" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
@@ -135,11 +142,6 @@
     <None Include="ItemTemplates\Extensibility\CodeSnippet\CSharpSnippet.snippet" />
     <None Include="ItemTemplates\Extensibility\CodeSnippet\VBSnippet.snippet" />
     <None Include="ItemTemplates\Extensibility\HtmlSmartTag\AddClassSmartTag.cs" />
-    <Content Include="ItemTemplates\Extensibility\SideWaffle\Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Extensibility\SideWaffle\file-icon.png" />
-    <Content Include="ItemTemplates\Extensibility\SideWaffle\readme.txt" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\controller.js" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\Definitions\VB.vstemplate" />
@@ -238,10 +240,6 @@
     <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\build.proj" />
     <None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\project.nuspec" />
     <None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\project.nuspec" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\CSharp.vstemplat-" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\VB.vstemplat-" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\Web.csharp.vstemplat-" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\Web.VB.vstemplat-" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\readme.md" />
