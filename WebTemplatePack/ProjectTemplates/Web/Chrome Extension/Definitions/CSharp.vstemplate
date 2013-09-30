@@ -1,0 +1,46 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>ChromeExtensionProjectTemplate</Name>
+    <Description>A Chrome Extension</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>ChromeExtensionProjectTemplate</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="ChromeExtensionProjectTemplate.csproj" File="ChromeExtensionProjectTemplate.csproj" ReplaceParameters="true">
+      <Folder Name="app" TargetFolderName="app">
+        <Folder Name="img" TargetFolderName="img">
+          <ProjectItem ReplaceParameters="false" TargetFileName="icon.png">icon.png</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="false" TargetFileName="manifest.json">manifest.json</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="popup.html">popup.html</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="popup.js">popup.js</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="index.htm">index.htm</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <Folder Name="build" TargetFolderName="build">
+          <Folder Name="lib" TargetFolderName="lib">
+            <ProjectItem ReplaceParameters="false" TargetFileName="Ionic.Zip.DLL">Ionic.Zip.DLL</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="MSBuild.ExtensionPack.dll">MSBuild.ExtensionPack.dll</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="false" TargetFileName="ligershark.chrome.targets">ligershark.chrome.targets</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="screenshots" TargetFolderName="screenshots">
+        <ProjectItem ReplaceParameters="true" TargetFileName="readme.txt">readme.txt</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="screenshot.png">screenshot.png</ProjectItem>
+      </Folder>
+      <Folder Name="scripts" TargetFolderName="scripts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="_references.js">_references.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="chrome-api-vsdoc.js">chrome-api-vsdoc.js</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
