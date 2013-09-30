@@ -47,6 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.11-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
     <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.10-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
@@ -95,7 +96,12 @@
     <None Include="ItemTemplates\Extensibility\VS Command Table\icon.png" />
     <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
+    <None Include="ItemTemplates\Test\readme.md" />
+    <None Include="ItemTemplates\Windows Phone\readme.md" />
+    <None Include="ItemTemplates\Windows Store\readme.md" />
+    <None Include="ItemTemplates\WPF\readme.md" />
     <None Include="packages.config" />
+    <None Include="ProjectTemplates\Cloud\readme.md" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.vsct" />
     <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef">
@@ -111,11 +117,17 @@
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
+    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
+    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.vsct" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\aspnet.ico" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\SignalR\BasicHubAndPage\aspnet.ico" />
     <Content Include="ItemTemplates\Web\SignalR\BasicHubAndPage\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\SignalR\BasicHubAndPage\HitCounterHubClient.html" />
+    <Content Include="ItemTemplates\Azure\BlobUploadHelper\azure-icon.png" />
+    <Content Include="ItemTemplates\Azure\BlobUploadHelper\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Azure\TableStorageEntity\azure-icon.png" />
+    <Content Include="ItemTemplates\Azure\TableStorageEntity\Definitions\CSharp.vstemplate" />
     <Content Include="logo_big.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -246,6 +258,8 @@
     <None Include="ProjectTemplates\Web\SampleWeb\Web.config" />
     <None Include="ProjectTemplates\Web\SampleWeb\Web.Debug.config" />
     <None Include="ProjectTemplates\Web\SampleWeb\Web.Release.config" />
+    <None Include="ProjectTemplates\Windows Phone\readme.md" />
+    <None Include="ProjectTemplates\Windows Store\readme.md" />
     <None Include="Properties\template-builder.props">
       <SubType>Designer</SubType>
     </None>
@@ -264,6 +278,8 @@
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Properties\AssemblyInfo.cs" />
     <None Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\NinjectControllerFactory.cs" />
     <None Include="ItemTemplates\Web\SignalR\BasicHubAndPage\HitCounterHub.cs" />
+    <None Include="ItemTemplates\Azure\BlobUploadHelper\BlobUploadHelper.cs" />
+    <None Include="ItemTemplates\Azure\TableStorageEntity\TableStorageEntity.cs" />
     <Compile Include="ProjectTemplates\Web\SampleWeb\Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +289,7 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
