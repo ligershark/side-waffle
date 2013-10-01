@@ -24,7 +24,7 @@
       <DestDir>%(RecursiveDir)</DestDir>
     </ContentItems>
 
-    <ProjectsToBuild Include="$(SourceRoot)WebTemplatePack\WebTemplatePack.csproj" />
+    <ProjectsToBuild Include="$(SourceRoot)TemplatePack\TemplatePack.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
