@@ -19,8 +19,8 @@
     <ProjectGuid>{66E5E42A-2905-4A93-A3F7-FD26DA48A25F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebTemplatePack</RootNamespace>
-    <AssemblyName>WebTemplatePack</AssemblyName>
+    <RootNamespace>TemplatePack</RootNamespace>
+    <AssemblyName>TemplatePack</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
@@ -267,7 +267,9 @@
     <Content Include="ItemTemplates\Web\Misc\RobotsTxt\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\RobotsTxt\icon.png" />
     <Content Include="ItemTemplates\Web\Misc\RobotsTxt\robots.txt" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\build.proj" />
+    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\build.proj">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\project.nuspec" />
     <None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\project.nuspec" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\Definitions\CSharp.vstemplate" />
