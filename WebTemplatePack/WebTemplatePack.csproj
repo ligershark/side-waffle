@@ -60,6 +60,18 @@
     <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\icon.png" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\icon.png" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\icon.png" />
     <Content Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
@@ -73,6 +85,10 @@
     <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\icon.png" />
     <Content Include="ItemTemplates\Extensibility\BrowserLink\Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\custom.targets" />
+    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\custom.props">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ItemTemplates\Extensibility\BrowserLink\icon.png" />
     <Content Include="ItemTemplates\Extensibility\BrowserLink\MyExtension.js" />
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\Definitions\CSharp.vstemplate" />
@@ -267,7 +283,9 @@
     <Content Include="ItemTemplates\Web\Misc\RobotsTxt\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\RobotsTxt\icon.png" />
     <Content Include="ItemTemplates\Web\Misc\RobotsTxt\robots.txt" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\build.proj" />
+    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\build.proj">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\project.nuspec" />
     <None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\project.nuspec" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\Definitions\CSharp.vstemplate" />
