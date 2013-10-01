@@ -1,0 +1,20 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>VisualBasic</ProjectType>
+
+
+    <DefaultName>SideWaffle - templateinfo.xml</DefaultName>
+    <Name>Sample templateinfo.xml file</Name>
+    <Description>Sample templateinfo.xml file</Description>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+
+    <EnableEditOfLocationField>false</EnableEditOfLocationField>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <!-- 
+    <ProjectItem ReplaceParameters="true">readme.txt</ProjectItem>
+    -->
+  </TemplateContent>
+</VSTemplate>

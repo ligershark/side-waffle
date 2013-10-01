@@ -92,6 +92,9 @@
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\VB.vstemplat-" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\Web.csharp.vstemplat-" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\Web.VB.vstemplat-" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-TemplateInfoFile\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-TemplateInfoFile\sample-templateinfo.xml" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-TemplateInfoFile\Definitions\VB.vstemplate" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\VSPackage.vsct" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\icon.png" />
     <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
@@ -112,6 +115,8 @@
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\file-icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\readme.txt" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-TemplateInfoFile\icon.png" />
+    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-TemplateInfoFile\readme.txt" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\Definitions\Web.csharp.vstemplate" />
