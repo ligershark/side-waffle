@@ -1,0 +1,65 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>HTML5 Boiler Plate v4.3</Name>
+    <Description>HTML5 Boiler Plate v4.3 Project Template</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>HTML5 Boiler Plate v4.3</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="HTML5 Boiler Plate v4.3.csproj" File="HTML5 Boiler Plate v4.3.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName=".htaccess">.htaccess</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="404.html">404.html</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="apple-touch-icon-precomposed.png">apple-touch-icon-precomposed.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="CHANGELOG.md">CHANGELOG.md</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="CONTRIBUTING.md">CONTRIBUTING.md</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="crossdomain.xml">crossdomain.xml</ProjectItem>
+      <Folder Name="css" TargetFolderName="css">
+        <ProjectItem ReplaceParameters="true" TargetFileName="main.css">main.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="normalize.css">normalize.css</ProjectItem>
+      </Folder>
+      <Folder Name="doc" TargetFolderName="doc">
+        <ProjectItem ReplaceParameters="false" TargetFileName="crossdomain.md">crossdomain.md</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="css.md">css.md</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="extend.md">extend.md</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="faq.md">faq.md</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="html.md">html.md</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="js.md">js.md</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="misc.md">misc.md</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="TOC.md">TOC.md</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="usage.md">usage.md</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="humans.txt">humans.txt</ProjectItem>
+      <Folder Name="img" TargetFolderName="img">
+        <ProjectItem ReplaceParameters="true" TargetFileName=".gitignore">.gitignore</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="index.html">index.html</ProjectItem>
+      <Folder Name="js" TargetFolderName="js">
+        <ProjectItem ReplaceParameters="true" TargetFileName="main.js">main.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="plugins.js">plugins.js</ProjectItem>
+        <Folder Name="vendor" TargetFolderName="vendor">
+          <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.10.2.min.js">jquery-1.10.2.min.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="modernizr-2.6.2.min.js">modernizr-2.6.2.min.js</ProjectItem>
+        </Folder>
+      </Folder>
+      <ProjectItem ReplaceParameters="false" TargetFileName="LICENSE.md">LICENSE.md</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="false" TargetFileName="README.md">README.md</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="robots.txt">robots.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

@@ -3,7 +3,7 @@
     <ProjectType>Web</ProjectType>
     <ProjectSubType>VisualBasic</ProjectSubType>
 
-    <DefaultName>$fileinputname$</DefaultName>
+    <DefaultName>readme.txt</DefaultName>
     <Name>Basic name here</Name>
     <Description>Long description here</Description>
     <Icon>icon.png</Icon>
@@ -11,8 +11,8 @@
   </TemplateData>
   <TemplateContent>
     <References />
-     
+    <!-- 
     <ProjectItem ReplaceParameters="true">readme.txt</ProjectItem>
-    
+    -->
   </TemplateContent>
 </VSTemplate>
