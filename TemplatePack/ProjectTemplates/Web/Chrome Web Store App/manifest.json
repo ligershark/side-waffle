@@ -1,0 +1,21 @@
+﻿{
+    "name": "Google chrome App",
+    "description": "Sample Google chrome App",
+    "version": "1",
+    "manifest_version": 2,
+    "app": {
+        "urls": [
+          "*://www.yourwebsite.com"
+        ],
+        "launch": {
+            "web_url": "http://yourwebsite.com"
+        }
+    },
+  "icons": {
+      "128": "ChromeApp.png"
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "notifications"
+  ]
+}
