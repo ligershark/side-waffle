@@ -72,7 +72,7 @@ public class feed : IHttpHandler
             
             writer.WriteStartElement("content");
             writer.WriteAttributeString("type", "application/octet-stream");
-            writer.WriteAttributeString("src", "http://sidewaffle.com/feed/web/webtemplatepack.vsix");
+            writer.WriteAttributeString("src", "http://sidewaffle.com/feed/web/templatepack.vsix");
             writer.WriteEndElement(); // content
 
             writer.WriteRaw("<Vsix xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"http://schemas.microsoft.com/developer/vsx-syndication-schema/2010\">");
