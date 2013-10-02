@@ -12,11 +12,11 @@ In that folder you will have all the files you need for a SideWaffle Item Templa
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\CSharp.vstemplat-" ItemType="None" OpenInEditor="true">CSharp.vstemplat-</ProjectItem>
-    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\VB.vstemplat-" ItemType="None" OpenInEditor="true">VB.vstemplat-</ProjectItem>
-    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\Web.csharp.vstemplat-" ItemType="None" OpenInEditor="true">Web.csharp.vstemplat-</ProjectItem>
-    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\Web.VB.vstemplat-" ItemType="None" OpenInEditor="true">Web.VB.vstemplat-</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\CSharp.vstemplat-" ItemType="None">CSharp.vstemplat-</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\VB.vstemplat-" ItemType="None">VB.vstemplat-</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\Web.csharp.vstemplat-" ItemType="None">Web.csharp.vstemplat-</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\Web.VB.vstemplat-" ItemType="None">Web.VB.vstemplat-</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\icon.png">file-icon.png</ProjectItem>
-    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\readme.txt" ItemType="None" OpenInEditor="true">readme.txt</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\readme.txt" ItemType="None">readme.txt</ProjectItem>
   </TemplateContent>
 </VSTemplate>

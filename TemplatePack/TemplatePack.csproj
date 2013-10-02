@@ -110,7 +110,9 @@
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\CSharp.vstemplat-" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\VB.vstemplat-" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\Web.csharp.vstemplat-" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\Web.VB.vstemplat-" />
+    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\Web.VB.vstemplat-">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\file-icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\readme.txt" />
@@ -123,10 +125,10 @@
     <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <None Include="ItemTemplates\Test\readme.md" />
-    <Content Include="ItemTemplates\Web\SayedDemo\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\SayedDemo\Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\SayedDemo\Definitions\Web.csharp.vstemplat-" />
-    <None Include="ItemTemplates\Web\SayedDemo\Definitions\Web.VB.vstemplat-" />
+    <Content Include="ItemTemplates\Web\SayedsTemplate\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\SayedsTemplate\Definitions\VB.vstemplate" />
+    <None Include="ItemTemplates\Web\SayedsTemplate\Definitions\Web.csharp.vstemplat-" />
+    <None Include="ItemTemplates\Web\SayedsTemplate\Definitions\Web.VB.vstemplat-" />
     <None Include="ItemTemplates\Windows Phone\readme.md" />
     <None Include="ItemTemplates\Windows Store\readme.md" />
     <None Include="ItemTemplates\WPF\readme.md" />
@@ -149,8 +151,8 @@
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\SayedDemo\icon.png" />
-    <Content Include="ItemTemplates\Web\SayedDemo\sample.html" />
+    <Content Include="ItemTemplates\Web\SayedsTemplate\icon.png" />
+    <Content Include="ItemTemplates\Web\SayedsTemplate\sample.html" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.vsct" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\aspnet.ico" />

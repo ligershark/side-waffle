@@ -2,8 +2,8 @@
   <TemplateData>
     <ProjectType>CSharp</ProjectType>
     
-    <DefaultName>$fileinputname$</DefaultName>
-    <Name>Basic name here</Name>
+    <DefaultName>$fileinputname$.txt</DefaultName>
+    <Name>$fileinputname$</Name>
     <Description>Long description here</Description>    
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
