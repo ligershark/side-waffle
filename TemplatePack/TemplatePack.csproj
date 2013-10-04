@@ -214,6 +214,17 @@
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\__TemplateIcon.png" />
     <Content Include="ProjectTemplates\Web\SampleWeb\_Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Web\SampleWeb\_Definitions\templateinfo.xml" />
+    <Content Include="ProjectTemplates\Web\Chrome Web Store App\ChromeApp.csproj" />
+    <Content Include="ProjectTemplates\Web\Chrome Web Store App\ChromeApp.png" />
+    <Content Include="ProjectTemplates\Web\Chrome Web Store App\Definitions\CSharp.vstemplate" />
+    <Content Include="ProjectTemplates\Web\Chrome Web Store App\Properties\build\lib\Ionic.Zip.DLL" />
+    <Content Include="ProjectTemplates\Web\Chrome Web Store App\Properties\build\lib\MSBuild.ExtensionPack.dll" />
+    <Content Include="ProjectTemplates\Web\Chrome Web Store App\__PreviewImage.png" />
+    <Content Include="ProjectTemplates\Web\Chrome Web Store App\__TemplateIcon.png" />
+    <Content Include="ProjectTemplates\Web\SampleWeb\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ProjectTemplates\Web\SampleWeb\Definitions\templateinfo.xml" />
     <Content Include="ProjectTemplates\Web\SampleWeb\SampleWeb.csproj">
       <SubType>Designer</SubType>
     </Content>
@@ -343,6 +354,11 @@
     <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Web.config" />
     <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Web.Debug.config" />
     <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Web.Release.config" />
+    <None Include="ProjectTemplates\Web\Chrome Extension\Properties\build\ligershark.chrome.targets">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectTemplates\Web\Chrome Web Store App\manifest.json" />
+    <None Include="ProjectTemplates\Web\Chrome Web Store App\Properties\build\ligershark.chrome.targets" />
     <None Include="ProjectTemplates\Web\SampleWeb\Web.config" />
     <None Include="ProjectTemplates\Web\SampleWeb\Web.Debug.config" />
     <None Include="ProjectTemplates\Web\SampleWeb\Web.Release.config" />
