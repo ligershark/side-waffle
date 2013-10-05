@@ -24,6 +24,8 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="popup.js">popup.js</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="index.htm">index.htm</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="DebugSettings.template.xml">DebugSettings.template.xml</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$.user">DebugSettings.template.xml</ProjectItem>
       <Folder Name="Properties" TargetFolderName="Properties">
         <Folder Name="build" TargetFolderName="build">
           <Folder Name="lib" TargetFolderName="lib">

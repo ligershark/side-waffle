@@ -2,26 +2,31 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <UseHostCompilerIfAvailable>false</UseHostCompilerIfAvailable>
+
+    <ls-PathToUserFile Condition=" '$(ls-PathToUserFile)'=='' ">$(MSBuildProjectFullPath).user</ls-PathToUserFile>    
   </PropertyGroup>
   <ItemDefinitionGroup>
-    <AppFileNameItem>
-      <Visible>false</Visible>
-    </AppFileNameItem>
-    <AppFolderItem>
-      <Visible>false</Visible>
-    </AppFolderItem>
+    <AppFileNameItem><Visible>false</Visible></AppFileNameItem>
+    <AppFolderItem><Visible>false</Visible></AppFolderItem>
   </ItemDefinitionGroup>
-  
+
   <UsingTask AssemblyFile="$(BuildLib)MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.Compression.Zip" />
-  
-  <Target Name="Build">
+  <PropertyGroup>
+    <BuildDependsOn>
+      $(BuildDependsOn);
+      CoreBuild;
+      UpdateUserFileToInsertChromeSettings
+    </BuildDependsOn>
+  </PropertyGroup>
+  <Target Name="Build" DependsOnTargets="$(BuildDependsOn)"/>
+  <Target Name="CoreBuild">
     <MakeDir Directories="$(OutputPath)" />
-    
+
     <ItemGroup>
       <_AppCandidateFilesToZip Remove="@(_AppCandidateFilesToZip)" />
       <_AppCandidateFilesToZip Include="@(Content);@(None)" />
     </ItemGroup>
-    
+
     <FindUnderPath Path="$(AppFolder)" Files="@(_AppCandidateFilesToZip)">
       <Output TaskParameter="InPath" ItemName="_AppFilesToZip" />
     </FindUnderPath>
@@ -32,14 +37,14 @@
     </PropertyGroup>
 
     <Message Text="Creating package .zip at [%(AppFileNameItem.FullPath)]" Importance="high" />
-    <MSBuild.ExtensionPack.Compression.Zip 
-      TaskAction="Create" 
-      CompressFiles="@(_AppFilesToZip)" 
-      ZipFileName="%(AppFileNameItem.FullPath)" 
-      RemoveRoot="$(_AppFolderFullPath)" 
+    <MSBuild.ExtensionPack.Compression.Zip
+      TaskAction="Create"
+      CompressFiles="@(_AppFilesToZip)"
+      ZipFileName="%(AppFileNameItem.FullPath)"
+      RemoveRoot="$(_AppFolderFullPath)"
       CompressionLevel="BestCompression" />
   </Target>
-  
+
   <PropertyGroup>
     <RebuildDependsOn>
       Clean;
@@ -56,4 +61,86 @@
     <Message Text="Deleting files: @(_FilesToDelete)" />
     <Delete Files="@(_FilesToDelete)" />
   </Target>
+
+  <!-- Elements related to updating the .user file to support F5 and CTRL+F5 -->
+  <PropertyGroup>
+    <UpdateUserFileToInsertChromeSettingsDependsOn>
+      $(UpdateUserFileToInsertChromeSettingsDependsOn);
+      EnsureUserFileExists;
+      GetChromeSettings;
+      CoreUpdateUserFileToInsertChromeSettings
+    </UpdateUserFileToInsertChromeSettingsDependsOn>
+  </PropertyGroup>
+  <Target Name="UpdateUserFileToInsertChromeSettings" DependsOnTargets="$(UpdateUserFileToInsertChromeSettingsDependsOn)" />
+  <Target Name="EnsureUserFileExists">
+    <Message Text="Copying over [$(MSBuildProjectDirectory)\DebugSettings.template.xml)] to [$(ls-PathToUserFile)]" Condition="!Exists('$(ls-PathToUserFile)')" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\DebugSettings.template.xml"
+          DestinationFiles="$(ls-PathToUserFile)"
+          Condition="!Exists('$(ls-PathToUserFile)')"/>
+  </Target>
+  <Target Name="CoreUpdateUserFileToInsertChromeSettings" DependsOnTargets="GetChromeSettings;EnsureUserFileExists">
+    <!-- Only update the .user file if the ExternalProperty XML element is empty. -->
+    <XmlPeek Namespaces="&lt;Namespace Prefix='msb' Uri='http://schemas.microsoft.com/developer/msbuild/2003'/&gt;"             
+             XmlInputPath="$(ls-PathToUserFile)"
+             Query="/msb:Project/msb:ProjectExtensions/msb:VisualStudio/msb:FlavorProperties/msb:WebProjectProperties/msb:ExternalProgram/text()">
+      <Output TaskParameter="Result" PropertyName="ls-CurrentExtProgValue"/>
+    </XmlPeek>
+
+    <XmlPoke Namespaces="&lt;Namespace Prefix='msb' Uri='http://schemas.microsoft.com/developer/msbuild/2003'/&gt;"
+             XmlInputPath="$(ls-PathToUserFile)"
+             Query="/msb:Project/msb:ProjectExtensions/msb:VisualStudio/msb:FlavorProperties/msb:WebProjectProperties/msb:ExternalProgram"
+             Value="$(ls-ChromePath)"
+             Condition=" '$(ls-PathToUserFile)'!='$(ls-ChromePath)' " />
+    <Message Text="Updated .user file to have current chrome path to [$(ls-ChromePath)]" Condition=" '$(ls-PathToUserFile)'!='$(ls-ChromePath)'"/>
+    <Message Text="Did not update .user file because chrome path already up to date." Condition=" '$(ls-PathToUserFile)'=='$(ls-ChromePath)'"/>
+    
+    <!-- See if we need to update the StartCmdLineArguments element -->
+    <XmlPeek Namespaces="&lt;Namespace Prefix='msb' Uri='http://schemas.microsoft.com/developer/msbuild/2003'/&gt;"
+             XmlInputPath="$(ls-PathToUserFile)"
+             Query="/msb:Project/msb:ProjectExtensions/msb:VisualStudio/msb:FlavorProperties/msb:WebProjectProperties/msb:StartCmdLineArguments/text()">
+      <Output TaskParameter="Result" PropertyName="ls-CurrentCmdLineArgs"/>
+    </XmlPeek>
+    <XmlPoke Namespaces="&lt;Namespace Prefix='msb' Uri='http://schemas.microsoft.com/developer/msbuild/2003'/&gt;"
+             XmlInputPath="$(ls-PathToUserFile)"
+             Query="/msb:Project/msb:ProjectExtensions/msb:VisualStudio/msb:FlavorProperties/msb:WebProjectProperties/msb:StartCmdLineArguments"
+             Value="$(ls-ChromeCmdLineArgs)"
+             Condition=" '$(ls-CurrentCmdLineArgs)'!='$(ls-ChromeCmdLineArgs)' " />
+    <Message Text="Updated .user file to have current chrome path to [$(ls-ChromeCmdLineArgs)]" Condition=" '$(ls-CurrentCmdLineArgs)'!='$(ls-ChromeCmdLineArgs)'"/>
+    <Message Text="Did not update .user file for cmd line args, already up to date." Condition=" '$(ls-CurrentCmdLineArgs)'=='$(ls-ChromeCmdLineArgs)'"/>
+
+    <!-- See if we need to update the StartWorkingDirectory element -->
+    <XmlPeek Namespaces="&lt;Namespace Prefix='msb' Uri='http://schemas.microsoft.com/developer/msbuild/2003'/&gt;"
+             XmlInputPath="$(ls-PathToUserFile)"
+             Query="/msb:Project/msb:ProjectExtensions/msb:VisualStudio/msb:FlavorProperties/msb:WebProjectProperties/msb:StartWorkingDirectory/text()">
+      <Output TaskParameter="Result" PropertyName="ls-CurrentWorkingDir"/>
+    </XmlPeek>
+    <XmlPoke Namespaces="&lt;Namespace Prefix='msb' Uri='http://schemas.microsoft.com/developer/msbuild/2003'/&gt;"
+             XmlInputPath="$(ls-PathToUserFile)"
+             Query="/msb:Project/msb:ProjectExtensions/msb:VisualStudio/msb:FlavorProperties/msb:WebProjectProperties/msb:StartWorkingDirectory"
+             Value="$(ls-ChromeWorkingDir)"
+             Condition=" '$(ls-CurrentWorkingDir)'!='$(ls-ChromeWorkingDir)' " />
+    <Message Text="Updated .user file to set working directory to [$(ls-ChromeCmdLineArgs)]" Condition=" '$(ls-CurrentCmdLineArgs)'!='$(ls-ChromeCmdLineArgs)'"/>
+    <Message Text="Did not update .user file for working directory, already up to date." Condition=" '$(ls-CurrentCmdLineArgs)'=='$(ls-ChromeCmdLineArgs)'"/>    
+  </Target>
+  <!--
+  This target will populate the following properties:
+    ls-ChromePath
+    ls-ChromeCmdLineArgs
+    ls-ChromeWorkingDir
+  If Chrome cannot be found the property will be empty and a warning will be issued
+  -->
+  <Target Name="GetChromeSettings">
+    <!-- 
+    See if Chrome exists at the default location C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+    -->    
+    <PropertyGroup>
+      <ls-ChromePath Condition=" '$(ls-ChromePath)'=='' ">$(MSBuildProgramFiles32)\Google\Chrome\Application\chrome.exe</ls-ChromePath>
+      <ls-ChromeCmdLineArgs Condition=" '$(ls-ChromeCmdLineArgs)'=='' ">--load-extension=$(MSBuildProjectDirectory)\app</ls-ChromeCmdLineArgs>
+      <ls-ChromeWorkingDir Condition=" '$(ls-ChromeWorkingDir)'=='' ">$(MSBuildProjectDirectory)\app</ls-ChromeWorkingDir>      
+    </PropertyGroup>
+
+    <Warning Text="Chrome was not found at [$(ls-ChromePath)]. Please specify the correct path to chrome in your .user file, or update the MSBuild property ls-ChromePath."
+             Condition="!Exists('$(ls-ChromePath)')"/>        
+  </Target>
+
 </Project>
