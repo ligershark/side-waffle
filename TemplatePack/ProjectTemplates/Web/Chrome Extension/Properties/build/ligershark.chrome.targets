@@ -135,7 +135,7 @@
     -->    
     <PropertyGroup>
       <ls-ChromePath Condition=" '$(ls-ChromePath)'=='' ">$(MSBuildProgramFiles32)\Google\Chrome\Application\chrome.exe</ls-ChromePath>
-      <ls-ChromeCmdLineArgs Condition=" '$(ls-ChromeCmdLineArgs)'=='' ">--load-extension=$(MSBuildProjectDirectory)\app</ls-ChromeCmdLineArgs>
+      <ls-ChromeCmdLineArgs Condition=" '$(ls-ChromeCmdLineArgs)'=='' ">--load-extension="$(MSBuildProjectDirectory)\app"</ls-ChromeCmdLineArgs>
       <ls-ChromeWorkingDir Condition=" '$(ls-ChromeWorkingDir)'=='' ">$(MSBuildProjectDirectory)\app</ls-ChromeWorkingDir>      
     </PropertyGroup>
 

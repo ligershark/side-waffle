@@ -12,7 +12,7 @@
           <SQLDebugging>False</SQLDebugging>
           <ExternalProgram>C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</ExternalProgram>
           <StartExternalURL></StartExternalURL>
-          <StartCmdLineArguments>--load-extension=$destinationdirectory$\app</StartCmdLineArguments>
+          <StartCmdLineArguments>--load-extension="$destinationdirectory$\app"</StartCmdLineArguments>
           <StartWorkingDirectory>$destinationdirectory$</StartWorkingDirectory>
           <EnableENC>False</EnableENC>
           <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
