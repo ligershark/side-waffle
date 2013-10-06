@@ -6,13 +6,13 @@
   <TemplateData>
     <Name>Multi-Project Template Sample</Name>
     <Description>An example of a multi-project template</Description>
-    <Icon>Icon.ico</Icon>
+    <Icon>logo.png</Icon>
     <ProjectType>CSharp</ProjectType>
   </TemplateData>
   <TemplateContent>
     <ProjectCollection>
-      <ProjectTemplateLink ProjectName="My Web Front End">Web\MyTemplate.vstemplate</ProjectTemplateLink>
-      <ProjectTemplateLink ProjectName="My Shared Library">Shared\MyTemplate.vstemplate</ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="$safeprojectname$ Web">Web\MyTemplate.vstemplate</ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="$safeprojectname$ Shared">Shared\MyTemplate.vstemplate</ProjectTemplateLink>
     </ProjectCollection>
   </TemplateContent>
 </VSTemplate>

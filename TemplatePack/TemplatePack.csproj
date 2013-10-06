@@ -219,6 +219,7 @@
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\robots.txt" />
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\__PreviewImage.png" />
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\__TemplateIcon.png" />
+    <Content Include="ProjectTemplates\Web\Sample Multi Project\logo.png" />
     <Content Include="ProjectTemplates\Web\Sample Multi Project\Shared\My.Cool.Company.SharedLibrary.csproj" />
     <Content Include="ProjectTemplates\Web\Sample Multi Project\Shared\MyTemplate.vstemplate" />
     <Content Include="ProjectTemplates\Web\Sample Multi Project\Shared\__TemplateIcon.ico" />
