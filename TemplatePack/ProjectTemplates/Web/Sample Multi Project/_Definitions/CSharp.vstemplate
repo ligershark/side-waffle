@@ -1,0 +1,18 @@
+<VSTemplate Version="2.0.0" Type="ProjectGroup"
+    xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  
+  <!-- Fore more info on multi project templates visit: http://msdn.microsoft.com/en-us/library/ms185308(v=vs.90).aspx -->
+  
+  <TemplateData>
+    <Name>Multi-Project Template Sample</Name>
+    <Description>An example of a multi-project template</Description>
+    <Icon>Icon.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection>
+      <ProjectTemplateLink ProjectName="My Web Front End">Web\MyTemplate.vstemplate</ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="My Shared Library">Shared\MyTemplate.vstemplate</ProjectTemplateLink>
+    </ProjectCollection>
+  </TemplateContent>
+</VSTemplate>
