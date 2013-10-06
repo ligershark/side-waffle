@@ -45,6 +45,7 @@
     <Content Include="Properties\build\lib\MSBuild.ExtensionPack.dll" />
     <Content Include="screenshots\screenshot.png" />
     <Content Include="index.htm" />
+    <Content Include="DebugSettings.template.xml" />
     <Content Include="Properties\build\ligershark.chrome.targets" />
     <Content Include="screenshots\readme.txt" />
     <None Include="scripts\_references.js" />

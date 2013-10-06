@@ -185,7 +185,10 @@
     <Content Include="ProjectTemplates\Web\Chrome Extension\app\popup.html" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\app\popup.js" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\ChromeExtensionProjectTemplate.csproj" />
-    <Content Include="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate" />
+    <Content Include="ProjectTemplates\Web\Chrome Extension\DebugSettings.template.xml" />
+    <Content Include="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ProjectTemplates\Web\Chrome Extension\index.htm" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\Properties\build\lib\Ionic.Zip.DLL" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\Properties\build\lib\MSBuild.ExtensionPack.dll" />
@@ -354,9 +357,6 @@
     <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Web.config" />
     <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Web.Debug.config" />
     <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Web.Release.config" />
-    <None Include="ProjectTemplates\Web\Chrome Extension\Properties\build\ligershark.chrome.targets">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="ProjectTemplates\Web\Chrome Web Store App\manifest.json" />
     <None Include="ProjectTemplates\Web\Chrome Web Store App\Properties\build\ligershark.chrome.targets" />
     <None Include="ProjectTemplates\Web\SampleWeb\Web.config" />
