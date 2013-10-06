@@ -1,0 +1,27 @@
+﻿{
+	"manifest_version":2, 
+	"version": "1",
+	"name": "camo theme",
+	"theme": {
+	"images" : {
+	  "theme_frame" : "images/theme_frame.png",
+	  "theme_toolbar" : "images/theme_toolbar.png",
+	  "theme_ntp_background" : "images/theme_ntp_background.png",
+	  "theme_tab_background" : "images/theme_tab_background.png"
+	},
+	"colors" : {
+	  "frame" : [71, 105, 91],
+	  "toolbar" : [207, 221, 192],
+	  "ntp_text" : [20, 40, 0],
+	  "ntp_link" : [36, 70, 0],
+	  "ntp_section" : [207, 221, 192],
+	  "button_background" : [255, 255, 255]
+	},
+	"tints" : {
+	  "buttons" : [0.33, 0.5, 0.47]
+	},
+	"properties" : {
+		"ntp_background_repeat":"no-repeat"
+	}
+  }
+}

@@ -1,0 +1,39 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Chrome Theme</Name>
+    <Description>A google chrome theme</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Chrome Theme</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.png</Icon>
+    <PreviewImage>__PreviewImage.png</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="ChromeTheme.csproj" File="ChromeTheme.csproj" ReplaceParameters="true">
+      <Folder Name="app" TargetFolderName="app">
+        <Folder Name="images" TargetFolderName="images">
+          <ProjectItem ReplaceParameters="false" TargetFileName="theme_frame.png">theme_frame.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="theme_ntp_background.png">theme_ntp_background.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="theme_tab_background.png">theme_tab_background.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="theme_toolbar.png">theme_toolbar.png</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="false" TargetFileName="manifest.json">manifest.json</ProjectItem>
+      </Folder>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <Folder Name="build" TargetFolderName="build">
+          <Folder Name="lib" TargetFolderName="lib">
+            <ProjectItem ReplaceParameters="false" TargetFileName="Ionic.Zip.DLL">Ionic.Zip.DLL</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="MSBuild.ExtensionPack.dll">MSBuild.ExtensionPack.dll</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="false" TargetFileName="ligershark.chrome.targets">ligershark.chrome.targets</ProjectItem>
+        </Folder>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
