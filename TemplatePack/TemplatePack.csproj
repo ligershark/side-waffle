@@ -197,6 +197,17 @@
     <Content Include="ProjectTemplates\Web\Chrome Extension\scripts\chrome-api-vsdoc.js" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\scripts\_references.js" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\__TemplateIcon.png" />
+    <Content Include="ProjectTemplates\Web\Chrome Theme\app\images\theme_frame.png" />
+    <Content Include="ProjectTemplates\Web\Chrome Theme\app\images\theme_ntp_background.png" />
+    <Content Include="ProjectTemplates\Web\Chrome Theme\app\images\theme_tab_background.png" />
+    <Content Include="ProjectTemplates\Web\Chrome Theme\app\images\theme_toolbar.png" />
+    <Content Include="ProjectTemplates\Web\Chrome Theme\ChromeTheme.csproj" />
+    <Content Include="ProjectTemplates\Web\Chrome Theme\DebugSettings.template.xml" />
+    <Content Include="ProjectTemplates\Web\Chrome Theme\Properties\build\lib\Ionic.Zip.DLL" />
+    <Content Include="ProjectTemplates\Web\Chrome Theme\Properties\build\lib\MSBuild.ExtensionPack.dll" />
+    <Content Include="ProjectTemplates\Web\Chrome Theme\_Definitions\CSharp.vstemplate" />
+    <Content Include="ProjectTemplates\Web\Chrome Theme\__PreviewImage.png" />
+    <Content Include="ProjectTemplates\Web\Chrome Theme\__TemplateIcon.png" />
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\404.html" />
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\apple-touch-icon-precomposed.png" />
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\crossdomain.xml" />
@@ -340,6 +351,8 @@
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\readme.md" />
     <None Include="ProjectTemplates\Web\Chrome Extension\app\manifest.json" />
     <None Include="ProjectTemplates\Web\Chrome Extension\Properties\build\ligershark.chrome.targets" />
+    <None Include="ProjectTemplates\Web\Chrome Theme\app\manifest.json" />
+    <None Include="ProjectTemplates\Web\Chrome Theme\Properties\build\ligershark.chrome.targets" />
     <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\.htaccess" />
     <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\CHANGELOG.md" />
     <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\CONTRIBUTING.md" />
