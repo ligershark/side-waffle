@@ -26,5 +26,8 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$slnname$" Value="$safeprojectname$Bar"/>
+    </CustomParameters>
   </TemplateContent>
 </VSTemplate>

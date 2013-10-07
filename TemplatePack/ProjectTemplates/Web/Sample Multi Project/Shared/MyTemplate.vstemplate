@@ -7,7 +7,7 @@
     </ProjectSubType>
     <SortOrder>1000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>MultiProject</DefaultName>
+    <DefaultName>$safeprojectname$</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
@@ -15,11 +15,14 @@
     <PreviewImage>__PreviewImage.png</PreviewImage>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="$safeprojectname$.SharedLibrary.csproj" File="My.Cool.Company.SharedLibrary.csproj" ReplaceParameters="true">
+    <Project TargetFileName="$safeprojectname$.csproj" File="My.Cool.Company.SharedLibrary.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="Contact.cs">Contact.cs</ProjectItem>
       <Folder Name="Properties" TargetFolderName="Properties">
         <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       </Folder>
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$slnname$" Value="$slnname$Foo"/>
+    </CustomParameters>
   </TemplateContent>
 </VSTemplate>

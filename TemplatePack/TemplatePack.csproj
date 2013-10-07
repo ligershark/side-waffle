@@ -223,12 +223,17 @@
     <Content Include="ProjectTemplates\Web\Sample Multi Project\Shared\My.Cool.Company.SharedLibrary.csproj" />
     <Content Include="ProjectTemplates\Web\Sample Multi Project\Shared\MyTemplate.vstemplate" />
     <Content Include="ProjectTemplates\Web\Sample Multi Project\Shared\__TemplateIcon.ico" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\Default.aspx" />
+    <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\Default.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\My.Cool.Company.WebFrontEnd.csproj" />
     <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\MyTemplate.vstemplate" />
     <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\__PreviewImage.png" />
     <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\__TemplateIcon.png" />
     <Content Include="ProjectTemplates\Web\Sample Multi Project\_Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ProjectTemplates\Web\Sample Multi Project\_Definitions\templateinfo.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ProjectTemplates\Web\SampleWeb\_Definitions\CSharp.vstemplate" />
