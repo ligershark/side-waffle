@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <DefaultName>readme.md</DefaultName>
-    <Name>Readme.md File</Name>
+		<Name>Readme.md Markdown File</Name>
     <Description>Adding a README to help give people an overview of your project.</Description>
     <ProjectType>Web</ProjectType>
     <ProjectSubType>CSharp</ProjectSubType>
