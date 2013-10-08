@@ -11,7 +11,7 @@
   </TemplateData>
   <TemplateContent>
     <ProjectCollection>
-      <ProjectTemplateLink ProjectName="$safeprojectname$Web">Web\MyTemplate.vstemplate</ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="$safeprojectname$">Web\MyTemplate.vstemplate</ProjectTemplateLink>
       <ProjectTemplateLink ProjectName="$safeprojectname$Shared">Shared\MyTemplate.vstemplate</ProjectTemplateLink>
     </ProjectCollection>
     <CustomParameters>
