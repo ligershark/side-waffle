@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TemplateInfo>
+  <Replacements Include="*.*" Exclude="*.vstemplate;*.csproj*.jpg;*.png;*.ico;templateinfo.xml">   
+    <add key="My.Cool.Company." value="$safeprojectname$"/>
+    <!--<add key="My.Cool.Company." value="$slnname$"/>-->
+  </Replacements>
+</TemplateInfo>

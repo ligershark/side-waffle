@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Preprocess>
+  <Replacements Include="*.*" Exclude="*.vstemplate;*.csproj*.jpg;*.png;*.ico;templateinfo.xml">   
+    <add key="My.Cool.Company.SharedLibrary" value="$safeprojectname$Shared"/>
+  </Replacements>
+</Preprocess>
