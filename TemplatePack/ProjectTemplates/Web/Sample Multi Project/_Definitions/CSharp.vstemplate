@@ -12,7 +12,7 @@
   <TemplateContent>
     <ProjectCollection>
       <ProjectTemplateLink ProjectName="$safeprojectname$Web">Web\MyTemplate.vstemplate</ProjectTemplateLink>
-      <ProjectTemplateLink ProjectName="$safeprojectname$SharedLibrary">Shared\MyTemplate.vstemplate</ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="$safeprojectname$Shared">Shared\MyTemplate.vstemplate</ProjectTemplateLink>
     </ProjectCollection>
     <CustomParameters>
       <CustomParameter Name="$slnname$" Value="$safeprojectname$Orig"/>
