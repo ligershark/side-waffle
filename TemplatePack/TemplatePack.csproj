@@ -132,6 +132,8 @@
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\aspnet.ico" />
+    <Content Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\icon.png" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\VB.vstemplate" />
@@ -425,6 +427,7 @@
     <None Include="ItemTemplates\Web\SignalR\BasicHubAndPage\HitCounterHub.cs" />
     <None Include="ItemTemplates\Azure\BlobUploadHelper\BlobUploadHelper.cs" />
     <None Include="ItemTemplates\Azure\TableStorageEntity\TableStorageEntity.cs" />
+    <None Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\WhitespaceModule.cs" />
     <Compile Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Properties\AssemblyInfo.cs" />
     <Compile Include="ProjectTemplates\Web\Sample Multi Project\Shared\Contact.cs" />
     <Compile Include="ProjectTemplates\Web\Sample Multi Project\Shared\Properties\AssemblyInfo.cs" />

@@ -1,0 +1,13 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>WhitespaceModule.cs</DefaultName>
+    <Name>HTML Whitespace Removal HttpModule</Name>
+    <Description>Removes unneeded whitespace from web pages at runtime. Be careful with this one.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon>aspnet.ico</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true">WhitespaceModule.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
