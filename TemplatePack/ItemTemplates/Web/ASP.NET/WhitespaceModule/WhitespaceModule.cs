@@ -4,7 +4,8 @@ using System.Text.RegularExpressions;
 using System.Web;
 
 /// <summary>
-/// Removes whitespace from the webpage. Be careful
+/// Removes whitespace from the webpage. Be careful!
+/// This doesn't work when dynamicCompressionBeforeCache="true" in web.config on IIS 7+
 /// </summary>
 public class $safeitemname$ : IHttpModule
 {
