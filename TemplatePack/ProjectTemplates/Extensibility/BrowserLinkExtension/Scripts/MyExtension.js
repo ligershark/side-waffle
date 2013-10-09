@@ -5,8 +5,6 @@
     /// <param name="$" value="jQuery" />
 
     function output(message) { // Helper for the 'greeting' function
-        alert(message);
-
         if (console) {
             console.log(message);
         }

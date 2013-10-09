@@ -121,7 +121,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="$safeprojectname$.cs" />
+    <Compile Include="$safeprojectname$Extension.cs" />
     <Compile Include="Guids.cs" />
     <Compile Include="$safeprojectname$Package.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -151,7 +151,7 @@
     <Content Include="Intellisense\jquery-1.8.2.intellisense.js" />
     <Content Include="Intellisense\jquery-1.8.2.js" />
     <Content Include="Resources\Package.ico" />
-    <EmbeddedResource Include="Scripts\$safeprojectname$.js" />
+    <EmbeddedResource Include="Scripts\$safeprojectname$Extension.js" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
