@@ -17,27 +17,19 @@ public class $safeitemname$ : IHttpModule
 
     void IHttpModule.Init(HttpApplication context)
     {
-        context.PreSendRequestHeaders += PreSendRequestHeaders;
         context.PostRequestHandlerExecute += PostRequestHandlerExecute;
     }
 
     #endregion
 
-    private void PreSendRequestHeaders(object sender, EventArgs e)
+    private void PostRequestHandlerExecute(object sender, EventArgs e)
     {
         HttpApplication app = sender as HttpApplication;
+        
         if (app.Response.ContentType.Equals("text/html", StringComparison.OrdinalIgnoreCase))
         {
             app.Response.Filter = new WhitespaceFilter(app.Response.Filter);
         }
-    }
-
-    private void PostRequestHandlerExecute(object sender, EventArgs e)
-    {
-        // Flush immediately after the request handler has finished.
-        // This is Before the output cache compression happens.
-        var response = ((HttpApplication)sender).Context.Response;
-        response.Flush();
     }
 
     #region Stream filter
