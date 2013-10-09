@@ -110,13 +110,13 @@ public class $safeitemname$ : IHttpModule
         {
             byte[] data = new byte[count];
             Buffer.BlockCopy(buffer, offset, data, 0, count);
-            string html = System.Text.Encoding.Default.GetString(buffer);
+            string html = System.Text.Encoding.Default.GetString(data);
 
             html = Regex.Replace(html, @">\s+<", "><");
             html = Regex.Replace(html, @"\s+", " ");
 
             byte[] outdata = System.Text.Encoding.Default.GetBytes(html.Trim());
-            _sink.Write(outdata, 0, outdata.GetLength(0));
+            _sink.Write(outdata, 0, outdata.Length);
         }
 
         #endregion
