@@ -1,29 +1,23 @@
+// Import the angularjs.TypeScript.DefinitelyTyped NuGet package to resovle the reference paths
 /// <reference path='../Scripts/typings/angularjs/angular.d.ts'/>
 /// <reference path='../Scripts/typings/angularjs/angular-resource.d.ts'/>
 
-
-interface IController1Scope extends ng.IScope {
-    vmx: Controller1;
+interface I$safeitemname$Scope extends ng.IScope {
+    vm: $safeitemname$;
 }
 
-interface IController1 {
+interface II$safeitemname$ {
     greeting: string;
     controllerId: string;
     changeGreeting: () => void;
 }
 
-class Controller1 implements IController1 {
+class $safeitemname$ implements I$safeitemname$ {
 
-    static controllerId: string = "controller1";
+    static $safeitemname$Id: string = "$safeitemname$";
     greeting = "Hello";
-    lcbohtml: string;
 
-    constructor(private $scope: IController1Scope, private $http: ng.IHttpService, private $resource: ng.resource.IResourceService) {
-        var x = '1';
-    }
-
-    callback(data: string, status: string) {
-        this.lcbohtml = data;
+    constructor(private $scope: I$safeitemname$Scope, private $http: ng.IHttpService, private $resource: ng.resource.IResourceService) {
     }
 
     changeGreeting() {
@@ -31,6 +25,6 @@ class Controller1 implements IController1 {
     }
 }
 
-myApp.controller(Controller1.controllerId, ['$scope', '$http', '$resource', function ($scope, $http, $resource) {
-    return new Controller1($scope, $http, $resource);
-}]);
+app.controller($safeitemname$.$safeitemname$Id, function ($scope, $http, $resource) {
+    return new $safeitemname$($scope, $http, $resource);
+});
