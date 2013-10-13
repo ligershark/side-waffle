@@ -124,7 +124,9 @@
     <None Include="ItemTemplates\Extensibility\VS Command Table\icon.png" />
     <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
-    <None Include="ItemTemplates\Test\readme.md" />
+    <Content Include="ItemTemplates\Test\NUnitFixture\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
@@ -132,6 +134,7 @@
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Test\NUnitFixture\icon.png" />
     <Content Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\aspnet.ico" />
     <Content Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\_Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
@@ -428,6 +431,7 @@
     <None Include="ItemTemplates\Azure\BlobUploadHelper\BlobUploadHelper.cs" />
     <None Include="ItemTemplates\Azure\TableStorageEntity\TableStorageEntity.cs" />
     <None Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\WhitespaceModule.cs" />
+    <Compile Include="ItemTemplates\Test\NUnitFixture\NUnitFixture.cs" />
     <Compile Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Properties\AssemblyInfo.cs" />
     <Compile Include="ProjectTemplates\Web\Sample Multi Project\Shared\Contact.cs" />
     <Compile Include="ProjectTemplates\Web\Sample Multi Project\Shared\Properties\AssemblyInfo.cs" />
