@@ -1,4 +1,5 @@
-// Import the angularjs.TypeScript.DefinitelyTyped NuGet package to resovle the reference paths
+// Install the angularjs.TypeScript.DefinitelyTyped NuGet package to resovle the reference paths,
+// then adjust the path value to be relative to this file
 /// <reference path='../Scripts/typings/angularjs/angular.d.ts'/>
 /// <reference path='../Scripts/typings/angularjs/angular-resource.d.ts'/>
 
@@ -6,7 +7,7 @@ interface I$safeitemname$Scope extends ng.IScope {
     vm: $safeitemname$;
 }
 
-interface II$safeitemname$ {
+interface I$safeitemname$ {
     greeting: string;
     controllerId: string;
     changeGreeting: () => void;
@@ -14,7 +15,7 @@ interface II$safeitemname$ {
 
 class $safeitemname$ implements I$safeitemname$ {
 
-    static $safeitemname$Id: string = "$safeitemname$";
+    static controllerId: string = "$safeitemname$";
     greeting = "Hello";
 
     constructor(private $scope: I$safeitemname$Scope, private $http: ng.IHttpService, private $resource: ng.resource.IResourceService) {
@@ -25,6 +26,6 @@ class $safeitemname$ implements I$safeitemname$ {
     }
 }
 
-app.controller($safeitemname$.$safeitemname$Id, function ($scope, $http, $resource) {
+app.controller($safeitemname$.controllerId, function ($scope, $http, $resource) {
     return new $safeitemname$($scope, $http, $resource);
 });

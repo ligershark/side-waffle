@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <DefaultName>controller.ts</DefaultName>
-    <Name>AngularJs Controller using 'Controller as'</Name>
+    <Name>AngularJs TypeScript Controller using 'Controller as'</Name>
     <Description>AngularJs Controller: minification ready, starter dependencies, using 'Controller As' syntax. By James McLachlan, http://jamesmclachlan.blogspot.ca, inspired by John Papa, http://johnpapa.net</Description>
     <ProjectType>Web</ProjectType>
     <ProjectSubType>VisualBasic</ProjectSubType>

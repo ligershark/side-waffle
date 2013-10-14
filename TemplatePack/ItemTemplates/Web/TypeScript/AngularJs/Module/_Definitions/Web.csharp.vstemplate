@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <DefaultName>app.ts</DefaultName>
-    <Name>AngularJs Module</Name>
+    <Name>AngularJs TypeScript Module</Name>
     <Description>AngularJs Module: ready with common modules and starter dependencies. By James McLachlan, http://jamesmclachlan.blogspot.ca, inspired by John Papa, http://johnpapa.net</Description>
     <ProjectType>Web</ProjectType>
     <ProjectSubType>CSharp</ProjectSubType>
