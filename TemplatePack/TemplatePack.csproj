@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.16-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.19-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -122,12 +122,10 @@
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-TemplateInfoFile\_Definitions\VB.vstemplate" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\VSPackage.vsct" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\icon.png" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
+    <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
     <Content Include="ItemTemplates\Test\NUnitFixture\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
@@ -146,6 +144,8 @@
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\SayedsTemplate\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\SayedsTemplate\Definitions\VB.vstemplate" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\app.manifest" />
     <None Include="ItemTemplates\Web\SayedsTemplate\Definitions\Web.csharp.vstemplat-" />
     <None Include="ItemTemplates\Web\SayedsTemplate\Definitions\Web.VB.vstemplat-" />
