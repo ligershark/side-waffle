@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Angular Directive</Title>
+      <Author>John Papa</Author>
+      <Description>Template for adding an Angular Directive</Description>
+      <Shortcut>ngdir</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>module</ID>
+          <ToolTip>Replace with a module name variable.</ToolTip>
+          <Default>app</Default>
+        </Literal>
+        <Literal>
+          <ID>directive</ID>
+          <ToolTip>Replace with the string name of the directive.</ToolTip>
+          <Default>customDirective</Default>
+        </Literal>
+        <Literal>
+          <ID>dependency</ID>
+          <ToolTip>Replace with the dependency for the directive.</ToolTip>
+          <Default>$window</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="JavaScript">
+        <![CDATA[
+    $module$.directive('$directive$', ['$dependency$', function ($dependency$) {
+        // Usage:
+        // 
+        // Creates:
+        // 
+        var directive = {
+            link: link,
+            restrict: 'A'
+        };
+        return directive;
+
+        function link(scope, element, attrs) {
+        }
+    }]);
+                ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

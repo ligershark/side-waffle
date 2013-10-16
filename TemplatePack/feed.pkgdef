@@ -1,5 +1,42 @@
-﻿[$RootKey$\ExtensionManager\Repositories\{549d04c2-adc0-490f-8587-9cc268ca81d5}]
+﻿// ---------------------- FEED ----------------------
+
+[$RootKey$\ExtensionManager\Repositories\{549d04c2-adc0-490f-8587-9cc268ca81d5}]
 @="http://sidewaffle.com/feed"
 "Priority"=dword:00000064
 "Protocol"="Atom Feed"
 "DisplayName"="SideWaffle"
+
+
+// ---------------------- SNIPPETS ----------------------
+
+// Visual Basic
+[$RootKey$\Languages\CodeExpansions\Basic\Paths]
+"SideWaffle"="$PackageFolder$\Snippets\VisualBasic\SideWaffle"
+
+// C++
+[$RootKey$\Languages\CodeExpansions\C/C++\Paths]
+"SideWaffle"="$PackageFolder$\Snippets\C++\SideWaffle"
+
+// C#
+[$RootKey$\Languages\CodeExpansions\CSharp\Paths]
+"SideWaffle"="$PackageFolder$\Snippets\CSharp\SideWaffle"
+
+// CSS
+[$RootKey$\Languages\CodeExpansions\CSS\Paths]
+"SideWaffle"="$PackageFolder$\Snippets\CSS\SideWaffle"
+
+// HTML
+[$RootKey$\Languages\CodeExpansions\HTML\Paths]
+"SideWaffle"="$PackageFolder$\Snippets\HTML\SideWaffle"
+
+// JavaScript
+[$RootKey$\Languages\CodeExpansions\JavaScript\Paths]
+"SideWaffle"="$PackageFolder$\Snippets\JavaScript\SideWaffle"
+
+// SQL
+[$RootKey$\Languages\CodeExpansions\SQL_SSDT\Paths]
+"SideWaffle"="$PackageFolder$\Snippets\SQL\SideWaffle"
+
+// XML
+[$RootKey$\Languages\CodeExpansions\XML\Paths]
+"SideWaffle"="$PackageFolder$\Snippets\XML\SideWaffle"
