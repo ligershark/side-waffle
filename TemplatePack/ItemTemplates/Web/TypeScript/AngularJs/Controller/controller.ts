@@ -17,7 +17,7 @@ class $safeitemname$ implements I$safeitemname$ {
 
     static controllerId: string = "$safeitemname$";
     greeting = "Hello";
-
+    
     constructor(private $scope: I$safeitemname$Scope, private $http: ng.IHttpService, private $resource: ng.resource.IResourceService) {
     }
 
@@ -26,6 +26,6 @@ class $safeitemname$ implements I$safeitemname$ {
     }
 }
 
-app.controller($safeitemname$.controllerId, function ($scope, $http, $resource) {
+app.controller($safeitemname$.controllerId, ['$scope', '$http', '$resource', function ($scope, $http, $resource) {
     return new $safeitemname$($scope, $http, $resource);
-});
+}]);
