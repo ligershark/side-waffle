@@ -1,0 +1,32 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Browser Link Extension (simple)</Name>
+    <Description>The fastest way to get started with writing Browser Link extensions</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>BrowserLinkProject</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>logo.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$projectname$.csproj" File="BrowserLinkExtensionTemplate.csproj" ReplaceParameters="true">
+      <Folder Name="Intellisense" TargetFolderName="Intellisense">
+        <ProjectItem ReplaceParameters="false" TargetFileName="browserlink.intellisense.js">browserlink.intellisense.js</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="jquery-1.8.2.intellisense.js">jquery-1.8.2.intellisense.js</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="jquery-1.8.2.js">jquery-1.8.2.js</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$Extension.cs" OpenInEditor="true">MyExtension.cs</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Scripts" TargetFolderName="Scripts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$safeprojectname$Extension.js" OpenInEditor="true">MyExtension.js</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="source.extension.vsixmanifest">_source.extension.vsixmanifest</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
