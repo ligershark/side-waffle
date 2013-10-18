@@ -164,6 +164,12 @@
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-TemplateInfoFile\readme.txt" />
     <Content Include="ItemTemplates\Web\SayedsTemplate\icon.png" />
     <Content Include="ItemTemplates\Web\SayedsTemplate\sample.html" />
+    <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Factory\factory.ts" />
+    <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Factory\icon.png" />
+    <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Factory\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Factory\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Factory\_Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Factory\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Controller using %24scope\controller.ts" />
     <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Controller using %24scope\icon.png" />
     <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Controller using %24scope\_Definitions\CSharp.vstemplate" />
