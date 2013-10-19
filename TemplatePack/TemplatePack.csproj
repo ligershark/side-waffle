@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.19-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.20-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -247,25 +247,6 @@
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\robots.txt" />
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\__PreviewImage.png" />
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\__TemplateIcon.png" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\logo.png" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Shared\My.Cool.Company.SharedLibrary.csproj" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Shared\MyTemplate.vstemplate" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Shared\__TemplateIcon.ico" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\Default.aspx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\My.Cool.Company.WebFrontEnd.csproj" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\MyTemplate.vstemplate" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\__PreviewImage.png" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\__TemplateIcon.png" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\_Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\_Definitions\templateinfo.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ProjectTemplates\Web\SampleWeb\_Definitions\CSharp.vstemplate" />
-    <Content Include="ProjectTemplates\Web\SampleWeb\_Definitions\templateinfo.xml" />
     <Content Include="ProjectTemplates\Web\Chrome Web Store App\ChromeApp.csproj" />
     <Content Include="ProjectTemplates\Web\Chrome Web Store App\ChromeApp.png" />
     <Content Include="ProjectTemplates\Web\Chrome Web Store App\Definitions\CSharp.vstemplate" />
@@ -273,14 +254,6 @@
     <Content Include="ProjectTemplates\Web\Chrome Web Store App\Properties\build\lib\MSBuild.ExtensionPack.dll" />
     <Content Include="ProjectTemplates\Web\Chrome Web Store App\__PreviewImage.png" />
     <Content Include="ProjectTemplates\Web\Chrome Web Store App\__TemplateIcon.png" />
-    <Content Include="ProjectTemplates\Web\SampleWeb\Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ProjectTemplates\Web\SampleWeb\Definitions\templateinfo.xml" />
-    <Content Include="ProjectTemplates\Web\SampleWeb\SampleWeb.csproj">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ProjectTemplates\Web\SampleWeb\__TemplateIcon.ico" />
     <None Include="ItemTemplates\Extensibility\CodeSnippet\CSharpSnippet.snippet" />
     <None Include="ItemTemplates\Extensibility\CodeSnippet\VBSnippet.snippet" />
     <None Include="ItemTemplates\Extensibility\HtmlSmartTag\AddClassSmartTag.cs" />
@@ -410,17 +383,34 @@
     <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Web.Release.config" />
     <None Include="ProjectTemplates\Web\Chrome Web Store App\manifest.json" />
     <None Include="ProjectTemplates\Web\Chrome Web Store App\Properties\build\ligershark.chrome.targets" />
-    <None Include="ProjectTemplates\Web\Sample Multi Project\Web\Web.config" />
-    <None Include="ProjectTemplates\Web\Sample Multi Project\Web\Web.Debug.config" />
-    <None Include="ProjectTemplates\Web\Sample Multi Project\Web\Web.Release.config" />
-    <None Include="ProjectTemplates\Web\SampleWeb\Web.config" />
-    <None Include="ProjectTemplates\Web\SampleWeb\Web.Debug.config" />
-    <None Include="ProjectTemplates\Web\SampleWeb\Web.Release.config" />
+    <None Include="ProjectTemplates\Web\_Sample Multi Project\Web\Web.config" />
+    <None Include="ProjectTemplates\Web\_Sample Multi Project\Web\Web.Debug.config" />
+    <None Include="ProjectTemplates\Web\_Sample Multi Project\Web\Web.Release.config" />
+    <None Include="ProjectTemplates\Web\_SampleWeb\Web.config" />
+    <None Include="ProjectTemplates\Web\_SampleWeb\Web.Debug.config" />
+    <None Include="ProjectTemplates\Web\_SampleWeb\Web.Release.config" />
     <None Include="ProjectTemplates\Windows Phone\readme.md" />
     <None Include="ProjectTemplates\Windows Store\readme.md" />
     <None Include="Properties\template-builder.props">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\logo.png" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Shared\My.Cool.Company.SharedLibrary.csproj" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Shared\MyTemplate.vstemplate" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Shared\_preprocess.xml" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Shared\__TemplateIcon.ico" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\Default.aspx" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\My.Cool.Company.WebFrontEnd.csproj" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\MyTemplate.vstemplate" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\_preprocess.xml" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\__PreviewImage.png" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\__TemplateIcon.png" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\_Definitions\CSharp.vstemplate" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\_Definitions\templateinfo.xml" />
+    <Content Include="ProjectTemplates\Web\_SampleWeb\SampleWeb.csproj" />
+    <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate" />
+    <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\templateinfo.xml" />
+    <Content Include="ProjectTemplates\Web\_SampleWeb\__TemplateIcon.ico" />
     <Content Include="Snippets\JavaScript\SideWaffle\ng.controller.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
@@ -435,6 +425,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProjectTemplates\Web\_Sample Multi Project\Shared\Contact.cs" />
+    <Compile Include="ProjectTemplates\Web\_Sample Multi Project\Shared\Properties\AssemblyInfo.cs" />
+    <Compile Include="ProjectTemplates\Web\_Sample Multi Project\Web\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectTemplates\Web\_Sample Multi Project\Web\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectTemplates\Web\_Sample Multi Project\Web\Properties\AssemblyInfo.cs" />
+    <Compile Include="ProjectTemplates\Web\_SampleWeb\Properties\AssemblyInfo.cs" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\Guids.cs" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\PkgCmdID.cs" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\VSPackagePackage.cs" />
@@ -452,16 +452,6 @@
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\MyExtension.cs" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\Properties\AssemblyInfo.cs" />
     <Compile Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Properties\AssemblyInfo.cs" />
-    <Compile Include="ProjectTemplates\Web\Sample Multi Project\Shared\Contact.cs" />
-    <Compile Include="ProjectTemplates\Web\Sample Multi Project\Shared\Properties\AssemblyInfo.cs" />
-    <Compile Include="ProjectTemplates\Web\Sample Multi Project\Web\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ProjectTemplates\Web\Sample Multi Project\Web\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProjectTemplates\Web\Sample Multi Project\Web\Properties\AssemblyInfo.cs" />
-    <Compile Include="ProjectTemplates\Web\SampleWeb\Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\VSPackage.resx" />
