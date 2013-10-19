@@ -122,6 +122,7 @@
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-TemplateInfoFile\_Definitions\VB.vstemplate" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\VSPackage.vsct" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\icon.png" />
+    <Content Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Global.asax" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
     <Content Include="ItemTemplates\Test\NUnitFixture\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
@@ -145,6 +146,8 @@
     <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\app.manifest" />
+    <Content Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\aspnet.ico" />
+    <Content Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Windows Phone\readme.md" />
     <None Include="ItemTemplates\Windows Store\readme.md" />
     <None Include="ItemTemplates\WPF\readme.md" />
@@ -445,6 +448,8 @@
     <Compile Include="ItemTemplates\Test\NUnitFixture\NUnitFixture.cs" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\MyExtension.cs" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\Properties\AssemblyInfo.cs" />
+    <Compile Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\EmptyController.cs" />
+    <Compile Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Global.asax.cs" />
     <Compile Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Properties\AssemblyInfo.cs" />
     <Compile Include="ProjectTemplates\Web\Sample Multi Project\Shared\Contact.cs" />
     <Compile Include="ProjectTemplates\Web\Sample Multi Project\Shared\Properties\AssemblyInfo.cs" />
