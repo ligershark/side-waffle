@@ -142,13 +142,9 @@
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\SayedsTemplate\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\SayedsTemplate\Definitions\VB.vstemplate" />
     <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\app.manifest" />
-    <None Include="ItemTemplates\Web\SayedsTemplate\Definitions\Web.csharp.vstemplat-" />
-    <None Include="ItemTemplates\Web\SayedsTemplate\Definitions\Web.VB.vstemplat-" />
     <None Include="ItemTemplates\Windows Phone\readme.md" />
     <None Include="ItemTemplates\Windows Store\readme.md" />
     <None Include="ItemTemplates\WPF\readme.md" />
@@ -165,8 +161,6 @@
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\readme.txt" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-TemplateInfoFile\icon.png" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-TemplateInfoFile\readme.txt" />
-    <Content Include="ItemTemplates\Web\SayedsTemplate\icon.png" />
-    <Content Include="ItemTemplates\Web\SayedsTemplate\sample.html" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.vsct" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\aspnet.ico" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\_Definitions\CSharp.vstemplate" />
