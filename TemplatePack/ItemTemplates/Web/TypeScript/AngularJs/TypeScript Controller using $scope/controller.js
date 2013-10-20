@@ -5,23 +5,29 @@
 /// <reference path='../Scripts/typings/angularjs/angular.d.ts'/>
 /// <reference path='../Scripts/typings/angularjs/angular-resource.d.ts'/>
 var $safeitemname$ = (function () {
-    function $safeitemname$($http, $resource) {
+    function $safeitemname$($scope, $http, $resource) {
+        var _this = this;
+        this.$scope = $scope;
         this.$http = $http;
         this.$resource = $resource;
-        this.greeting = "Hello";
+        $scope.greeting = "Hello";
+        $scope.changeGreeting = function () {
+            return _this.changeGreeting();
+        };
     }
     $safeitemname$.prototype.changeGreeting = function () {
-        this.greeting = "Bye";
+        this.$scope.greeting = "Bye";
     };
-    $safeitemname$.serviceId = "$safeitemname$";
+    $safeitemname$.controllerId = "$safeitemname$";
     return $safeitemname$;
 })();
 
 // Update the app variable name to be that of your module variable
-app.factory($safeitemname$.serviceId, [
+app.controller($safeitemname$.controllerId, [
+    '$scope',
     '$http',
     '$resource',
     function ($scope, $http, $resource) {
-        return new $safeitemname$($http, $resource);
+        return new $safeitemname$($scope, $http, $resource);
     }
 ]);
