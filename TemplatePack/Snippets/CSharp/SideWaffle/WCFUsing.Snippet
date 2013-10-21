@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Author>Robert MacLean - http://www.sadev.co.za</Author>
+			<Description>Implements the pattern correctly for a WCF client to correctly deal with the closing, disposing &amp; errors on a proxie. For further info see: http://msdn.microsoft.com/en-us/library/aa355056.aspx</Description>
+			<HelpUrl>http://www.sadev.co.za</HelpUrl>
+			<Keywords>
+				<Keyword>C#</Keyword>
+				<Keyword>Dispose</Keyword>
+				<Keyword>WCF</Keyword>
+				<Keyword>Client</Keyword>
+        <Keyword>Proxy</Keyword>
+        <Keyword>Close</Keyword>
+			</Keywords>
+			<Shortcut>wcfusing</Shortcut>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+			<Title>WCF Client Usage</Title>
+		</Header>
+		<Snippet>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>Client object name</ToolTip>
+          <Default>client</Default>
+        </Literal>
+      </Declarations>
+			<Code Language="CSharp">
+				<![CDATA[
+				try
+        {
+            //todo: make calls to the client - should be as small a set of work here as possible
+            $name$.Close();
+        }
+        catch (System.ServiceModel.CommunicationException e)
+        {
+            //todo: handle communication exceptions, for example cannot connect to service.
+            $name$.Abort();
+        }
+        catch (TimeoutException e)
+        {
+            //todo: handle time outs when connecting, calling and closing
+            $name$.Abort();
+        }
+        catch (Exception e)
+        {
+            //todo: handle any other client issue
+            $name$.Abort();
+            throw;
+        }
+				]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
