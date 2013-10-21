@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.20-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.21-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -412,9 +412,7 @@
     <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\templateinfo.xml" />
     <Content Include="ProjectTemplates\Web\_SampleWeb\__TemplateIcon.ico" />
-    <Content Include="Snippets\JavaScript\SideWaffle\ng.controller.snippet">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
+    <Content Include="Snippets\JavaScript\SideWaffle\ng.controller.snippet" />
     <Content Include="Snippets\JavaScript\SideWaffle\ng.directive.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
