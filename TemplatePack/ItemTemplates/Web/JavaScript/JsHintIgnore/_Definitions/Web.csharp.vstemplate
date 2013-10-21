@@ -1,0 +1,15 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>.jshintignore</DefaultName>
+    <Name>JSHint Ignore File (.jshintignore)</Name>
+    <Description>Allows you to ignore specific JavaScript files from being run by JSHint</Description>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true" TargetFileName=".jshintignore">jshintignore.txt</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,3 @@
+﻿legacy.js
+somelib/*.*
+otherlib/*.js
