@@ -23,7 +23,7 @@ class $safeitemname$ implements I$safeitemname$ {
     }
 }
 
-// Update the app variable name to be that of your module variable
-app.factory($safeitemname$.serviceId, ['$http', '$resource', function ($scope, $http, $resource) {
+// Update the app1 variable name to be that of your module variable
+app1.factory($safeitemname$.serviceId, ['$http', '$resource', function ($scope, $http, $resource) {
     return new $safeitemname$($http, $resource);
 }]);

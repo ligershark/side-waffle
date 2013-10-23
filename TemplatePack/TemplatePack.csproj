@@ -201,7 +201,7 @@
     <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Module\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Module\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Module\_Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Module\_Definitions\Web.VB.vstemplate">
+    <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Module\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\icon.png" />
     <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\InputModels\Search\readme.txt" />
     <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ViewModels\readme.txt" />

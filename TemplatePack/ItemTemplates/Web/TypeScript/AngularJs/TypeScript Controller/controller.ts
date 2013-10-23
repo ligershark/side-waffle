@@ -27,7 +27,7 @@ class $safeitemname$ implements I$safeitemname$ {
     }
 }
 
-// Update the app variable name to be that of your module variable
-app.controller($safeitemname$.controllerId, ['$scope', '$http', '$resource', function ($scope, $http, $resource) {
+// Update the app1 variable name to be that of your module variable
+app1.controller($safeitemname$.controllerId, ['$scope', '$http', '$resource', function ($scope, $http, $resource) {
     return new $safeitemname$($scope, $http, $resource);
 }]);
