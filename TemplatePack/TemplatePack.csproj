@@ -134,6 +134,7 @@
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Test\NUnitFixture\icon.png" />
+    <Content Include="ItemTemplates\TypeScript\TS watermark.png" />
     <Content Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\aspnet.ico" />
     <Content Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\_Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
