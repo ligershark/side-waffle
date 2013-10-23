@@ -1,0 +1,17 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>CSharp</ProjectType>
+    
+    <DefaultName>NUnitFixture.cs</DefaultName>
+    <Name>NUnit Fixture</Name>
+    <Description>NUnit test fixture</Description>    
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+
+    <ProjectItem ReplaceParameters="true">NUnitFixture.cs</ProjectItem>
+    
+  </TemplateContent>
+</VSTemplate>

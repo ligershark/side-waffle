@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Angular Controller</Title>
+      <Author>John Papa</Author>
+      <Description>Template for adding an Angular Controller</Description>
+      <Shortcut>ngctrl</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>id</ID>
+          <ToolTip>Replace with a variable to hold the controller name.</ToolTip>
+          <Default>controllerId</Default>
+        </Literal>
+        <Literal>
+          <ID>module</ID>
+          <ToolTip>Replace with a module name variable.</ToolTip>
+          <Default>app</Default>
+        </Literal>
+        <Literal>
+          <ID>controller</ID>
+          <ToolTip>Replace with the string name of the controller.</ToolTip>
+          <Default>customController</Default>
+        </Literal>
+        <Literal>
+          <ID>dependency</ID>
+          <ToolTip>Replace with the dependency for controller.</ToolTip>
+          <Default>$scope</Default>
+        </Literal>
+        <Literal>
+          <ID>member1</ID>
+          <ToolTip>Replace with the name of a member of the controller.</ToolTip>
+          <Default>activate</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="JavaScript">
+        <![CDATA[
+(function () {
+    'use strict';
+
+    var $id$ = '$controller$';
+    angular.module('$module$').controller($id$,
+        ['$dependency$', $controller$]);
+
+    function $controller$($dependency$) {
+        var vm = this;
+
+        vm.$member1$ = $member1$;
+
+        function $member1$() {
+        }
+
+        //#region Internal Methods        
+
+        //#endregion
+    }
+})();
+                ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

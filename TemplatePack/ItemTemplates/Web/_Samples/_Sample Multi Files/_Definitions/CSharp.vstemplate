@@ -1,0 +1,20 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>multifile</DefaultName>
+    <Name>Multi file template sample</Name>
+    <Description>Adds a few different files in one item template</Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <SortOrder>1</SortOrder>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem TargetFileName="I$safeitemname$Controller.cs" ReplaceParameters="true">ISearchController.cs</ProjectItem>
+    <ProjectItem TargetFileName="$safeitemname$Controller.cs" ReplaceParameters="true">SearchController.cs</ProjectItem>
+    <ProjectItem TargetFileName="WorkerService\$safeitemname$WorkerService.cs" ReplaceParameters="true">WorkerService\SearchWorkerService.cs</ProjectItem>
+    <ProjectItem TargetFileName="WorkerService\I$safeitemname$WorkerService.cs" ReplaceParameters="true">WorkerService\ISearchWorkerService.cs</ProjectItem>
+    <ProjectItem TargetFileName="Views\readme.txt" ReplaceParameters="true">Views\readme.txt</ProjectItem>
+    <ProjectItem TargetFileName="ViewModels\readme.txt" ReplaceParameters="true">ViewModels\readme.txt</ProjectItem>
+    <ProjectItem TargetFileName="InputModels\$safeitemname$\$safeitemname$.txt" ReplaceParameters="true">InputModels\Search\readme.txt</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

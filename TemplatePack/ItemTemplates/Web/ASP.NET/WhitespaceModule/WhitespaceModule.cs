@@ -7,6 +7,14 @@ using System.Web;
 /// Removes whitespace from the webpage. Be careful!
 /// This doesn't work when dynamicCompressionBeforeCache="true" in web.config on IIS 7+
 /// </summary>
+/// <remarks>
+/// Add this to the web.config to register the module:
+/// <system.webServer>
+///    <modules>
+///      <add name="WhitespaceModule" type="WhitespaceModule" preCondition="managedHandler" />
+///    </modules>
+///  </system.webServer>
+/// </remarks>
 public class $safeitemname$ : IHttpModule
 {
     #region IHttpModule Members

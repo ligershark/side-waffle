@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.16-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.21-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -122,16 +122,18 @@
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-TemplateInfoFile\_Definitions\VB.vstemplate" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\VSPackage.vsct" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\icon.png" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
-    <None Include="ItemTemplates\Test\readme.md" />
+    <Content Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Global.asax" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
+    <Content Include="ItemTemplates\Test\NUnitFixture\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Test\NUnitFixture\icon.png" />
     <Content Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\aspnet.ico" />
     <Content Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\_Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
@@ -142,16 +144,22 @@
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\jshintignore.txt" />
+    <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\icon.png" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\SayedsTemplate\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\SayedsTemplate\Definitions\VB.vstemplate" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\app.manifest" />
-    <None Include="ItemTemplates\Web\SayedsTemplate\Definitions\Web.csharp.vstemplat-" />
-    <None Include="ItemTemplates\Web\SayedsTemplate\Definitions\Web.VB.vstemplat-" />
+    <Content Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\aspnet.ico" />
+    <Content Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Windows Phone\readme.md" />
     <None Include="ItemTemplates\Windows Store\readme.md" />
     <None Include="ItemTemplates\WPF\readme.md" />
@@ -194,6 +202,11 @@
     <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Module\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Module\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\TypeScript\AngularJs\TypeScript Module\_Definitions\Web.VB.vstemplate">
+    <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\icon.png" />
+    <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\InputModels\Search\readme.txt" />
+    <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ViewModels\readme.txt" />
+    <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\Views\readme.txt" />
+    <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\_Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.vsct" />
@@ -223,6 +236,14 @@
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Resources\Package.ico" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\Scripts\MyExtension.js" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\_source.extension.vsixmanifest" />
+    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\BrowserLinkExtensionTemplate.csproj" />
+    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\Intellisense\browserlink.intellisense.js" />
+    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\Intellisense\jquery-1.8.2.intellisense.js" />
+    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\Intellisense\jquery-1.8.2.js" />
+    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\logo.png" />
+    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\Scripts\MyExtension.js" />
+    <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\_Definitions\CSharp.vstemplate" />
+    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\_source.extension.vsixmanifest" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\app\img\icon.png" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\app\popup.html" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\app\popup.js" />
@@ -268,25 +289,6 @@
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\robots.txt" />
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\__PreviewImage.png" />
     <Content Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\__TemplateIcon.png" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\logo.png" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Shared\My.Cool.Company.SharedLibrary.csproj" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Shared\MyTemplate.vstemplate" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Shared\__TemplateIcon.ico" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\Default.aspx">
-      <SubType>ASPXCodeBehind</SubType>
-    </Content>
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\My.Cool.Company.WebFrontEnd.csproj" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\MyTemplate.vstemplate" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\__PreviewImage.png" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\Web\__TemplateIcon.png" />
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\_Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ProjectTemplates\Web\Sample Multi Project\_Definitions\templateinfo.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ProjectTemplates\Web\SampleWeb\_Definitions\CSharp.vstemplate" />
-    <Content Include="ProjectTemplates\Web\SampleWeb\_Definitions\templateinfo.xml" />
     <Content Include="ProjectTemplates\Web\Chrome Web Store App\ChromeApp.csproj" />
     <Content Include="ProjectTemplates\Web\Chrome Web Store App\ChromeApp.png" />
     <Content Include="ProjectTemplates\Web\Chrome Web Store App\Definitions\CSharp.vstemplate" />
@@ -294,14 +296,6 @@
     <Content Include="ProjectTemplates\Web\Chrome Web Store App\Properties\build\lib\MSBuild.ExtensionPack.dll" />
     <Content Include="ProjectTemplates\Web\Chrome Web Store App\__PreviewImage.png" />
     <Content Include="ProjectTemplates\Web\Chrome Web Store App\__TemplateIcon.png" />
-    <Content Include="ProjectTemplates\Web\SampleWeb\Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ProjectTemplates\Web\SampleWeb\Definitions\templateinfo.xml" />
-    <Content Include="ProjectTemplates\Web\SampleWeb\SampleWeb.csproj">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ProjectTemplates\Web\SampleWeb\__TemplateIcon.ico" />
     <None Include="ItemTemplates\Extensibility\CodeSnippet\CSharpSnippet.snippet" />
     <None Include="ItemTemplates\Extensibility\CodeSnippet\VBSnippet.snippet" />
     <None Include="ItemTemplates\Extensibility\HtmlSmartTag\AddClassSmartTag.cs" />
@@ -431,22 +425,62 @@
     <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Web.Release.config" />
     <None Include="ProjectTemplates\Web\Chrome Web Store App\manifest.json" />
     <None Include="ProjectTemplates\Web\Chrome Web Store App\Properties\build\ligershark.chrome.targets" />
-    <None Include="ProjectTemplates\Web\Sample Multi Project\Web\Web.config" />
-    <None Include="ProjectTemplates\Web\Sample Multi Project\Web\Web.Debug.config" />
-    <None Include="ProjectTemplates\Web\Sample Multi Project\Web\Web.Release.config" />
-    <None Include="ProjectTemplates\Web\SampleWeb\Web.config" />
-    <None Include="ProjectTemplates\Web\SampleWeb\Web.Debug.config" />
-    <None Include="ProjectTemplates\Web\SampleWeb\Web.Release.config" />
+    <None Include="ProjectTemplates\Web\_Sample Multi Project\Web\Web.config" />
+    <None Include="ProjectTemplates\Web\_Sample Multi Project\Web\Web.Debug.config" />
+    <None Include="ProjectTemplates\Web\_Sample Multi Project\Web\Web.Release.config" />
+    <None Include="ProjectTemplates\Web\_SampleWeb\Web.config" />
+    <None Include="ProjectTemplates\Web\_SampleWeb\Web.Debug.config" />
+    <None Include="ProjectTemplates\Web\_SampleWeb\Web.Release.config" />
     <None Include="ProjectTemplates\Windows Phone\readme.md" />
     <None Include="ProjectTemplates\Windows Store\readme.md" />
     <None Include="Properties\template-builder.props">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\logo.png" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Shared\My.Cool.Company.SharedLibrary.csproj" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Shared\MyTemplate.vstemplate" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Shared\_preprocess.xml" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Shared\__TemplateIcon.ico" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\Default.aspx" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\My.Cool.Company.WebFrontEnd.csproj" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\MyTemplate.vstemplate" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\_preprocess.xml" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\__PreviewImage.png" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\__TemplateIcon.png" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\_Definitions\CSharp.vstemplate" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\_Definitions\templateinfo.xml" />
+    <Content Include="ProjectTemplates\Web\_SampleWeb\SampleWeb.csproj" />
+    <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate" />
+    <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\templateinfo.xml" />
+    <Content Include="ProjectTemplates\Web\_SampleWeb\__TemplateIcon.ico" />
+    <Content Include="Snippets\JavaScript\SideWaffle\ng.controller.snippet" />
+    <Content Include="Snippets\JavaScript\SideWaffle\ng.directive.snippet">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Snippets\JavaScript\SideWaffle\ng.service.snippet">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <None Include="Snippets\CSharp\SideWaffle\Dispose.Snippet" />
+    <None Include="Snippets\CSharp\SideWaffle\WCFUsing.Snippet" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ISearchController.cs" />
+    <Compile Include="ItemTemplates\Web\_Samples\_Sample Multi Files\SearchController.cs" />
+    <Compile Include="ItemTemplates\Web\_Samples\_Sample Multi Files\WorkerService\ISearchWorkerService.cs" />
+    <Compile Include="ItemTemplates\Web\_Samples\_Sample Multi Files\WorkerService\SearchWorkerService.cs" />
+    <Compile Include="ProjectTemplates\Web\_Sample Multi Project\Shared\Contact.cs" />
+    <Compile Include="ProjectTemplates\Web\_Sample Multi Project\Shared\Properties\AssemblyInfo.cs" />
+    <Compile Include="ProjectTemplates\Web\_Sample Multi Project\Web\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectTemplates\Web\_Sample Multi Project\Web\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectTemplates\Web\_Sample Multi Project\Web\Properties\AssemblyInfo.cs" />
+    <Compile Include="ProjectTemplates\Web\_SampleWeb\Properties\AssemblyInfo.cs" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\Guids.cs" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\PkgCmdID.cs" />
     <None Include="ItemTemplates\Extensibility\VS Command Table\VSPackagePackage.cs" />
@@ -460,17 +494,12 @@
     <None Include="ItemTemplates\Azure\BlobUploadHelper\BlobUploadHelper.cs" />
     <None Include="ItemTemplates\Azure\TableStorageEntity\TableStorageEntity.cs" />
     <None Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\WhitespaceModule.cs" />
+    <Compile Include="ItemTemplates\Test\NUnitFixture\NUnitFixture.cs" />
+    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\MyExtension.cs" />
+    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\Properties\AssemblyInfo.cs" />
+    <Compile Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\EmptyController.cs" />
+    <Compile Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Global.asax.cs" />
     <Compile Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\Properties\AssemblyInfo.cs" />
-    <Compile Include="ProjectTemplates\Web\Sample Multi Project\Shared\Contact.cs" />
-    <Compile Include="ProjectTemplates\Web\Sample Multi Project\Shared\Properties\AssemblyInfo.cs" />
-    <Compile Include="ProjectTemplates\Web\Sample Multi Project\Web\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ProjectTemplates\Web\Sample Multi Project\Web\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProjectTemplates\Web\Sample Multi Project\Web\Properties\AssemblyInfo.cs" />
-    <Compile Include="ProjectTemplates\Web\SampleWeb\Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\VSPackage.resx" />
@@ -479,7 +508,14 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Snippets\C++\SideWaffle\" />
+    <Folder Include="Snippets\CSS\SideWaffle\" />
+    <Folder Include="Snippets\HTML\SideWaffle\" />
+    <Folder Include="Snippets\SQL\SideWaffle\" />
+    <Folder Include="Snippets\VisualBasic\SideWaffle\" />
+    <Folder Include="Snippets\XML\SideWaffle\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
