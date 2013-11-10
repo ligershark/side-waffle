@@ -152,6 +152,8 @@
     <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\NodeJS\icon.png" />
+    <None Include="ItemTemplates\Web\JavaScript\NodeJS\package.json" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\icon.png" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\VB.vstemplate" />
@@ -159,6 +161,7 @@
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\Web.VB.vstemplate" />
     <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
+    <Content Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\app.manifest" />
     <Content Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\aspnet.ico" />
     <Content Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Definitions\CSharp.vstemplate" />
@@ -469,6 +472,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\VB.vstemplate" />
     <Compile Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ISearchController.cs" />
     <Compile Include="ItemTemplates\Web\_Samples\_Sample Multi Files\SearchController.cs" />
     <Compile Include="ItemTemplates\Web\_Samples\_Sample Multi Files\WorkerService\ISearchWorkerService.cs" />
