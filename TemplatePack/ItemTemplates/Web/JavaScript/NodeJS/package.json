@@ -1,0 +1,40 @@
+﻿{
+    "name": "package-name",
+    "preferGlobal": true,
+    "version": "0.3.0",
+    "author": "Author Name <author@domain.com>",
+    "description": "a simple description for the package",
+    "contributors": [ 
+      {
+          "name": "First Contributor",
+          "email": "email@domain.com"
+      } 
+    ],
+    "bin": {
+        "package-name": "./bin/package-name"
+    },
+  "scripts": {
+      "start": "node ./bin/package-name",
+      "test": "vows --spec --isolate",
+      "predeploy": "echo This will be run before deploying the app",
+      "postdeploy": "echo This will be run after deploying the app"
+  },
+  "main": "./lib/package-name",
+  "repository": {
+      "type": "git",
+      "url": "the url of the package"
+  },
+  "keywords": [
+  ],
+  "dependencies" : {
+  },
+  "analyze": false,
+  "devDependencies": {
+  },
+  "bundledDependencies": [
+  ],  
+  "license": "MIT",
+  "engines": {
+      "node": ">=0.6"
+  }
+}
