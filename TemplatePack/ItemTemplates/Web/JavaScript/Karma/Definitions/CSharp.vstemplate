@@ -1,0 +1,17 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>CSharp</ProjectType>
+    
+    <DefaultName>karma.conf.js</DefaultName>
+    <Name>Karma Configuration File</Name>
+    <Description>Karma configuration file. For more information please visit: http://karma-runner.github.io/0.10/intro/configuration.html </Description>    
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+     
+    <ProjectItem ReplaceParameters="true">karma.conf.js</ProjectItem>
+    
+  </TemplateContent>
+</VSTemplate>
