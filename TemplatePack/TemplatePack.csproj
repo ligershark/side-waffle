@@ -54,6 +54,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="ItemTemplates\Azure\CloudServicePlugin\azure-icon.png" />
+    <Content Include="ItemTemplates\Azure\CloudServicePlugin\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\_Definitions\Web.csharp.vstemplate" />
@@ -84,6 +86,7 @@
     <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\icon.png" />
     <Content Include="ItemTemplates\Extensibility\BrowserLink\_Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\Azure\CloudServicePlugin\CloudServicePlugin.csplugin" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\custom.targets" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\custom.props">
       <SubType>Designer</SubType>
