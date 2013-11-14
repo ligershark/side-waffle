@@ -146,6 +146,8 @@
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\GruntJS\Gruntfile.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\GruntJS\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\jshintignore.txt" />
     <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\CSharp.vstemplate" />
@@ -159,6 +161,10 @@
     <Content Include="ItemTemplates\Web\JavaScript\Karma\Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\Karma\Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\Karma\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\Web.VB.vstemplate" />
     <None Include="ItemTemplates\Web\JavaScript\NodeJS\package.json" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\icon.png" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\CSharp.vstemplate" />
