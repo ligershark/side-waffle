@@ -152,7 +152,13 @@
     <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Karma\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\Karma\karma.conf.js" />
     <Content Include="ItemTemplates\Web\JavaScript\NodeJS\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\Karma\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Karma\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Karma\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Karma\Definitions\Web.VB.vstemplate" />
     <None Include="ItemTemplates\Web\JavaScript\NodeJS\package.json" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\icon.png" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\CSharp.vstemplate" />
