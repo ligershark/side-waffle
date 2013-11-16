@@ -1,0 +1,13 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>CloudServicePlugin</DefaultName>
+    <Name>Windows Azure Cloud Service Plugin</Name>
+    <Description>A template to create a plugin which extends the Virtual Studio SDK for Cloud Services.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon>azure-icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.csplugin">CloudServicePlugin.csplugin</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

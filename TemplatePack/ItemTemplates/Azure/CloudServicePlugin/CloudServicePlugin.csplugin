@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" ?>
+<!--
+
+Copy the plugin files to this folder for the Azure SDK to discover it:
+
+%PROGRAMFILES%\Microsoft SDKs\Windows Azure\.NET SDK\vX.X\bin\plugins\$safeitemname$\
+
+Add this plugin to your cloud project by adding this import tag to your ServiceDefinition.csdef
+
+<ServiceDefinition>
+  <WorkerRole>
+    <Imports>
+      <Import moduleName="$safeitemname$" />
+    </Imports>
+  </WorkerRole>
+</ServiceDefinition>
+
+-->
+<RoleModule xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" namespace="$safeitemname$">
+    <Startup>
+        <!-- add startup tasks here
+
+        <Task commandLine="install.cmd" executionContext="elevated" taskType="simple" />
+
+        -->
+    </Startup>
+    <ConfigurationSettings>
+        <!-- add settings here
+
+        <Setting name="SettingName"/>  
+
+        -->
+    </ConfigurationSettings>
+    <Endpoints>
+        <!-- add endpoints here
+
+        <InputEndpoint localPort="8080" name="InputEndpointName" port="80" protocol="tcp"/>
+
+        <InternalEndpoint name="InternalEndpointName" protocol="http">
+            <FixedPort port="8000"/>
+        </InternalEndpoint>   
+
+        -->     
+    </Endpoints>
+    <Certificates>
+        <!-- add certificates here
+        
+        <Certificate name="CertificateName" storeLocation="LocalMachine" storeName="My" permissionLevel="elevated" />    
+
+        -->
+    </Certificates>
+</RoleModule>
