@@ -9,6 +9,7 @@
     <StartArguments>/rootsuffix Exp</StartArguments>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <ZipPackageCompressionLevel>Normal</ZipPackageCompressionLevel>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -97,9 +98,7 @@
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\icon.png" />
     <Content Include="ItemTemplates\Extensibility\Editor Drop Handler\icon.png" />
     <Content Include="ItemTemplates\Extensibility\Editor Drop Handler\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\Editor Drop Handler\MyDropHandler.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="ItemTemplates\Extensibility\Editor Drop Handler\MyDropHandler.cs" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\icon.png" />
     <Content Include="ItemTemplates\Extensibility\Package Definition\_Definitions\CSharp.vstemplate" />
@@ -183,9 +182,7 @@
     <None Include="packages.config" />
     <None Include="ProjectTemplates\Cloud\readme.md" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
-    <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
     <Content Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\file-icon.png" />
@@ -223,9 +220,7 @@
     <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\InputModels\Search\readme.txt" />
     <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ViewModels\readme.txt" />
     <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\Views\readme.txt" />
-    <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\_Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\_Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.vsct" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\aspnet.ico" />
     <Content Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\_Definitions\CSharp.vstemplate" />
