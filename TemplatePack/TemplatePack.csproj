@@ -99,11 +99,11 @@
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\CodeSnippet\icon.png" />
+    <Content Include="ItemTemplates\Extensibility\HtmlValidator\icon.png" />
+    <Content Include="ItemTemplates\Extensibility\HtmlValidator\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\Editor Drop Handler\icon.png" />
     <Content Include="ItemTemplates\Extensibility\Editor Drop Handler\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\Editor Drop Handler\MyDropHandler.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="ItemTemplates\Extensibility\Editor Drop Handler\MyDropHandler.cs" />
     <None Include="ItemTemplates\Extensibility\Editor Drop Handler\MyDropHandler.cs" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\HtmlSmartTag\icon.png" />
@@ -188,9 +188,7 @@
     <None Include="packages.config" />
     <None Include="ProjectTemplates\Cloud\readme.md" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
-    <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
     <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
     <Content Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\_Definitions\CSharp.vstemplate" />
@@ -494,6 +492,7 @@
     <Content Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\VB.vstemplate" />
+    <None Include="ItemTemplates\Extensibility\HtmlValidator\validator.cs" />
     <Compile Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ISearchController.cs" />
     <Compile Include="ItemTemplates\Web\_Samples\_Sample Multi Files\SearchController.cs" />
     <Compile Include="ItemTemplates\Web\_Samples\_Sample Multi Files\WorkerService\ISearchWorkerService.cs" />

@@ -8,7 +8,7 @@ using Microsoft.Web.Editor;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 
-namespace MadsKristensen.EditorExtensions
+namespace $rootnamespace$
 {
     [Export(typeof(IHtmlSmartTagProvider))]
     [ContentType(HtmlContentTypeDefinition.HtmlContentType)]
