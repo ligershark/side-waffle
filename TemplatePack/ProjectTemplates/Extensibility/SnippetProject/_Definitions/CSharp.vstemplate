@@ -1,0 +1,30 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Code Snippet Extension</Name>
+    <Description>Makes it easy to distribute code snippets in a VSIX</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>MySnippets</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>logo.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$projectname$.csproj" File="MySnippets.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="README.txt" OpenInEditor="true">README.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="registry.pkgdef">registry.pkgdef</ProjectItem>
+      <Folder Name="Snippets" TargetFolderName="Snippets">
+        <Folder Name="CSharp" TargetFolderName="CSharp">
+          <Folder Name="MySnippets" TargetFolderName="$safeprojectname$">
+            <ProjectItem ReplaceParameters="false" TargetFileName="Dispose.Snippet">Dispose.Snippet</ProjectItem>
+            <ProjectItem ReplaceParameters="false" TargetFileName="WCFUsing.Snippet">WCFUsing.Snippet</ProjectItem>
+          </Folder>
+        </Folder>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="source.extension.vsixmanifest">_source.extension.vsixmanifest</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

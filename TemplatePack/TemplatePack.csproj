@@ -266,6 +266,12 @@
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\Scripts\MyExtension.js" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\_Definitions\CSharp.vstemplate" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\_source.extension.vsixmanifest" />
+    <None Include="ProjectTemplates\Extensibility\SnippetProject\logo.png" />
+    <Content Include="ProjectTemplates\Extensibility\SnippetProject\MySnippets.csproj" />
+    <Content Include="ProjectTemplates\Extensibility\SnippetProject\README.txt" />
+    <Content Include="ProjectTemplates\Extensibility\SnippetProject\registry.pkgdef" />
+    <Content Include="ProjectTemplates\Extensibility\SnippetProject\_source.extension.vsixmanifest" />
+    <Content Include="ProjectTemplates\Extensibility\SnippetProject\_Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\app\img\icon.png" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\app\popup.html" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\app\popup.js" />
@@ -424,6 +430,8 @@
     <None Include="ItemTemplates\Extensibility\VS Command Table\_Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\readme.md" />
+    <None Include="ProjectTemplates\Extensibility\SnippetProject\Snippets\CSharp\MySnippets\Dispose.Snippet" />
+    <None Include="ProjectTemplates\Extensibility\SnippetProject\Snippets\CSharp\MySnippets\WCFUsing.Snippet" />
     <None Include="ProjectTemplates\Web\Chrome Extension\app\manifest.json" />
     <None Include="ProjectTemplates\Web\Chrome Extension\Properties\build\ligershark.chrome.targets" />
     <None Include="ProjectTemplates\Web\Chrome Theme\app\manifest.json" />

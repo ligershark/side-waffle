@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Author>Robert MacLean - http://www.sadev.co.za</Author>
+      <Description>Implements the dispose pattern correctly for an object - you still need to add the IDisposable interface to the type defination.</Description>
+      <HelpUrl>http://www.sadev.co.za</HelpUrl>
+      <Keywords>
+        <Keyword>C#</Keyword>
+        <Keyword>Dispose</Keyword>
+        <Keyword>Region</Keyword>
+        <Keyword>Task Items</Keyword>
+      </Keywords>
+      <Shortcut>dispose</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Dispose</Title>
+    </Header>
+    <Snippet>
+      <Declarations>        
+        <Literal default="true" Editable="false">
+          <ID>classname</ID>
+          <ToolTip>Class name</ToolTip>
+          <Function>ClassName()</Function>
+          <Default>ClassNamePlaceholder</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+        #region IDisposable Members
+
+        /// <summary>
+        /// Internal variable which checks if Dispose has already been called
+        /// </summary>
+        private Boolean disposed;
+
+        /// <summary>
+        /// Releases unmanaged and - optionally - managed resources
+        /// </summary>
+        /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        protected virtual void Dispose(Boolean disposing)
+        {
+            if (disposed)
+            {
+                return;
+            }
+
+            if (disposing)
+            {
+                //TODO: Managed cleanup code here, while managed refs still valid
+            }
+            //TODO: Unmanaged cleanup code here
+
+            disposed = true;
+        }
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            // Call the private Dispose(bool) helper and indicate 
+            // that we are explicitly disposing
+            this.Dispose(true);
+
+            // Tell the garbage collector that the object doesn't require any
+            // cleanup when collected since Dispose was called explicitly.
+            GC.SuppressFinalize(this);
+        }
+        
+        /// <summary>
+        /// The destructor for the class.
+        /// </summary>
+        ~$classname$() 
+        { 
+            this.Dispose(false); 
+        }
+
+
+        #endregion
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

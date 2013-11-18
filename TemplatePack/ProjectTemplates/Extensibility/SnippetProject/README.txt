@@ -1,0 +1,1 @@
+﻿Read more about how to customize the snippet project at http://madskristensen.net/post/shipping-visual-studio-snippets-in-an-extension
