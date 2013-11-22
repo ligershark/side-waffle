@@ -16,7 +16,7 @@ namespace $safeprojectname$
 
         public string GetScript()
         {
-            using (Stream stream = GetType().Assembly.GetManifestResourceStream("$safeprojectname$.Scripts.$safeprojectname$.js"))
+            using (Stream stream = GetType().Assembly.GetManifestResourceStream("$safeprojectname$.Scripts.$safeprojectname$Extension.js"))
             using (StreamReader reader = new StreamReader(stream))
             {
                 return reader.ReadToEnd();
