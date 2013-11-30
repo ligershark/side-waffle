@@ -1,0 +1,21 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>FSharpSample</Name>
+    <Description>FSharp sample project template</Description>
+    <ProjectType>FSharp</ProjectType>
+    <ProjectSubType></ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>FSharpSample</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>fsharp-logo-32x32.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="SayedFSharpSample.fsproj" File="SayedFSharpSample.fsproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Program.fs">Program.fs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="App.config">App.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

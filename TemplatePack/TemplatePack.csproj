@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.21-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.22-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -170,14 +170,14 @@
     <Content Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\Web.VB.vstemplate" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
+    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <None Include="ItemTemplates\Web\JavaScript\NodeJS\package.json" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\icon.png" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\Web.VB.vstemplate" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <Content Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\app.manifest" />
     <Content Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\aspnet.ico" />
@@ -223,6 +223,10 @@
     <Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\_Samples\_FSharp Samples\fsharp-logo-32x32.png" />
+    <Content Include="ItemTemplates\Web\_Samples\_FSharp Samples\icon.png" />
+    <Content Include="ItemTemplates\Web\_Samples\_FSharp Samples\Sayed.fs" />
+    <Content Include="ItemTemplates\Web\_Samples\_FSharp Samples\_Definitions\fsharp.vstemplate" />
     <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\icon.png" />
     <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\InputModels\Search\readme.txt" />
     <Content Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ViewModels\readme.txt" />
@@ -458,6 +462,9 @@
     <None Include="ProjectTemplates\Web\_Sample Multi Project\Web\Web.config" />
     <None Include="ProjectTemplates\Web\_Sample Multi Project\Web\Web.Debug.config" />
     <None Include="ProjectTemplates\Web\_Sample Multi Project\Web\Web.Release.config" />
+    <None Include="ProjectTemplates\Web\_SampleFSharpTemplate\App.config" />
+    <None Include="ProjectTemplates\Web\_SampleFSharpTemplate\fsharp-logo-32x32.pdn" />
+    <None Include="ProjectTemplates\Web\_SampleFSharpTemplate\SayedFSharpSample.fsproj" />
     <None Include="ProjectTemplates\Web\_SampleWeb\Web.config" />
     <None Include="ProjectTemplates\Web\_SampleWeb\Web.Debug.config" />
     <None Include="ProjectTemplates\Web\_SampleWeb\Web.Release.config" />
@@ -479,6 +486,13 @@
     <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\__TemplateIcon.png" />
     <Content Include="ProjectTemplates\Web\_Sample Multi Project\_Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Web\_Sample Multi Project\_Definitions\templateinfo.xml" />
+    <Content Include="ProjectTemplates\Web\_SampleFSharpTemplate\fsharp-logo-256x256.png" />
+    <Content Include="ProjectTemplates\Web\_SampleFSharpTemplate\fsharp-logo-32x32.png" />
+    <Content Include="ProjectTemplates\Web\_SampleFSharpTemplate\icon.png" />
+    <Content Include="ProjectTemplates\Web\_SampleFSharpTemplate\Program.fs" />
+    <Content Include="ProjectTemplates\Web\_SampleFSharpTemplate\_Definitions\fsharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ProjectTemplates\Web\_SampleWeb\SampleWeb.csproj" />
     <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\templateinfo.xml" />
