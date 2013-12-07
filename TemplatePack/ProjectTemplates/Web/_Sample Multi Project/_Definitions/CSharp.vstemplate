@@ -18,4 +18,8 @@
       <CustomParameter Name="$slnname$" Value="$safeprojectname$Orig"/>
     </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>TemplateBuilder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>TemplateBuilder.RootWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>
