@@ -480,7 +480,9 @@
     <Content Include="ProjectTemplates\Web\_Sample Multi Project\Shared\__TemplateIcon.ico" />
     <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\Default.aspx" />
     <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\My.Cool.Company.WebFrontEnd.csproj" />
-    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\MyTemplate.vstemplate" />
+    <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\MyTemplate.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\_preprocess.xml" />
     <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\__PreviewImage.png" />
     <Content Include="ProjectTemplates\Web\_Sample Multi Project\Web\__TemplateIcon.png" />
