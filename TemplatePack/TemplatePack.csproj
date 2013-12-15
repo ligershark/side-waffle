@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.24-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.25-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -506,7 +506,9 @@
     <Content Include="Snippets\JavaScript\SideWaffle\ng.service.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="Snippets\CSharp\SideWaffle\Dispose.Snippet" />
+    <None Include="Snippets\CSharp\SideWaffle\Dispose.Snippet">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Snippets\CSharp\SideWaffle\WCFUsing.Snippet" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
@@ -559,7 +561,7 @@
     <Reference Include="System" />
     <Reference Include="TemplateBuilder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\TemplateBuilder.1.0.3.24-beta\lib\TemplateBuilder.dll</HintPath>
+      <HintPath>..\packages\TemplateBuilder.1.0.3.25-beta\lib\TemplateBuilder.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
