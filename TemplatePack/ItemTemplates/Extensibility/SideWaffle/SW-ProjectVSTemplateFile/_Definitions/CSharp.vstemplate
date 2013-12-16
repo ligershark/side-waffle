@@ -9,7 +9,7 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
-    <ProjectItem ReplaceParameters="false" TargetFileName="Definitions\_project.vstemplate.xml" OpenInEditor="true">_project.vstemplate.xml</ProjectItem>
+    <ProjectItem ReplaceParameters="false" TargetFileName="_Definitions\_project.vstemplate.xml" OpenInEditor="true">_project.vstemplate.xml</ProjectItem>
     <ProjectItem ReplaceParameters="false" TargetFileName="file-icon.png" OpenInEditor="false">file-icon.png</ProjectItem>
   </TemplateContent>
 </VSTemplate>
