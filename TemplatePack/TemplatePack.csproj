@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.26-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.27-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -667,7 +667,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="TemplateBuilder">
-      <HintPath>..\packages\TemplateBuilder.1.0.3.26-beta\lib\TemplateBuilder.dll</HintPath>
+      <HintPath>..\packages\TemplateBuilder.1.0.3.27-beta\lib\TemplateBuilder.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
