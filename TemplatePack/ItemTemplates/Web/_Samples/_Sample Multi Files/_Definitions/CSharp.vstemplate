@@ -6,7 +6,7 @@
     <ProjectType>CSharp</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-    <SortOrder>1</SortOrder>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <ProjectItem TargetFileName="I$safeitemname$Controller.cs" ReplaceParameters="true">ISearchController.cs</ProjectItem>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Preprocess>
-  <Replacements Include="*.*" Exclude="*.vstemplate;*.csproj*.jpg;*.png;*.ico;_preprocess.xml">   
+  <Replacements Include="*.*" Exclude="*.vstemplate;*.csproj*.jpg;*.png;*.ico;_preprocess.xml">
     <add key="My.Namespace" value="$safeprojectname$"/>
   </Replacements>
 </Preprocess>
