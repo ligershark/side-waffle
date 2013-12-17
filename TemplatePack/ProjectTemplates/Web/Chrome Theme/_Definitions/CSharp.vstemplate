@@ -1,6 +1,6 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
-    <Name>Chrome Theme</Name>
+    <Name>Google Chrome Theme</Name>
     <Description>A google chrome theme</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
