@@ -7,7 +7,21 @@
         2. Define the environment variable TemplateBuilderDevRoot which should
            point to the root template-builder folder, this should end with a \
            as well. For example 'C:\Data\personal\mycode\template-builder\'.
+
+.PARAMETER extraBuildArgs
+    You can now pass in additional arguments for msbuild.exe
+    Let's say you want to execute a specific target and don't want to hack this file
+    you can invoke it in the following way
+                .\build-debug.ps1 -extraBuildArgs '/t:Demo'
+
+.PARAMETER preventOverridingTargetsPath
+    If this is set the build will still be invoked but the path to the .targets & .tasks file will not be modified. This is useful if you just want to build with the sources in place and use the Debug build configuration
 #>
+param(
+    $extraBuildArgs,   
+
+    [switch]$preventOverridingTargetsPath
+    )
 function Get-ScriptDirectory
 {
     $Invocation = (Get-Variable MyInvocation -Scope 1).Value
@@ -18,7 +32,6 @@ function Get-ScriptDirectory
 # There are a few things which this script requires
 #     msbuild alias
 #     TemplateBuilderDevRoot : Environment variable
-
 
 # When called it will return true if all dependencies are found, and false if not
 function CheckForDependencies{
@@ -72,12 +85,18 @@ if(CheckForDependencies){
 
     $msbuildArgs = @()
     $msbuildArgs += ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
+    $msbuildArgs += ("/p:Configuration=Debug");
     $msbuildArgs += ("/p:VisualStudioVersion=11.0");
-    $msbuildArgs += ("/p:TemplateBuilderTargets={0}" -f $templateBuilderTargetsPath)
-    $msbuildArgs += ("/p:ls-TasksRoot={0}" -f $templateTaskRoot)
+    if(!$preventOverridingTargetsPath){
+        $msbuildArgs += ("/p:TemplateBuilderTargets={0}" -f $templateBuilderTargetsPath)
+        $msbuildArgs += ("/p:ls-TasksRoot={0}" -f $templateTaskRoot)
+    }
     $msbuildArgs += '/flp1:v=d;logfile=msbuild.d.log'
     $msbuildArgs += '/flp2:v=diag;logfile=msbuild.diag.log'
     $msbuildArgs += '/clp:v=m'
+    if($extraBuildArgs){
+        $msbuildArgs += $extraBuildArgs
+    }
 
     "Calling msbuild.exe with the following args: {0}" -f $msbuildArgs | Write-Host
     & msbuild $msbuildArgs
@@ -86,9 +105,3 @@ if(CheckForDependencies){
     "    msbuild.d.log" | Write-Host -ForegroundColor Green
     "    msbuild.diag.log" | Write-Host -ForegroundColor Green
 }
-
-
-
-
-
-
