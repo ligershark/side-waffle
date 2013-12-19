@@ -199,6 +199,14 @@
     <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <Content Include="ItemTemplates\Misc\Svg\file.svg" />
     <None Include="ItemTemplates\Web\JavaScript\NodeJS\package.json" />
+    <Content Include="ItemTemplates\Web\Misc\WebVTT\icon.png" />
+    <None Include="ItemTemplates\Web\Misc\WebVTT\subtitles.vtt" />
+    <Content Include="ItemTemplates\Web\Misc\WebVTT\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\WebVTT\_Definitions\VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Web\Misc\WebVTT\_Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\WebVTT\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\icon.png" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\VB.vstemplate" />
@@ -443,7 +451,9 @@
     <Content Include="ItemTemplates\Web\Misc\HumansTxt\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\HumansTxt\humans.txt" />
     <Content Include="ItemTemplates\Web\Misc\HumansTxt\icon.png" />
-    <Content Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\Web.VB.vstemplate" />
