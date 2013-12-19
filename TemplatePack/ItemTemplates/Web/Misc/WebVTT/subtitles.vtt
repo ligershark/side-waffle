@@ -1,10 +1,12 @@
 WEBVTT
 
 0:00:01.000 --> 0:00:03.000
-Captain, this is Mr. Joost.
+Hey Batman and Robin
+
+NOTE <v> elements can be used with the ::cue(v[voice=batman]) CSS selector 
 
 0:00:03.000 --> 0:00:05.500
-<v batman>Supervisor Joost!</v>
+<v batman>Wazzup?</v>
 
 0:00:06.000 --> 0:00:09.000
-<v robin>Renovation Team Nova</v>
+<v robin>Holla</v>
