@@ -3,7 +3,9 @@ WEBVTT
 0:00:01.000 --> 0:00:03.000
 Hey Batman and Robin
 
-NOTE <v> elements can be used with the ::cue(v[voice=batman]) CSS selector 
+
+NOTE <v> elements can be used with the ::cue(v[voice=batman]) CSS selector  
+
 
 0:00:03.000 --> 0:00:05.500
 <v batman>Wazzup?</v>
