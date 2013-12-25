@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.31-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.33-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -146,7 +146,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Global.asax" />
-    <Content Include="ItemTemplates\Misc\ReadmeMd\icon.png" />
     <Content Include="ItemTemplates\Misc\Svg\icon.png" />
     <Content Include="ItemTemplates\Misc\Svg\_Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
@@ -195,8 +194,6 @@
     <Content Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\Web.VB.vstemplate" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\icon.pdn" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\readme.md" />
     <Content Include="ItemTemplates\Misc\Svg\file.svg" />
     <None Include="ItemTemplates\Web\JavaScript\NodeJS\package.json" />
     <Content Include="ItemTemplates\Web\Misc\WebVTT\icon.png" />
@@ -219,9 +216,7 @@
     <None Include="ItemTemplates\Windows Phone\readme.md" />
     <None Include="ItemTemplates\Windows Store\readme.md" />
     <None Include="ItemTemplates\WPF\readme.md" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
     <None Include="ProjectTemplates\Cloud\readme.md" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
     <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
@@ -434,6 +429,7 @@
     <Content Include="ProjectTemplates\Web\_SampleNewWeb\_Definitions\_project.vstemplate.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="ProjectTemplates\Web\_SampleNewWeb\_preprocess.xml" />
     <Content Include="ProjectTemplates\Web\_SampleWeb\SampleWeb.csproj" />
     <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate" />
     <Content Include="Snippets\JavaScript\SideWaffle\ng.controller.snippet" />
@@ -479,7 +475,7 @@
     <Reference Include="System" />
     <Reference Include="TemplateBuilder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\TemplateBuilder.1.0.3.31-beta\lib\TemplateBuilder.dll</HintPath>
+      <HintPath>..\packages\TemplateBuilder.1.0.3.33-beta\lib\TemplateBuilder.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
