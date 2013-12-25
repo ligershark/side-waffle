@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.33-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.34-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="feed.pkgdef">
@@ -288,7 +288,9 @@
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\_Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\SnippetProject\MySnippets.csproj" />
     <Content Include="ProjectTemplates\Extensibility\SnippetProject\_Definitions\CSharp.vstemplate" />
-    <Content Include="ProjectTemplates\Extensibility\TemplatePack\TemplatePack.csproj" />
+    <Content Include="ProjectTemplates\Extensibility\TemplatePack\TemplatePack.csproj">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ProjectTemplates\Extensibility\TemplatePack\_preprocess.xml" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\ChromeExtensionProjectTemplate.csproj" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate">
@@ -410,7 +412,7 @@
     <None Include="ItemTemplates\Extensibility\VS Command Table\_Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\readme.md" />
-    <None Include="ProjectTemplates\Extensibility\TemplatePack\_Definitions\_project.vstemplate.xmlTEST" />
+    <Content Include="ProjectTemplates\Extensibility\TemplatePack\_Definitions\_project.vstemplate.xml" />
     <None Include="ProjectTemplates\Web\_SampleFSharpTemplate\SayedFSharpSample.fsproj" />
     <None Include="ProjectTemplates\Windows Phone\readme.md" />
     <None Include="ProjectTemplates\Windows Store\readme.md" />
@@ -478,7 +480,7 @@
     <Reference Include="System" />
     <Reference Include="TemplateBuilder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\TemplateBuilder.1.0.3.33-beta\lib\TemplateBuilder.dll</HintPath>
+      <HintPath>..\packages\TemplateBuilder.1.0.3.34-beta\lib\TemplateBuilder.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
