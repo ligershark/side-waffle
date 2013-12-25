@@ -288,6 +288,8 @@
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\_Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\SnippetProject\MySnippets.csproj" />
     <Content Include="ProjectTemplates\Extensibility\SnippetProject\_Definitions\CSharp.vstemplate" />
+    <Content Include="ProjectTemplates\Extensibility\TemplatePack\TemplatePack.csproj" />
+    <Content Include="ProjectTemplates\Extensibility\TemplatePack\_preprocess.xml" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\ChromeExtensionProjectTemplate.csproj" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
@@ -408,6 +410,7 @@
     <None Include="ItemTemplates\Extensibility\VS Command Table\_Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.pdn" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\readme.md" />
+    <None Include="ProjectTemplates\Extensibility\TemplatePack\_Definitions\_project.vstemplate.xmlTEST" />
     <None Include="ProjectTemplates\Web\_SampleFSharpTemplate\SayedFSharpSample.fsproj" />
     <None Include="ProjectTemplates\Windows Phone\readme.md" />
     <None Include="ProjectTemplates\Windows Store\readme.md" />
