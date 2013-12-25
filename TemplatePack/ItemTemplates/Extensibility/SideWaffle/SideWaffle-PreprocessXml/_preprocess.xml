@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Preprocess>
+  <!--
+  You can specify the path where this should show up in the
+  Add New Project / Add New Item dialog by setting the value below
+  
+  <TemplateInfo Path="CSharp\Web\Custom\Subcategory"/>
+  -->
   <Replacements Include="*.*" Exclude="*.vstemplate;*.csproj*.jpg;*.png;*.ico;_preprocess.xml">
     <add key="My.Namespace" value="$safeprojectname$"/>
   </Replacements>
