@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TemplateReport>
+  <ItemTemplates>
+    <ItemTemplate Path="TemplatePack\ItemTemplates\Misc\ReadmeMd\_Definitions\CSharp.vstemplate" Name="Readme.md File" Description="Adding a README to help give people an overview of your project." ProjectType="CSharp" ProjectSubType="" />
+    <ItemTemplate Path="TemplatePack\ItemTemplates\Misc\ReadmeMd\_Definitions\VB.vstemplate" Name="Readme.md File" Description="Adding a README to help give people an overview of your project." ProjectType="VisualBasic" ProjectSubType="" />
+    <ItemTemplate Path="TemplatePack\ItemTemplates\Misc\ReadmeMd\_Definitions\Web.csharp.vstemplate" Name="Readme.md File" Description="Adding a README to help give people an overview of your project." ProjectType="Web" ProjectSubType="CSharp" />
+    <ItemTemplate Path="TemplatePack\ItemTemplates\Misc\ReadmeMd\_Definitions\Web.VB.vstemplate" Name="Readme.md File" Description="Adding a README to help give people an overview of your project." ProjectType="Web" ProjectSubType="VisualBasic" />
+  </ItemTemplates>
+  <ProjectTemplates />
+  <Snippets />
+</TemplateReport>
