@@ -2,7 +2,7 @@
   <TemplateData>
     <Name>Your name here</Name>
     <Description>Project description here</Description>
-    <DefaultName>MyWebApp</DefaultName>
+    <DefaultName>$rootnamespace$</DefaultName>
     
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType></ProjectSubType>
@@ -11,13 +11,13 @@
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-    <Icon>icon.png</Icon>
+    <Icon>file-icon.png</Icon>
     
     <!-- Indicates how many parent folders this item template should appear in -->
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="$projectname$.csproj" File="WebApplication1.csproj" ReplaceParameters="true">      
+    <Project TargetFileName="$rootnamespace$.csproj" File="$rootnamespace$.csproj" ReplaceParameters="true">      
     </Project>
   </TemplateContent>
 </VSTemplate>
