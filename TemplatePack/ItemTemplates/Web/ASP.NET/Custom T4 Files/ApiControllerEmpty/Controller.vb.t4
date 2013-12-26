@@ -1,0 +1,9 @@
+﻿<#@ template language="VB" HostSpecific="True" #>
+<#@ output extension="vb" #>
+<#@ parameter type="System.String" name="ControllerName" #>
+Imports System.Net
+Imports System.Web.Http
+
+Public Class <#= ControllerName #>
+    Inherits ApiController
+End Class

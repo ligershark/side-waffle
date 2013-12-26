@@ -1,0 +1,79 @@
+﻿<#@ template language="VB" HostSpecific="True" #>
+<#@ output extension="vb" #>
+<#@ parameter type="System.String" name="ControllerName" #>
+<#@ parameter type="System.String" name="ControllerRootName" #>
+<#@ parameter type="System.String" name="AreaName" #>
+<#
+Dim routeComment As String
+If String.IsNullOrEmpty(AreaName) Then
+    routeComment = "/" + ControllerRootName
+Else
+    routeComment = "/" + AreaName + "/" + ControllerRootName
+End If
+#>
+Imports System.Web.Mvc
+
+Public Class <#= ControllerName #>
+    Inherits Controller
+
+    ' GET: <#= routeComment #>
+    Function Index() As ActionResult
+        Return View()
+    End Function
+
+    ' GET: <#= routeComment #>/Details/5
+    Function Details(ByVal id As Integer) As ActionResult
+        Return View()
+    End Function
+
+    ' GET: <#= routeComment #>/Create
+    Function Create() As ActionResult
+        Return View()
+    End Function
+
+    ' POST: <#= routeComment #>/Create
+    <HttpPost()>
+    Function Create(ByVal collection As FormCollection) As ActionResult
+        Try
+            ' TODO: Add insert logic here
+
+            Return RedirectToAction("Index")
+        Catch
+            Return View()
+        End Try
+    End Function
+
+    ' GET: <#= routeComment #>/Edit/5
+    Function Edit(ByVal id As Integer) As ActionResult
+        Return View()
+    End Function
+
+    ' POST: <#= routeComment #>/Edit/5
+    <HttpPost()>
+    Function Edit(ByVal id As Integer, ByVal collection As FormCollection) As ActionResult
+        Try
+            ' TODO: Add update logic here
+
+            Return RedirectToAction("Index")
+        Catch
+            Return View()
+        End Try
+    End Function
+
+    ' GET: <#= routeComment #>/Delete/5
+    Function Delete(ByVal id As Integer) As ActionResult
+        Return View()
+    End Function
+
+    ' POST: <#= routeComment #>/Delete/5
+    <HttpPost()>
+    Function Delete(ByVal id As Integer, ByVal collection As FormCollection) As ActionResult
+        Try
+            ' TODO: Add delete logic here
+
+            Return RedirectToAction("Index")
+        Catch
+            Return View()
+        End Try
+    End Function
+End Class

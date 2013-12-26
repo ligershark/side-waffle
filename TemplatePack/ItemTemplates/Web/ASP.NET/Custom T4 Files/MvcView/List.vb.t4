@@ -1,0 +1,125 @@
+﻿<#@ template language="VB" HostSpecific="True" #>
+<#@ output extension=".vbhtml" #>
+<#@ include file="Imports.include.t4" #>
+@ModelType IEnumerable(Of <#= ViewDataTypeName #>)
+<#
+' The following chained if-statement outputs the file header code and markup for a partial view, a view using a layout page, or a regular view.
+If (IsPartialView) Then
+#>
+
+<#
+    ElseIf (IsLayoutPageSelected)
+#>
+@Code
+ViewData("Title") = "<#= ViewName#>"
+<#
+If (Not String.IsNullOrEmpty(LayoutPageFile))
+#>
+Layout = "<#= LayoutPageFile#>"
+<#
+End If
+#>
+End Code
+
+<h2><#= ViewName#></h2>
+
+<#
+Else
+#>
+
+@Code
+    Layout = Nothing
+End Code
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title><#= ViewName #></title>
+</head>
+<body>
+<#
+    PushIndent("    ")
+End If
+#>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+<#
+Dim properties As IEnumerable(Of PropertyMetadata) = ModelMetadata.Properties
+For Each modelProperty As PropertyMetadata In properties
+    If (modelProperty.Scaffold) AndAlso (Not modelProperty.IsPrimaryKey) AndAlso (Not modelProperty.IsForeignKey) Then
+#>
+<#
+        ' This is a temporary work around until core scaffolding provides support for independent associations.
+        If (modelProperty.IsAssociation) AndAlso (GetRelatedModelMetadata(modelProperty) Is Nothing)  Then
+            Continue For
+        End If
+#>
+        <th>
+            @Html.DisplayNameFor(Function(model) model.<#= GetValueExpression(modelProperty) #>)
+        </th>
+<#
+    End If
+Next
+#>
+        <th></th>
+    </tr>
+
+@For Each item In Model
+    @<tr>
+<#
+For Each modelProperty As PropertyMetadata In properties
+    If (modelProperty.Scaffold) AndAlso (Not modelProperty.IsPrimaryKey) AndAlso (Not modelProperty.IsForeignKey) Then
+#>
+<#
+        ' This is a temporary work around until core scaffolding provides support for independent associations.
+        If (modelProperty.IsAssociation) AndAlso (GetRelatedModelMetadata(modelProperty) Is Nothing)  Then
+            Continue For
+        End If
+#>
+        <td>
+            @Html.DisplayFor(Function(modelItem) <#= "item." + GetValueExpression(modelProperty) #>)
+        </td>
+<#
+    End If
+Next
+Dim pkName as String = GetPrimaryKeyName()
+If (Not pkName Is Nothing) Then
+#>
+        <td>
+            @Html.ActionLink("Edit", "Edit", New With {.id = item.<#= pkName #> }) |
+            @Html.ActionLink("Details", "Details", New With {.id = item.<#= pkName #> }) |
+            @Html.ActionLink("Delete", "Delete", New With {.id = item.<#= pkName #> })
+        </td>
+<#
+Else
+#>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", New With {.id = item.PrimaryKey}) |
+            @Html.ActionLink("Details", "Details", New With {.id = item.PrimaryKey}) |
+            @Html.ActionLink("Delete", "Delete", New With {.id = item.PrimaryKey})*@
+        </td>
+<#
+End If
+#>
+    </tr>
+Next
+
+</table>
+<#
+' The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page
+#>
+<#
+If (Not IsPartialView) AndAlso (Not IsLayoutPageSelected) Then
+    ClearIndent()
+#>
+</body>
+</html>
+<#
+End If
+#>
+<#@ include file="ModelMetadataFunctions.vb.include.t4" #>

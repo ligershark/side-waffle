@@ -1,0 +1,39 @@
+﻿
+<#+
+' These functionalities needs to move to core.
+
+    Function GetRelatedModelMetadata(ByVal modelProperty As PropertyMetadata) As RelatedModelMetadata
+        Dim propertyModel As RelatedModelMetadata = Nothing
+        Dim relatedProperties As IDictionary(Of String, RelatedModelMetadata)
+        If (ModelMetadata.RelatedEntities IsNot Nothing) Then
+            relatedProperties = ModelMetadata.RelatedEntities.ToDictionary(Function(item) item.AssociationPropertyName)
+        Else
+            relatedProperties = New Dictionary(Of String, RelatedModelMetadata)
+        End If
+        relatedProperties.TryGetValue(modelProperty.PropertyName, propertyModel)
+
+        Return propertyModel
+    End Function
+
+' A foreign key, e.g. CategoryID, will have an association name of Category
+    Function GetAssociationName(ByVal modelProperty As PropertyMetadata) As String
+        Dim propertyModel As RelatedModelMetadata = GetRelatedModelMetadata(modelProperty)
+        Return If((propertyModel IsNot Nothing), propertyModel.AssociationPropertyName, modelProperty.PropertyName)
+    End Function
+
+' A foreign key, e.g. CategoryID, will have a value expression of Category.CategoryID
+    Function GetValueExpression(ByVal modelProperty As PropertyMetadata) As String
+        Dim propertyModel As RelatedModelMetadata = GetRelatedModelMetadata(modelProperty)
+        Return If((propertyModel IsNot Nothing), propertyModel.AssociationPropertyName + "." + propertyModel.DisplayPropertyName, modelProperty.PropertyName)
+    End Function
+
+' This will return the primary key modelProperty name, if and only if there is exactly
+' one primary key. Returns null if there is no PK, or the PK is composite.
+    Function GetPrimaryKeyName () As String
+        Return If(ModelMetadata.PrimaryKeys IsNot Nothing AndAlso ModelMetadata.PrimaryKeys.Count() = 1, ModelMetadata.PrimaryKeys(0).PropertyName , Nothing)
+    End Function
+
+    Function IsPropertyGuid (ByVal modelProperty As PropertyMetadata) As Boolean
+        Return String.Equals("System.Guid", modelProperty.TypeName, StringComparison.OrdinalIgnoreCase)
+    End Function
+#>

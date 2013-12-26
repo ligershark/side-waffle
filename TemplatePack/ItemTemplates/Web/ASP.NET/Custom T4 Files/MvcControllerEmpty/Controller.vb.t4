@@ -1,0 +1,23 @@
+﻿<#@ template language="VB" HostSpecific="True" #>
+<#@ output extension="vb" #>
+<#@ parameter type="System.String" name="ControllerName" #>
+<#@ parameter type="System.String" name="ControllerRootName" #>
+<#@ parameter type="System.String" name="AreaName" #>
+<#
+Dim routeComment As String
+If String.IsNullOrEmpty(AreaName) Then
+    routeComment = "/" + ControllerRootName
+Else
+    routeComment = "/" + AreaName + "/" + ControllerRootName + "/"
+End If
+#>
+Imports System.Web.Mvc
+
+Public Class <#= ControllerName #>
+    Inherits Controller
+
+    ' GET: <#= routeComment #>
+    Function Index() As ActionResult
+        Return View()
+    End Function
+End Class

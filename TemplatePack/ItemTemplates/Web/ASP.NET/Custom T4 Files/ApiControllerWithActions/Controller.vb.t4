@@ -1,0 +1,38 @@
+﻿<#@ template language="VB" HostSpecific="True" #>
+<#@ output extension="vb" #>
+<#@ parameter type="System.String" name="ControllerName" #>
+<#@ parameter type="System.String" name="ControllerRootName" #>
+<#
+Dim pathFragment As String = ControllerRootName.ToLowerInvariant()
+#>
+Imports System.Net
+Imports System.Web.Http
+
+Public Class <#= ControllerName #>
+    Inherits ApiController
+
+    ' GET api/<#= pathFragment #>
+    Public Function GetValues() As IEnumerable(Of String)
+        Return New String() {"value1", "value2"}
+    End Function
+
+    ' GET api/<#= pathFragment #>/5
+    Public Function GetValue(ByVal id As Integer) As String
+        Return "value"
+    End Function
+
+    ' POST api/<#= pathFragment #>
+    Public Sub PostValue(<FromBody()> ByVal value As String)
+
+    End Sub
+
+    ' PUT api/<#= pathFragment #>/5
+    Public Sub PutValue(ByVal id As Integer, <FromBody()> ByVal value As String)
+
+    End Sub
+
+    ' DELETE api/<#= pathFragment #>/5
+    Public Sub DeleteValue(ByVal id As Integer)
+
+    End Sub
+End Class

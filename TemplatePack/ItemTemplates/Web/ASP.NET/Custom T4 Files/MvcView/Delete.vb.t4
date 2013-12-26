@@ -1,0 +1,95 @@
+﻿<#@ template language="VB" HostSpecific="True" #>
+<#@ output extension=".vbhtml" #>
+<#@ include file="Imports.include.t4" #>
+@ModelType <#= ViewDataTypeName #>
+<#
+' The following chained if-statement outputs the file header code and markup for a partial view, a view using a layout page, or a regular view.
+If (IsPartialView) Then
+#>
+
+<#
+    ElseIf (IsLayoutPageSelected)
+#>
+@Code
+    ViewData("Title") = "<#= ViewName#>"
+<#
+If (Not String.IsNullOrEmpty(LayoutPageFile))
+#>
+    Layout = "<#= LayoutPageFile#>"
+<#
+End If
+#>
+End Code
+
+<h2><#= ViewName#></h2>
+
+<#
+Else
+#>
+
+@Code
+    Layout = Nothing
+End Code
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title><#= ViewName #></title>
+</head>
+<body>
+<#
+    PushIndent("    ")
+End If
+#>
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4><#= ViewDataTypeShortName #></h4>
+    <hr />
+    <dl class="dl-horizontal">
+<#
+For Each modelProperty As PropertyMetadata in ModelMetadata.Properties
+    If (modelProperty.Scaffold) AndAlso (Not modelProperty.IsPrimaryKey) AndAlso (Not modelProperty.IsForeignKey) Then
+#>
+<#
+        ' This is a temporary work around until core scaffolding provides support for independent associations.
+        If (modelProperty.IsAssociation) AndAlso (GetRelatedModelMetadata(modelProperty) Is Nothing)  Then
+            Continue For
+        End If
+#>
+        <dt>
+            @Html.DisplayNameFor(Function(model) model.<#= GetValueExpression(modelProperty) #>)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(Function(model) model.<#= GetValueExpression(modelProperty) #>)
+        </dd>
+
+<#
+    End If
+Next
+#>
+    </dl>
+    @Using (Html.BeginForm())
+        @Html.AntiForgeryToken()
+
+        @<div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    End Using
+</div>
+<#
+' The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page
+#>
+<#
+If (Not IsPartialView) AndAlso (Not IsLayoutPageSelected) Then
+    ClearIndent()
+#>
+</body>
+</html>
+<#
+End If
+#>
+<#@ include file="ModelMetadataFunctions.vb.include.t4" #>

@@ -1,0 +1,6 @@
+﻿<#@ template language="VB" HostSpecific="True" #>
+<#@ output extension="vbhtml" #>
+<#@ parameter type="System.String" name="AreaName" #>
+@Code
+    Layout = "<#= If(String.IsNullOrEmpty(AreaName), "~/Views/Shared/_Layout.vbhtml", "~/Areas/" + AreaName + "/Views/Shared/_Layout.vbhtml") #>"
+End Code

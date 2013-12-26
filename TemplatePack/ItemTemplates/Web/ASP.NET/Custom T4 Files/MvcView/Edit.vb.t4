@@ -1,0 +1,154 @@
+﻿<#@ template language="VB" HostSpecific="True" #>
+<#@ output extension=".vbhtml" #>
+<#@ include file="Imports.include.t4" #>
+@ModelType <#= ViewDataTypeName #>
+<#
+' The following chained if-statement outputs the file header code and markup for a partial view, a view using a layout page, or a regular view.
+If (IsPartialView) Then
+#>
+
+<#
+    ElseIf (IsLayoutPageSelected) Then
+#>
+@Code
+    ViewData("Title") = "<#= ViewName#>"
+<#
+If (Not String.IsNullOrEmpty(LayoutPageFile))
+#>
+    Layout = "<#= LayoutPageFile#>"
+<#
+End If
+#>
+End Code
+
+<h2><#= ViewName#></h2>
+
+<#
+Else
+#>
+
+@Code
+    Layout = Nothing
+End Code
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title><#= ViewName #></title>
+</head>
+<body>
+<#
+    PushIndent("    ")
+End If
+#>
+<#
+If ReferenceScriptLibraries Then
+#>
+<#
+    If (Not IsLayoutPageSelected) AndAlso (IsBundleConfigPresent) Then
+#>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+<#
+    ElseIf (Not IsLayoutPageSelected)
+#>
+<script src="~/Scripts/jquery-<#= JQueryVersion #>.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<#
+    End If
+End If
+#>
+@Using (Html.BeginForm())
+    @Html.AntiForgeryToken()
+    
+    @<div class="form-horizontal">
+        <h4><#= ViewDataTypeShortName #></h4>
+        <hr />
+        @Html.ValidationSummary(true)
+<#
+For Each modelProperty As PropertyMetadata in ModelMetadata.Properties
+    If (modelProperty.Scaffold) AndAlso (Not modelProperty.IsAssociation) Then
+        If (modelProperty.IsPrimaryKey) Then
+#>
+        @Html.HiddenFor(Function(model) model.<#= modelProperty.PropertyName #>)
+
+<#
+        ElseIf (Not modelProperty.IsReadOnly)
+#>
+        <div class="form-group">
+<#
+            If (modelProperty.IsForeignKey) Then
+#>
+            @Html.LabelFor(Function(model) model.<#= modelProperty.PropertyName #>, "<#= GetAssociationName(modelProperty) #>", New With { .class = "control-label col-md-2" })
+<#
+            Else
+#>
+            @Html.LabelFor(Function(model) model.<#= modelProperty.PropertyName #>, New With { .class = "control-label col-md-2" })
+<#
+            End If
+#>
+            <div class="col-md-10">
+<#
+            If (modelProperty.IsForeignKey) Then
+#>
+                @Html.DropDownList("<#= modelProperty.PropertyName #>", String.Empty)
+<#
+            Else
+#>
+                @Html.EditorFor(Function(model) model.<#= modelProperty.PropertyName #>)
+<#
+            End If
+#>
+                @Html.ValidationMessageFor(Function(model) model.<#= modelProperty.PropertyName #>)
+            </div>
+        </div>
+
+<#
+        End If
+    End If
+Next
+#>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+End Using
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<#
+If (IsLayoutPageSelected) AndAlso (ReferenceScriptLibraries) AndAlso (IsBundleConfigPresent) Then
+#>
+
+@Section Scripts 
+    @Scripts.Render("~/bundles/jqueryval")
+End Section
+<#
+ElseIf (IsLayoutPageSelected AndAlso ReferenceScriptLibraries)
+#>
+<script src="~/Scripts/jquery-<#= JQueryVersion#>.min.js "></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<#
+End If
+#>
+<#
+' The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page
+#>
+<#
+If (Not IsPartialView) AndAlso (Not IsLayoutPageSelected) Then
+    ClearIndent()
+#>
+</body>
+</html>
+<#
+End If
+#>
+<#@ include file="ModelMetadataFunctions.vb.include.t4" #>

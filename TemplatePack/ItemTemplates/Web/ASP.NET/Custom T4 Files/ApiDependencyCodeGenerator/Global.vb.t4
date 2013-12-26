@@ -1,0 +1,4 @@
+﻿<#@ template language="VB" HostSpecific="True" #>
+<#@ output extension="asax" #>
+<#@ parameter type="System.String" name="Namespace" #>
+<%@ Application Codebehind="Global.asax.vb" Inherits="<#= Namespace #>.WebApiApplication" Language="VB" %>

@@ -1,0 +1,6 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#@ output extension="cshtml" #>
+<#@ parameter type="System.String" name="AreaName" #>
+@{
+    Layout = "<#= String.IsNullOrEmpty(AreaName) ? "~/Views/Shared/_Layout.cshtml" : "~/Areas/" + AreaName + "/Views/Shared/_Layout.cshtml" #>";
+}

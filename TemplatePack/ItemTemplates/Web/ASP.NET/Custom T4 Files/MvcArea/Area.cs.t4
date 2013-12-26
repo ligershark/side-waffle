@@ -1,0 +1,29 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#@ output extension="cs" #>
+<#@ parameter type="System.String" name="AreaName" #>
+<#@ parameter type="System.String" name="AreaClassName" #>
+<#@ parameter type="System.String" name="Namespace" #>
+using System.Web.Mvc;
+
+namespace <#= Namespace #>
+{
+    public class <#= AreaClassName #> : AreaRegistration 
+    {
+        public override string AreaName 
+        {
+            get 
+            {
+                return "<#= AreaName #>";
+            }
+        }
+
+        public override void RegisterArea(AreaRegistrationContext context) 
+        {
+            context.MapRoute(
+                "<#= AreaName #>_default",
+                "<#= AreaName #>/{controller}/{action}/{id}",
+                new { action = "Index", id = UrlParameter.Optional }
+            );
+        }
+    }
+}

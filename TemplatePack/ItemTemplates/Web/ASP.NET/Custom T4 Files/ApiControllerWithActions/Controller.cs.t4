@@ -1,0 +1,47 @@
+﻿<#@ template language="C#" HostSpecific="True" #>
+<#@ output extension="cs" #>
+<#@ parameter type="System.String" name="ControllerName" #>
+<#@ parameter type="System.String" name="ControllerRootName" #>
+<#@ parameter type="System.String" name="Namespace" #>
+<#
+string pathFragment = ControllerRootName.ToLowerInvariant();
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+
+namespace <#= Namespace #>
+{
+    public class <#= ControllerName #> : ApiController
+    {
+        // GET api/<#= pathFragment #>
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET api/<#= pathFragment #>/5
+        public string Get(int id)
+        {
+            return "value";
+        }
+
+        // POST api/<#= pathFragment #>
+        public void Post([FromBody]string value)
+        {
+        }
+
+        // PUT api/<#= pathFragment #>/5
+        public void Put(int id, [FromBody]string value)
+        {
+        }
+
+        // DELETE api/<#= pathFragment #>/5
+        public void Delete(int id)
+        {
+        }
+    }
+}

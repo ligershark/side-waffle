@@ -1,0 +1,14 @@
+﻿<#@ template language="VB" HostSpecific="True" #>
+<#@ output extension="vb" #>
+<#@ parameter type="System.String" name="RouteConfig" #>
+Imports System.Web.Mvc
+Imports System.Web.Routing
+
+Public Class MvcApplication
+    Inherits System.Web.HttpApplication
+
+    Sub Application_Start()
+        AreaRegistration.RegisterAllAreas()
+        <#= RouteConfig #>.RegisterRoutes(RouteTable.Routes)
+    End Sub
+End Class
