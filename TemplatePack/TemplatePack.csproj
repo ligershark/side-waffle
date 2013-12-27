@@ -139,7 +139,9 @@
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_Definitions\VB.vstemplate">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_preprocess.xml" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_preprocess-template.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_project.vstemplate.xml">
       <SubType>Designer</SubType>
     </Content>

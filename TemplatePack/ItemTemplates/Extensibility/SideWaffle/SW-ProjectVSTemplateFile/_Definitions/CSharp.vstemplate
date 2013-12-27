@@ -10,7 +10,7 @@
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="_Definitions\_project.vstemplate.xml" OpenInEditor="true">_project.vstemplate.xml</ProjectItem>
-    <ProjectItem ReplaceParameters="true" TargetFileName="_preprocess.xml" OpenInEditor="true">_preprocess.xml</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="_preprocess.xml" OpenInEditor="true">_preprocess-template.xml</ProjectItem>
     <ProjectItem ReplaceParameters="false" TargetFileName="file-icon.png" OpenInEditor="false">file-icon.png</ProjectItem>
   </TemplateContent>
 </VSTemplate>
