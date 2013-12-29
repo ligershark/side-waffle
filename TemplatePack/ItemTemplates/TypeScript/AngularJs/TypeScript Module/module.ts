@@ -18,7 +18,6 @@ var $safeitemname$: I$safeitemname$ = angular.module('$safeitemname$', [
 ]);
 
 // Execute bootstrapping code and any dependencies.
-$safeitemname$.run(['$q', '$rootScope',
-    function ($q, $rootScope) {
+$safeitemname$.run(['$q', '$rootScope', ($q, $rootScope) => {
 
-    }]);
+}]);

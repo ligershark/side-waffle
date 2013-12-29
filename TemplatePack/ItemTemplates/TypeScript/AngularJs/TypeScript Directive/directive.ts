@@ -30,6 +30,6 @@ class $safeitemname$ implements I$safeitemname$ {
 }
 
 // Update the app1 variable name to be that of your module variable
-app1.directive($safeitemname$.directiveId, ['$window', function ($window) {
-    return new $safeitemname$($window);
-}]);
+app1.directive($safeitemname$.directiveId, ['$window', $window =>
+    new $safeitemname$($window)
+]);
