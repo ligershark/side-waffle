@@ -13,7 +13,7 @@
     <Icon>file-icon.png</Icon>
     
     <!-- Indicates how many parent folders this item template should appear in -->
-    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="$projectname$.csproj" File="WebApplication1.csproj" ReplaceParameters="true">      
