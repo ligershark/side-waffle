@@ -274,7 +274,13 @@
     <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\scaffolding-file-icon.pdn" />
     <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\update.ps1" />
     <None Include="ItemTemplates\Web\JavaScript\NodeJS\package.json" />
+    <Content Include="ItemTemplates\Web\Misc\AppCacheManifest\icon.png" />
+    <Content Include="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\WebVTT\icon.png" />
+    <None Include="ItemTemplates\Web\Misc\AppCacheManifest\site.appcache" />
     <None Include="ItemTemplates\Web\Misc\WebVTT\subtitles.vtt" />
     <Content Include="ItemTemplates\Web\Misc\WebVTT\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\WebVTT\_Definitions\VB.vstemplate">
@@ -366,7 +372,9 @@
     <Content Include="ProjectTemplates\Extensibility\TemplatePack\TemplatePack.csproj">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ProjectTemplates\Extensibility\TemplatePack\_preprocess.xml" />
+    <Content Include="ProjectTemplates\Extensibility\TemplatePack\_preprocess.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ProjectTemplates\Web\Chrome Extension\ChromeExtensionProjectTemplate.csproj" />
     <Content Include="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>

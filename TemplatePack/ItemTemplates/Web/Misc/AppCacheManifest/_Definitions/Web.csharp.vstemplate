@@ -1,0 +1,15 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>site.appcache</DefaultName>
+    <Name>Offline Application Cache Manifest</Name>
+    <Description>Provide online support for your website using HTML5 App Cache.</Description>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">site.appcache</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
