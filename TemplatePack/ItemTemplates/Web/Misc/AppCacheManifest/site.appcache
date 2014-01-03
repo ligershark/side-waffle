@@ -5,3 +5,5 @@ stylesheet.css
 images/logo.png
 scripts/main.js
 http://cdn.example.com/scripts/main.js
+
+# Read more about App Cache here: http://www.html5rocks.com/en/tutorials/appcache/beginner/
