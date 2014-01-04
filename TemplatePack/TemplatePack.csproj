@@ -182,6 +182,12 @@
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\JsHintRc\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\JsHintRc\jshintrc.txt" />
+    <Content Include="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\GruntJS\Gruntfile.js" />
     <Content Include="ItemTemplates\Web\JavaScript\GruntJS\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\JsHintIgnore\icon.png" />

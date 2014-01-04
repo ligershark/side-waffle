@@ -1,0 +1,14 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>.jshintrc</DefaultName>
+    <Name>JSHint Rules File (.jshintrc)</Name>
+    <Description>Allows you to customize the rules run by JSHint</Description>
+    <ProjectType>VisualBasic</ProjectType>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true" TargetFileName=".jshintrc">jshintrc.txt</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
