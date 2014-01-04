@@ -156,6 +156,11 @@
     <Content Include="ItemTemplates\Misc\Svg\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Misc\Svg\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Misc\Svg\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\PowerShell\EmptyPowerShellFile\icon.png" />
     <Content Include="ItemTemplates\Test\NUnitFixture\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
@@ -167,6 +172,7 @@
     <Content Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Test\NUnitFixture\icon.png" />
     <Content Include="ItemTemplates\TypeScript\TS watermark.png" />
+    <None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\empty.ps1" />
     <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Site.css" />
     <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\scaffolding-file-icon.png" />
     <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\_Definitions\CSharp.vstemplate" />
