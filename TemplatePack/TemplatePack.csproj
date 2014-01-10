@@ -188,6 +188,12 @@
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\TsLint\icon.png" />
+    <None Include="ItemTemplates\Web\JavaScript\TsLint\tslint.json" />
+    <Content Include="ItemTemplates\Web\JavaScript\TsLint\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\TsLint\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\TsLint\_Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\TsLint\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\JsHintRc\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\JsHintRc\jshintrc.txt" />
     <Content Include="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\CSharp.vstemplate" />
