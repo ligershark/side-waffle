@@ -1,5 +1,5 @@
-﻿'use strict';
-var $safeitemname$ = (function () {
+﻿var $safeitemname$ = (function () {
+    'use strict';
     // Internal members
     var iffeId = '$safeitemname$';
 
