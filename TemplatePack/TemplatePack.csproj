@@ -188,6 +188,22 @@
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\Definitions\Web.csharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnitTestRunner.html" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnitTestSpecs.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\JasmineTestSpecs.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\JasmineTestRunner.html" />
     <Content Include="ItemTemplates\Web\JavaScript\TsLint\icon.png" />
     <None Include="ItemTemplates\Web\JavaScript\TsLint\tslint.json" />
     <Content Include="ItemTemplates\Web\JavaScript\TsLint\_Definitions\CSharp.vstemplate" />
@@ -461,7 +477,9 @@
     <Content Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\viewmodel.js" />
     <Content Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\_Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\_Definitions\VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\icon.png" />
