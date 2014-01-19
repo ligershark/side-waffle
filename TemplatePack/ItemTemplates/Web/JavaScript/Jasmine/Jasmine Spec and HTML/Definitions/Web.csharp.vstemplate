@@ -1,8 +1,9 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <ProjectType>VisualBasic</ProjectType>
-    <DefaultName>JasmineTest</DefaultName>
-    <Name>Jasmine Test and HTML file </Name>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <DefaultName>JasmineJSSpecAndHtml</DefaultName>
+    <Name>Jasmine Spec and HTML files</Name>
     <Description>Jasmine tests for JavaScript</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>

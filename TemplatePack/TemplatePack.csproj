@@ -188,22 +188,36 @@
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\QUnit\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\QUnit\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\QUnit\Definitions\Web.csharp.vstemplate">
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\JasmineTestSpecs.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\Definitions\Web.csharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ItemTemplates\Web\JavaScript\QUnit\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\QUnit\icon.png" />
-    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnitTestRunner.html" />
-    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnitTestSpecs.js" />
-    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Definitions\Web.VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\icon.png" />
-    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\JasmineTestSpecs.js" />
-    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\JasmineTestRunner.html" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\QUnitTestSpecs.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\Definitions\Web.csharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\QUnitTestRunner.html" />
+    <Content Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\QUnitTestSpecs.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\JasmineTestSpecs.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\JasmineTestRunner.html" />
     <Content Include="ItemTemplates\Web\JavaScript\TsLint\icon.png" />
     <None Include="ItemTemplates\Web\JavaScript\TsLint\tslint.json" />
     <Content Include="ItemTemplates\Web\JavaScript\TsLint\_Definitions\CSharp.vstemplate" />

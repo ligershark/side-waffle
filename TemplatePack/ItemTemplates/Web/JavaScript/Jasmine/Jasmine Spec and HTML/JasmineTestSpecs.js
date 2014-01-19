@@ -5,9 +5,6 @@ describe('Tests functionality defined in the object obj', function () {
     //Setup
     beforeEach(function () {
         obj.setNumber(10);
-        obj.getSquare = function () {
-            return this.number * this.number;
-        };
     });
 
     //Spec - 1

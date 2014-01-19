@@ -2,15 +2,14 @@
   <TemplateData>
     <ProjectType>Web</ProjectType>
     <ProjectSubType>CSharp</ProjectSubType>
-    <DefaultName>JasmineTest</DefaultName>
-    <Name>Jasmine Test and HTML file </Name>
-    <Description>Jasmine tests for JavaScript</Description>
+    <DefaultName>QUnitJSSpec</DefaultName>
+    <Name>QUnit Spec file</Name>
+    <Description>QUnit tests for JavaScript</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Specs.js">JasmineTestSpecs.js</ProjectItem>
-    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Runner.html">JasmineTestRunner.html</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Specs.js">QUnitTestSpecs.js</ProjectItem>
   </TemplateContent>
 </VSTemplate>
