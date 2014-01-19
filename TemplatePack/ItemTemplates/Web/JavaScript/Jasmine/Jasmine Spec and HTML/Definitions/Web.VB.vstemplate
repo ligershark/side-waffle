@@ -1,0 +1,16 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>VisualBasic</ProjectSubType>
+    <DefaultName>JasmineJSSpecAndHtml</DefaultName>
+    <Name>Jasmine Spec and HTML files</Name>
+    <Description>Jasmine tests for JavaScript</Description>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Specs.js">JasmineTestSpecs.js</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Runner.html">JasmineTestRunner.html</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
