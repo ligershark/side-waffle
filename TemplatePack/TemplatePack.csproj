@@ -472,6 +472,12 @@
     <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE\_Definitions\Web.VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE\iife.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\_Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\iifem.js" />
     <Content Include="ItemTemplates\Web\JavaScript\Durandal\Main\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\Durandal\Main\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\Durandal\Main\_Definitions\Web.csharp.vstemplate" />
