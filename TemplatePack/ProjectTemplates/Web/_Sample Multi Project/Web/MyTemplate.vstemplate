@@ -16,6 +16,7 @@
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="$safeprojectname$.WebFrontEnd.csproj" File="My.Cool.Company.WebFrontEnd.csproj" ReplaceParameters="true">
+	<!--
       <ProjectItem ReplaceParameters="true" TargetFileName="Default.aspx">Default.aspx</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Default.aspx.cs">Default.aspx.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Default.aspx.designer.cs">Default.aspx.designer.cs</ProjectItem>
@@ -25,6 +26,7 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+	  -->
     </Project>
   </TemplateContent>
   <WizardExtension>
