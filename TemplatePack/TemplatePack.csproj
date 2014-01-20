@@ -631,10 +631,9 @@
     <Folder Include="Snippets\XML\SideWaffle\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\_SampleProjRef\_SampleProjRef.csproj">
+    <ProjectReference Include="..\Project Templates\_SampleProjRef\_SampleProjRef.csproj">
       <Project>{0328c195-795d-423f-99ac-9ecf8b0b5198}</Project>
       <Name>_SampleProjRef</Name>
-      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

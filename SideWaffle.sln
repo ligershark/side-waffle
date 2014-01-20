@@ -21,7 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CF6C5B
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_SampleProjRef", "_SampleProjRef\_SampleProjRef.csproj", "{0328C195-795D-423F-99AC-9ECF8B0B5198}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project Templates", "Project Templates", "{30C5F3FE-3003-4BC0-9AC7-F084270A43DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_SampleProjRef", "Project Templates\_SampleProjRef\_SampleProjRef.csproj", "{0328C195-795D-423F-99AC-9ECF8B0B5198}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +36,14 @@ Global
 		{66E5E42A-2905-4A93-A3F7-FD26DA48A25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66E5E42A-2905-4A93-A3F7-FD26DA48A25F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0328C195-795D-423F-99AC-9ECF8B0B5198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0328C195-795D-423F-99AC-9ECF8B0B5198}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0328C195-795D-423F-99AC-9ECF8B0B5198}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0328C195-795D-423F-99AC-9ECF8B0B5198}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0328C195-795D-423F-99AC-9ECF8B0B5198} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
 	EndGlobalSection
 EndGlobal
