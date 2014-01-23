@@ -2,7 +2,7 @@
 
 [SideWaffle.com](http://sidewaffle.com) - download the extension
 
-##The ultimate web developer template packhttps://github.com/ligershark/side-waffle/blob/master/README.md
+##The ultimate web developer template pack
 
 A collection of Item Templates for Visual Studio 2012/2013 
 that makes any web developer's life much easier.
