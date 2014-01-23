@@ -1,0 +1,13 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>Bootstrapper</DefaultName>
+    <Name>Caliburn Micro Bootstrapper</Name>
+    <Description>Adds a class file to any existing VSIX project that provides bootstrapper representation for Caliburn Micro Windows Phone 8 application.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon>caliburn-icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.cs">Bootstrapper.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
