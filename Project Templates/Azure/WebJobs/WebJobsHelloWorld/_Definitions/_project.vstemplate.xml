@@ -1,0 +1,23 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Windows Azure WebJobs Console Application</Name>
+    <Description>Windows Azure WebJobs Console Application</Description>
+    <DefaultName>WebJobsHelloWorld</DefaultName>
+    
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType></ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>    
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>azure-icon-256x256.png</Icon>
+    <PreviewImage>azure-icon-256x256.png</PreviewImage>
+    <!-- Indicates how many parent folders this item template should appear in -->
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="WebJobsHelloWorld.csproj" File="WebJobsHelloWorld.csproj" ReplaceParameters="true">      
+    </Project>
+  </TemplateContent>
+</VSTemplate>
