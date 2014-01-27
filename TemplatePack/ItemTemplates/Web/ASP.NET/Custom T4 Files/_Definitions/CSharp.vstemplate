@@ -39,7 +39,10 @@
     <ProjectItem TargetFileName="CodeTemplates\MvcView\Edit.cs.t4" ReplaceParameters="true">MvcView\Edit.cs.t4</ProjectItem>
     <ProjectItem TargetFileName="CodeTemplates\MvcView\Empty.cs.t4" ReplaceParameters="true">MvcView\Empty.cs.t4</ProjectItem>
     <ProjectItem TargetFileName="CodeTemplates\MvcView\List.cs.t4" ReplaceParameters="true">MvcView\List.cs.t4</ProjectItem>
+    <ProjectItem TargetFileName="CodeTemplates\MvcView\Imports.include.t4" ReplaceParameters="true">MvcView\Imports.include.t4</ProjectItem>
+    <ProjectItem TargetFileName="CodeTemplates\MvcView\ModelMetadataFunctions.cs.include.t4" ReplaceParameters="true">MvcView\ModelMetadataFunctions.cs.include.t4</ProjectItem>
     <ProjectItem TargetFileName="CodeTemplates\MvcViewWithoutModel\Empty.cs.t4" ReplaceParameters="true">MvcViewWithoutModel\Empty.cs.t4</ProjectItem>
+    <ProjectItem TargetFileName="CodeTemplates\MvcViewWithoutModel\Imports.include.t4" ReplaceParameters="true">MvcViewWithoutModel\Imports.include.t4</ProjectItem>
     <ProjectItem TargetFileName="CodeTemplates\ODataControllerWithContext\Controller.cs.t4" ReplaceParameters="true">ODataControllerWithContext\Controller.cs.t4</ProjectItem>
   </TemplateContent>
 </VSTemplate>
