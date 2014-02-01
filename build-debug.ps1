@@ -86,6 +86,7 @@ if(CheckForDependencies){
     $msbuildArgs = @()
     $msbuildArgs += ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
     $msbuildArgs += '/m'
+    $msbuildArgs += '/nologo'
     $msbuildArgs += ("/p:Configuration=Debug")
     $msbuildArgs += ("/p:VisualStudioVersion=11.0")
     if(!$preventOverridingTargetsPath){
@@ -94,12 +95,12 @@ if(CheckForDependencies){
     }
     $msbuildArgs += '/flp1:v=d;logfile=msbuild.d.log'
     $msbuildArgs += '/flp2:v=diag;logfile=msbuild.diag.log'
-    $msbuildArgs += '/clp:v=m'
+    $msbuildArgs += ('/clp:v=m;ShowCommandLine')
     if($extraBuildArgs){
         $msbuildArgs += $extraBuildArgs
     }
 
-    "Calling msbuild.exe with the following args: {0}" -f ($msbuildArgs -join ';') | Write-Host
+    "Calling msbuild.exe with the following args: {0}" -f ($msbuildArgs -join ' ') | Write-Host
     & msbuild $msbuildArgs
 
     "`r`n  MSBuild log files have been written to" | Write-Host -ForegroundColor Green
