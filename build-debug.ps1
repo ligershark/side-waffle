@@ -85,8 +85,9 @@ if(CheckForDependencies){
 
     $msbuildArgs = @()
     $msbuildArgs += ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
-    $msbuildArgs += ("/p:Configuration=Debug");
-    $msbuildArgs += ("/p:VisualStudioVersion=11.0");
+    $msbuildArgs += '/m'
+    $msbuildArgs += ("/p:Configuration=Debug")
+    $msbuildArgs += ("/p:VisualStudioVersion=11.0")
     if(!$preventOverridingTargetsPath){
         $msbuildArgs += ("/p:TemplateBuilderTargets={0}" -f $templateBuilderTargetsPath)
         $msbuildArgs += ("/p:ls-TasksRoot={0}" -f $templateTaskRoot)
@@ -98,7 +99,7 @@ if(CheckForDependencies){
         $msbuildArgs += $extraBuildArgs
     }
 
-    "Calling msbuild.exe with the following args: {0}" -f $msbuildArgs | Write-Host
+    "Calling msbuild.exe with the following args: {0}" -f ($msbuildArgs -join ';') | Write-Host
     & msbuild $msbuildArgs
 
     "`r`n  MSBuild log files have been written to" | Write-Host -ForegroundColor Green
