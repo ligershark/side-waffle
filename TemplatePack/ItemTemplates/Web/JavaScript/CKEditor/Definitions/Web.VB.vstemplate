@@ -1,0 +1,14 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>VisualBasic</ProjectSubType>
+    <DefaultName>plugin</DefaultName>
+    <Name>CKEditor plugin</Name>
+    <Description>CKEditor plugin file</Description>
+    <Icon>icon.png</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\plugin.js">plugin.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

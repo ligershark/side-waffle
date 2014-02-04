@@ -218,6 +218,12 @@
     <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\JasmineTestSpecs.js" />
     <Content Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\JasmineTestRunner.html" />
+    <Content Include="ItemTemplates\Web\JavaScript\CKEditor\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\CKEditor\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\CKEditor\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\CKEditor\Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\CKEditor\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\CKEditor\plugin.js" />
     <Content Include="ItemTemplates\Web\JavaScript\tinymce\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\tinymce\plugin.js" />
     <Content Include="ItemTemplates\Web\JavaScript\TsLint\icon.png" />
