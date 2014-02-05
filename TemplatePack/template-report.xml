@@ -44,7 +44,6 @@
     <ItemTemplate Path="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\CSharp.vstemplate" Name="JSHint Rules File (.jshintrc)" Description="Allows you to customize the rules run by JSHint" ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Web\JavaScript\Karma\Definitions\CSharp.vstemplate" Name="Karma Configuration File" Description="Karma configuration file. For more information please visit: http://karma-runner.github.io/0.10/intro/configuration.html " ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\_Definitions\CSharp.vstemplate" Name="Knockout Custom Binding" Description="Knockout Custom Binding: custom binding handler" ProjectType="CSharp" ProjectSubType="" />
-    <ItemTemplate Path="ItemTemplates\Web\_Samples\_Sample Multi Files\_Definitions\CSharp.vstemplate" Name="Multi file template sample" Description="Adds a few different files in one item template" ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Web\Mvc\NinjectControllerFactory\_Definitions\CSharp.vstemplate" Name="Ninect Controller Factory" Description="Adds an MVC Controller Factory class backed by a Ninject IoC container to any existing VSIX project." ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Test\NUnitFixture\Definitions\CSharp.vstemplate" Name="NUnit Fixture" Description="NUnit test fixture" ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\CSharp.vstemplate" Name="Offline Application Cache Manifest" Description="Provide online support for your website using HTML5 App Cache." ProjectType="CSharp" ProjectSubType="" />
@@ -217,13 +216,11 @@
     <ProjectTemplate Path="ProjectTemplates\Extensibility\BrowserLinkExtension\_Definitions\CSharp.vstemplate" Name="Browser Link Extension" Description="&lt;No description available&gt;" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\_Definitions\CSharp.vstemplate" Name="Browser Link Extension (simple)" Description="The fastest way to get started with writing Browser Link extensions" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Extensibility\SnippetProject\_Definitions\CSharp.vstemplate" Name="Code Snippet Extension" Description="Makes it easy to distribute code snippets in a VSIX" ProjectType="CSharp" ProjectSubType="" />
-    <ProjectTemplate Path="ProjectTemplates\Web\_Sample Multi Project\_Definitions\CSharp.vstemplate" Name="MultiProj" Description="An example of a multi-project template" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate" Name="Google Chrome Extension" Description="A Chrome Extension" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Web\Chrome Theme\_Definitions\CSharp.vstemplate" Name="Google Chrome Theme" Description="A google chrome theme" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Web\Chrome Web Store App\Definitions\CSharp.vstemplate" Name="Google Chrome Web Store App" Description="A Google Chrome Web Store App" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Web\HTML5 Boiler Platev4.3\_Definitions\CSharp.vstemplate" Name="HTML5 Boiler Plate v4.3" Description="HTML5 Boiler Plate v4.3 Project Template" ProjectType="CSharp" ProjectSubType="" />
-    <ProjectTemplate Path="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate" Name="Sample Web Project" Description="&lt;Just a sample here&gt;" ProjectType="CSharp" ProjectSubType="" />
-    <ProjectTemplate Path="ProjectTemplates\Web\_SampleFSharpTemplate\_Definitions\fsharp.vstemplate" Name="FSharpSample" Description="FSharp sample project template" ProjectType="FSharp" ProjectSubType="" />
+    <ProjectTemplate Path="ProjectTemplates\Windows Store\TypeScript Blank\_Definitions\CSharp.vstemplate" Name="Blank App" Description="A single-page project for a Windows Store app using TypeScript" ProjectType="TypeScript" ProjectSubType="Windows Store" />
   </ProjectTemplates>
   <Snippets>
     <Snippet Title="Angular Controller" Description="Template for adding an Angular Controller" Shortcut="ngctrl" Path="Snippets\JavaScript\SideWaffle\ng.controller.snippet" />
