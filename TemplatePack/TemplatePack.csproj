@@ -525,6 +525,11 @@
     <None Include="ProjectTemplates\Web\_SampleWeb\Web.Release.config" />
     <None Include="ProjectTemplates\Windows Phone\readme.md" />
     <None Include="ProjectTemplates\Windows Store\readme.md" />
+    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\package.appxmanifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\WSaTypeScript.jsproj" />
+    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\WSaTypeScript_TemporaryKey.pfx" />
     <None Include="ProjectTemplates\Windows\readme.md" />
     <None Include="Properties\template-builder.props">
       <SubType>Designer</SubType>
@@ -581,9 +586,24 @@
     </Content>
     <Content Include="ProjectTemplates\Web\_SampleNewWeb\_preprocess.xml" />
     <Content Include="ProjectTemplates\Web\_SampleWeb\SampleWeb.csproj" />
-    <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate" />
-    <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\templateinfo.xml" />
+    <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ProjectTemplates\Web\_SampleWeb\_Definitions\templateinfo.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="ProjectTemplates\Web\_SampleWeb\__TemplateIcon.ico" />
+    <Content Include="ProjectTemplates\Windows Store\TypeScript Blank\css\default.css" />
+    <Content Include="ProjectTemplates\Windows Store\TypeScript Blank\default.html" />
+    <Content Include="ProjectTemplates\Windows Store\TypeScript Blank\images\logo.scale-100.png" />
+    <Content Include="ProjectTemplates\Windows Store\TypeScript Blank\images\smalllogo.scale-100.png" />
+    <Content Include="ProjectTemplates\Windows Store\TypeScript Blank\images\splashscreen.scale-100.png" />
+    <Content Include="ProjectTemplates\Windows Store\TypeScript Blank\images\storelogo.scale-100.png" />
+    <Content Include="ProjectTemplates\Windows Store\TypeScript Blank\js\default.js" />
+    <Content Include="ProjectTemplates\Windows Store\TypeScript Blank\_Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ProjectTemplates\Windows Store\TypeScript Blank\__TemplateIcon.ico" />
     <Content Include="Snippets\JavaScript\SideWaffle\ng.controller.snippet" />
     <Content Include="Snippets\JavaScript\SideWaffle\ng.directive.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -598,6 +618,11 @@
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
+    <TypeScriptCompile Include="ProjectTemplates\Windows Store\TypeScript Blank\js\default.ts" />
+    <TypeScriptCompile Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\jquery.d.ts" />
+    <TypeScriptCompile Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\lib.d.ts" />
+    <TypeScriptCompile Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\winjs.d.ts" />
+    <TypeScriptCompile Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\winrt.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\Web.VB.vstemplate" />
