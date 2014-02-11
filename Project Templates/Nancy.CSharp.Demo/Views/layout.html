@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>$safeprojectname$</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="@Path['~/content/bootstrap.css']" rel="Stylesheet" />
+    <link href="@Path['~/content/default.min.css']" rel="Stylesheet" />
+    
+    <script src="@Path['~/content/scripts/jquery.min.js']"></script>
+    <script src="@Path['~/content/scripts/highlight.min.js']"></script>
+    <script src="@Path['~/content/scripts/bootstrap.js']"></script>
+    
+    <script>
+        $(document).ready(function () {
+            hljs.tabReplace = '    ';
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="@Path['~/']">$safeprojectname$</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                <li><a href="@Path['~/']">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        @Section['Content']
+    </div>
+</body>
+</html>
