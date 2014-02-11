@@ -607,9 +607,18 @@
     <Content Include="Snippets\JavaScript\SideWaffle\ng.service.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <None Include="Snippets\CSharp\SideWaffle\NancyModuleDelete.Snippet" />
+    <None Include="Snippets\CSharp\SideWaffle\NancyModuleGet.Snippet">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Snippets\CSharp\SideWaffle\Dispose.Snippet">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Snippets\CSharp\SideWaffle\NancyModuleHead.Snippet" />
+    <None Include="Snippets\CSharp\SideWaffle\NancyModuleOptions.Snippet" />
+    <None Include="Snippets\CSharp\SideWaffle\NancyModulePatch.Snippet" />
+    <None Include="Snippets\CSharp\SideWaffle\NancyModulePost.Snippet" />
+    <None Include="Snippets\CSharp\SideWaffle\NancyModulePut.Snippet" />
     <None Include="Snippets\CSharp\SideWaffle\WCFUsing.Snippet" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
