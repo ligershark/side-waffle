@@ -1,9 +1,7 @@
 ﻿(function() {
     'use strict';
 
-    // Define the directive on the module.
-    // Inject the dependencies. 
-    // Point to the directive definition function.
+    // TODO: replace app with your module name
     angular.module('app').directive('$safeitemname$', ['$window', $safeitemname$]);
     
     function $safeitemname$ ($window) {
