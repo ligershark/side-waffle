@@ -1,10 +1,9 @@
 ﻿(function () {
     'use strict';
 
-    // Module name is handy for logging
     var id = '$safeitemname$';
 
-    // Create the module and define its dependencies.
+    // TODO: Inject modules as needed.
     var $safeitemname$ = angular.module('$safeitemname$', [
         // Angular modules 
         'ngAnimate',        // animations
@@ -17,6 +16,7 @@
     ]);
 
     // Execute bootstrapping code and any dependencies.
+    // TODO: inject services as needed.
     $safeitemname$.run(['$q', '$rootScope',
         function ($q, $rootScope) {
 
