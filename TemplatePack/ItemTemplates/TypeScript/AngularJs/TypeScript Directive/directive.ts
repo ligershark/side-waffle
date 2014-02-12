@@ -21,7 +21,7 @@ class $safeitemname$ implements I$safeitemname$ {
     constructor(private $window: ng.IWindowService) {
     }
 
-    link(scope: I$safeitemname$Scope, element, attrs) {
+    link = (scope: I$safeitemname$Scope, element, attrs) => {
         scope.greeting = "Hi!";
         scope.changeGreeting = () => {
             scope.greeting = "See ya!";
