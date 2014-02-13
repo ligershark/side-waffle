@@ -720,10 +720,9 @@
     <None Include="ItemTemplates\Windows Phone\CaliburnMicroBootstrapper\Bootstrapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Guids.cs" />
     <Compile Include="ItemTemplates\Web\Nancy\NancyBootstrapper\bootstrapper.cs" />
     <Compile Include="ItemTemplates\Web\Nancy\NancyModule\module.cs" />
-    <Compile Include="PkgCmdID.cs" />
+    <Compile Include="PackageConstants.cs" />
     <Compile Include="TemplatePackPackage.cs" />
     <Compile Include="Tooling\ProjectSelector2.xaml.cs">
       <DependentUpon>ProjectSelector2.xaml</DependentUpon>

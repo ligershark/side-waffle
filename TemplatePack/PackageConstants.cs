@@ -1,5 +1,5 @@
-﻿// Guids.cs
-// MUST match guids.h
+﻿// PkgCmdID.cs
+// MUST match PkgCmdID.h
 using System;
 
 namespace TemplatePack
@@ -10,5 +10,10 @@ namespace TemplatePack
         public const string guidTemplatePackCmdSetString = "a94bef1a-053e-4066-a851-16e5f6c915f1";
 
         public static readonly Guid guidTemplatePackCmdSet = new Guid(guidTemplatePackCmdSetString);
+    }
+
+    static class PkgCmdIDList
+    {
+        public const uint cmdidMyCommand = 0x100;
     };
 }
