@@ -53,7 +53,7 @@ namespace TemplatePack
         private void ButtonClicked(object sender, EventArgs e)
         {
             Project currentProject = GetSelectedProjects().ElementAt(0);
-            var projects = _dte.Solution.GetAllNonWebProjects();
+            var projects = _dte.Solution.GetAllProjects();
             var names = from p in projects
                         where p != currentProject
                         select p.Name;
@@ -63,13 +63,12 @@ namespace TemplatePack
 
             if (isSelected.HasValue && isSelected.Value)
             {
-                WebJobCreator creator = new WebJobCreator();
-                var selectedProject = projects.First(p => p.Name == selector.SelectedProjectName);
-                creator.AddReference(currentProject, selectedProject);
-                creator.CreateFolders(currentProject, selector.SelectedProjectName);
+                // need to save everything because we will directly write to the project file in the creator
+                _dte.ExecuteCommand("File.SaveAll");
 
-                // ensure that the NuGet package is installed in the project as well
-                //InstallWebJobsNuGetPackage(currentProject);
+                TemplateReferenceCreator creator = new TemplateReferenceCreator();
+                var selectedProject = projects.First(p => p.Name == selector.SelectedProjectName);
+                creator.AddTemplateReference(currentProject, selectedProject);
             }
         }
 

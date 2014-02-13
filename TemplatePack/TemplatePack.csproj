@@ -79,9 +79,6 @@
     <Content Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\icon.png" />
     <Content Include="ItemTemplates\Extensibility\BrowserLink\_Definitions\CSharp.vstemplate" />
     <Content Include="resources\Package.ico" />
-    <Content Include="Tooling\readme.txt">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
     <None Include="ItemTemplates\Azure\CloudServicePlugin\CloudServicePlugin.csplugin" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\custom.targets" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\custom.props">
@@ -668,6 +665,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Tasks.v4.0" />
+    <Reference Include="Microsoft.Build.Utilities.v4.0" />
     <Reference Include="Microsoft.VisualStudio.CommandBars, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -690,6 +690,7 @@
     <Reference Include="System" />
     <Reference Include="System.Design" />
     <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
     <Reference Include="TemplateBuilder">
       <HintPath>..\packages\TemplateBuilder.1.0.3.44-beta\lib\TemplateBuilder.dll</HintPath>
     </Reference>
@@ -728,7 +729,7 @@
       <DependentUpon>ProjectSelector2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tooling\SolutionHelper.cs" />
-    <Compile Include="Tooling\WebJobCreator.cs" />
+    <Compile Include="Tooling\TemplateReferenceCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <VSCTCompile Include="TemplatePack.vsct">
