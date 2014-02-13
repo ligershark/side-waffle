@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Author>Luís Rudge - http://luisrudge.net</Author>
+      <Description>Adds a Options endpoint to a module</Description>
+      <HelpUrl>https://github.com/NancyFx/Nancy/wiki/Defining-routes</HelpUrl>
+      <Keywords>
+        <Keyword>C#</Keyword>
+        <Keyword>NancyFX</Keyword>
+      </Keywords>
+      <Shortcut>noptions</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Nancy - Options</Title>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal default="true" Editable="false">
+          <ID>nancyOptions</ID>
+          <ToolTip>Options</ToolTip>
+          <Function>Options()</Function>
+          <Default>Options</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+        Options["/"] = _ => "Hello!";
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

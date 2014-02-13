@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Author>Luís Rudge - http://luisrudge.net</Author>
+      <Description>Adds a Patch endpoint to a module</Description>
+      <HelpUrl>https://github.com/NancyFx/Nancy/wiki/Defining-routes</HelpUrl>
+      <Keywords>
+        <Keyword>C#</Keyword>
+        <Keyword>NancyFX</Keyword>
+      </Keywords>
+      <Shortcut>npatch</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Nancy - Patch</Title>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal default="true" Editable="false">
+          <ID>nancyPatch</ID>
+          <ToolTip>Patch</ToolTip>
+          <Function>Patch()</Function>
+          <Default>Patch</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+        Patch["/"] = _ => "Hello!";
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

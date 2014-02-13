@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Author>Luís Rudge - http://luisrudge.net</Author>
+      <Description>Adds a Get endpoint to a module</Description>
+      <HelpUrl>https://github.com/NancyFx/Nancy/wiki/Defining-routes</HelpUrl>
+      <Keywords>
+        <Keyword>C#</Keyword>
+        <Keyword>NancyFX</Keyword>
+      </Keywords>
+      <Shortcut>nget</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Nancy - Get</Title>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal default="true" Editable="false">
+          <ID>nancyget</ID>
+          <ToolTip>Get</ToolTip>
+          <Default>Get</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+        Get["/"] = _ => "Hello!";
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
