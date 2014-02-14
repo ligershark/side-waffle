@@ -596,6 +596,8 @@
     <None Include="Snippets\CSharp\SideWaffle\NancyModulePost.Snippet" />
     <None Include="Snippets\CSharp\SideWaffle\NancyModulePut.Snippet" />
     <None Include="Snippets\CSharp\SideWaffle\WCFUsing.Snippet" />
+    <None Include="Snippets\CSS\SideWaffle\css-linear-gradient.snippet" />
+    <None Include="Snippets\CSS\SideWaffle\css-radial-gradient.snippet" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
@@ -707,7 +709,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Snippets\C++\SideWaffle\" />
-    <Folder Include="Snippets\CSS\SideWaffle\" />
     <Folder Include="Snippets\HTML\SideWaffle\" />
     <Folder Include="Snippets\SQL\SideWaffle\" />
     <Folder Include="Snippets\VisualBasic\SideWaffle\" />

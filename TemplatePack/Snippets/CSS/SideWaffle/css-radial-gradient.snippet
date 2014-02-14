@@ -1,0 +1,36 @@
+﻿<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Cross Browser Background Radial Gradient</Title>
+      <Author>Andreas Nylin</Author>
+      <Shortcut>radial-gradient</Shortcut>
+      <Description>A background radial gradient snippet</Description>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>startcolor</ID>
+          <ToolTip>Start color value</ToolTip>
+          <Default>#cccccc</Default>
+        </Literal>
+        <Literal>
+          <ID>endcolor</ID>
+          <ToolTip>End color value</ToolTip>
+          <Default>#333333</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="css">
+        <![CDATA[background: $startcolor$;
+background: -moz-radial-gradient(center, ellipse cover,  $startcolor$ 0%, $endcolor$ 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,$startcolor$), color-stop(100%,$endcolor$));
+background: -webkit-radial-gradient(center, ellipse cover,  $startcolor$ 0%,$endcolor$ 100%);
+background: -o-radial-gradient(center, ellipse cover,  $startcolor$ 0%,$endcolor$ 100%);
+background: -ms-radial-gradient(center, ellipse cover,  $startcolor$ 0%,$endcolor$ 100%);
+background: radial-gradient(ellipse at center,  $startcolor$ 0%,$endcolor$ 100%);$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
