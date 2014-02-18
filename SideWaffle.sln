@@ -29,6 +29,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_SampleProjRef", "Project T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebJobsHelloWorld", "Project Templates\Azure\WebJobs\WebJobsHelloWorld\WebJobsHelloWorld.csproj", "{168B1B48-3C74-4793-888C-49989E749CCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.CSharp.AspNetHost", "Project Templates\Nancy.Csharp.AspNetHost\Nancy.CSharp.AspNetHost.csproj", "{ED638DD5-E755-4B7A-940D-5C94AB425686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.CSharp.AspNetHostWithRazor", "Project Templates\Nancy.Csharp.AspNetHostWithRazor\Nancy.CSharp.AspNetHostWithRazor.csproj", "{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.CSharp.Demo", "Project Templates\Nancy.Csharp.Demo\Nancy.CSharp.Demo.csproj", "{E945E104-2687-4637-AE33-6EECBF157E8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.CSharp.EmptyAspNetHost", "Project Templates\Nancy.Csharp.EmptyAspNetHost\Nancy.CSharp.EmptyAspNetHost.csproj", "{887A8565-4A10-44C8-82EF-F2F2D1D2BFBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.CSharp.EmptyAspNetHostWithRazor", "Project Templates\Nancy.Csharp.EmptyAspNetHostingWithRazor\Nancy.CSharp.EmptyAspNetHostWithRazor.csproj", "{0EA43F89-0536-4691-B108-7392E49D2C48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.CSharp.EmptySelfHost", "Project Templates\Nancy.Csharp.EmptySelfHost\Nancy.CSharp.EmptySelfHost.csproj", "{F8A5A9AD-F680-46F4-806F-653E7E51A030}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.CSharp.EmptySelfHostWithRazor", "Project Templates\Nancy.CSharp.EmptySelfHostWithRazor\Nancy.CSharp.EmptySelfHostWithRazor.csproj", "{0DD85688-3051-42C9-BBB3-9EAE9D9B473F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.CSharp.SelfHost", "Project Templates\Nancy.CSharp.SelfHost\Nancy.CSharp.SelfHost.csproj", "{35460AA4-B94A-4B64-9418-7243EC3D2F01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.CSharp.SelfHostWithRazor", "Project Templates\Nancy.CSharp.SelfHostWithRazor\Nancy.CSharp.SelfHostWithRazor.csproj", "{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +61,24 @@ Global
 		{0328C195-795D-423F-99AC-9ECF8B0B5198}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{168B1B48-3C74-4793-888C-49989E749CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{168B1B48-3C74-4793-888C-49989E749CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED638DD5-E755-4B7A-940D-5C94AB425686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED638DD5-E755-4B7A-940D-5C94AB425686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E945E104-2687-4637-AE33-6EECBF157E8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E945E104-2687-4637-AE33-6EECBF157E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887A8565-4A10-44C8-82EF-F2F2D1D2BFBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887A8565-4A10-44C8-82EF-F2F2D1D2BFBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA43F89-0536-4691-B108-7392E49D2C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA43F89-0536-4691-B108-7392E49D2C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A5A9AD-F680-46F4-806F-653E7E51A030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A5A9AD-F680-46F4-806F-653E7E51A030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD85688-3051-42C9-BBB3-9EAE9D9B473F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD85688-3051-42C9-BBB3-9EAE9D9B473F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35460AA4-B94A-4B64-9418-7243EC3D2F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35460AA4-B94A-4B64-9418-7243EC3D2F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +86,14 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0328C195-795D-423F-99AC-9ECF8B0B5198} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
 		{168B1B48-3C74-4793-888C-49989E749CCB} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
+		{ED638DD5-E755-4B7A-940D-5C94AB425686} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
+		{B4F9C525-5C56-440E-B4C2-972A33D7C8CD} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
+		{E945E104-2687-4637-AE33-6EECBF157E8B} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
+		{887A8565-4A10-44C8-82EF-F2F2D1D2BFBF} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
+		{0EA43F89-0536-4691-B108-7392E49D2C48} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
+		{F8A5A9AD-F680-46F4-806F-653E7E51A030} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
+		{0DD85688-3051-42C9-BBB3-9EAE9D9B473F} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
+		{35460AA4-B94A-4B64-9418-7243EC3D2F01} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
+		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
 	EndGlobalSection
 EndGlobal

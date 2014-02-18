@@ -717,6 +717,15 @@
   <ItemGroup>
     <TemplateReference Include="..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\WebJobsHelloWorld.csproj" />
     <TemplateReference Include="..\Project Templates\_SampleProjRef\_SampleProjRef.csproj" />
+    <TemplateReference Include="..\Project Templates\Nancy.CSharp.AspNetHost\Nancy.CSharp.AspNetHost.csproj" />
+    <TemplateReference Include="..\Project Templates\Nancy.CSharp.AspNetHostWithRazor\Nancy.CSharp.AspNetHostWithRazor.csproj" />
+    <TemplateReference Include="..\Project Templates\Nancy.CSharp.Demo\Nancy.CSharp.Demo.csproj" />
+    <TemplateReference Include="..\Project Templates\Nancy.CSharp.EmptyAspNetHost\Nancy.CSharp.EmptyAspNetHost.csproj" />
+    <TemplateReference Include="..\Project Templates\Nancy.CSharp.EmptyAspNetHostingWithRazor\Nancy.CSharp.EmptyAspNetHostWithRazor.csproj" />
+    <TemplateReference Include="..\Project Templates\Nancy.CSharp.EmptySelfHost\Nancy.CSharp.EmptySelfHost.csproj" />
+    <TemplateReference Include="..\Project Templates\Nancy.CSharp.EmptySelfHostWithRazor\Nancy.CSharp.EmptySelfHostWithRazor.csproj" />
+    <TemplateReference Include="..\Project Templates\Nancy.CSharp.SelfHost\Nancy.CSharp.SelfHost.csproj" />
+    <TemplateReference Include="..\Project Templates\Nancy.CSharp.SelfHostWithRazor\Nancy.CSharp.SelfHostWithRazor.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ItemTemplates\Windows Phone\CaliburnMicroBootstrapper\Bootstrapper.cs" />
