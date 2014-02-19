@@ -44,6 +44,8 @@
     <ItemTemplate Path="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\CSharp.vstemplate" Name="JSHint Rules File (.jshintrc)" Description="Allows you to customize the rules run by JSHint" ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Web\JavaScript\Karma\Definitions\CSharp.vstemplate" Name="Karma Configuration File" Description="Karma configuration file. For more information please visit: http://karma-runner.github.io/0.10/intro/configuration.html " ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\_Definitions\CSharp.vstemplate" Name="Knockout Custom Binding" Description="Knockout Custom Binding: custom binding handler" ProjectType="CSharp" ProjectSubType="" />
+    <ItemTemplate Path="ItemTemplates\Web\Nancy\NancyBootstrapper\_Definitions\CSharp.vstemplate" Name="Nancy bootstrapper" Description="The bootstrapper enables you to reconfigure the composition of the framework, by overriding the various methods and properties." ProjectType="CSharp" ProjectSubType="" />
+    <ItemTemplate Path="ItemTemplates\Web\Nancy\NancyModule\_Definitions\CSharp.vstemplate" Name="Nancy module" Description="Modules are the one thing you simply cannot avoid because they are where you define the behavior of your application. In fact declaring a single module is the bare minimum requirement for any Nancy application." ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Web\Mvc\NinjectControllerFactory\_Definitions\CSharp.vstemplate" Name="Ninect Controller Factory" Description="Adds an MVC Controller Factory class backed by a Ninject IoC container to any existing VSIX project." ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Test\NUnitFixture\Definitions\CSharp.vstemplate" Name="NUnit Fixture" Description="NUnit test fixture" ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\CSharp.vstemplate" Name="Offline Application Cache Manifest" Description="Provide online support for your website using HTML5 App Cache." ProjectType="CSharp" ProjectSubType="" />
@@ -188,6 +190,7 @@
     <Snippet Title="Nancy - Post" Description="Adds a Post endpoint to a module" Shortcut="npost" Path="Snippets\CSharp\SideWaffle\NancyModulePost.Snippet" />
     <Snippet Title="Nancy - Put" Description="Adds a Put endpoint to a module" Shortcut="nput" Path="Snippets\CSharp\SideWaffle\NancyModulePut.Snippet" />
     <Snippet Title="WCF Client Usage" Description="Implements the pattern correctly for a WCF client to correctly deal with the closing, disposing &amp; errors on a proxie. For further info see: http://msdn.microsoft.com/en-us/library/aa355056.aspx" Shortcut="wcfusing" Path="Snippets\CSharp\SideWaffle\WCFUsing.Snippet" />
-    <Snippet Title="Cross Browser Background Linear Gradient" Description="A background linear gradient snippet" Shortcut="linear-gradient" Path="Snippets\CSS\SideWaffle\LinearGradient.snippet" />
+    <Snippet Title="Cross Browser Background Linear Gradient" Description="A background linear gradient snippet" Shortcut="linear-gradient" Path="Snippets\CSS\SideWaffle\css-linear-gradient.snippet" />
+    <Snippet Title="Cross Browser Background Radial Gradient" Description="A background radial gradient snippet" Shortcut="radial-gradient" Path="Snippets\CSS\SideWaffle\css-radial-gradient.snippet" />
   </Snippets>
 </TemplateReport>
