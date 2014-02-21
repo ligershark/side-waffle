@@ -1,0 +1,41 @@
+﻿<p class="lead">
+    This is the start page for logged in users. It can only be viewed by users who have signed in.
+</p>
+<p>
+    The user <span data-bind="text: session.userName()"></span>  is in the following roles:
+</p>
+<ul data-bind="foreach: session.userRoles()">
+    <li data-bind="html: $data"></li>
+</ul>
+<h3>Configuring the router</h3>
+<p>To configure route based authorization add a property <strong>requiredRoles</strong> to each route that needs to be checked when setting up the route map.</p>
+<pre>
+function setupRouter() {
+    router.map([
+            { route: '', title: 'Welcome', moduleId: 'viewmodels/welcome', nav: true},
+            { route: 'welcome', title: 'Welcome', moduleId: 'viewmodels/welcome' },                
+            { route: 'register', moduleId: 'viewmodels/register', nav: false},
+            { route: 'login', moduleId: 'viewmodels/login', nav: false},
+            { route: 'registerExternal', moduleId: 'viewmodels/registerExternal', nav: false},
+            { route: 'manage', moduleId: 'viewmodels/manage', nav: false, requiredRoles: ['RegisteredUsers'] },
+            { route: 'start', title:'Get started', moduleId: 'viewmodels/start', nav: true, requiredRoles: ['RegisteredUsers']}
+    ]).buildNavigationModel();
+</pre>
+<h3>Rendering based on role membersip</h3>
+<p>To render areas of a view based on the role membership use the <strong>ifIsInRole</strong> custom KO binding.</p>
+<div class="highlight">
+<pre>
+    &lt;div data-bind="ifIsInRole: 'Admnistrators' "&gt;
+        &lt;h2>Admin&lt;/h2&gt;
+        &lt;p&gt;This is an admin section which will only be visible if the current user is in the 'Admnistrators' role.&lt;/p&gt;
+    &lt;/div&gt;
+</pre>
+</div>
+<div class="highlight">
+<pre>
+    &lt;div data-bind="ifIsInRole: ['Admnistrators','RegisteredUsers'] "&gt;
+        &lt;h2>Admin and Registered&lt;/h2&gt;
+        &lt;p&gt;This section will only be visible if the current user is in either the 'Admnistrators' or 'RegisteredUsers' role.&lt;/p&gt;
+    &lt;/div&gt;
+</pre>
+</div>
