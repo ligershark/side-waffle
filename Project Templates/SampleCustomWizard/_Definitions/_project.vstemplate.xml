@@ -17,7 +17,7 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="SampleCustomWizard.csproj" File="SampleCustomWizard.csproj" ReplaceParameters="true">      
+    <Project TargetFileName="SampleCustomWizard.csproj" File="SampleCustomWizard.csproj" ReplaceParameters="true">
     </Project>
   </TemplateContent>
   <WizardExtension>

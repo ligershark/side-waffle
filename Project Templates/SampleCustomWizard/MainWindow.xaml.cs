@@ -21,8 +21,8 @@ namespace SampleCustomWizard {
         public MainWindow() {
 
             // Showing replacements here from customwizard
-            // saferootprojectname: $saferootprojectname$
-            // datetime: $datetime$
+            // built in param:  safeprojectname: $safeprojectname$
+            // custom param:    datetime: $datetime$
 
             InitializeComponent();
         }

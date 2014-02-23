@@ -11,9 +11,8 @@ namespace SideWaffle {
         public static Dictionary<string, string> GlobalDictionary = new Dictionary<string, string>();
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams) {
             // Place "$saferootprojectname$ in the global dictionary. 
-            // Copy from $safeprojectname$ passed in my root vstemplate         
-            GlobalDictionary["$saferootprojectname$"] = replacementsDictionary["$safeprojectname$"];
-            GlobalDictionary["$datetime$"] = DateTime.Now.ToShortDateString();
+            // Copy from $safeprojectname$ passed in my root vstemplate           
+            replacementsDictionary.Add("$datetime$", DateTime.Now.ToShortDateString());
         }
 
         public void BeforeOpeningFile(EnvDTE.ProjectItem projectItem) {

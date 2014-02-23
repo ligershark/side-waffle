@@ -24,5 +24,6 @@
     <Asset Type="Microsoft.VisualStudio.ProjectTemplate" Path="Output\ProjectTemplates" />
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="feed.pkgdef" />
     <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="TemplateBuilder.dll" AssemblyName="TemplateBuilder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="File" Path="SideWaffle.dll" AssemblyName="SideWaffle, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </Assets>
 </PackageManifest>
