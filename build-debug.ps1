@@ -20,14 +20,14 @@
 param(
     $extraBuildArgs,   
 
-    [switch]$preventOverridingTargetsPath
+    [switch]$preventOverridingTargetsPath,
+    [switch]$preventOverridingMsbuildPath
     )
 function Get-ScriptDirectory
 {
     $Invocation = (Get-Variable MyInvocation -Scope 1).Value
     Split-Path $Invocation.MyCommand.Path
 }
-
 
 # There are a few things which this script requires
 #     msbuild alias
@@ -74,6 +74,10 @@ $scriptDir = ((Get-ScriptDirectory) + "\")
 $templateBuilderTargetsPath = ("{0}tools\ligershark.templates.targets" -f $env:TemplateBuilderDevRoot)
 $templateTaskRoot = ("{0}src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" -f $env:TemplateBuilderDevRoot)
 
+if(-not $preventOverridingMsbuildPath){
+    Set-MSBuild "$env:windir\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
+}
+
 if(CheckForDependencies){
     "Dep check passed" | Write-Host
     # msbuild ".\TemplatePack\TemplatePack.csproj" 
@@ -87,7 +91,9 @@ if(CheckForDependencies){
     $msbuildArgs += ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
     $msbuildArgs += '/m'
     $msbuildArgs += '/nologo'
-    $msbuildArgs += ("/p:Configuration=Debug")
+    # https://github.com/ligershark/side-waffle/issues/108
+    #     Cmd line build not working for Debug mode for some reason
+    $msbuildArgs += ("/p:Configuration=Release")
     $msbuildArgs += ("/p:VisualStudioVersion=11.0")
     if(!$preventOverridingTargetsPath){
         $msbuildArgs += ("/p:TemplateBuilderTargets={0}" -f $templateBuilderTargetsPath)
