@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplatePack", "TemplatePack\TemplatePack.csproj", "{66E5E42A-2905-4A93-A3F7-FD26DA48A25F}"
 EndProject
@@ -47,6 +47,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.CSharp.SelfHost", "Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.CSharp.SelfHostWithRazor", "Project Templates\Nancy.CSharp.SelfHostWithRazor\Nancy.CSharp.SelfHostWithRazor.csproj", "{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SideWaffle", "SideWaffle\SideWaffle.csproj", "{DE72772A-28BA-4545-84C9-F2CD53698B02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCustomWizard", "Project Templates\SampleCustomWizard\SampleCustomWizard.csproj", "{E5AD744C-0F8D-410E-B6C0-4BF12D82E313}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +83,14 @@ Global
 		{35460AA4-B94A-4B64-9418-7243EC3D2F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE72772A-28BA-4545-84C9-F2CD53698B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE72772A-28BA-4545-84C9-F2CD53698B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE72772A-28BA-4545-84C9-F2CD53698B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE72772A-28BA-4545-84C9-F2CD53698B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5AD744C-0F8D-410E-B6C0-4BF12D82E313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5AD744C-0F8D-410E-B6C0-4BF12D82E313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5AD744C-0F8D-410E-B6C0-4BF12D82E313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5AD744C-0F8D-410E-B6C0-4BF12D82E313}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,5 +107,6 @@ Global
 		{0DD85688-3051-42C9-BBB3-9EAE9D9B473F} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
 		{35460AA4-B94A-4B64-9418-7243EC3D2F01} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
 		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
+		{E5AD744C-0F8D-410E-B6C0-4BF12D82E313} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
 	EndGlobalSection
 EndGlobal

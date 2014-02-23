@@ -713,6 +713,9 @@
     <Folder Include="Snippets\XML\SideWaffle\" />
   </ItemGroup>
   <ItemGroup>
+    <TemplateReference Include="../Project%20Templates/SampleCustomWizard/SampleCustomWizard.csproj">
+      <Visible>False</Visible>
+    </TemplateReference>
     <TemplateReference Include="..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\WebJobsHelloWorld.csproj" />
     <TemplateReference Include="..\Project Templates\_SampleProjRef\_SampleProjRef.csproj" />
     <TemplateReference Include="..\Project Templates\Nancy.CSharp.AspNetHost\Nancy.CSharp.AspNetHost.csproj" />
@@ -757,6 +760,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SideWaffle\SideWaffle.csproj">
+      <Project>{de72772a-28ba-4545-84c9-f2cd53698b02}</Project>
+      <Name>SideWaffle</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <UseCodebase>true</UseCodebase>

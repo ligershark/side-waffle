@@ -1,0 +1,9 @@
+﻿<Window x:Class="SampleCustomWizard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Label Content="Custom wizard sample" HorizontalAlignment="Left" Margin="76,133,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

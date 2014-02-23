@@ -186,6 +186,7 @@
     <ProjectTemplate Path="ProjectTemplates\Web\Chrome Web Store App\Definitions\CSharp.vstemplate" Name="Google Chrome Web Store App" Description="A Google Chrome Web Store App" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Web\HTML5 Boiler Platev4.3\_Definitions\CSharp.vstemplate" Name="HTML5 Boiler Plate v4.3" Description="HTML5 Boiler Plate v4.3 Project Template" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\_Definitions\_project.vstemplate.xml" Name="Windows Azure WebJobs Console Application" Description="Windows Azure WebJobs Console Application" ProjectType="CSharp" ProjectSubType="" />
+    <ProjectTemplate Path="..\Project Templates\SampleCustomWizard\_Definitions\_project.vstemplate.xml" Name="Your name here" Description="Project description here" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Windows Store\TypeScript Blank\_Definitions\CSharp.vstemplate" Name="Blank App" Description="A single-page project for a Windows Store app using TypeScript" ProjectType="TypeScript" ProjectSubType="Windows Store" />
   </ProjectTemplates>
   <Snippets>
