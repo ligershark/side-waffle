@@ -18,7 +18,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <Strings>
           <CommandName>AddSideWaffleProject</CommandName>
-          <ButtonText>Add SideWaffle project</ButtonText>
+          <ButtonText>Add Template Reference (SideWaffle project)</ButtonText>
         </Strings>
       </Button>
     </Buttons> 
