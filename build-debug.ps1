@@ -93,8 +93,8 @@ if(CheckForDependencies){
     $msbuildArgs += '/nologo'
     # https://github.com/ligershark/side-waffle/issues/108
     #     Cmd line build not working for Debug mode for some reason
-    $msbuildArgs += ("/p:Configuration=Release")
-    $msbuildArgs += ("/p:VisualStudioVersion=11.0")
+    $msbuildArgs += ("/p:Configuration=Debug")
+    $msbuildArgs += ("/p:VisualStudioVersion=12.0")
     if(!$preventOverridingTargetsPath){
         $msbuildArgs += ("/p:TemplateBuilderTargets={0}" -f $templateBuilderTargetsPath)
         $msbuildArgs += ("/p:ls-TasksRoot={0}" -f $templateTaskRoot)
