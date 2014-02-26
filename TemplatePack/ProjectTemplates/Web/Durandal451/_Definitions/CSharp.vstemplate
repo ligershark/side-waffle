@@ -5,13 +5,14 @@
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
-    <SortOrder>1000</SortOrder>
+    <SortOrder>5000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>Durandal451</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>__TemplateIcon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="Durandal451.csproj" File="Durandal451.csproj" ReplaceParameters="true">
