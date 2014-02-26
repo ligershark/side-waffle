@@ -878,6 +878,7 @@
   <PropertyGroup Label="TemplateBuilder">
     <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.0.3.46-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
+  <ItemGroup>
     <Compile Include="ProjectTemplates\Web\Durandal451\App_Start\BundleConfig.cs" />
     <Compile Include="ProjectTemplates\Web\Durandal451\App_Start\DurandalBundleConfig.cs" />
     <Compile Include="ProjectTemplates\Web\Durandal451\App_Start\DurandalConfig.cs" />
