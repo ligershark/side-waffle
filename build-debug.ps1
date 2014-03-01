@@ -17,17 +17,29 @@
 .PARAMETER preventOverridingTargetsPath
     If this is set the build will still be invoked but the path to the .targets & .tasks file will not be modified. This is useful if you just want to build with the sources in place and use the Debug build configuration
 #>
+[cmdletbinding(DefaultParameterSetName ='build')]
 param(
-    $extraBuildArgs,   
+    [Parameter(ParameterSetName='build')]
+    $extraBuildArgs,
 
+    [Parameter(ParameterSetName='build')]
     [switch]$preventOverridingTargetsPath,
-    [switch]$preventOverridingMsbuildPath
+
+    [Parameter(ParameterSetName='build')]
+    [switch]$preventOverridingMsbuildPath,
+
+    [Parameter(ParameterSetName='optimizeImages')]
+    [switch]$optimizeImages
     )
 function Get-ScriptDirectory
 {
     $Invocation = (Get-Variable MyInvocation -Scope 1).Value
     Split-Path $Invocation.MyCommand.Path
 }
+
+$script:scrDir = (Get-ScriptDirectory)
+$script:toolsRoot = (Join-Path -Path (Get-ScriptDirectory) -ChildPath Tools\)
+
 
 # There are a few things which this script requires
 #     msbuild alias
@@ -69,47 +81,127 @@ function CheckForDependencies{
     return $depFound
 }
 
-$scriptDir = ((Get-ScriptDirectory) + "\")
+function OptimizeImages(){
+    [cmdletbinding()]
+    param(
+         $root = (Join-Path -Path $script:scrDir -ChildPath TemplatePack\),
 
-$templateBuilderTargetsPath = ("{0}tools\ligershark.templates.targets" -f $env:TemplateBuilderDevRoot)
-$templateTaskRoot = ("{0}src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" -f $env:TemplateBuilderDevRoot)
+        [switch]
+        $Recurse
+    )
+    process{
+        'Optimizing images in directory [{0}]' -f $root | Write-Verbose
 
-if(-not $preventOverridingMsbuildPath){
-    Set-MSBuild "$env:windir\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
+        if($Recurse){
+            $pngsToOptimize = (Get-ChildItem $root *.png -Recurse)
+
+            $imgToOptimize = (Get-ChildItem $root *.gif -Recurse)
+            $imgToOptimize += (Get-ChildItem $root *.jpg -Recurse)
+        }
+        else{
+            $pngsToOptimize = (Get-ChildItem $root *.png)
+            
+            $imgToOptimize = (Get-ChildItem $root *.gif)
+            $imgToOptimize += (Get-ChildItem $root *.jpg)
+        }
+
+        
+        if($pngsToOptimize){
+            $pngsToOptimize = ($pngsToOptimize |
+                Where-Object { !$_.FullName.Contains('\obj\')} | 
+                Where-Object { !$_.FullName.Contains('\bin\')})
+        }
+
+        if($imgToOptimize){
+            $imgToOptimize = ($imgToOptimize |
+                Where-Object { !$_.FullName.Contains('\obj\')} | 
+                Where-Object { !$_.FullName.Contains('\bin\')})
+        }
+        'Number of .pngs to optimize: [{0}]' -f $pngsToOptimize.Length | Write-Verbose
+        $pngsToOptimize.FullName | OptimizePng
+    }
 }
 
-if(CheckForDependencies){
-    "Dep check passed" | Write-Host
-    # msbuild ".\TemplatePack\TemplatePack.csproj" 
-    #    /p:VisualStudioVersion=11.0 
-    #    /p:TemplateBuilderTargets="($env:TemplateBuilderDevRoot)tools\ligershark.templates.targets" 
-    #    /p:ls-TasksRoot="($env:TemplateBuilderDevRoot)\src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" /fl
-
-    # /flp1:v=d;logfile=build.d.log /flp2:v=diag;logfile=build.diag.log
-
-    $msbuildArgs = @()
-    $msbuildArgs += ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
-    $msbuildArgs += '/m'
-    $msbuildArgs += '/nologo'
-    # https://github.com/ligershark/side-waffle/issues/108
-    #     Cmd line build not working for Debug mode for some reason
-    $msbuildArgs += ("/p:Configuration=Debug")
-    $msbuildArgs += ("/p:VisualStudioVersion=12.0")
-    if(!$preventOverridingTargetsPath){
-        $msbuildArgs += ("/p:TemplateBuilderTargets={0}" -f $templateBuilderTargetsPath)
-        $msbuildArgs += ("/p:ls-TasksRoot={0}" -f $templateTaskRoot)
+function OptimizePng(){
+    [cmdletbinding()]
+    param(
+        [Parameter(
+            Mandatory=$true,
+            ValueFromPipeline=$true)]
+        $image)
+    begin{
+        $pngout = Join-Path $script:toolsRoot pngout.exe
+        $pngoptim = Join-Path $script:toolsRoot PNGOptim.1.2.2.exe
     }
-    $msbuildArgs += '/flp1:v=d;logfile=msbuild.d.log'
-    $msbuildArgs += '/flp2:v=diag;logfile=msbuild.diag.log'
-    $msbuildArgs += ('/clp:v=m;ShowCommandLine')
-    if($extraBuildArgs){
-        $msbuildArgs += $extraBuildArgs
+    process{
+        foreach($img in $image){
+            $fullPath = Resolve-Path $img
+            $pngoutArgs = @()
+            $pngoutArgs += $fullPath
+            $pngoutArgs += '/q'
+            
+            'Calling pngout [{0} {1}]' -f $pngout, ($pngoutArgs -join ' ')
+            &$pngout $pngoutArgs
+        }
+    }
+}
+
+function OptimizeImage(){
+    [cmdletbinding()]
+    param()
+    process{
+        
+    }
+}
+
+if($optimizeImages){
+    'optimizing images' | Write-Verbose
+        
+    OptimizeImages -root (Join-Path -Path $script:scrDir -ChildPath TemplatePack\) -Recurse
+}
+else {
+    $scriptDir = ((Get-ScriptDirectory) + "\")
+
+    $templateBuilderTargetsPath = ("{0}tools\ligershark.templates.targets" -f $env:TemplateBuilderDevRoot)
+    $templateTaskRoot = ("{0}src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" -f $env:TemplateBuilderDevRoot)
+
+    if(-not $preventOverridingMsbuildPath){
+        Set-MSBuild "$env:windir\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
     }
 
-    "Calling msbuild.exe with the following args: {0}" -f ($msbuildArgs -join ' ') | Write-Host
-    & msbuild $msbuildArgs
+    if(CheckForDependencies){
+        "Dep check passed" | Write-Host
+        # msbuild ".\TemplatePack\TemplatePack.csproj" 
+        #    /p:VisualStudioVersion=11.0 
+        #    /p:TemplateBuilderTargets="($env:TemplateBuilderDevRoot)tools\ligershark.templates.targets" 
+        #    /p:ls-TasksRoot="($env:TemplateBuilderDevRoot)\src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" /fl
 
-    "`r`n  MSBuild log files have been written to" | Write-Host -ForegroundColor Green
-    "    msbuild.d.log" | Write-Host -ForegroundColor Green
-    "    msbuild.diag.log" | Write-Host -ForegroundColor Green
+        # /flp1:v=d;logfile=build.d.log /flp2:v=diag;logfile=build.diag.log
+
+        $msbuildArgs = @()
+        $msbuildArgs += ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
+        $msbuildArgs += '/m'
+        $msbuildArgs += '/nologo'
+        # https://github.com/ligershark/side-waffle/issues/108
+        #     Cmd line build not working for Debug mode for some reason
+        $msbuildArgs += ("/p:Configuration=Debug")
+        $msbuildArgs += ("/p:VisualStudioVersion=12.0")
+        if(!$preventOverridingTargetsPath){
+            $msbuildArgs += ("/p:TemplateBuilderTargets={0}" -f $templateBuilderTargetsPath)
+            $msbuildArgs += ("/p:ls-TasksRoot={0}" -f $templateTaskRoot)
+        }
+        $msbuildArgs += '/flp1:v=d;logfile=msbuild.d.log'
+        $msbuildArgs += '/flp2:v=diag;logfile=msbuild.diag.log'
+        $msbuildArgs += ('/clp:v=m;ShowCommandLine')
+        if($extraBuildArgs){
+            $msbuildArgs += $extraBuildArgs
+        }
+
+        "Calling msbuild.exe with the following args: {0}" -f ($msbuildArgs -join ' ') | Write-Host
+        & msbuild $msbuildArgs
+
+        "`r`n  MSBuild log files have been written to" | Write-Host -ForegroundColor Green
+        "    msbuild.d.log" | Write-Host -ForegroundColor Green
+        "    msbuild.diag.log" | Write-Host -ForegroundColor Green
+    }
 }
