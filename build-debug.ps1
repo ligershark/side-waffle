@@ -117,8 +117,39 @@ function OptimizeImages(){
                 Where-Object { !$_.FullName.Contains('\obj\')} | 
                 Where-Object { !$_.FullName.Contains('\bin\')})
         }
+
+        $beforeOptimizing = (Get-ChildItem TemplatePack -Recurse -include *.png,*.jpg,*.gif | Select-Object FullName, Length)
+
         'Number of .pngs to optimize: [{0}]' -f $pngsToOptimize.Length | Write-Verbose
         $pngsToOptimize.FullName | OptimizePng
+
+        $afterOptimizing = (Get-ChildItem TemplatePack -Recurse -include *.png,*.jpg,*.gif | Select-Object FullName, Length)
+        <#
+        $delta = @()
+        foreach($item in $beforeOptimizing){
+            $beforeItem = $item
+            $afterItem = ($afterOptimizing | Where-Object {$_.FullName -eq $item.FullName})
+
+            $deltaObj = New-Object PSObject -Property @{
+                    FullName = $beforeItem.FullName
+                    LengthBefore = $beforeItem.Length
+                    LengthAfter = [int]::MinValue
+                    LengthDiff = [int]::MinValue
+                }
+            
+            if(!$afterItem){
+                'Unable to find matching file in after collection for file [{0}]' -f $_.FullName | Write-Error
+            }
+            else{
+                $deltaObj.LengthAfter = $afterItem.Length
+                $deltaObj.LengthDiff = ($beforeItem.Length - $afterItem.Length)
+            }
+
+            $delta += $de
+        }
+
+        $delta | Sort-Object LengthDiff | Write-Output
+        #>
     }
 }
 
