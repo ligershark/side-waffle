@@ -31,6 +31,11 @@ param(
     [Parameter(ParameterSetName='optimizeImages')]
     [switch]$optimizeImages
     )
+
+$global:SideWaffleBuildSettings = New-Object PSObject -Property @{
+    TempFolder = ("$env:LOCALAPPDATA\SideWaffle\BuildOutput\")
+}
+
 function Get-ScriptDirectory
 {
     $Invocation = (Get-Variable MyInvocation -Scope 1).Value
@@ -118,13 +123,13 @@ function OptimizeImages(){
                 Where-Object { !$_.FullName.Contains('\bin\')})
         }
 
-        $beforeOptimizing = (Get-ChildItem TemplatePack -Recurse -include *.png,*.jpg,*.gif | Select-Object FullName, Length)
+        $beforeOptimizing = ( ($pngsToOptimize + $imgToOptimize).FullName | Get-Item | Select-Object FullName, Length)
 
         'Number of .pngs to optimize: [{0}]' -f $pngsToOptimize.Length | Write-Verbose
         $pngsToOptimize.FullName | OptimizePng
 
-        $afterOptimizing = (Get-ChildItem TemplatePack -Recurse -include *.png,*.jpg,*.gif | Select-Object FullName, Length)
-        <#
+        $afterOptimizing = ( ($pngsToOptimize + $imgToOptimize).FullName | Get-Item | Select-Object FullName, Length)
+        
         $delta = @()
         foreach($item in $beforeOptimizing){
             $beforeItem = $item
@@ -145,11 +150,19 @@ function OptimizeImages(){
                 $deltaObj.LengthDiff = ($beforeItem.Length - $afterItem.Length)
             }
 
-            $delta += $de
+            $delta += $deltaObj
         }
 
-        $delta | Sort-Object LengthDiff | Write-Output
-        #>
+        # $delta | Sort-Object LengthDiff -Descending | Select-Object Name, FullName, LengthBefore, LengthAfter,LengthDiff | Write-Output
+        
+        $imgReportPath = (Join-Path -Path $global:SideWaffleBuildSettings.TempFolder -ChildPath 'imagereport.csv')
+        if(!(Test-Path $global:SideWaffleBuildSettings.TempFolder)){
+            mkdir $global:SideWaffleBuildSettings.TempFolder
+        }
+        $delta | Select-Object FullName, LengthBefore, LengthAfter,LengthDiff | Export-Csv -Path $imgReportPath -NoTypeInformation
+        'Saved image report to [{0}]' -f $imgReportPath | Write-Verbose
+
+        return $delta
     }
 }
 
@@ -171,7 +184,7 @@ function OptimizePng(){
             $pngoutArgs += $fullPath
             $pngoutArgs += '/q'
             
-            'Calling pngout [{0} {1}]' -f $pngout, ($pngoutArgs -join ' ')
+            'Calling pngout [{0} {1}]' -f $pngout, ($pngoutArgs -join ' ') | Write-Verbose
             &$pngout $pngoutArgs
         }
     }
@@ -187,8 +200,15 @@ function OptimizeImage(){
 
 if($optimizeImages){
     'optimizing images' | Write-Verbose
-        
-    OptimizeImages -root (Join-Path -Path $script:scrDir -ChildPath TemplatePack\) -Recurse
+
+    $imgResult = OptimizeImages -root (Join-Path -Path $script:scrDir -ChildPath TemplatePack\) #-Recurse 
+    
+    $imgResult | 
+        Select-Object @{Name='Name';Expression={(get-item $_.FullName).Name}},LengthBefore,LengthAfter,LengthDiff | 
+        Sort-Object LengthDiff -Descending |
+        Write-Output
+
+    'Total diff: {0} KB' -f (($imgResult | Measure-Object -Property LengthDiff -Sum | Select-Object Sum).Sum/1KB) | Write-Output
 }
 else {
     $scriptDir = ((Get-ScriptDirectory) + "\")
