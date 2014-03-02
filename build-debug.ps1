@@ -34,6 +34,7 @@ param(
 
 $global:SideWaffleBuildSettings = New-Object PSObject -Property @{
     TempFolder = ("$env:LOCALAPPDATA\SideWaffle\BuildOutput\")
+    MaxNumThreads = ((Get-WmiObject Win32_Processor).NumberOfCores)
 }
 
 function Get-ScriptDirectory
@@ -92,22 +93,19 @@ function OptimizeImages(){
          $root = (Join-Path -Path $script:scrDir -ChildPath TemplatePack\),
 
         [switch]
-        $Recurse
+        $Recurse,
+
+        [switch]
+        $enableMultiCore
     )
     process{
         'Optimizing images in directory [{0}]' -f $root | Write-Verbose
 
         if($Recurse){
             $pngsToOptimize = (Get-ChildItem $root *.png -Recurse)
-
-            $imgToOptimize = (Get-ChildItem $root *.gif -Recurse)
-            $imgToOptimize += (Get-ChildItem $root *.jpg -Recurse)
         }
         else{
             $pngsToOptimize = (Get-ChildItem $root *.png)
-            
-            $imgToOptimize = (Get-ChildItem $root *.gif)
-            $imgToOptimize += (Get-ChildItem $root *.jpg)
         }
 
         
@@ -116,19 +114,19 @@ function OptimizeImages(){
                 Where-Object { !$_.FullName.Contains('\obj\')} | 
                 Where-Object { !$_.FullName.Contains('\bin\')})
         }
-
-        if($imgToOptimize){
-            $imgToOptimize = ($imgToOptimize |
-                Where-Object { !$_.FullName.Contains('\obj\')} | 
-                Where-Object { !$_.FullName.Contains('\bin\')})
-        }
-
-        $beforeOptimizing = ( ($pngsToOptimize + $imgToOptimize).FullName | Get-Item | Select-Object FullName, Length)
+        
+        $beforeOptimizing = ($pngsToOptimize.FullName | Get-Item | Select-Object FullName, Length)
 
         'Number of .pngs to optimize: [{0}]' -f $pngsToOptimize.Length | Write-Verbose
-        $pngsToOptimize.FullName | OptimizePng
 
-        $afterOptimizing = ( ($pngsToOptimize + $imgToOptimize).FullName | Get-Item | Select-Object FullName, Length)
+        if($enableMultiCore){
+            $pngsToOptimize.FullName | OptimizePng -enableMultiCore
+        }
+        else{
+            $pngsToOptimize.FullName | OptimizePng
+        }
+
+        $afterOptimizing = ($pngsToOptimize.FullName | Get-Item | Select-Object FullName, Length)
         
         $delta = @()
         foreach($item in $beforeOptimizing){
@@ -153,8 +151,6 @@ function OptimizeImages(){
             $delta += $deltaObj
         }
 
-        # $delta | Sort-Object LengthDiff -Descending | Select-Object Name, FullName, LengthBefore, LengthAfter,LengthDiff | Write-Output
-        
         $imgReportPath = (Join-Path -Path $global:SideWaffleBuildSettings.TempFolder -ChildPath 'imagereport.csv')
         if(!(Test-Path $global:SideWaffleBuildSettings.TempFolder)){
             mkdir $global:SideWaffleBuildSettings.TempFolder
@@ -172,10 +168,16 @@ function OptimizePng(){
         [Parameter(
             Mandatory=$true,
             ValueFromPipeline=$true)]
-        $image)
+        $image,
+        
+        [switch]
+        $enableMultiCore
+        )
     begin{
         $pngout = Join-Path $script:toolsRoot pngout.exe
         $pngoptim = Join-Path $script:toolsRoot PNGOptim.1.2.2.exe
+
+        $multiCoreCommand = @()
     }
     process{
         foreach($img in $image){
@@ -184,24 +186,113 @@ function OptimizePng(){
             $pngoutArgs += $fullPath
             $pngoutArgs += '/q'
             
-            'Calling pngout [{0} {1}]' -f $pngout, ($pngoutArgs -join ' ') | Write-Verbose
-            &$pngout $pngoutArgs
+            if(-not $enableMultiCore){
+                'Calling pngout [{0} {1}]' -f $pngout, ($pngoutArgs -join ' ') | Write-Verbose
+                &$pngout $pngoutArgs
+            }
+            else{
+                $multiCoreCommand += {&$pngout $pngoutArgs}
+            }
         }
+
+        if($enableMultiCore){
+            $jobArray = Split-Array -arrayToSplit $multiCoreCommand -numSegments $global:SideWaffleBuildSettings.MaxNumThreads
+            Batch-Job -jobs $jobArray -waitForCompletion
+        }
+    }
+    <#
+    end{
+        if($enableMultiCore){
+            $jobArray = Split-Array -arrayToSplit $multiCoreCommand -numSegments $global:SideWaffleBuildSettings.MaxNumThreads
+            $jobArray | Batch-Job -waitForCompletion
+        }
+    }
+    #>
+}
+
+function Split-Array{
+    [cmdletbinding()]
+    param(
+        [Parameter(ValueFromPipeline=$true,Mandatory=$true)]
+        [array]
+        $arrayToSplit,
+
+        [ValidateRange(1,[int]::MaxValue)]
+        $numSegments = 1
+    )
+    process{
+        
+        # result is an array of arrays
+        $result = @()
+        $result = [array]::CreateInstance('array',$numSegments)
+        [int]$increment = ($arrayToSplit.Length / $numSegments)
+        $startIndex = 1
+        for($i = 1; $i -le $numSegments; $i++){
+            if($startIndex -gt $arrayToSplit.Length){
+                break
+            }
+
+            $endIndex = $startIndex + $increment
+            if($endIndex -gt ($arrayToSplit.length -1) ){
+                $endIndex = $arrayToSplit.length -1
+            }
+
+            $result[$i-1]=$arrayToSplit[$startIndex..$endIndex]
+
+            $startIndex = $endIndex + 1
+        }
+
+        return $result
     }
 }
 
-function OptimizeImage(){
+function Batch-Job{
     [cmdletbinding()]
-    param()
+    param(
+        [Parameter(ValueFromPipeline=$true,Mandatory=$true)]
+        [array]
+        $jobs,
+
+        [switch]
+        $waitForCompletion,
+
+        $jobnameprefix = 'batch-job'
+    )
     process{
-        
+        $jobsToStart = @()
+        foreach($job in $jobs){
+            # create a job that will loop through each array item and then start it
+            
+            $jobsInBatch += $jobs
+
+            $jobsToStart += {
+                foreach($item in $using:jobsInBatch){
+                    'Calling Invoke-Expression for pngout item: [{0}]' -f $item | Write-Verbose
+                    Invoke-Expression $item
+                    #Start-Job -ScriptBlock $item
+                }
+            }.GetNewClosure()
+        }
+
+        $index = 1
+        $startedJobs = @()
+        foreach($jobToStart in $jobsToStart){
+            $startedJobs += (Start-Job $jobToStart -Name ('{0}-{1}' -f $jobnameprefix, $index++))
+        }
+
+        if($waitForCompletion){
+            foreach($sj in $startedJobs){
+                Wait-Job $sj
+                Receive-Job $sj
+            }
+        }
     }
 }
 
 if($optimizeImages){
     'optimizing images' | Write-Verbose
 
-    $imgResult = OptimizeImages -root (Join-Path -Path $script:scrDir -ChildPath TemplatePack\) #-Recurse 
+    $imgResult = OptimizeImages -root (Join-Path -Path $script:scrDir -ChildPath TemplatePack\) -Recurse #-enableMultiCore
     
     $imgResult | 
         Select-Object @{Name='Name';Expression={(get-item $_.FullName).Name}},LengthBefore,LengthAfter,LengthDiff | 
