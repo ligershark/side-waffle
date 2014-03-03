@@ -120,7 +120,7 @@ function OptimizeImages(){
         'Number of .pngs to optimize: [{0}]' -f $pngsToOptimize.Length | Write-Verbose
 
         if($enableMultiCore){
-            $pngsToOptimize.FullName | OptimizePng -enableMultiCore
+            OptimizePng -image ($pngsToOptimize.FullName) -enableMultiCore
         }
         else{
             $pngsToOptimize.FullName | OptimizePng
@@ -191,23 +191,37 @@ function OptimizePng(){
                 &$pngout $pngoutArgs
             }
             else{
-                $multiCoreCommand += {&$pngout $pngoutArgs}
+                $foo = ({
+                    [cmdletbinding()]
+                    param(
+                        [Parameter(
+                            Mandatory=$true,
+                            Position=1)]
+                        $pngexe,
+
+                        [Parameter(
+                            Mandatory=$true,
+                            Position=2)]
+                        $pngargs
+                    )
+
+                    'Calling pngout [{0} {1}]' -f $pngexe, ($pngargs -join ' ') | Write-Verbose
+                    & $pngexe $pngargs
+                }.GetNewClosure())
+
+
+                $multiCoreCommand += { Invoke-Command -ScriptBlock $foo -ArgumentList @($pngout,$pngoutArgs) }.GetNewClosure()
             }
         }
 
         if($enableMultiCore){
+            <#
             $jobArray = Split-Array -arrayToSplit $multiCoreCommand -numSegments $global:SideWaffleBuildSettings.MaxNumThreads
-            Batch-Job -jobs $jobArray -waitForCompletion
+            Batch-Job -jobs $jobArray
+            #>
+            Batch-Job -jobs $multiCoreCommand -numThreads $global:SideWaffleBuildSettings.MaxNumThreads
         }
     }
-    <#
-    end{
-        if($enableMultiCore){
-            $jobArray = Split-Array -arrayToSplit $multiCoreCommand -numSegments $global:SideWaffleBuildSettings.MaxNumThreads
-            $jobArray | Batch-Job -waitForCompletion
-        }
-    }
-    #>
 }
 
 function Split-Array{
@@ -253,6 +267,56 @@ function Batch-Job{
         [array]
         $jobs,
 
+        $jobnameprefix = 'batch-job',
+
+        $numThreads = ($global:SideWaffleBuildSettings.MaxNumThreads)
+    )
+    process{
+        # start $numThreads using start-job. Wait for them to finish
+
+        # convert jobs array to a queue
+        $jobsQueue = New-Object System.Collections.Queue
+        foreach($j in $jobs){
+            $jobsQueue.Enqueue($j)
+        }
+
+        $runningJobs = New-Object System.Collections.ArrayList
+        while($jobsQueue.Count -gt 0){
+            # we still have pending jobs that need to be started
+
+            # if any jobs in $runningJobs is completed receive them and remove them
+            $completedJobs = ($runningJobs | Where-Object {$_.State -eq 'Completed'})
+            foreach($cj in $completedJobs){
+                Receive-Job $cj
+                $runningJobs.Remove($cj)
+                Remove-Job $cj
+            }
+
+            if($runningJobs.Count -lt $numThreads){
+                # we have free threads that can start to do work
+                for($i=$runningJobs.Count; $i -lt $numThreads; $i++){
+                    if($jobsQueue.Count -le 0){break}
+
+                    $j = ($jobsQueue.Dequeue())
+
+                    $startedjob = (Start-Job -Name ('{0}-{1}' -f $jobnameprefix,$i) -ScriptBlock ($j[0]))
+                    $runningJobs.Add($startedjob)
+                }
+            }
+
+            # to give threads a chance to process let's just wait for one of them to finish
+            Wait-Job ($runningJobs[0]) | Out-Null
+        }
+    }
+}
+
+function Batch-Job-old{
+    [cmdletbinding()]
+    param(
+        [Parameter(ValueFromPipeline=$true,Mandatory=$true)]
+        [array]
+        $jobs,
+
         [switch]
         $waitForCompletion,
 
@@ -292,7 +356,7 @@ function Batch-Job{
 if($optimizeImages){
     'optimizing images' | Write-Verbose
 
-    $imgResult = OptimizeImages -root (Join-Path -Path $script:scrDir -ChildPath TemplatePack\) -Recurse #-enableMultiCore
+    $imgResult = OptimizeImages -root (Join-Path -Path $script:scrDir -ChildPath TemplatePack\) -Recurse -enableMultiCore
     
     $imgResult | 
         Select-Object @{Name='Name';Expression={(get-item $_.FullName).Name}},LengthBefore,LengthAfter,LengthDiff | 
