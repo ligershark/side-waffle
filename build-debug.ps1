@@ -93,10 +93,7 @@ function OptimizeImages(){
          $root = (Join-Path -Path $script:scrDir -ChildPath TemplatePack\),
 
         [switch]
-        $Recurse,
-
-        [switch]
-        $enableMultiCore
+        $Recurse
     )
     process{
         'Optimizing images in directory [{0}]' -f $root | Write-Verbose
@@ -119,13 +116,7 @@ function OptimizeImages(){
 
         'Number of .pngs to optimize: [{0}]' -f $pngsToOptimize.Length | Write-Verbose
 
-        if($enableMultiCore){
-            OptimizePng -image ($pngsToOptimize.FullName) -enableMultiCore
-        }
-        else{
-            $pngsToOptimize.FullName | OptimizePng
-        }
-
+        $pngsToOptimize.FullName | OptimizePng
         $afterOptimizing = ($pngsToOptimize.FullName | Get-Item | Select-Object FullName, Length)
         
         $delta = @()
@@ -168,16 +159,11 @@ function OptimizePng(){
         [Parameter(
             Mandatory=$true,
             ValueFromPipeline=$true)]
-        $image,
-        
-        [switch]
-        $enableMultiCore
+        $image
         )
     begin{
         $pngout = Join-Path $script:toolsRoot pngout.exe
         $pngoptim = Join-Path $script:toolsRoot PNGOptim.1.2.2.exe
-
-        $multiCoreCommand = @()
     }
     process{
         foreach($img in $image){
@@ -186,169 +172,8 @@ function OptimizePng(){
             $pngoutArgs += $fullPath
             $pngoutArgs += '/q'
             
-            if(-not $enableMultiCore){
-                'Calling pngout [{0} {1}]' -f $pngout, ($pngoutArgs -join ' ') | Write-Verbose
-                &$pngout $pngoutArgs
-            }
-            else{
-                $foo = ({
-                    [cmdletbinding()]
-                    param(
-                        [Parameter(
-                            Mandatory=$true,
-                            Position=1)]
-                        $pngexe,
-
-                        [Parameter(
-                            Mandatory=$true,
-                            Position=2)]
-                        $pngargs
-                    )
-
-                    'Calling pngout [{0} {1}]' -f $pngexe, ($pngargs -join ' ') | Write-Verbose
-                    & $pngexe $pngargs
-                }.GetNewClosure())
-
-
-                $multiCoreCommand += { Invoke-Command -ScriptBlock $foo -ArgumentList @($pngout,$pngoutArgs) }.GetNewClosure()
-            }
-        }
-
-        if($enableMultiCore){
-            <#
-            $jobArray = Split-Array -arrayToSplit $multiCoreCommand -numSegments $global:SideWaffleBuildSettings.MaxNumThreads
-            Batch-Job -jobs $jobArray
-            #>
-            Batch-Job -jobs $multiCoreCommand -numThreads $global:SideWaffleBuildSettings.MaxNumThreads
-        }
-    }
-}
-
-function Split-Array{
-    [cmdletbinding()]
-    param(
-        [Parameter(ValueFromPipeline=$true,Mandatory=$true)]
-        [array]
-        $arrayToSplit,
-
-        [ValidateRange(1,[int]::MaxValue)]
-        $numSegments = 1
-    )
-    process{
-        
-        # result is an array of arrays
-        $result = @()
-        $result = [array]::CreateInstance('array',$numSegments)
-        [int]$increment = ($arrayToSplit.Length / $numSegments)
-        $startIndex = 1
-        for($i = 1; $i -le $numSegments; $i++){
-            if($startIndex -gt $arrayToSplit.Length){
-                break
-            }
-
-            $endIndex = $startIndex + $increment
-            if($endIndex -gt ($arrayToSplit.length -1) ){
-                $endIndex = $arrayToSplit.length -1
-            }
-
-            $result[$i-1]=$arrayToSplit[$startIndex..$endIndex]
-
-            $startIndex = $endIndex + 1
-        }
-
-        return $result
-    }
-}
-
-function Batch-Job{
-    [cmdletbinding()]
-    param(
-        [Parameter(ValueFromPipeline=$true,Mandatory=$true)]
-        [array]
-        $jobs,
-
-        $jobnameprefix = 'batch-job',
-
-        $numThreads = ($global:SideWaffleBuildSettings.MaxNumThreads)
-    )
-    process{
-        # start $numThreads using start-job. Wait for them to finish
-
-        # convert jobs array to a queue
-        $jobsQueue = New-Object System.Collections.Queue
-        foreach($j in $jobs){
-            $jobsQueue.Enqueue($j)
-        }
-
-        $runningJobs = New-Object System.Collections.ArrayList
-        while($jobsQueue.Count -gt 0){
-            # we still have pending jobs that need to be started
-
-            # if any jobs in $runningJobs is completed receive them and remove them
-            $completedJobs = ($runningJobs | Where-Object {$_.State -eq 'Completed'})
-            foreach($cj in $completedJobs){
-                Receive-Job $cj
-                $runningJobs.Remove($cj)
-                Remove-Job $cj
-            }
-
-            if($runningJobs.Count -lt $numThreads){
-                # we have free threads that can start to do work
-                for($i=$runningJobs.Count; $i -lt $numThreads; $i++){
-                    if($jobsQueue.Count -le 0){break}
-
-                    $j = ($jobsQueue.Dequeue())
-
-                    $startedjob = (Start-Job -Name ('{0}-{1}' -f $jobnameprefix,$i) -ScriptBlock ($j[0]))
-                    $runningJobs.Add($startedjob)
-                }
-            }
-
-            # to give threads a chance to process let's just wait for one of them to finish
-            Wait-Job ($runningJobs[0]) | Out-Null
-        }
-    }
-}
-
-function Batch-Job-old{
-    [cmdletbinding()]
-    param(
-        [Parameter(ValueFromPipeline=$true,Mandatory=$true)]
-        [array]
-        $jobs,
-
-        [switch]
-        $waitForCompletion,
-
-        $jobnameprefix = 'batch-job'
-    )
-    process{
-        $jobsToStart = @()
-        foreach($job in $jobs){
-            # create a job that will loop through each array item and then start it
-            
-            $jobsInBatch += $jobs
-
-            $jobsToStart += {
-                foreach($item in $using:jobsInBatch){
-                    'Calling Invoke-Expression for pngout item: [{0}]' -f $item | Write-Verbose
-                    Invoke-Expression $item
-                    #Start-Job -ScriptBlock $item
-                }
-            }.GetNewClosure()
-        }
-
-        $index = 1
-        $startedJobs = @()
-        foreach($jobToStart in $jobsToStart){
-            $startedJobs += (Start-Job $jobToStart -Name ('{0}-{1}' -f $jobnameprefix, $index++))
-        }
-
-        if($waitForCompletion){
-            foreach($sj in $startedJobs){
-                Wait-Job $sj
-                Receive-Job $sj
-            }
+            'Calling pngout [{0} {1}]' -f $pngout, ($pngoutArgs -join ' ') | Write-Verbose
+            &$pngout $pngoutArgs
         }
     }
 }
@@ -356,7 +181,7 @@ function Batch-Job-old{
 if($optimizeImages){
     'optimizing images' | Write-Verbose
 
-    $imgResult = OptimizeImages -root (Join-Path -Path $script:scrDir -ChildPath TemplatePack\) -Recurse -enableMultiCore
+    $imgResult = OptimizeImages -root $script:scrDir -Recurse
     
     $imgResult | 
         Select-Object @{Name='Name';Expression={(get-item $_.FullName).Name}},LengthBefore,LengthAfter,LengthDiff | 
