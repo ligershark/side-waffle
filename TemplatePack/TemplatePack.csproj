@@ -53,6 +53,9 @@
     </Content>
     <Content Include="ItemTemplates\Azure\CloudServicePlugin\azure-icon.png" />
     <Content Include="ItemTemplates\Azure\CloudServicePlugin\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\icon.png" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\icon.png" />
@@ -77,6 +80,9 @@
     <Content Include="ItemTemplates\Extensibility\BrowserLink\_Definitions\CSharp.vstemplate" />
     <Content Include="resources\Package.ico" />
     <None Include="ItemTemplates\Azure\CloudServicePlugin\CloudServicePlugin.csplugin" />
+    <None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\build.proj">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\custom.targets" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\custom.props">
       <SubType>Designer</SubType>
