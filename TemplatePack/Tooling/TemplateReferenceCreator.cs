@@ -13,16 +13,18 @@ namespace TemplatePack {
             Uri selectedProjUri = new Uri(selectedProject.FullName);
             string relativePath = currentProjUri.MakeRelativeUri(selectedProjUri).ToString();
 
-            var curProjObj = ProjectRootElement.Open(currentProject.FullName);
-            curProjObj.AddItem("TemplateReference", relativePath, GetTemplateReferenceMetadata());
-            curProjObj.Save();
+            FileInfo selectedProjFile = new FileInfo(selectedProject.FullName);
 
-            // TODO: We need a way in VS for the user to remove these TemplateReference items
+            var curProjObj = ProjectRootElement.Open(currentProject.FullName);
+            var item = curProjObj.AddItem("TemplateReference", selectedProjFile.Name, GetTemplateReferenceMetadata(relativePath));
+
+            curProjObj.Save();
         }
 
-        private IEnumerable<KeyValuePair<string, string>> GetTemplateReferenceMetadata() {
+        private IEnumerable<KeyValuePair<string, string>> GetTemplateReferenceMetadata(string relativePath) {
             var result = new List<KeyValuePair<string, string>>();
-            result.Add(new KeyValuePair<string, string>("Visible", "False"));
+            result.Add(new KeyValuePair<string, string>("PathToProject", relativePath));
+            // result.Add(new KeyValuePair<string, string>("Visible", "False"));
             return result;
         }
     }

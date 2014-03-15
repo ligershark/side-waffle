@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0"
+         DefaultTargets="Build"
+         xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!--
+  For more information, see 
+  http://docs.nuget.org/docs/workflows/migrating-to-automatic-package-restore
+  http://docs.nuget.org/docs/reference/package-restore-with-team-build
+  -->
+
+  <PropertyGroup>
+    <OutDir>$(MSBuildThisFileDirectory)bin</OutDir>
+    <Configuration>Release</Configuration>
+    <ProjectProperties>
+      OutDir=$(OutDir);
+      Configuration=$(Configuration);
+    </ProjectProperties>
+  </PropertyGroup>
+
+  <!-- This project file assumes your solution file is located under the src folder -->
+  <ItemGroup>
+    <Solution Include="$(MSBuildThisFileDirectory)src\*.sln" />
+  </ItemGroup>
+
+  <!-- Append the following to the arguments to specify feed sources.
+   -source &quot;https://nuget.org/api/v2;https://www.myget.org/F/scriptcsnightly/&quot;
+  -->
+  <Target Name="RestorePackages">
+    <Exec Command="&quot;$(MSBuildThisFileDirectory)tools\NuGet\NuGet.exe&quot; restore &quot;%(Solution.Identity)&quot;" />
+  </Target>
+
+  <Target Name="Clean">
+    <MSBuild Targets="Clean"
+             Projects="@(Solution)"
+             Properties="$(ProjectProperties)" />
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="RestorePackages">
+    <MSBuild Targets="Build"
+             Projects="@(Solution)"
+             Properties="$(ProjectProperties)" />
+  </Target>
+
+  <Target Name="Rebuild" DependsOnTargets="RestorePackages">
+    <MSBuild Targets="Rebuild"
+             Projects="@(Solution)"
+             Properties="$(ProjectProperties)" />
+  </Target>
+
+</Project>

@@ -1,0 +1,10 @@
+﻿<section class="flickr">
+    <h2 data-bind="html: displayName"></h2>
+    <ul class="list-inline list-unstyled" data-bind="foreach: images">
+        <li>
+            <a href="#" class="img-thumbnail" data-bind="click: $parent.select">
+                <img style="width: 260px; height: 180px;" data-bind="attr: { src: media.m }"/>
+            </a>
+        </li>
+    </ul>
+</section>

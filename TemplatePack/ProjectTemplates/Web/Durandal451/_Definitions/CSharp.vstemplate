@@ -1,0 +1,228 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Durandal451</Name>
+    <Description>Durandal 2.0.1 on ASP.NET 4.5.1 with OWIN based authentication.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>5000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Durandal451</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Durandal451.csproj" File="Durandal451.csproj" ReplaceParameters="true">
+      <Folder Name="App" TargetFolderName="App">
+        <Folder Name="global" TargetFolderName="global">
+          <ProjectItem ReplaceParameters="true" TargetFileName="session.js">session.js</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="main-built.js">main-built.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="main.js">main.js</ProjectItem>
+        <Folder Name="services" TargetFolderName="services">
+          <ProjectItem ReplaceParameters="true" TargetFileName="logger.js">logger.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="security.js">security.js</ProjectItem>
+        </Folder>
+        <Folder Name="utilities" TargetFolderName="utilities" />
+        <Folder Name="viewmodels" TargetFolderName="viewmodels">
+          <ProjectItem ReplaceParameters="true" TargetFileName="flickr.js">flickr.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="login.js">login.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="manage.js">manage.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="register.js">register.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="registerExternal.js">registerExternal.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="shell.js">shell.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="start.js">start.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="welcome.js">welcome.js</ProjectItem>
+        </Folder>
+        <Folder Name="views" TargetFolderName="views">
+          <ProjectItem ReplaceParameters="true" TargetFileName="detail.html">detail.html</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="flickr.html">flickr.html</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="login.html">login.html</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="manage.html">manage.html</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="register.html">register.html</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="registerExternal.html">registerExternal.html</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="shell.html">shell.html</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="start.html">start.html</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="welcome.html">welcome.html</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="App_Data" TargetFolderName="App_Data" />
+      <Folder Name="App_Start" TargetFolderName="App_Start">
+        <ProjectItem ReplaceParameters="true" TargetFileName="BundleConfig.cs">BundleConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DurandalBundleConfig.cs">DurandalBundleConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DurandalConfig.cs">DurandalConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="FilterConfig.cs">FilterConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="RouteConfig.cs">RouteConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Startup.Auth.cs">Startup.Auth.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="WebApiConfig.cs">WebApiConfig.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Areas" TargetFolderName="Areas">
+        <Folder Name="HelpPage" TargetFolderName="HelpPage">
+          <ProjectItem ReplaceParameters="true" TargetFileName="ApiDescriptionExtensions.cs">ApiDescriptionExtensions.cs</ProjectItem>
+          <Folder Name="App_Start" TargetFolderName="App_Start">
+            <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageConfig.cs">HelpPageConfig.cs</ProjectItem>
+          </Folder>
+          <Folder Name="Controllers" TargetFolderName="Controllers">
+            <ProjectItem ReplaceParameters="true" TargetFileName="HelpController.cs">HelpController.cs</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="HelpPage.css">HelpPage.css</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageAreaRegistration.cs">HelpPageAreaRegistration.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageConfigurationExtensions.cs">HelpPageConfigurationExtensions.cs</ProjectItem>
+          <Folder Name="Models" TargetFolderName="Models">
+            <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageApiModel.cs">HelpPageApiModel.cs</ProjectItem>
+          </Folder>
+          <Folder Name="SampleGeneration" TargetFolderName="SampleGeneration">
+            <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageSampleGenerator.cs">HelpPageSampleGenerator.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageSampleKey.cs">HelpPageSampleKey.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="ImageSample.cs">ImageSample.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="InvalidSample.cs">InvalidSample.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="ObjectGenerator.cs">ObjectGenerator.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="SampleDirection.cs">SampleDirection.cs</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="TextSample.cs">TextSample.cs</ProjectItem>
+          </Folder>
+          <Folder Name="Views" TargetFolderName="Views">
+            <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+            <Folder Name="Help" TargetFolderName="Help">
+              <ProjectItem ReplaceParameters="true" TargetFileName="Api.cshtml">Api.cshtml</ProjectItem>
+              <Folder Name="DisplayTemplates" TargetFolderName="DisplayTemplates">
+                <ProjectItem ReplaceParameters="true" TargetFileName="ApiGroup.cshtml">ApiGroup.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="HelpPageApiModel.cshtml">HelpPageApiModel.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="ImageSample.cshtml">ImageSample.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="InvalidSample.cshtml">InvalidSample.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Parameters.cshtml">Parameters.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="Samples.cshtml">Samples.cshtml</ProjectItem>
+                <ProjectItem ReplaceParameters="true" TargetFileName="TextSample.cshtml">TextSample.cshtml</ProjectItem>
+              </Folder>
+              <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+            </Folder>
+            <Folder Name="Shared" TargetFolderName="Shared">
+              <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+            </Folder>
+            <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="XmlDocumentationProvider.cs">XmlDocumentationProvider.cs</ProjectItem>
+        </Folder>
+      </Folder>
+      <Folder Name="Content" TargetFolderName="Content">
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-theme.css">bootstrap-theme.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap-theme.min.css">bootstrap-theme.min.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.css">bootstrap.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.css">bootstrap.min.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="durandal.css">durandal.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="font-awesome.css">font-awesome.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="font-awesome.min.css">font-awesome.min.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ie10mobile.css">ie10mobile.css</ProjectItem>
+        <Folder Name="images" TargetFolderName="images">
+          <ProjectItem ReplaceParameters="false" TargetFileName="icon.png">icon.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="ios-startup-image-landscape.png">ios-startup-image-landscape.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="ios-startup-image-portrait.png">ios-startup-image-portrait.png</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Site.css">Site.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="starterkit.css">starterkit.css</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="toastr.css">toastr.css</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="toastr.less">toastr.less</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="toastr.min.css">toastr.min.css</ProjectItem>
+      </Folder>
+      <Folder Name="Controllers" TargetFolderName="Controllers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AccountController.cs">AccountController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="DurandalController.cs">DurandalController.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="false" TargetFileName="favicon.ico">favicon.ico</ProjectItem>
+      <Folder Name="fonts" TargetFolderName="fonts">
+        <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-webfont.eot">fontawesome-webfont.eot</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-webfont.svg">fontawesome-webfont.svg</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-webfont.ttf">fontawesome-webfont.ttf</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="fontawesome-webfont.woff">fontawesome-webfont.woff</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="FontAwesome.otf">FontAwesome.otf</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.eot">glyphicons-halflings-regular.eot</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.svg">glyphicons-halflings-regular.svg</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.ttf">glyphicons-halflings-regular.ttf</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="glyphicons-halflings-regular.woff">glyphicons-halflings-regular.woff</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
+      <Folder Name="Models" TargetFolderName="Models">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AccountBindingModels.cs">AccountBindingModels.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="AccountViewModels.cs">AccountViewModels.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IdentityDbInitializer.cs">IdentityDbInitializer.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Project_Readme.html">Project_Readme.html</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Providers" TargetFolderName="Providers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ApplicationOAuthProvider.cs">ApplicationOAuthProvider.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Results" TargetFolderName="Results">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ChallengeResult.cs">ChallengeResult.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Scripts" TargetFolderName="Scripts">
+        <ProjectItem ReplaceParameters="true" TargetFileName="_references.js">_references.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="almond-custom.js">almond-custom.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.js">bootstrap.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="bootstrap.min.js">bootstrap.min.js</ProjectItem>
+        <Folder Name="durandal" TargetFolderName="durandal">
+          <ProjectItem ReplaceParameters="true" TargetFileName="activator.js">activator.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="app.js">app.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="binder.js">binder.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="composition.js">composition.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="events.js">events.js</ProjectItem>
+          <Folder Name="plugins" TargetFolderName="plugins">
+            <ProjectItem ReplaceParameters="true" TargetFileName="dialog.js">dialog.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="history.js">history.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="http.js">http.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="observable.js">observable.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="router.js">router.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="serializer.js">serializer.js</ProjectItem>
+            <ProjectItem ReplaceParameters="true" TargetFileName="widget.js">widget.js</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="system.js">system.js</ProjectItem>
+          <Folder Name="transitions" TargetFolderName="transitions">
+            <ProjectItem ReplaceParameters="true" TargetFileName="entrance.js">entrance.js</ProjectItem>
+          </Folder>
+          <ProjectItem ReplaceParameters="true" TargetFileName="viewEngine.js">viewEngine.js</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="viewLocator.js">viewLocator.js</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.10.2.intellisense.js">jquery-1.10.2.intellisense.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.10.2.js">jquery-1.10.2.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.10.2.min.js">jquery-1.10.2.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery-1.10.2.min.map">jquery-1.10.2.min.map</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="jquery.utilities.js">jquery.utilities.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.3.0.debug.js">knockout-2.3.0.debug.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="knockout-2.3.0.js">knockout-2.3.0.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="knockout.validation.debug.js">knockout.validation.debug.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="knockout.validation.js">knockout.validation.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="modernizr-2.6.2.js">modernizr-2.6.2.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="r.js">r.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="require.js">require.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="respond.js">respond.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="respond.min.js">respond.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="text.js">text.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="toastr.js">toastr.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="toastr.min.js">toastr.min.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="toastr.min.js.map">toastr.min.js.map</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Startup.cs">Startup.cs</ProjectItem>
+      <Folder Name="Views" TargetFolderName="Views">
+        <ProjectItem ReplaceParameters="true" TargetFileName="_ViewStart.cshtml">_ViewStart.cshtml</ProjectItem>
+        <Folder Name="Durandal" TargetFolderName="Durandal">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_splash.cshtml">_splash.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Index.cshtml">Index.cshtml</ProjectItem>
+        </Folder>
+        <Folder Name="Shared" TargetFolderName="Shared">
+          <ProjectItem ReplaceParameters="true" TargetFileName="_Layout.cshtml">_Layout.cshtml</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Error.cshtml">Error.cshtml</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="weyland-config.js">weyland-config.js</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

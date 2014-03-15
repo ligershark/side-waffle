@@ -186,6 +186,7 @@
     <ProjectTemplate Path="..\Project Templates\Nancy.CSharp.SelfHost\_Definitions\_project.vstemplate.xml" Name="Nancy with self host" Description="Nancy with self hoste" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="..\Project Templates\Nancy.CSharp.SelfHostWithRazor\_Definitions\_project.vstemplate.xml" Name="Nancy with self host with Razor" Description="Nancy with self host with Razor" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Extensibility\TemplatePack\_Definitions\_project.vstemplate.xml" Name="Your name here" Description="Project description here" ProjectType="CSharp" ProjectSubType="" />
+    <ProjectTemplate Path="ProjectTemplates\Web\Durandal451\_Definitions\CSharp.vstemplate" Name="Durandal451" Description="Durandal 2.0.1 on ASP.NET 4.5.1 with OWIN based authentication." ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate" Name="Google Chrome Extension" Description="A Chrome Extension" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Web\Chrome Theme\_Definitions\CSharp.vstemplate" Name="Google Chrome Theme" Description="A google chrome theme" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Web\Chrome Web Store App\Definitions\CSharp.vstemplate" Name="Google Chrome Web Store App" Description="A Google Chrome Web Store App" ProjectType="CSharp" ProjectSubType="" />

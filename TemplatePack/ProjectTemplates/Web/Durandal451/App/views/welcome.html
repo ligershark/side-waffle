@@ -1,0 +1,16 @@
+﻿<section>
+    <div class="jumbotron">
+        <h1 data-bind="html: displayName"></h1>
+        <p>Durandal is a cross-device, cross-platform client framework written in JavaScript and designed to make Single Page Applications (SPAs) easy to create and maintain. This project template is based on the ASP.NET 4.5.1 Single Page Application template. Sign in to find out more.</p>
+        <p> To read the blog series that accompanies this project click <a href="http://netdevplus.wordpress.com/tag/durandal/">here</a>.</p>        
+    </div>
+
+    <h3>Features</h3>
+    <ul data-bind="foreach: features">
+        <li data-bind="html: $data"></li>
+    </ul>
+    <h3>Useful links</h3>
+    <ul data-bind="foreach: references">
+        <li><a data-bind="attr: {href: url}, text: name" target="_blank"></a></li>
+    </ul>
+</section>

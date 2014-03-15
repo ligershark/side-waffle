@@ -1,0 +1,42 @@
+﻿<div>
+    <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" data-bind="attr: { href: router.navigationModel()[0].hash }">
+                <i class="fa fa-home"></i>Durandal
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" data-bind="foreach: router.navigationModel">
+                <li data-bind="css: { active: isActive }, ifIsInRole: $data.requiredRoles">
+                    <a data-bind="attr: { href: hash }, html: title"></a>
+                </li>
+            </ul>
+            <div class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
+                    <li data-bind="visible: session.isLoggedIn()">
+                        <span class="navbar-text nofloat">Hello, <a href="#/manage" class="navbar-link" data-bind="text: session.userName()"></a>!</span>
+                    </li>
+                    <li data-bind="visible: !session.isLoggedIn()">
+                        <a href="#login" class="navbar-link">sign in</a>
+                    </li>
+                    <li>
+                        <a href="#" data-bind="click: logout,visible: session.isLoggedIn()">Log off</a>
+                    </li>
+                    <li>
+                        <div class="loader" data-bind="css: { showLoader: session.isBusy() || router.isNavigating()}">
+                            <i class="fa fa-spinner fa-spin fa-2x active"></i>
+                        </div>
+                    </li>
+                </ul>         
+            </div>
+        </div>
+    </div>
+
+    <div class="page-host" data-bind="router: { transition: 'entrance', cacheViews: true }"></div>
+</div>
