@@ -1,6 +1,6 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <DefaultName>Mocha</DefaultName>
+    <DefaultName>Mocha.js</DefaultName>
     <Name>Mocha Test Framework</Name>
     <Description>&lt;No description available&gt;</Description>
     <ProjectType>CSharp</ProjectType>
