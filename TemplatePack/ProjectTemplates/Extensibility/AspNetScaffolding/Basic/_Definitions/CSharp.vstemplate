@@ -4,15 +4,19 @@
   <!-- Fore more info on multi project templates visit: http://msdn.microsoft.com/en-us/library/ms185308(v=vs.90).aspx -->
   
   <TemplateData>
-    <Name>BasicScaffolder</Name>
+    <Name>Basic Scaffolder</Name>
     <Description>Basic Scaffolder</Description>
     <Icon>logo.png</Icon>
     <ProjectType>CSharp</ProjectType>
+    <!--<PreviewImage></PreviewImage>-->
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>basicscaffolder</DefaultName>
+    <SortOrder>5000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <ProjectCollection>
-      <ProjectTemplateLink ProjectName="$safeprojectname$">CustomScaffolder\MyTemplate.vstemplate</ProjectTemplateLink>
       <ProjectTemplateLink ProjectName="$safeprojectname$Extension">CustomScaffolderExtension\MyTemplate.vstemplate</ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="$safeprojectname$">CustomScaffolder\MyTemplate.vstemplate</ProjectTemplateLink>      
     </ProjectCollection>
     <!--<CustomParameters>
       <CustomParameter Name="$slnname$" Value="$safeprojectname$Orig"/>

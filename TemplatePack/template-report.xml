@@ -174,7 +174,7 @@
     <ItemTemplate Path="ItemTemplates\Web\Misc\WebVTT\_Definitions\Web.csharp.vstemplate" Name="WebVTT File" Description="A file for adding subtitles to HTML 5 video." ProjectType="Web" ProjectSubType="CSharp" />
   </ItemTemplates>
   <ProjectTemplates>
-    <ProjectTemplate Path="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\_Definitions\CSharp.vstemplate" Name="BasicScaffolder" Description="Basic Scaffolder" ProjectType="CSharp" ProjectSubType="" />
+    <ProjectTemplate Path="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\_Definitions\CSharp.vstemplate" Name="Basic Scaffolder" Description="Basic Scaffolder" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Extensibility\BrowserLinkExtension\_Definitions\CSharp.vstemplate" Name="Browser Link Extension" Description="&lt;No description available&gt;" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\_Definitions\CSharp.vstemplate" Name="Browser Link Extension (simple)" Description="The fastest way to get started with writing Browser Link extensions" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Extensibility\SnippetProject\_Definitions\CSharp.vstemplate" Name="Code Snippet Extension" Description="Makes it easy to distribute code snippets in a VSIX" ProjectType="CSharp" ProjectSubType="" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Preprocess>
   <Replacements Include="*.*" Exclude="*.vstemplate;*.csproj*.jpg;*.png;*.ico;templateinfo.xml">   
-    <add key="CustomScaffolderExtension" value="$saferootprojectname$Extension"/>
+    <add key="CustomScaffolder" value="$saferootprojectname$"/>
   </Replacements>
 </Preprocess>
