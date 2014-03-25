@@ -25,4 +25,8 @@
     -->
     <!--<ls-TemplatesIntermediateOutputPath Condition=" '$(ls-TemplatesIntermediateOutputPath)'=='' ">$(LOCALAPPDATA)\Microsoft\MSBuild\SideWaffle\$(MSBuildProjectName)\$(Configuration)\</ls-TemplatesIntermediateOutputPath>-->
   </PropertyGroup>
+
+  <ItemGroup>
+    <ls-NonFileTypes Include="Service;BootstrapperPackage;"/>
+  </ItemGroup>
 </Project>
