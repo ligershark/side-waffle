@@ -10,7 +10,7 @@
     <ProjectType>CSharp</ProjectType>
     <!--<PreviewImage></PreviewImage>-->
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-    <DefaultName>basicscaffolder</DefaultName>
+    <DefaultName>BasicScaffolder</DefaultName>
     <SortOrder>5000</SortOrder>
   </TemplateData>
   <TemplateContent>
