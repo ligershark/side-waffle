@@ -92,8 +92,6 @@
     <Content Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\MyTemplate.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\_preprocess.xml" />
     <Content Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\_Definitions\CSharp.vstemplate" />
-    <Content Include="ProjectTemplates\Windows\ConsoleApplicationAsync\ConsoleApplicationAsync.csproj" />
-    <Content Include="ProjectTemplates\Windows\ConsoleApplicationAsync\_Definitions\CSharp.vstemplate" />
     <Content Include="resources\Package.ico" />
     <None Include="ItemTemplates\Azure\CloudServicePlugin\CloudServicePlugin.csplugin" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\build.proj">
@@ -676,7 +674,6 @@
     </None>
     <None Include="ProjectTemplates\Windows Store\TypeScript Blank\WSaTypeScript.jsproj" />
     <None Include="ProjectTemplates\Windows Store\TypeScript Blank\WSaTypeScript_TemporaryKey.pfx" />
-    <None Include="ProjectTemplates\Windows\ConsoleApplicationAsync\App.config" />
     <None Include="Properties\template-builder.props">
       <SubType>Designer</SubType>
     </None>
@@ -848,6 +845,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ProjectTemplates\Windows\" />
     <Folder Include="Snippets\C++\SideWaffle\" />
     <Folder Include="Snippets\HTML\SideWaffle\" />
     <Folder Include="Snippets\SQL\SideWaffle\" />
@@ -855,6 +853,9 @@
     <Folder Include="Snippets\XML\SideWaffle\" />
   </ItemGroup>
   <ItemGroup>
+    <TemplateReference Include="ConsoleApplicationAsync.csproj">
+      <PathToProject>../Project%20Templates/Windows%20Desktop/ConsoleApplicationAsync/ConsoleApplicationAsync.csproj</PathToProject>
+    </TemplateReference>
     <TemplateReference Include="WebJobsHelloWorld.csproj">
       <PathToProject>..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\WebJobsHelloWorld.csproj</PathToProject>
     </TemplateReference>
@@ -896,8 +897,6 @@
     <Compile Include="ItemTemplates\Web\Nancy\NancyBootstrapper\bootstrapper.cs" />
     <Compile Include="ItemTemplates\Web\Nancy\NancyModule\module.cs" />
     <Compile Include="PackageConstants.cs" />
-    <Compile Include="ProjectTemplates\Windows\ConsoleApplicationAsync\AssemblyInfo.cs" />
-    <Compile Include="ProjectTemplates\Windows\ConsoleApplicationAsync\Program.cs" />
     <Compile Include="TemplatePackPackage.cs" />
     <Compile Include="Tooling\ProjectSelector2.xaml.cs">
       <DependentUpon>ProjectSelector2.xaml</DependentUpon>
