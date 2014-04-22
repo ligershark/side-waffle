@@ -86,6 +86,11 @@
     <Content Include="ItemTemplates\Web\JavaScript\Mocha\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\Mocha\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\RequireJs\template.js" />
+    <None Include="ItemTemplates\Web\Misc\JsonSchema\schema.json" />
+    <Content Include="ItemTemplates\Web\Misc\JsonSchema\icon.png" />
+    <Content Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\CustomScaffolderExtension.csproj" />
     <Content Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\MyTemplate.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\_preprocess.xml" />
