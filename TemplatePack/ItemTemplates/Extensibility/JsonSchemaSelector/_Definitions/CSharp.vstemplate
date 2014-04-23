@@ -1,0 +1,21 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>JsonSchemaSelector.cs</DefaultName>
+    <Name>JSON Schema Selector Extension</Name>
+    <Description>A MEF export class that maps JSON file names to JSON schemas.</Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System.ComponentModel.Composition</Assembly>
+      </Reference>
+      <Reference>
+        <Assembly>Microsoft.JSON.Core, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true">JsonSchemaSelector.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
