@@ -4,13 +4,12 @@
     var controllerId = '$safeitemname$';
 
     // TODO: replace app with your module name
-    angular.module('app').controller(controllerId,
-        ['$scope', $safeitemname$]);
+    angular.module('app')
+        .controller(controllerId, ['$location', $safeitemname$]);
 
-    function $safeitemname$($scope) {
+    function $safeitemname$($location) {
         var vm = this;
 
-        vm.activate = activate;
         vm.title = '$safeitemname$';
 
         function activate() { }

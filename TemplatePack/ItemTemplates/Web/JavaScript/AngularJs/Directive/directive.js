@@ -2,7 +2,8 @@
     'use strict';
 
     // TODO: replace app with your module name
-    angular.module('app').directive('$safeitemname$', ['$window', $safeitemname$]);
+    angular.module('app')
+        .directive('$safeitemname$', ['$window', $safeitemname$]);
     
     function $safeitemname$ ($window) {
         // Usage:

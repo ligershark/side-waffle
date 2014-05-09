@@ -6,8 +6,8 @@
     // TODO: Inject modules as needed.
     var $safeitemname$ = angular.module('$safeitemname$', [
         // Angular modules 
-        'ngAnimate',        // animations
-        'ngRoute'           // routing
+        'ngAnimate',
+        'ngRoute'
 
         // Custom modules 
 
@@ -17,8 +17,8 @@
 
     // Execute bootstrapping code and any dependencies.
     // TODO: inject services as needed.
-    $safeitemname$.run(['$q', '$rootScope',
-        function ($q, $rootScope) {
+    $safeitemname$.run(['$rootScope',
+        function ($rootScope) {
 
         }]);
 })();
