@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "My schema file",
+  "description": "A description of my schema file",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "A description of the 'name' property",
+      "type": "string"
+    },
+    "required": [ "name" ]
+  }
+}

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Preprocess>
+  <!--
+  You can specify the path where this should show up in the
+  Add New Project / Add New Item dialog by setting the value below
+  -->
+  <TemplateInfo Path="CSharp\Web"/>
+  <Replacements Include="*.*" Exclude="*.vstemplate;*.fsproj;*.vbproj;*.jpg;*.png;*.ico;_preprocess.xml;_project.vstemplate.xml">
+    <add key="Nancy.CSharp.EmptyAspNetHostWithRazor" value="$safeprojectname$"/>
+    <!--targetFramework="4.0"-->
+    <add key="targetFramework=&quot;4.0&quot;" value="targetFramework=&quot;$targetframeworkversion$&quot;"/>
+    <!--<TargetFrameworkVersion>v4.0</TargetFrameworkVersion>-->
+    <add key="&lt;TargetFrameworkVersion>v4.0&lt;/TargetFrameworkVersion>" value="&lt;TargetFrameworkVersion>v$targetframeworkversion$&lt;/TargetFrameworkVersion>"/>
+  </Replacements>
+</Preprocess>

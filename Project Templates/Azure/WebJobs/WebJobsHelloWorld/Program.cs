@@ -16,7 +16,7 @@ namespace WebJobsHelloWorld {
             host.RunAndBlock();
         }
 
-        public static void ProcessQueueMessage([QueueInput] string inputText, [BlobOutput("containername/blobname")]TextWriter writer) {
+        public static void ProcessQueueMessage([QueueInput("webjobsqueue")] string inputText, [BlobOutput("containername/blobname")]TextWriter writer) {
             writer.WriteLine(inputText);
         }
     }

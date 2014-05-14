@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="e6e2a48e-387d-4af2-9072-86a5276da6d4" Version="1.7" Language="en-US" Publisher="LigerShark" />
+    <Identity Id="e6e2a48e-387d-4af2-9072-86a5276da6d4" Version="1.9" Language="en-US" Publisher="LigerShark" />
     <DisplayName>SideWaffle Template Pack</DisplayName>
     <Description>A side dish filled with item- and project templates for all developers.</Description>
     <MoreInfo>http://sidewaffle.com</MoreInfo>
@@ -15,9 +15,11 @@
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="12.0" />
   </Installation>
   <Dependencies>
-    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.5" />
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    <Dependency Id="Microsoft.VisualStudio.MPF.11.0" DisplayName="Visual Studio MPF 11.0" d:Source="Installed" Version="[11.0,13.0)" />
   </Dependencies>
   <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
     <Asset Type="Microsoft.VisualStudio.ItemTemplate" Path="Output\ItemTemplates" />
     <Asset Type="Microsoft.VisualStudio.ProjectTemplate" Path="Output\ProjectTemplates" />
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="feed.pkgdef" />

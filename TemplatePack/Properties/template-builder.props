@@ -13,7 +13,7 @@
     -->
     <ls-TemplateSubFolder>SideWaffle</ls-TemplateSubFolder>
     <UseHostCompilerIfAvailable>false</UseHostCompilerIfAvailable>
-    
+    <!--<ls-GenerateTemplateReport>false</ls-GenerateTemplateReport>-->
     <!-- 
     We need to redirect build outputs to not be under the solution source tree.
     Otherwise when building templates that are coming in via a project reference
@@ -25,4 +25,8 @@
     -->
     <!--<ls-TemplatesIntermediateOutputPath Condition=" '$(ls-TemplatesIntermediateOutputPath)'=='' ">$(LOCALAPPDATA)\Microsoft\MSBuild\SideWaffle\$(MSBuildProjectName)\$(Configuration)\</ls-TemplatesIntermediateOutputPath>-->
   </PropertyGroup>
+
+  <ItemGroup>
+    <ls-NonFileTypes Include="Service;BootstrapperPackage;"/>
+  </ItemGroup>
 </Project>

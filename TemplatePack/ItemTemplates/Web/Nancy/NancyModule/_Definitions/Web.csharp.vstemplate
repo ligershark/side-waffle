@@ -1,0 +1,15 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>Module.cs</DefaultName>
+    <Name>Nancy module</Name>
+    <Description>Modules are the one thing you simply cannot avoid because they are where you define the behavior of your application. In fact declaring a single module is the bare minimum requirement for any Nancy application.</Description>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">module.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

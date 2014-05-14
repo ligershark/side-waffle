@@ -1,14 +1,13 @@
 ﻿(function () {
     'use strict';
 
-    // Module name is handy for logging
     var id = '$safeitemname$';
 
-    // Create the module and define its dependencies.
+    // TODO: Inject modules as needed.
     var $safeitemname$ = angular.module('$safeitemname$', [
         // Angular modules 
-        'ngAnimate',        // animations
-        'ngRoute'           // routing
+        'ngAnimate',
+        'ngRoute'
 
         // Custom modules 
 
@@ -17,8 +16,9 @@
     ]);
 
     // Execute bootstrapping code and any dependencies.
-    $safeitemname$.run(['$q', '$rootScope',
-        function ($q, $rootScope) {
+    // TODO: inject services as needed.
+    $safeitemname$.run(['$rootScope',
+        function ($rootScope) {
 
         }]);
 })();
