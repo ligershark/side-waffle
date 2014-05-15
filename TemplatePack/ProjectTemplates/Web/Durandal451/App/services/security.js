@@ -1,25 +1,26 @@
-﻿define(['jquery'],
+﻿define(['jquery', 'jquery.utilities'],
     function ($) {
         // Routes
-        addExternalLoginUrl = "/api/Account/AddExternalLogin",
-        changePasswordUrl = "/api/Account/changePassword",
-        loginUrl = "/Token",
-        logoutUrl = "/api/Account/Logout",
-        registerUrl = "/api/Account/Register",
-        registerExternalUrl = "/api/Account/RegisterExternal",
-        removeLoginUrl = "/api/Account/RemoveLogin",
-        setPasswordUrl = "/api/Account/setPassword",
-        siteUrl = "/",
-        userInfoUrl = "/api/Account/UserInfo";
+        var baseUrl = $.getBasePath(),
+        addExternalLoginUrl = baseUrl + "api/Account/AddExternalLogin",
+        changePasswordUrl = baseUrl + "api/Account/changePassword",
+        loginUrl = baseUrl + "Token",
+        logoutUrl = baseUrl + "api/Account/Logout",
+        registerUrl = baseUrl + "api/Account/Register",
+        registerExternalUrl = baseUrl + "api/Account/RegisterExternal",
+        removeLoginUrl = baseUrl + "api/Account/RemoveLogin",
+        setPasswordUrl = baseUrl + "api/Account/setPassword",
+        siteUrl = baseUrl,
+        userInfoUrl = "api/Account/UserInfo";
 
         // Route operations
         function externalLoginsUrl(returnUrl, generateState) {
-            return "/api/Account/ExternalLogins?returnUrl=" + (encodeURIComponent(returnUrl)) +
+            return baseUrl + "api/Account/ExternalLogins?returnUrl=" + (encodeURIComponent(returnUrl)) +
                 "&generateState=" + (generateState ? "true" : "false");
         }
 
         function manageInfoUrl(returnUrl, generateState) {
-            return "/api/Account/ManageInfo?returnUrl=" + (encodeURIComponent(returnUrl)) +
+            return baseUrl + "api/Account/ManageInfo?returnUrl=" + (encodeURIComponent(returnUrl)) +
                 "&generateState=" + (generateState ? "true" : "false");
         }
 
@@ -46,9 +47,7 @@
                     items = data.modelState[key];
 
                     if (items.length) {
-                        for (var i = 0; i < items.length; i++) {
-                            errors += ", " + items[i];
-                        }
+                        errors = items.join(",");
                     }
                 }
             }
@@ -58,7 +57,7 @@
             }
 
             return errors;
-        };
+        }
 
         var securityService = {
             addExternalLogin: addExternalLogin,
@@ -94,7 +93,7 @@
         });
 
         return securityService;
-  
+
         // Data access operations
         function addExternalLogin(data) {
             return $.ajax(addExternalLoginUrl, {
@@ -102,7 +101,7 @@
                 data: data,
                 headers: getSecurityHeaders()
             });
-        };
+        }
 
         function changePassword(data) {
             return $.ajax(changePasswordUrl, {
@@ -110,21 +109,21 @@
                 data: data,
                 headers: getSecurityHeaders()
             });
-        };
+        }
 
         function getExternalLogins(returnUrl, generateState) {
             return $.ajax(externalLoginsUrl(returnUrl, generateState), {
                 cache: false,
                 headers: getSecurityHeaders()
             });
-        };
+        }
 
         function getManageInfo(returnUrl, generateState) {
             return $.ajax(manageInfoUrl(returnUrl, generateState), {
                 cache: false,
                 headers: getSecurityHeaders()
             });
-        };
+        }
 
         function getUserInfo(accessToken) {
             var headers;
@@ -141,28 +140,28 @@
                 cache: false,
                 headers: headers
             });
-        };
+        }
 
         function login(data) {
             return $.ajax(loginUrl, {
                 type: "POST",
                 data: data
             });
-        };
+        }
 
         function logout() {
             return $.ajax(logoutUrl, {
                 type: "POST",
                 headers: getSecurityHeaders()
             });
-        };
+        }
 
         function register(data) {
             return $.ajax(registerUrl, {
                 type: "POST",
                 data: data
             });
-        };
+        }
 
         function registerExternal(accessToken, data) {
             return $.ajax(registerExternalUrl, {
@@ -172,7 +171,7 @@
                     "Authorization": "Bearer " + accessToken
                 }
             });
-        };
+        }
 
         function removeLogin(data) {
             return $.ajax(removeLoginUrl, {
@@ -180,7 +179,7 @@
                 data: data,
                 headers: getSecurityHeaders()
             });
-        };
+        }
 
         function setPassword(data) {
             return $.ajax(setPasswordUrl, {
@@ -188,5 +187,5 @@
                 data: data,
                 headers: getSecurityHeaders()
             });
-        };
+        }
     });

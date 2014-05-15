@@ -18,26 +18,11 @@ namespace $safeprojectname$
         {
             PublicClientId = "self";
 
-            UserManagerFactory = () =>
-            {
-                var context = new IdentityDbContext();
-                System.Data.Entity.Database.SetInitializer<IdentityDbContext>(new IdentityDbInitializer());
+            InitializeDatabase();
 
-                var userStore = new UserStore<IdentityUser>(context);
-                userStore.DisposeContext = true;
+            UserManagerFactory = () => new UserManager<IdentityUser>(new UserStore<IdentityUser>());
 
-                return new UserManager<IdentityUser>(userStore);
-            };
-
-            RoleManagerFactory = () =>
-            {
-                var context = new IdentityDbContext();
-                System.Data.Entity.Database.SetInitializer<IdentityDbContext>(new IdentityDbInitializer());
-
-                var roleStore = new RoleStore<IdentityRole>(context);
-          
-                return new RoleManager<IdentityRole>(roleStore);
-            }; 
+            RoleManagerFactory = () => new RoleManager<IdentityRole>(new RoleStore<IdentityRole>()); 
                       
             OAuthOptions = new OAuthAuthorizationServerOptions
             {
@@ -47,6 +32,15 @@ namespace $safeprojectname$
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
                 AllowInsecureHttp = true
             };
+        }
+
+        private static void InitializeDatabase()
+        {
+            using (var ctxt = new IdentityDbContext())
+            {
+                System.Data.Entity.Database.SetInitializer<IdentityDbContext>(new IdentityDbInitializer());
+                ctxt.Database.Initialize(false);
+            }
         }
 
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
