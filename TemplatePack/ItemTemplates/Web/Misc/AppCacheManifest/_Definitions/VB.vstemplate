@@ -2,7 +2,7 @@
   <TemplateData>
     <DefaultName>site.appcache</DefaultName>
     <Name>Offline Application Cache Manifest</Name>
-    <Description>Provide online support for your website using HTML5 App Cache.</Description>
+    <Description>Provide offline support for your website using HTML5 App Cache.</Description>
     <ProjectType>VisualBasic</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
