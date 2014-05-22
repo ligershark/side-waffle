@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0"
          DefaultTargets="Build"
          xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-         
+
   <!--
   Important: Put NuGet.exe under /tools/NuGet (download at https://nuget.codeplex.com/releases)
   For more information, see 
@@ -25,14 +25,14 @@
   </ItemGroup>
 
   <Target Name="RestorePackages">
-  
+
     <!-- Have Nuget.exe update itself because some packages require the latest version -->
     <Exec Command="&quot;$(ToolsHome)NuGet\NuGet.exe&quot; update -self" />
-    
+
     <!-- Append the following to the restore command arguments to specify feed sources.
         -source &quot;https://nuget.org/api/v2;https://www.myget.org/F/scriptcsnightly/&quot;
         Alternatively you can use a NuGet.config file.
-    -->    
+    -->
     <Exec Command="&quot;$(ToolsHome)NuGet\NuGet.exe&quot; restore &quot;%(Solution.Identity)&quot;" />
   </Target>
 
