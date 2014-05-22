@@ -27,7 +27,7 @@
   <Target Name="RestorePackages">
   
     <!-- Have Nuget.exe update itself because some packages require the latest version -->
-    <Exec Command="&quot;$(MSBuildThisFileDirectory)tools\NuGet\NuGet.exe&quot; update -self" />
+    <Exec Command="&quot;$(ToolsHome)NuGet\NuGet.exe&quot; update -self" />
     
     <!-- Append the following to the restore command arguments to specify feed sources.
         -source &quot;https://nuget.org/api/v2;https://www.myget.org/F/scriptcsnightly/&quot;
