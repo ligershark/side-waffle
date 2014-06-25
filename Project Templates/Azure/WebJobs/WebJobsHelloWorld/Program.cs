@@ -1,22 +1,28 @@
-﻿using Microsoft.WindowsAzure.Jobs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Azure.Jobs;
 
-namespace WebJobsHelloWorld {
+namespace WebJobsHelloWorld
+{
     // To learn more about Windows Azure WebJobs start here http://go.microsoft.com/fwlink/?LinkID=320976
-    class Program {
+    internal class Program
+    {
         // Please set the following connectionstring values in app.config
-        // AzureJobsRuntime and AzureJobsData
-        static void Main() {
-            JobHost host = new JobHost();
+        // AzureJobsDashboard and AzureJobsStorage
+        private static void Main()
+        {
+            var host = new JobHost();
             host.RunAndBlock();
         }
 
-        public static void ProcessQueueMessage([QueueInput("webjobsqueue")] string inputText, [BlobOutput("containername/blobname")]TextWriter writer) {
+        public static void ProcessQueueMessage(
+            [QueueTrigger("webjobsqueue")] string inputText,
+            [Blob("containername/blobname")] TextWriter writer)
+        {
             writer.WriteLine(inputText);
         }
     }
