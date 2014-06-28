@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <DefaultName>NinjectControllerFactory</DefaultName>
-    <Name>Ninect Controller Factory</Name>
+    <Name>Ninject Controller Factory</Name>
     <Description>Adds an MVC Controller Factory class backed by a Ninject IoC container to any existing VSIX project.</Description>
     <ProjectType>CSharp</ProjectType>
     <Icon>aspnet.ico</Icon>
