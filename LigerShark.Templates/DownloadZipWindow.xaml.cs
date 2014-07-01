@@ -35,7 +35,8 @@
 
             this.DownloadedFile = dest;
 
-            MessageBox.Show("downloaded file!");
+            this.DialogResult = true;
+            this.Close();
         }
 
         // TODO: is it OK to use async void here? 
