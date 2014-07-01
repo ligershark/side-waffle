@@ -31,8 +31,7 @@
                 vm.externalAccessToken = registerExternal.externalAccessToken;
                 vm.state = registerExternal.state;
                 vm.loginUrl = registerExternal.loginUrl;
-            }
-            else {
+            } else {
                 router.navigate("#/login", "replace");
             }
         }

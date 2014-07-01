@@ -30,7 +30,6 @@ namespace $safeprojectname$.Models
 
             userManager.AddToRole(administrator.Id, "RegisteredUsers");
             userManager.AddToRole(administrator.Id, "Administrators");
-
         }
     }
 }

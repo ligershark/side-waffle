@@ -257,6 +257,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\ie10mobile.css" />
     <Content Include="Content\images\icon.png" />
+    <Content Include="Content\images\iconOriginal.png" />
     <Content Include="Content\images\ios-startup-image-landscape.png" />
     <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="Content\Site.css" />
@@ -342,6 +343,15 @@
     <Content Include="Views\Durandal\_splash.cshtml" />
     <Content Include="Scripts\toastr.min.js.map" />
     <Content Include="Scripts\jquery.utilities.js" />
+    <None Include="Web.config.install.xdt">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.config.install.Debug.xdt">
+      <DependentUpon>Web.config.install.xdt</DependentUpon>
+    </None>
+    <None Include="Web.config.install.Release.xdt">
+      <DependentUpon>Web.config.install.xdt</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\utilities\" />

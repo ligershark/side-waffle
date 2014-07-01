@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using System.Web;
 
 namespace $safeprojectname$.Providers
 {
@@ -76,11 +77,12 @@ namespace $safeprojectname$.Providers
             return Task.FromResult<object>(null);
         }
 
+
         public override Task ValidateClientRedirectUri(OAuthValidateClientRedirectUriContext context)
         {
             if (context.ClientId == _publicClientId)
             {
-                Uri expectedRootUri = new Uri(context.Request.Uri, "/");
+                Uri expectedRootUri = FullRootUri(HttpContext.Current);
 
                 if (expectedRootUri.AbsoluteUri == context.RedirectUri)
                 {
@@ -89,6 +91,29 @@ namespace $safeprojectname$.Providers
             }
 
             return Task.FromResult<object>(null);
+        }
+
+        private Uri FullRootUri(HttpContext context)
+        {
+            var appPath = string.Empty;
+
+            if (context != null)
+            {
+                appPath = string.Format("{0}://{1}{2}{3}",
+                                   context.Request.Url.Scheme,
+                                   context.Request.Url.Host,
+                                   context.Request.Url.Port == 80
+                                       ? string.Empty
+                                       : ":" + context.Request.Url.Port,
+                                   context.Request.ApplicationPath);
+            }
+
+            if (!appPath.EndsWith("/"))
+            {
+                appPath += "/";
+            }
+
+            return new Uri(appPath);
         }
 
         public static AuthenticationProperties CreateProperties(IdentityUser user)

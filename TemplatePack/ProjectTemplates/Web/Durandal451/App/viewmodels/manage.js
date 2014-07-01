@@ -290,7 +290,6 @@
             return dfd.promise();
         }
 
-
         // Reveal the bindable properties and functions
         var vm = {
             activate: activate,
@@ -356,8 +355,7 @@
                 addExternalLogin(externalAssociationResult).done(function () {
                     return load();
                 });
-            }
-            else {
+            } else {
                 return load();
             }
         }
