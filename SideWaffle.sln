@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplicationAsync", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LigerShark.Templates", "LigerShark.Templates\LigerShark.Templates.csproj", "{A2A92F75-3703-4326-A474-1569979EC875}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "html5up", "Project Templates\html5up\html5up.csproj", "{5F527135-30BB-413A-9F23-9E9D6047D92D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,7 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{66E5E42A-2905-4A93-A3F7-FD26DA48A25F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E5E42A-2905-4A93-A3F7-FD26DA48A25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66E5E42A-2905-4A93-A3F7-FD26DA48A25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66E5E42A-2905-4A93-A3F7-FD26DA48A25F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0328C195-795D-423F-99AC-9ECF8B0B5198}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -88,6 +91,9 @@ Global
 		{A2A92F75-3703-4326-A474-1569979EC875}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2A92F75-3703-4326-A474-1569979EC875}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2A92F75-3703-4326-A474-1569979EC875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F527135-30BB-413A-9F23-9E9D6047D92D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F527135-30BB-413A-9F23-9E9D6047D92D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F527135-30BB-413A-9F23-9E9D6047D92D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,5 +111,6 @@ Global
 		{35460AA4-B94A-4B64-9418-7243EC3D2F01} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
 		{68F5F5F3-B8BB-4911-875F-6F00AAE04EA6} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
 		{80D7D5EF-F856-4A55-840B-0D07E7FD1718} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
+		{5F527135-30BB-413A-9F23-9E9D6047D92D} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
 	EndGlobalSection
 EndGlobal
