@@ -51,7 +51,10 @@
                 return;
             }
 
-            DirectoryCopy(sourceDir, destDir, true);
+            List<FileInfo> copiedFiles = DirectoryCopy(sourceDir, destDir, true);
+            copiedFiles.ForEach(file => {
+                project.ProjectItems.AddFromFile(file.FullName);
+            });
         }
 
         public void ProjectItemFinishedGenerating(EnvDTE.ProjectItem projectItem) {
@@ -65,7 +68,7 @@
         }
 
         // taken from http://msdn.microsoft.com/en-us/library/bb762914.aspx
-        private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs) {
+        private List<FileInfo> DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs) {
             // Get the subdirectories for the specified directory.
             DirectoryInfo dir = new DirectoryInfo(sourceDirName);
             DirectoryInfo[] dirs = dir.GetDirectories();
@@ -81,20 +84,24 @@
                 Directory.CreateDirectory(destDirName);
             }
 
+            var copiedFiles = new List<FileInfo>();
             // Get the files in the directory and copy them to the new location.
             FileInfo[] files = dir.GetFiles();
             foreach (FileInfo file in files) {
                 string temppath = Path.Combine(destDirName, file.Name);
-                file.CopyTo(temppath, false);
+                copiedFiles.Add(file.CopyTo(temppath, false));
             }
 
             // If copying subdirectories, copy them and their contents to new location. 
             if (copySubDirs) {
                 foreach (DirectoryInfo subdir in dirs) {
                     string temppath = Path.Combine(destDirName, subdir.Name);
-                    DirectoryCopy(subdir.FullName, temppath, copySubDirs);
+                    copiedFiles.AddRange(
+                        DirectoryCopy(subdir.FullName, temppath, copySubDirs));
                 }
             }
+
+            return copiedFiles;
         }
     }
 }

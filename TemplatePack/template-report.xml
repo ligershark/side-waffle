@@ -199,18 +199,10 @@
     <ProjectTemplate Path="ProjectTemplates\Web\Chrome Theme\_Definitions\CSharp.vstemplate" Name="Google Chrome Theme" Description="A google chrome theme" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Web\Chrome Web Store App\Definitions\CSharp.vstemplate" Name="Google Chrome Web Store App" Description="A Google Chrome Web Store App" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Web\HTML5 Boiler Platev4.3\_Definitions\CSharp.vstemplate" Name="HTML5 Boiler Plate v4.3" Description="HTML5 Boiler Plate v4.3 Project Template" ProjectType="CSharp" ProjectSubType="" />
-<<<<<<< HEAD
-=======
-    <ProjectTemplate Path="..\Project Templates\html5up\_Definitions\_project.vstemplate.xml" Name="html5up" Description="html5up" ProjectType="CSharp" ProjectSubType="" />
->>>>>>> 3e918abab64b9222db6570c51ef7577e0b920f06
     <ProjectTemplate Path="ProjectTemplates\Web\_SampleNewWeb\_Definitions\_project.vstemplate.xml" Name="Sample New Web Project" Description="Sample new web project here" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="..\Project Templates\_SampleProjRef\_Definitions\_project.vstemplate.xml" Name="Sample proj from ref" Description="Sample proj from ref" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate" Name="Sample Web Project" Description="&lt;Just a sample here&gt;" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\_Definitions\_project.vstemplate.xml" Name="Windows Azure WebJobs Console Application" Description="Windows Azure WebJobs Console Application" ProjectType="CSharp" ProjectSubType="" />
-<<<<<<< HEAD
-    <ProjectTemplate Path="..\Project Templates\html5up\_Definitions\_project.vstemplate.xml" Name="Your name here" Description="Project description here" ProjectType="CSharp" ProjectSubType="" />
-=======
->>>>>>> 3e918abab64b9222db6570c51ef7577e0b920f06
     <ProjectTemplate Path="ProjectTemplates\Web\_SampleFSharpTemplate\_Definitions\fsharp.vstemplate" Name="FSharpSample" Description="FSharp sample project template" ProjectType="FSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Windows Store\TypeScript Blank\_Definitions\CSharp.vstemplate" Name="Blank App" Description="A single-page project for a Windows Store app using TypeScript" ProjectType="TypeScript" ProjectSubType="Windows Store" />
     <ProjectTemplate Path="ProjectTemplates\Web\html5up\_Definitions\Web.CSharp.vstemplate" Name="html5up" Description="&lt;html5up&gt;" ProjectType="Web" ProjectSubType="CSharp" />
