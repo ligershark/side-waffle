@@ -432,6 +432,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="ProjectTemplates\Cross-Platform\ReactiveUI\ProjectTemplate.Core\MyTemplate.vstemplate" />
+    <Content Include="ProjectTemplates\Cross-Platform\ReactiveUI\ProjectTemplate.Core\ProjectTemplate.Core.csproj" />
+    <Content Include="ProjectTemplates\Cross-Platform\ReactiveUI\ProjectTemplate.WPF\MyTemplate.vstemplate" />
+    <Content Include="ProjectTemplates\Cross-Platform\ReactiveUI\ProjectTemplate.WPF\ProjectTemplate.Wpf.csproj" />
+    <Content Include="ProjectTemplates\Cross-Platform\ReactiveUI\_Definitions\CSharp.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtension\_Definitions\CSharp.vstemplate" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\BrowserLinkExtensionTemplate.csproj" />
     <Content Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\_Definitions\CSharp.vstemplate" />
@@ -976,6 +981,10 @@
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <Import Project="$(TemplateBuilderTargets)" Condition="Exists('$(TemplateBuilderTargets)')" Label="TemplateBuilder" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

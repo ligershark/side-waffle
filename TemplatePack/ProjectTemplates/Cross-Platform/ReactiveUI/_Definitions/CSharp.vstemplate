@@ -1,0 +1,29 @@
+<VSTemplate Version="2.0.0" Type="ProjectGroup"
+    xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+
+  <!-- Fore more info on multi project templates visit: http://msdn.microsoft.com/en-us/library/ms185308(v=vs.90).aspx -->
+
+  <TemplateData>
+    <Name>ReactiveUI</Name>
+    <Description>A cross-platform ReactiveUI template</Description>
+    <Icon>logo.png</Icon>
+    <ProjectType>CSharp</ProjectType>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectCollection>
+      <ProjectTemplateLink ProjectName="$safeprojectname$">ProjectTemplate.Core\MyTemplate.vstemplate</ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="$safeprojectname$Wpf">ProjectTemplate.WPF\MyTemplate.vstemplate</ProjectTemplateLink>
+<!--
+      <ProjectTemplateLink ProjectName="$safeprojectname$Android">ProjectTemplate.Android\MyTemplate.vstemplate</ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="$safeprojectname$WinRT">ProjectTemplate.WinRT\MyTemplate.vstemplate</ProjectTemplateLink>
+-->
+    </ProjectCollection>
+    <CustomParameters>
+      <CustomParameter Name="$slnname$" Value="$safeprojectname$Orig"/>
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>TemplateBuilder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>TemplateBuilder.RootWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
