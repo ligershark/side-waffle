@@ -29,7 +29,7 @@
         private async Task DownloadFile(string uri) {
             if (string.IsNullOrEmpty(uri)) { throw new ArgumentNullException("uri"); }
 
-            string dest = System.IO.Path.Combine(this.TempFolder, DateTime.Now.ToString("yyyyMMdd-hh.mm.ss.ffff")+".zip");
+            string dest = System.IO.Path.Combine(this.TempFolder, DateTime.Now.ToString("yyyyMMdd-hh.mm.ss.ffff") + ".zip");
 
             await new Downloader().Download(uri, dest);
 
@@ -47,6 +47,16 @@
                 e.Cancel = true;
                 // download the file now
                 await DownloadFile(e.Uri.ToString());
+            }
+        }
+
+        private async void ButtonDownload_Click(object sender, RoutedEventArgs e) {
+            string url = this.CtrlTextUrl.Text;
+            if (!string.IsNullOrEmpty(url)) {
+                await DownloadedFile(this.CtrlTextUrl.Text);
+            }
+            else {
+                MessageBox.Show("Please enter a URL to a .zip file in the text box");
             }
         }
     }

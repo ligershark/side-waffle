@@ -3,7 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Select your template from http://html5up.net" Height="800" Width="1200">
     <Grid>
-        <WebBrowser Name="CtrlBrowser" Navigating="OnNavigating" Source="http://html5up.net/"/>
+        <WebBrowser Name="CtrlBrowser" Navigating="OnNavigating" Source="http://html5up.net/" Margin="0,58,0,55"/>
+        <Label Content="Click on the Download link for desired template or enter a URL to a .zip file" Margin="10,10,10,0" VerticalAlignment="Top" RenderTransformOrigin="-1.965,0.354" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Zip URL to download" HorizontalAlignment="Left" Margin="30,733,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox Name="CtrlTextUrl" Height="23" Margin="187,733,184,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Name="ButtonDownload" Content="Download" HorizontalAlignment="Left" Margin="1047,733,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDownload_Click"/>
 
     </Grid>
 </Window>
