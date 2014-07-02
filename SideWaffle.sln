@@ -53,8 +53,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LigerShark.Templates", "Lig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "html5up", "Project Templates\html5up\html5up.csproj", "{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SideWaffle.Common", "SideWaffle.Common\SideWaffle.Common.csproj", "{14945820-B6CD-4121-8C06-8D2999CC9855}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -96,10 +94,6 @@ Global
 		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{14945820-B6CD-4121-8C06-8D2999CC9855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{14945820-B6CD-4121-8C06-8D2999CC9855}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{14945820-B6CD-4121-8C06-8D2999CC9855}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{14945820-B6CD-4121-8C06-8D2999CC9855}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

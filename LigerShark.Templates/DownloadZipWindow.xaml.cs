@@ -53,7 +53,7 @@
         private async void ButtonDownload_Click(object sender, RoutedEventArgs e) {
             string url = this.CtrlTextUrl.Text;
             if (!string.IsNullOrEmpty(url)) {
-                await DownloadedFile(this.CtrlTextUrl.Text);
+                await DownloadFile(this.CtrlTextUrl.Text);
             }
             else {
                 MessageBox.Show("Please enter a URL to a .zip file in the text box");
