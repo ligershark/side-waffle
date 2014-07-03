@@ -29,7 +29,7 @@
         private async Task DownloadFile(string uri) {
             if (string.IsNullOrEmpty(uri)) { throw new ArgumentNullException("uri"); }
 
-            string dest = System.IO.Path.Combine(this.TempFolder, DateTime.Now.ToString("yyyyMMdd-hh.mm.ss.ffff") + ".zip");
+            string dest = System.IO.Path.Combine(this.TempFolder, DateTime.Now.Ticks.ToString() + ".zip");
 
             await new Downloader().Download(uri, dest);
 
