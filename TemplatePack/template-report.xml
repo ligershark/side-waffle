@@ -51,7 +51,7 @@
     <ItemTemplate Path="ItemTemplates\Web\_Samples\_Sample Multi Files\_Definitions\CSharp.vstemplate" Name="Multi file template sample" Description="Adds a few different files in one item template" ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Web\Nancy\NancyBootstrapper\_Definitions\CSharp.vstemplate" Name="Nancy bootstrapper" Description="The bootstrapper enables you to reconfigure the composition of the framework, by overriding the various methods and properties." ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Web\Nancy\NancyModule\_Definitions\CSharp.vstemplate" Name="Nancy module" Description="Modules are the one thing you simply cannot avoid because they are where you define the behavior of your application. In fact declaring a single module is the bare minimum requirement for any Nancy application." ProjectType="CSharp" ProjectSubType="" />
-    <ItemTemplate Path="ItemTemplates\Web\Mvc\NinjectControllerFactory\_Definitions\CSharp.vstemplate" Name="Ninect Controller Factory" Description="Adds an MVC Controller Factory class backed by a Ninject IoC container to any existing VSIX project." ProjectType="CSharp" ProjectSubType="" />
+    <ItemTemplate Path="ItemTemplates\Web\Mvc\NinjectControllerFactory\_Definitions\CSharp.vstemplate" Name="Ninject Controller Factory" Description="Adds an MVC Controller Factory class backed by a Ninject IoC container to any existing VSIX project." ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Test\NUnitFixture\Definitions\CSharp.vstemplate" Name="NUnit Fixture" Description="NUnit test fixture" ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\CSharp.vstemplate" Name="Offline Application Cache Manifest" Description="Provide offline support for your website using HTML5 App Cache." ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\Extensibility\Package Definition\_Definitions\CSharp.vstemplate" Name="Package Definition (.pkgdef)" Description="Package Definition files lets you add registry keys to the VS hive." ProjectType="CSharp" ProjectSubType="" />
@@ -205,6 +205,8 @@
     <ProjectTemplate Path="..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\_Definitions\_project.vstemplate.xml" Name="Windows Azure WebJobs Console Application" Description="Windows Azure WebJobs Console Application" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Web\_SampleFSharpTemplate\_Definitions\fsharp.vstemplate" Name="FSharpSample" Description="FSharp sample project template" ProjectType="FSharp" ProjectSubType="" />
     <ProjectTemplate Path="ProjectTemplates\Windows Store\TypeScript Blank\_Definitions\CSharp.vstemplate" Name="Blank App" Description="A single-page project for a Windows Store app using TypeScript" ProjectType="TypeScript" ProjectSubType="Windows Store" />
+    <ProjectTemplate Path="ProjectTemplates\Web\html5up\_Definitions\Web.CSharp.vstemplate" Name="html5up" Description="&lt;html5up&gt;" ProjectType="Web" ProjectSubType="CSharp" />
+    <ProjectTemplate Path="ProjectTemplates\Web\html5up\_Definitions\Web.VB.vstemplate" Name="html5up" Description="&lt;html5up&gt;" ProjectType="Web" ProjectSubType="VisualBasic" />
   </ProjectTemplates>
   <Snippets>
     <Snippet Title="Angular Controller" Description="Template for adding an Angular Controller" Shortcut="ngctrl" Path="Snippets\JavaScript\SideWaffle\ng.controller.snippet" />
