@@ -345,7 +345,6 @@ namespace $safeprojectname$.Controllers
             }
 
             result = await UserManager.AddToRoleAsync(user.Id, DefaultUserRole);
-
             errorResult = GetErrorResult(result);
 
             if (errorResult != null)

@@ -1,11 +1,9 @@
 ﻿(function () {
     'use strict';
 
-    var serviceId = '$safeitemname$';
-
-    // TODO: replace app with your module name
-    angular.module('app')
-        .factory(serviceId, ['$http', $safeitemname$]);
+    angular
+        .module('app')
+        .factory('$safeitemname$', ['$http', $safeitemname$]);
 
     function $safeitemname$($http) {
         var service = {

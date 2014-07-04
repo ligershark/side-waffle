@@ -20,12 +20,21 @@
             };
         }
 
+        function reset() {
+            vm.userName("");
+            vm.password("");            
+            vm.confirmPassword("");
+            vm.setFocus(true);
+            vm.validationErrors.showAllMessages(false);
+        }
+
         // Reveal the bindable properties and functions
         var vm = {
             activate: activate,
             goBack: goBack,
             title: 'register',
             session: session,
+            setFocus: ko.observable(true),
             userName: ko.observable("").extend({ required: true }),
             password: ko.observable("").extend({ required: true }),                  
             register: register,
@@ -43,6 +52,8 @@
             var dfd = $.Deferred();
 
             session.isBusy(true);
+
+            reset();
 
             if (!vm.loaded) {
                 security.getExternalLogins(security.returnUrl, true /* generateState */)
@@ -78,8 +89,7 @@
                    });
 
                 return dfd.promise();
-            }
-            else {
+            } else {
                 session.isBusy(false);
                 return dfd.resolve();
             }
@@ -124,7 +134,6 @@
                             showToast: true,
                             type: "error"
                         });
-                        vm.errors.push(data.error_description);
                     } else {
                         logger.log({
                             message: "An unknown error occurred.",
@@ -133,6 +142,8 @@
                         });
                     }
                 });
+            }).always(function () {
+                session.isBusy(false);
             }).failJSON(function (data) {
                 var errors = security.toErrorString(data);
 

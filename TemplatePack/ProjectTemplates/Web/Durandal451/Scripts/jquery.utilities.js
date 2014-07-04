@@ -1,4 +1,4 @@
-﻿(function ($) {
+﻿(function($) {
     //arguments: array, comparison (value to compare against or function which should return true/false)
     $.arrayContains = function (array, comparison) {
         if (Object.prototype.toString.call(array) === '[object Array]') {
@@ -6,19 +6,17 @@
             var res = false;
             var comparator;
 
-            if (typeof (comparison) == 'function') {
+            if (typeof (comparison) === 'function') {
                 comparator = comparison;
-            }
-            else {
+            } else {
                 comparator = function (value) {
                     if (value === comparison) {
                         return true;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                 };
-            };
+            }
 
             $.each(array, function (i, v) {
                 res = comparator(v);
@@ -27,23 +25,24 @@
 
             return res;
 
-        }
-        else {
-            throw { name: "InvalidArgument", description: "array argument must be an array" }
+        } else {
+            throw { name: "InvalidArgument", description: "array argument must be an array" };
         }
     };
 
     $.asyncEach = function (array, asyncFunction) {
 
-        if (Object.prototype.toString.call(array) !== '[object Array]')
+        if (Object.prototype.toString.call(array) !== '[object Array]') {
             throw { name: "InvalidArgument", description: "array parameter must be an array" };
+        }
 
-        if (typeof (asyncFunction) !== 'function')
+        if (typeof (asyncFunction) !== 'function') {
             throw { name: "InvalidArgument", description: "asyncFunction parameter must be a function" };
+        }
 
         var dfd = $.Deferred();
-        var i = 1;
-        if(array.length == 0)
+
+        if (array.length === 0)
         {
             return dfd.resolve();
         }
@@ -51,8 +50,9 @@
         $.each(array, function (i, v) {
             $.when(asyncFunction(v)).then(function () {
                 i++;
-                if (i == array.length)
+                if (i === array.length) {
                     return dfd.resolve();
+                }
             });
         });
 
@@ -76,9 +76,9 @@
         } else {
             return {};
         }
-    }
+    };
 
-    $.parseQueryString = function(queryString) {
+    $.parseQueryString = function (queryString) {
         var data = {},
             pairs, pair, separatorIndex, escapedKey, escapedValue, key, value;
 
@@ -107,12 +107,21 @@
         }
 
         return data;
-    }
+    };
 
     $.arrayIntersect = function (array1, array2) {
         return $.grep(array1, function (i) {
             return $.inArray(i, array2) > -1;
         });
-    }
+    };
 
+    $.getBasePath = function () {
+        var path = window.location.pathname;
+
+        if (path.substring(path.length - 1) !== "/") {
+            return path + "/";
+        } else {
+            return path;
+        }
+    };
 })(jQuery);

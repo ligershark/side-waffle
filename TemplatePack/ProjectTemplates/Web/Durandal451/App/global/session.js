@@ -14,7 +14,7 @@
 
                 localStorage.removeItem("sessionStorageBackup");
             }
-        };
+        }
 
         function setAccessToken(accessToken, persistent) {
             if (persistent) {
@@ -22,12 +22,12 @@
             } else {
                 sessionStorage["accessToken"] = accessToken;
             }
-        };
+        }
             
         function clearAccessToken() {
             localStorage.removeItem("accessToken");
             sessionStorage.removeItem("accessToken");
-        };
+        }
 
         function init() {
             restoreSessionStorageFromLocalStorage();
@@ -40,14 +40,14 @@
             isLoggedIn: ko.observable(false),
             isBusy: ko.observable(false),
             userRoles: ko.observableArray(),
-            userIsInRole : userIsInRole,
+            userIsInRole: userIsInRole,
             setUser: setUser,
             clearUser: clearUser,
             archiveSessionStorageToLocalStorage: archiveSessionStorageToLocalStorage,
-            isAuthCallback: isAuthCallback,      
+            isAuthCallback: isAuthCallback,
             userRemembered: userRemembered,
             rememberedToken: rememberedToken
-        }
+        };
 
         return session;
 
@@ -81,25 +81,18 @@
 
         function userIsInRole(requiredRole)
         {
-            if (requiredRole === undefined)
-            {
+            if (requiredRole === undefined) {
                 return true;
-            }
-            else if (session.userRoles() === undefined)
-            {
+            } else if (session.userRoles() === undefined) {
                 return false;
-            }
-            else
-            {
+            } else {
                 if ($.isArray(requiredRole)) {
                     if (requiredRole.length === 0) {
                         return true;
-                    }
-                    else {
+                    } else {
                         return $.arrayIntersect(session.userRoles(), requiredRole).length > 0;
                     }
-                }
-                else {
+                } else {
                     return $.inArray(requiredRole, session.userRoles()) > -1;
                 }
             }                       
@@ -120,8 +113,7 @@
         function redirectCallback(redirectToManage) {
             if (redirectToManage) {
                 router.navigate('#/manage', 'replace');
-            }
-            else {
+            } else {
                 router.navigate('#/', 'replace');
             }
         }
@@ -135,6 +127,6 @@
 
             localStorage["sessionStorageBackup"] = JSON.stringify(backup);
             sessionStorage.clear();
-        };        
+        }      
 
     });

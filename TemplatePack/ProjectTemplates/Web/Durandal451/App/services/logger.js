@@ -15,7 +15,7 @@
             toastr.options.positionClass = 'toast-bottom-right';
             toastr.options.backgroundpositionClass = 'toast-bottom-right';
             toastr.options.fadeOut = 1000;
-        };
+        }
 
         init();
         
@@ -33,5 +33,5 @@
             if (opns.showToast) {
                 toastr[opns.type](opns.message, opns.title);
             }
-        };
+        }
     });

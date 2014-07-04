@@ -1,18 +1,17 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>Durandal451</Name>
-    <Description>Durandal 2.0.1 on ASP.NET 4.5.1 with OWIN based authentication.</Description>
+    <Description>Durandal 2.0.1 on ASP.NET 4.5.1 secured with ASP.NET Identity 1.0.0</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
-    <SortOrder>5000</SortOrder>
+    <SortOrder>1000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>Durandal451</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>__TemplateIcon.png</Icon>
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="Durandal451.csproj" File="Durandal451.csproj" ReplaceParameters="true">
@@ -117,6 +116,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="ie10mobile.css">ie10mobile.css</ProjectItem>
         <Folder Name="images" TargetFolderName="images">
           <ProjectItem ReplaceParameters="false" TargetFileName="icon.png">icon.png</ProjectItem>
+          <ProjectItem ReplaceParameters="false" TargetFileName="iconOriginal.png">iconOriginal.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="ios-startup-image-landscape.png">ios-startup-image-landscape.png</ProjectItem>
           <ProjectItem ReplaceParameters="false" TargetFileName="ios-startup-image-portrait.png">ios-startup-image-portrait.png</ProjectItem>
         </Folder>
@@ -222,6 +222,9 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Web.config.install.xdt">Web.config.install.xdt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Web.config.install.Debug.xdt">Web.config.install.Debug.xdt</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Web.config.install.Release.xdt">Web.config.install.Release.xdt</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="weyland-config.js">weyland-config.js</ProjectItem>
     </Project>
   </TemplateContent>
