@@ -1,16 +1,15 @@
 ﻿(function () {
     'use strict';
 
-    var controllerId = '$safeitemname$';
-
-    // TODO: replace app with your module name
-    angular.module('app')
-        .controller(controllerId, ['$location', $safeitemname$]);
+    angular
+        .module('app')
+        .controller('$safeitemname$', ['$location', $safeitemname$]);
 
     function $safeitemname$($location) {
         var vm = this;
-
         vm.title = '$safeitemname$';
+
+        activate();
 
         function activate() { }
     }
