@@ -50,6 +50,7 @@ $script:toolsRoot = (Join-Path -Path (Get-ScriptDirectory) -ChildPath Tools\)
 # There are a few things which this script requires
 #     msbuild alias
 #     TemplateBuilderDevRoot : Environment variable
+#     SlowCheetahXdtDevRoot  : Environment variable
 
 # When called it will return true if all dependencies are found, and false if not
 function CheckForDependencies{
@@ -69,6 +70,19 @@ function CheckForDependencies{
         }
     }
 
+    $allDepPassed = $true
+    if(!( Check-PathVariable -name TemplateBuilderDevRoot -envValue $env:TemplateBuilderDevRoot -checkEndsWithSlash)){
+        $allDepPassed = $false
+    }
+    if(!( Check-PathVariable -name SlowCheetahXdtDevRoot -envValue $env:SlowCheetahXdtDevRoot -checkEndsWithSlash )){
+        $allDepPassed = $false
+    }
+
+    if(!$allDepPassed){
+        throw 'issue with dependencies found'
+    }
+
+    <#
     if(!$env:TemplateBuilderDevRoot){
         "Missing required environment variable TemplateBuilderDevRoot. Please define it and try again" | Write-Error
         $depFound = $false
@@ -83,8 +97,46 @@ function CheckForDependencies{
             '$env:TemplateBuilderDevRoot does not end with a \ which is expected. Things may not go as planned.' | Write-Warning
         }
     }
+    #>
+
 
     return $depFound
+}
+
+function Check-PathVariable(){
+    [cmdletbinding()]
+    param(
+        [Parameter(Mandatory=$true)]
+        $name,
+        
+        #[Parameter(Mandatory=$true)]
+        $envValue,
+        
+        [switch]
+        $checkEndsWithSlash
+    )
+    process{
+
+        $private:succeeded = $true
+
+        if(!$envValue){
+            "Missing required environment variable {0}. Please define it and try again" -f $name | Write-Error
+            $private:succeeded = $false
+        }
+        elseif(!(Test-Path $envValue)){
+            "{0} not found at [{1}]" -f $name, $envValue | Write-Error
+            $private:succeeded = $false
+        }
+        elseif($checkEndsWithSlash){
+            # check to see if $envValue does not end with a '\' and warn the user if not
+            if(!(($envValue).EndsWith('\'))){
+                '$env:{0} does not end with a \ which is expected. Things may not go as planned.' -f $name | Write-Warning
+            }
+        }
+
+        # return true / false
+        $private:succeeded
+    }
 }
 
 function OptimizeImages(){
@@ -196,6 +248,8 @@ else {
     $templateBuilderTargetsPath = ("{0}tools\ligershark.templates.targets" -f $env:TemplateBuilderDevRoot)
     $templateTaskRoot = ("{0}src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" -f $env:TemplateBuilderDevRoot)
 
+    $slowcheetahxdtTaskRoot = ('{0}SlowCheetah.Xdt\bin\Debug\' -f $env:SlowCheetahXdtDevRoot)
+
     if(-not $preventOverridingMsbuildPath){
         Set-MSBuild "$env:windir\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
     }
@@ -218,8 +272,11 @@ else {
         $msbuildArgs += ("/p:Configuration=Debug")
         $msbuildArgs += ("/p:VisualStudioVersion=12.0")
         if(!$preventOverridingTargetsPath){
-            $msbuildArgs += ("/p:TemplateBuilderTargets={0}" -f $templateBuilderTargetsPath)
-            $msbuildArgs += ("/p:ls-TasksRoot={0}" -f $templateTaskRoot)
+            $msbuildArgs += ('/p:TemplateBuilderTargets={0}' -f $templateBuilderTargetsPath)
+            $msbuildArgs += ('/p:ls-TasksRoot={0}' -f $templateTaskRoot)
+            # todo: I'm not convinced this should always be redirected. I don't edit the 
+            # slowcheetah.xdt project often.
+            $msbuildArgs += ('/p:ls-SlowCheetahXdtTaskRoot={0}' -f $slowcheetahxdtTaskRoot)
         }
         $msbuildArgs += '/flp1:v=d;logfile=msbuild.d.log'
         $msbuildArgs += '/flp2:v=diag;logfile=msbuild.diag.log'
