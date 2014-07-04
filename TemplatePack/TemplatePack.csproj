@@ -862,6 +862,9 @@
     <TemplateReference Include="ConsoleApplicationAsync.csproj">
       <PathToProject>../Project%20Templates/Windows%20Desktop/ConsoleApplicationAsync/ConsoleApplicationAsync.csproj</PathToProject>
     </TemplateReference>
+    <TemplateReference Include="html5up.csproj">
+      <PathToProject>../Project%20Templates/html5up/html5up.csproj</PathToProject>
+    </TemplateReference>
     <TemplateReference Include="WebJobsHelloWorld.csproj">
       <PathToProject>..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\WebJobsHelloWorld.csproj</PathToProject>
     </TemplateReference>
@@ -970,6 +973,12 @@
     <Compile Include="ProjectTemplates\Web\Durandal451\Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="ProjectTemplates\Web\Durandal451\Results\ChallengeResult.cs" />
     <Compile Include="ProjectTemplates\Web\Durandal451\Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LigerShark.Templates\LigerShark.Templates.csproj">
+      <Project>{a2a92f75-3703-4326-a474-1569979ec875}</Project>
+      <Name>LigerShark.Templates</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
