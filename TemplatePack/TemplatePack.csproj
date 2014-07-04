@@ -852,7 +852,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ProjectTemplates\Web\html5up\" />
     <Folder Include="ProjectTemplates\Windows\" />
     <Folder Include="Snippets\C++\SideWaffle\" />
     <Folder Include="Snippets\HTML\SideWaffle\" />
