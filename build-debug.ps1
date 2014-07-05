@@ -23,6 +23,9 @@ param(
     $extraBuildArgs,
 
     [Parameter(ParameterSetName='build')]
+    $restoreNugetPackages = $true,
+
+    [Parameter(ParameterSetName='build')]
     [switch]$preventOverridingTargetsPath,
 
     [Parameter(ParameterSetName='build')]
@@ -49,10 +52,10 @@ function Get-ScriptDirectory
     Split-Path $Invocation.MyCommand.Path
 }
 
-$script:scrDir = (Get-ScriptDirectory)
+$script:scriptDir = ((Get-ScriptDirectory) + "\")
 $script:toolsRoot = (Join-Path -Path (Get-ScriptDirectory) -ChildPath Tools\)
-
-
+$script:nugetExePath = ('{0}nuget.exe' -f $script:toolsRoot)
+$script:slnFilePath = ('{0}SideWaffle.sln' -f $scriptDir)
 # There are a few things which this script requires
 #     msbuild alias
 #     $global:codeHome
@@ -184,6 +187,33 @@ function OptimizePng(){
     }
 }
 
+function UpdateNuGetExe(){
+    [cmdletbinding()]
+    param()
+    process{
+        $cmdArgs = @()
+        $cmdArgs += 'update'
+        $cmdArgs += '-self'
+
+        'Updating nuget.exe. Calling nuget.exe with the args: [{0}]' -f ($cmdArgs -join ' ') | Write-Verbose
+        & $script:nugetExePath $cmdArgs
+    }
+}
+
+function RestoreNugetPackages(){
+    [cmdletbinding()]
+    param()
+    process{
+        $cmdArgs = @()
+        $cmdArgs += 'restore'
+        $cmdArgs += (Resolve-Path $script:slnFilePath).ToString()
+
+        'Restoring nuget packages. Calling nuget.exe with the args: [{0}]' -f ($cmdArgs -join ' ') | Write-Verbose
+
+        & $nugetExePath $cmdArgs
+    }
+}
+
 if($optimizeImages){
     'optimizing images' | Write-Verbose
 
@@ -197,7 +227,11 @@ if($optimizeImages){
     'Total diff: {0} KB' -f (($imgResult | Measure-Object -Property LengthDiff -Sum | Select-Object Sum).Sum/1KB) | Write-Output
 }
 else {
-    $scriptDir = ((Get-ScriptDirectory) + "\")
+
+    if($restoreNugetPackages){
+        UpdateNuGetExe
+        RestoreNugetPackages
+    }
 
     if(-not $preventOverridingMsbuildPath){
         Set-MSBuild "$env:windir\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
