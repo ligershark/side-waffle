@@ -23,10 +23,19 @@ param(
     $extraBuildArgs,
 
     [Parameter(ParameterSetName='build')]
+    $restoreNugetPackages = $true,
+
+    [Parameter(ParameterSetName='build')]
     [switch]$preventOverridingTargetsPath,
 
     [Parameter(ParameterSetName='build')]
     [switch]$preventOverridingMsbuildPath,
+
+    [Parameter(ParameterSetName='build')]
+    [switch]$UseLocalTemplateBuilderSrc,
+
+    [Parameter(ParameterSetName='build')]
+    [switch]$UseLocalSlowCheetahXdtSrc,
 
     [Parameter(ParameterSetName='optimizeImages')]
     [switch]$optimizeImages
@@ -43,65 +52,13 @@ function Get-ScriptDirectory
     Split-Path $Invocation.MyCommand.Path
 }
 
-$script:scrDir = (Get-ScriptDirectory)
+$script:scriptDir = ((Get-ScriptDirectory) + "\")
 $script:toolsRoot = (Join-Path -Path (Get-ScriptDirectory) -ChildPath Tools\)
-
-
+$script:nugetExePath = ('{0}nuget.exe' -f $script:toolsRoot)
+$script:slnFilePath = ('{0}SideWaffle.sln' -f $scriptDir)
 # There are a few things which this script requires
 #     msbuild alias
-#     TemplateBuilderDevRoot : Environment variable
-#     SlowCheetahXdtDevRoot  : Environment variable
-
-# When called it will return true if all dependencies are found, and false if not
-function CheckForDependencies{
-    $depFound = $true
-    # check for the msbuild alias othewise set it to use
-    
-    if(!(Get-Alias msbuild)){
-        $msbuildDefaultPath = ("{0}\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" -f $env:windir);
-
-        # check to see if it is in the default location
-        if(Test-Path $msbuildDefaultPath){
-            Set-Alias msbuild $msbuildDefaultPath -Scope Global
-        }
-        else{
-            "Unable to locate msbuild.exe. Set the alias 'msbuild' and try again" | Write-Error
-            $depFound = $false
-        }
-    }
-
-    $allDepPassed = $true
-    if(!( Check-PathVariable -name TemplateBuilderDevRoot -envValue $env:TemplateBuilderDevRoot -checkEndsWithSlash)){
-        $allDepPassed = $false
-    }
-    if(!( Check-PathVariable -name SlowCheetahXdtDevRoot -envValue $env:SlowCheetahXdtDevRoot -checkEndsWithSlash )){
-        $allDepPassed = $false
-    }
-
-    if(!$allDepPassed){
-        throw 'issue with dependencies found'
-    }
-
-    <#
-    if(!$env:TemplateBuilderDevRoot){
-        "Missing required environment variable TemplateBuilderDevRoot. Please define it and try again" | Write-Error
-        $depFound = $false
-    }
-    elseif(!(Test-Path $env:TemplateBuilderDevRoot)){
-        "TemplateBuilderDevRoot not found at [{0}]" -f $env:TemplateBuilderDevRoot | Write-Error
-        $depFound = $false
-    }
-    else{
-        # check to see if $env:TemplateBuilderDevRoot does not end with a '\' and warn the user if not
-        if(!(($env:TemplateBuilderDevRoot).EndsWith('\'))){
-            '$env:TemplateBuilderDevRoot does not end with a \ which is expected. Things may not go as planned.' | Write-Warning
-        }
-    }
-    #>
-
-
-    return $depFound
-}
+#     $global:codeHome
 
 function Check-PathVariable(){
     [cmdletbinding()]
@@ -230,6 +187,33 @@ function OptimizePng(){
     }
 }
 
+function UpdateNuGetExe(){
+    [cmdletbinding()]
+    param()
+    process{
+        $cmdArgs = @()
+        $cmdArgs += 'update'
+        $cmdArgs += '-self'
+
+        'Updating nuget.exe. Calling nuget.exe with the args: [{0}]' -f ($cmdArgs -join ' ') | Write-Verbose
+        & $script:nugetExePath $cmdArgs
+    }
+}
+
+function RestoreNugetPackages(){
+    [cmdletbinding()]
+    param()
+    process{
+        $cmdArgs = @()
+        $cmdArgs += 'restore'
+        $cmdArgs += (Resolve-Path $script:slnFilePath).ToString()
+
+        'Restoring nuget packages. Calling nuget.exe with the args: [{0}]' -f ($cmdArgs -join ' ') | Write-Verbose
+
+        & $nugetExePath $cmdArgs
+    }
+}
+
 if($optimizeImages){
     'optimizing images' | Write-Verbose
 
@@ -243,53 +227,79 @@ if($optimizeImages){
     'Total diff: {0} KB' -f (($imgResult | Measure-Object -Property LengthDiff -Sum | Select-Object Sum).Sum/1KB) | Write-Output
 }
 else {
-    $scriptDir = ((Get-ScriptDirectory) + "\")
 
-    $templateBuilderTargetsPath = ("{0}tools\ligershark.templates.targets" -f $env:TemplateBuilderDevRoot)
-    $templateTaskRoot = ("{0}src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" -f $env:TemplateBuilderDevRoot)
-
-    $slowcheetahxdtTaskRoot = ('{0}SlowCheetah.Xdt\bin\Debug\' -f $env:SlowCheetahXdtDevRoot)
+    if($restoreNugetPackages){
+        UpdateNuGetExe
+        RestoreNugetPackages
+    }
 
     if(-not $preventOverridingMsbuildPath){
         Set-MSBuild "$env:windir\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
     }
 
-    if(CheckForDependencies){
-        "Dep check passed" | Write-Host
-        # msbuild ".\TemplatePack\TemplatePack.csproj" 
-        #    /p:VisualStudioVersion=11.0 
-        #    /p:TemplateBuilderTargets="($env:TemplateBuilderDevRoot)tools\ligershark.templates.targets" 
-        #    /p:ls-TasksRoot="($env:TemplateBuilderDevRoot)\src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" /fl
+    # msbuild ".\TemplatePack\TemplatePack.csproj" 
+    #    /p:VisualStudioVersion=11.0 
+    #    /p:TemplateBuilderTargets="($env:TemplateBuilderDevRoot)tools\ligershark.templates.targets" 
+    #    /p:ls-TasksRoot="($env:TemplateBuilderDevRoot)\src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" /fl
 
-        # /flp1:v=d;logfile=build.d.log /flp2:v=diag;logfile=build.diag.log
+    # /flp1:v=d;logfile=build.d.log /flp2:v=diag;logfile=build.diag.log
 
-        $msbuildArgs = @()
-        $msbuildArgs += ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
-        $msbuildArgs += '/m'
-        $msbuildArgs += '/nologo'
-        # https://github.com/ligershark/side-waffle/issues/108
-        #     Cmd line build not working for Debug mode for some reason
-        $msbuildArgs += ("/p:Configuration=Debug")
-        $msbuildArgs += ("/p:VisualStudioVersion=12.0")
-        if(!$preventOverridingTargetsPath){
-            $msbuildArgs += ('/p:TemplateBuilderTargets={0}' -f $templateBuilderTargetsPath)
-            $msbuildArgs += ('/p:ls-TasksRoot={0}' -f $templateTaskRoot)
-            # todo: I'm not convinced this should always be redirected. I don't edit the 
-            # slowcheetah.xdt project often.
-            $msbuildArgs += ('/p:ls-SlowCheetahXdtTaskRoot={0}' -f $slowcheetahxdtTaskRoot)
-        }
-        $msbuildArgs += '/flp1:v=d;logfile=msbuild.d.log'
-        $msbuildArgs += '/flp2:v=diag;logfile=msbuild.diag.log'
-        $msbuildArgs += ('/clp:v=m;ShowCommandLine')
-        if($extraBuildArgs){
-            $msbuildArgs += $extraBuildArgs
+    $msbuildArgs = @()
+    $msbuildArgs += ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
+    $msbuildArgs += '/m'
+    $msbuildArgs += '/nologo'
+    # https://github.com/ligershark/side-waffle/issues/108
+    #     Cmd line build not working for Debug mode for some reason
+    $msbuildArgs += ("/p:Configuration=Debug")
+    $msbuildArgs += ("/p:VisualStudioVersion=12.0")
+
+    if($UseLocalTemplateBuilderSrc){
+        $expTempBuilderSrcPath = $env:TemplateBuilderDevRoot
+
+        if(!($expTempBuilderSrcPath)){
+            $expTempBuilderSrcPath = ('{0}template-builder\' -f $global:codeHome)
         }
 
-        "Calling msbuild.exe with the following args: {0}" -f ($msbuildArgs -join ' ') | Write-Host
-        & msbuild $msbuildArgs
+        if(!(Test-Path $expTempBuilderSrcPath)){
+            $msg = ('template builder folder not found at [{0}]' -f $expTempBuilderSrcPath)
+            throw $msg
+        }
 
-        "`r`n  MSBuild log files have been written to" | Write-Host -ForegroundColor Green
-        "    msbuild.d.log" | Write-Host -ForegroundColor Green
-        "    msbuild.diag.log" | Write-Host -ForegroundColor Green
+        $templateBuilderTargetsPath = ("{0}tools\ligershark.templates.targets" -f $expTempBuilderSrcPath)
+        $templateTaskRoot = ("{0}src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" -f $expTempBuilderSrcPath)
+
+        $msbuildArgs += ("/p:TemplateBuilderTargets={0}" -f $templateBuilderTargetsPath)
+        $msbuildArgs += ("/p:ls-TasksRoot={0}" -f $templateTaskRoot)                
     }
+
+    if($UseLocalSlowCheetahXdtSrc){
+        $expScXdtPath = $env:SlowCheetahXdtDevRoot
+
+        if(!($expScXdtPath)){
+            $expScXdtPath = ('{0}slow-cheetah.xdt\' -f $global:codeHome)
+        }
+
+        if(!(Test-Path $expScXdtPath)){
+            $msg = ('SlowCheetah.Xdt folder not found at [{0}]' -f $expScXdtPath)
+            throw $msg
+        }
+
+        $slowcheetahxdtTaskRoot = ('{0}SlowCheetah.Xdt\bin\Debug\' -f $expScXdtPath)
+        $msbuildArgs += ('/p:ls-SlowCheetahXdtTaskRoot={0}' -f $slowcheetahxdtTaskRoot)
+    }
+
+    $msbuildArgs += '/flp1:v=d;logfile=msbuild.d.log'
+    $msbuildArgs += '/flp2:v=diag;logfile=msbuild.diag.log'
+    $msbuildArgs += ('/clp:v=m;ShowCommandLine')
+    if($extraBuildArgs){
+        $msbuildArgs += $extraBuildArgs
+    }
+
+    "Calling msbuild.exe with the following args: {0}" -f ($msbuildArgs -join ' ') | Write-Host
+    & msbuild $msbuildArgs
+
+    "`r`n  MSBuild log files have been written to" | Write-Host -ForegroundColor Green
+    "    msbuild.d.log" | Write-Host -ForegroundColor Green
+    "    msbuild.diag.log" | Write-Host -ForegroundColor Green
+    
 }
