@@ -60,42 +60,6 @@ $script:slnFilePath = ('{0}SideWaffle.sln' -f $scriptDir)
 #     msbuild alias
 #     $global:codeHome
 
-function Check-PathVariable(){
-    [cmdletbinding()]
-    param(
-        [Parameter(Mandatory=$true)]
-        $name,
-        
-        #[Parameter(Mandatory=$true)]
-        $envValue,
-        
-        [switch]
-        $checkEndsWithSlash
-    )
-    process{
-
-        $private:succeeded = $true
-
-        if(!$envValue){
-            "Missing required environment variable {0}. Please define it and try again" -f $name | Write-Error
-            $private:succeeded = $false
-        }
-        elseif(!(Test-Path $envValue)){
-            "{0} not found at [{1}]" -f $name, $envValue | Write-Error
-            $private:succeeded = $false
-        }
-        elseif($checkEndsWithSlash){
-            # check to see if $envValue does not end with a '\' and warn the user if not
-            if(!(($envValue).EndsWith('\'))){
-                '$env:{0} does not end with a \ which is expected. Things may not go as planned.' -f $name | Write-Warning
-            }
-        }
-
-        # return true / false
-        $private:succeeded
-    }
-}
-
 function OptimizeImages(){
     [cmdletbinding()]
     param(
@@ -214,6 +178,34 @@ function RestoreNugetPackages(){
     }
 }
 
+function Build-TemplateBuilder(){
+    [cmdletbinding()]
+    param(
+        [Parameter(Mandatory=$true)]
+        $tbSourceRoot
+    )
+    process{
+        'Building templatebuilder' | Write-Output
+        $tbSlnFile = (Join-Path $tbSourceRoot -ChildPath 'src\LigerShark.TemplateBuilder.sln')
+
+        Invoke-MSBuild $tbSlnFile -configuration 'Debug'
+    }
+}
+
+function Build-SlowCheetahXdt(){
+    [cmdletbinding()]
+    param(
+        [Parameter(Mandatory=$true)]
+        $scSourceRoot
+    )
+    process{
+        'Building SlowCheetah.Xdt' | Write-Output
+        $scSlnFile = (Join-Path $scSourceRoot -ChildPath 'SlowCheetah.Xdt\SlowCheetah.Xdt.sln')
+
+        Invoke-MSBuild $scSlnFile -configuration 'Debug'
+    }
+}
+
 if($optimizeImages){
     'optimizing images' | Write-Verbose
 
@@ -268,6 +260,7 @@ else {
         $templateBuilderTargetsPath = ("{0}tools\ligershark.templates.targets" -f $expTempBuilderSrcPath)
         $templateTaskRoot = ("{0}src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" -f $expTempBuilderSrcPath)
 
+        Build-TemplateBuilder -tbSourceRoot $expTempBuilderSrcPath
         $msbuildArgs += ("/p:TemplateBuilderTargets={0}" -f $templateBuilderTargetsPath)
         $msbuildArgs += ("/p:ls-TasksRoot={0}" -f $templateTaskRoot)                
     }
@@ -284,6 +277,7 @@ else {
             throw $msg
         }
 
+        Build-SlowCheetahXdt -scSourceRoot $expScXdtPath
         $slowcheetahxdtTaskRoot = ('{0}SlowCheetah.Xdt\bin\Debug\' -f $expScXdtPath)
         $msbuildArgs += ('/p:ls-SlowCheetahXdtTaskRoot={0}' -f $slowcheetahxdtTaskRoot)
     }
