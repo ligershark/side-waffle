@@ -38,12 +38,16 @@ param(
     [switch]$UseLocalSlowCheetahXdtSrc,
 
     [Parameter(ParameterSetName='optimizeImages')]
-    [switch]$optimizeImages
+    [switch]$optimizeImages,
+
+    [switch]$UsePsbuild
     )
 
 $global:SideWaffleBuildSettings = New-Object PSObject -Property @{
     TempFolder = ("$env:LOCALAPPDATA\SideWaffle\BuildOutput\")
     MaxNumThreads = ((Get-WmiObject Win32_Processor).NumberOfCores)
+    Configuration = 'Debug'
+    VisualStudioVersion = '12.0'
 }
 
 function Get-ScriptDirectory
@@ -59,6 +63,23 @@ $script:slnFilePath = ('{0}SideWaffle.sln' -f $scriptDir)
 # There are a few things which this script requires
 #     msbuild alias
 #     $global:codeHome
+
+<#
+.SYNOPSIS 
+    This will throw an error if the psbuild module is not installed and available.
+#>
+function EnsurePsbuildInstalled(){
+    [cmdletbinding()]
+    param()
+    process{
+        # TODO: This doesn't seemm reliable, revisit this later
+
+        if(!(Get-Module 'psbuild')){
+            $msg = ('psbuild is required for this script, but it does not look to be installed. Get psbuild from here: https://github.com/ligershark/psbuild')
+            throw $msg
+        }
+    }
+}
 
 function OptimizeImages(){
     [cmdletbinding()]
@@ -206,6 +227,15 @@ function Build-SlowCheetahXdt(){
     }
 }
 
+###########################################################
+# Begin script
+###########################################################
+
+'Begin build.' | Write-Output
+'This script relies on psbuild, if you haven``t already please istall it from https://github.com/ligershark/psbuild' | Write-Output
+
+# EnsurePsbuildInstalled
+
 if($optimizeImages){
     'optimizing images' | Write-Verbose
 
@@ -236,14 +266,23 @@ else {
 
     # /flp1:v=d;logfile=build.d.log /flp2:v=diag;logfile=build.diag.log
 
+    # https://github.com/ligershark/side-waffle/issues/108
+    #     Cmd line build not working for Debug mode for some reason
+
     $msbuildArgs = @()
     $msbuildArgs += ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
     $msbuildArgs += '/m'
-    $msbuildArgs += '/nologo'
-    # https://github.com/ligershark/side-waffle/issues/108
-    #     Cmd line build not working for Debug mode for some reason
+    $msbuildArgs += '/nologo'    
     $msbuildArgs += ("/p:Configuration=Debug")
     $msbuildArgs += ("/p:VisualStudioVersion=12.0")
+
+    $projToBuild = ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
+    
+    $buildProperties = @{}
+    $extraArgs = @()
+    #$extraArgs += '/m'
+    #$extraArgs += '/nologo'
+    
 
     if($UseLocalTemplateBuilderSrc){
         $expTempBuilderSrcPath = $env:TemplateBuilderDevRoot
@@ -282,14 +321,28 @@ else {
         $msbuildArgs += ('/p:ls-SlowCheetahXdtTaskRoot={0}' -f $slowcheetahxdtTaskRoot)
     }
 
+    $extraArgs += '/clp:v=m;ShowCommandLine'
+
     $msbuildArgs += '/flp1:v=d;logfile=msbuild.d.log'
     $msbuildArgs += '/flp2:v=diag;logfile=msbuild.diag.log'
     $msbuildArgs += ('/clp:v=m;ShowCommandLine')
     if($extraBuildArgs){
         $msbuildArgs += $extraBuildArgs
+        $extraArgs += $extraBuildArgs
     }
 
-    "Calling msbuild.exe with the following args: {0}" -f ($msbuildArgs -join ' ') | Write-Host
+    if($usePsbuild){
+        'Building with psbuild' | Write-Host -ForegroundColor Red
+        Invoke-MSBuild  -projectsToBuild $projToBuild `
+                        -configuration $global:SideWaffleBuildSettings.Configuration `
+                        -visualStudioVersion $global:SideWaffleBuildSettings.VisualStudioVersion `
+                        -nologo `
+                        -properties $buildProperties `
+    }
+    else{
+        "Calling msbuild.exe with the following args: {0}" -f ($msbuildArgs -join ' ') | Write-Host
+    }
+    
     & msbuild $msbuildArgs
 
     "`r`n  MSBuild log files have been written to" | Write-Host -ForegroundColor Green
