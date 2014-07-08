@@ -29,18 +29,13 @@ param(
     [switch]$preventOverridingTargetsPath,
 
     [Parameter(ParameterSetName='build')]
-    [switch]$preventOverridingMsbuildPath,
-
-    [Parameter(ParameterSetName='build')]
     [switch]$UseLocalTemplateBuilderSrc,
 
     [Parameter(ParameterSetName='build')]
     [switch]$UseLocalSlowCheetahXdtSrc,
 
     [Parameter(ParameterSetName='optimizeImages')]
-    [switch]$optimizeImages,
-
-    [switch]$UsePsbuild
+    [switch]$optimizeImages
     )
 
 $global:SideWaffleBuildSettings = New-Object PSObject -Property @{
@@ -48,6 +43,7 @@ $global:SideWaffleBuildSettings = New-Object PSObject -Property @{
     MaxNumThreads = ((Get-WmiObject Win32_Processor).NumberOfCores)
     Configuration = 'Debug'
     VisualStudioVersion = '12.0'
+    ToolsDirectory = '.\.tools'
 }
 
 function Get-ScriptDirectory
@@ -77,6 +73,41 @@ function EnsurePsbuildInstalled(){
         if(!(Get-Module 'psbuild')){
             $msg = ('psbuild is required for this script, but it does not look to be installed. Get psbuild from here: https://github.com/ligershark/psbuild')
             throw $msg
+        }
+    }
+}
+
+<#
+.SYNOPSIS
+    If the image optimizer is not installed in the .tools\
+    folder then it will be downloaded there.
+#>
+function EnsureImageOptimizerAvailable(){
+    [cmdletbinding()]
+    param()
+    process{
+        $toolsDir = (Join-Path -Path $script:scriptDir -ChildPath $global:SideWaffleBuildSettings.ToolsDirectory)
+        if(!(Test-Path $toolsDir)){
+            New-Item $toolsDir -ItemType Directory
+        }
+
+        $imgOptimizer = (Get-ChildItem -Path $toolsDir -Include 'ImageCompressor.Job.exe' -Recurse)
+
+        if(!$imgOptimizer){
+            'Downloading image optimizer to the .tools folder' | Write-Output
+            # nuget install AzureImageOptimizer -Prerelease -OutputDirectory C:\temp\nuget\out\
+            $cmdArgs = @()
+            $cmdArgs += 'install'
+            $cmdArgs += 'AzureImageOptimizer'
+            $cmdArgs += '-Prerelease'
+            $cmdArgs += '-OutputDirectory'
+            $cmdArgs += (Resolve-Path $toolsDir).ToString()
+
+            'Calling nuget to install image optimzer with the following args. [{0}]' -f ($cmdArgs -join ' ') | Write-Verbose
+            &$script:nugetExePath $cmdArgs
+        }
+        else{
+            'Image optimizer found'
         }
     }
 }
@@ -231,12 +262,14 @@ function Build-SlowCheetahXdt(){
 # Begin script
 ###########################################################
 
+
 'Begin build.' | Write-Output
-'This script relies on psbuild, if you haven``t already please istall it from https://github.com/ligershark/psbuild' | Write-Output
+'This script relies on psbuild, if you haven''t already please istall it from https://github.com/ligershark/psbuild' | Write-Output
 
 # EnsurePsbuildInstalled
 
 if($optimizeImages){
+    # EnsureImageOptimizerAvailable
     'optimizing images' | Write-Verbose
 
     $imgResult = OptimizeImages -root $script:scrDir -Recurse
@@ -255,10 +288,6 @@ else {
         RestoreNugetPackages
     }
 
-    if(-not $preventOverridingMsbuildPath){
-        Set-MSBuild "$env:windir\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
-    }
-
     # msbuild ".\TemplatePack\TemplatePack.csproj" 
     #    /p:VisualStudioVersion=11.0 
     #    /p:TemplateBuilderTargets="($env:TemplateBuilderDevRoot)tools\ligershark.templates.targets" 
@@ -269,20 +298,10 @@ else {
     # https://github.com/ligershark/side-waffle/issues/108
     #     Cmd line build not working for Debug mode for some reason
 
-    $msbuildArgs = @()
-    $msbuildArgs += ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
-    $msbuildArgs += '/m'
-    $msbuildArgs += '/nologo'    
-    $msbuildArgs += ("/p:Configuration=Debug")
-    $msbuildArgs += ("/p:VisualStudioVersion=12.0")
-
     $projToBuild = ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
     
     $buildProperties = @{}
-    $extraArgs = @()
-    #$extraArgs += '/m'
-    #$extraArgs += '/nologo'
-    
+    $extraArgs = @()   
 
     if($UseLocalTemplateBuilderSrc){
         $expTempBuilderSrcPath = $env:TemplateBuilderDevRoot
@@ -300,8 +319,8 @@ else {
         $templateTaskRoot = ("{0}src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" -f $expTempBuilderSrcPath)
 
         Build-TemplateBuilder -tbSourceRoot $expTempBuilderSrcPath
-        $msbuildArgs += ("/p:TemplateBuilderTargets={0}" -f $templateBuilderTargetsPath)
-        $msbuildArgs += ("/p:ls-TasksRoot={0}" -f $templateTaskRoot)                
+        $buildProperties += @{'TemplateBuilderTargets'=$templateBuilderTargetsPath}
+        $buildProperties += @{'ls-TasksRoot'=$templateTaskRoot}
     }
 
     if($UseLocalSlowCheetahXdtSrc){
@@ -318,35 +337,18 @@ else {
 
         Build-SlowCheetahXdt -scSourceRoot $expScXdtPath
         $slowcheetahxdtTaskRoot = ('{0}SlowCheetah.Xdt\bin\Debug\' -f $expScXdtPath)
-        $msbuildArgs += ('/p:ls-SlowCheetahXdtTaskRoot={0}' -f $slowcheetahxdtTaskRoot)
+        $buildProperties += @{'ls-SlowCheetahXdtTaskRoot'=$slowcheetahxdtTaskRoot}
     }
 
     $extraArgs += '/clp:v=m;ShowCommandLine'
 
-    $msbuildArgs += '/flp1:v=d;logfile=msbuild.d.log'
-    $msbuildArgs += '/flp2:v=diag;logfile=msbuild.diag.log'
-    $msbuildArgs += ('/clp:v=m;ShowCommandLine')
     if($extraBuildArgs){
-        $msbuildArgs += $extraBuildArgs
         $extraArgs += $extraBuildArgs
     }
 
-    if($usePsbuild){
-        'Building with psbuild' | Write-Host -ForegroundColor Red
-        Invoke-MSBuild  -projectsToBuild $projToBuild `
-                        -configuration $global:SideWaffleBuildSettings.Configuration `
-                        -visualStudioVersion $global:SideWaffleBuildSettings.VisualStudioVersion `
-                        -nologo `
-                        -properties $buildProperties `
-    }
-    else{
-        "Calling msbuild.exe with the following args: {0}" -f ($msbuildArgs -join ' ') | Write-Host
-    }
-    
-    & msbuild $msbuildArgs
-
-    "`r`n  MSBuild log files have been written to" | Write-Host -ForegroundColor Green
-    "    msbuild.d.log" | Write-Host -ForegroundColor Green
-    "    msbuild.diag.log" | Write-Host -ForegroundColor Green
-    
+    Invoke-MSBuild  -projectsToBuild $projToBuild `
+                    -configuration $global:SideWaffleBuildSettings.Configuration `
+                    -visualStudioVersion $global:SideWaffleBuildSettings.VisualStudioVersion `
+                    -nologo `
+                    -properties $buildProperties `
 }
