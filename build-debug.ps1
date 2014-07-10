@@ -68,8 +68,6 @@ function EnsurePsbuildInstalled(){
     [cmdletbinding()]
     param()
     process{
-        # get-module -listavailable 'psbuild' will list installed modules on the host
-        # get-module 'psbuild' will list modules imported into the current session
 
         if(!(Get-Module -listAvailable 'psbuild')){
             $msg = ('psbuild is required for this script, but it does not look to be installed. Get psbuild from here: https://github.com/ligershark/psbuild')
@@ -269,10 +267,9 @@ function Build-SlowCheetahXdt(){
 ###########################################################
 
 
-'Begin build.' | Write-Output
-'This script relies on psbuild, if you haven''t already please istall it from https://github.com/ligershark/psbuild' | Write-Output
+'Begin started. This script uses psbuild which is available at https://github.com/ligershark/psbuild' | Write-Output
 
-# EnsurePsbuildInstalled
+EnsurePsbuildInstalled
 
 if($optimizeImages){
     # EnsureImageOptimizerAvailable
