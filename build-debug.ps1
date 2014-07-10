@@ -68,11 +68,17 @@ function EnsurePsbuildInstalled(){
     [cmdletbinding()]
     param()
     process{
-        # TODO: This doesn't seemm reliable, revisit this later
+        # get-module -listavailable 'psbuild' will list installed modules on the host
+        # get-module 'psbuild' will list modules imported into the current session
 
-        if(!(Get-Module 'psbuild')){
+        if(!(Get-Module -listAvailable 'psbuild')){
             $msg = ('psbuild is required for this script, but it does not look to be installed. Get psbuild from here: https://github.com/ligershark/psbuild')
             throw $msg
+        }
+
+        if(!(Get-Module 'psbuild')){
+            # add psbuild to the currently loaded session modules
+            import-module psbuild -Global;
         }
     }
 }
