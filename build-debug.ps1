@@ -34,6 +34,9 @@ param(
     [Parameter(ParameterSetName='build')]
     [switch]$UseLocalSlowCheetahXdtSrc,
 
+    [Parameter(ParameterSetName='build')]
+    [switch]$UpdateNugetExe,
+
     [Parameter(ParameterSetName='optimizeImages')]
     [switch]$optimizeImages
     )
@@ -287,7 +290,10 @@ if($optimizeImages){
 else {
 
     if($restoreNugetPackages){
-        UpdateNuGetExe
+        if($UpdateNugetExe){
+            UpdateNuGetExe
+        }
+
         RestoreNugetPackages
     }
 
@@ -301,9 +307,6 @@ else {
     #    /p:ls-TasksRoot="($env:TemplateBuilderDevRoot)\src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" /fl
 
     # /flp1:v=d;logfile=build.d.log /flp2:v=diag;logfile=build.diag.log
-
-    # https://github.com/ligershark/side-waffle/issues/108
-    #     Cmd line build not working for Debug mode for some reason
 
     $projToBuild = ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
     
