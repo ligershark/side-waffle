@@ -59,6 +59,7 @@ $script:scriptDir = ((Get-ScriptDirectory) + "\")
 $script:toolsRoot = (Join-Path -Path (Get-ScriptDirectory) -ChildPath Tools\)
 $script:nugetExePath = ('{0}nuget.exe' -f $script:toolsRoot)
 $script:slnFilePath = ('{0}SideWaffle.sln' -f $scriptDir)
+
 # There are a few things which this script requires
 #     msbuild alias
 #     $global:codeHome
@@ -89,7 +90,7 @@ function EnsurePsbuildInstalled(){
     If the image optimizer is not installed in the .tools\
     folder then it will be downloaded there.
 #>
-function EnsureImageOptimizerAvailable(){
+function GetImageOptimizer(){
     [cmdletbinding()]
     param()
     process{
@@ -113,100 +114,53 @@ function EnsureImageOptimizerAvailable(){
             'Calling nuget to install image optimzer with the following args. [{0}]' -f ($cmdArgs -join ' ') | Write-Verbose
             &$script:nugetExePath $cmdArgs
         }
+
+        $imgOptimizer = (Get-ChildItem -Path $toolsDir -Include 'ImageCompressor.Job.exe' -Recurse)
+        if(!$imgOptimizer){
+            throw 'Image optimizer not found'
+        }
+
+        # return the path to it
+        if($imgOptimizer -is [Array]){
+            # incase somehow more than one ImageCompressor.Job.exe shows up in that folder
+            $imgOptimizer[0]
+        }
         else{
-            'Image optimizer found'
+            $imgOptimizer
         }
     }
 }
 
 function OptimizeImages(){
     [cmdletbinding()]
-    param(
-         $root = (Join-Path -Path $script:scrDir -ChildPath TemplatePack\),
+    param()
+    process{        
+        [string]$imgOptExe = GetImageOptimizer
 
-        [switch]
-        $Recurse
-    )
-    process{
-        'Optimizing images in directory [{0}]' -f $root | Write-Verbose
+        # delete the bin & obj folder before starting
+        $foldersToDelete = @()
+        $foldersToDelete += (Join-Path $script:scriptDir 'TemplatePack\bin\')
+        $foldersToDelete += (Join-Path $script:scriptDir 'TemplatePack\obj')
 
-        if($Recurse){
-            $pngsToOptimize = (Get-ChildItem $root *.png -Recurse)
-        }
-        else{
-            $pngsToOptimize = (Get-ChildItem $root *.png)
-        }
-
-        
-        if($pngsToOptimize){
-            $pngsToOptimize = ($pngsToOptimize |
-                Where-Object { !$_.FullName.Contains('\obj\')} | 
-                Where-Object { !$_.FullName.Contains('\bin\')})
-        }
-        
-        $beforeOptimizing = ($pngsToOptimize.FullName | Get-Item | Select-Object FullName, Length)
-
-        'Number of .pngs to optimize: [{0}]' -f $pngsToOptimize.Length | Write-Verbose
-
-        $pngsToOptimize.FullName | OptimizePng
-        $afterOptimizing = ($pngsToOptimize.FullName | Get-Item | Select-Object FullName, Length)
-        
-        $delta = @()
-        foreach($item in $beforeOptimizing){
-            $beforeItem = $item
-            $afterItem = ($afterOptimizing | Where-Object {$_.FullName -eq $item.FullName})
-
-            $deltaObj = New-Object PSObject -Property @{
-                    FullName = $beforeItem.FullName
-                    LengthBefore = $beforeItem.Length
-                    LengthAfter = [int]::MinValue
-                    LengthDiff = [int]::MinValue
-                }
-            
-            if(!$afterItem){
-                'Unable to find matching file in after collection for file [{0}]' -f $_.FullName | Write-Error
+        foreach($folder in $foldersToDelete){
+            if(Test-Path $folder){
+                'Deleting build folder: [{0}]' -f $folder | Write-Output
+                Remove-Item $folder -Recurse
             }
-            else{
-                $deltaObj.LengthAfter = $afterItem.Length
-                $deltaObj.LengthDiff = ($beforeItem.Length - $afterItem.Length)
-            }
-
-            $delta += $deltaObj
         }
 
-        $imgReportPath = (Join-Path -Path $global:SideWaffleBuildSettings.TempFolder -ChildPath 'imagereport.csv')
-        if(!(Test-Path $global:SideWaffleBuildSettings.TempFolder)){
-            mkdir $global:SideWaffleBuildSettings.TempFolder
-        }
-        $delta | Select-Object FullName, LengthBefore, LengthAfter,LengthDiff | Export-Csv -Path $imgReportPath -NoTypeInformation
-        'Saved image report to [{0}]' -f $imgReportPath | Write-Verbose
+        [string]$folderToOptimize = (Resolve-path (Join-Path $script:scriptDir 'TemplatePack'))
 
-        return $delta
-    }
-}
+        'Starting image optimizer on folder [{0}]' -f $foldersToDelete | Write-Output
+        # .\.tools\AzureImageOptimizer.0.0.10-beta\tools\ImageCompressor.Job.exe --folder M:\temp\images\opt\to-optimize
+        $cmdArgs = @()
+        $cmdArgs += '--folder'
+        $cmdArgs += $folderToOptimize
 
-function OptimizePng(){
-    [cmdletbinding()]
-    param(
-        [Parameter(
-            Mandatory=$true,
-            ValueFromPipeline=$true)]
-        $image
-        )
-    begin{
-        $pngout = Join-Path $script:toolsRoot pngout.exe
-        $pngoptim = Join-Path $script:toolsRoot PNGOptim.1.2.2.exe
-    }
-    process{
-        foreach($img in $image){
-            $fullPath = Resolve-Path $img
-            $pngoutArgs = @()
-            $pngoutArgs += $fullPath
-            $pngoutArgs += '/q'
-            
-            'Calling pngout [{0} {1}]' -f $pngout, ($pngoutArgs -join ' ') | Write-Verbose
-            &$pngout $pngoutArgs
-        }
+        'Calling img optimizer with the following args [{0}]' -f ($cmdArgs -join ' ') | Write-Output
+        &$imgOptExe $cmdArgs
+
+        'Images optimized' | Write-Output
     }
 }
 
@@ -265,6 +219,10 @@ function Build-SlowCheetahXdt(){
     }
 }
 
+
+OptimizeImages
+return
+
 ###########################################################
 # Begin script
 ###########################################################
@@ -275,10 +233,9 @@ function Build-SlowCheetahXdt(){
 EnsurePsbuildInstalled
 
 if($optimizeImages){
-    # EnsureImageOptimizerAvailable
     'optimizing images' | Write-Verbose
 
-    $imgResult = OptimizeImages -root $script:scrDir -Recurse
+    $imgResult = OptimizeImages -root $script:scriptDir -Recurse
     
     $imgResult | 
         Select-Object @{Name='Name';Expression={(get-item $_.FullName).Name}},LengthBefore,LengthAfter,LengthDiff | 
