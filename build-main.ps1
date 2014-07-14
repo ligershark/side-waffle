@@ -20,6 +20,9 @@
 [cmdletbinding(DefaultParameterSetName ='build')]
 param(
     [Parameter(ParameterSetName='build')]
+    $configuration = 'Release',
+
+    [Parameter(ParameterSetName='build')]
     $extraBuildArgs,
 
     [Parameter(ParameterSetName='build')]
@@ -44,7 +47,6 @@ param(
 $global:SideWaffleBuildSettings = New-Object PSObject -Property @{
     TempFolder = ("$env:LOCALAPPDATA\SideWaffle\BuildOutput\")
     MaxNumThreads = ((Get-WmiObject Win32_Processor).NumberOfCores)
-    Configuration = 'Debug'
     VisualStudioVersion = '12.0'
     ToolsDirectory = '.\.tools'
 }
@@ -56,8 +58,6 @@ function Get-ScriptDirectory
 }
 
 $script:scriptDir = ((Get-ScriptDirectory) + "\")
-$script:toolsRoot = (Join-Path -Path (Get-ScriptDirectory) -ChildPath Tools\)
-$script:nugetExePath = ('{0}nuget.exe' -f $script:toolsRoot)
 $script:slnFilePath = ('{0}SideWaffle.sln' -f $scriptDir)
 
 # There are a few things which this script requires
@@ -109,7 +109,7 @@ function GetImageOptimizer(){
             $cmdArgs = @('install','AzureImageOptimizer','-Prerelease','-OutputDirectory',(Resolve-Path $toolsDir).ToString())
 
             'Calling nuget to install image optimzer with the following args. [{0}]' -f ($cmdArgs -join ' ') | Write-Verbose
-            &$script:nugetExePath $cmdArgs | Out-Null
+            &(GetNuGet) $cmdArgs | Out-Null
         }
 
         $imgOptimizer = (Get-ChildItem -Path $toolsDir -Include 'ImageCompressor.Job.exe' -Recurse)
@@ -147,20 +147,61 @@ function OptimizeImages(){
     }
 }
 
+
+<#
+.SYNOPSIS
+    If nuget is not in the tools
+    folder then it will be downloaded there.
+#>
+function GetNuget(){
+    [cmdletbinding()]
+    param(
+        $toolsDir = ("$env:LOCALAPPDATA\LigerShark\AzureJobs\tools\"),
+
+        $nugetDownloadUrl = 'http://nuget.org/nuget.exe'
+    )
+    process{
+        $nugetDestPath = Join-Path -Path $toolsDir -ChildPath nuget.exe
+
+        if(!(Test-Path $toolsDir)){
+            New-Item -Path $toolsDir -ItemType Directory
+        }
+        
+        if(!(Test-Path $nugetDestPath)){
+            'Downloading nuget.exe' | Write-Verbose
+            # download nuget
+            $webclient = New-Object System.Net.WebClient
+            $webclient.DownloadFile($nugetDownloadUrl, $nugetDestPath)
+
+            # double check that is was written to disk
+            if(!(Test-Path $nugetDestPath)){
+                throw 'unable to download nuget'
+            }
+        }
+
+        # return the path of the file
+        $nugetDestPath
+    }
+}
+
 function UpdateNuGetExe(){
     [cmdletbinding()]
-    param()
+    param(
+        $nugetExePath = (GetNuget)
+    )
     process{
         $cmdArgs = @('update','-self')
 
         'Updating nuget.exe. Calling nuget.exe with the args: [{0}]' -f ($cmdArgs -join ' ') | Write-Verbose
-        & $script:nugetExePath $cmdArgs
+        & $nugetExePath $cmdArgs
     }
 }
 
 function RestoreNugetPackages(){
     [cmdletbinding()]
-    param()
+    param(
+        $nugetExePath = (GetNuget)
+    )
     process{
         $cmdArgs = @('restore', (Resolve-Path $script:slnFilePath).ToString())
 
@@ -174,13 +215,15 @@ function Build-TemplateBuilder(){
     [cmdletbinding()]
     param(
         [Parameter(Mandatory=$true)]
-        $tbSourceRoot
+        $tbSourceRoot,
+
+        $configuration = 'Release'
     )
     process{
         'Building templatebuilder' | Write-Host
         $tbSlnFile = (Join-Path $tbSourceRoot -ChildPath 'src\LigerShark.TemplateBuilder.sln')
 
-        Invoke-MSBuild $tbSlnFile -configuration 'Debug'
+        Invoke-MSBuild $tbSlnFile -configuration $configuration
     }
 }
 
@@ -188,16 +231,17 @@ function Build-SlowCheetahXdt(){
     [cmdletbinding()]
     param(
         [Parameter(Mandatory=$true)]
-        $scSourceRoot
+        $scSourceRoot,
+
+        $configuration = 'Release'
     )
     process{
         'Building SlowCheetah.Xdt' | Write-Host
         $scSlnFile = (Join-Path $scSourceRoot -ChildPath 'SlowCheetah.Xdt\SlowCheetah.Xdt.sln')
 
-        Invoke-MSBuild $scSlnFile -configuration 'Debug'
+        Invoke-MSBuild $scSlnFile -configuration $configuration
     }
 }
-
 
 ###########################################################
 # Begin script
@@ -262,7 +306,7 @@ else {
         $templateBuilderTargetsPath = ("{0}tools\ligershark.templates.targets" -f $expTempBuilderSrcPath)
         $templateTaskRoot = ("{0}src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" -f $expTempBuilderSrcPath)
 
-        Build-TemplateBuilder -tbSourceRoot $expTempBuilderSrcPath
+        Build-TemplateBuilder -tbSourceRoot $expTempBuilderSrcPath -configuration $configuration
         $buildProperties += @{'TemplateBuilderTargets'=$templateBuilderTargetsPath}
         $buildProperties += @{'ls-TasksRoot'=$templateTaskRoot}
     }
@@ -279,7 +323,7 @@ else {
             throw $msg
         }
 
-        Build-SlowCheetahXdt -scSourceRoot $expScXdtPath
+        Build-SlowCheetahXdt -scSourceRoot $expScXdtPath -configuration $configuration
         $slowcheetahxdtTaskRoot = ('{0}SlowCheetah.Xdt\bin\Debug\' -f $expScXdtPath)
         $buildProperties += @{'ls-SlowCheetahXdtTaskRoot'=$slowcheetahxdtTaskRoot}
     }
@@ -291,7 +335,7 @@ else {
     }
 
     Invoke-MSBuild  -projectsToBuild $projToBuild `
-                    -configuration $global:SideWaffleBuildSettings.Configuration `
+                    -configuration $configuration `
                     -visualStudioVersion $global:SideWaffleBuildSettings.VisualStudioVersion `
                     -nologo `
                     -properties $buildProperties `
