@@ -92,33 +92,28 @@ function EnsurePsbuildInstalled(){
 #>
 function GetImageOptimizer(){
     [cmdletbinding()]
-    param()
-    process{
+    param(
         $toolsDir = (Join-Path -Path $script:scriptDir -ChildPath $global:SideWaffleBuildSettings.ToolsDirectory)
+    )
+    process{
+        
         if(!(Test-Path $toolsDir)){
-            New-Item $toolsDir -ItemType Directory
+            New-Item $toolsDir -ItemType Directory | Out-Null
         }
 
         $imgOptimizer = (Get-ChildItem -Path $toolsDir -Include 'ImageCompressor.Job.exe' -Recurse)
 
         if(!$imgOptimizer){
-            'Downloading image optimizer to the .tools folder' | Write-Output
+            'Downloading image optimizer to the .tools folder' | Write-Verbose
             # nuget install AzureImageOptimizer -Prerelease -OutputDirectory C:\temp\nuget\out\
-            $cmdArgs = @()
-            $cmdArgs += 'install'
-            $cmdArgs += 'AzureImageOptimizer'
-            $cmdArgs += '-Prerelease'
-            $cmdArgs += '-OutputDirectory'
-            $cmdArgs += (Resolve-Path $toolsDir).ToString()
+            $cmdArgs = @('install','AzureImageOptimizer','-Prerelease','-OutputDirectory',(Resolve-Path $toolsDir).ToString())
 
             'Calling nuget to install image optimzer with the following args. [{0}]' -f ($cmdArgs -join ' ') | Write-Verbose
-            &$script:nugetExePath $cmdArgs
+            &$script:nugetExePath $cmdArgs | Out-Null
         }
 
         $imgOptimizer = (Get-ChildItem -Path $toolsDir -Include 'ImageCompressor.Job.exe' -Recurse)
-        if(!$imgOptimizer){
-            throw 'Image optimizer not found'
-        }
+        if(!$imgOptimizer){ throw 'Image optimizer not found' }       
 
         # return the path to it
         if($imgOptimizer -is [Array]){
@@ -133,34 +128,22 @@ function GetImageOptimizer(){
 
 function OptimizeImages(){
     [cmdletbinding()]
-    param()
+    param(
+        $folder = (Join-Path $script:scriptDir 'TemplatePack')
+    )
     process{        
         [string]$imgOptExe = GetImageOptimizer
 
-        # delete the bin & obj folder before starting
-        $foldersToDelete = @()
-        $foldersToDelete += (Join-Path $script:scriptDir 'TemplatePack\bin\')
-        $foldersToDelete += (Join-Path $script:scriptDir 'TemplatePack\obj')
+        [string]$folderToOptimize = (Resolve-path $folder)
 
-        foreach($folder in $foldersToDelete){
-            if(Test-Path $folder){
-                'Deleting build folder: [{0}]' -f $folder | Write-Output
-                Remove-Item $folder -Recurse
-            }
-        }
-
-        [string]$folderToOptimize = (Resolve-path (Join-Path $script:scriptDir 'TemplatePack'))
-
-        'Starting image optimizer on folder [{0}]' -f $foldersToDelete | Write-Output
+        'Starting image optimizer on folder [{0}]' -f $foldersToDelete | Write-Host
         # .\.tools\AzureImageOptimizer.0.0.10-beta\tools\ImageCompressor.Job.exe --folder M:\temp\images\opt\to-optimize
-        $cmdArgs = @()
-        $cmdArgs += '--folder'
-        $cmdArgs += $folderToOptimize
+        $cmdArgs = @('--folder', $folderToOptimize)
 
-        'Calling img optimizer with the following args [{0}]' -f ($cmdArgs -join ' ') | Write-Output
+        'Calling img optimizer with the following args [{0}]' -f ($cmdArgs -join ' ') | Write-Host
         &$imgOptExe $cmdArgs
 
-        'Images optimized' | Write-Output
+        'Images optimized' | Write-Host
     }
 }
 
@@ -168,9 +151,7 @@ function UpdateNuGetExe(){
     [cmdletbinding()]
     param()
     process{
-        $cmdArgs = @()
-        $cmdArgs += 'update'
-        $cmdArgs += '-self'
+        $cmdArgs = @('update','-self')
 
         'Updating nuget.exe. Calling nuget.exe with the args: [{0}]' -f ($cmdArgs -join ' ') | Write-Verbose
         & $script:nugetExePath $cmdArgs
@@ -181,9 +162,7 @@ function RestoreNugetPackages(){
     [cmdletbinding()]
     param()
     process{
-        $cmdArgs = @()
-        $cmdArgs += 'restore'
-        $cmdArgs += (Resolve-Path $script:slnFilePath).ToString()
+        $cmdArgs = @('restore', (Resolve-Path $script:slnFilePath).ToString())
 
         'Restoring nuget packages. Calling nuget.exe with the args: [{0}]' -f ($cmdArgs -join ' ') | Write-Verbose
 
@@ -198,7 +177,7 @@ function Build-TemplateBuilder(){
         $tbSourceRoot
     )
     process{
-        'Building templatebuilder' | Write-Output
+        'Building templatebuilder' | Write-Host
         $tbSlnFile = (Join-Path $tbSourceRoot -ChildPath 'src\LigerShark.TemplateBuilder.sln')
 
         Invoke-MSBuild $tbSlnFile -configuration 'Debug'
@@ -212,7 +191,7 @@ function Build-SlowCheetahXdt(){
         $scSourceRoot
     )
     process{
-        'Building SlowCheetah.Xdt' | Write-Output
+        'Building SlowCheetah.Xdt' | Write-Host
         $scSlnFile = (Join-Path $scSourceRoot -ChildPath 'SlowCheetah.Xdt\SlowCheetah.Xdt.sln')
 
         Invoke-MSBuild $scSlnFile -configuration 'Debug'
@@ -225,21 +204,22 @@ function Build-SlowCheetahXdt(){
 ###########################################################
 
 
-'Begin started. This script uses psbuild which is available at https://github.com/ligershark/psbuild' | Write-Output
+'Begin started. This script uses psbuild which is available at https://github.com/ligershark/psbuild' | Write-Host
 
 EnsurePsbuildInstalled
 
 if($optimizeImages){
-    'optimizing images' | Write-Verbose
+    # delete the bin & obj folder before starting
+    $foldersToDelete = @( (Join-Path $script:scriptDir 'TemplatePack\bin\'), (Join-Path $script:scriptDir 'TemplatePack\obj'))
 
-    $imgResult = OptimizeImages -root $script:scriptDir -Recurse
-    
-    $imgResult | 
-        Select-Object @{Name='Name';Expression={(get-item $_.FullName).Name}},LengthBefore,LengthAfter,LengthDiff | 
-        Sort-Object LengthDiff -Descending |
-        Write-Output
+    foreach($folder in $foldersToDelete){
+        if(Test-Path $folder){
+            'Deleting build folder: [{0}]' -f $folder | Write-Verbose
+            Remove-Item $folder -Recurse
+        }
+    }
 
-    'Total diff: {0} KB' -f (($imgResult | Measure-Object -Property LengthDiff -Sum | Select-Object Sum).Sum/1KB) | Write-Output
+    OptimizeImages
 }
 else {
 
