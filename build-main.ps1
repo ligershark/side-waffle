@@ -112,17 +112,11 @@ function GetImageOptimizer(){
             &(GetNuGet) $cmdArgs | Out-Null
         }
 
-        $imgOptimizer = (Get-ChildItem -Path $toolsDir -Include 'ImageCompressor.Job.exe' -Recurse)
-        if(!$imgOptimizer){ throw 'Image optimizer not found' }       
+        $imgOptimizer = Get-ChildItem -Path $toolsDir -Include 'ImageCompressor.Job.exe' -Recurse | select -first 1
+        # imgOptimizer is now a single fileinfo reference, or $null
 
-        # return the path to it
-        if($imgOptimizer -is [Array]){
-            # incase somehow more than one ImageCompressor.Job.exe shows up in that folder
-            $imgOptimizer[0]
-        }
-        else{
-            $imgOptimizer
-        }
+        if(!$imgOptimizer){ throw 'Image optimizer not found' }
+        $imgOptimizer
     }
 }
 
