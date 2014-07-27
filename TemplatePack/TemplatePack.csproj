@@ -99,6 +99,9 @@
     <Content Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\MyTemplate.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\_preprocess.xml" />
     <Content Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\_Definitions\CSharp.vstemplate" />
+    <Content Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Caliburn.Micro WPF Application.csproj" />
+    <Content Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\_Definitions\CSharp.vstemplate" />
+    <Content Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\__TemplateIcon.png" />
     <Content Include="resources\Package.ico" />
     <None Include="ItemTemplates\Azure\CloudServicePlugin\CloudServicePlugin.csplugin" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\build.proj">
@@ -674,6 +677,9 @@
     </None>
     <None Include="ProjectTemplates\Windows Store\TypeScript Blank\WSaTypeScript.jsproj" />
     <None Include="ProjectTemplates\Windows Store\TypeScript Blank\WSaTypeScript_TemporaryKey.pfx" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.config" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\packages.config" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Settings.settings" />
     <None Include="Properties\template-builder.props">
       <SubType>Designer</SubType>
     </None>
@@ -848,7 +854,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ProjectTemplates\Web\html5up\" />
-    <Folder Include="ProjectTemplates\Windows\" />
     <Folder Include="Snippets\C++\SideWaffle\" />
     <Folder Include="Snippets\HTML\SideWaffle\" />
     <Folder Include="Snippets\SQL\SideWaffle\" />
@@ -904,6 +909,17 @@
     <Compile Include="ItemTemplates\Web\Nancy\NancyBootstrapper\bootstrapper.cs" />
     <Compile Include="ItemTemplates\Web\Nancy\NancyModule\module.cs" />
     <Compile Include="PackageConstants.cs" />
+    <Compile Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\AppBootstrapper.cs" />
+    <Compile Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\AssemblyInfo.cs" />
+    <Compile Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Resources.Designer.cs" />
+    <Compile Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Settings.Designer.cs" />
+    <Compile Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\ViewModels\MainViewModel.cs" />
+    <Compile Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TemplatePackPackage.cs" />
     <Compile Include="Tooling\ProjectSelector2.xaml.cs">
       <DependentUpon>ProjectSelector2.xaml</DependentUpon>
@@ -918,6 +934,7 @@
     </VSCTCompile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Resources.resx" />
     <EmbeddedResource Include="VSPackage.resx">
       <MergeWithCTO>true</MergeWithCTO>
       <ManifestResourceName>VSPackage</ManifestResourceName>
@@ -925,6 +942,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Tooling\ProjectSelector2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
