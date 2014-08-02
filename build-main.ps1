@@ -74,7 +74,7 @@ function EnsurePsbuildInstalled(){
     process{
 
         if(!(Get-Module -listAvailable 'psbuild')){
-            $msg = ('psbuild is required for this script, but it does not look to be installed. Get psbuild from here: https://github.com/ligershark/psbuild')
+            $msg = ('psbuild is required for this script, but it does not look to be installed. Get psbuild from here: https://aka.ms/psbuild')
             throw $msg
         }
 
@@ -109,7 +109,7 @@ function GetImageOptimizer(){
             $cmdArgs = @('install','AzureImageOptimizer','-Prerelease','-OutputDirectory',(Resolve-Path $toolsDir).ToString())
 
             'Calling nuget to install image optimzer with the following args. [{0}]' -f ($cmdArgs -join ' ') | Write-Verbose
-            &(GetNuGet) $cmdArgs | Out-Null
+            &(Get-Nuget) $cmdArgs | Out-Null
         }
 
         $imgOptimizer = Get-ChildItem -Path $toolsDir -Include 'ImageCompressor.Job.exe' -Recurse | select -first 1
@@ -142,30 +142,23 @@ function OptimizeImages(){
 }
 
 
-<#
-.SYNOPSIS
-    If nuget is not in the tools
-    folder then it will be downloaded there.
-#>
-function GetNuget(){
+function Get-Nuget{
     [cmdletbinding()]
     param(
-        $toolsDir = ("$env:LOCALAPPDATA\LigerShark\AzureJobs\tools\"),
+        $toolsDir = ("$env:LOCALAPPDATA\LigerShark\tools\"),
 
         $nugetDownloadUrl = 'http://nuget.org/nuget.exe'
     )
     process{
-        $nugetDestPath = Join-Path -Path $toolsDir -ChildPath nuget.exe
-
         if(!(Test-Path $toolsDir)){
-            New-Item -Path $toolsDir -ItemType Directory
+            New-Item -Path $toolsDir -ItemType Directory -Force | Out-Null
         }
+
+        $nugetDestPath = Join-Path -Path $toolsDir -ChildPath nuget.exe
         
         if(!(Test-Path $nugetDestPath)){
             'Downloading nuget.exe' | Write-Verbose
-            # download nuget
-            $webclient = New-Object System.Net.WebClient
-            $webclient.DownloadFile($nugetDownloadUrl, $nugetDestPath)
+            (New-Object System.Net.WebClient).DownloadFile($nugetDownloadUrl, $nugetDestPath)
 
             # double check that is was written to disk
             if(!(Test-Path $nugetDestPath)){
@@ -181,7 +174,7 @@ function GetNuget(){
 function UpdateNuGetExe(){
     [cmdletbinding()]
     param(
-        $nugetExePath = (GetNuget)
+        $nugetExePath = (Get-Nuget)
     )
     process{
         $cmdArgs = @('update','-self')
@@ -194,7 +187,7 @@ function UpdateNuGetExe(){
 function RestoreNugetPackages(){
     [cmdletbinding()]
     param(
-        $nugetExePath = (GetNuget)
+        $nugetExePath = (Get-Nuget)
     )
     process{
         $cmdArgs = @('restore', (Resolve-Path $script:slnFilePath).ToString())

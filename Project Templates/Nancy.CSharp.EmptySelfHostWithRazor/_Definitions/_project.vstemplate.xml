@@ -13,7 +13,7 @@
     <Icon>icon.png</Icon>
     
     <!-- Indicates how many parent folders this item template should appear in -->
-    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="Nancy.CSharp.EmptySelfHostWithRazor.csproj" File="Nancy.CSharp.EmptySelfHostWithRazor.csproj" ReplaceParameters="true">      
