@@ -3,7 +3,9 @@
 
     angular
         .module('app')
-        .factory('$safeitemname$', ['$http', $safeitemname$]);
+        .factory('$safeitemname$', $safeitemname$);
+
+    $safeitemname$.$inject = ['$http'];
 
     function $safeitemname$($http) {
         var service = {

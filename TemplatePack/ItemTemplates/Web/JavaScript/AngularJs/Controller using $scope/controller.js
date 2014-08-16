@@ -3,7 +3,9 @@
 
     angular
         .module('app')
-        .controller('$safeitemname$', ['$scope', $safeitemname$]);
+        .controller('$safeitemname$', $safeitemname$);
+
+    $safeitemname$.$inject = ['$scope']; 
 
     function $safeitemname$($scope) {
         $scope.title = '$safeitemname$';

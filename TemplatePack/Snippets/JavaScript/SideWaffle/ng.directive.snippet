@@ -28,20 +28,24 @@
       </Declarations>
       <Code Language="JavaScript">
         <![CDATA[
-    $module$.directive('$directive$', ['$dependency$', function ($dependency$) {
+    $module$.directive('$directive$', $directive$);
+
+    $directive.$inject = ['$dependency$'];
+
+    function $directive$($dependency$) {
         // Usage:
         // 
         // Creates:
         // 
         var directive = {
             link: link,
-            restrict: 'A'
+            restrict: 'EA'
         };
         return directive;
 
         function link(scope, element, attrs) {
         }
-    }]);
+    });
                 ]]>
       </Code>
     </Snippet>
