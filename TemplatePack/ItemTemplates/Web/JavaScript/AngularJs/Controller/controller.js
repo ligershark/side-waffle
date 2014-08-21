@@ -3,9 +3,12 @@
 
     angular
         .module('app')
-        .controller('$safeitemname$', ['$location', $safeitemname$]);
+        .controller('$safeitemname$', $safeitemname$);
+
+    $safeitemname$.$inject = ['$location']; 
 
     function $safeitemname$($location) {
+        /* jshint validthis:true */
         var vm = this;
         vm.title = '$safeitemname$';
 

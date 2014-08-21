@@ -3,7 +3,9 @@
 
     angular
         .module('app')
-        .directive('$safeitemname$', ['$window', $safeitemname$]);
+        .directive('$safeitemname$', $safeitemname$);
+
+    $safeitemname$.$inject = ['$window'];
     
     function $safeitemname$ ($window) {
         // Usage:
@@ -12,7 +14,7 @@
         // 
         var directive = {
             link: link,
-            restrict: 'A'
+            restrict: 'EA'
         };
         return directive;
 

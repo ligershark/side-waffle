@@ -41,21 +41,21 @@
 (function () {
     'use strict';
 
-    var $id$ = '$controller$';
-    angular.module('$module$').controller($id$,
-        ['$dependency$', $controller$]);
+    angular
+      .module('$module$')
+      .controller('$controller$', $controller$);
+
+    $controller$.$inject = ['$dependency$'];
 
     function $controller$($dependency$) {
+        /* jshint validthis:true */
         var vm = this;
 
-        vm.$member1$ = $member1$;
+        vm.title = '';
 
-        function $member1$() {
-        }
+        activate();
 
-        //#region Internal Methods        
-
-        //#endregion
+        function activate() { }
     }
 })();
                 ]]>

@@ -40,8 +40,12 @@
         <![CDATA[
 (function () {
     'use strict';
-    var $id$ = '$service$';
-    angular.module('$module$').factory($id$, ['$dependency$', $service$]);
+
+    angular
+      .module('$module$')
+      .factory('$service$', $service$);
+
+    $service$.$inject = ['$dependency$'];
 
     function $service$($dependency$) {
         var service = {
@@ -53,10 +57,6 @@
         function $member1$() {
 
         }
-
-        //#region Internal Methods        
-
-        //#endregion
     }
 })();
                 ]]>
