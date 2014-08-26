@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Azure.Jobs;
+using Microsoft.Azure.WebJobs;
 
 namespace WebJobsHelloWorld
 {
@@ -12,7 +12,7 @@ namespace WebJobsHelloWorld
     internal class Program
     {
         // Please set the following connectionstring values in app.config
-        // AzureJobsDashboard and AzureJobsStorage
+        // AzureWebJobsDashboard and AzureWebJobsStorage
         private static void Main()
         {
             var host = new JobHost();
