@@ -5,7 +5,8 @@
   Add New Project / Add New Item dialog by setting the value below
   -->
   <TemplateInfo Path="CSharp\Cloud\SideWaffle"/>
-  <Replacements Include="*.*" Exclude="*.vstemplate;*.csproj*.jpg;*.png;*.ico;_preprocess.xml;_project.vstemplate.xml">
+  <Replacements Include="*.*" Exclude="*.vstemplate;*.jpg;*.png;*.ico;_preprocess.xml;_project.vstemplate.xml">
     <add key="WebJobsHelloWorld" value="$safeprojectname$"/>
+    <add key="..\..\..\..\packages\" value="..\packages\"/>
   </Replacements>
 </Preprocess>
