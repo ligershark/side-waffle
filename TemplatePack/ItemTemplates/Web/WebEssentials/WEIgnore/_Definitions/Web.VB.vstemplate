@@ -1,0 +1,15 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>.weignore</DefaultName>
+    <Name>WEIgnore Ignore File (.weignore)</Name>
+    <Description>Allow you to ignore specific files to be processed by compilers or linters on Web Essentials.</Description>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>VisualBasic</ProjectSubType>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true" TargetFileName=".weignore">weignore.txt</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

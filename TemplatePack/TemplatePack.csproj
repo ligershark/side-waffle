@@ -100,6 +100,12 @@
     <Content Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\WebEssentials\WEIgnore\icon.png" />
+    <Content Include="ItemTemplates\Web\WebEssentials\WEIgnore\weignore.txt" />
+    <Content Include="ItemTemplates\Web\WebEssentials\WEIgnore\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\WebEssentials\WEIgnore\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\WebEssentials\WEIgnore\_Definitions\Web.VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\WebEssentials\WEIgnore\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\CustomScaffolderExtension.csproj" />
     <Content Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\MyTemplate.vstemplate" />
     <Content Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\_preprocess.xml" />
