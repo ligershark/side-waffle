@@ -1,0 +1,10 @@
+﻿# For more examples: http://vswebessentials.com/goto/weignore
+
+# To ignore file path including the word "style":
+# **/**style** 
+
+# To ignore path with .min.js at the end: 
+# **/**.min.js 
+
+# To ignore the file from being processed by Autoprefixer, use the word autoprefixer: 
+# **/bug.scss autoprefixer 
