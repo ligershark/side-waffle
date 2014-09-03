@@ -2,7 +2,7 @@
   <TemplateData>
     <DefaultName>directive.js</DefaultName>
     <Name>AngularJs Directive</Name>
-    <Description>AngularJs Directive: minification ready and starter dependencies. By John Papa, http://twitter.com/john_papa</Description>
+    <Description>AngularJs Directive: minification ready and starter dependencies. By John Papa, http://johnpapa.net </Description>
     <ProjectType>CSharp</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>

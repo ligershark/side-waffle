@@ -2,7 +2,7 @@
   <TemplateData>
     <DefaultName>controller.js</DefaultName>
     <Name>AngularJs Controller using $scope</Name>
-    <Description>AngularJs Controller $scope: minification ready, starter dependencies, using 'Classic' $scope syntax. By John Papa, http://twitter.com/john_papa</Description>
+    <Description>AngularJs Controller $scope: minification ready, starter dependencies, using 'Classic' $scope syntax. By John Papa, http://johnpapa.net </Description>
     <ProjectType>CSharp</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>

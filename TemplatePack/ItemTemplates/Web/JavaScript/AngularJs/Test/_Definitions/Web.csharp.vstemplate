@@ -2,7 +2,7 @@
   <TemplateData>
     <DefaultName>spec.js</DefaultName>
     <Name>AngularJs Test Spec</Name>
-    <Description>AngularJs Test Spec. By John Papa, http://twitter.com/john_papa</Description>
+    <Description>AngularJs Test Spec. By John Papa, http://johnpapa.net </Description>
     <ProjectType>Web</ProjectType>
     <ProjectSubType>CSharp</ProjectSubType>
     <Icon>icon.png</Icon>
