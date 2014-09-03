@@ -2,7 +2,7 @@
   <TemplateData>
     <DefaultName>controller.js</DefaultName>
     <Name>AngularJs Controller using 'Controller as'</Name>
-    <Description>AngularJs Controller: minification ready, starter dependencies, using 'Controller As' syntax. By John Papa, http://johnpapa.net</Description>
+    <Description>AngularJs Controller: minification ready, starter dependencies, using 'Controller As' syntax. By John Papa, http://twitter.com/john_papa</Description>
     <ProjectType>VisualBasic</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>

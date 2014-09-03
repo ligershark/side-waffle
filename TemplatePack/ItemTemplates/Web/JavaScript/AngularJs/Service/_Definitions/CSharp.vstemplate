@@ -1,14 +1,14 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <DefaultName>factory.js</DefaultName>
-    <Name>AngularJs Factory</Name>
-    <Description>AngularJs Factory: minification ready with starter dependencies. By John Papa, http://twitter.com/john_papa</Description>
+    <DefaultName>service.js</DefaultName>
+    <Name>AngularJs Service</Name>
+    <Description>AngularJs Service: minification ready with starter dependencies. By John Papa, http://twitter.com/john_papa</Description>
     <ProjectType>CSharp</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem ReplaceParameters="true">factory.js</ProjectItem>
+    <ProjectItem ReplaceParameters="true">service.js</ProjectItem>
   </TemplateContent>
 </VSTemplate>

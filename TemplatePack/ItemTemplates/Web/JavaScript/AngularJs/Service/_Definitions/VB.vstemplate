@@ -1,14 +1,14 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <DefaultName>controller.js</DefaultName>
-    <Name>AngularJs Controller using $scope</Name>
-    <Description>AngularJs Controller $scope: minification ready, starter dependencies, using 'Classic' $scope syntax. By John Papa, http://twitter.com/john_papa</Description>
+    <DefaultName>service.js</DefaultName>
+    <Name>AngularJs Service</Name>
+    <Description>AngularJs Service: minification ready with starter dependencies. By John Papa, http://twitter.com/john_papa</Description>
     <ProjectType>VisualBasic</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem ReplaceParameters="true">controller.js</ProjectItem>
+    <ProjectItem ReplaceParameters="true">service.js</ProjectItem>
   </TemplateContent>
 </VSTemplate>

@@ -2,7 +2,7 @@
   <TemplateData>
     <DefaultName>factory.js</DefaultName>
     <Name>AngularJs Factory</Name>
-    <Description>AngularJs Factory: minification ready with starter dependencies. By John Papa, http://johnpapa.net</Description>
+    <Description>AngularJs Factory: minification ready with starter dependencies. By John Papa, http://twitter.com/john_papa</Description>
     <ProjectType>VisualBasic</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
