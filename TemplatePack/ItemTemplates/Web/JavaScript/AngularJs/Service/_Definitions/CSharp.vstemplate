@@ -1,14 +1,14 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <DefaultName>controller.js</DefaultName>
-    <Name>AngularJs Controller using 'Controller as'</Name>
-    <Description>AngularJs Controller: minification ready, starter dependencies, using 'Controller As' syntax. By John Papa, http://johnpapa.net</Description>
+    <DefaultName>service.js</DefaultName>
+    <Name>AngularJs Service</Name>
+    <Description>AngularJs Service: minification ready with starter dependencies. By John Papa, http://johnpapa.net </Description>
     <ProjectType>CSharp</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem ReplaceParameters="true">controller.js</ProjectItem>
+    <ProjectItem ReplaceParameters="true">service.js</ProjectItem>
   </TemplateContent>
 </VSTemplate>
