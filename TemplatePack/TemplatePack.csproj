@@ -87,11 +87,11 @@
     <Content Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\_Definitions\Web.csharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Service\icon.png" />
-    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Service\service.js" />
-    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Service\_Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Service\_Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Service\_Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\service.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Test\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Test\spec.js" />
     <Content Include="ItemTemplates\Web\JavaScript\AngularJs\Test\_Definitions\CSharp.vstemplate" />
