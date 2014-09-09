@@ -1,8 +1,8 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <DefaultName>directive.js</DefaultName>
-    <Name>AngularJs Directive</Name>
-    <Description>AngularJs Directive: minification ready and starter dependencies. By John Papa, http://johnpapa.net </Description>
+    <DefaultName>controller.js</DefaultName>
+    <Name>AngularJs Controller</Name>
+    <Description>AngularJs Controller: minification ready, starter dependencies, using 'Controller As' syntax. By John Papa, http://johnpapa.net </Description>
     <ProjectType>Web</ProjectType>
     <ProjectSubType>CSharp</ProjectSubType>
     <Icon>icon.png</Icon>
@@ -10,6 +10,6 @@
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem ReplaceParameters="true">directive.js</ProjectItem>
+    <ProjectItem ReplaceParameters="true">controller.js</ProjectItem>
   </TemplateContent>
 </VSTemplate>
