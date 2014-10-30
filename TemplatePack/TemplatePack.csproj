@@ -763,6 +763,8 @@
     <None Include="Snippets\CSharp\SideWaffle\WCFUsing.Snippet" />
     <None Include="Snippets\CSS\SideWaffle\css-linear-gradient.snippet" />
     <None Include="Snippets\CSS\SideWaffle\css-radial-gradient.snippet" />
+    <None Include="Snippets\JavaScript\SideWaffle\ng.module.snippet" />
+    <None Include="Snippets\JavaScript\SideWaffle\ng.testSpec.snippet" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>

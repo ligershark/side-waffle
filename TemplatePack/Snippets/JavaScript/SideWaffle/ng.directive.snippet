@@ -25,27 +25,54 @@
           <ToolTip>Replace with the dependency for the directive.</ToolTip>
           <Default>$window</Default>
         </Literal>
+        <Literal>
+          <ID>replace</ID>
+          <ToolTip>If true, hides the directive HTML tag in the root of HTML template.</ToolTip>
+          <Default>true</Default>
+        </Literal>
+        <Literal>
+          <ID>filePath</ID>
+          <ToolTip>The source of the HTML file template.</ToolTip>
+          <Default>app/myDirective/myDirective.html</Default>
+        </Literal>
+        <Literal>
+          <ID>controller</ID>
+          <ToolTip>The name of the controller of the directive.</ToolTip>
+          <Default>customController</Default>
+        </Literal>
+        <Literal>
+          <ID>controllerAlias</ID>
+          <ToolTip>The variable of the controller to be used in the template.</ToolTip>
+          <Default>custom</Default>
+        </Literal>
       </Declarations>
       <Code Language="JavaScript">
         <![CDATA[
-    $module$.directive('$directive$', $directive$);
+        (function() {
+            angular.module('$module$')
+                   .directive('$directive$', $directive$);
 
-    $directive.$$inject = ['$dependency$'];
+            $directive$.$$inject = ['$dependency$'];
 
-    function $directive$($dependency$) {
-        // Usage:
-        // 
-        // Creates:
-        // 
-        var directive = {
-            link: link,
-            restrict: 'EA'
-        };
-        return directive;
+            function $directive$($dependency$) {
+                // Usage:
+                // 
+                // Creates:
+                // 
+                var directive = {
+                    link: link,
+                    restrict: 'EA',
+                    replace : $replace$,
+                    templateUrl : '$filePath$',
+                    controller : '$controller$',
+                    controllerAs : '$controllerAlias$'
+                };
+                return directive;
 
-        function link(scope, element, attrs) {
-        }
-    });
+                function link(scope, element, attrs) {
+                }
+            };
+        })();
                 ]]>
       </Code>
     </Snippet>
