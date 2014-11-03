@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Angular Test Spec</Title>
+      <Author>Aleksandar Bogatinov</Author>
+      <Description>Template for adding an Angular Test Specification</Description>
+      <Shortcut>ngspec</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>id</ID>
+          <ToolTip>Replace with a variable to hold the specification name.</ToolTip>
+          <Default>specificationId</Default>
+        </Literal>
+        <Literal>
+          <ID>module</ID>
+          <ToolTip>Replace with a module name variable.</ToolTip>
+          <Default>app</Default>
+        </Literal>
+        <Literal>
+          <ID>controller</ID>
+          <ToolTip>Replace with the string name of the controller you need to test.</ToolTip>
+          <Default>customController</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="JavaScript">
+        <![CDATA[
+describe('$id$', function () {
+    var $controller$,
+        $$httpBackend,
+        $$rootScope;
+
+    beforeEach(function () {
+        module('$module$');
+        inject(function (_$$controller_, _$$httpBackend_, _$$rootScope_) {
+            $controller$ = _$$controller_;
+            $$httpBackend = _$$httpBackend_;
+            $$rootScope = _$$rootScope_;
+        });
+    });
+
+    it('should exist', function () {
+        //TODO: expectation goes here
+    });
+});
+
+                ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Angular Module</Title>
+      <Author>Aleksandar Bogatinov</Author>
+      <Description>Template for adding an Angular Module</Description>
+      <Shortcut>ngmod</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>id</ID>
+          <ToolTip>Replace with a variable to hold the module name.</ToolTip>
+          <Default>moduleId</Default>
+        </Literal>
+        <Literal>
+          <ID>firstDependency</ID>
+          <ToolTip>Replace with an optional Angular dependency.</ToolTip>
+          <Default>ngAnimate</Default>
+        </Literal>
+        <Literal>
+          <ID>secondDependency</ID>
+          <ToolTip>Replace with an optional Angular dependency.</ToolTip>
+          <Default>ngRoute</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="JavaScript">
+        <![CDATA[
+(function () {
+    'use strict';
+
+    angular.module('$id$', [
+        // Angular modules 
+        '$firstDependency$',
+        '$secondDependency$'
+
+        // Custom modules 
+
+        // 3rd Party Modules
+        
+    ]);
+})();
+                ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
