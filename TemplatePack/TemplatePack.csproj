@@ -748,7 +748,7 @@
     <Content Include="Snippets\JavaScript\SideWaffle\ng.service.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactly.Snippet">
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactlyTimes.Snippet">
       <SubType>Designer</SubType>
     </None>
     <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappened.Snippet">
