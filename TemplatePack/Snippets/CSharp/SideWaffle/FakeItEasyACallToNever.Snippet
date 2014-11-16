@@ -3,17 +3,17 @@
   <CodeSnippet Format="1.0.0">
     <Header>
       <Author>Christian Fredh - http://christianfredh.com</Author>
-      <Description>Asserts that a call to a method must have happened exactly once.</Description>
+      <Description>Asserts that a call to a method never have happened.</Description>
       <HelpUrl>https://github.com/FakeItEasy/FakeItEasy/wiki/Creating-Fakes</HelpUrl>
       <Keywords>
         <Keyword>C#</Keyword>
         <Keyword>FakeItEasy</Keyword>
       </Keywords>
-      <Shortcut>acalltoonce</Shortcut>
+      <Shortcut>acalltonever</Shortcut>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
-      <Title>FakeItEasy - Call To Must Have Happened Once</Title>
+      <Title>FakeItEasy - Call To Must Not Have Happened</Title>
     </Header>
     <Snippet>
       <Declarations>
@@ -29,7 +29,7 @@
         </Literal>
       </Declarations>
       <Code Language="CSharp">
-        <![CDATA[A.CallTo(() => $fake$.$method$).MustHaveHappened(Repeated.Exactly.Once);$end$]]>
+        <![CDATA[A.CallTo(() => $fake$.$method$).MustNotHaveHappened();$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>
