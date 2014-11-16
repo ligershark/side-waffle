@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Author>Christian Fredh - http://christianfredh.com</Author>
+      <Description>Asserts that a call to a method must have happened exactly twice.</Description>
+      <HelpUrl>https://github.com/FakeItEasy/FakeItEasy/wiki/Creating-Fakes</HelpUrl>
+      <Keywords>
+        <Keyword>C#</Keyword>
+        <Keyword>FakeItEasy</Keyword>
+      </Keywords>
+      <Shortcut>acallmust2</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>FakeItEasy - Call To Must Have Happened Exactly Twice</Title>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>fake</ID>
+          <ToolTip>The fake.</ToolTip>
+          <Default>fake</Default>
+        </Literal>
+        <Literal>
+          <ID>method</ID>
+          <ToolTip>Method to fake.</ToolTip>
+          <Default>Method()</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[A.CallTo(() => $fake$.$method$).MustHaveHappened(Repeated.Exactly.Twice);$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

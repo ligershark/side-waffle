@@ -748,7 +748,31 @@
     <Content Include="Snippets\JavaScript\SideWaffle\ng.service.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactlyTimes.Snippet">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappened.Snippet">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactlyTwice.Snippet">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustNotHaveHappened.Snippet">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactlyOnce.Snippet">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallTo.Snippet">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyAFakeStrict.Snippet">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Snippets\CSharp\SideWaffle\NancyModuleDelete.Snippet" />
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyAFake.Snippet">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Snippets\CSharp\SideWaffle\NancyModuleGet.Snippet">
       <SubType>Designer</SubType>
     </None>

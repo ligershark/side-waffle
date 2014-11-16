@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Author>Christian Fredh - http://christianfredh.com</Author>
+      <Description>Adds a strict fake to a unit test.</Description>
+      <HelpUrl>https://github.com/FakeItEasy/FakeItEasy/wiki/Creating-Fakes</HelpUrl>
+      <Keywords>
+        <Keyword>C#</Keyword>
+        <Keyword>FakeItEasy</Keyword>
+      </Keywords>
+      <Shortcut>afakestrict</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>FakeItEasy - Strict Fake</Title>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>type</ID>
+          <ToolTip>Interface or type to fake.</ToolTip>
+          <Default>ITypeToFake</Default>
+        </Literal>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>Name of the fake.</ToolTip>
+          <Default>fake</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[var $name$ = A.Fake<$type$>(x => x.Strict());$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
