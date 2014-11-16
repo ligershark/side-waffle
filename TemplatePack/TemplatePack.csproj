@@ -748,10 +748,19 @@
     <Content Include="Snippets\JavaScript\SideWaffle\ng.service.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToNever.Snippet">
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactly.Snippet">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToOnce.Snippet">
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappened.Snippet">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactlyTwice.Snippet">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustNotHaveHappened.Snippet">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactlyOnce.Snippet">
       <SubType>Designer</SubType>
     </None>
     <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallTo.Snippet">

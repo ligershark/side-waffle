@@ -3,17 +3,17 @@
   <CodeSnippet Format="1.0.0">
     <Header>
       <Author>Christian Fredh - http://christianfredh.com</Author>
-      <Description>Adds a faked method return from a fake.</Description>
+      <Description>Asserts that a call to a method must have happened exactly once.</Description>
       <HelpUrl>https://github.com/FakeItEasy/FakeItEasy/wiki/Creating-Fakes</HelpUrl>
       <Keywords>
         <Keyword>C#</Keyword>
         <Keyword>FakeItEasy</Keyword>
       </Keywords>
-      <Shortcut>acall</Shortcut>
+      <Shortcut>acallmust1</Shortcut>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
-      <Title>FakeItEasy - Call To</Title>
+      <Title>FakeItEasy - Call To Must Have Happened Exactly Once</Title>
     </Header>
     <Snippet>
       <Declarations>
@@ -27,14 +27,9 @@
           <ToolTip>Method to fake.</ToolTip>
           <Default>Method()</Default>
         </Literal>
-        <Literal>
-          <ID>returnValue</ID>
-          <ToolTip>Return value.</ToolTip>
-          <Default>null</Default>
-        </Literal>
       </Declarations>
       <Code Language="CSharp">
-        <![CDATA[A.CallTo(() => $fake$.$method$).Returns($returnValue$);$end$]]>
+        <![CDATA[A.CallTo(() => $fake$.$method$).MustHaveHappened(Repeated.Exactly.Once);$end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>
