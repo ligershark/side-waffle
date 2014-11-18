@@ -81,19 +81,24 @@
     <Content Include="ItemTemplates\Extensibility\JsonSchemaSelector\icon.png" />
     <Content Include="ItemTemplates\Extensibility\JsonSchemaSelector\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\Definitions\vb.vstemplate" />
     <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\icon.png" />
     <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\powershell-file-icon.png" />
+    <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\Definitions\vb.vstemplate" />
     <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\icon.png" />
     <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\powershell-file-icon.png" />
     <Content Include="ItemTemplates\PowerShell\DscConfigurationSimple\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="ItemTemplates\PowerShell\DscConfigurationSimple\Definitions\vb.vstemplate" />
     <Content Include="ItemTemplates\PowerShell\DscConfigurationSimple\icon.png" />
     <Content Include="ItemTemplates\PowerShell\DscConfigurationSimple\powershell-file-icon.png" />
     <Content Include="ItemTemplates\PowerShell\DscResourceProvider\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\PowerShell\DscResourceProvider\Definitions\vb.vstemplate" />
     <Content Include="ItemTemplates\PowerShell\DscResourceProvider\icon.png" />
     <Content Include="ItemTemplates\PowerShell\DscResourceProvider\powershell-file-icon.png" />
+    <Content Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\vb.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\jQueryJSFile.js" />
     <Content Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\_Definitions\CSharp.vstemplate" />
