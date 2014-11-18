@@ -3,13 +3,13 @@
     <ProjectType>CSharp</ProjectType>
 
     <DefaultName>script.ps1</DefaultName>
-    <Name>Empty PowerShell file</Name>
-    <Description>This will create an empty PowerShell (.ps1) file.</Description>
+    <Name>Cmdlet (advanced function) complete</Name>
+    <Description>Advanced function (ScriptCmdlet) with some attributes and some inline help fields.</Description>
     <Icon>powershell-file-icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-    <SortOrder>5000</SortOrder>
+    <SortOrder>10010</SortOrder>
   </TemplateData>
   <TemplateContent>
-    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.ps1">empty.ps1</ProjectItem>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.ps1">cmdlet-adv-function-complete.ps1</ProjectItem>
   </TemplateContent>
 </VSTemplate>

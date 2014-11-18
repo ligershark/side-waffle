@@ -80,6 +80,20 @@
     <Content Include="ItemTemplates\Extensibility\BrowserLink\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\JsonSchemaSelector\icon.png" />
     <Content Include="ItemTemplates\Extensibility\JsonSchemaSelector\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\icon.png" />
+    <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\powershell-file-icon.png" />
+    <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\icon.png" />
+    <Content Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\powershell-file-icon.png" />
+    <Content Include="ItemTemplates\PowerShell\DscConfigurationSimple\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\PowerShell\DscConfigurationSimple\icon.png" />
+    <Content Include="ItemTemplates\PowerShell\DscConfigurationSimple\powershell-file-icon.png" />
+    <Content Include="ItemTemplates\PowerShell\DscResourceProvider\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\PowerShell\DscResourceProvider\icon.png" />
+    <Content Include="ItemTemplates\PowerShell\DscResourceProvider\powershell-file-icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\jQueryJSFile.js" />
     <Content Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\_Definitions\CSharp.vstemplate" />
@@ -105,6 +119,10 @@
     <Content Include="ItemTemplates\Web\JavaScript\Mocha\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\Mocha\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\RequireJs\template.js" />
+    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\cmdlet-adv-function-complete.ps1" />
+    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\cmdlet-adv-function.ps1" />
+    <None Include="ItemTemplates\PowerShell\DscConfigurationSimple\dsc-configuration-simple.ps1" />
+    <None Include="ItemTemplates\PowerShell\DscResourceProvider\dsc-resource-provider.ps1" />
     <None Include="ItemTemplates\Web\Misc\JsonSchema\schema.json" />
     <Content Include="ItemTemplates\Web\Misc\JsonSchema\icon.png" />
     <Content Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\CSharp.vstemplate" />
@@ -200,8 +218,6 @@
     <Content Include="ItemTemplates\Misc\Svg\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Misc\Svg\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\PowerShell\EmptyPowerShellFile\icon.png" />
     <Content Include="ItemTemplates\Test\NUnitFixture\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>

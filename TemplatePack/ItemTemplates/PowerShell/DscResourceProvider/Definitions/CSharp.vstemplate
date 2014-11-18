@@ -1,0 +1,15 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>CSharp</ProjectType>
+
+    <DefaultName>dsc-resource-provider.ps1</DefaultName>
+    <Name>DSC Resource provider</Name>
+    <Description>PowerShell Desierd State Configuration simple resource provider with functions for Get-TargetResource Set-TargetResource and Test-TargetResource</Description>
+    <Icon>powershell-file-icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <SortOrder>20010</SortOrder>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.ps1">dsc-resource-provider.ps1</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
