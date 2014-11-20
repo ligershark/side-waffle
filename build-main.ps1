@@ -50,12 +50,10 @@ $global:SideWaffleBuildSettings = New-Object PSObject -Property @{
     VisualStudioVersion = '12.0'
     ToolsDirectory = '.\.tools'
 }
-
 function Get-ScriptDirectory{
     $Invocation = (Get-Variable MyInvocation -Scope 1).Value
     Split-Path $Invocation.MyCommand.Path
 }
-
 $script:scriptDir = ((Get-ScriptDirectory) + "\")
 $script:slnFilePath = ('{0}SideWaffle.sln' -f $scriptDir)
 
