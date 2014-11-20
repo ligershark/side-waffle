@@ -51,8 +51,7 @@ $global:SideWaffleBuildSettings = New-Object PSObject -Property @{
     ToolsDirectory = '.\.tools'
 }
 
-function Get-ScriptDirectory
-{
+function Get-ScriptDirectory{
     $Invocation = (Get-Variable MyInvocation -Scope 1).Value
     Split-Path $Invocation.MyCommand.Path
 }
