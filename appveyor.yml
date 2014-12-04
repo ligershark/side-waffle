@@ -28,7 +28,7 @@ build:
       (new-object Net.WebClient).DownloadString("https://raw.github.com/ligershark/psbuild/master/src/GetPSBuild.ps1") | iex
       .\build-main.ps1
 
-artifacts:
+#artifacts:
   #- path: 'BuildOutput\**\*.nupkg'
   
   #- path: 'BuildOutput\**\*.vsix'
