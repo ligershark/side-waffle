@@ -1,5 +1,7 @@
 #SideWaffle for Visual Studio
 
+[![Build status](https://ci.appveyor.com/api/projects/status/bwirtvfcnjix07pd?svg=true)](https://ci.appveyor.com/project/sayedihashimi/side-waffle)
+
 [SideWaffle.com](http://sidewaffle.com) - download the extension
 
 ##The ultimate web developer template pack
