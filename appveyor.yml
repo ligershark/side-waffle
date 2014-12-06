@@ -23,7 +23,8 @@ os: Windows Server 2012 R2
 #---------------------------------#
 
 build_script:
-  - ps: nuget restore sidewaffle.sln
+  - ps: 
+      nuget restore sidewaffle.sln
       (new-object Net.WebClient).DownloadString("https://raw.github.com/ligershark/psbuild/master/src/GetPSBuild.ps1") | iex
       .\build-main.ps1
 
