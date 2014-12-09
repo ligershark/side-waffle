@@ -51,6 +51,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="ItemTemplates\AppVeyor\Empty\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\AppVeyor\Empty\Definitions\vb.vstemplate" />
+    <Content Include="ItemTemplates\AppVeyor\Empty\appveyor-icon.png" />
+    <Content Include="ItemTemplates\AppVeyor\Full\appveyor-icon.png" />
+    <Content Include="ItemTemplates\AppVeyor\Full\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\AppVeyor\Full\Definitions\vb.vstemplate" />
     <Content Include="ItemTemplates\Azure\CloudServicePlugin\azure-icon.png" />
     <Content Include="ItemTemplates\Azure\CloudServicePlugin\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\icon.png" />
@@ -124,6 +130,8 @@
     <Content Include="ItemTemplates\Web\JavaScript\Mocha\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\Mocha\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\RequireJs\template.js" />
+    <None Include="ItemTemplates\AppVeyor\Empty\appveyor.yml" />
+    <None Include="ItemTemplates\AppVeyor\Full\appveyor.yml" />
     <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\cmdlet-adv-function-complete.ps1" />
     <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\cmdlet-adv-function.ps1" />
     <None Include="ItemTemplates\PowerShell\DscConfigurationSimple\dsc-configuration-simple.ps1" />
