@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+
+  <!--
+  Invoke-MSBuild .\build-templates.proj -properties @{'ls-ProjectTemplateRoot'='C:\Data\personal\mycode\side-waffle\Project Templates\\';'ls-ItemTemplateRoot'='C:\Data\personal\mycode\side-waffle\TemplatePack\ItemTemplates\';'BaseIntermediateOutputPath'='C:\temp\_NET\templates-out\'}
+  -->
+  
+  <PropertyGroup Label="TemplateBuilder">
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">C:\Data\personal\mycode\side-waffle\packages\TemplateBuilder.1.0.3.52-beta\tools\ligershark.templates.targets</TemplateBuilderTargets>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">obj\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath Condition=" '$(PlatformName)' == 'AnyCPU' ">$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
+    <IntermediateOutputPath Condition=" '$(PlatformName)' != 'AnyCPU' ">$(BaseIntermediateOutputPath)$(PlatformName)\$(Configuration)\</IntermediateOutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TemplateSourceRoot Condition=" '$(TemplateSourceRoot)'=='' ">C:\Data\personal\mycode\side-waffle\</TemplateSourceRoot>
+    <ls-ProjectTemplateRoot Condition=" '$(ls-ProjectTemplateRoot)'=='' ">$(TemplateSourceRoot)Project Templates\</ls-ProjectTemplateRoot>
+    <ls-ItemTemplateRoot Condition=" '$(ls-ItemTemplateRoot)'=='' ">$(TemplateSourceRoot)Item Templates\</ls-ItemTemplateRoot>
+    <ls-ItemTemplatesExtendBuild>true</ls-ItemTemplatesExtendBuild>
+  </PropertyGroup>
+  <Import Project="$(TemplateBuilderTargets)" Condition="Exists('$(TemplateBuilderTargets)')" Label="TemplateBuilder" />
+
+  <Target Name="FixProperties">
+    <PropertyGroup>
+      <ls-ProjectTemplateRoot Condition="!HasTrailingSlash('$(ls-ProjectTemplateRoot)')">$(ls-ProjectTemplateRoot)\</ls-ProjectTemplateRoot>
+      <ls-ItemTemplateRoot Condition="!HasTrailingSlash('$(ls-ItemTemplateRoot)')">$(ls-ItemTemplateRoot)</ls-ItemTemplateRoot>
+    </PropertyGroup>
+  </Target>
+  
+  <Target Name="DiscoverTemplateFiles">
+    <Message Text="ls-ProjectTemplateRoot: [$(ls-ProjectTemplateRoot)]" Importance="high"/>
+    <Message Text="ls-ItemTemplateRoot: [$(ls-ItemTemplateRoot)]" Importance="high"/>
+    <ItemGroup>
+      <_templatefiles Include="$(ls-ProjectTemplateRoot)**\_project.vstemplate.xml"/>
+      <TemplateReference Include="%(_templatefiles.rootdir)%(_templatefiles.Directory)%(_templatefiles.filename)%(_templatefiles.extension)">
+        <PathToProject>$(ls-ProjectTemplateRoot)%(RecursiveDir)%(Filename)%(Extension)</PathToProject>
+      </TemplateReference>
+    </ItemGroup>
+  </Target>
+  <PropertyGroup>
+    <BuildDependsOn>
+      $(BuildDependsOn);
+      DiscoverTemplateFiles;
+    </BuildDependsOn>
+  </PropertyGroup>
+  <Target Name="Build" DependsOnTargets="$(BuildDependsOn);$(CoreCompileDependsOn);ls-ProcessItemTemplates">
+    <Message Text="Inside build" Importance="high"/>
+  </Target>
+</Project>
