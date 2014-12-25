@@ -12,7 +12,8 @@
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">obj\</BaseIntermediateOutputPath>
     <IntermediateOutputPath Condition=" '$(PlatformName)' == 'AnyCPU' ">$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
     <IntermediateOutputPath Condition=" '$(PlatformName)' != 'AnyCPU' ">$(BaseIntermediateOutputPath)$(PlatformName)\$(Configuration)\</IntermediateOutputPath>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath Condition=" '$(OutputPath)'=='' ">bin\Debug\</OutputPath>
+    <ls-TemplateSubFolder Condition=" '$(ls-TemplateSubFolder)'=='' ">SideWaffle</ls-TemplateSubFolder>
   </PropertyGroup>
 
   <PropertyGroup>
