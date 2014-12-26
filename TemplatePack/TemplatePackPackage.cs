@@ -37,6 +37,29 @@ namespace TemplatePack
                 button.BeforeQueryStatus += button_BeforeQueryStatus;
                 mcs.AddCommand(button);
             }
+
+            if(Environment.GetEnvironmentVariable("SideWaffleEnableDynamicTemplates") != null){
+                ProcessDynamicTemplates();
+            }
+        }
+
+        private void ProcessDynamicTemplates() {
+            string templateBuilderInstallPath = @"C:\data\mycode\side-waffle\packages\TemplateBuilder.1.1.2-beta1\";
+            string templateSourceRoot = @"C:\data\mycode\side-waffle\";
+            string projectTemplateSourceRoot = @"C:\data\mycode\side-waffle\Project Templates\";
+            string itemTemplateSourceRoot = @"C:\data\mycode\side-waffle\TemplatePack\ItemTemplates\";
+            string baseIntermediateOutputPath = @"C:\temp\_net\bio\";
+            string outputPath = @"C:\temp\_net\output\";
+
+            var builder = new LigerShark.Templates.DynamicBuilder.TemplateFolderBuilder(
+                templateBuilderInstallPath,
+                templateSourceRoot,
+                projectTemplateSourceRoot,
+                itemTemplateSourceRoot,
+                baseIntermediateOutputPath,
+                outputPath);
+            var result = builder.BuildTemplates();
+            System.Windows.MessageBox.Show("Done building");
         }
 
         void button_BeforeQueryStatus(object sender, EventArgs e)

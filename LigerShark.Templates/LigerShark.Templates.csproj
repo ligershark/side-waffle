@@ -46,6 +46,9 @@
     <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.Build" />
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.IO.Compression" />
@@ -80,10 +83,12 @@
     <Compile Include="DownloadZipWindow.xaml.cs">
       <DependentUpon>DownloadZipWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DynamicBuilder\TemplateFolderBuilder.cs" />
     <Compile Include="Extensions\HttpContentExtensions.cs" />
     <Compile Include="Html5UpProjectWizard.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InmemoryMsbuildLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
