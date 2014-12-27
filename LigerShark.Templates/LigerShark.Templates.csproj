@@ -79,11 +79,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="DirectoryHelper.cs" />
     <Compile Include="Downloader.cs" />
     <Compile Include="DownloadZipWindow.xaml.cs">
       <DependentUpon>DownloadZipWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="DynamicBuilder\TemplateFolderBuilder.cs" />
+    <Compile Include="DynamicBuilder\TemplateSource.cs" />
     <Compile Include="Extensions\HttpContentExtensions.cs" />
     <Compile Include="Html5UpProjectWizard.cs" />
   </ItemGroup>
