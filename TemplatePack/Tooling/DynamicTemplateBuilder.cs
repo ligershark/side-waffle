@@ -1,4 +1,5 @@
 ﻿namespace TemplatePack.Tooling {
+    using LibGit2Sharp;
     using LigerShark.Templates;
     using LigerShark.Templates.DynamicBuilder;
     using System;
@@ -43,8 +44,8 @@
             }
             else if(
                 string.Compare("git", source.Location.Scheme, StringComparison.InvariantCultureIgnoreCase)==0 ||
-                string.Compare("git", source.Location.Scheme, StringComparison.InvariantCultureIgnoreCase)==0 ||
-                string.Compare("git", source.Location.Scheme, StringComparison.InvariantCultureIgnoreCase) == 0) {
+                string.Compare("http", source.Location.Scheme, StringComparison.InvariantCultureIgnoreCase)==0 ||
+                string.Compare("https", source.Location.Scheme, StringComparison.InvariantCultureIgnoreCase) == 0) {
                     FetchGitSourceLocally(source, destFolder);
             }
             else {
@@ -60,15 +61,24 @@
             if (string.IsNullOrEmpty(destFolder)) { throw new ArgumentNullException("destFolder"); }
 
             // TODO: these methods should be renamed since fetch means something in git
-            
-            
-            var destDirInfo = new DirectoryInfo(destFolder);
-            if (destDirInfo.Exists) {
-                // TODO: if the folder exists and there is a .git folder then we should do a fetch/merge or pull
-                destDirInfo.Delete(true);
-            }
 
-            // clone it
+            try {
+                var destDirInfo = new DirectoryInfo(destFolder);
+                if (destDirInfo.Exists) {
+                    // TODO: if the folder exists and there is a .git folder then we should do a fetch/merge or pull
+                    destDirInfo.Delete(true);
+                }
+
+                // clone it
+                var repoPath = Repository.Clone(source.Location.AbsoluteUri, destFolder);
+                var repo = new Repository(repoPath);
+                Branch branch = repo.Checkout(source.Branch);
+                branch.Checkout();
+                // Repository.Clone(source.Location.AbsoluteUri,destFolder,new CloneOptions().br)
+            }
+            catch (Exception ex) {
+                string msg = ex.ToString();
+            }
         }
         protected void BuildTemplates(TemplateLocalInfo template) {
             if (template == null) { throw new ArgumentNullException("template"); }
@@ -136,7 +146,7 @@
                 new TemplateSource{
                     Name="sidewaffleremote",
                     Location = new Uri(@"https://github.com/ligershark/side-waffle.git"),
-                    Branch="autoupdate"}
+                    Branch="origin/autoupdate"}
 
                 //new TemplateSource{
                 //    Name="sidewafflelocal",
