@@ -15,7 +15,7 @@
         public string OutputPath { get; set; }
 
         public string SourceRoot { get; set; }
-
+        
         public DynamicTemplateBuilder() {
             this.SourceRoot = Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\DynamicTemplates\sources\");
             this.BaseIntermediateOutputPath = Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\DynamicTemplates\baseintout\");
@@ -29,7 +29,7 @@
         }
         protected string TemplateBuilderBinPath {
             get {
-                return Path.Combine(SideWaffleInstallDir, "TemplateBuilderBin");
+                return Path.Combine(SideWaffleInstallDir, @"TemplateBuilderBin\");
             }
         }
 
@@ -50,11 +50,38 @@
             }
         }
         protected void BuildTemplates(TemplateLocalInfo template) {
-            // call msbuild to build the templates here
+            if (template == null) { throw new ArgumentNullException("template"); }
+
+            var builder = new TemplateFolderBuilder(
+                TemplateBuilderBinPath,
+                template.TemplateSourceRoot,
+                template.ProjectTemplateSourceRoot,
+                template.ItemTemplateSourceRoot,
+                Path.Combine(this.BaseIntermediateOutputPath, template.Source.Name) + @"\",
+                Path.Combine(this.OutputPath, template.Source.Name) + @"\");
+
+            var result = builder.BuildTemplates();
+            if (!result) {
+                System.Diagnostics.Trace.TraceError("Unable to build templates from source [{0}]. Unknown error", template.TemplateSourceRoot);
+            }
         }
 
         protected void CopyTemplatesToExtensionsFolder(TemplateLocalInfo template) {
+            if (template == null) { throw new ArgumentNullException("template"); }
             // copy the templates from the output directory and into the extensions folder
+            string actualBaseIntOut = Path.Combine(this.BaseIntermediateOutputPath, template.Source.Name);
+            var templatePath = new DirectoryInfo(Path.Combine(actualBaseIntOut, @"Debug\ls-Templates"));
+            if(!templatePath.Exists){
+                throw new ApplicationException(string.Format("Unable to find generated templates at [{0}]",templatePath.FullName));
+            }
+
+            var templatesToCopy = templatePath.GetFiles(@"*.zip", SearchOption.TopDirectoryOnly);
+
+            // var destFolder = Path.Combine(SideWaffleInstallDir,"Output\")
+
+            foreach (var tToCopy in templatesToCopy) {
+                // TODO: Needs to be implemented. MSBuild should copy to OutputPath in the correct folder structure first
+            }
         }
         public void ProcessTemplates() {
             CreateTemplateBuilderBinIfNotExists();
@@ -130,7 +157,7 @@
 
             foreach (var source in sources) {
                 string srcRoot = Path.Combine(this.SourceRoot,source.Name);
-                result.Add(new TemplateLocalInfo(source, Path.Combine(this.SourceRoot, source.Name)));
+                result.Add(new TemplateLocalInfo(source, Path.Combine(this.SourceRoot, source.Name)+@"\"));
             }
 
             return result;
