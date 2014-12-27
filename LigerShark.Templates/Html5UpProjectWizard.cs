@@ -47,7 +47,7 @@
                 return;
             }
 
-            List<FileInfo> copiedFiles = new DirectoryHelper().DirectoryCopy(sourceDir, destDir, true);
+            List<FileInfo> copiedFiles = new DirectoryHelper().DirectoryCopy(sourceDir, destDir, true, false);
             copiedFiles.ForEach(file => {
                 project.ProjectItems.AddFromFile(file.FullName);
             });

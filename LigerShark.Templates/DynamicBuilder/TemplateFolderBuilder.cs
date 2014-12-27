@@ -67,7 +67,7 @@
                 var project = pc.LoadProject(projectFilepath);
                 var projectInstance = project.CreateProjectInstance();
 
-                string[] targets = new string[] { "Build" };
+                string[] targets = new string[] { "BuildStandAlone" };
                 var buildReqData = new BuildRequestData(projectInstance, targets, null, BuildRequestDataFlags.ProvideProjectStateAfterBuild);
                 var buildResult = BuildManager.DefaultBuildManager.Build(
                     new BuildParameters(pc),

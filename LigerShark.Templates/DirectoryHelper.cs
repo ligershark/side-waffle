@@ -7,8 +7,8 @@
     using System.Threading.Tasks;
 
     public class DirectoryHelper {
-        
-        public List<FileInfo> DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs) {
+
+        public List<FileInfo> DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs,bool overwrite) {
             // taken from http://msdn.microsoft.com/en-us/library/bb762914.aspx
             // Get the subdirectories for the specified directory.
             DirectoryInfo dir = new DirectoryInfo(sourceDirName);
@@ -30,7 +30,7 @@
             FileInfo[] files = dir.GetFiles();
             foreach (FileInfo file in files) {
                 string temppath = Path.Combine(destDirName, file.Name);
-                copiedFiles.Add(file.CopyTo(temppath, false));
+                copiedFiles.Add(file.CopyTo(temppath, overwrite));
             }
 
             // If copying subdirectories, copy them and their contents to new location. 
@@ -38,7 +38,7 @@
                 foreach (DirectoryInfo subdir in dirs) {
                     string temppath = Path.Combine(destDirName, subdir.Name);
                     copiedFiles.AddRange(
-                        DirectoryCopy(subdir.FullName, temppath, copySubDirs));
+                        DirectoryCopy(subdir.FullName, temppath, copySubDirs,overwrite));
                 }
             }
 

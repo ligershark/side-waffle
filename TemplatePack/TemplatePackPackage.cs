@@ -41,7 +41,13 @@ namespace TemplatePack
             }
 
             if(Environment.GetEnvironmentVariable("SideWaffleEnableDynamicTemplates") != null){
-                new DynamicTemplateBuilder().ProcessTemplates();
+                try {
+                    new DynamicTemplateBuilder().ProcessTemplates();
+                }
+                catch (Exception ex) {
+                    // todo: replace with logging or something
+                    System.Windows.MessageBox.Show(ex.ToString());
+                }
             }
         }
 

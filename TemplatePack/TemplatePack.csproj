@@ -968,7 +968,7 @@
     <Folder Include="Snippets\XML\SideWaffle\" />
   </ItemGroup>
   <ItemGroup>
-    <TemplateReference Include="ConsoleApplicationAsync.csproj">
+    <!--<TemplateReference Include="ConsoleApplicationAsync.csproj">
       <PathToProject>../Project%20Templates/Windows%20Desktop/ConsoleApplicationAsync/ConsoleApplicationAsync.csproj</PathToProject>
     </TemplateReference>
     <TemplateReference Include="WebJobsHelloWorld.csproj">
@@ -1006,7 +1006,7 @@
     </TemplateReference>
     <TemplateReference Include="html5up.csproj">
       <PathToProject>../Project%20Templates/html5up/html5up.csproj</PathToProject>
-    </TemplateReference>
+    </TemplateReference>-->
   </ItemGroup>
   <ItemGroup>
     <None Include="ItemTemplates\Windows Phone\CaliburnMicroBootstrapper\Bootstrapper.cs" />

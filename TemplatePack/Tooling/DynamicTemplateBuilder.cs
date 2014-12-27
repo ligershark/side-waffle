@@ -39,7 +39,7 @@
 
             if (string.Compare("file", source.Location.Scheme, StringComparison.InvariantCultureIgnoreCase)==0) {
                 // do a recursive copy of the folder to the dest
-                new DirectoryHelper().DirectoryCopy(source.Location.LocalPath, destFolder, true);
+                new DirectoryHelper().DirectoryCopy(source.Location.LocalPath, destFolder, true, true);
             }
             else {
                 throw new ApplicationException(
@@ -68,19 +68,13 @@
 
         protected void CopyTemplatesToExtensionsFolder(TemplateLocalInfo template) {
             if (template == null) { throw new ArgumentNullException("template"); }
-            // copy the templates from the output directory and into the extensions folder
-            string actualBaseIntOut = Path.Combine(this.BaseIntermediateOutputPath, template.Source.Name);
-            var templatePath = new DirectoryInfo(Path.Combine(actualBaseIntOut, @"Debug\ls-Templates"));
-            if(!templatePath.Exists){
-                throw new ApplicationException(string.Format("Unable to find generated templates at [{0}]",templatePath.FullName));
+
+            var outputPath = Path.Combine(OutputPath, template.Source.Name);
+            if (Directory.Exists(outputPath)) {
+                new DirectoryHelper().DirectoryCopy(System.IO.Path.Combine(OutputPath, template.Source.Name), SideWaffleInstallDir, true, true);
             }
-
-            var templatesToCopy = templatePath.GetFiles(@"*.zip", SearchOption.TopDirectoryOnly);
-
-            // var destFolder = Path.Combine(SideWaffleInstallDir,"Output\")
-
-            foreach (var tToCopy in templatesToCopy) {
-                // TODO: Needs to be implemented. MSBuild should copy to OutputPath in the correct folder structure first
+            else {
+                throw new ApplicationException(string.Format(@"Template output not found in [{0}]", outputPath));
             }
         }
         public void ProcessTemplates() {
@@ -95,30 +89,6 @@
                     CopyTemplatesToExtensionsFolder(template);
                 }
             }
-
-            /*
-            // get from GetTemplateBuilderInstallPath
-            string templateBuilderInstallPath = @"C:\data\mycode\side-waffle\packages\TemplateBuilder.1.1.2-beta1\";
-            // this is %localappdata%\LigerShark\SideWaffle\DynamicTemplates\sources\$sourcename$\
-            string templateSourceRoot = @"C:\data\mycode\side-waffle\";
-            // this is %localappdata%\LigerShark\SideWaffle\DynamicTemplates\sources\$sourcename$\Project Templates\
-            string projectTemplateSourceRoot = @"C:\data\mycode\side-waffle\Project Templates\";
-            // this is %localappdata%\LigerShark\SideWaffle\DynamicTemplates\sources\$sourcename$\Item Templates\
-            string itemTemplateSourceRoot = @"C:\data\mycode\side-waffle\Item Templates\";
-            // either passed in or %localappdata%\LigerShark\SideWaffle\DynamicTemplates\baseintout\$sourcename$\
-            string baseIntermediateOutputPath = @"C:\temp\_net\bio\";
-            // either passed in or %localappdata%\LigerShark\SideWaffle\DynamicTemplates\output\$sourcename$\
-            string outputPath = @"C:\temp\_net\output\";
-            var builder = new LigerShark.Templates.DynamicBuilder.TemplateFolderBuilder(
-                templateBuilderInstallPath,
-                templateSourceRoot,
-                projectTemplateSourceRoot,
-                itemTemplateSourceRoot,
-                baseIntermediateOutputPath,
-                outputPath);
-            var result = builder.BuildTemplates();
-            System.Windows.MessageBox.Show("Done building");
-             * */
         }
 
         public void CreateTemplateBuilderBinIfNotExists() {
