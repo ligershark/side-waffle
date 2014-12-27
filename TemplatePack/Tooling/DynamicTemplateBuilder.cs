@@ -41,6 +41,12 @@
                 // do a recursive copy of the folder to the dest
                 new DirectoryHelper().DirectoryCopy(source.Location.LocalPath, destFolder, true, true);
             }
+            else if(
+                string.Compare("git", source.Location.Scheme, StringComparison.InvariantCultureIgnoreCase)==0 ||
+                string.Compare("git", source.Location.Scheme, StringComparison.InvariantCultureIgnoreCase)==0 ||
+                string.Compare("git", source.Location.Scheme, StringComparison.InvariantCultureIgnoreCase) == 0) {
+                    FetchGitSourceLocally(source, destFolder);
+            }
             else {
                 throw new ApplicationException(
                     string.Format(
@@ -48,6 +54,21 @@
                         source.Location.Scheme,
                         source.Location.AbsoluteUri));
             }
+        }
+        protected void FetchGitSourceLocally(TemplateSource source, string destFolder) {
+            if (source == null) { throw new ArgumentNullException("source"); }
+            if (string.IsNullOrEmpty(destFolder)) { throw new ArgumentNullException("destFolder"); }
+
+            // TODO: these methods should be renamed since fetch means something in git
+            
+            
+            var destDirInfo = new DirectoryInfo(destFolder);
+            if (destDirInfo.Exists) {
+                // TODO: if the folder exists and there is a .git folder then we should do a fetch/merge or pull
+                destDirInfo.Delete(true);
+            }
+
+            // clone it
         }
         protected void BuildTemplates(TemplateLocalInfo template) {
             if (template == null) { throw new ArgumentNullException("template"); }
@@ -83,7 +104,8 @@
 
             // see if the source exists locally, if not then get it
             foreach (var template in templateLocalInfo) {
-                if (!Directory.Exists(template.TemplateSourceRoot)) {
+                //if (!Directory.Exists(template.TemplateSourceRoot))
+                {
                     FetchSourceLocally(template.Source, template.TemplateSourceRoot);
                     BuildTemplates(template);
                     CopyTemplatesToExtensionsFolder(template);
@@ -111,11 +133,14 @@
             // TODO: get this from templates.json or from tools->option
 
             var sources = new List<TemplateSource> {
-                //new TemplateSource{Name="sidewaffle",Location = new Uri(@"https://github.com/ligershark/side-waffle.git")}
-                
                 new TemplateSource{
-                    Name="sidewafflelocal",
-                    Location = new Uri(@"C:\data\mycode\side-waffle")}
+                    Name="sidewaffleremote",
+                    Location = new Uri(@"https://github.com/ligershark/side-waffle.git"),
+                    Branch="autoupdate"}
+
+                //new TemplateSource{
+                //    Name="sidewafflelocal",
+                //    Location = new Uri(@"C:\data\mycode\side-waffle")}
             };
             return sources;
         }
