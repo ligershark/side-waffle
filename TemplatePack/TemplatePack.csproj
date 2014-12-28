@@ -54,19 +54,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\CustomScaffolderExtension.csproj" />
-    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\MyTemplate.vstemplate" />
-    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\_preprocess.xml" />
-    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\MyTemplate.vstemplate" />
-    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\_preprocess.xml" />
-    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Caliburn.Micro WPF Application.csproj" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\__TemplateIcon.png" />
     <Content Include="resources\Package.ico" />
     <None Include="packages.config" />
-    <None Include="ProjectTemplates\Cloud\readme.md" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
     <Content Include="logo_big.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -75,6 +64,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <None Include="Properties\template-builder.props" />
+    <!--<None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\CustomScaffolderExtension.csproj" />
+    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\MyTemplate.vstemplate" />
+    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\_preprocess.xml" />
+    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\MyTemplate.vstemplate" />
+    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\_preprocess.xml" />
+    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\_Definitions\CSharp.vstemplate" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Caliburn.Micro WPF Application.csproj" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\_Definitions\CSharp.vstemplate" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\__TemplateIcon.png" />    
+    <None Include="ProjectTemplates\Cloud\readme.md" />
+    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\_Definitions\CSharp.vstemplate" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\BrowserLinkExtensionTemplate.csproj" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\_Definitions\CSharp.vstemplate" />
@@ -211,8 +212,7 @@
     <None Include="ProjectTemplates\Windows Store\TypeScript Blank\WSaTypeScript_TemporaryKey.pfx" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.config" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\packages.config" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Settings.settings" />
-    <None Include="Properties\template-builder.props" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Settings.settings" />    
     <None Include="ProjectTemplates\Web\_Sample Multi Project\Shared\My.Cool.Company.SharedLibrary.csproj" />
     <None Include="ProjectTemplates\Web\_Sample Multi Project\Shared\MyTemplate.vstemplate" />
     <None Include="ProjectTemplates\Web\_Sample Multi Project\Web\My.Cool.Company.WebFrontEnd.csproj" />
@@ -236,6 +236,52 @@
     <None Include="ProjectTemplates\Windows Store\TypeScript Blank\js\default.js" />
     <None Include="ProjectTemplates\Windows Store\TypeScript Blank\_Definitions\CSharp.vstemplate" />
     <None Include="ProjectTemplates\Windows Store\TypeScript Blank\__TemplateIcon.ico" />
+    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\js\default.ts" />
+    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\jquery.d.ts" />
+    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\lib.d.ts" />
+    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\winjs.d.ts" />
+    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\winrt.d.ts" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.xaml.cs" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\AppBootstrapper.cs" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\AssemblyInfo.cs" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Resources.Designer.cs" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Settings.Designer.cs" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\ViewModels\MainViewModel.cs" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml.cs" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Resources.resx" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.xaml" />
+    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml" />
+    <None Include="ProjectTemplates\Web\Durandal451\App_Start\BundleConfig.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\App_Start\DurandalBundleConfig.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\App_Start\DurandalConfig.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\App_Start\FilterConfig.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\App_Start\RouteConfig.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\App_Start\Startup.Auth.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\App_Start\WebApiConfig.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Controllers\HelpController.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Controllers\AccountController.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Controllers\DurandalController.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Global.asax.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Models\AccountBindingModels.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Models\AccountViewModels.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Models\IdentityDbInitializer.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Properties\AssemblyInfo.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Providers\ApplicationOAuthProvider.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Results\ChallengeResult.cs" />
+    <None Include="ProjectTemplates\Web\Durandal451\Startup.cs" />-->
     <None Include="Snippets\JavaScript\SideWaffle\ng.controller.snippet" />
     <None Include="Snippets\JavaScript\SideWaffle\ng.directive.snippet">
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -287,11 +333,7 @@
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\js\default.ts" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\jquery.d.ts" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\lib.d.ts" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\winjs.d.ts" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\winrt.d.ts" />
+    
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="EnvDTE">
@@ -458,13 +500,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PackageConstants.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.xaml.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\AppBootstrapper.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\AssemblyInfo.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Resources.Designer.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Settings.Designer.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\ViewModels\MainViewModel.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml.cs" />
+    
     <Compile Include="TemplatePackPackage.cs" />
     <Compile Include="Tooling\DynamicTemplateBuilder.cs" />
     <Compile Include="Tooling\ProjectSelector2.xaml.cs">
@@ -479,17 +515,14 @@
       <SubType>Designer</SubType>
     </VSCTCompile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Resources.resx" />
+  <ItemGroup> 
     <EmbeddedResource Include="VSPackage.resx">
       <MergeWithCTO>true</MergeWithCTO>
       <ManifestResourceName>VSPackage</ManifestResourceName>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.xaml" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml" />
+  <ItemGroup>    
     <Page Include="Tooling\ProjectSelector2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -497,40 +530,7 @@
   </ItemGroup>
   <PropertyGroup>
     <UseCodebase>true</UseCodebase>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\BundleConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\DurandalBundleConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\DurandalConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\FilterConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\RouteConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\Startup.Auth.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\WebApiConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\ApiDescriptionExtensions.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\App_Start\HelpPageConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Controllers\HelpController.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\HelpPageAreaRegistration.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Models\HelpPageApiModel.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\ImageSample.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\TextSample.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Controllers\AccountController.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Controllers\DurandalController.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Global.asax.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Models\AccountBindingModels.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Models\AccountViewModels.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Models\IdentityDbInitializer.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Properties\AssemblyInfo.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Providers\ApplicationOAuthProvider.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Results\ChallengeResult.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Startup.cs" />
-  </ItemGroup>
+  </PropertyGroup> 
   <ItemGroup>
     <ProjectReference Include="..\LigerShark.Templates\LigerShark.Templates.csproj">
       <Project>{a2a92f75-3703-4326-a474-1569979ec875}</Project>
