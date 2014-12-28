@@ -143,17 +143,34 @@
         private IList<TemplateSource> GetTemplateSources() {
             // TODO: get this from templates.json or from tools->option
 
-            var sources = new List<TemplateSource> {
-                new TemplateSource{
-                    Name="sidewaffleremote",
-                    Location = new Uri(@"https://github.com/ligershark/side-waffle.git"),
-                    Branch="origin/autoupdate"}
+            var sources = GetTemplateSourcesFromTemplateSourcesJson();
+            
+            // return default if there was an issues reading from the .json file
+            if (sources == null) {
+                    sources = new List<TemplateSource> {
+                    new TemplateSource{
+                        Name="sidewaffleremote",
+                        Location = new Uri(@"https://github.com/ligershark/side-waffle.git"),
+                        Branch="origin/autoupdate"}
 
-                //new TemplateSource{
-                //    Name="sidewafflelocal",
-                //    Location = new Uri(@"C:\data\mycode\side-waffle")}
-            };
+                    //new TemplateSource{
+                    //    Name="sidewafflelocal",
+                    //    Location = new Uri(@"C:\data\mycode\side-waffle")}
+                };
+            }
+
             return sources;
+        }
+
+        private IList<TemplateSource> GetTemplateSourcesFromTemplateSourcesJson() {
+            IList<TemplateSource> result = null;
+
+            string pathToFile = Path.Combine(this.SideWaffleInstallDir, "templatesources.json");
+            if (File.Exists(pathToFile)) {
+                result = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<TemplateSource>>(File.ReadAllText(pathToFile)).ToList();
+            }
+
+            return result;
         }
 
         private IList<TemplateLocalInfo> GetLocalInfoFor(IList<TemplateSource> sources) {
