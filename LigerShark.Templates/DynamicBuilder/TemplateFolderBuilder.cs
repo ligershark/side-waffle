@@ -13,27 +13,27 @@
         private string TemplateBuilderInstallFolder { get; set; }
         private string TemplateSourceRoot { get; set; }
         private string ProjectTemplateRoot { get; set; }
+        private string TemplateReferenceSourceRoot { get; set; }
         private string ItemTemplateSourceRoot { get; set; }
         private string BaseIntermediateOutputPath { get; set; }
         private string OutputPath { get; set; }
 
         public TemplateFolderBuilder(
             string templateBuilderInstallFolder,
-            string templateSourceRoot, 
+            string templateSourceRoot,
+            string templateReferenceSourceRoot,
             string projectTemplateRoot, 
             string itemTemplateSourceRoot,
             string baseIntermediateOutputPath,
             string outputPath) {
-
             if (string.IsNullOrEmpty(templateBuilderInstallFolder)) { throw new ArgumentNullException("templateBuilderInstallFolder"); }
-            if (string.IsNullOrEmpty(templateSourceRoot)) { throw new ArgumentNullException("templateSourceRoot"); }
-            if (string.IsNullOrEmpty(projectTemplateRoot)) { throw new ArgumentNullException("projectTemplateRoot"); }
-            if (string.IsNullOrEmpty(itemTemplateSourceRoot)) { throw new ArgumentNullException("itemTemplateSourceRoot"); }
+            if (string.IsNullOrEmpty(templateSourceRoot)) { throw new ArgumentNullException("templateSourceRoot"); }            
             if (string.IsNullOrEmpty(baseIntermediateOutputPath)) { throw new ArgumentNullException("baseIntermediateOutputPath"); }
             if (string.IsNullOrEmpty(outputPath)) { throw new ArgumentNullException("outputPath"); }
 
             this.TemplateBuilderInstallFolder = templateBuilderInstallFolder;
             this.TemplateSourceRoot = templateSourceRoot;
+            this.TemplateReferenceSourceRoot = templateReferenceSourceRoot;
             this.ProjectTemplateRoot = projectTemplateRoot;
             this.ItemTemplateSourceRoot = itemTemplateSourceRoot;
             this.BaseIntermediateOutputPath = baseIntermediateOutputPath;
