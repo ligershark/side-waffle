@@ -64,7 +64,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="Properties\template-builder.props" />
+    <None Include="Properties\template-builder.props">
+      <SubType>Designer</SubType>
+    </None>
     <!--<None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\CustomScaffolderExtension.csproj" />
     <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\MyTemplate.vstemplate" />
     <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\_preprocess.xml" />
@@ -506,6 +508,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PackageConstants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TemplatePackPackage.cs" />
     <Compile Include="Tooling\DynamicTemplateBuilder.cs" />
     <Compile Include="Tooling\ProjectSelector2.xaml.cs">

@@ -18,9 +18,18 @@
         public string SourceRoot { get; set; }
         
         public DynamicTemplateBuilder() {
-            this.SourceRoot = Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\DynamicTemplates\sources\");
-            this.BaseIntermediateOutputPath = Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\DynamicTemplates\baseintout\");
-            this.OutputPath = Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\DynamicTemplates\output\");
+            // Note: using extensions install dir causes max path issues
+            //this.SourceRoot = Path.Combine(SideWaffleInstallDir, @"DynamicTemplates\sources\");
+            //this.BaseIntermediateOutputPath = Path.Combine(SideWaffleInstallDir, @"DynamicTemplates\baseintout\");
+            //this.OutputPath = Path.Combine(SideWaffleInstallDir, @"DynamicTemplates\output\");
+
+            var verstr = new AssemblyName(Assembly.GetExecutingAssembly().FullName).Version.ToString();
+            var rootDir = Environment.ExpandEnvironmentVariables(
+                            string.Format(@"%localappdata%\LigerShark\SideWaffle\DynamicTemplates\{0}\", verstr));
+
+            this.SourceRoot = Path.Combine(rootDir, @"sources\");
+            this.BaseIntermediateOutputPath = Path.Combine(rootDir, @"baseintout\");
+            this.OutputPath = Path.Combine(rootDir, @"output\");
         }
 
         protected string SideWaffleInstallDir {
