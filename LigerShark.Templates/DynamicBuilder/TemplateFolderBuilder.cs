@@ -42,10 +42,12 @@
 
         public bool BuildTemplates() {          
             Dictionary<string, string> buildProperties = new Dictionary<string, string>();
+            buildProperties.Add("ls-TemplateSubFolder", "SideWaffle");
             buildProperties.Add("TemplateSourceRoot", TemplateSourceRoot);
+            buildProperties.Add("ls-TemplateReferenceRoot", TemplateReferenceSourceRoot);
             buildProperties.Add("ls-ProjectTemplateRoot", ProjectTemplateRoot);
             buildProperties.Add("ls-ItemTemplateRoot", ItemTemplateSourceRoot);
-            buildProperties.Add("BaseIntermediateOutputPath", BaseIntermediateOutputPath);
+            buildProperties.Add("BaseIntermediateOutputPath", BaseIntermediateOutputPath);            
             buildProperties.Add("OutputPath", OutputPath);
 
             string pathToBuildScript = Path.Combine(this.TemplateBuilderInstallFolder, @"tools\build-templates.proj");
