@@ -393,8 +393,9 @@
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.XML" />
-    <Reference Include="TemplateBuilder">
-      <HintPath>..\packages\TemplateBuilder.1.1.2-beta1\lib\TemplateBuilder.dll</HintPath>
+    <Reference Include="TemplateBuilder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\TemplateBuilder.1.1.2-beta2\lib\TemplateBuilder.dll</HintPath>
     </Reference>
     <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -497,9 +498,6 @@
   <PropertyGroup>
     <UseCodebase>true</UseCodebase>
   </PropertyGroup>
-  <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.1.2-beta1\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
-  </PropertyGroup>
   <ItemGroup>
     <None Include="ProjectTemplates\Web\Durandal451\App_Start\BundleConfig.cs" />
     <None Include="ProjectTemplates\Web\Durandal451\App_Start\DurandalBundleConfig.cs" />
@@ -539,25 +537,23 @@
       <Name>LigerShark.Templates</Name>
     </ProjectReference>
   </ItemGroup>
-
   <!--
   Include libgit2sharp NativeBinaries folder in vsix.
   Modified version of http://chrisparnin.github.io/articles/2013/09/deploying-native-binaries-with-visual-studio-extensions/
   -->
-  
   <PropertyGroup>
     <EnableIncludeLibGit2SharpInVsix Condition=" '$(EnableIncludeLibGit2SharpInVsix)'=='' ">true</EnableIncludeLibGit2SharpInVsix>
   </PropertyGroup>
+  <PropertyGroup Label="TemplateBuilder">
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.1.2-beta2\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+  </PropertyGroup>
   <ItemGroup Condition=" '$(EnableIncludeLibGit2SharpInVsix)'=='true' ">
-    <!-- This assumes that there is only one version of ligit2sharp nuget package in packages\ -->
-    <Content Include="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.*"
-             Exclude="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.pdb">
+    <Content Include="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.*" Exclude="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.pdb">
       <Link>NativeBinaries\%(RecursiveDir)%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
   </ItemGroup>
-  
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(TemplateBuilderTargets)" Condition="Exists('$(TemplateBuilderTargets)')" Label="TemplateBuilder" />
@@ -576,10 +572,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <Target Name="AfterBuild">
-    <Message Text="
-EnableIncludeLibGit2SharpInVsix: $(EnableIncludeLibGit2SharpInVsix)
-Foo: [@(Foo)]" Importance="high"/>
-  </Target>
-
 </Project>

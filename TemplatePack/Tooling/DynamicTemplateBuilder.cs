@@ -114,7 +114,7 @@
 
             // see if the source exists locally, if not then get it
             foreach (var template in templateLocalInfo) {
-                //if (!Directory.Exists(template.TemplateSourceRoot))
+                if (!Directory.Exists(template.TemplateSourceRoot))
                 {
                     FetchSourceLocally(template.Source, template.TemplateSourceRoot);
                     BuildTemplates(template);
