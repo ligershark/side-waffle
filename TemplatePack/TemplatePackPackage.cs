@@ -40,7 +40,7 @@ namespace TemplatePack
                 mcs.AddCommand(button);
             }
 
-            if(Environment.GetEnvironmentVariable("SideWaffleEnableDynamicTemplates") != null){
+            /*if(Environment.GetEnvironmentVariable("SideWaffleEnableDynamicTemplates") != null)*/{
                 try {
                     new DynamicTemplateBuilder().ProcessTemplates();
                 }
