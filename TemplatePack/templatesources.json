@@ -1,3 +1,4 @@
 ﻿[
     { "Name": "sidewaffleremote", "Location": "https://github.com/ligershark/side-waffle.git", "Branch": "origin/autoupdate" }
+    /* ,{ "Name": "contoso", "Location": "https://github.com/sayedihashimi/contoso-templatepack.git", "Branch": "origin/autoupdate" } */
 ]
