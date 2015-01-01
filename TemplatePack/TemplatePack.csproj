@@ -514,8 +514,11 @@
     <Compile Include="Tooling\ProjectSelector2.xaml.cs">
       <DependentUpon>ProjectSelector2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tooling\RemoteTemplateSettings.cs" />
     <Compile Include="Tooling\SolutionHelper.cs" />
+    <Compile Include="Tooling\TemplateLocalInfo.cs" />
     <Compile Include="Tooling\TemplateReferenceCreator.cs" />
+    <Compile Include="Tooling\UpdateFrequency.cs" />
   </ItemGroup>
   <ItemGroup>
     <VSCTCompile Include="TemplatePack.vsct">

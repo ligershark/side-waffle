@@ -1,4 +1,18 @@
-﻿[
-    { "Name": "sidewaffleremote", "Location": "https://github.com/ligershark/side-waffle.git", "Branch": "origin/autoupdate" }
-    /* ,{ "Name": "contoso", "Location": "https://github.com/sayedihashimi/contoso-templatepack.git", "Branch": "origin/autoupdate" } */
-]
+﻿{
+    "sources": [
+        {
+            "Name": "sidewaffleremote",
+            "Enabled": "true",
+            "Location": "https://github.com/ligershark/side-waffle.git",
+            "Branch": "origin/autoupdate"
+        },
+
+        {
+            "Name": "contoso",
+            "Enabled": "false",
+            "Location": "https://github.com/sayedihashimi/contoso-templatepack.git",
+            "Branch": "origin/autoupdate"
+        }
+    ],
+    "updateInterval": "OnceAWeek"
+}

@@ -6,7 +6,12 @@
     using System.Threading.Tasks;
 
     public class TemplateSource {
+        public TemplateSource() {
+            Name = "unnamed";
+            Enabled = true;
+        }
         public string Name { get; set; }
+        public bool Enabled { get; set; }
         public Uri Location { get; set; }
         
         /// <summary>

@@ -120,11 +120,13 @@
         }
         public void ProcessTemplates() {
             CreateTemplateBuilderBinIfNotExists();
-            var templateLocalInfo = GetLocalInfoFor(GetTemplateSources());
+     
+            var settings = GetTemplateSettingsFromJson();
+            var templateLocalInfo = GetLocalInfoFor(settings.Sources);
 
             // see if the source exists locally, if not then get it
             foreach (var template in templateLocalInfo) {
-                if (!Directory.Exists(template.TemplateSourceRoot))
+                if (!Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
                 {
                     FetchSourceLocally(template.Source, template.TemplateSourceRoot);
                     BuildTemplates(template);
@@ -149,37 +151,21 @@
             }
         }
 
-        private IList<TemplateSource> GetTemplateSources() {
-            // TODO: get this from templates.json or from tools->option
+        private RemoteTemplateSettings GetTemplateSettingsFromJson() {
+            var results = RemoteTemplateSettings.ReadFromJson(Path.Combine(this.SideWaffleInstallDir, "templatesources.json"));
 
-            var sources = GetTemplateSourcesFromTemplateSourcesJson();
-            
-            // return default if there was an issues reading from the .json file
-            if (sources == null) {
-                    sources = new List<TemplateSource> {
-                    new TemplateSource{
-                        Name="sidewaffleremote",
-                        Location = new Uri(@"https://github.com/ligershark/side-waffle.git"),
-                        Branch="origin/autoupdate"}
-
-                    //new TemplateSource{
-                    //    Name="sidewafflelocal",
-                    //    Location = new Uri(@"C:\data\mycode\side-waffle")}
+            if (results == null || results.Sources == null || results.Sources.Count <= 0) {
+                results = new RemoteTemplateSettings {
+                    UpdateInterval = UpdateFrequency.OnceAWeek,
+                    Sources = new List<TemplateSource>{
+                        new TemplateSource{
+                            Name="sidewaffleremote",
+                            Location = new Uri(@"https://github.com/ligershark/side-waffle.git"),
+                            Branch="origin/autoupdate" }}
                 };
             }
 
-            return sources;
-        }
-
-        private IList<TemplateSource> GetTemplateSourcesFromTemplateSourcesJson() {
-            IList<TemplateSource> result = null;
-
-            string pathToFile = Path.Combine(this.SideWaffleInstallDir, "templatesources.json");
-            if (File.Exists(pathToFile)) {
-                result = Newtonsoft.Json.JsonConvert.DeserializeObject<IEnumerable<TemplateSource>>(File.ReadAllText(pathToFile)).ToList();
-            }
-
-            return result;
+            return results;
         }
 
         private IList<TemplateLocalInfo> GetLocalInfoFor(IList<TemplateSource> sources) {
@@ -195,29 +181,5 @@
             return result;
         }
     }
-    public class TemplateLocalInfo {
-        public TemplateLocalInfo(TemplateSource source, string templateSourceRoot, string templateReferenceSourceRoot, string projectTemplateSourceRoot, string itemTemplateSourceRoot) {
-            if (source == null) { throw new ArgumentNullException("source"); }
-            if (string.IsNullOrEmpty(templateSourceRoot)) { throw new ArgumentNullException("templateSourceRoot"); }
 
-            this.Source = source;
-            this.TemplateSourceRoot = templateSourceRoot;
-            this.TemplateReferenceSourceRoot = templateReferenceSourceRoot;
-            this.ProjectTemplateSourceRoot = projectTemplateSourceRoot;
-            this.ItemTemplateSourceRoot = itemTemplateSourceRoot;
-        }
-        public TemplateLocalInfo(TemplateSource source, string templateSourceRoot)
-            : this(
-                source,
-                templateSourceRoot,
-                Path.Combine(templateSourceRoot, @"Project Templates\"),
-                Path.Combine(templateSourceRoot, @"Project Templates v0\"),
-                Path.Combine(templateSourceRoot, @"Item Templates\")) {
-        }
-        public TemplateSource Source { get; set; }
-        public string TemplateSourceRoot { get; set; }
-        public string ProjectTemplateSourceRoot { get; set; }
-        public string TemplateReferenceSourceRoot { get; set; }
-        public string ItemTemplateSourceRoot { get; set; }        
-    }
 }
