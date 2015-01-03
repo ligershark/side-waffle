@@ -10,9 +10,6 @@ param(
     $restoreNugetPackages = $true,
 
     [Parameter(ParameterSetName='build')]
-    [switch]$preventOverridingTargetsPath,
-
-    [Parameter(ParameterSetName='build')]
     [switch]$UseLocalTemplateBuilderSrc,
 
     [Parameter(ParameterSetName='build')]
