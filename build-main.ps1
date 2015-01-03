@@ -1,22 +1,3 @@
-﻿<#
-.SYNOPSIS 
-    You can use this script if you are modifying the TemplateBuilder targets
-    file ligershark.templates.targets and want to try out changes when 
-    building SideWaffle. To use this script you will need to do the following:
-        1. Create an alias to msbulid.exe
-        2. Define the environment variable TemplateBuilderDevRoot which should
-           point to the root template-builder folder, this should end with a \
-           as well. For example 'C:\Data\personal\mycode\template-builder\'.
-
-.PARAMETER extraBuildArgs
-    You can now pass in additional arguments for msbuild.exe
-    Let's say you want to execute a specific target and don't want to hack this file
-    you can invoke it in the following way
-                .\build-debug.ps1 -extraBuildArgs '/t:Demo'
-
-.PARAMETER preventOverridingTargetsPath
-    If this is set the build will still be invoked but the path to the .targets & .tasks file will not be modified. This is useful if you just want to build with the sources in place and use the Debug build configuration
-#>
 [cmdletbinding(DefaultParameterSetName ='build')]
 param(
     [Parameter(ParameterSetName='build')]
