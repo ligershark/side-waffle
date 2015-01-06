@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="0c4fc195-8bcd-4f56-a064-7210d9979e54" Version="1.0" Language="en-US" Publisher="LigerShark" />
-    <DisplayName>SideWaffleOptions</DisplayName>
-    <Description>The purpose of this package is to provide SideWaffle users with the ability to alter settings within the extension.</Description>
+    <Identity Id="ee0cf212-810b-45a1-8c62-e10041913c94" Version="1.0" Language="en-US" Publisher="LigerShark" />
+    <DisplayName>MenuOptions</DisplayName>
+    <Description>This is the default menu to manage remote sources for SideWaffle.</Description>
   </Metadata>
   <Installation InstalledByMsi="false">
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />

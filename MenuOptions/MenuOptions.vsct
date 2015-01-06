@@ -25,7 +25,7 @@
 
   <!--The Commands section is where we the commands, menus and menu groups are defined.
       This section uses a Guid to identify the package that provides the command defined inside it. -->
-  <Commands package="guidSideWaffleOptionsPkg">
+  <Commands package="guidMenuOptionsPkg">
     <!-- Inside this section we have different sub-sections: one for the menus, another  
     for the menu groups, one for the buttons (the actual commands), one for the combos 
     and the last one for the bitmaps used. Each element is identified by a command id that  
@@ -41,7 +41,7 @@
          must be a menu. -->
     <Groups>
 
-      <Group guid="guidSideWaffleOptionsCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Group guid="guidMenuOptionsCmdSet" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
       </Group>
       
@@ -61,11 +61,11 @@
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
 
-      <Button guid="guidSideWaffleOptionsCmdSet" id="cmdidGetIntOpt" priority="0x0100" type="Button">
-        <Parent guid="guidSideWaffleOptionsCmdSet" id="MyMenuGroup" />
+      <Button guid="guidMenuOptionsCmdSet" id="cmdidOpenSWMenu" priority="0x0100" type="Button">
+        <Parent guid="guidMenuOptionsCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Get Integer Option</ButtonText>
+          <ButtonText>SideWaffle Settings</ButtonText>
         </Strings>
       </Button>
 
@@ -92,18 +92,18 @@
 
   <Symbols>
     <!-- This is the package guid. -->
-    <GuidSymbol name="guidSideWaffleOptionsPkg" value="{0c4fc195-8bcd-4f56-a064-7210d9979e54}" />
+    <GuidSymbol name="guidMenuOptionsPkg" value="{ee0cf212-810b-45a1-8c62-e10041913c94}" />
     
     <!-- This is the guid used to group the menu commands together -->
-    <GuidSymbol name="guidSideWaffleOptionsCmdSet" value="{50fe588c-aa9a-48a5-9859-2f9507b2ebd4}">
+    <GuidSymbol name="guidMenuOptionsCmdSet" value="{c75eac28-63cd-4766-adb1-e655471525ea}">
 
       <IDSymbol name="MyMenuGroup" value="0x1020" />
-      <IDSymbol name="cmdidGetIntOpt" value="0x0100" />
+      <IDSymbol name="cmdidOpenSWMenu" value="0x0100" />
     </GuidSymbol>
     
     
     
-    <GuidSymbol name="guidImages" value="{978d30f1-f7be-425d-8fb3-bae4fc781853}" >
+    <GuidSymbol name="guidImages" value="{e2bf6a31-afea-46fb-9397-0c2add3a59d8}" >
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />

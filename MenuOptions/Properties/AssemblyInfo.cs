@@ -7,11 +7,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SideWaffleOptions")]
+[assembly: AssemblyTitle("SideWaffle Menu Options")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("LigerShark")]
-[assembly: AssemblyProduct("SideWaffleOptions")]
+[assembly: AssemblyProduct("SideWaffle Menu Options")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]   

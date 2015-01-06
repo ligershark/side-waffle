@@ -2,10 +2,12 @@
 // MUST match PkgCmdID.h
 using System;
 
-namespace LigerShark.SideWaffleOptions
+namespace LigerShark.MenuOptions
 {
     static class PkgCmdIDList
     {
-        public const uint cmdidGetIntOpt = 0x100;
+        public const uint cmdidOpenSWMenu =        0x100;
+
+
     };
 }

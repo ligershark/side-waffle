@@ -8,10 +8,9 @@ using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
-using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace LigerShark.SideWaffleOptions
+namespace LigerShark.MenuOptions
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.
@@ -31,12 +30,8 @@ namespace LigerShark.SideWaffleOptions
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
     // This attribute is needed to let the shell know that this package exposes some menus.
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    [Guid(GuidList.guidSideWaffleOptionsPkgString)]
-    [ProvideOptionPage(typeof(OptionsPageCustom),
-    "SideWaffle", "General", 0, 0, true)]
-    [ProvideOptionPage(typeof(OptionPageGrid),
-    "SideWaffle", "Grid", 0, 0, true)]
-    public sealed class SideWaffleOptionsPackage : Package
+    [Guid(GuidList.guidMenuOptionsPkgString)]
+    public sealed class MenuOptionsPackage : Package
     {
         /// <summary>
         /// Default constructor of the package.
@@ -45,7 +40,7 @@ namespace LigerShark.SideWaffleOptions
         /// not sited yet inside Visual Studio environment. The place to do all the other 
         /// initialization is the Initialize method.
         /// </summary>
-        public SideWaffleOptionsPackage()
+        public MenuOptionsPackage()
         {
             Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}", this.ToString()));
         }
@@ -70,7 +65,7 @@ namespace LigerShark.SideWaffleOptions
             if ( null != mcs )
             {
                 // Create the command for the menu item.
-                CommandID menuCommandID = new CommandID(GuidList.guidSideWaffleOptionsCmdSet, (int)PkgCmdIDList.cmdidGetIntOpt);
+                CommandID menuCommandID = new CommandID(GuidList.guidMenuOptionsCmdSet, (int)PkgCmdIDList.cmdidOpenSWMenu);
                 MenuCommand menuItem = new MenuCommand(MenuItemCallback, menuCommandID );
                 mcs.AddCommand( menuItem );
             }
@@ -84,22 +79,8 @@ namespace LigerShark.SideWaffleOptions
         /// </summary>
         private void MenuItemCallback(object sender, EventArgs e)
         {
-            // Show a Message Box to prove we were here
-            IVsUIShell uiShell = (IVsUIShell)GetService(typeof(SVsUIShell));
-            Guid clsid = Guid.Empty;
-            int result;
-            Microsoft.VisualStudio.ErrorHandler.ThrowOnFailure(uiShell.ShowMessageBox(
-                       0,
-                       ref clsid,
-                       "SideWaffleOptions",
-                       string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.ToString()),
-                       string.Empty,
-                       0,
-                       OLEMSGBUTTON.OLEMSGBUTTON_OK,
-                       OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST,
-                       OLEMSGICON.OLEMSGICON_INFO,
-                       0,        // false
-                       out result));
+            // Here is where our UI (i.e. user control) will go to do all the settings.
+
         }
 
     }

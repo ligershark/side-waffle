@@ -10,12 +10,12 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5015C6FF-1F92-4499-8BB6-1892E6AC33F4}</ProjectGuid>
+    <ProjectGuid>{EC6BD36A-7A66-4308-AA83-FF720F5C43B7}</ProjectGuid>
     <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LigerShark.SideWaffleOptions</RootNamespace>
-    <AssemblyName>SideWaffleOptions</AssemblyName>
+    <RootNamespace>LigerShark.MenuOptions</RootNamespace>
+    <AssemblyName>MenuOptions</AssemblyName>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -122,29 +122,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Guids.cs" />
-    <Compile Include="OptionPageGrid.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RemoteTemplateUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="RemoteTemplateUserControl.Designer.cs">
-      <DependentUpon>RemoteTemplateUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="SideWaffleOptionsPackage.cs" />
+    <Compile Include="MenuOptionsPackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PkgCmdID.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="RemoteTemplateUserControl.resx">
-      <DependentUpon>RemoteTemplateUserControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -164,7 +152,7 @@
     <None Include="Key.snk" />
   </ItemGroup>
   <ItemGroup>
-    <VSCTCompile Include="SideWaffleOptions.vsct">
+    <VSCTCompile Include="MenuOptions.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
     </VSCTCompile>
   </ItemGroup>
