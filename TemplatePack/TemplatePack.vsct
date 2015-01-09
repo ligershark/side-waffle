@@ -24,6 +24,30 @@
     </Buttons> 
   </Commands>
 
+  <!-- SideWaffle Menu Options -->
+  <Commands package="guidMenuOptionsPkg">
+    <Groups>
+      <Group guid="guidMenuOptionsCmdSet" id="SWMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+      </Group>
+    </Groups>
+    
+    <Buttons>
+      <Button guid="guidMenuOptionsCmdSet" id="cmdidOpenSWMenu" priority="0x0100" type="Button">
+        <Parent guid="guidMenuOptionsCmdSet" id="SWMenuGroup" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>SideWaffle Settings</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+    
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\Images.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows"/>
+    </Bitmaps>
+  </Commands>
+  <!-- End SideWaffle Menu Options -->
+  
   <Symbols>
     <GuidSymbol name="guidTemplatePackPkg" value="{e6e2a48e-387d-4af2-9072-86a5276da6d4}" />
     
@@ -31,6 +55,25 @@
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="cmdidMyCommand" value="0x0100" />
     </GuidSymbol>
+
+    <!-- SideWaffle Menu Options -->
+    <GuidSymbol name="guidMenuOptionsPkg" value="{ee0cf212-810b-45a1-8c62-e10041913c94}" />
+    <GuidSymbol name="guidMenuOptionsCmdSet" value="{c75eac28-63cd-4766-adb1-e655471525ea}">
+      <IDSymbol name="SWMenuGroup" value="0x1020" />
+      <IDSymbol name="cmdidOpenSWMenu" value="0x0100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{e2bf6a31-afea-46fb-9397-0c2add3a59d8}" >
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+    <!-- End SideWaffle Menu Options -->
   </Symbols>
+  
+  
 
 </CommandTable>

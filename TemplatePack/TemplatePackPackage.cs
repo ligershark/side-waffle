@@ -38,6 +38,10 @@ namespace TemplatePack
                 OleMenuCommand button = new OleMenuCommand(ButtonClicked, cmdId);
                 button.BeforeQueryStatus += button_BeforeQueryStatus;
                 mcs.AddCommand(button);
+
+                CommandID menuCommandID = new CommandID(GuidList.guidMenuOptionsCmdSet, (int)PkgCmdIDList.SWMenuGroup);
+                MenuCommand menuItem = new MenuCommand(MenuItemCallback, menuCommandID);
+                mcs.AddCommand(menuItem);
             }
 
             /*if(Environment.GetEnvironmentVariable("SideWaffleEnableDynamicTemplates") != null)*/{
@@ -50,6 +54,14 @@ namespace TemplatePack
                 }
             }
         }
+
+        private void MenuItemCallback(object sender, EventArgs e)
+        {
+            // Here is where our UI (i.e. user control) will go to do all the settings.
+            var window = new SettingsForm();
+            window.Show();
+        }
+
 
         void button_BeforeQueryStatus(object sender, EventArgs e)
         {
