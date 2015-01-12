@@ -19,7 +19,10 @@
     
     <ItemGroup>
       <_AppCandidateFilesToZip Remove="@(_AppCandidateFilesToZip)" />
-      <_AppCandidateFilesToZip Include="@(Content);@(None)" />
+      <_AppCandidateFilesToZip
+        Include="@(Content);@(None)"
+        Condition="'%(Content.CopyToOutputDirectory)'=='Always' or '%(Content.CopyToOutputDirectory)'=='PreserveNewest' or
+                   '%(None.CopyToOutputDirectory)'=='Always' or '%(None.CopyToOutputDirectory)'=='PreserveNewest'" />
     </ItemGroup>
     
     <FindUnderPath Path="$(AppFolder)" Files="@(_AppCandidateFilesToZip)">
