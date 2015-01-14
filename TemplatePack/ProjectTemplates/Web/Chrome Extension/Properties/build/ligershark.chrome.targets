@@ -43,6 +43,13 @@
       ZipFileName="%(AppFileNameItem.FullPath)"
       RemoveRoot="$(_AppFolderFullPath)"
       CompressionLevel="BestCompression" />
+
+    <!-- Unpacked extension for debugging -->
+    <MakeDir Directories="$(OutputPath)\unpacked" />
+    <MSBuild.ExtensionPack.Compression.Zip
+      TaskAction="Extract"
+      ZipFileName="%(AppFileNameItem.FullPath)"
+      ExtractPath="$(OutputPath)\unpacked" />
   </Target>
 
   <PropertyGroup>
