@@ -38,10 +38,6 @@ namespace TemplatePack
                 OleMenuCommand button = new OleMenuCommand(ButtonClicked, cmdId);
                 button.BeforeQueryStatus += button_BeforeQueryStatus;
                 mcs.AddCommand(button);
-
-                CommandID menuCommandID = new CommandID(GuidList.guidMenuOptionsCmdSet, (int)PkgCmdIDList.SWMenuGroup);
-                MenuCommand menuItem = new MenuCommand(MenuItemCallback, menuCommandID);
-                mcs.AddCommand(menuItem);
             }
 
             /*if(Environment.GetEnvironmentVariable("SideWaffleEnableDynamicTemplates") != null)*/{
@@ -54,14 +50,6 @@ namespace TemplatePack
                 }
             }
         }
-
-        private void MenuItemCallback(object sender, EventArgs e)
-        {
-            // Here is where our UI (i.e. user control) will go to do all the settings.
-            var window = new SettingsForm();
-            window.Show();
-        }
-
 
         void button_BeforeQueryStatus(object sender, EventArgs e)
         {
@@ -108,6 +96,48 @@ namespace TemplatePack
                 }
             }
         }
-
     }
+     
+    [PackageRegistration(UseManagedResourcesOnly = true)]
+    [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
+    [ProvideMenuResource("Menus.ctmenu", 1)]
+    [Guid(GuidList.guidMenuOptionsPkgString)]
+    public sealed class MenuOptionsPackage : Package
+    {
+        public MenuOptionsPackage()
+        {
+            Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}", this.ToString()));
+        }
+     
+        // Overridden Package Implementation
+        #region Package Members
+     
+        protected override void Initialize()
+        {
+            Debug.WriteLine (string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
+            base.Initialize();
+     
+            // Add our command handlers for menu (commands must exist in the .vsct file)
+            OleMenuCommandService mcs = GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
+            if ( null != mcs )
+            {
+                // Create the command for the menu item.
+                CommandID menuCommandID = new CommandID(GuidList.guidMenuOptionsCmdSet, (int)PkgCmdIDList.SWMenuGroup);
+                MenuCommand menuItem = new MenuCommand(MenuItemCallback, menuCommandID );
+                mcs.AddCommand( menuItem );
+            }
+        }
+        #endregion
+
+        private void MenuItemCallback(object sender, EventArgs e)
+        {
+            // Here is where our UI (i.e. user control) will go to do all the settings.
+            var window = new SettingsForm();
+            window.Show();
+        }
+     
+    }
+
+
+
 }

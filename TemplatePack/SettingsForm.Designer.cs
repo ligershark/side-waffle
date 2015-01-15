@@ -30,13 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.remoteSourceListView = new System.Windows.Forms.ListView();
+            this.enabledColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.nameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.UrlColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.branchColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.sourceBranchTextBox = new System.Windows.Forms.TextBox();
+            this.sourceUrlTextBox = new System.Windows.Forms.TextBox();
+            this.sourceNameTextBox = new System.Windows.Forms.TextBox();
             this.newSourceBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,7 +53,6 @@
             this.neverCheckBox = new System.Windows.Forms.CheckBox();
             this.OkBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -62,13 +65,42 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Remote Sources";
             // 
-            // listView1
+            // remoteSourceListView
             // 
-            this.listView1.Location = new System.Drawing.Point(29, 44);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(623, 173);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.remoteSourceListView.CheckBoxes = true;
+            this.remoteSourceListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.enabledColumn,
+            this.nameColumn,
+            this.UrlColumn,
+            this.branchColumn});
+            this.remoteSourceListView.FullRowSelect = true;
+            this.remoteSourceListView.Location = new System.Drawing.Point(29, 48);
+            this.remoteSourceListView.Name = "remoteSourceListView";
+            this.remoteSourceListView.Size = new System.Drawing.Size(623, 173);
+            this.remoteSourceListView.TabIndex = 1;
+            this.remoteSourceListView.UseCompatibleStateImageBehavior = false;
+            this.remoteSourceListView.View = System.Windows.Forms.View.Details;
+            this.remoteSourceListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.SourcesListView_ItemSelectionChanged);
+            // 
+            // enabledColumn
+            // 
+            this.enabledColumn.Text = "Enabled";
+            this.enabledColumn.Width = 58;
+            // 
+            // nameColumn
+            // 
+            this.nameColumn.Text = "Name";
+            this.nameColumn.Width = 128;
+            // 
+            // UrlColumn
+            // 
+            this.UrlColumn.Text = "URL";
+            this.UrlColumn.Width = 307;
+            // 
+            // branchColumn
+            // 
+            this.branchColumn.Text = "Branch";
+            this.branchColumn.Width = 121;
             // 
             // label2
             // 
@@ -100,32 +132,34 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "URL:";
             // 
-            // textBox1
+            // sourceBranchTextBox
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(88, 282);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(325, 22);
-            this.textBox1.TabIndex = 5;
+            this.sourceBranchTextBox.Enabled = false;
+            this.sourceBranchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sourceBranchTextBox.Location = new System.Drawing.Point(88, 282);
+            this.sourceBranchTextBox.Name = "sourceBranchTextBox";
+            this.sourceBranchTextBox.Size = new System.Drawing.Size(411, 22);
+            this.sourceBranchTextBox.TabIndex = 5;
+            this.sourceBranchTextBox.Text = "origin/master";
+            this.sourceBranchTextBox.TextChanged += new System.EventHandler(this.SourceBranch_TextChanged);
             // 
-            // textBox2
+            // sourceUrlTextBox
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(88, 252);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(325, 22);
-            this.textBox2.TabIndex = 6;
+            this.sourceUrlTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sourceUrlTextBox.Location = new System.Drawing.Point(88, 252);
+            this.sourceUrlTextBox.Name = "sourceUrlTextBox";
+            this.sourceUrlTextBox.Size = new System.Drawing.Size(411, 22);
+            this.sourceUrlTextBox.TabIndex = 6;
+            this.sourceUrlTextBox.TextChanged += new System.EventHandler(this.SourceURL_TextChanged);
             // 
-            // textBox3
+            // sourceNameTextBox
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(88, 224);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(325, 22);
-            this.textBox3.TabIndex = 7;
+            this.sourceNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sourceNameTextBox.Location = new System.Drawing.Point(88, 224);
+            this.sourceNameTextBox.Name = "sourceNameTextBox";
+            this.sourceNameTextBox.Size = new System.Drawing.Size(411, 22);
+            this.sourceNameTextBox.TabIndex = 7;
+            this.sourceNameTextBox.TextChanged += new System.EventHandler(this.SourceName_TextChanged);
             // 
             // newSourceBtn
             // 
@@ -136,6 +170,7 @@
             this.newSourceBtn.TabIndex = 8;
             this.newSourceBtn.Text = "New Source";
             this.newSourceBtn.UseVisualStyleBackColor = true;
+            this.newSourceBtn.Click += new System.EventHandler(this.newSourceBtn_Click);
             // 
             // label5
             // 
@@ -167,6 +202,7 @@
             this.rebuildTemplatesBtn.TabIndex = 11;
             this.rebuildTemplatesBtn.Text = "Rebuild Templates";
             this.rebuildTemplatesBtn.UseVisualStyleBackColor = true;
+            this.rebuildTemplatesBtn.Click += new System.EventHandler(this.rebuildTemplatesBtn_Click);
             // 
             // label7
             // 
@@ -240,6 +276,7 @@
             this.OkBtn.TabIndex = 18;
             this.OkBtn.Text = "OK";
             this.OkBtn.UseVisualStyleBackColor = true;
+            this.OkBtn.Click += new System.EventHandler(this.OkBtn_Click);
             // 
             // cancelBtn
             // 
@@ -249,22 +286,13 @@
             this.cancelBtn.TabIndex = 19;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(495, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 527);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.OkBtn);
             this.Controls.Add(this.neverCheckBox);
@@ -277,13 +305,13 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.newSourceBtn);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.sourceNameTextBox);
+            this.Controls.Add(this.sourceUrlTextBox);
+            this.Controls.Add(this.sourceBranchTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.remoteSourceListView);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsForm";
@@ -296,13 +324,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView remoteSourceListView;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox sourceBranchTextBox;
+        private System.Windows.Forms.TextBox sourceUrlTextBox;
+        private System.Windows.Forms.TextBox sourceNameTextBox;
         private System.Windows.Forms.Button newSourceBtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -315,6 +343,9 @@
         private System.Windows.Forms.CheckBox neverCheckBox;
         private System.Windows.Forms.Button OkBtn;
         private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ColumnHeader enabledColumn;
+        private System.Windows.Forms.ColumnHeader nameColumn;
+        private System.Windows.Forms.ColumnHeader UrlColumn;
+        private System.Windows.Forms.ColumnHeader branchColumn;
     }
 }
