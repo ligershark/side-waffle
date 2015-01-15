@@ -82,10 +82,12 @@
     <AppFileName Condition=" '$(AppFileName)'=='' ">$(AssemblyName).zip</AppFileName>
     <BuildFolder Condition=" '$(BuildFolder)'=='' ">$(MSBuildProjectDirectory)\properties\build\</BuildFolder>
     <BuildLib Condition=" '$(BuildLib)'=='' ">$(BuildFolder)Lib\</BuildLib>
+    <ScriptsFolder Condition=" '$(ScriptsFolder)'=='' ">scripts\</ScriptsFolder>
   </PropertyGroup>
   <ItemGroup>
     <AppFileNameItem Include="$(OutputPath)$(AppFilename)" />
     <AppFolderItem Include="$(AppFolder)" />
+    <ScriptsFolderItem Include="$(ScriptsFolder)" />
   </ItemGroup>
   <PropertyGroup>
     <LigerSharkChromeTargetsPath>$(BuildFolder)\ligershark.chrome.targets</LigerSharkChromeTargetsPath>
