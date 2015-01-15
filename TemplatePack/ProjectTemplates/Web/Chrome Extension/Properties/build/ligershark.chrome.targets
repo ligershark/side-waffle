@@ -8,6 +8,7 @@
   <ItemDefinitionGroup>
     <AppFileNameItem><Visible>false</Visible></AppFileNameItem>
     <AppFolderItem><Visible>false</Visible></AppFolderItem>
+    <ScriptsFolderItem><Visible>false</Visible></ScriptsFolderItem>
   </ItemDefinitionGroup>
 
   <UsingTask AssemblyFile="$(BuildLib)MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.Compression.Zip" />
@@ -25,18 +26,33 @@
     <ItemGroup>
       <_AppCandidateFilesToZip Remove="@(_AppCandidateFilesToZip)" />
       <_AppCandidateFilesToZip
-        Include="@(Content);@(None)"
+        Include="@(Content);@(None);@(TypeScriptCompile)"
         Condition="'%(Content.CopyToOutputDirectory)'=='Always' or '%(Content.CopyToOutputDirectory)'=='PreserveNewest' or
-                   '%(None.CopyToOutputDirectory)'=='Always' or '%(None.CopyToOutputDirectory)'=='PreserveNewest'" />
+                   '%(None.CopyToOutputDirectory)'=='Always' or '%(None.CopyToOutputDirectory)'=='PreserveNewest' or
+                   '%(TypeScriptCompile.CopyToOutputDirectory)'=='Always' or '%(TypeScriptCompile.CopyToOutputDirectory)'=='PreserveNewest'" />
+
+      <_ScriptsCandidateFilesToZip Remove="@(_ScriptsCandidateFilesToZip)" />
+      <_ScriptsCandidateFilesToZip
+        Include="@(Content);@(None);@(TypeScriptCompile)"
+        Condition="'%(Content.CopyToOutputDirectory)'=='Always' or '%(Content.CopyToOutputDirectory)'=='PreserveNewest' or
+                   '%(None.CopyToOutputDirectory)'=='Always' or '%(None.CopyToOutputDirectory)'=='PreserveNewest' or
+                   '%(TypeScriptCompile.CopyToOutputDirectory)'=='Always' or '%(TypeScriptCompile.CopyToOutputDirectory)'=='PreserveNewest'" />
     </ItemGroup>
 
     <FindUnderPath Path="$(AppFolder)" Files="@(_AppCandidateFilesToZip)">
       <Output TaskParameter="InPath" ItemName="_AppFilesToZip" />
     </FindUnderPath>
+    <FindUnderPath Path="$(ScriptsFolder)" Files="@(_ScriptsCandidateFilesToZip)">
+      <Output TaskParameter="InPath" ItemName="_ScriptsFilesToZip" />
+    </FindUnderPath>
     <Message Text="App files to zip: @(_AppFilesToZip->'%(RelativeDir)%(Filename)%(Extension)')" />
+    <Message Text="Scripts files to zip: @(_ScriptsFilesToZip->'%(RelativeDir)%(Filename)%(Extension)')" />
 
     <PropertyGroup>
       <_AppFolderFullPath>%(AppFolderItem.FullPath)</_AppFolderFullPath>
+    </PropertyGroup>
+    <PropertyGroup>
+      <_ScriptsFolderFullPath>%(ScriptsFolderItem.FullPath)</_ScriptsFolderFullPath>
     </PropertyGroup>
 
     <Message Text="Creating package .zip at [%(AppFileNameItem.FullPath)]" Importance="high" />
@@ -46,6 +62,13 @@
       ZipFileName="%(AppFileNameItem.FullPath)"
       RemoveRoot="$(_AppFolderFullPath)"
       CompressionLevel="BestCompression" />
+    <MSBuild.ExtensionPack.Compression.Zip
+      TaskAction="AddFiles"
+      CompressFiles="@(_ScriptsFilesToZip)"
+      ZipFileName="%(AppFileNameItem.FullPath)"
+      RemoveRoot="$(_ScriptsFolderFullPath)"
+      CompressionLevel="BestCompression"
+      Condition="@(_ScriptsFilesToZip) != ''" />
 
     <!-- Unpacked extension for debugging -->
     <MakeDir Directories="$(OutputPath)\unpacked" />
