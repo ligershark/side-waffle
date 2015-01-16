@@ -18,6 +18,7 @@ namespace TemplatePack
         RemoteTemplateSettings templateSettings;
         private bool templateSourcesChanged = false;
         private bool newSourceAdded = false;
+        private int _index;
 
         public SettingsForm()
         {
@@ -72,17 +73,22 @@ namespace TemplatePack
 
         private void newSourceBtn_Click(object sender, EventArgs e)
         {
+            // Reset the branch textbox
+            sourceBranchTextBox.Enabled = false;
+            sourceBranchTextBox.Text = "origin/master";
+
             // Add new row to the ListView
             ListViewItem row = new ListViewItem();
-            row.SubItems.Add("new");
             row.SubItems.Add(String.Empty);
             row.SubItems.Add(String.Empty);
-            row.Selected = true;
+            row.SubItems.Add(String.Empty);
 
             remoteSourceListView.Items.Add(row);
+            int index = remoteSourceListView.Items.Count - 1;
+            remoteSourceListView.Items[index].Selected = true;
 
             newSourceAdded = true;
-            sourceNameTextBox.Clear();
+            sourceNameTextBox.Text = "new";
             sourceUrlTextBox.Clear();
         }
 
@@ -115,18 +121,24 @@ namespace TemplatePack
 
         public void SourceName_TextChanged(object sender, EventArgs e)
         {
-            remoteSourceListView.Items[IndexSelected].SubItems[1].Text = sourceNameTextBox.Text;
+            if (CurrentItemSelected != null)
+            {
+                CurrentItemSelected.SubItems[1].Text = sourceNameTextBox.Text;
+            }
         }
 
         public void SourceURL_TextChanged(object sender, EventArgs e)
         {
-            string url = sourceUrlTextBox.Text;
-            if ((url.StartsWith("http")) || (url.StartsWith("https")) || (url.StartsWith("git")))
+            if (CurrentItemSelected != null)
             {
-                sourceBranchTextBox.Enabled = true;
-            }
+                string url = sourceUrlTextBox.Text;
+                if ((url.StartsWith("http")) || (url.StartsWith("https")) || (url.StartsWith("git")))
+                {
+                    sourceBranchTextBox.Enabled = true;
+                }
 
-            remoteSourceListView.Items[IndexSelected].SubItems[1].Text = url;
+                CurrentItemSelected.SubItems[2].Text = url;
+            }
         }
 
         public void SourceBranch_TextChanged(object sender, EventArgs e)
@@ -134,20 +146,31 @@ namespace TemplatePack
 
         }
 
-        public void SourcesListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        public void SourcesListView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sourceNameTextBox.Text = e.Item.SubItems[1].Text;            
-            sourceUrlTextBox.Text = e.Item.SubItems[2].Text;
+            ListView.SelectedListViewItemCollection selectedRows = remoteSourceListView.SelectedItems;
 
-            IndexSelected = e.ItemIndex;
-
-            if (e.Item.SubItems[3].Text != "")
+            if (remoteSourceListView.SelectedItems.Count > 0)
             {
-                sourceBranchTextBox.Enabled = true;
-                sourceBranchTextBox.Text = e.Item.SubItems[3].Text;
+                CurrentItemSelected = remoteSourceListView.SelectedItems[0];
+
+                sourceNameTextBox.Text = CurrentItemSelected.SubItems[1].Text;
+                sourceUrlTextBox.Text = CurrentItemSelected.SubItems[2].Text;
+
+                if (CurrentItemSelected.SubItems[3].Text != "")
+                {
+                    sourceBranchTextBox.Enabled = true;
+                    sourceBranchTextBox.Text = CurrentItemSelected.SubItems[3].Text;
+                }
             }
         }
 
-        public int IndexSelected { get; set; }
+        public int IndexSelected
+        {
+            get { return _index; }
+            set { _index = value; }
+        }
+
+        private ListViewItem CurrentItemSelected { get; set; }
     }
 }

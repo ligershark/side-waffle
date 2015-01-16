@@ -466,7 +466,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Snippets\C++\SideWaffle\" />
     <Folder Include="Snippets\HTML\SideWaffle\" />
     <Folder Include="Snippets\SQL\SideWaffle\" />
@@ -533,9 +532,6 @@
     <Compile Include="Tooling\TemplateLocalInfo.cs" />
     <Compile Include="Tooling\TemplateReferenceCreator.cs" />
     <Compile Include="Tooling\UpdateFrequency.cs" />
-    <Compile Include="ViewModels\DelegateCommand.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <VSCTCompile Include="TemplatePack.vsct">

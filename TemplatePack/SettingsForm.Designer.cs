@@ -75,12 +75,13 @@
             this.branchColumn});
             this.remoteSourceListView.FullRowSelect = true;
             this.remoteSourceListView.Location = new System.Drawing.Point(29, 48);
+            this.remoteSourceListView.MultiSelect = false;
             this.remoteSourceListView.Name = "remoteSourceListView";
             this.remoteSourceListView.Size = new System.Drawing.Size(623, 173);
             this.remoteSourceListView.TabIndex = 1;
             this.remoteSourceListView.UseCompatibleStateImageBehavior = false;
             this.remoteSourceListView.View = System.Windows.Forms.View.Details;
-            this.remoteSourceListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.SourcesListView_ItemSelectionChanged);
+            this.remoteSourceListView.SelectedIndexChanged += new System.EventHandler(this.SourcesListView_SelectedIndexChanged);
             // 
             // enabledColumn
             // 
