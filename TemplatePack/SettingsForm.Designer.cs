@@ -143,6 +143,7 @@
             this.sourceBranchTextBox.TabIndex = 5;
             this.sourceBranchTextBox.Text = "origin/master";
             this.sourceBranchTextBox.TextChanged += new System.EventHandler(this.SourceBranch_TextChanged);
+            this.sourceBranchTextBox.Validated += new System.EventHandler(this.BranchTextbox_Validated);
             // 
             // sourceUrlTextBox
             // 
