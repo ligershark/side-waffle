@@ -16,6 +16,7 @@
         public string OutputPath { get; set; }
         public string RootDirectory { get; set; }
         public string SourceRoot { get; set; }
+        private int UpdatePeriod { get; set; }
         
         public DynamicTemplateBuilder() {
             // Note: using extensions install dir causes max path issues
@@ -132,17 +133,75 @@
                     FetchSourceLocally(template.Source, template.TemplateSourceRoot);
                     BuildTemplate(template);
                     CopyTemplatesToExtensionsFolder(template);
+
+                    // Write to the log file "UpdateLog.txt"
                 }
 
                 else if (Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
                 {
-                    // Check to see if it is time to update the source again
-                    // Once we know figure that out we can use the three lines below.
+                    if (CheckIfTimeToUpdateSources())
+                    {
+                        FetchSourceLocally(template.Source, template.TemplateSourceRoot);
+                        BuildTemplate(template);
+                        CopyTemplatesToExtensionsFolder(template);
 
-                    //FetchSourceLocally(template.Source, template.TemplateSourceRoot);
-                    //BuildTemplates(template);
-                    //CopyTemplatesToExtensionsFolder(template);
+                        // Write to the log file "UpdateLog.txt"
+                    }
                 }
+            }
+        }
+
+        public bool CheckIfTimeToUpdateSources()
+        {
+            String logPath = "UpdateLog.txt";
+            if (File.Exists(logPath))
+            {
+                // Get the amount of time that has passed since we last updated
+                DateTime lastWrite = File.GetLastWriteTime(logPath);
+                DateTime today = DateTime.Now;
+                double elapsedTime = (double)today.Subtract(lastWrite).TotalDays;
+                string updateFrequency = GetTemplateSettingsFromJson().UpdateInterval.ToString();
+
+                switch (updateFrequency)
+                {
+                    case "OnceADay":
+                        UpdatePeriod = 1;
+                        break;
+                    case "OnceAWeek":
+                        UpdatePeriod = 7;
+                        break;
+                    case "OnceAMonth":
+                        UpdatePeriod = 30;
+                        break;
+                    case "Never":
+                        UpdatePeriod = 0;
+                        break;
+                    default:
+                        UpdatePeriod = 7;
+                        break;
+                }
+                if (UpdatePeriod == 0)
+                {
+                    // Always return false because we never want to update
+                    return false;
+                }
+                else
+                {
+                    // Otherwise we check to see if it is time to update 
+                    if (UpdatePeriod == elapsedTime)
+                    {
+                        return true;
+                    }
+
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                return false;
             }
         }
 

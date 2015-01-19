@@ -132,11 +132,14 @@ namespace TemplatePack
              *  have to worry about though is whether or not the user finished adding a new source
              */
 
+
             // Save the configuration schedule if changed
             if (OriginalUpdateInterval != UpdateInterval)
             {
                 // UpdateInterval is what you want to save
             }
+
+            // Here is where the .json file needs to be saved before calling ProcessTemplates
 
             // If templatesources.json has changed then refresh the template building process
             if (templateSourcesChanged || newSourceAdded)
