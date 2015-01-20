@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LigerShark.Templates.DynamicBuilder;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,10 +28,10 @@ namespace TemplatePack
             templateBuilder = new DynamicTemplateBuilder();
             templateSettings = new RemoteTemplateSettings();
             NumberOfSources = 0;
-            OriginalUpdateInterval = templateSettings.UpdateInterval.ToString();
 
             // Load the list of sources
             var templateList = templateBuilder.GetTemplateSettingsFromJson();
+            OriginalUpdateInterval = templateList.UpdateInterval.ToString();
 
             foreach (var template in templateList.Sources)
             {
@@ -55,27 +56,27 @@ namespace TemplatePack
             }
 
             // Check the box for the user's configuration schedule (default: Once A Week)
-            switch (UpdateInterval)
+            switch (NewUpdateInterval)
             {
                 case "OnceADay":
                     onceADayCheckbox.Checked = true;
-                    UpdateInterval = "OnceADay";
+                    NewUpdateInterval = "OnceADay";
                     break;
                 case "OnceAWeek":
                     onceAWeekCheckbox.Checked = true;
-                    UpdateInterval = "OnceAWeek";
+                    NewUpdateInterval = "OnceAWeek";
                     break;
                 case "OnceAMonth":
                     onceAMonthCheckbox.Checked = true;
-                    UpdateInterval = "OnceAMonth";
+                    NewUpdateInterval = "OnceAMonth";
                     break;
                 case "Never":
                     neverCheckBox.Checked = true;
-                    UpdateInterval = "Never";
+                    NewUpdateInterval = "Never";
                     break;
                 default:
                     onceAWeekCheckbox.Checked = true;
-                    UpdateInterval = "OnceAWeek";
+                    NewUpdateInterval = "OnceAWeek";
                     break;
             }
         }
@@ -101,8 +102,6 @@ namespace TemplatePack
                 sourceBranchTextBox.Enabled = false;
                 sourceBranchTextBox.Text = "origin/master";
             }
-
-            newSourceAdded = true;
         }
 
         private void BranchTextbox_Validated(object sender, EventArgs e)
@@ -120,7 +119,21 @@ namespace TemplatePack
 
         private void rebuildTemplatesBtn_Click(object sender, EventArgs e)
         {
-            templateBuilder.RebuildAllTemplates();
+            try
+            {
+                LoadingImage.Visible = true;
+                LoadingLabel.Visible = true;
+                templateBuilder.RebuildAllTemplates();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception Occurred:" + ex.Message);
+            }
+            finally
+            {
+                LoadingImage.Visible = false;
+                LoadingLabel.Text = "All templates have been built";
+            }
         }
 
         private void OkBtn_Click(object sender, EventArgs e)
@@ -132,14 +145,52 @@ namespace TemplatePack
              *  have to worry about though is whether or not the user finished adding a new source
              */
 
+            List<TemplateSource> sources = new List<TemplateSource>();
+
+            foreach (ListViewItem row in remoteSourceListView.Items)
+            {
+                TemplateSource source = new TemplateSource();
+                if (row.Checked == true)
+                {
+                    source.Enabled = true;
+                }
+
+                else
+                {
+                    source.Enabled = false;
+                }
+
+                source.Name = row.SubItems[1].Text;
+                
+                Uri uri = new Uri(row.SubItems[2].Text);
+                Uri url = uri;
+                if (uri.IsFile)
+                {
+                    
+                    url = new Uri(uri.AbsoluteUri);
+                }
+
+                source.Location = url;
+
+                if (row.SubItems[3].Text != "")
+                {
+                    source.Branch = row.SubItems[3].Text;
+                }
+
+                sources.Add(source);
+            }
+
+            templateSettings.Sources = sources;
 
             // Save the configuration schedule if changed
-            if (OriginalUpdateInterval != UpdateInterval)
+            if (OriginalUpdateInterval != NewUpdateInterval)
             {
-                // UpdateInterval is what you want to save
+                UpdateFrequency frequency = (UpdateFrequency) Enum.Parse(typeof(UpdateFrequency), NewUpdateInterval, true);
+                templateSettings.UpdateInterval = frequency;
             }
 
             // Here is where the .json file needs to be saved before calling ProcessTemplates
+            templateBuilder.WriteJsonTemplateSettings(templateSettings);
 
             // If templatesources.json has changed then refresh the template building process
             if (templateSourcesChanged || newSourceAdded)
@@ -220,7 +271,7 @@ namespace TemplatePack
 
         private ListViewItem CurrentItemSelected { get; set; }
 
-        private string UpdateInterval { get; set; }
+        private string NewUpdateInterval { get; set; }
 
         private string OriginalUpdateInterval { get; set; }
     }

@@ -2,6 +2,7 @@
     using LibGit2Sharp;
     using LigerShark.Templates;
     using LigerShark.Templates.DynamicBuilder;
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -236,6 +237,14 @@
             }
 
             return results;
+        }
+
+        public void WriteJsonTemplateSettings(RemoteTemplateSettings settings)
+        {
+            var filePath = Path.Combine(this.SideWaffleInstallDir, "templatesources.json");
+
+            var json = JsonConvert.SerializeObject(settings);
+            File.WriteAllText(filePath, json);
         }
 
         private IList<TemplateLocalInfo> GetLocalInfoFor(IList<TemplateSource> sources) {

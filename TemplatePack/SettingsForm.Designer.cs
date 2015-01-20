@@ -53,6 +53,9 @@
             this.neverCheckBox = new System.Windows.Forms.CheckBox();
             this.OkBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.LoadingImage = new System.Windows.Forms.PictureBox();
+            this.LoadingLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.LoadingImage)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -290,11 +293,34 @@
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
+            // LoadingImage
+            // 
+            this.LoadingImage.Image = ((System.Drawing.Image)(resources.GetObject("LoadingImage.Image")));
+            this.LoadingImage.Location = new System.Drawing.Point(172, 374);
+            this.LoadingImage.Name = "LoadingImage";
+            this.LoadingImage.Size = new System.Drawing.Size(20, 17);
+            this.LoadingImage.TabIndex = 20;
+            this.LoadingImage.TabStop = false;
+            this.LoadingImage.Visible = false;
+            // 
+            // LoadingLabel
+            // 
+            this.LoadingLabel.AutoSize = true;
+            this.LoadingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadingLabel.Location = new System.Drawing.Point(195, 374);
+            this.LoadingLabel.Name = "LoadingLabel";
+            this.LoadingLabel.Size = new System.Drawing.Size(198, 16);
+            this.LoadingLabel.TabIndex = 21;
+            this.LoadingLabel.Text = "Please wait building templates...";
+            this.LoadingLabel.Visible = false;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 527);
+            this.Controls.Add(this.LoadingLabel);
+            this.Controls.Add(this.LoadingImage);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.OkBtn);
             this.Controls.Add(this.neverCheckBox);
@@ -318,6 +344,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsForm";
             this.Text = "SideWaffle Remote Template Settings";
+            ((System.ComponentModel.ISupportInitialize)(this.LoadingImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +376,7 @@
         private System.Windows.Forms.ColumnHeader nameColumn;
         private System.Windows.Forms.ColumnHeader UrlColumn;
         private System.Windows.Forms.ColumnHeader branchColumn;
+        private System.Windows.Forms.PictureBox LoadingImage;
+        private System.Windows.Forms.Label LoadingLabel;
     }
 }

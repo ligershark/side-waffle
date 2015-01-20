@@ -50,10 +50,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="checkmark.png" />
     <Content Include="feed.pkgdef">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="loading.gif" />
     <Content Include="logo.ico" />
     <Content Include="resources\Package.ico" />
     <None Include="packages.config" />
@@ -532,6 +534,11 @@
     <Compile Include="Tooling\TemplateLocalInfo.cs" />
     <Compile Include="Tooling\TemplateReferenceCreator.cs" />
     <Compile Include="Tooling\UpdateFrequency.cs" />
+    <Compile Include="VSPackage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VSPackage.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <VSCTCompile Include="TemplatePack.vsct">
@@ -547,6 +554,8 @@
       <MergeWithCTO>true</MergeWithCTO>
       <ManifestResourceName>VSPackage</ManifestResourceName>
       <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VSPackage.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
