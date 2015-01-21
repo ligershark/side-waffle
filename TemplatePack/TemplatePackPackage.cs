@@ -117,8 +117,8 @@ namespace TemplatePack
             if ( null != mcs )
             {
                 // Create the command for the menu item.
-                CommandID menuCommandID = new CommandID(GuidList.guidMenuOptionsCmdSet, (int)PkgCmdIDList.cmdidMyCommand);
-                MenuCommand menuItem = new MenuCommand(MenuItemCallback, menuCommandID );
+                CommandID menuCommandID = new CommandID(GuidList.guidMenuOptionsCmdSet, (int)PkgCmdIDList.SWMenuGroup);
+                OleMenuCommand menuItem = new OleMenuCommand(MenuItemCallback, menuCommandID );
                 mcs.AddCommand( menuItem );
             }
         }

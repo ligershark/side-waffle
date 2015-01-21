@@ -57,13 +57,13 @@
     </GuidSymbol>
 
     <!-- SideWaffle Menu Options -->
-    <GuidSymbol name="guidMenuOptionsPkg" value="{ee0cf212-810b-45a1-8c62-e10041913c94}" />
-    <GuidSymbol name="guidMenuOptionsCmdSet" value="{c75eac28-63cd-4766-adb1-e655471525ea}">
+    <GuidSymbol name="guidMenuOptionsPkg" value="{796B8CBC-3010-4A76-872B-56775129765F}" />
+    <GuidSymbol name="guidMenuOptionsCmdSet" value="{13EE92AE-B8B5-4728-8AF6-F53D8DD9C391}">
       <IDSymbol name="SWMenuGroup" value="0x1020" />
       <IDSymbol name="cmdidOpenSWMenu" value="0x0100" />
     </GuidSymbol>
 
-    <GuidSymbol name="guidImages" value="{e2bf6a31-afea-46fb-9397-0c2add3a59d8}" >
+    <GuidSymbol name="guidImages" value="{900524C9-8677-4F84-AF97-3A1B5B45E3B2}" >
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />

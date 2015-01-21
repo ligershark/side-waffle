@@ -1,14 +1,7 @@
 ﻿using LigerShark.Templates.DynamicBuilder;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TemplatePack.Tooling;
 
@@ -138,13 +131,6 @@ namespace TemplatePack
 
         private void OkBtn_Click(object sender, EventArgs e)
         {
-            /*
-             *  Save the new or updated sources - It might be easier just to save whatever is in
-             *  the ListView when the Ok button is clicked. Reason being by doing it this way we don't
-             *  have to worry about keeping up with whether or not the list changed...one thing we would
-             *  have to worry about though is whether or not the user finished adding a new source
-             */
-
             List<TemplateSource> sources = new List<TemplateSource>();
 
             foreach (ListViewItem row in remoteSourceListView.Items)

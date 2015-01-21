@@ -12,8 +12,8 @@ namespace TemplatePack
         public static readonly Guid guidTemplatePackCmdSet = new Guid(guidTemplatePackCmdSetString);
 
         // SideWaffle Remote Source Settings
-        public const string guidMenuOptionsPkgString = "ee0cf212-810b-45a1-8c62-e10041913c94";
-        public const string guidMenuOptionsCmdSetString = "c75eac28-63cd-4766-adb1-e655471525ea";
+        public const string guidMenuOptionsPkgString = "796B8CBC-3010-4A76-872B-56775129765F";
+        public const string guidMenuOptionsCmdSetString = "13EE92AE-B8B5-4728-8AF6-F53D8DD9C391";
 
         public static readonly Guid guidMenuOptionsCmdSet = new Guid(guidMenuOptionsCmdSetString);
     }
