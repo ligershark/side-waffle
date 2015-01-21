@@ -7,11 +7,11 @@
     <Description>GruntJS: The Javascript Task Runner configuration file. For more information about GruntJS please visit http://gruntjs.com/getting-started </Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>04b5f422-f372-4b08-8276-d8c8d67a45ef</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References />
-
     <ProjectItem ReplaceParameters="true">Gruntfile.js</ProjectItem>
-
   </TemplateContent>
 </VSTemplate>
