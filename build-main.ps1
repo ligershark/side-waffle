@@ -212,96 +212,108 @@ function Build-SlowCheetahXdt(){
 # Begin script
 ###########################################################
 
+function DoBuild{
+    [cmdletbinding()]
+    param()
+    process{
+        'Begin started. This script uses psbuild which is available at https://github.com/ligershark/psbuild' | Write-Host
 
-'Begin started. This script uses psbuild which is available at https://github.com/ligershark/psbuild' | Write-Host
+        EnsurePsbuildInstalled
 
-EnsurePsbuildInstalled
+        if($optimizeImages){
+            # delete the bin & obj folder before starting
+            $foldersToDelete = @( (Join-Path $script:scriptDir 'TemplatePack\bin\'), (Join-Path $script:scriptDir 'TemplatePack\obj'))
 
-if($optimizeImages){
-    # delete the bin & obj folder before starting
-    $foldersToDelete = @( (Join-Path $script:scriptDir 'TemplatePack\bin\'), (Join-Path $script:scriptDir 'TemplatePack\obj'))
+            foreach($folder in $foldersToDelete){
+                if(Test-Path $folder){
+                    'Deleting build folder: [{0}]' -f $folder | Write-Verbose
+                    Remove-Item $folder -Recurse
+                }
+            }
 
-    foreach($folder in $foldersToDelete){
-        if(Test-Path $folder){
-            'Deleting build folder: [{0}]' -f $folder | Write-Verbose
-            Remove-Item $folder -Recurse
+            OptimizeImages
         }
-    }
+        else {
 
-    OptimizeImages
-}
-else {
+            if($restoreNugetPackages){
+                if($UpdateNugetExe){
+                    UpdateNuGetExe
+                }
 
-    if($restoreNugetPackages){
-        if($UpdateNugetExe){
-            UpdateNuGetExe
-        }
+                RestoreNugetPackages
+            }
 
-        RestoreNugetPackages
-    }
+            if(-not $preventOverridingMsbuildPath){
+                Set-MSBuild "$env:windir\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
+            }
 
-    if(-not $preventOverridingMsbuildPath){
-        Set-MSBuild "$env:windir\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
-    }
+            # msbuild ".\TemplatePack\TemplatePack.csproj" 
+            #    /p:VisualStudioVersion=11.0 
+            #    /p:TemplateBuilderTargets="($env:TemplateBuilderDevRoot)tools\ligershark.templates.targets" 
+            #    /p:ls-TasksRoot="($env:TemplateBuilderDevRoot)\src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" /fl
 
-    # msbuild ".\TemplatePack\TemplatePack.csproj" 
-    #    /p:VisualStudioVersion=11.0 
-    #    /p:TemplateBuilderTargets="($env:TemplateBuilderDevRoot)tools\ligershark.templates.targets" 
-    #    /p:ls-TasksRoot="($env:TemplateBuilderDevRoot)\src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" /fl
+            # /flp1:v=d;logfile=build.d.log /flp2:v=diag;logfile=build.diag.log
 
-    # /flp1:v=d;logfile=build.d.log /flp2:v=diag;logfile=build.diag.log
-
-    $projToBuild = ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
+            $projToBuild = ('{0}TemplatePack\TemplatePack.csproj' -f $scriptDir)
     
-    $buildProperties = @{}
-    $extraArgs = @()   
+            $buildProperties = @{}
+            $extraArgs = @()   
 
-    if($UseLocalTemplateBuilderSrc){
-        $expTempBuilderSrcPath = $env:TemplateBuilderDevRoot
+            if($UseLocalTemplateBuilderSrc){
+                $expTempBuilderSrcPath = $env:TemplateBuilderDevRoot
 
-        if(!($expTempBuilderSrcPath)){
-            $expTempBuilderSrcPath = ('{0}template-builder\' -f $global:codeHome)
+                if(!($expTempBuilderSrcPath)){
+                    $expTempBuilderSrcPath = ('{0}template-builder\' -f $global:codeHome)
+                }
+
+                if(!(Test-Path $expTempBuilderSrcPath)){
+                    $msg = ('template builder folder not found at [{0}]' -f $expTempBuilderSrcPath)
+                    throw $msg
+                }
+
+                $templateBuilderTargetsPath = ("{0}tools\ligershark.templates.targets" -f $expTempBuilderSrcPath)
+                $templateTaskRoot = ("{0}src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" -f $expTempBuilderSrcPath)
+
+                Build-TemplateBuilder -tbSourceRoot $expTempBuilderSrcPath -configuration $configuration
+                $buildProperties += @{'TemplateBuilderTargets'=$templateBuilderTargetsPath}
+                $buildProperties += @{'ls-TasksRoot'=$templateTaskRoot}
+            }
+
+            if($UseLocalSlowCheetahXdtSrc){
+                $expScXdtPath = $env:SlowCheetahXdtDevRoot
+
+                if(!($expScXdtPath)){
+                    $expScXdtPath = ('{0}slow-cheetah.xdt\' -f $global:codeHome)
+                }
+
+                if(!(Test-Path $expScXdtPath)){
+                    $msg = ('SlowCheetah.Xdt folder not found at [{0}]' -f $expScXdtPath)
+                    throw $msg
+                }
+
+                Build-SlowCheetahXdt -scSourceRoot $expScXdtPath -configuration $configuration
+                $slowcheetahxdtTaskRoot = ('{0}SlowCheetah.Xdt\bin\Debug\' -f $expScXdtPath)
+                $buildProperties += @{'ls-SlowCheetahXdtTaskRoot'=$slowcheetahxdtTaskRoot}
+            }
+
+            $extraArgs += '/clp:v=m;ShowCommandLine'
+
+            if($extraBuildArgs){
+                $extraArgs += $extraBuildArgs
+            }
+
+            Invoke-MSBuild  -projectsToBuild $projToBuild `
+                            -configuration $configuration `
+                            -visualStudioVersion $global:SideWaffleBuildSettings.VisualStudioVersion `
+                            -nologo `
+                            -properties $buildProperties `
         }
-
-        if(!(Test-Path $expTempBuilderSrcPath)){
-            $msg = ('template builder folder not found at [{0}]' -f $expTempBuilderSrcPath)
-            throw $msg
-        }
-
-        $templateBuilderTargetsPath = ("{0}tools\ligershark.templates.targets" -f $expTempBuilderSrcPath)
-        $templateTaskRoot = ("{0}src\LigerShark.TemplateBuilder.Tasks\bin\Debug\" -f $expTempBuilderSrcPath)
-
-        Build-TemplateBuilder -tbSourceRoot $expTempBuilderSrcPath -configuration $configuration
-        $buildProperties += @{'TemplateBuilderTargets'=$templateBuilderTargetsPath}
-        $buildProperties += @{'ls-TasksRoot'=$templateTaskRoot}
     }
+}
 
-    if($UseLocalSlowCheetahXdtSrc){
-        $expScXdtPath = $env:SlowCheetahXdtDevRoot
-
-        if(!($expScXdtPath)){
-            $expScXdtPath = ('{0}slow-cheetah.xdt\' -f $global:codeHome)
-        }
-
-        if(!(Test-Path $expScXdtPath)){
-            $msg = ('SlowCheetah.Xdt folder not found at [{0}]' -f $expScXdtPath)
-            throw $msg
-        }
-
-        Build-SlowCheetahXdt -scSourceRoot $expScXdtPath -configuration $configuration
-        $slowcheetahxdtTaskRoot = ('{0}SlowCheetah.Xdt\bin\Debug\' -f $expScXdtPath)
-        $buildProperties += @{'ls-SlowCheetahXdtTaskRoot'=$slowcheetahxdtTaskRoot}
-    }
-
-    $extraArgs += '/clp:v=m;ShowCommandLine'
-
-    if($extraBuildArgs){
-        $extraArgs += $extraBuildArgs
-    }
-
-    Invoke-MSBuild  -projectsToBuild $projToBuild `
-                    -configuration $configuration `
-                    -visualStudioVersion $global:SideWaffleBuildSettings.VisualStudioVersion `
-                    -nologo `
-                    -properties $buildProperties `
+try{
+    DoBuild
+}
+catch{
+    throw $_.Exception
 }
