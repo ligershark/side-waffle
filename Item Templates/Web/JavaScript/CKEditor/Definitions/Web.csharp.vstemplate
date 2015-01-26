@@ -6,6 +6,8 @@
     <Name>CKEditor plugin</Name>
     <Description>CKEditor plugin file</Description>
     <Icon>icon.png</Icon>
+    <TemplateID>bc46b93c-c09d-4261-9f2b-85e1015fcead</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References />

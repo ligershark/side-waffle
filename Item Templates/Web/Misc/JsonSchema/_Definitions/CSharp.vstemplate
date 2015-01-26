@@ -1,11 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
-  <TemplateData>    
+  <TemplateData>
     <DefaultName>schema.json</DefaultName>
     <Name>JSON Schema File</Name>
     <Description>A schema file to describe JSON content</Description>
     <ProjectType>CSharp</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>f2e50b15-fc03-43e3-9ac0-d93a23362910</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References />

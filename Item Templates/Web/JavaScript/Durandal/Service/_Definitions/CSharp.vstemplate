@@ -6,6 +6,8 @@
     <ProjectType>CSharp</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>4a1cbd13-cf19-4c0b-9d9d-f1f95d6ee8d1</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References />

@@ -6,6 +6,8 @@
     <Description>QUnit tests for JavaScript</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>8972f9d3-1b96-4ad5-8add-bb6c31f78716</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References />

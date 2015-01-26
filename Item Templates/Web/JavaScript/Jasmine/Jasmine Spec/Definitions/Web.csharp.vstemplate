@@ -7,6 +7,8 @@
     <Description>Jasmine tests for JavaScript</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>6df6da8c-64ea-4e0f-9841-df62c1752b9a</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References />
