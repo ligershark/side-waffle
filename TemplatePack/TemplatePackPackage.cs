@@ -96,6 +96,39 @@ namespace TemplatePack
                 }
             }
         }
+    }
+     
+    [PackageRegistration(UseManagedResourcesOnly = true)]
+    [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
+    [ProvideMenuResource("Menus.ctmenu", 1)]
+    [Guid(GuidList.guidMenuOptionsPkgString)]
+    [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
+    public sealed class MenuOptionsPackage : Package
+    {     
+        // Overridden Package Implementation
+        #region Package Members
+     
+        protected override void Initialize()
+        {
+            base.Initialize();
+     
+            // Add our command handlers for menu (commands must exist in the .vsct file)
+            OleMenuCommandService mcs = GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
+            if ( null != mcs )
+            {
+                // Create the command for the menu item.
+                CommandID menuCommandID = new CommandID(GuidList.guidMenuOptionsCmdSet, (int)PkgCmdIDList.SWMenuGroup);
+                OleMenuCommand menuItem = new OleMenuCommand(MenuItemCallback, menuCommandID );
+                mcs.AddCommand( menuItem );
+            }
+        }
+        #endregion
 
+        private void MenuItemCallback(object sender, EventArgs e)
+        {
+            // Here is where our UI (i.e. user control) will go to do all the settings.
+            var window = new SettingsForm();
+            window.Show();
+        }
     }
 }

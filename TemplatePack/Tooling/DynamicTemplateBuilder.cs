@@ -2,6 +2,7 @@
     using LibGit2Sharp;
     using LigerShark.Templates;
     using LigerShark.Templates.DynamicBuilder;
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -14,8 +15,9 @@
     public class DynamicTemplateBuilder {
         public string BaseIntermediateOutputPath { get; set; }
         public string OutputPath { get; set; }
-
+        public string RootDirectory { get; set; }
         public string SourceRoot { get; set; }
+        private int UpdatePeriod { get; set; }
         
         public DynamicTemplateBuilder() {
             // Note: using extensions install dir causes max path issues
@@ -27,6 +29,7 @@
             var rootDir = Environment.ExpandEnvironmentVariables(
                             string.Format(@"%localappdata%\LigerShark\SideWaffle\DynamicTemplates\{0}\", verstr));
 
+            this.RootDirectory = Path.GetFullPath(rootDir);
             this.SourceRoot = Path.Combine(rootDir, @"sources\");
             this.BaseIntermediateOutputPath = Path.Combine(rootDir, @"baseintout\");
             this.OutputPath = Path.Combine(rootDir, @"output\");
@@ -89,7 +92,7 @@
                 string msg = ex.ToString();
             }
         }
-        protected void BuildTemplates(TemplateLocalInfo template) {
+        protected void BuildTemplate(TemplateLocalInfo template) {
             if (template == null) { throw new ArgumentNullException("template"); }
 
             var builder = new TemplateFolderBuilder(
@@ -129,9 +132,77 @@
                 if (!Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
                 {
                     FetchSourceLocally(template.Source, template.TemplateSourceRoot);
-                    BuildTemplates(template);
+                    BuildTemplate(template);
                     CopyTemplatesToExtensionsFolder(template);
+
+                    // Write to the log file "UpdateLog.txt"
                 }
+
+                else if (Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
+                {
+                    if (CheckIfTimeToUpdateSources())
+                    {
+                        FetchSourceLocally(template.Source, template.TemplateSourceRoot);
+                        BuildTemplate(template);
+                        CopyTemplatesToExtensionsFolder(template);
+
+                        // Write to the log file "UpdateLog.txt"
+                    }
+                }
+            }
+        }
+
+        public bool CheckIfTimeToUpdateSources()
+        {
+            String logPath = "UpdateLog.txt";
+            if (File.Exists(logPath))
+            {
+                // Get the amount of time that has passed since we last updated
+                DateTime lastWrite = File.GetLastWriteTime(logPath);
+                DateTime today = DateTime.Now;
+                double elapsedTime = (double)today.Subtract(lastWrite).TotalDays;
+                string updateFrequency = GetTemplateSettingsFromJson().UpdateInterval.ToString();
+
+                switch (updateFrequency)
+                {
+                    case "OnceADay":
+                        UpdatePeriod = 1;
+                        break;
+                    case "OnceAWeek":
+                        UpdatePeriod = 7;
+                        break;
+                    case "OnceAMonth":
+                        UpdatePeriod = 30;
+                        break;
+                    case "Never":
+                        UpdatePeriod = 0;
+                        break;
+                    default:
+                        UpdatePeriod = 7;
+                        break;
+                }
+                if (UpdatePeriod == 0)
+                {
+                    // Always return false because we never want to update
+                    return false;
+                }
+                else
+                {
+                    // Otherwise we check to see if it is time to update 
+                    if (UpdatePeriod == elapsedTime)
+                    {
+                        return true;
+                    }
+
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -151,7 +222,7 @@
             }
         }
 
-        private RemoteTemplateSettings GetTemplateSettingsFromJson() {
+        public RemoteTemplateSettings GetTemplateSettingsFromJson() {
             var results = RemoteTemplateSettings.ReadFromJson(Path.Combine(this.SideWaffleInstallDir, "templatesources.json"));
 
             if (results == null || results.Sources == null || results.Sources.Count <= 0) {
@@ -168,6 +239,14 @@
             return results;
         }
 
+        public void WriteJsonTemplateSettings(RemoteTemplateSettings settings)
+        {
+            var filePath = Path.Combine(this.SideWaffleInstallDir, "templatesources.json");
+
+            var json = JsonConvert.SerializeObject(settings);
+            File.WriteAllText(filePath, json);
+        }
+
         private IList<TemplateLocalInfo> GetLocalInfoFor(IList<TemplateSource> sources) {
             if (sources == null) { throw new ArgumentNullException("sources"); }
 
@@ -179,6 +258,24 @@
             }
 
             return result;
+        }
+
+        public void RebuildAllTemplates()
+        {
+            // Delete the folder where the templates are built (i.e. C:\Users\<Username>\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\<Version>
+            if (Directory.Exists(RootDirectory))
+            {
+                Directory.Delete(RootDirectory, true);
+            }
+
+            // Delete the Output folder from the Extension directory
+            if (Directory.Exists(OutputPath))
+            {
+                Directory.Delete(OutputPath);
+            }
+
+            // Download and build the latest templates from their source
+            ProcessTemplates();
         }
     }
 
