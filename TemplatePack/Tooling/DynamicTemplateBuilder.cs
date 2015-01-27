@@ -8,6 +8,7 @@
     using System.IO;
     using System.IO.Compression;
     using System.Reflection;
+    using System.Threading;
 
     public class DynamicTemplateBuilder {
         public string BaseIntermediateOutputPath { get; set; }
@@ -280,7 +281,7 @@
             }
 
             // Download and build the latest templates from their source
-            ProcessTemplates();
+            ProcessTemplates();        
         }
 
         private static void ResetDirectoryAttributes(DirectoryInfo parentDirectory)

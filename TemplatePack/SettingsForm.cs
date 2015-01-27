@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using TemplatePack.Tooling;
 
@@ -110,13 +112,19 @@ namespace TemplatePack
             }
         }
 
-        private void rebuildTemplatesBtn_Click(object sender, EventArgs e)
+        private async void rebuildTemplatesBtn_Click(object sender, EventArgs e)
         {
             try
             {
                 LoadingImage.Visible = true;
                 LoadingLabel.Visible = true;
-                templateBuilder.RebuildAllTemplates();
+
+
+                // Templates are rebuilt on another thread in order to avoid freezing the GIF image by locking the UI thread
+                await Task.Run(() =>
+                {
+                    templateBuilder.RebuildAllTemplates();
+                });
             }
             catch (Exception ex)
             {
