@@ -271,7 +271,7 @@
             // Delete the Output folder from the Extension directory
             if (Directory.Exists(OutputPath))
             {
-                Directory.Delete(OutputPath);
+                Directory.Delete(OutputPath, true);
             }
 
             // Download and build the latest templates from their source
