@@ -243,7 +243,7 @@
         {
             var filePath = Path.Combine(this.SideWaffleInstallDir, "templatesources.json");
 
-            var json = JsonConvert.SerializeObject(settings);
+            var json = JsonConvert.SerializeObject(settings, Formatting.Indented);
             File.WriteAllText(filePath, json);
         }
 

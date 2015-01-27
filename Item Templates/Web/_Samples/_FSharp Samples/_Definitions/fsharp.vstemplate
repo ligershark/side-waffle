@@ -1,12 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <ProjectType>FSharp</ProjectType>
-
     <DefaultName>sample.fs</DefaultName>
     <Name>FSharp sample item template</Name>
     <Description>Description here</Description>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <Icon>fsharp-logo-32x32.png</Icon>
+    <TemplateID>b8c1d0ed-bba2-44f6-bae0-264a2a992621</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References>

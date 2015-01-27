@@ -59,6 +59,13 @@
         }
         protected bool BuildProjectWithProperties(string projectFilepath,Dictionary<string,string>globalProperties) {        
             try {
+                var logmsg = new StringBuilder();
+                logmsg.AppendLine(string.Format(@"Building the project [{0}] with the following properties.", projectFilepath));
+                foreach (var key in globalProperties.Keys) {
+                    logmsg.AppendLine(string.Format(@"    ['{0}'='{1}']", key, globalProperties[key]));
+                }
+                System.Diagnostics.Trace.TraceInformation(logmsg.ToString());
+
                 var pc = new ProjectCollection(globalProperties);
 
                 var logger = new InmemoryMsbuildLogger();

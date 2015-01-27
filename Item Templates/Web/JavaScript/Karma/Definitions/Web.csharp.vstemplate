@@ -7,11 +7,11 @@
     <Description>Karma configuration file. For more information please visit: http://karma-runner.github.io/0.10/intro/configuration.html </Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>02587a02-00aa-4fff-a793-a5fa52d80355</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References />
-
     <ProjectItem ReplaceParameters="true">karma.conf.js</ProjectItem>
-    
   </TemplateContent>
 </VSTemplate>

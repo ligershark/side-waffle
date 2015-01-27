@@ -21,6 +21,7 @@ namespace TemplatePack
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(GuidList.guidTemplatePackPkgString)]
+    [ProvideAutoLoad(UIContextGuids80.NoSolution)]
     [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
     public sealed class TemplatePackPackage : Package
     {
@@ -40,15 +41,16 @@ namespace TemplatePack
                 mcs.AddCommand(button);
             }
 
-            /*if(Environment.GetEnvironmentVariable("SideWaffleEnableDynamicTemplates") != null)*/{
-                try {
-                    new DynamicTemplateBuilder().ProcessTemplates();
-                }
-                catch (Exception ex) {
-                    // todo: replace with logging or something
-                    System.Windows.MessageBox.Show(ex.ToString());
-                }
+            // TODO: we should biuld the templates in the background if possible, it's blocking the UI now
+            _dte.StatusBar.Text = @"Updating project and item templates";
+            try {
+                new DynamicTemplateBuilder().ProcessTemplates();
             }
+            catch (Exception ex) {
+                // todo: replace with logging or something
+                System.Windows.MessageBox.Show(ex.ToString());
+            }
+            _dte.StatusBar.Text = @"Template update complete";
         }
 
         void button_BeforeQueryStatus(object sender, EventArgs e)

@@ -1,12 +1,14 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-		<DefaultName>app.manifest</DefaultName>
-		<Name>FirefoxOS manifest</Name>
-		<Description>An Open Web App manifest contains information that a Web browser needs to interact with an app.</Description>
+    <DefaultName>app.manifest</DefaultName>
+    <Name>FirefoxOS manifest</Name>
+    <Description>An Open Web App manifest contains information that a Web browser needs to interact with an app.</Description>
     <ProjectType>Web</ProjectType>
     <ProjectSubType>CSharp</ProjectSubType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>13210cba-7c3b-4d82-a839-5e983f9b2724</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References />

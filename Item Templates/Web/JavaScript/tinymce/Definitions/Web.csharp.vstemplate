@@ -6,6 +6,8 @@
     <Name>TinyMCE plugin</Name>
     <Description>TinyMCE plugin file</Description>
     <Icon>icon.png</Icon>
+    <TemplateID>449161b9-ed2d-4656-9b6b-b1de42820453</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References />

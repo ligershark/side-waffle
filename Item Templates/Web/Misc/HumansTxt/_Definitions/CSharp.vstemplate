@@ -1,11 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
-  <TemplateData>    
+  <TemplateData>
     <DefaultName>humans.txt</DefaultName>
     <Name>Humans.txt File</Name>
     <Description>Because we're not all robots!!</Description>
     <ProjectType>CSharp</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>e23e289d-fd27-434f-ab66-f31ef30640e3</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References />
