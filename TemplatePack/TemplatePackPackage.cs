@@ -39,25 +39,38 @@ namespace TemplatePack
                 OleMenuCommand button = new OleMenuCommand(ButtonClicked, cmdId);
                 button.BeforeQueryStatus += button_BeforeQueryStatus;
                 mcs.AddCommand(button);
+
+                CommandID menuCommandID = new CommandID(GuidList.guidMenuOptionsCmdSet, (int)PkgCmdIDList.SWMenuGroup);
+                OleMenuCommand menuItem = new OleMenuCommand(OpenSettings, menuCommandID);
+                mcs.AddCommand(menuItem);
             }
 
             // TODO: we should build the templates in the background if possible, it's blocking the UI now
             _dte.StatusBar.Text = @"Updating project and item templates";
-            try {
+            try
+            {
                 new DynamicTemplateBuilder().ProcessTemplates();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 // todo: replace with logging or something
                 System.Windows.MessageBox.Show(ex.ToString());
             }
             _dte.StatusBar.Text = @"Template update complete";
         }
 
+        private void OpenSettings(object sender, EventArgs e)
+        {
+            // Here is where our UI (i.e. user control) will go to do all the settings.
+            var window = new SettingsForm();
+            window.Show();
+        }
+
         void button_BeforeQueryStatus(object sender, EventArgs e)
         {
             var button = (OleMenuCommand)sender;
             var project = GetSelectedProjects().ElementAt(0);
-            
+
             // TODO: We should only show this if the target project has the TemplateBuilder NuGet pkg installed
             //       or something similar to that.
             button.Visible = true;
@@ -97,40 +110,6 @@ namespace TemplatePack
                     yield return item;
                 }
             }
-        }
-    }
-     
-    [PackageRegistration(UseManagedResourcesOnly = true)]
-    [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
-    [ProvideMenuResource("Menus.ctmenu", 1)]
-    [Guid(GuidList.guidMenuOptionsPkgString)]
-    [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
-    public sealed class MenuOptionsPackage : Package
-    {     
-        // Overridden Package Implementation
-        #region Package Members
-     
-        protected override void Initialize()
-        {
-            base.Initialize();
-     
-            // Add our command handlers for menu (commands must exist in the .vsct file)
-            OleMenuCommandService mcs = GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
-            if ( null != mcs )
-            {
-                // Create the command for the menu item.
-                CommandID menuCommandID = new CommandID(GuidList.guidMenuOptionsCmdSet, (int)PkgCmdIDList.SWMenuGroup);
-                OleMenuCommand menuItem = new OleMenuCommand(MenuItemCallback, menuCommandID );
-                mcs.AddCommand( menuItem );
-            }
-        }
-        #endregion
-
-        private void MenuItemCallback(object sender, EventArgs e)
-        {
-            // Here is where our UI (i.e. user control) will go to do all the settings.
-            var window = new SettingsForm();
-            window.Show();
         }
     }
 }
