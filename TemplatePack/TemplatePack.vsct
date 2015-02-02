@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
- <Extern href="stdidcmd.h"/>
+  <Extern href="stdidcmd.h"/>
   <Extern href="vsshlids.h"/>
 
   <Commands package="guidTemplatePackPkg">
@@ -8,10 +8,12 @@
       <Group guid="guidTemplatePackCmdSet" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
       </Group>
+      <Group guid="guidMenuOptionsCmdSet" id="SWMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+      </Group>
     </Groups>
-    
-    <Buttons>
 
+    <Buttons>
       <Button guid="guidTemplatePackCmdSet" id="cmdidMyCommand" priority="0x2000" type="Button">
         <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_ADD_REFERENCES" />
         <CommandFlag>DynamicVisibility</CommandFlag>
@@ -21,18 +23,7 @@
           <ButtonText>Add Template Reference (SideWaffle project)</ButtonText>
         </Strings>
       </Button>
-    </Buttons> 
-  </Commands>
 
-  <!-- SideWaffle Menu Options -->
-  <Commands package="guidMenuOptionsPkg">
-    <Groups>
-      <Group guid="guidMenuOptionsCmdSet" id="SWMenuGroup" priority="0x0600">
-        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
-      </Group>
-    </Groups>
-    
-    <Buttons>
       <Button guid="guidMenuOptionsCmdSet" id="cmdidOpenSWMenu" priority="0x0100" type="Button">
         <Parent guid="guidMenuOptionsCmdSet" id="SWMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
@@ -41,16 +32,16 @@
         </Strings>
       </Button>
     </Buttons>
-    
+
     <Bitmaps>
       <Bitmap guid="guidImages" href="Resources\Images.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows"/>
     </Bitmaps>
   </Commands>
-  <!-- End SideWaffle Menu Options -->
-  
+
+
   <Symbols>
     <GuidSymbol name="guidTemplatePackPkg" value="{e6e2a48e-387d-4af2-9072-86a5276da6d4}" />
-    
+
     <GuidSymbol name="guidTemplatePackCmdSet" value="{a94bef1a-053e-4066-a851-16e5f6c915f1}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="cmdidMyCommand" value="0x0100" />
@@ -73,7 +64,7 @@
     </GuidSymbol>
     <!-- End SideWaffle Menu Options -->
   </Symbols>
-  
-  
+
+
 
 </CommandTable>
