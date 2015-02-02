@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using TemplatePack.Tooling;
 
@@ -74,6 +76,51 @@ namespace TemplatePack
             }
         }
 
+        private void editBtn_click(object sender, EventArgs e)
+        {
+            // Get the selected row
+            ListView.SelectedListViewItemCollection selectedRows = remoteSourceListView.SelectedItems;
+
+            // Load the selected row into the textboxes
+            if (remoteSourceListView.SelectedItems.Count > 0)
+            {
+                CurrentItemSelected = remoteSourceListView.SelectedItems[0];
+                sourceNameTextBox.Text = CurrentItemSelected.SubItems[1].Text;
+                sourceUrlTextBox.Text = CurrentItemSelected.SubItems[2].Text;
+
+                if (CurrentItemSelected.SubItems[3].Text != "")
+                {
+                    sourceBranchTextBox.Enabled = true;
+                    sourceBranchTextBox.Text = CurrentItemSelected.SubItems[3].Text;
+                }
+            }
+
+            applyBtn.Visible = true;
+        }
+
+        private void applyBtn_Click(object sender, EventArgs e)
+        {
+            if (CurrentItemSelected != null)
+            {
+                // Update the name of the selected item
+                CurrentItemSelected.SubItems[1].Text = sourceNameTextBox.Text;
+                CurrentItemSelected.SubItems[2].Text = sourceUrlTextBox.Text;
+
+                if (sourceBranchTextBox.Enabled == true)
+                {
+                    // Update the selected item's branch if and only if the branch textbox is enabled
+                    CurrentItemSelected.SubItems[3].Text = sourceBranchTextBox.Text;
+                }
+            }
+
+
+            // Reset the textboxes and buttons
+            sourceNameTextBox.Clear();
+            sourceBranchTextBox.Text = "origin/master";
+            sourceUrlTextBox.Clear();
+            applyBtn.Visible = false;
+        }
+
         private void newSourceBtn_Click(object sender, EventArgs e)
         {
             // Add new row to the ListView
@@ -95,6 +142,8 @@ namespace TemplatePack
                 sourceBranchTextBox.Enabled = false;
                 sourceBranchTextBox.Text = "origin/master";
             }
+
+            applyBtn.Visible = true;
         }
 
         private void BranchTextbox_Validated(object sender, EventArgs e)
@@ -110,13 +159,19 @@ namespace TemplatePack
             }
         }
 
-        private void rebuildTemplatesBtn_Click(object sender, EventArgs e)
+        private async void rebuildTemplatesBtn_Click(object sender, EventArgs e)
         {
             try
             {
                 LoadingImage.Visible = true;
                 LoadingLabel.Visible = true;
-                templateBuilder.RebuildAllTemplates();
+
+
+                // Templates are rebuilt on another thread in order to avoid freezing the GIF image by locking the UI thread
+                await Task.Run(() =>
+                {
+                    templateBuilder.RebuildAllTemplates();
+                });
             }
             catch (Exception ex)
             {
@@ -194,58 +249,18 @@ namespace TemplatePack
             this.Close();
         }
 
-        public void SourceName_TextChanged(object sender, EventArgs e)
-        {
-            if (CurrentItemSelected != null)
-            {
-                CurrentItemSelected.SubItems[1].Text = sourceNameTextBox.Text;
-            }
-        }
-
         public void SourceURL_TextChanged(object sender, EventArgs e)
         {
-            if (CurrentItemSelected != null)
+
+            string url = sourceUrlTextBox.Text;
+            if ((url.StartsWith("http")) || (url.StartsWith("https")) || (url.StartsWith("git")))
             {
-                string url = sourceUrlTextBox.Text;
-                if ((url.StartsWith("http")) || (url.StartsWith("https")) || (url.StartsWith("git")))
-                {
-                    sourceBranchTextBox.Enabled = true;
-                    CurrentItemSelected.SubItems[3].Text = sourceBranchTextBox.Text;
-                }
-
-                else
-                {
-                    sourceBranchTextBox.Enabled = false;
-                }
-
-                CurrentItemSelected.SubItems[2].Text = url;
+                sourceBranchTextBox.Enabled = true;
             }
-        }
 
-        public void SourceBranch_TextChanged(object sender, EventArgs e)
-        {
-            if (CurrentItemSelected != null && sourceBranchTextBox.Enabled == true)
+            else
             {
-                CurrentItemSelected.SubItems[3].Text = sourceBranchTextBox.Text;
-            }
-        }
-
-        public void SourcesListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ListView.SelectedListViewItemCollection selectedRows = remoteSourceListView.SelectedItems;
-
-            if (remoteSourceListView.SelectedItems.Count > 0)
-            {
-                CurrentItemSelected = remoteSourceListView.SelectedItems[0];
-
-                sourceNameTextBox.Text = CurrentItemSelected.SubItems[1].Text;
-                sourceUrlTextBox.Text = CurrentItemSelected.SubItems[2].Text;
-
-                if (CurrentItemSelected.SubItems[3].Text != "")
-                {
-                    sourceBranchTextBox.Enabled = true;
-                    sourceBranchTextBox.Text = CurrentItemSelected.SubItems[3].Text;
-                }
+                sourceBranchTextBox.Enabled = false;
             }
         }
 

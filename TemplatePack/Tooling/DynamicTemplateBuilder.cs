@@ -7,10 +7,8 @@
     using System.Collections.Generic;
     using System.IO;
     using System.IO.Compression;
-    using System.Linq;
     using System.Reflection;
-    using System.Text;
-    using System.Threading.Tasks;
+    using System.Threading;
 
     public class DynamicTemplateBuilder {
         public string BaseIntermediateOutputPath { get; set; }
@@ -265,18 +263,41 @@
             // Delete the folder where the templates are built (i.e. C:\Users\<Username>\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\<Version>
             if (Directory.Exists(RootDirectory))
             {
+                // Reset the attributes for all subdirectories and their files
+                DirectoryInfo parentDirectoryInfo = new DirectoryInfo(RootDirectory);
+                ResetDirectoryAttributes(parentDirectoryInfo);
+
                 Directory.Delete(RootDirectory, true);
             }
 
             // Delete the Output folder from the Extension directory
             if (Directory.Exists(OutputPath))
             {
-                Directory.Delete(OutputPath);
+                // Reset the attributes for all subdirectories and their files
+                DirectoryInfo parentDirectoryInfo = new DirectoryInfo(OutputPath);
+                ResetDirectoryAttributes(parentDirectoryInfo);
+
+                Directory.Delete(OutputPath, true);
             }
 
             // Download and build the latest templates from their source
-            ProcessTemplates();
+            ProcessTemplates();        
+        }
+
+        private static void ResetDirectoryAttributes(DirectoryInfo parentDirectory)
+        {
+            if (parentDirectory != null)
+            {
+                parentDirectory.Attributes = FileAttributes.Normal;
+                foreach (FileInfo fi in parentDirectory.GetFiles())
+                {
+                    fi.Attributes = FileAttributes.Normal;
+                }
+                foreach (DirectoryInfo di in parentDirectory.GetDirectories())
+                {
+                    ResetDirectoryAttributes(di);
+                }
+            }
         }
     }
-
 }

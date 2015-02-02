@@ -41,7 +41,7 @@ namespace TemplatePack
                 mcs.AddCommand(button);
             }
 
-            // TODO: we should biuld the templates in the background if possible, it's blocking the UI now
+            // TODO: we should build the templates in the background if possible, it's blocking the UI now
             _dte.StatusBar.Text = @"Updating project and item templates";
             try {
                 new DynamicTemplateBuilder().ProcessTemplates();
