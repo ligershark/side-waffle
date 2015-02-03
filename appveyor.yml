@@ -23,10 +23,14 @@ os: Windows Server 2012 R2
 #       build configuration       #
 #---------------------------------#
 
+install: 
+  - ps: Start-FileDownload https://raw.githubusercontent.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1
+  - ps: Import-Module './vsix.ps1'
+
 build_script:
   - ps: nuget restore sidewaffle.sln
   - ps: (new-object Net.WebClient).DownloadString("https://raw.github.com/ligershark/psbuild/master/src/GetPSBuild.ps1") | iex
   - ps: .\build-main.ps1
 
-artifacts:
-  - path: 'TemplatePack\bin\Release\**\*'
+after_build:
+  - ps: Vsix-PushArtifacts | Vsix-PublishToGallery
