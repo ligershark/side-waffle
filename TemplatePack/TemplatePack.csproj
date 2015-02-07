@@ -146,6 +146,10 @@
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Caliburn.Micro WPF Application.csproj" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\_Definitions\CSharp.vstemplate" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\__TemplateIcon.png" />
+    <None Include="ItemTemplates\Misc\Dockerfile\Dockerfile" />
+    <None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\Web.csharp.vstemplate" />
+    <None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\VB.vstemplate" />
     <Content Include="resources\Package.ico" />
     <None Include="ItemTemplates\Azure\CloudServicePlugin\CloudServicePlugin.csplugin" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\build.proj" />
@@ -610,9 +614,9 @@
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\VB.vstemplate" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\Web.csharp.vstemplate" />
     <None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.png" />
-    <None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\Web.csharp.vstemplate" />
+    <None Include="ItemTemplates\Misc\Dockerfile\_Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\Misc\Dockerfile\_Definitions\VB.vstemplate" />
+    <None Include="ItemTemplates\Misc\Dockerfile\_Definitions\Web.csharp.vstemplate" />
     <None Include="ItemTemplates\Web\Misc\RobotsTxt\icon.png" />
     <None Include="ItemTemplates\Web\Misc\RobotsTxt\robots.txt" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\build.proj" />
