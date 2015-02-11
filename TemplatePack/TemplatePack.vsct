@@ -26,7 +26,7 @@
 
       <Button guid="guidMenuOptionsCmdSet" id="cmdidOpenSWMenu" priority="0x0100" type="Button">
         <Parent guid="guidMenuOptionsCmdSet" id="SWMenuGroup" />
-        <Icon guid="guidImages" id="bmpPic1" />
+        <Icon guid="logoImages" id="bmpSWLogo" />
         <Strings>
           <ButtonText>SideWaffle Settings</ButtonText>
         </Strings>
@@ -35,6 +35,7 @@
 
     <Bitmaps>
       <Bitmap guid="guidImages" href="Resources\Images.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows"/>
+      <Bitmap guid="logoImages" href="resources\SideWaffle16blue.png"/>
     </Bitmaps>
   </Commands>
 
@@ -61,6 +62,10 @@
       <IDSymbol name="bmpPicX" value="4" />
       <IDSymbol name="bmpPicArrows" value="5" />
       <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+    
+    <GuidSymbol name="logoImages" value="{4B6AB8D6-0116-418B-B69B-6721499D947E}">
+      <IDSymbol name="bmpSWLogo" value="1"/>
     </GuidSymbol>
     <!-- End SideWaffle Menu Options -->
   </Symbols>
