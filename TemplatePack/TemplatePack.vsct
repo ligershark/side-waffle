@@ -35,7 +35,7 @@
 
     <Bitmaps>
       <Bitmap guid="guidImages" href="Resources\Images.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows"/>
-      <Bitmap guid="logoImages" href="Resources\SideWaffle-icon-16x16.png"/>
+      <Bitmap guid="logoImages" href="resources\SideWaffle16blue.png"/>
     </Bitmaps>
   </Commands>
 

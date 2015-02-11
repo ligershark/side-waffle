@@ -338,7 +338,7 @@
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="resources\SideWaffle-icon-16x16.png" />
+    <Content Include="resources\SideWaffle16blue.png" />
     <Content Include="templatesources.json">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
