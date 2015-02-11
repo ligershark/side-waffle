@@ -44,6 +44,12 @@
             }
         }
 
+        protected string UpdateLogFilePath {
+            get {
+                return Path.Combine(SideWaffleInstallDir, "UpdateLog.txt");
+            }
+        }
+
         protected void FetchSourceLocally(TemplateSource source, string destFolder) {
             if (source == null) { throw new ArgumentNullException("source"); }
             if (string.IsNullOrEmpty(destFolder)) { throw new ArgumentNullException("destFolder"); }
@@ -75,6 +81,7 @@
             try {
                 var destDirInfo = new DirectoryInfo(destFolder);
                 if (destDirInfo.Exists) {
+                    ResetDirectoryAttributes(destDirInfo);
                     // TODO: if the folder exists and there is a .git folder then we should do a fetch/merge or pull
                     destDirInfo.Delete(true);
                 }
@@ -84,10 +91,11 @@
                 var repo = new Repository(repoPath);
                 Branch branch = repo.Checkout(source.Branch);
                 branch.Checkout();
-                // Repository.Clone(source.Location.AbsoluteUri,destFolder,new CloneOptions().br)
             }
             catch (Exception ex) {
+                // TODO: we should log this error
                 string msg = ex.ToString();
+                System.Windows.Forms.MessageBox.Show(msg);
             }
         }
         protected void BuildTemplate(TemplateLocalInfo template) {
@@ -132,10 +140,8 @@
                     FetchSourceLocally(template.Source, template.TemplateSourceRoot);
                     BuildTemplate(template);
                     CopyTemplatesToExtensionsFolder(template);
-
-                    // Write to the log file "UpdateLog.txt"
+                    TouchUpgradeLog();
                 }
-
                 else if (Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
                 {
                     if (CheckIfTimeToUpdateSources())
@@ -143,8 +149,7 @@
                         FetchSourceLocally(template.Source, template.TemplateSourceRoot);
                         BuildTemplate(template);
                         CopyTemplatesToExtensionsFolder(template);
-
-                        // Write to the log file "UpdateLog.txt"
+                        TouchUpgradeLog();
                     }
                 }
             }
@@ -152,12 +157,11 @@
 
         public bool CheckIfTimeToUpdateSources()
         {
-            String logPath = "UpdateLog.txt";
-            if (File.Exists(logPath))
+            if (File.Exists(UpdateLogFilePath))
             {
                 // Get the amount of time that has passed since we last updated
-                DateTime lastWrite = File.GetLastWriteTime(logPath);
-                DateTime today = DateTime.Now;
+                DateTime lastWrite = File.GetLastWriteTimeUtc(UpdateLogFilePath);
+                DateTime today = DateTime.UtcNow;
                 double elapsedTime = (double)today.Subtract(lastWrite).TotalDays;
                 string updateFrequency = GetTemplateSettingsFromJson().UpdateInterval.ToString();
 
@@ -200,7 +204,9 @@
             }
             else
             {
-                return false;
+                // create the file and return true
+                File.Create(this.UpdateLogFilePath);
+                return true;
             }
         }
 
@@ -257,7 +263,9 @@
 
             return result;
         }
-
+        private void TouchUpgradeLog() {
+            System.IO.File.SetLastWriteTimeUtc(this.UpdateLogFilePath, DateTime.UtcNow);
+        }
         public void RebuildAllTemplates()
         {
             // Delete the folder where the templates are built (i.e. C:\Users\<Username>\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\<Version>
