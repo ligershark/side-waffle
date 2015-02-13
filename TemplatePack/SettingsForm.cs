@@ -146,6 +146,23 @@ namespace TemplatePack
             applyBtn.Visible = true;
         }
 
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            // Delete the selected item
+            CurrentItemSelected = remoteSourceListView.SelectedItems[0];
+
+            try
+            {
+                remoteSourceListView.Items.RemoveAt(CurrentItemSelected.Index);
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error Removing List Item: " + ex.Message);
+            }
+            
+        }
+
         private void BranchTextbox_Validated(object sender, EventArgs e)
         {
             var branch = sourceBranchTextBox.Text;

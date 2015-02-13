@@ -57,6 +57,7 @@
             this.LoadingLabel = new System.Windows.Forms.Label();
             this.editBtn = new System.Windows.Forms.Button();
             this.applyBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LoadingImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +83,7 @@
             this.remoteSourceListView.Location = new System.Drawing.Point(29, 48);
             this.remoteSourceListView.MultiSelect = false;
             this.remoteSourceListView.Name = "remoteSourceListView";
-            this.remoteSourceListView.Size = new System.Drawing.Size(659, 173);
+            this.remoteSourceListView.Size = new System.Drawing.Size(687, 173);
             this.remoteSourceListView.TabIndex = 1;
             this.remoteSourceListView.UseCompatibleStateImageBehavior = false;
             this.remoteSourceListView.View = System.Windows.Forms.View.Details;
@@ -168,7 +169,7 @@
             // newSourceBtn
             // 
             this.newSourceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newSourceBtn.Location = new System.Drawing.Point(596, 227);
+            this.newSourceBtn.Location = new System.Drawing.Point(624, 227);
             this.newSourceBtn.Name = "newSourceBtn";
             this.newSourceBtn.Size = new System.Drawing.Size(92, 23);
             this.newSourceBtn.TabIndex = 5;
@@ -274,7 +275,7 @@
             // 
             // OkBtn
             // 
-            this.OkBtn.Location = new System.Drawing.Point(532, 492);
+            this.OkBtn.Location = new System.Drawing.Point(576, 492);
             this.OkBtn.Name = "OkBtn";
             this.OkBtn.Size = new System.Drawing.Size(75, 23);
             this.OkBtn.TabIndex = 18;
@@ -284,7 +285,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(613, 492);
+            this.cancelBtn.Location = new System.Drawing.Point(657, 492);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 19;
@@ -316,9 +317,9 @@
             // editBtn
             // 
             this.editBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.Location = new System.Drawing.Point(515, 227);
+            this.editBtn.Location = new System.Drawing.Point(505, 227);
             this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(75, 23);
+            this.editBtn.Size = new System.Drawing.Size(92, 23);
             this.editBtn.TabIndex = 6;
             this.editBtn.Text = "Edit";
             this.editBtn.UseVisualStyleBackColor = true;
@@ -327,7 +328,7 @@
             // applyBtn
             // 
             this.applyBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.applyBtn.Location = new System.Drawing.Point(515, 256);
+            this.applyBtn.Location = new System.Drawing.Point(508, 256);
             this.applyBtn.Name = "applyBtn";
             this.applyBtn.Size = new System.Drawing.Size(110, 25);
             this.applyBtn.TabIndex = 7;
@@ -336,11 +337,23 @@
             this.applyBtn.Visible = false;
             this.applyBtn.Click += new System.EventHandler(this.applyBtn_Click);
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Location = new System.Drawing.Point(624, 256);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(92, 23);
+            this.deleteBtn.TabIndex = 208;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 527);
+            this.ClientSize = new System.Drawing.Size(744, 527);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.applyBtn);
             this.Controls.Add(this.editBtn);
             this.Controls.Add(this.LoadingLabel);
@@ -404,5 +417,6 @@
         private System.Windows.Forms.Label LoadingLabel;
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Button applyBtn;
+        private System.Windows.Forms.Button deleteBtn;
     }
 }
