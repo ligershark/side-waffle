@@ -5,29 +5,22 @@
 /// <reference path='/Scripts/typings/angularjs/angular.d.ts'/>
 /// <reference path='/Scripts/typings/angularjs/angular-resource.d.ts'/>
 
-interface I$safeitemname$Scope extends ng.IScope {
-    vm: $safeitemname$;
-}
-
 interface I$safeitemname$ {
     greeting: string;
-    controllerId: string;
     changeGreeting: () => void;
 }
 
-class $safeitemname$ implements I$safeitemname$ {
-    static controllerId: string = "$safeitemname$";
-    greeting = "Hello";
-    
-    constructor(private $scope: I$safeitemname$Scope, private $http: ng.IHttpService, private $resource: ng.resource.IResourceService) {
-    }
+function $safeitemname$($scope: ng.IScope, $http: ng.IHttpService, $resource: ng.resource.IResourceService){
+    var vm: I$safeitemname$ = this;
+    vm.greeting = "Hello";
 
-    changeGreeting() {
-        this.greeting = "Bye";
+    vm.changeGreeting=(): void =>{
+        vm.greeting = "Bye";
     }
 }
 
+
 // Update the app1 variable name to be that of your module variable
-app1.controller($safeitemname$.controllerId, ['$scope', '$http', '$resource', ($scope, $http, $resource) =>
-    new $safeitemname$($scope, $http, $resource)
+app1.controller("$safeitemname$", ['$scope', '$http', '$resource', 
+    $safeitemname$
 ]);

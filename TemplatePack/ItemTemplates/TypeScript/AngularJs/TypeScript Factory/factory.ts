@@ -7,7 +7,6 @@
 
 interface I$safeitemname$ {
     greeting: string;
-    serviceId: string;
     changeGreeting: () => void;
 }
 
