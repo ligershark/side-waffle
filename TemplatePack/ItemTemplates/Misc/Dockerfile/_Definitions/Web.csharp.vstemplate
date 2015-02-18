@@ -1,0 +1,17 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>Dockerfile</DefaultName>
+    <Name>Dockerfile</Name>
+    <Description>A file with commands describing how to build a docker image.</Description>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>801ae6d7-ec83-4351-9975-e0dbef41addc</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem>Dockerfile</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
