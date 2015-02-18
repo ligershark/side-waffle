@@ -10,24 +10,14 @@ interface I$safeitemname$Scope extends ng.IScope {
     changeGreeting: () => void;
 }
 
-interface I$safeitemname$ {
-    controllerId: string;
-}
-
-class $safeitemname$ implements I$safeitemname$ {
-    static controllerId: string = "$safeitemname$";
-    
-    constructor(private $scope: I$safeitemname$Scope, private $http: ng.IHttpService, private $resource: ng.resource.IResourceService) {
-        $scope.greeting = "Hello";
-        $scope.changeGreeting = () => this.changeGreeting();
-    }
-
-    private changeGreeting() {
-        this.$scope.greeting = "Bye";
-    }
+function $safeitemname$($scope: I$safeitemname$Scope, $http: ng.IHttpService, $resource: ng.resource.IResourceService) {
+    $scope.greeting = "Hello";
+    $scope.changeGreeting = (): void => {
+        $scope.greeting = "Bye";
+    };
 }
 
 // Update the app1 variable name to be that of your module variable
-app1.controller($safeitemname$.controllerId, ['$scope', '$http', '$resource', ($scope, $http, $resource) =>
-    new $safeitemname$($scope, $http, $resource)
+app1.controller("$safeitemname$", ['$scope', '$http', '$resource',
+    $safeitemname$
 ]);

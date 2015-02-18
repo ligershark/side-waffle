@@ -6,7 +6,6 @@
 /// <reference path='/Scripts/typings/angularjs/angular-resource.d.ts'/>
 
 interface I$safeitemname$ extends ng.IDirective {
-    directiveId: string;
 }
 
 interface I$safeitemname$Scope extends ng.IScope {
