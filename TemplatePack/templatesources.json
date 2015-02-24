@@ -2,7 +2,7 @@
     "sources": [
         {
             "Name": "sidewaffleremote",
-            "Enabled": "true",
+            "Enabled": "false",
             "Location": "https://github.com/ligershark/side-waffle.git",
             "Branch": "origin/autoupdate"
         },
