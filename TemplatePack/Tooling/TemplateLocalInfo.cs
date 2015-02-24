@@ -18,9 +18,9 @@
             : this(
                 source,
                 templateSourceRoot,
-                Path.Combine(templateSourceRoot, @"Project Templates\"),
-                Path.Combine(templateSourceRoot, @"Project Templates v0\"),
-                Path.Combine(templateSourceRoot, @"Item Templates\")) {
+                Path.Combine(templateSourceRoot, @"project-templates\"),
+                Path.Combine(templateSourceRoot, @"project-templates-v0\"),
+                Path.Combine(templateSourceRoot, @"item-Templates\")) {
         }
         public TemplateSource Source { get; set; }
         public string TemplateSourceRoot { get; set; }
