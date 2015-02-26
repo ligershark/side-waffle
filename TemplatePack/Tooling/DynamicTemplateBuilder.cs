@@ -236,7 +236,8 @@
                         new TemplateSource{
                             Name="sidewaffleremote",
                             Location = new Uri(@"https://github.com/ligershark/side-waffle.git"),
-                            Branch="origin/autoupdate" }}
+                            Branch="origin/autoupdate",
+                            Enabled=false }}
                 };
             }
 
@@ -264,6 +265,10 @@
             return result;
         }
         private void TouchUpgradeLog() {
+            if (!File.Exists(this.UpdateLogFilePath)) {
+                File.Create(this.UpdateLogFilePath);
+            }
+
             System.IO.File.SetLastWriteTimeUtc(this.UpdateLogFilePath, DateTime.UtcNow);
         }
         public void RebuildAllTemplates()

@@ -49,7 +49,7 @@ namespace TemplatePack
             _dte.StatusBar.Text = @"Updating project and item templates";
             try
             {
-                new DynamicTemplateBuilder().ProcessTemplates();
+                System.Threading.ThreadPool.QueueUserWorkItem(x => { new DynamicTemplateBuilder().ProcessTemplates(); }, new Object());
             }
             catch (Exception ex)
             {
