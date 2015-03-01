@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Project Selector" Height="193" Width="404" WindowStartupLocation="CenterScreen">
     <Grid>
-        <GroupBox Header="Select project and schedule" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="99" Width="369" FontWeight="Bold"/>
+        <GroupBox Header="Select project?" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="99" Width="369" FontWeight="Bold"/>
         <ComboBox x:Name="names" HorizontalAlignment="Left" Margin="119,58,0,0" VerticalAlignment="Top" Width="246" />
         <Label Content="Project" HorizontalAlignment="Left" Margin="29,54,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="304,125,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
