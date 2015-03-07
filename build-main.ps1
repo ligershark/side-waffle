@@ -188,7 +188,7 @@ function Build-TemplateBuilder(){
         'Building templatebuilder' | Write-Host
         $tbSlnFile = (Join-Path $tbSourceRoot -ChildPath 'src\LigerShark.TemplateBuilder.sln')
 
-        Invoke-MSBuild $tbSlnFile -configuration $configuration
+        Invoke-MSBuild $tbSlnFile -configuration $configuration -properties @{'DeployExtension'='false'}
     }
 }
 
