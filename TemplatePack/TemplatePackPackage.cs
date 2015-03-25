@@ -12,6 +12,8 @@ using Microsoft.VisualStudio.Shell;
 using System.Collections.Generic;
 using EnvDTE;
 using EnvDTE80;
+using LigerShark.Templates.DynamicBuilder;
+using TemplatePack.Tooling;
 
 namespace TemplatePack
 {
@@ -19,6 +21,7 @@ namespace TemplatePack
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(GuidList.guidTemplatePackPkgString)]
+    [ProvideAutoLoad(UIContextGuids80.NoSolution)]
     [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
     public sealed class TemplatePackPackage : Package
     {
@@ -36,14 +39,38 @@ namespace TemplatePack
                 OleMenuCommand button = new OleMenuCommand(ButtonClicked, cmdId);
                 button.BeforeQueryStatus += button_BeforeQueryStatus;
                 mcs.AddCommand(button);
+
+                CommandID menuCommandID = new CommandID(GuidList.guidMenuOptionsCmdSet, (int)PkgCmdIDList.SWMenuGroup);
+                OleMenuCommand menuItem = new OleMenuCommand(OpenSettings, menuCommandID);
+                mcs.AddCommand(menuItem);
             }
+
+            // TODO: we should build the templates in the background if possible, it's blocking the UI now
+            _dte.StatusBar.Text = @"Updating project and item templates";
+            try
+            {
+                System.Threading.ThreadPool.QueueUserWorkItem(x => { new DynamicTemplateBuilder().ProcessTemplates(); }, new Object());
+            }
+            catch (Exception ex)
+            {
+                // todo: replace with logging or something
+                System.Windows.MessageBox.Show(ex.ToString());
+            }
+            _dte.StatusBar.Text = @"Template update complete";
+        }
+
+        private void OpenSettings(object sender, EventArgs e)
+        {
+            // Here is where our UI (i.e. user control) will go to do all the settings.
+            var window = new SettingsForm();
+            window.Show();
         }
 
         void button_BeforeQueryStatus(object sender, EventArgs e)
         {
             var button = (OleMenuCommand)sender;
             var project = GetSelectedProjects().ElementAt(0);
-            
+
             // TODO: We should only show this if the target project has the TemplateBuilder NuGet pkg installed
             //       or something similar to that.
             button.Visible = true;
@@ -84,6 +111,5 @@ namespace TemplatePack
                 }
             }
         }
-
     }
 }
