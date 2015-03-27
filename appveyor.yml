@@ -28,10 +28,10 @@ environment:
 #---------------------------------#
 
 install: 
-  - ps: (new-object Net.WebClient).DownloadString("https://raw.github.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1") | iex
+  - ps: # (new-object Net.WebClient).DownloadString("https://raw.github.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1") | iex
 
 before_build: 
-  - ps: Vsix-IncrementVsixVersion | Vsix-UpdateBuildVersion
+  - ps: # Vsix-IncrementVsixVersion | Vsix-UpdateBuildVersion
 
 build_script:
   - ps: nuget restore sidewaffle.sln
@@ -39,4 +39,4 @@ build_script:
   - ps: .\build-main.ps1
 
 after_build:
-  - ps: Vsix-PushArtifacts | Vsix-PublishToGallery
+  - ps: # Vsix-PushArtifacts | Vsix-PublishToGallery
