@@ -1,31 +1,28 @@
-﻿// Update the reference to app1.ts to be that of your module file.
-// Install the angularjs.TypeScript.DefinitelyTyped NuGet package to resolve the .d.ts reference paths,
-// then adjust the path value to be relative to this file
-/// <reference path="app1.ts" />
-/// <reference path="/Scripts/typings/angularjs/angular.d.ts"/>
-/// <reference path="/Scripts/typings/angularjs/angular-resource.d.ts"/>
+﻿// Install the angularjs.TypeScript.DefinitelyTyped NuGet package
+module App {
+    "use strict";
 
-interface I$safeitemname$Scope extends ng.IScope {
-    greeting: string;
-    changeGreeting: () => void;
-}
-
-interface I$safeitemname$ {
-}
-
-class $safeitemname$ implements I$safeitemname$ {
-    static controllerId: string = "$safeitemname$";
-    static $inject: string[] = ["$scope", "$http", "$resource"];
-
-    constructor(private $scope: I$safeitemname$Scope, private $http: ng.IHttpService, private $resource: ng.resource.IResourceService) {
-        $scope.greeting = "Hello";
-        $scope.changeGreeting = () => this.changeGreeting();
+    interface I$safeitemname$Scope extends ng.IScope {
+        title: string;
     }
 
-    private changeGreeting() {
-        this.$scope.greeting = "Bye";
+    interface I$safeitemname$ {
+        activate: () => void;
     }
-}
 
-// Update the app1 variable name to be that of your module variable
-app1.controller($safeitemname$.controllerId, $safeitemname$);
+    class $safeitemname$ implements I$safeitemname$ {
+        static $inject: string[] = ["$scope"];
+
+        constructor(private $scope: I$safeitemname$Scope) {
+            $scope.title = "$safeitemname$";
+
+            this.activate();
+        }
+
+        activate() {
+
+        }
+    }
+
+    angular.module("app").controller("$safeitemname$", $safeitemname$);
+}
