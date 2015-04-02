@@ -1,5 +1,6 @@
 // Install the angularjs.TypeScript.DefinitelyTyped NuGet package
 module App {
+    "use strict";
 
     interface I$safeitemname$ {
         title: string;
