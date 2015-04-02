@@ -11,6 +11,8 @@ using System.IO;
 
 namespace TemplatePack {
     class TemplateReferenceCreator {
+        private DTE dte;
+
         public void AddTemplateReference(EnvDTE.Project currentProject, EnvDTE.Project selectedProject) {           
             // we need to compute a relative path for the template project
             Uri currentProjUri = new Uri(currentProject.FullName);
@@ -53,8 +55,12 @@ namespace TemplatePack {
 
                 if (!installerServices.IsPackageInstalled(project, "TemplateBuilder"))
                 {
+                    dte.StatusBar.Text = @"Installing TemplateBuilder NuGet package, this may take a minute...";
+
                     var installer = componentModel.GetService<IVsPackageInstaller>();
                     installer.InstallPackage("All", project, "TemplateBuilder", (System.Version)null, false);
+
+                    dte.StatusBar.Text = @"Finished installing the TemplateBuilder NuGet package";
                 }
             }
 
@@ -62,7 +68,9 @@ namespace TemplatePack {
             {
                 installedPkg = false;
 
-                // Log the failure
+                dte.StatusBar.Text = @"Unable to install the TemplateBuilder NuGet package";
+
+                // Log the failure to the ActivityLog
             }
 
             return installedPkg;
