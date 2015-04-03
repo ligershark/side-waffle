@@ -201,6 +201,11 @@ namespace TemplatePack
             }
         }
 
+        private void ResetDefaultsBtn_Clock(object sender, EventArgs e)
+        {
+
+        }
+
         private void OkBtn_Click(object sender, EventArgs e)
         {
             List<TemplateSource> sources = new List<TemplateSource>();

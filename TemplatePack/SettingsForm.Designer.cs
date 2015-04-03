@@ -58,6 +58,7 @@
             this.editBtn = new System.Windows.Forms.Button();
             this.applyBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
+            this.ResetDefaultsBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LoadingImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,7 +172,7 @@
             this.newSourceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newSourceBtn.Location = new System.Drawing.Point(624, 227);
             this.newSourceBtn.Name = "newSourceBtn";
-            this.newSourceBtn.Size = new System.Drawing.Size(92, 23);
+            this.newSourceBtn.Size = new System.Drawing.Size(92, 25);
             this.newSourceBtn.TabIndex = 5;
             this.newSourceBtn.Text = "New Source";
             this.newSourceBtn.UseVisualStyleBackColor = true;
@@ -275,9 +276,9 @@
             // 
             // OkBtn
             // 
-            this.OkBtn.Location = new System.Drawing.Point(576, 492);
+            this.OkBtn.Location = new System.Drawing.Point(576, 490);
             this.OkBtn.Name = "OkBtn";
-            this.OkBtn.Size = new System.Drawing.Size(75, 23);
+            this.OkBtn.Size = new System.Drawing.Size(75, 25);
             this.OkBtn.TabIndex = 18;
             this.OkBtn.Text = "OK";
             this.OkBtn.UseVisualStyleBackColor = true;
@@ -285,9 +286,9 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(657, 492);
+            this.cancelBtn.Location = new System.Drawing.Point(657, 490);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(75, 25);
             this.cancelBtn.TabIndex = 19;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -317,9 +318,9 @@
             // editBtn
             // 
             this.editBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.Location = new System.Drawing.Point(505, 227);
+            this.editBtn.Location = new System.Drawing.Point(526, 227);
             this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(92, 23);
+            this.editBtn.Size = new System.Drawing.Size(92, 25);
             this.editBtn.TabIndex = 6;
             this.editBtn.Text = "Edit";
             this.editBtn.UseVisualStyleBackColor = true;
@@ -342,17 +343,30 @@
             this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.Location = new System.Drawing.Point(624, 256);
             this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(92, 23);
+            this.deleteBtn.Size = new System.Drawing.Size(92, 25);
             this.deleteBtn.TabIndex = 208;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // ResetDefaultsBtn
+            // 
+            this.ResetDefaultsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetDefaultsBtn.Location = new System.Drawing.Point(416, 490);
+            this.ResetDefaultsBtn.Name = "ResetDefaultsBtn";
+            this.ResetDefaultsBtn.Size = new System.Drawing.Size(154, 25);
+            this.ResetDefaultsBtn.TabIndex = 209;
+            this.ResetDefaultsBtn.Text = "Reset Default Settings";
+            this.ResetDefaultsBtn.UseVisualStyleBackColor = true;
+            this.ResetDefaultsBtn.Visible = false;
+            this.ResetDefaultsBtn.Click += new System.EventHandler(this.ResetDefaultsBtn_Clock);
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 527);
+            this.Controls.Add(this.ResetDefaultsBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.applyBtn);
             this.Controls.Add(this.editBtn);
@@ -418,5 +432,6 @@
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Button applyBtn;
         private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button ResetDefaultsBtn;
     }
 }
