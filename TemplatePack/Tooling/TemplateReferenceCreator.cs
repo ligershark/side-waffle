@@ -3,14 +3,20 @@ using EnvDTE80;
 using Microsoft.Build.Construction;
 using Microsoft.VisualStudio.ComponentModelHost;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using NuGet.VisualStudio;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Diagnostics;
+using System.Linq;
+using System.Runtime.InteropServices;
 using System.IO;
 
 
 namespace TemplatePack {
     class TemplateReferenceCreator {
+        private DTE2 dte2;
         private DTE dte;
 
         public void AddTemplateReference(EnvDTE.Project currentProject, EnvDTE.Project selectedProject) {           
@@ -25,15 +31,14 @@ namespace TemplatePack {
             var item = curProjObj.AddItem("TemplateReference", selectedProjFile.Name, GetTemplateReferenceMetadata(relativePath));
 
             // Install the TemplateBuilder NuGet pkg into the target project
+            
             InstallTemplateBuilderPackage(selectedProject);
 
             // Add the SideWaffle Project Template files into the target project
-            SVsServiceProvider ServiceProvider = null;
-            DTE dte = (DTE)ServiceProvider.GetService(typeof(DTE));
-
-            Solution2 solution = (Solution2)dte.Solution;
-            String itemPath = solution.GetProjectItemTemplate("", "CSharp");
-            selectedProject.ProjectItems.AddFromTemplate(itemPath, "");
+            dte2 = Package.GetGlobalService(typeof(DTE)) as DTE2;
+            Solution2 solution = (Solution2)dte2.Solution;
+            String itemPath = solution.GetProjectItemTemplate("SW-ProjectVSTemplateFile.csharp.zip", "CSharp");
+            selectedProject.ProjectItems.AddFromTemplate(itemPath, "_project1.vstemplate");
 
             curProjObj.Save();
         }
@@ -48,6 +53,8 @@ namespace TemplatePack {
         private bool InstallTemplateBuilderPackage(EnvDTE.Project project)
         {
             bool installedPkg = true;
+            dte = new DTE();
+
             try
             {
                 var componentModel = (IComponentModel)Package.GetGlobalService(typeof(SComponentModel));
