@@ -1,8 +1,7 @@
 #SideWaffle for Visual Studio
 
-[![Join the chat at https://gitter.im/ligershark/side-waffle](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ligershark/side-waffle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 [![Build status](https://ci.appveyor.com/api/projects/status/bwirtvfcnjix07pd?svg=true)](https://ci.appveyor.com/project/sayedihashimi/side-waffle)
+[![Join the chat at https://gitter.im/ligershark/side-waffle](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ligershark/side-waffle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [SideWaffle.com](http://sidewaffle.com) - download the extension
 
