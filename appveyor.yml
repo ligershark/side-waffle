@@ -6,9 +6,7 @@ version: 1.0.{build}
 os: Windows Server 2012 R2
 
 environment:
-  DeployExtension: false 
-
-environment:
+  DeployExtension: false
   deployUserName:
     secure: OgeveOohI2Qlo5PUD56TTg==
   deployPassword:
