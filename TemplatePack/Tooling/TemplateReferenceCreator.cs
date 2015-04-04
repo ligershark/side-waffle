@@ -37,7 +37,7 @@ namespace TemplatePack {
             // Add the SideWaffle Project Template files into the target project
             dte2 = Package.GetGlobalService(typeof(DTE)) as DTE2;
             Solution2 solution = (Solution2)dte2.Solution;
-            String itemPath = solution.GetProjectItemTemplate("SW-ProjectVSTemplateFile.csharp.zip", "CSharp");
+            string itemPath = solution.GetProjectItemTemplate("SW-ProjectVSTemplateFile.csharp.zip", "CSharp");
             selectedProject.ProjectItems.AddFromTemplate(itemPath, "_project1.vstemplate");
 
             curProjObj.Save();
