@@ -50,10 +50,10 @@ namespace TemplatePack {
             return result;
         }
 
-        private bool InstallTemplateBuilderPackage(EnvDTE.Project project)
+        private bool InstallTemplateBuilderPackage(Project project)
         {
             bool installedPkg = true;
-            dte = new DTE();
+            dte = Package.GetGlobalService(typeof(DTE)) as DTE;
 
             try
             {
