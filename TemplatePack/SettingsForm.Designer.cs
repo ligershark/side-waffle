@@ -358,7 +358,6 @@
             this.ResetDefaultsBtn.TabIndex = 209;
             this.ResetDefaultsBtn.Text = "Reset Default Settings";
             this.ResetDefaultsBtn.UseVisualStyleBackColor = true;
-            this.ResetDefaultsBtn.Visible = false;
             this.ResetDefaultsBtn.Click += new System.EventHandler(this.ResetDefaultsBtn_Clock);
             // 
             // SettingsForm
