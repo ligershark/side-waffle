@@ -7,16 +7,27 @@
         After editing this file you may need to restart Visual Studio for the changes take effect.
   -->
 
-  <!-- 
-    You can override TemplateBuilder properties here.
-   -->
   <PropertyGroup>
-    <!-- This is the subfolder name where the templates will show up in Visual Studio. -->
-    <ls-TemplateSubFolder>My Custom Templates</ls-TemplateSubFolder>
-
-    <!---
-    You can set the following property to false to disable creating the template report
+    <!-- 
+          Custom properties will be included here
     -->
+    <ls-TemplateSubFolder>SideWaffle</ls-TemplateSubFolder>
+    <UseHostCompilerIfAvailable>false</UseHostCompilerIfAvailable>
+    <IncludeTemplateBuilderNuGetPkgInVsix>true</IncludeTemplateBuilderNuGetPkgInVsix>
     <!--<ls-GenerateTemplateReport>false</ls-GenerateTemplateReport>-->
+    <!-- 
+    We need to redirect build outputs to not be under the solution source tree.
+    Otherwise when building templates that are coming in via a project reference
+    Visual Studio will get confused and pick up the wrong source files and try
+    to build them.
+    We can also resolve the issue by adding <UseHostCompilerIfAvailable>false</UseHostCompilerIfAvailable>
+    but that would require a modification of the other project. Still haven't figure out a non-intrusive
+    solution besides moving the template output like below.
+    -->
+    <!--<ls-TemplatesIntermediateOutputPath Condition=" '$(ls-TemplatesIntermediateOutputPath)'=='' ">$(LOCALAPPDATA)\Microsoft\MSBuild\SideWaffle\$(MSBuildProjectName)\$(Configuration)\</ls-TemplatesIntermediateOutputPath>-->
   </PropertyGroup>
+
+  <ItemGroup>
+    <ls-NonFileTypes Include="Service;BootstrapperPackage;"/>
+  </ItemGroup>
 </Project>
