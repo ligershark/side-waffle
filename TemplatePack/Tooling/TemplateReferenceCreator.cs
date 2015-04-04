@@ -16,8 +16,6 @@ using System.IO;
 
 namespace TemplatePack {
     class TemplateReferenceCreator {
-        private DTE2 dte2;
-        private DTE dte;
 
         public void AddTemplateReference(EnvDTE.Project currentProject, EnvDTE.Project selectedProject) {           
             // we need to compute a relative path for the template project
@@ -32,15 +30,18 @@ namespace TemplatePack {
 
             // Install the TemplateBuilder NuGet pkg into the target project
             
-            InstallTemplateBuilderPackage(selectedProject);
+            InstallTemplateBuilderPackage(currentProject);
 
             // Add the SideWaffle Project Template files into the target project
-            dte2 = Package.GetGlobalService(typeof(DTE)) as DTE2;
+            var dte2 = Package.GetGlobalService(typeof(DTE)) as DTE2;
             Solution2 solution = (Solution2)dte2.Solution;
             string itemPath = solution.GetProjectItemTemplate("SW-ProjectVSTemplateFile.csharp.zip", "CSharp");
             selectedProject.ProjectItems.AddFromTemplate(itemPath, "_project1.vstemplate");
 
             curProjObj.Save();
+
+            // Reload the project
+            ReloadProject(dte2, currentProject);
         }
 
         private IEnumerable<KeyValuePair<string, string>> GetTemplateReferenceMetadata(string relativePath) {
@@ -53,7 +54,7 @@ namespace TemplatePack {
         private bool InstallTemplateBuilderPackage(Project project)
         {
             bool installedPkg = true;
-            dte = Package.GetGlobalService(typeof(DTE)) as DTE;
+            var dte = Package.GetGlobalService(typeof(DTE)) as DTE;
 
             try
             {
@@ -81,6 +82,22 @@ namespace TemplatePack {
             }
 
             return installedPkg;
+        }
+
+        private void ReloadProject(DTE2 dte2, Project currentProject)
+        {
+            // we need to unload and reload the project
+            dte2.ExecuteCommand("File.SaveAll");
+
+            string solutionName = System.IO.Path.GetFileNameWithoutExtension(dte2.Solution.FullName);
+            string projectName = currentProject.Name;
+
+            dte2.Windows.Item(EnvDTE.Constants.vsWindowKindSolutionExplorer).Activate();
+            ((DTE2)dte2).ToolWindows.SolutionExplorer.GetItem(solutionName + @"\" + projectName).Select(vsUISelectionType.vsUISelectionTypeSelect);
+
+            dte2.ExecuteCommand("Project.UnloadProject");
+            System.Threading.Thread.Sleep(500);
+            dte2.ExecuteCommand("Project.ReloadProject");
         }
     }
 }
