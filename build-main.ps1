@@ -476,6 +476,7 @@ function DoBuild{
             Invoke-MSBuild @msbArgs
 
             if($publish){
+                'Starting the publish process to sidewaffle.com' | Write-Output
                 Publish
             }
         }
