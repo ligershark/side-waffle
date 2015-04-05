@@ -360,7 +360,7 @@ function Publish{
             #-enableRule:DoNotDeleteRule
             #-whatif
     
-        $commandFormatString = '"{0}" -whatif -verb:sync -disablerule:BackupRule -enableRule:DoNotDeleteRule -source:contentPath=''{1}'' -dest:contentPath=''sidewaffle.com/{2}'',UserName=''{3}'',Password=''{4}'',ComputerName=''sidewaffle.com'',IncludeAcls=''False'',AuthType=''NTLM''  '
+        $commandFormatString = '"{0}" -verb:sync -disablerule:BackupRule -enableRule:DoNotDeleteRule -source:contentPath=''{1}'' -dest:contentPath=''sidewaffle.com/{2}'',UserName=''{3}'',Password=''{4}'',ComputerName=''sidewaffle.com'',IncludeAcls=''False'',AuthType=''NTLM''  '
 
         try{
             $filesToPublish | % {
