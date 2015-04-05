@@ -18,6 +18,9 @@ param(
     [Parameter(ParameterSetName='build')]
     [switch]$UpdateNugetExe,
 
+    [Parameter(ParameterSetName='build')]
+    [switch]$publish,
+
     [Parameter(ParameterSetName='optimizeImages')]
     [switch]$optimizeImages
     )
@@ -208,9 +211,169 @@ function Build-SlowCheetahXdt(){
     }
 }
 
-###########################################################
-# Begin script
-###########################################################
+function Get-MSDeploy{
+    [cmdletbinding()]
+    param()
+    process{
+        $installPath = $env:msdeployinstallpath
+
+        if(!$installPath){
+            $keysToCheck = @('hklm:\SOFTWARE\Microsoft\IIS Extensions\MSDeploy\3','hklm:\SOFTWARE\Microsoft\IIS Extensions\MSDeploy\2','hklm:\SOFTWARE\Microsoft\IIS Extensions\MSDeploy\1')
+
+            foreach($keyToCheck in $keysToCheck){
+                if(Test-Path $keyToCheck){
+                    $installPath = (Get-itemproperty $keyToCheck -Name InstallPath | select -ExpandProperty InstallPath)
+                }
+
+                if($installPath){
+                    break;
+                }
+            }
+        }
+
+        if(!$installPath){
+            throw "Unable to find msdeploy.exe, please install it and try again"
+        }
+
+        [string]$msdInstallLoc = (join-path $installPath 'msdeploy.exe')
+
+        "Found msdeploy.exe at [{0}]" -f $msdInstallLoc | Write-Verbose
+        
+        $msdInstallLoc
+    }
+}
+
+function Filter-String{
+[cmdletbinding()]
+    param(
+        [Parameter(Position=0,Mandatory=$true,ValueFromPipeline=$true)]
+        [string[]]$message,
+        [string[]]$textToRemove
+    )
+    process{
+        foreach($msg in $message){
+            $replacements = @()
+            if(![string]::IsNullOrEmpty($env:deployUserName)){
+                $replacements += $env:deployUserName
+            }
+            if(![string]::IsNullOrEmpty($env:deployPassword)){
+                $replacements += $env:deployPassword
+            }
+            $textToRemove | % { $replacements += $_ }
+            $replacements = ($replacements | Select-Object -Unique)
+            
+            $replacements | % {
+                $msg = $msg.Replace($_,'REMOVED-FROM-LOG')
+            }
+
+            $msg
+        }
+    }
+}
+
+<#
+.SYNOPSIS
+    Used to execute a command line tool (i.e. nuget.exe) using cmd.exe. This is needed in
+    some cases due to hanlding of special characters.
+
+.EXAMPLE
+    Execute-CommandString -command ('"{0}" {1}' -f (Get-NuGet),(@('install','psbuild') -join ' '))
+    Calls nuget.exe install psbuild using cmd.exe
+
+.EXAMPLE
+    '"{0}" {1}' -f (Get-NuGet),(@('install','psbuild') -join ' ') | Execute-CommandString
+    Calls nuget.exe install psbuild using cmd.exe
+
+.EXAMPLE
+    @('psbuild','packageweb') | % { """$(Get-NuGet)"" install $_ -prerelease"|Execute-CommandString}
+    Calls 
+        nuget.exe install psbuild -prerelease
+        nuget.exe install packageweb -prerelease
+#>
+function Execute-CommandString{
+    [cmdletbinding()]
+    param(
+        [Parameter(Mandatory=$true,Position=0,ValueFromPipeline=$true)]
+        [string[]]$command,
+
+        [switch]
+        $ignoreExitCode
+    )
+    process{
+        foreach($cmdToExec in $command){
+            'Executing command [{0}]' -f $cmdToExec | Write-Verbose
+            cmd.exe /D /C $cmdToExec
+
+            if(-not $ignoreExitCode -and ($LASTEXITCODE -ne 0)){
+                $msg = ('The command [{0}] exited with code [{1}]' -f $cmdToExec, $LASTEXITCODE)
+                throw $msg
+            }
+        }
+    }
+}
+
+<#
+.SYNOPSIS
+Publishes the latest to sidewaffle.com
+
+.DESCRIPTION
+This will publish the following files to sidewaffle.com
+    TemplatePack.vsix -> sidewaffle.com/feed/web/TemplatePack.vsix 
+    extension.vsixmanifest -> sidewaffle.com/feed/web/extension.vsixmanifest
+    release-notes.html -> sidewaffle.com/release-notes.html
+#>
+function Publish{
+    [cmdletbinding()]
+    param(
+        [string]$outputPath = (join-path $script:scriptDir 'TemplatePack\bin\Release\'),
+
+        [ValidateNotNullOrEmpty()]
+        [string]$deployUserName = ($env:deployUserName),
+        
+        [ValidateNotNullOrEmpty()]
+        [string]$deployPassword = ($env:deployPassword)
+    )
+    process{        
+        if(!(Test-Path $outputPath)){ throw ('OutputPath not found at {0}' -f $outputPath) }
+        if([string]::IsNullOrEmpty($deployUserName)){ throw 'deployUserName is required but missing'}
+        if([string]::IsNullOrEmpty($deployPassword)){ throw 'deployUserName is required but missing'}
+
+        $filesToPublish = @()
+        $filesToPublish += @{
+            'path' = (join-path $outputpath 'TemplatePack.vsix')
+            'dest' = 'feed/web/TemplatePack.vsix'
+        }
+        $filesToPublish += @{
+            'path' = (join-path $outputpath 'extension.vsixmanifest')
+            'dest' = 'feed/web/extension.vsixmanifest'
+        }
+        $filesToPublish += @{
+            'path' = (join-path $outputpath 'release-notes.html')
+            'dest' = 'release-notes.html'
+        }
+
+        # call msdeploy once for each of these files
+        # msdeploy.exe 
+            #-source:contentPath='C:\Data\personal\mycode\side-waffle\release-notes.html' 
+            #-dest:contentPath='"sidewaffle.com/release-notes.html"',UserName='<user-here>',Password='<pwd-here>',ComputerName='sidewaffle.com',IncludeAcls='False',AuthType='NTLM' 
+            #-verb:sync 
+            #-enableRule:DoNotDeleteRule
+            #-whatif
+    
+        $commandFormatString = '"{0}" -whatif -verb:sync -disablerule:BackupRule -enableRule:DoNotDeleteRule -source:contentPath=''{1}'' -dest:contentPath=''sidewaffle.com/{2}'',UserName=''{3}'',Password=''{4}'',ComputerName=''sidewaffle.com'',IncludeAcls=''False'',AuthType=''NTLM''  '
+
+        try{
+            $filesToPublish | % {
+                # build the cmd string
+                ($commandFormatString -f (Get-MSDeploy), $_.path , $_.dest, $deployUserName,$deployPassword) | Execute-CommandString
+            }
+        }
+        catch{
+            # make sure to not show errors with secrets
+            throw (Filter-String $_.ToString() -textToRemove @($deployUserName,$deployPassword))
+        }
+    }
+}
 
 function DoBuild{
     [cmdletbinding()]
@@ -302,11 +465,19 @@ function DoBuild{
                 $extraArgs += $extraBuildArgs
             }
 
-            Invoke-MSBuild  -projectsToBuild $projToBuild `
-                            -configuration $configuration `
-                            -visualStudioVersion $global:SideWaffleBuildSettings.VisualStudioVersion `
-                            -nologo `
-                            -properties $buildProperties `
+            $msbArgs = @{
+                'projectsToBuild'=$projToBuild
+                'configuration' = $configuration
+                'visualStudioVersion'=$global:SideWaffleBuildSettings.VisualStudioVersion
+                'properties'=$buildProperties
+                'nologo'=$true
+            }
+
+            Invoke-MSBuild @msbArgs
+
+            if($publish){
+                Publish
+            }
         }
     }
 }
@@ -315,5 +486,5 @@ try{
     DoBuild
 }
 catch{
-    throw $_.Exception
+    throw (Filter-String $_.Exception)
 }
