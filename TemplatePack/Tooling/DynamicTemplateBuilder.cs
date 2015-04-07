@@ -67,7 +67,7 @@
             else {
                 throw new ApplicationException(
                     string.Format(
-                        "Unsupported scheme [{0}] in template source uri [{1}]",
+                        "Unsupported scheme [{0}] in template source Uri [{1}]",
                         source.Location.Scheme,
                         source.Location.AbsoluteUri));
             }
@@ -240,6 +240,27 @@
                             Enabled=false }}
                 };
             }
+
+            return results;
+        }
+
+        public RemoteTemplateSettings GetDefaultJsonSettings()
+        {
+            var results = new RemoteTemplateSettings
+            {
+                UpdateInterval = UpdateFrequency.OnceAWeek,
+                Sources = new List<TemplateSource>{
+                    new TemplateSource{
+                        Name="sidewaffleremote",
+                        Location = new Uri(@"https://github.com/ligershark/side-waffle.git"),
+                        Branch="origin/autoupdate",
+                        Enabled = false },
+                    new TemplateSource{
+                        Name="contoso",
+                        Location = new Uri(@"https://github.com/sayedihashimi/contoso-templatepack.git"),
+                        Branch="origin/autoupdate",
+                        Enabled = false}}
+            };
 
             return results;
         }

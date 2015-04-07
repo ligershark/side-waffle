@@ -27,28 +27,7 @@ namespace TemplatePack
             // Load the list of sources
             var templateList = templateBuilder.GetTemplateSettingsFromJson();
             OriginalUpdateInterval = templateList.UpdateInterval.ToString();
-
-            foreach (var template in templateList.Sources)
-            {
-                ListViewItem row = new ListViewItem();
-
-                if (template.Enabled)
-                {
-                    row.Checked = true;
-                }
-
-                else
-                {
-                    row.Checked = false;
-                }
-
-                row.SubItems.Add(template.Name);
-                row.SubItems.Add(template.Location.ToString());
-                row.SubItems.Add(template.Branch);
-
-                remoteSourceListView.Items.Add(row);
-                NumberOfSources += 1;
-            }
+            LoadSourcesListView(templateList);
 
             // Check the box for the user's configuration schedule (default: Once A Week)
             switch (NewUpdateInterval)
@@ -112,7 +91,6 @@ namespace TemplatePack
                     CurrentItemSelected.SubItems[3].Text = sourceBranchTextBox.Text;
                 }
             }
-
 
             // Reset the textboxes and buttons
             sourceNameTextBox.Clear();
@@ -201,6 +179,17 @@ namespace TemplatePack
             }
         }
 
+        private void ResetDefaultsBtn_Clock(object sender, EventArgs e)
+        {
+            // Reset the templatesources.json file
+            var settings = templateBuilder.GetDefaultJsonSettings();
+            templateBuilder.WriteJsonTemplateSettings(settings);
+
+            // Reset the ListView
+            remoteSourceListView.Items.Clear();
+            LoadSourcesListView(settings);            
+        }
+
         private void OkBtn_Click(object sender, EventArgs e)
         {
             List<TemplateSource> sources = new List<TemplateSource>();
@@ -278,6 +267,31 @@ namespace TemplatePack
             else
             {
                 sourceBranchTextBox.Enabled = false;
+            }
+        }
+
+        public void LoadSourcesListView(RemoteTemplateSettings rts)
+        {
+            foreach (var template in rts.Sources)
+            {
+                ListViewItem row = new ListViewItem();
+
+                if (template.Enabled)
+                {
+                    row.Checked = true;
+                }
+
+                else
+                {
+                    row.Checked = false;
+                }
+
+                row.SubItems.Add(template.Name);
+                row.SubItems.Add(template.Location.ToString());
+                row.SubItems.Add(template.Branch);
+
+                remoteSourceListView.Items.Add(row);
+                NumberOfSources += 1;
             }
         }
 
