@@ -26,11 +26,13 @@ namespace TemplatePack
     public sealed class TemplatePackPackage : Package
     {
         private DTE2 _dte;
+        private ActivityLogger _activityLogger;
 
         protected override void Initialize()
         {
             base.Initialize();
             _dte = GetService(typeof(DTE)) as DTE2;
+            _activityLogger = new ActivityLogger(GetService(typeof(SVsActivityLog)) as IVsActivityLog);
 
             OleMenuCommandService mcs = GetService(typeof(IMenuCommandService)) as OleMenuCommandService;
             if (null != mcs)
@@ -49,14 +51,18 @@ namespace TemplatePack
             _dte.StatusBar.Text = @"Updating project and item templates";
             try
             {
-                System.Threading.ThreadPool.QueueUserWorkItem(x => { new DynamicTemplateBuilder().ProcessTemplates(); }, new Object());
+                System.Threading.ThreadPool.QueueUserWorkItem(
+                    x => { new DynamicTemplateBuilder(_dte,_activityLogger).ProcessTemplates(); }, 
+                    new Object());
             }
             catch (Exception ex)
             {
-                // todo: replace with logging or something
+                _activityLogger.Error(ex.ToString());
+                _dte.StatusBar.Text = @"An error occured while updating templates, check the activity log";
+
+                // Leave this for now until we are sure activity logger above works well
                 System.Windows.MessageBox.Show(ex.ToString());
             }
-            _dte.StatusBar.Text = @"Template update complete";
         }
 
         private void OpenSettings(object sender, EventArgs e)

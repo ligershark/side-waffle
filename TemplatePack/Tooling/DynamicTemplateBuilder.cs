@@ -1,14 +1,15 @@
 ﻿namespace TemplatePack.Tooling {
-    using LibGit2Sharp;
-    using LigerShark.Templates;
-    using LigerShark.Templates.DynamicBuilder;
-    using Newtonsoft.Json;
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.IO.Compression;
-    using System.Reflection;
-    using System.Threading;
+    using EnvDTE80;
+using LibGit2Sharp;
+using LigerShark.Templates;
+using LigerShark.Templates.DynamicBuilder;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
+using System.Reflection;
+using System.Threading;
 
     public class DynamicTemplateBuilder {
         public string BaseIntermediateOutputPath { get; set; }
@@ -16,8 +17,15 @@
         public string RootDirectory { get; set; }
         public string SourceRoot { get; set; }
         private int UpdatePeriod { get; set; }
+        private DTE2 Dte { get; set; }
+        private ActivityLogger ActivityLog { get; set; }
         
-        public DynamicTemplateBuilder() {
+        /// <summary>
+        /// If dte is null it will be ignored
+        /// If activityLogger is null it will be ignored.
+        /// </summary>
+        /// <param name="dte"></param>
+        public DynamicTemplateBuilder(DTE2 dte, ActivityLogger activityLogger) {
             // Note: using extensions install dir causes max path issues
             //this.SourceRoot = Path.Combine(SideWaffleInstallDir, @"DynamicTemplates\sources\");
             //this.BaseIntermediateOutputPath = Path.Combine(SideWaffleInstallDir, @"DynamicTemplates\baseintout\");
@@ -31,6 +39,8 @@
             this.SourceRoot = Path.Combine(rootDir, @"sources\");
             this.BaseIntermediateOutputPath = Path.Combine(rootDir, @"baseintout\");
             this.OutputPath = Path.Combine(rootDir, @"output\");
+            this.Dte = dte;
+            this.ActivityLog = activityLogger;
         }
 
         protected string SideWaffleInstallDir {
@@ -93,6 +103,7 @@
                 branch.Checkout();
             }
             catch (Exception ex) {
+                UpdateStatusBar("There was an error check the activity log");
                 // TODO: we should log this error
                 string msg = ex.ToString();
                 System.Windows.Forms.MessageBox.Show(msg);
@@ -127,6 +138,7 @@
                 throw new ApplicationException(string.Format(@"Template output not found in [{0}]", outputPath));
             }
         }
+
         public void ProcessTemplates() {
             CreateTemplateBuilderBinIfNotExists();
      
@@ -153,6 +165,8 @@
                     }
                 }
             }
+
+            UpdateStatusBar("Finished updating project and item templates");
         }
 
         public bool CheckIfTimeToUpdateSources()
@@ -331,6 +345,23 @@
                 {
                     ResetDirectoryAttributes(di);
                 }
+            }
+        }
+        private void LogError(string message) {
+            if (ActivityLog != null) {
+                ActivityLog.Error(message);
+            }
+            else {
+                UpdateStatusBar(message);
+            }
+        }
+        private void UpdateStatusBar(string message) {
+            if (Dte != null) {
+                Dte.StatusBar.Text = message;
+            }
+            else {
+                // not sure what else to do here
+                Console.WriteLine(message);
             }
         }
     }

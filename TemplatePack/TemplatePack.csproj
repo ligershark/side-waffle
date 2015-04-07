@@ -59,7 +59,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-	<Content Include="loading.gif" />
+    <Content Include="loading.gif" />
     <Content Include="logo.ico" />
     <None Include="ItemTemplates\AppVeyor\Empty\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\AppVeyor\Empty\Definitions\vb.vstemplate" />
@@ -978,6 +978,7 @@
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\ViewModels\MainViewModel.cs" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml.cs" />
     <Compile Include="TemplatePackPackage.cs" />
+    <Compile Include="Tooling\ActivityLogger.cs" />
     <Compile Include="Tooling\DynamicTemplateBuilder.cs" />
     <Compile Include="Tooling\ProjectSelector2.xaml.cs">
       <DependentUpon>ProjectSelector2.xaml</DependentUpon>
