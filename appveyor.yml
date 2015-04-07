@@ -1,42 +1,16 @@
-# Notes:
-#   - Minimal appveyor.yml file is an empty file. All sections are optional.
-#   - Indent each level of configuration with 2 spaces. Do not use tabs!
-#   - All section names are case-sensitive.
-#   - Section names should be unique on each level.
 #   - Full reference at http://www.appveyor.com/docs/appveyor-yml
 
-#---------------------------------#
-#      general configuration      #
-#---------------------------------#
-
-# version format
 version: 1.0.{build}
-
-#---------------------------------#
-#    environment configuration    #
-#---------------------------------#
 
 # Operating system (build VM template)
 os: Windows Server 2012 R2
 
 environment:
-  DeployExtension: false 
-
-
-#---------------------------------#
-#       build configuration       #
-#---------------------------------#
-
-install: 
-  - ps: (new-object Net.WebClient).DownloadString("https://raw.github.com/madskristensen/ExtensionScripts/master/AppVeyor/vsix.ps1") | iex
-
-before_build: 
-  - ps: Vsix-IncrementVsixVersion | Vsix-UpdateBuildVersion
+  DeployExtension: false
+  deployUserName:
+    secure: OgeveOohI2Qlo5PUD56TTg==
+  deployPassword:
+    secure: xjgBRniNNJx4mEdGv2ZkXQ==
 
 build_script:
-  - ps: nuget restore sidewaffle.sln
-  - ps: (new-object Net.WebClient).DownloadString("https://raw.github.com/ligershark/psbuild/master/src/GetPSBuild.ps1") | iex
-  - ps: .\build-main.ps1
-
-after_build:
-  - ps: Vsix-PushArtifacts | Vsix-PublishToGallery
+  - ps: .\appveyor.ps1
