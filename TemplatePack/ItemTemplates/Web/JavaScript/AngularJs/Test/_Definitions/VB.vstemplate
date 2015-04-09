@@ -7,7 +7,7 @@
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>312a6521-74e1-42e7-a982-1bd7daad90c7</TemplateID>
-    <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <AppliesTo>!CSharp</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References />
