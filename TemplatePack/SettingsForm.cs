@@ -1,4 +1,7 @@
-﻿using LigerShark.Templates.DynamicBuilder;
+﻿using EnvDTE;
+using EnvDTE80;
+using LigerShark.Templates.DynamicBuilder;
+using Microsoft.VisualStudio.Shell.Interop;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -21,7 +24,9 @@ namespace TemplatePack
         public SettingsForm()
         {
             InitializeComponent();
-            templateBuilder = new DynamicTemplateBuilder();
+            templateBuilder = new DynamicTemplateBuilder(
+                                    GetService(typeof(DTE)) as DTE2,
+                                    new ActivityLogger(GetService(typeof(SVsActivityLog)) as IVsActivityLog));
             templateSettings = new RemoteTemplateSettings();
             NumberOfSources = 0;
 

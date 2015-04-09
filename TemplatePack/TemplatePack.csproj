@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\LibGit2Sharp.0.20.1.0\build\net40\LibGit2Sharp.props" Condition="Exists('..\packages\LibGit2Sharp.0.20.1.0\build\net40\LibGit2Sharp.props')" />
   <PropertyGroup>
     <MinimumVisualStudioVersion>$(VisualStudioVersion)</MinimumVisualStudioVersion>
@@ -51,11 +51,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="checkmark.png" />
+    <Content Include="..\release-notes.html">
+      <Link>release-notes.html</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="feed.pkgdef">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-	<Content Include="loading.gif" />
+    <Content Include="loading.gif" />
     <Content Include="logo.ico" />
     <None Include="ItemTemplates\AppVeyor\Empty\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\AppVeyor\Empty\Definitions\vb.vstemplate" />
@@ -139,6 +143,11 @@
     <None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\Web.csharp.vstemplate" />
     <None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\VB.vstemplate" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\_Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\_Definitions\VB.vstemplate" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\_Definitions\Web.csharp.vstemplate" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\provider.js" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\icon.png" />
     <Content Include="resources\Package.ico" />
     <None Include="ItemTemplates\Azure\CloudServicePlugin\CloudServicePlugin.csplugin" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\build.proj" />
@@ -361,7 +370,9 @@
     <None Include="ItemTemplates\Windows Phone\readme.md" />
     <None Include="ItemTemplates\Windows Store\readme.md" />
     <None Include="ItemTemplates\WPF\readme.md" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ProjectTemplates\Cloud\readme.md" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
     <None Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
@@ -397,10 +408,6 @@
     <None Include="ItemTemplates\Web\Nancy\NancyModule\icon.png" />
     <None Include="ItemTemplates\Web\Nancy\NancyModule\_Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Web\Nancy\NancyModule\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\_Samples\_FSharp Samples\fsharp-logo-32x32.png" />
-    <None Include="ItemTemplates\Web\_Samples\_FSharp Samples\icon.png" />
-    <None Include="ItemTemplates\Web\_Samples\_FSharp Samples\Sayed.fs" />
-    <None Include="ItemTemplates\Web\_Samples\_FSharp Samples\_Definitions\fsharp.vstemplate" />
     <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\icon.png" />
     <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\InputModels\Search\readme.txt" />
     <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ViewModels\readme.txt" />
@@ -814,6 +821,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\assemblies\Microsoft.VisualStudio.CommandBars.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.ComponentModelHost, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\assemblies\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
@@ -860,6 +868,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform">
+      <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.VisualStudio">
+      <HintPath>..\packages\NuGet.VisualStudio.2.8.3\lib\net40\NuGet.VisualStudio.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -876,6 +891,9 @@
     <Reference Include="TemplateBuilder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\TemplateBuilder.1.1.2-beta5\lib\TemplateBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="TemplateBuilder">
+      <HintPath>..\packages\TemplateBuilder.1.1.3\lib\TemplateBuilder.dll</HintPath>
     </Reference>
     <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -956,6 +974,7 @@
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\ViewModels\MainViewModel.cs" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml.cs" />
     <Compile Include="TemplatePackPackage.cs" />
+    <Compile Include="Tooling\ActivityLogger.cs" />
     <Compile Include="Tooling\DynamicTemplateBuilder.cs" />
     <Compile Include="Tooling\ProjectSelector2.xaml.cs">
       <DependentUpon>ProjectSelector2.xaml</DependentUpon>
@@ -1015,6 +1034,7 @@
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
     <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.1.2-beta5\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.1.3\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup Condition=" '$(EnableIncludeLibGit2SharpInVsix)'=='true' ">
     <Content Include="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.*" Exclude="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.pdb">

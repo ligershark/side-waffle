@@ -15,7 +15,7 @@
 
     <Buttons>
       <Button guid="guidTemplatePackCmdSet" id="cmdidMyCommand" priority="0x2000" type="Button">
-        <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_ADD_REFERENCES" />
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_ADD_ITEMS" />
         <CommandFlag>DynamicVisibility</CommandFlag>
         <CommandFlag>DefaultInvisible</CommandFlag>
         <Strings>

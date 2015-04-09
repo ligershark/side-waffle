@@ -1,0 +1,16 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>provider.js</DefaultName>
+    <Name>AngularJs Provider</Name>
+    <Description>AngularJs Provider: minification ready with starter dependencies. By Kent Cooper, Twitter:@kcdevnc </Description>
+    <ProjectType>CSharp</ProjectType>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>905145AC-6F01-4F80-8B8C-8E5A360F0814</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">provider.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
