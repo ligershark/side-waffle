@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TemplatePack.Tooling;
+using System.Linq;
 
 namespace TemplatePack
 {
@@ -26,33 +27,37 @@ namespace TemplatePack
 
             // Load the list of sources
             var templateList = templateBuilder.GetTemplateSettingsFromJson();
-            OriginalUpdateInterval = templateList.UpdateInterval.ToString();
+            UpdateInterval = templateList.UpdateInterval.ToString();
             LoadSourcesListView(templateList);
 
             // Check the box for the user's configuration schedule (default: Once A Week)
-            switch (NewUpdateInterval)
+            switch (UpdateInterval)
             {
+                case "Always":
+                    alwaysRadioBtn.Checked = true;
+                    break;
                 case "OnceADay":
-                    onceADayCheckbox.Checked = true;
-                    NewUpdateInterval = "OnceADay";
+                    onceADayRadioBtn.Checked = true;
                     break;
                 case "OnceAWeek":
-                    onceAWeekCheckbox.Checked = true;
-                    NewUpdateInterval = "OnceAWeek";
+                    onceAWeekRadioBtn.Checked = true;
                     break;
                 case "OnceAMonth":
-                    onceAMonthCheckbox.Checked = true;
-                    NewUpdateInterval = "OnceAMonth";
+                    onceAMonthRadioBtn.Checked = true;
                     break;
                 case "Never":
-                    neverCheckBox.Checked = true;
-                    NewUpdateInterval = "Never";
+                    neverRadioBtn.Checked = true;
                     break;
                 default:
-                    onceAWeekCheckbox.Checked = true;
-                    NewUpdateInterval = "OnceAWeek";
+                    onceAWeekRadioBtn.Checked = true;
                     break;
             }
+
+            alwaysRadioBtn.Tag = UpdateFrequency.Always;
+            onceADayRadioBtn.Tag = UpdateFrequency.OnceADay;
+            onceAWeekRadioBtn.Tag = UpdateFrequency.OnceAWeek;
+            onceAMonthRadioBtn.Tag = UpdateFrequency.OnceAMonth;
+            neverRadioBtn.Tag = UpdateFrequency.Never;
         }
 
         private void editBtn_click(object sender, EventArgs e)
@@ -229,12 +234,11 @@ namespace TemplatePack
 
             templateSettings.Sources = sources;
 
-            // Save the configuration schedule if changed
-            if (OriginalUpdateInterval != NewUpdateInterval)
-            {
-                UpdateFrequency frequency = (UpdateFrequency) Enum.Parse(typeof(UpdateFrequency), NewUpdateInterval, true);
-                templateSettings.UpdateInterval = frequency;
-            }
+            // Save the configuration schedule
+            var checkbox = scheduleGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            //UpdateFrequency frequency = (UpdateFrequency)Enum.Parse(typeof(UpdateFrequency), checkbox.Text, true);
+            //MessageBox.Show("You changed the update frequency to " + checkbox.Tag.ToString());
+            templateSettings.UpdateInterval = (UpdateFrequency)checkbox.Tag;
 
             // Here is where the .json file needs to be saved before calling ProcessTemplates
             templateBuilder.WriteJsonTemplateSettings(templateSettings);
@@ -303,8 +307,6 @@ namespace TemplatePack
 
         private ListViewItem CurrentItemSelected { get; set; }
 
-        private string NewUpdateInterval { get; set; }
-
-        private string OriginalUpdateInterval { get; set; }
+        private string UpdateInterval { get; set; }
     }
 }

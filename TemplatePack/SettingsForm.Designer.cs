@@ -47,10 +47,6 @@
             this.rebuildTemplatesBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.onceADayCheckbox = new System.Windows.Forms.CheckBox();
-            this.onceAWeekCheckbox = new System.Windows.Forms.CheckBox();
-            this.onceAMonthCheckbox = new System.Windows.Forms.CheckBox();
-            this.neverCheckBox = new System.Windows.Forms.CheckBox();
             this.OkBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.LoadingImage = new System.Windows.Forms.PictureBox();
@@ -59,7 +55,14 @@
             this.applyBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.ResetDefaultsBtn = new System.Windows.Forms.Button();
+            this.onceADayRadioBtn = new System.Windows.Forms.RadioButton();
+            this.scheduleGroupBox = new System.Windows.Forms.GroupBox();
+            this.neverRadioBtn = new System.Windows.Forms.RadioButton();
+            this.onceAMonthRadioBtn = new System.Windows.Forms.RadioButton();
+            this.alwaysRadioBtn = new System.Windows.Forms.RadioButton();
+            this.onceAWeekRadioBtn = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.LoadingImage)).BeginInit();
+            this.scheduleGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -230,53 +233,9 @@
             this.label8.TabIndex = 207;
             this.label8.Text = "How often should SideWaffle check for update templates?";
             // 
-            // onceADayCheckbox
-            // 
-            this.onceADayCheckbox.AutoSize = true;
-            this.onceADayCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onceADayCheckbox.Location = new System.Drawing.Point(29, 451);
-            this.onceADayCheckbox.Name = "onceADayCheckbox";
-            this.onceADayCheckbox.Size = new System.Drawing.Size(99, 20);
-            this.onceADayCheckbox.TabIndex = 14;
-            this.onceADayCheckbox.Text = "Once A Day";
-            this.onceADayCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // onceAWeekCheckbox
-            // 
-            this.onceAWeekCheckbox.AutoSize = true;
-            this.onceAWeekCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onceAWeekCheckbox.Location = new System.Drawing.Point(134, 451);
-            this.onceAWeekCheckbox.Name = "onceAWeekCheckbox";
-            this.onceAWeekCheckbox.Size = new System.Drawing.Size(110, 20);
-            this.onceAWeekCheckbox.TabIndex = 15;
-            this.onceAWeekCheckbox.Text = "Once A Week";
-            this.onceAWeekCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // onceAMonthCheckbox
-            // 
-            this.onceAMonthCheckbox.AutoSize = true;
-            this.onceAMonthCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.onceAMonthCheckbox.Location = new System.Drawing.Point(250, 451);
-            this.onceAMonthCheckbox.Name = "onceAMonthCheckbox";
-            this.onceAMonthCheckbox.Size = new System.Drawing.Size(110, 20);
-            this.onceAMonthCheckbox.TabIndex = 16;
-            this.onceAMonthCheckbox.Text = "Once A Month";
-            this.onceAMonthCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // neverCheckBox
-            // 
-            this.neverCheckBox.AutoSize = true;
-            this.neverCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.neverCheckBox.Location = new System.Drawing.Point(366, 451);
-            this.neverCheckBox.Name = "neverCheckBox";
-            this.neverCheckBox.Size = new System.Drawing.Size(64, 20);
-            this.neverCheckBox.TabIndex = 17;
-            this.neverCheckBox.Text = "Never";
-            this.neverCheckBox.UseVisualStyleBackColor = true;
-            // 
             // OkBtn
             // 
-            this.OkBtn.Location = new System.Drawing.Point(576, 490);
+            this.OkBtn.Location = new System.Drawing.Point(576, 515);
             this.OkBtn.Name = "OkBtn";
             this.OkBtn.Size = new System.Drawing.Size(75, 25);
             this.OkBtn.TabIndex = 18;
@@ -286,7 +245,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(657, 490);
+            this.cancelBtn.Location = new System.Drawing.Point(657, 515);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 25);
             this.cancelBtn.TabIndex = 19;
@@ -352,7 +311,7 @@
             // ResetDefaultsBtn
             // 
             this.ResetDefaultsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResetDefaultsBtn.Location = new System.Drawing.Point(416, 490);
+            this.ResetDefaultsBtn.Location = new System.Drawing.Point(416, 515);
             this.ResetDefaultsBtn.Name = "ResetDefaultsBtn";
             this.ResetDefaultsBtn.Size = new System.Drawing.Size(154, 25);
             this.ResetDefaultsBtn.TabIndex = 209;
@@ -360,11 +319,86 @@
             this.ResetDefaultsBtn.UseVisualStyleBackColor = true;
             this.ResetDefaultsBtn.Click += new System.EventHandler(this.ResetDefaultsBtn_Clock);
             // 
+            // onceADayRadioBtn
+            // 
+            this.onceADayRadioBtn.AutoSize = true;
+            this.onceADayRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.onceADayRadioBtn.Location = new System.Drawing.Point(78, 19);
+            this.onceADayRadioBtn.Name = "onceADayRadioBtn";
+            this.onceADayRadioBtn.Size = new System.Drawing.Size(98, 20);
+            this.onceADayRadioBtn.TabIndex = 210;
+            this.onceADayRadioBtn.TabStop = true;
+            this.onceADayRadioBtn.Text = "Once A Day";
+            this.onceADayRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // scheduleGroupBox
+            // 
+            this.scheduleGroupBox.Controls.Add(this.neverRadioBtn);
+            this.scheduleGroupBox.Controls.Add(this.onceAMonthRadioBtn);
+            this.scheduleGroupBox.Controls.Add(this.alwaysRadioBtn);
+            this.scheduleGroupBox.Controls.Add(this.onceAWeekRadioBtn);
+            this.scheduleGroupBox.Controls.Add(this.onceADayRadioBtn);
+            this.scheduleGroupBox.Location = new System.Drawing.Point(29, 451);
+            this.scheduleGroupBox.Name = "scheduleGroupBox";
+            this.scheduleGroupBox.Size = new System.Drawing.Size(518, 49);
+            this.scheduleGroupBox.TabIndex = 211;
+            this.scheduleGroupBox.TabStop = false;
+            this.scheduleGroupBox.Text = "Schedule";
+            // 
+            // neverRadioBtn
+            // 
+            this.neverRadioBtn.AutoSize = true;
+            this.neverRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.neverRadioBtn.Location = new System.Drawing.Point(412, 19);
+            this.neverRadioBtn.Name = "neverRadioBtn";
+            this.neverRadioBtn.Size = new System.Drawing.Size(63, 20);
+            this.neverRadioBtn.TabIndex = 214;
+            this.neverRadioBtn.TabStop = true;
+            this.neverRadioBtn.Text = "Never";
+            this.neverRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // onceAMonthRadioBtn
+            // 
+            this.onceAMonthRadioBtn.AutoSize = true;
+            this.onceAMonthRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.onceAMonthRadioBtn.Location = new System.Drawing.Point(297, 19);
+            this.onceAMonthRadioBtn.Name = "onceAMonthRadioBtn";
+            this.onceAMonthRadioBtn.Size = new System.Drawing.Size(109, 20);
+            this.onceAMonthRadioBtn.TabIndex = 213;
+            this.onceAMonthRadioBtn.TabStop = true;
+            this.onceAMonthRadioBtn.Text = "Once A Month";
+            this.onceAMonthRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // alwaysRadioBtn
+            // 
+            this.alwaysRadioBtn.AutoSize = true;
+            this.alwaysRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alwaysRadioBtn.Location = new System.Drawing.Point(3, 19);
+            this.alwaysRadioBtn.Name = "alwaysRadioBtn";
+            this.alwaysRadioBtn.Size = new System.Drawing.Size(69, 20);
+            this.alwaysRadioBtn.TabIndex = 212;
+            this.alwaysRadioBtn.TabStop = true;
+            this.alwaysRadioBtn.Text = "Always";
+            this.alwaysRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // onceAWeekRadioBtn
+            // 
+            this.onceAWeekRadioBtn.AutoSize = true;
+            this.onceAWeekRadioBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.onceAWeekRadioBtn.Location = new System.Drawing.Point(182, 19);
+            this.onceAWeekRadioBtn.Name = "onceAWeekRadioBtn";
+            this.onceAWeekRadioBtn.Size = new System.Drawing.Size(109, 20);
+            this.onceAWeekRadioBtn.TabIndex = 211;
+            this.onceAWeekRadioBtn.TabStop = true;
+            this.onceAWeekRadioBtn.Text = "Once A Week";
+            this.onceAWeekRadioBtn.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 527);
+            this.ClientSize = new System.Drawing.Size(744, 552);
+            this.Controls.Add(this.scheduleGroupBox);
             this.Controls.Add(this.ResetDefaultsBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.applyBtn);
@@ -373,10 +407,6 @@
             this.Controls.Add(this.LoadingImage);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.OkBtn);
-            this.Controls.Add(this.neverCheckBox);
-            this.Controls.Add(this.onceAMonthCheckbox);
-            this.Controls.Add(this.onceAWeekCheckbox);
-            this.Controls.Add(this.onceADayCheckbox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.rebuildTemplatesBtn);
@@ -395,6 +425,8 @@
             this.Name = "SettingsForm";
             this.Text = "SideWaffle Remote Template Settings";
             ((System.ComponentModel.ISupportInitialize)(this.LoadingImage)).EndInit();
+            this.scheduleGroupBox.ResumeLayout(false);
+            this.scheduleGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,10 +448,6 @@
         private System.Windows.Forms.Button rebuildTemplatesBtn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox onceADayCheckbox;
-        private System.Windows.Forms.CheckBox onceAWeekCheckbox;
-        private System.Windows.Forms.CheckBox onceAMonthCheckbox;
-        private System.Windows.Forms.CheckBox neverCheckBox;
         private System.Windows.Forms.Button OkBtn;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.ColumnHeader enabledColumn;
@@ -432,5 +460,11 @@
         private System.Windows.Forms.Button applyBtn;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button ResetDefaultsBtn;
+        private System.Windows.Forms.RadioButton onceADayRadioBtn;
+        private System.Windows.Forms.GroupBox scheduleGroupBox;
+        private System.Windows.Forms.RadioButton onceAMonthRadioBtn;
+        private System.Windows.Forms.RadioButton alwaysRadioBtn;
+        private System.Windows.Forms.RadioButton onceAWeekRadioBtn;
+        private System.Windows.Forms.RadioButton neverRadioBtn;
     }
 }
