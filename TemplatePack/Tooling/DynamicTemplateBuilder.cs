@@ -182,6 +182,9 @@
 
                 switch (updateFrequency)
                 {
+                    case "Always":
+                        UpdatePeriod = 0;
+                        break;
                     case "OnceADay":
                         UpdatePeriod = 1;
                         break;
@@ -198,23 +201,16 @@
                         UpdatePeriod = 7;
                         break;
                 }
-                if (UpdatePeriod == 0)
+
+                // Otherwise we check to see if it is time to update 
+                if (UpdatePeriod == elapsedTime)
                 {
-                    // Always return false because we never want to update
-                    return false;
+                    return true;
                 }
+
                 else
                 {
-                    // Otherwise we check to see if it is time to update 
-                    if (UpdatePeriod == elapsedTime)
-                    {
-                        return true;
-                    }
-
-                    else
-                    {
-                        return false;
-                    }
+                    return false;
                 }
             }
             else
