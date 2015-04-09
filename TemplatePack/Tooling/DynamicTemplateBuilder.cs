@@ -1,15 +1,15 @@
 ﻿namespace TemplatePack.Tooling {
     using EnvDTE80;
-using LibGit2Sharp;
-using LigerShark.Templates;
-using LigerShark.Templates.DynamicBuilder;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.IO.Compression;
-using System.Reflection;
-using System.Threading;
+    using LibGit2Sharp;
+    using LigerShark.Templates;
+    using LigerShark.Templates.DynamicBuilder;
+    using Newtonsoft.Json;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.IO.Compression;
+    using System.Reflection;
+    using System.Threading;
 
     public class DynamicTemplateBuilder {
         public string BaseIntermediateOutputPath { get; set; }
@@ -140,6 +140,7 @@ using System.Threading;
         }
 
         public void ProcessTemplates() {
+            UpdateStatusBar("Updating project and item templates");
             CreateTemplateBuilderBinIfNotExists();
      
             var settings = GetTemplateSettingsFromJson();
@@ -219,7 +220,9 @@ using System.Threading;
             else
             {
                 // create the file and return true
-                File.Create(this.UpdateLogFilePath);
+                using (File.Create(this.UpdateLogFilePath)) {
+                    // nothing to write
+                }
                 return true;
             }
         }
@@ -301,10 +304,18 @@ using System.Threading;
         }
         private void TouchUpgradeLog() {
             if (!File.Exists(this.UpdateLogFilePath)) {
-                File.Create(this.UpdateLogFilePath);
+                using (File.Create(this.UpdateLogFilePath)) {
+                    // nothing to write
+                }
             }
 
-            System.IO.File.SetLastWriteTimeUtc(this.UpdateLogFilePath, DateTime.UtcNow);
+            try {
+                System.IO.File.SetLastWriteTimeUtc(this.UpdateLogFilePath, DateTime.UtcNow);
+            }
+            catch (IOException iex) {
+                // ignore since this is not critical
+                LogError(iex.ToString());
+            }
         }
         public void RebuildAllTemplates()
         {
