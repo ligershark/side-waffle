@@ -36,27 +36,7 @@ namespace TemplatePack
             LoadSourcesListView(templateList);
 
             // Check the box for the user's configuration schedule (default: Once A Week)
-            switch (UpdateInterval)
-            {
-                case "Always":
-                    alwaysRadioBtn.Checked = true;
-                    break;
-                case "OnceADay":
-                    onceADayRadioBtn.Checked = true;
-                    break;
-                case "OnceAWeek":
-                    onceAWeekRadioBtn.Checked = true;
-                    break;
-                case "OnceAMonth":
-                    onceAMonthRadioBtn.Checked = true;
-                    break;
-                case "Never":
-                    neverRadioBtn.Checked = true;
-                    break;
-                default:
-                    onceAWeekRadioBtn.Checked = true;
-                    break;
-            }
+            SetupRadioButtons(UpdateInterval);
 
             alwaysRadioBtn.Tag = UpdateFrequency.Always;
             onceADayRadioBtn.Tag = UpdateFrequency.OnceADay;
@@ -197,7 +177,10 @@ namespace TemplatePack
 
             // Reset the ListView
             remoteSourceListView.Items.Clear();
-            LoadSourcesListView(settings);            
+            LoadSourcesListView(settings);
+
+            // Reset the radio buttons so that is shows the default selection
+            SetupRadioButtons(templateBuilder.GetTemplateSettingsFromJson().UpdateInterval.ToString());
         }
 
         private void OkBtn_Click(object sender, EventArgs e)
@@ -301,6 +284,31 @@ namespace TemplatePack
 
                 remoteSourceListView.Items.Add(row);
                 NumberOfSources += 1;
+            }
+        }
+
+        public void SetupRadioButtons(string interval)
+        {
+            switch (interval)
+            {
+                case "Always":
+                    alwaysRadioBtn.Checked = true;
+                    break;
+                case "OnceADay":
+                    onceADayRadioBtn.Checked = true;
+                    break;
+                case "OnceAWeek":
+                    onceAWeekRadioBtn.Checked = true;
+                    break;
+                case "OnceAMonth":
+                    onceAMonthRadioBtn.Checked = true;
+                    break;
+                case "Never":
+                    neverRadioBtn.Checked = true;
+                    break;
+                default:
+                    onceAWeekRadioBtn.Checked = true;
+                    break;
             }
         }
 
