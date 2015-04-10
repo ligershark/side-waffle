@@ -8,7 +8,7 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <SortOrder>1000</SortOrder>
     <TemplateID>0ef132c2-3034-4d52-b665-5374ec2ae0ba</TemplateID>
-    <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <AppliesTo>!VB</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <ProjectItem TargetFileName="I$safeitemname$Controller.cs" ReplaceParameters="true">ISearchController.cs</ProjectItem>

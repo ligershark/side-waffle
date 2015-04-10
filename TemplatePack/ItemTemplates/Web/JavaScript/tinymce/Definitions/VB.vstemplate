@@ -6,7 +6,7 @@
     <Description>TinyMCE plugin file</Description>
     <Icon>icon.png</Icon>
     <TemplateID>952e3097-d5f7-4266-8a09-d9023817196d</TemplateID>
-    <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <AppliesTo>!CSharp</AppliesTo>
   </TemplateData>
   <TemplateContent>
     <References />

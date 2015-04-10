@@ -424,10 +424,10 @@
     <None Include="ItemTemplates\Web\Nancy\NancyModule\icon.png" />
     <None Include="ItemTemplates\Web\Nancy\NancyModule\_Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Web\Nancy\NancyModule\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\_Samples\_FSharp Samples\fsharp-logo-32x32.png" />
-    <None Include="ItemTemplates\Web\_Samples\_FSharp Samples\icon.png" />
-    <None Include="ItemTemplates\Web\_Samples\_FSharp Samples\Sayed.fs" />
-    <None Include="ItemTemplates\Web\_Samples\_FSharp Samples\_Definitions\fsharp.vstemplate" />
+    <None Include="ItemTemplates\Web\_Samples\_Sample FSharp\fsharp-logo-32x32.png" />
+    <None Include="ItemTemplates\Web\_Samples\_Sample FSharp\icon.png" />
+    <None Include="ItemTemplates\Web\_Samples\_Sample FSharp\Sayed.fs" />
+    <None Include="ItemTemplates\Web\_Samples\_Sample FSharp\_Definitions\fsharp.vstemplate" />
     <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\icon.png" />
     <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\InputModels\Search\readme.txt" />
     <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ViewModels\readme.txt" />
