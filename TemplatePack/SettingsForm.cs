@@ -156,12 +156,7 @@ namespace TemplatePack
                 // Templates are rebuilt on another thread in order to avoid freezing the GIF image by locking the UI thread
                 await Task.Run(() =>
                 {
-                    // Keeps SideWaffle from trying to build the templates while it's already building them
-                    if (!buildingTemplates)
-                    {
-                        templateBuilder.RebuildAllTemplates();
-                        buildingTemplates = true;
-                    }
+                    templateBuilder.RebuildAllTemplates();
                 });
             }
             catch (Exception ex)
@@ -172,9 +167,6 @@ namespace TemplatePack
             {
                 LoadingImage.Visible = false;
                 LoadingLabel.Text = "All templates have been built";
-
-                // Reset the check
-                buildingTemplates = false;
             }
         }
 

@@ -60,6 +60,12 @@
             }
         }
 
+        protected string TemplateInstallLogFilePath {
+            get {
+                return Path.Combine(SideWaffleInstallDir, "TemplateInstallLog.txt");
+            }
+        }
+
         protected void FetchSourceLocally(TemplateSource source, string destFolder) {
             if (source == null) { throw new ArgumentNullException("source"); }
             if (string.IsNullOrEmpty(destFolder)) { throw new ArgumentNullException("destFolder"); }
@@ -140,42 +146,49 @@
         }
 
         public void ProcessTemplates() {
-            UpdateStatusBar("Updating project and item templates");
-            CreateTemplateBuilderBinIfNotExists();
-     
-            var settings = GetTemplateSettingsFromJson();
-            var templateLocalInfo = GetLocalInfoFor(settings.Sources);
 
-            // see if the source exists locally, if not then get it
-            foreach (var template in templateLocalInfo) {
-                if (!Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
+            if (CheckIfAlreadyBuildingSources())
+            {
+                UpdateStatusBar("Updating project and item templates");
+                CreateTemplateBuilderBinIfNotExists();
+
+                var settings = GetTemplateSettingsFromJson();
+                var templateLocalInfo = GetLocalInfoFor(settings.Sources);
+
+                // see if the source exists locally, if not then get it
+                foreach (var template in templateLocalInfo)
                 {
-                    FetchSourceLocally(template.Source, template.TemplateSourceRoot);
-                    BuildTemplate(template);
-                    CopyTemplatesToExtensionsFolder(template);
-                    TouchUpgradeLog();
-                }
-                else if (Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
-                {
-                    if (CheckIfTimeToUpdateSources())
+                    if (!Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
                     {
                         FetchSourceLocally(template.Source, template.TemplateSourceRoot);
                         BuildTemplate(template);
                         CopyTemplatesToExtensionsFolder(template);
                         TouchUpgradeLog();
+                        TouchInstallLog();
+                    }
+                    else if (Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
+                    {
+                        if (CheckIfTimeToUpdateSources())
+                        {
+                            FetchSourceLocally(template.Source, template.TemplateSourceRoot);
+                            BuildTemplate(template);
+                            CopyTemplatesToExtensionsFolder(template);
+                            TouchUpgradeLog();
+                            TouchInstallLog();
+                        }
                     }
                 }
-            }
 
-            UpdateStatusBar("Finished updating project and item templates");
+                UpdateStatusBar("Finished updating project and item templates");
+            }
         }
 
         public bool CheckIfTimeToUpdateSources()
         {
-            if (File.Exists(UpdateLogFilePath))
+            if (File.Exists(TemplateInstallLogFilePath))
             {
                 // Get the amount of time that has passed since we last updated
-                DateTime lastWrite = File.GetLastWriteTimeUtc(UpdateLogFilePath);
+                DateTime lastWrite = File.GetLastWriteTimeUtc(TemplateInstallLogFilePath);
                 DateTime today = DateTime.UtcNow;
                 double elapsedTime = (double)today.Subtract(lastWrite).TotalDays;
                 string updateFrequency = GetTemplateSettingsFromJson().UpdateInterval.ToString();
@@ -240,7 +253,7 @@
         }
 
         public RemoteTemplateSettings GetTemplateSettingsFromJson() {
-            var results = RemoteTemplateSettings.ReadFromJson(Path.Combine(this.SideWaffleInstallDir, "templatesources.json"));
+            var results = RemoteTemplateSettings.ReadFromJson(Path.Combine(this.RootDirectory, "templatesources.json"));
 
             if (results == null || results.Sources == null || results.Sources.Count <= 0) {
                 results = new RemoteTemplateSettings {
@@ -313,30 +326,80 @@
                 LogError(iex.ToString());
             }
         }
+
+        private void TouchInstallLog()
+        {
+            if (!File.Exists(this.TemplateInstallLogFilePath))
+            {
+                using (File.Create(this.TemplateInstallLogFilePath))
+                {
+                    // nothing to write
+                }
+            }
+
+            try
+            {
+                System.IO.File.SetLastWriteTimeUtc(this.TemplateInstallLogFilePath, DateTime.UtcNow);
+            }
+            catch (IOException iex)
+            {
+                // ignore since this is not critical
+                LogError(iex.ToString());
+            }
+        }
         public void RebuildAllTemplates()
         {
-            // Delete the folder where the templates are built (i.e. C:\Users\<Username>\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\<Version>
-            if (Directory.Exists(RootDirectory))
+            if (!CheckIfAlreadyBuildingSources())
             {
-                // Reset the attributes for all subdirectories and their files
-                DirectoryInfo parentDirectoryInfo = new DirectoryInfo(RootDirectory);
-                ResetDirectoryAttributes(parentDirectoryInfo);
+                // Delete the folder where the templates are built (i.e. C:\Users\<Username>\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\<Version>
+                if (Directory.Exists(RootDirectory))
+                {
+                    // Reset the attributes for all subdirectories and their files
+                    DirectoryInfo parentDirectoryInfo = new DirectoryInfo(RootDirectory);
+                    ResetDirectoryAttributes(parentDirectoryInfo);
 
-                Directory.Delete(RootDirectory, true);
+                    Directory.Delete(RootDirectory, true);
+                }
+
+                // Delete the Output folder from the Extension directory
+                if (Directory.Exists(OutputPath))
+                {
+                    // Reset the attributes for all subdirectories and their files
+                    DirectoryInfo parentDirectoryInfo = new DirectoryInfo(OutputPath);
+                    ResetDirectoryAttributes(parentDirectoryInfo);
+
+                    Directory.Delete(OutputPath, true);
+                }
+
+                // Download and build the latest templates from their source
+                ProcessTemplates();
             }
+        }
 
-            // Delete the Output folder from the Extension directory
-            if (Directory.Exists(OutputPath))
+        public bool CheckIfAlreadyBuildingSources()
+        {
+            // Get the amount of time that has passed since we last updated
+            if (File.Exists(UpdateLogFilePath))
             {
-                // Reset the attributes for all subdirectories and their files
-                DirectoryInfo parentDirectoryInfo = new DirectoryInfo(OutputPath);
-                ResetDirectoryAttributes(parentDirectoryInfo);
+                DateTime lastWrite = File.GetLastWriteTimeUtc(UpdateLogFilePath);
+                DateTime now = DateTime.UtcNow;
+                double elapsedTime = (double)now.Subtract(lastWrite).TotalHours;
 
-                Directory.Delete(OutputPath, true);
+                if (elapsedTime <= 1)
+                {
+                    return true;
+                }
+
+                else
+                {
+                    return false;
+                }
             }
-
-            // Download and build the latest templates from their source
-            ProcessTemplates();        
+            else
+            {
+                // Shouldn't ever happen since we are creating the file when VS is launched
+                return false;
+            }
         }
 
         private static void ResetDirectoryAttributes(DirectoryInfo parentDirectory)
