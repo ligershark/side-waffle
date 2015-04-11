@@ -147,7 +147,7 @@
 
         public void ProcessTemplates() {
 
-            if (CheckIfAlreadyBuildingSources())
+            if (!CheckIfAlreadyBuildingSources())
             {
                 UpdateStatusBar("Updating project and item templates");
                 CreateTemplateBuilderBinIfNotExists();
