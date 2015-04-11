@@ -185,10 +185,10 @@
 
         public bool CheckIfTimeToUpdateSources()
         {
-            if (File.Exists(TemplateInstallLogFilePath))
+            if (File.Exists(UpdateLogFilePath))
             {
                 // Get the amount of time that has passed since we last updated
-                DateTime lastWrite = File.GetLastWriteTimeUtc(TemplateInstallLogFilePath);
+                DateTime lastWrite = File.GetLastWriteTimeUtc(UpdateLogFilePath);
                 DateTime today = DateTime.UtcNow;
                 double elapsedTime = (double)today.Subtract(lastWrite).TotalDays;
                 string updateFrequency = GetTemplateSettingsFromJson().UpdateInterval.ToString();
@@ -379,9 +379,9 @@
         public bool CheckIfAlreadyBuildingSources()
         {
             // Get the amount of time that has passed since we last updated
-            if (File.Exists(UpdateLogFilePath))
+            if (File.Exists(TemplateInstallLogFilePath))
             {
-                DateTime lastWrite = File.GetLastWriteTimeUtc(UpdateLogFilePath);
+                DateTime lastWrite = File.GetLastWriteTimeUtc(TemplateInstallLogFilePath);
                 DateTime now = DateTime.UtcNow;
                 double elapsedTime = (double)now.Subtract(lastWrite).TotalHours;
 
