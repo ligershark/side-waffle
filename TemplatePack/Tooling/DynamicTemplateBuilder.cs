@@ -60,7 +60,7 @@
             }
         }
 
-        protected string TemplateInstallLogFilePath {
+        protected string BuildingTemplatesLogFilePath {
             get {
                 return Path.Combine(SideWaffleInstallDir, "TemplateInstallLog.txt");
             }
@@ -147,13 +147,22 @@
 
         public void ProcessTemplates() {
 
-            if (!CheckIfAlreadyBuildingSources())
-            {
-                UpdateStatusBar("Updating project and item templates");
-                CreateTemplateBuilderBinIfNotExists();
+            UpdateStatusBar("Updating project and item templates");
+            CreateTemplateBuilderBinIfNotExists();
 
-                var settings = GetTemplateSettingsFromJson();
-                var templateLocalInfo = GetLocalInfoFor(settings.Sources);
+            var settings = GetTemplateSettingsFromJson();
+            var templateLocalInfo = GetLocalInfoFor(settings.Sources);
+
+            // Drop a file indicating a template build is happening
+            try
+            {
+                if (!File.Exists(this.BuildingTemplatesLogFilePath))
+                {
+                    using (File.Create(this.BuildingTemplatesLogFilePath))
+                    {
+                        // nothing to write
+                    }
+                }
 
                 // see if the source exists locally, if not then get it
                 foreach (var template in templateLocalInfo)
@@ -164,7 +173,6 @@
                         BuildTemplate(template);
                         CopyTemplatesToExtensionsFolder(template);
                         TouchUpgradeLog();
-                        TouchInstallLog();
                     }
                     else if (Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
                     {
@@ -174,13 +182,17 @@
                             BuildTemplate(template);
                             CopyTemplatesToExtensionsFolder(template);
                             TouchUpgradeLog();
-                            TouchInstallLog();
                         }
                     }
                 }
-
-                UpdateStatusBar("Finished updating project and item templates");
             }
+
+            finally
+            {
+                File.Delete(BuildingTemplatesLogFilePath); // When template build completes delete the file
+            }
+
+            UpdateStatusBar("Finished updating project and item templates");
         }
 
         public bool CheckIfTimeToUpdateSources()
@@ -327,29 +339,9 @@
             }
         }
 
-        private void TouchInstallLog()
-        {
-            if (!File.Exists(this.TemplateInstallLogFilePath))
-            {
-                using (File.Create(this.TemplateInstallLogFilePath))
-                {
-                    // nothing to write
-                }
-            }
-
-            try
-            {
-                System.IO.File.SetLastWriteTimeUtc(this.TemplateInstallLogFilePath, DateTime.UtcNow);
-            }
-            catch (IOException iex)
-            {
-                // ignore since this is not critical
-                LogError(iex.ToString());
-            }
-        }
         public void RebuildAllTemplates()
         {
-            if (!CheckIfAlreadyBuildingSources())
+            if (!IsBuildingDynamicTemplates())
             {
                 // Delete the folder where the templates are built (i.e. C:\Users\<Username>\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\<Version>
                 if (Directory.Exists(RootDirectory))
@@ -376,29 +368,36 @@
             }
         }
 
-        public bool CheckIfAlreadyBuildingSources()
+        public bool IsBuildingDynamicTemplates()
         {
-            // Get the amount of time that has passed since we last updated
-            if (File.Exists(TemplateInstallLogFilePath))
+
+            try
             {
-                DateTime lastWrite = File.GetLastWriteTimeUtc(TemplateInstallLogFilePath);
-                DateTime now = DateTime.UtcNow;
-                double elapsedTime = (double)now.Subtract(lastWrite).TotalHours;
-
-                if (elapsedTime <= 1)
+                if (File.Exists(BuildingTemplatesLogFilePath)) // Check if the file exists
                 {
-                    return true;
-                }
+                    DateTime lastWrite = File.GetLastWriteTimeUtc(BuildingTemplatesLogFilePath);
+                    DateTime now = DateTime.UtcNow;
+                    double elapsedTime = (double)now.Subtract(lastWrite).TotalHours;
+                    if (elapsedTime >= 1) // File is older than 1 hour
+                    {
+                        File.Delete(BuildingTemplatesLogFilePath);
+                        return false;
+                    }
 
+                    else
+                    {
+                        return true;
+                    }
+                }
                 else
                 {
+                    ProcessTemplates();
                     return false;
                 }
             }
-            else
+            finally
             {
-                // Shouldn't ever happen since we are creating the file when VS is launched
-                return false;
+
             }
         }
 
