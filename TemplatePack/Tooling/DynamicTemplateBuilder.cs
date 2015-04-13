@@ -167,21 +167,17 @@
                 // see if the source exists locally, if not then get it
                 foreach (var template in templateLocalInfo)
                 {
+                    Action performFetch = new Action(() => FetchSources(template));
+
                     if (!Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
                     {
-                        FetchSourceLocally(template.Source, template.TemplateSourceRoot);
-                        BuildTemplate(template);
-                        CopyTemplatesToExtensionsFolder(template);
-                        TouchUpgradeLog();
+                        performFetch();
                     }
                     else if (Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
                     {
                         if (CheckIfTimeToUpdateSources())
                         {
-                            FetchSourceLocally(template.Source, template.TemplateSourceRoot);
-                            BuildTemplate(template);
-                            CopyTemplatesToExtensionsFolder(template);
-                            TouchUpgradeLog();
+                            performFetch();
                         }
                     }
                 }
@@ -193,6 +189,14 @@
             }
 
             UpdateStatusBar("Finished updating project and item templates");
+        }
+
+        public void FetchSources(TemplateLocalInfo template)
+        {
+            FetchSourceLocally(template.Source, template.TemplateSourceRoot);
+            BuildTemplate(template);
+            CopyTemplatesToExtensionsFolder(template);
+            TouchUpgradeLog();
         }
 
         public bool CheckIfTimeToUpdateSources()
