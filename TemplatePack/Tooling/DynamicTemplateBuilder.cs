@@ -158,16 +158,19 @@
             {
                 if (!File.Exists(this.BuildingTemplatesLogFilePath))
                 {
-                    using (File.Create(this.BuildingTemplatesLogFilePath))
-                    {
-                        // nothing to write
-                    }
+                    using (File.Create(this.BuildingTemplatesLogFilePath)) ;
                 }
 
                 // see if the source exists locally, if not then get it
                 foreach (var template in templateLocalInfo)
                 {
-                    Action performFetch = new Action(() => FetchSources(template));
+                    Action performFetch = new Action(() =>
+                    {
+                        FetchSourceLocally(template.Source, template.TemplateSourceRoot);
+                        BuildTemplate(template);
+                        CopyTemplatesToExtensionsFolder(template);
+                        TouchUpgradeLog();
+                    });
 
                     if (!Directory.Exists(template.TemplateSourceRoot) && template.Source.Enabled)
                     {
@@ -189,14 +192,6 @@
             }
 
             UpdateStatusBar("Finished updating project and item templates");
-        }
-
-        public void FetchSources(TemplateLocalInfo template)
-        {
-            FetchSourceLocally(template.Source, template.TemplateSourceRoot);
-            BuildTemplate(template);
-            CopyTemplatesToExtensionsFolder(template);
-            TouchUpgradeLog();
         }
 
         public bool CheckIfTimeToUpdateSources()
