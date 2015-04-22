@@ -910,6 +910,9 @@
     <TemplateReference Include="ConsoleApplicationAsync.csproj">
       <PathToProject>../Project%20Templates/Windows%20Desktop/ConsoleApplicationAsync/ConsoleApplicationAsync.csproj</PathToProject>
     </TemplateReference>
+    <TemplateReference Include="RazorV3WebApplication.csproj">
+      <PathToProject>../Project%20Templates/RazorV3WebApplication/RazorV3WebApplication.csproj</PathToProject>
+    </TemplateReference>
     <TemplateReference Include="WebJobsHelloWorld.csproj">
       <PathToProject>..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\WebJobsHelloWorld.csproj</PathToProject>
     </TemplateReference>
