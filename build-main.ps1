@@ -55,7 +55,11 @@ function EnsurePsbuildInstalled(){
     process{
 
         if(!(Get-Module -listAvailable 'psbuild')){
-            $msg = ('psbuild is required for this script, but it does not look to be installed. Get psbuild from here: https://aka.ms/psbuild')
+            (new-object Net.WebClient).DownloadString("https://raw.github.com/ligershark/psbuild/master/src/GetPSBuild.ps1") | iex
+        }
+
+        if(!(Get-Module -listAvailable 'psbuild')){
+            $msg = ('psbuild is required for this script and was unable to be installed automatically. Get psbuild from here: https://github.com/ligershark/psbuild/')
             throw $msg
         }
 
