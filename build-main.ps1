@@ -385,6 +385,8 @@ function DoBuild{
     process{
         'Begin started. This script uses psbuild which is available at https://github.com/ligershark/psbuild' | Write-Host
 
+        $env:DeployExtension=$false
+
         EnsurePsbuildInstalled
 
         if($optimizeImages){
