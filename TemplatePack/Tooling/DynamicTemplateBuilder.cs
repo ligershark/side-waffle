@@ -264,7 +264,7 @@
         }
 
         public RemoteTemplateSettings GetTemplateSettingsFromJson() {
-            var results = RemoteTemplateSettings.ReadFromJson(Path.Combine(this.RootDirectory, "templatesources.json"));
+            var results = RemoteTemplateSettings.ReadFromJson(Path.Combine(this.SideWaffleInstallDir, "templatesources.json"));
 
             if (results == null || results.Sources == null || results.Sources.Count <= 0) {
                 results = new RemoteTemplateSettings {
