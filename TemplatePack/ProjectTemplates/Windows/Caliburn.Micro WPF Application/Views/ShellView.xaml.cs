@@ -3,11 +3,11 @@
 namespace $safeprojectname$.Views
 {
 	/// <summary>
-	/// Interaction logic for Main.xaml
+	/// Interaction logic for Shell.xaml
 	/// </summary>
-	public partial class MainView : UserControl
+	public partial class ShellView : UserControl
 	{
-		public MainView()
+		public ShellView()
 		{
 			InitializeComponent();
 		}

@@ -28,11 +28,11 @@
 				<ProjectItem ReplaceParameters="true" TargetFileName="Settings.Designer.cs">Settings.Designer.cs</ProjectItem>
 			</Folder>
 			<Folder Name="ViewModels" TargetFolderName="ViewModels">
-				<ProjectItem ReplaceParameters="true" TargetFileName="MainViewModel.cs">MainViewModel.cs</ProjectItem>
+				<ProjectItem ReplaceParameters="true" TargetFileName="ShellViewModel.cs">ShellViewModel.cs</ProjectItem>
 			</Folder>
 			<Folder Name="Views" TargetFolderName="Views">
-				<ProjectItem ReplaceParameters="true" TargetFileName="MainView.xaml">MainView.xaml</ProjectItem>
-				<ProjectItem ReplaceParameters="true" TargetFileName="MainView.xaml.cs">MainView.xaml.cs</ProjectItem>
+				<ProjectItem ReplaceParameters="true" TargetFileName="ShellView.xaml">ShellView.xaml</ProjectItem>
+				<ProjectItem ReplaceParameters="true" TargetFileName="ShellView.xaml.cs">ShellView.xaml.cs</ProjectItem>
 			</Folder>
 		</Project>
 	</TemplateContent>
