@@ -6,7 +6,7 @@
     
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Web</ProjectSubType>
-    <SortOrder>1000</SortOrder>
+    <SortOrder>2000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>    
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
