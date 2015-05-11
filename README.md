@@ -10,7 +10,8 @@
 A collection of Item Templates for Visual Studio 2012/2013/2015 
 that makes any web developer's life much easier.
 
-![The result of a search for "angular" in the "Add new item" dialog](screenshot.png)The result of a search for "angular" in the "Add new item" dialog
+![The result of a search for "angular" in the "Add new item" dialog](screenshot.png)
+The result of a search for "angular" in the "Add new item" dialog
 
 ##Add new templates##
 
