@@ -7,6 +7,7 @@
     <Description>This will add the files required to create a project template using SideWaffle. The files that will be added include; _preprocess.xml, _Definitions\_project.vstemplate.xml and  file-icon.png.</Description>
     <Icon>sw-file-icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>$guid1$</TemplateID>
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="_Definitions\_project.vstemplate.xml" OpenInEditor="true">fsharp._project.vstemplate.xml</ProjectItem>
