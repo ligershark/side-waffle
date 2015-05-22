@@ -1,0 +1,16 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>filter.js</DefaultName>
+    <Name>AngularJs Filter</Name>
+    <Description>AngularJs Filter. By Kent Cooper, Twitter:@kcdevnc. Based on John Papa's (http://johnpapa.net) style guide </Description>
+    <ProjectType>VisualBasic</ProjectType>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>4AE75194-4714-451F-AC91-4D749C9C9FF2</TemplateID>
+    <AppliesTo>!CSharp</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">filter.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
