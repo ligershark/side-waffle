@@ -1,13 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <ProjectType>CSharp</ProjectType>
-
     <DefaultName>appveyor.yml</DefaultName>
     <Name>Full AppVeyor.yml file</Name>
     <Description>Full AppVeyor.yml file for appveyor.com.</Description>
     <Icon>appveyor-icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <SortOrder>10000</SortOrder>
+    <TemplateID>d5831746-027e-4f11-a239-83e1bb80d32e</TemplateID>
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="appveyor.yml">appveyor.yml</ProjectItem>

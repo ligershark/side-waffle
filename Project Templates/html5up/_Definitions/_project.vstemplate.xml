@@ -3,21 +3,21 @@
     <Name>Template from html5up.net</Name>
     <Description>html5up</Description>
     <DefaultName>html5up</DefaultName>
-    
     <ProjectType>CSharp</ProjectType>
-    <ProjectSubType></ProjectSubType>
+    <ProjectSubType>
+    </ProjectSubType>
     <SortOrder>10</SortOrder>
-    <CreateNewFolder>true</CreateNewFolder>    
+    <CreateNewFolder>true</CreateNewFolder>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>sw-file-icon.png</Icon>
-    
     <!-- Indicates how many parent folders this item template should appear in -->
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>da046bc9-5ed2-4dff-bacb-29e7c0ff0fb0</TemplateID>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="html5up.csproj" File="html5up.csproj" ReplaceParameters="true">      
+    <Project TargetFileName="html5up.csproj" File="html5up.csproj" ReplaceParameters="true">
     </Project>
   </TemplateContent>
   <WizardExtension>

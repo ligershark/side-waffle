@@ -3,21 +3,20 @@
     <Name>ASP.NET Web Application (Razor v3)</Name>
     <Description>A project template for creating an ASP.NET web site using Razor syntax (CSHTML)</Description>
     <DefaultName>RazorV3WebApplication</DefaultName>
-    
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Web</ProjectSubType>
     <SortOrder>2000</SortOrder>
-    <CreateNewFolder>true</CreateNewFolder>    
+    <CreateNewFolder>true</CreateNewFolder>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>sw-file-icon.png</Icon>
-    
     <!-- Indicates how many parent folders this item template should appear in -->
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>78ef4dca-3134-4128-9b98-08a348749d29</TemplateID>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="RazorV3WebApplication.csproj" File="RazorV3WebApplication.csproj" ReplaceParameters="true">      
+    <Project TargetFileName="RazorV3WebApplication.csproj" File="RazorV3WebApplication.csproj" ReplaceParameters="true">
     </Project>
   </TemplateContent>
 </VSTemplate>

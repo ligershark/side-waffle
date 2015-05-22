@@ -2,17 +2,15 @@
   <TemplateData>
     <ProjectType>Web</ProjectType>
     <ProjectSubType>CSharp</ProjectSubType>
-
     <DefaultName>Gulpfile.js</DefaultName>
     <Name>GulpJS configuration file </Name>
     <Description>GulpJS: The Javascript Task Runner configuration file. For more information about GulpJS please visit http://gulpjs.com/ </Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>073e867b-7731-4819-bbe6-970750946c3e</TemplateID>
   </TemplateData>
   <TemplateContent>
     <References />
-
     <ProjectItem ReplaceParameters="true">Gulpfile.js</ProjectItem>
-    
   </TemplateContent>
 </VSTemplate>

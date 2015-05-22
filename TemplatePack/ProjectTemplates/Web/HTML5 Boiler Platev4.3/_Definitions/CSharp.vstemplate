@@ -13,6 +13,7 @@
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>__TemplateIcon.png</Icon>
     <PreviewImage>__PreviewImage.png</PreviewImage>
+    <TemplateID>cecf08c0-12ce-4275-ab80-668146229995</TemplateID>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="HTML5 Boiler Plate v4.3.csproj" File="HTML5 Boiler Plate v4.3.csproj" ReplaceParameters="true">

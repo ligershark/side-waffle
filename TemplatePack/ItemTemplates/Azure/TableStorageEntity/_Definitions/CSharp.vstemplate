@@ -6,6 +6,7 @@
     <ProjectType>CSharp</ProjectType>
     <Icon>azure-icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>e7c9e39b-e406-449f-bea8-c3c9ceb1e70c</TemplateID>
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.cs">TableStorageEntity.cs</ProjectItem>

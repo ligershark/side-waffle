@@ -1,17 +1,15 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <ProjectType>VisualBasic</ProjectType>
-
     <DefaultName>Gulpfile.js</DefaultName>
     <Name>GulpJS configuration file </Name>
     <Description>GulpJS: The Javascript Task Runner configuration file. For more information about GulpJS please visit http://gulpjs.com/ </Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>8e8ca819-a712-48d4-a4d6-f21ce433db21</TemplateID>
   </TemplateData>
   <TemplateContent>
     <References />
-
     <ProjectItem ReplaceParameters="true">Gulpfile.js</ProjectItem>
-    
   </TemplateContent>
 </VSTemplate>

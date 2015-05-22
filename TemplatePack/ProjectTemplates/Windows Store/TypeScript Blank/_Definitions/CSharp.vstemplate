@@ -1,44 +1,44 @@
-<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" 
-            Type="Project">
-	<TemplateData>
-		<Name>Blank App</Name>
-		<Description>A single-page project for a Windows Store app using TypeScript</Description>
-		<ProjectType>TypeScript</ProjectType>
-		<ProjectSubType>Windows Store</ProjectSubType>
-		<SortOrder>1000</SortOrder>
-		<CreateNewFolder>true</CreateNewFolder>
-		<DefaultName>App</DefaultName>
-		<ProvideDefaultName>true</ProvideDefaultName>
-		<LocationField>Enabled</LocationField>
-		<EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-		<Icon>__TemplateIcon.ico</Icon>
-	</TemplateData>
-	<TemplateContent>
-		<Project TargetFileName="$projectname$.jsproj" File="WSaTypeScript.jsproj" ReplaceParameters="true">
-			<Folder Name="css" TargetFolderName="css">
-				<ProjectItem ReplaceParameters="true" TargetFileName="default.css">default.css</ProjectItem>
-			</Folder>
-			<Folder Name="images" TargetFolderName="images">
-				<ProjectItem ReplaceParameters="false" TargetFileName="logo.scale-100.png">logo.scale-100.png</ProjectItem>
-				<ProjectItem ReplaceParameters="false" TargetFileName="smalllogo.scale-100.png">smalllogo.scale-100.png</ProjectItem>
-				<ProjectItem ReplaceParameters="false" TargetFileName="splashscreen.scale-100.png">splashscreen.scale-100.png</ProjectItem>
-				<ProjectItem ReplaceParameters="false" TargetFileName="storelogo.scale-100.png">storelogo.scale-100.png</ProjectItem>
-			</Folder>
-			<Folder Name="js" TargetFolderName="js">
-				<ProjectItem ReplaceParameters="true" TargetFileName="default.ts">default.ts</ProjectItem>
-				<ProjectItem ReplaceParameters="true" TargetFileName="default.js">default.js</ProjectItem>
-			</Folder>
-			<Folder Name="Scripts" >
-				<Folder Name="typings" >
-					<ProjectItem>jquery.d.ts</ProjectItem>
-					<ProjectItem>lib.d.ts</ProjectItem>
-					<ProjectItem>winjs.d.ts</ProjectItem>
-					<ProjectItem>winrt.d.ts</ProjectItem>
-				</Folder>
-			</Folder>
-			<ProjectItem ReplaceParameters="true" TargetFileName="$projectname$_TemporaryKey.pfx">WSaTypeScript_TemporaryKey.pfx</ProjectItem>
-			<ProjectItem ReplaceParameters="true" TargetFileName="default.html">default.html</ProjectItem>
-			<ProjectItem ReplaceParameters="true" TargetFileName="package.appxmanifest">package.appxmanifest</ProjectItem>
-		</Project>
-	</TemplateContent>
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Blank App</Name>
+    <Description>A single-page project for a Windows Store app using TypeScript</Description>
+    <ProjectType>TypeScript</ProjectType>
+    <ProjectSubType>Windows Store</ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>App</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+    <TemplateID>62dbac10-7a7c-4365-a135-0a305bb2306a</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="$projectname$.jsproj" File="WSaTypeScript.jsproj" ReplaceParameters="true">
+      <Folder Name="css" TargetFolderName="css">
+        <ProjectItem ReplaceParameters="true" TargetFileName="default.css">default.css</ProjectItem>
+      </Folder>
+      <Folder Name="images" TargetFolderName="images">
+        <ProjectItem ReplaceParameters="false" TargetFileName="logo.scale-100.png">logo.scale-100.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="smalllogo.scale-100.png">smalllogo.scale-100.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="splashscreen.scale-100.png">splashscreen.scale-100.png</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="storelogo.scale-100.png">storelogo.scale-100.png</ProjectItem>
+      </Folder>
+      <Folder Name="js" TargetFolderName="js">
+        <ProjectItem ReplaceParameters="true" TargetFileName="default.ts">default.ts</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="default.js">default.js</ProjectItem>
+      </Folder>
+      <Folder Name="Scripts">
+        <Folder Name="typings">
+          <ProjectItem>jquery.d.ts</ProjectItem>
+          <ProjectItem>lib.d.ts</ProjectItem>
+          <ProjectItem>winjs.d.ts</ProjectItem>
+          <ProjectItem>winrt.d.ts</ProjectItem>
+        </Folder>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$_TemporaryKey.pfx">WSaTypeScript_TemporaryKey.pfx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="default.html">default.html</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="package.appxmanifest">package.appxmanifest</ProjectItem>
+    </Project>
+  </TemplateContent>
 </VSTemplate>

@@ -12,6 +12,7 @@
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>__TemplateIcon.png</Icon>
+    <TemplateID>7c198be3-a92f-4f7a-99f5-8b23de1ddd37</TemplateID>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="Durandal451.csproj" File="Durandal451.csproj" ReplaceParameters="true">
