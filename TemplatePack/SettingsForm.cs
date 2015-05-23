@@ -1,15 +1,14 @@
 ﻿using EnvDTE;
 using EnvDTE80;
 using LigerShark.Templates.DynamicBuilder;
+using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TemplatePack.Tooling;
-using System.Linq;
 
 namespace TemplatePack
 {
@@ -152,12 +151,7 @@ namespace TemplatePack
                 LoadingImage.Visible = true;
                 LoadingLabel.Visible = true;
 
-
-                // Templates are rebuilt on another thread in order to avoid freezing the GIF image by locking the UI thread
-                await Task.Run(() =>
-                {
-                    templateBuilder.RebuildAllTemplates();
-                });
+                startRebuildingTemplates();                
             }
             catch (Exception ex)
             {
@@ -232,10 +226,14 @@ namespace TemplatePack
             // Here is where the .json file needs to be saved before calling ProcessTemplates
             templateBuilder.WriteJsonTemplateSettings(templateSettings);
 
-            // If templatesources.json has changed then refresh the template building process
+            // Rebuild all templates before notifying the user
+            startRebuildingTemplates();
+
+            // If a new source was added notify the user to restart Visual Studio
             if (templateSourcesChanged || newSourceAdded)
             {
-                templateBuilder.ProcessTemplates();
+                var dte = Package.GetGlobalService(typeof(DTE)) as DTE;
+                dte.StatusBar.Text = @"Your template(s) have been installed. Please restart Visual Studio.";
             }
 
             templateSourcesChanged = false;
@@ -286,6 +284,15 @@ namespace TemplatePack
                 remoteSourceListView.Items.Add(row);
                 NumberOfSources += 1;
             }
+        }
+
+        private async void startRebuildingTemplates()
+        {
+            // Templates are rebuilt on another thread in order to avoid freezing the GIF image by locking the UI thread
+            await System.Threading.Tasks.Task.Run(() =>
+            {
+                templateBuilder.RebuildAllTemplates();
+            });            
         }
 
         public void SetupRadioButtons(string interval)
