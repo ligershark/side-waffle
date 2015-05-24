@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using TemplatePack.Tooling;
 
@@ -151,7 +152,7 @@ namespace TemplatePack
                 LoadingImage.Visible = true;
                 LoadingLabel.Visible = true;
 
-                startRebuildingTemplates();                
+                await startRebuildingTemplates();                
             }
             catch (Exception ex)
             {
@@ -178,7 +179,7 @@ namespace TemplatePack
             SetupRadioButtons(templateBuilder.GetTemplateSettingsFromJson().UpdateInterval.ToString());
         }
 
-        private void OkBtn_Click(object sender, EventArgs e)
+        private async void OkBtn_Click(object sender, EventArgs e)
         {
             List<TemplateSource> sources = new List<TemplateSource>();
 
@@ -219,15 +220,13 @@ namespace TemplatePack
 
             // Save the configuration schedule
             var checkbox = scheduleGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-            //UpdateFrequency frequency = (UpdateFrequency)Enum.Parse(typeof(UpdateFrequency), checkbox.Text, true);
-            //MessageBox.Show("You changed the update frequency to " + checkbox.Tag.ToString());
             templateSettings.UpdateInterval = (UpdateFrequency)checkbox.Tag;
 
             // Here is where the .json file needs to be saved before calling ProcessTemplates
             templateBuilder.WriteJsonTemplateSettings(templateSettings);
 
             // Rebuild all templates before notifying the user
-            startRebuildingTemplates();
+            await startRebuildingTemplates();
 
             // If a new source was added notify the user to restart Visual Studio
             if (templateSourcesChanged || newSourceAdded)
@@ -286,7 +285,7 @@ namespace TemplatePack
             }
         }
 
-        private async void startRebuildingTemplates()
+        private async System.Threading.Tasks.Task startRebuildingTemplates()
         {
             // Templates are rebuilt on another thread in order to avoid freezing the GIF image by locking the UI thread
             await System.Threading.Tasks.Task.Run(() =>
