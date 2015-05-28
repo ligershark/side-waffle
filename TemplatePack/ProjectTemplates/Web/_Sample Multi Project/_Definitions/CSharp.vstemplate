@@ -1,13 +1,11 @@
-<VSTemplate Version="2.0.0" Type="ProjectGroup"
-    xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
-  
+<VSTemplate Version="2.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
   <!-- Fore more info on multi project templates visit: http://msdn.microsoft.com/en-us/library/ms185308(v=vs.90).aspx -->
-  
   <TemplateData>
     <Name>MultiProj</Name>
     <Description>An example of a multi-project template</Description>
     <Icon>logo.png</Icon>
     <ProjectType>CSharp</ProjectType>
+    <TemplateID>2599ffe4-4344-462e-b904-a932e0d80df1</TemplateID>
   </TemplateData>
   <TemplateContent>
     <ProjectCollection>
@@ -15,7 +13,7 @@
       <ProjectTemplateLink ProjectName="$safeprojectname$Shared">Shared\MyTemplate.vstemplate</ProjectTemplateLink>
     </ProjectCollection>
     <CustomParameters>
-      <CustomParameter Name="$slnname$" Value="$safeprojectname$Orig"/>
+      <CustomParameter Name="$slnname$" Value="$safeprojectname$Orig" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

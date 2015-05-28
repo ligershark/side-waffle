@@ -12,6 +12,7 @@
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>__TemplateIcon.png</Icon>
+    <TemplateID>be289469-d8a6-4aec-9241-d665c7f778cc</TemplateID>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="ChromeExtensionProjectTemplate.csproj" File="ChromeExtensionProjectTemplate.csproj" ReplaceParameters="true">

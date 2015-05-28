@@ -13,6 +13,7 @@
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>__TemplateIcon.png</Icon>
     <PreviewImage>__PreviewImage.png</PreviewImage>
+    <TemplateID>bf5392d5-f533-452c-bf89-b133f640a438</TemplateID>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="ChromeTheme.csproj" File="ChromeTheme.csproj" ReplaceParameters="true">

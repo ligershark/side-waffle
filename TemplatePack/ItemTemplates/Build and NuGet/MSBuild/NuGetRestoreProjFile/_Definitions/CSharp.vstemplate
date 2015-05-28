@@ -6,6 +6,7 @@
     <Description>Enables automatic package restore before build to be used on build server. To be used in favor of the MSBuild-Integrated package restore.</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>7f95835f-b6ed-42f2-8850-7ffc03301543</TemplateID>
   </TemplateData>
   <TemplateContent>
     <References />

@@ -1,22 +1,21 @@
-﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>Nancy empty self hosted</Name>
     <Description>Nancy empty self hosted</Description>
     <DefaultName>NancyEmptySelfHost</DefaultName>
-    
     <ProjectType>CSharp</ProjectType>
     <SortOrder>1000</SortOrder>
-    <CreateNewFolder>true</CreateNewFolder>    
+    <CreateNewFolder>true</CreateNewFolder>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>icon.png</Icon>
-    
     <!-- Indicates how many parent folders this item template should appear in -->
     <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+    <TemplateID>2f1a12ea-c5eb-46cd-b3a0-33d1d414c0d9</TemplateID>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="Nancy.CSharp.EmptySelfHost.csproj" File="Nancy.CSharp.EmptySelfHost.csproj" ReplaceParameters="true">      
+    <Project TargetFileName="Nancy.CSharp.EmptySelfHost.csproj" File="Nancy.CSharp.EmptySelfHost.csproj" ReplaceParameters="true">
     </Project>
   </TemplateContent>
 </VSTemplate>

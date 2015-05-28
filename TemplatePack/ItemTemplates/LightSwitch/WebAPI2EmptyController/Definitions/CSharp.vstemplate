@@ -1,18 +1,18 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <ProjectType>CSharp</ProjectType>
-
     <DefaultName>Item</DefaultName>
     <Name>Web API 2 Empty Controller</Name>
     <Description>This template creates an empty Web API controller, along with the supporting files needed (routing, global.asax). The output from this is inspired by the article by Joe Binder (MSFT). This is focused for Visual Studio LightSwitch HTML SERVER projects.</Description>
     <Icon>aspnet.ico</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>365cc56c-c7e4-442c-8ed1-87f4bb13069d</TemplateID>
   </TemplateData>
   <TemplateContent>
     <References>
       <Reference>
         <Assembly>Newtonsoft.Json</Assembly>
-      </Reference>      
+      </Reference>
       <Reference>
         <Assembly>System.Net.Http</Assembly>
       </Reference>
@@ -26,10 +26,8 @@
         <Assembly>System.Web.Http.WebHost</Assembly>
       </Reference>
     </References>
-
     <ProjectItem ReplaceParameters="true" TargetFileName="API\$safeitemname$Controller.cs">EmptyController.cs</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
-
   </TemplateContent>
 </VSTemplate>
