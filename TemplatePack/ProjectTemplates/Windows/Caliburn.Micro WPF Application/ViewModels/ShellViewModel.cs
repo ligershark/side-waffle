@@ -2,11 +2,11 @@
 
 namespace $safeprojectname$.ViewModels
 {
-	public class MainViewModel : PropertyChangedBase, IHaveDisplayName
+	public class ShellViewModel : PropertyChangedBase, IHaveDisplayName
     {
-        public MainViewModel()
+        public ShellViewModel()
         {
-            DisplayName = "Main Window";
+            DisplayName = "Shell Window";
         }
 
         /// <summary>

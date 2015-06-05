@@ -19,21 +19,23 @@
   
   <Target Name="Build">
     <MakeDir Directories="$(OutputPath)" />
-    
+
     <ItemGroup>
       <_AppCandidateFilesToZip Remove="@(_AppCandidateFilesToZip)" />
+
       <_AppCandidateFilesToZip
-        Include="@(Content);@(None);@(TypeScriptCompile)"
-        Condition="'%(Content.CopyToOutputDirectory)'=='Always' or '%(Content.CopyToOutputDirectory)'=='PreserveNewest' or
-                   '%(None.CopyToOutputDirectory)'=='Always' or '%(None.CopyToOutputDirectory)'=='PreserveNewest' or
-                   '%(TypeScriptCompile.CopyToOutputDirectory)'=='Always' or '%(TypeScriptCompile.CopyToOutputDirectory)'=='PreserveNewest'" />
+        Include="@(Content)" />
+
+      <_AppCandidateFilesToZip
+        Include="@(None)"
+        Condition="'%(None.CopyToOutputDirectory)'=='Always' or '%(None.CopyToOutputDirectory)'=='PreserveNewest'" />
 
       <_ScriptsCandidateFilesToZip Remove="@(_ScriptsCandidateFilesToZip)" />
+
+      <_ScriptsCandidateFilesToZip Include="@(Content)" />
       <_ScriptsCandidateFilesToZip
-        Include="@(Content);@(None);@(TypeScriptCompile)"
-        Condition="'%(Content.CopyToOutputDirectory)'=='Always' or '%(Content.CopyToOutputDirectory)'=='PreserveNewest' or
-                   '%(None.CopyToOutputDirectory)'=='Always' or '%(None.CopyToOutputDirectory)'=='PreserveNewest' or
-                   '%(TypeScriptCompile.CopyToOutputDirectory)'=='Always' or '%(TypeScriptCompile.CopyToOutputDirectory)'=='PreserveNewest'" />
+        Include="@(None)"
+        Condition="'%(None.CopyToOutputDirectory)'=='Always' or '%(None.CopyToOutputDirectory)'=='PreserveNewest'" />
     </ItemGroup>
 
     <FindUnderPath Path="$(AppFolder)" Files="@(_AppCandidateFilesToZip)">
