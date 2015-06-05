@@ -104,11 +104,20 @@
     <None Include="ItemTemplates\PowerShell\DscResourceProvider\icon.png" />
     <None Include="ItemTemplates\PowerShell\DscResourceProvider\powershell-file-icon.png" />
     <None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\vb.vstemplate" />
+    <Content Include="ItemTemplates\Web\Bower\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Web\Bower\Definitions\VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Web\Bower\Definitions\Web.csharp.vstemplate" />
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\VB.vstemplate" />
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\Web.csharp.vstemplate" />
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\filter.js" />
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\icon.png" />
+    <Content Include="ItemTemplates\Web\Bower\bower-logo.png" />
+    <None Include="ItemTemplates\Web\Bower\bower.json" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\Web.csharp.vstemplate" />
