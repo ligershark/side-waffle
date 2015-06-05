@@ -161,9 +161,9 @@
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\provider.js" />
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\icon.png" />
     <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\AngularJSWebApiEmpty.csproj" />
+    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\template-icon.png" />
     <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\_Definitions\_project.vstemplate.xml" />
     <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\_preprocess.xml" />
-    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\__TemplateIcon.png" />
     <Content Include="resources\Package.ico" />
     <None Include="ItemTemplates\Azure\CloudServicePlugin\CloudServicePlugin.csplugin" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\build.proj" />

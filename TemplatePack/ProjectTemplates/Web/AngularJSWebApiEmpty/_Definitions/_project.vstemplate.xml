@@ -1,17 +1,17 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
-    <Name>AngularJS and Web API Empty Project</Name>
-    <Description>An empty web project that starts with basic structure for AngularJS and Web API</Description>
+    <Name>AngularJS And Web API - Empty</Name>
+    <Description>Creates an empty project that is preloaded with AngularJs and Web API</Description>
     <DefaultName>AngularJSWebApiEmpty</DefaultName>
-
+    
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType></ProjectSubType>
     <SortOrder>1000</SortOrder>
-    <CreateNewFolder>true</CreateNewFolder>
+    <CreateNewFolder>true</CreateNewFolder>    
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
-    <Icon>__TemplateIcon.png</Icon>
+    <Icon>template-icon.png</Icon>
     
     <!-- Indicates how many parent folders this item template should appear in -->
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
