@@ -185,6 +185,12 @@
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\_Definitions\Web.csharp.vstemplate" />
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\provider.js" />
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\icon.png" />
+    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\AngularJSWebApiEmpty.csproj" />
+    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\template-icon.png" />
+    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\_Definitions\_project.vstemplate.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\_preprocess.xml" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Gulpfile.js" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Gulpfile.js" />
