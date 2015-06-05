@@ -13,10 +13,11 @@
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>__TemplateIcon.png</Icon>
     <PreviewImage>__PreviewImage.png</PreviewImage>
+    <TemplateID>99a01b57-0316-4e2c-b653-3f97a13d0f9d</TemplateID>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="$safeprojectname$.WebFrontEnd.csproj" File="My.Cool.Company.WebFrontEnd.csproj" ReplaceParameters="true">
-	<!--
+      <!--
       <ProjectItem ReplaceParameters="true" TargetFileName="Default.aspx">Default.aspx</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Default.aspx.cs">Default.aspx.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Default.aspx.designer.cs">Default.aspx.designer.cs</ProjectItem>

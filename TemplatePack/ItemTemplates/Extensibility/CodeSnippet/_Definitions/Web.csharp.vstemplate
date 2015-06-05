@@ -2,12 +2,12 @@
   <TemplateData>
     <ProjectType>Web</ProjectType>
     <ProjectSubType>CSharp</ProjectSubType>
-
     <DefaultName>snippet.snippet</DefaultName>
     <Name>Code Snippet</Name>
-    <Description>A code snippet</Description>    
+    <Description>A code snippet</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>d3beb9f6-de47-418b-bc20-ae4d1d266773</TemplateID>
   </TemplateData>
   <TemplateContent>
     <References />

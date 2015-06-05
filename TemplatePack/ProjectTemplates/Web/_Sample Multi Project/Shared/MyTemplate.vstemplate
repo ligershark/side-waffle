@@ -13,6 +13,7 @@
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>__TemplateIcon.png</Icon>
     <PreviewImage>__PreviewImage.png</PreviewImage>
+    <TemplateID>8da266d8-9b6e-436c-bd1a-f8742ff73d3a</TemplateID>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="$safeprojectname$.csproj" File="My.Cool.Company.SharedLibrary.csproj" ReplaceParameters="true">

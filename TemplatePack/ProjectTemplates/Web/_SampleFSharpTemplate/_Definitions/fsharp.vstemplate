@@ -3,7 +3,8 @@
     <Name>FSharpSample</Name>
     <Description>FSharp sample project template</Description>
     <ProjectType>FSharp</ProjectType>
-    <ProjectSubType></ProjectSubType>
+    <ProjectSubType>
+    </ProjectSubType>
     <SortOrder>1000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>FSharpSample</DefaultName>
@@ -11,6 +12,7 @@
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>fsharp-logo-32x32.png</Icon>
+    <TemplateID>1b8824be-08ae-4f4a-a17c-5ceb4bfa2ac9</TemplateID>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="SayedFSharpSample.fsproj" File="SayedFSharpSample.fsproj" ReplaceParameters="true">

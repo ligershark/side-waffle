@@ -1,13 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <ProjectType>ProjectK</ProjectType>
-
     <DefaultName>appveyor.yml</DefaultName>
     <Name>Full AppVeyor.yml file</Name>
     <Description>Full AppVeyor.yml file for appveyor.com.</Description>
     <Icon>appveyor-icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <SortOrder>10000</SortOrder>
+    <TemplateID>a61c28a4-df7f-4cac-b5f1-e820030f2bef</TemplateID>
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="appveyor.yml">appveyor.yml</ProjectItem>

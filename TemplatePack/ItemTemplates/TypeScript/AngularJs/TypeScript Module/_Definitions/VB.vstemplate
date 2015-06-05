@@ -6,6 +6,7 @@
     <ProjectType>VisualBasic</ProjectType>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>7b396d02-1910-420e-9d79-55ec1fc0b7b0</TemplateID>
   </TemplateData>
   <TemplateContent>
     <References />

@@ -3,21 +3,21 @@
     <Name>Sample proj from ref</Name>
     <Description>Sample proj from ref</Description>
     <DefaultName>MyProjApp</DefaultName>
-    
     <ProjectType>CSharp</ProjectType>
-    <ProjectSubType></ProjectSubType>
+    <ProjectSubType>
+    </ProjectSubType>
     <SortOrder>1000</SortOrder>
-    <CreateNewFolder>true</CreateNewFolder>    
+    <CreateNewFolder>true</CreateNewFolder>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>sw-file-icon.png</Icon>
-    
     <!-- Indicates how many parent folders this item template should appear in -->
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>a1192b3e-1870-44c9-a0f9-936f1bdda62f</TemplateID>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="$projectname$.csproj" File="_SampleProjRef.csproj" ReplaceParameters="true">      
+    <Project TargetFileName="$projectname$.csproj" File="_SampleProjRef.csproj" ReplaceParameters="true">
     </Project>
   </TemplateContent>
 </VSTemplate>

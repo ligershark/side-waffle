@@ -104,6 +104,20 @@
     <None Include="ItemTemplates\PowerShell\DscResourceProvider\icon.png" />
     <None Include="ItemTemplates\PowerShell\DscResourceProvider\powershell-file-icon.png" />
     <None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\vb.vstemplate" />
+    <Content Include="ItemTemplates\Web\Bower\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Web\Bower\Definitions\VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Web\Bower\Definitions\Web.csharp.vstemplate" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\VB.vstemplate" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\Web.csharp.vstemplate" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\filter.js" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\icon.png" />
+    <Content Include="ItemTemplates\Web\Bower\bower-logo.png" />
+    <None Include="ItemTemplates\Web\Bower\bower.json" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\Web.csharp.vstemplate" />
@@ -156,6 +170,9 @@
     <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\MyTemplate.vstemplate" />
     <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\_preprocess.xml" />
     <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\_Definitions\CSharp.vstemplate" />
+    <None Include="ProjectTemplates\Web\Durandal451\Web.config.install.Debug.xdt" />
+    <None Include="ProjectTemplates\Web\Durandal451\Web.config.install.Release.xdt" />
+    <None Include="ProjectTemplates\Web\Durandal451\Web.config.install.xdt" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Caliburn.Micro WPF Application.csproj" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\_Definitions\CSharp.vstemplate" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\__TemplateIcon.png" />
@@ -178,6 +195,13 @@
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Gulpfile.js" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\icon.png" />
+    <Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Durandal451.mdf</DependentUpon>
+    </Content>
     <Content Include="resources\Package.ico" />
     <None Include="ItemTemplates\Azure\CloudServicePlugin\CloudServicePlugin.csplugin" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\build.proj" />

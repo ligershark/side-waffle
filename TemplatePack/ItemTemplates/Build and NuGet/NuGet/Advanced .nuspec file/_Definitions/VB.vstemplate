@@ -1,12 +1,12 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <ProjectType>VisualBasic</ProjectType>
-
     <DefaultName>project.nuspec</DefaultName>
     <Name>A basic NuGet .nuspec file</Name>
     <Description>A basic NuGet .nuspec file</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>87431fc3-02b5-4247-9911-3c35686ec693</TemplateID>
   </TemplateData>
   <TemplateContent>
     <References />

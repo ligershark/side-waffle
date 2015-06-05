@@ -11,6 +11,7 @@
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>logo.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>ffe6ef16-097c-4664-a4c1-39c9db2ce8d4</TemplateID>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="$projectname$.csproj" File="BrowserLinkExtensionTemplate.csproj" ReplaceParameters="true">
