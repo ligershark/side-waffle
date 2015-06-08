@@ -17,6 +17,10 @@
             this.Sources = sources;
             this.UpdateInterval = updateInterval;
         }
+
+        [JsonProperty("$schema")]
+        public string Schema { get; set; }
+
         //[JsonProperty(ItemConverterType = typeof(StringEnumConverter))]
         [JsonProperty("updateInterval")]
         [JsonConverter(typeof(StringEnumConverter))]
