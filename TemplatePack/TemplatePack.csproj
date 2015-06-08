@@ -87,6 +87,8 @@
     <None Include="ItemTemplates\Extensibility\BrowserLink\_Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Extensibility\JsonSchemaSelector\icon.png" />
     <None Include="ItemTemplates\Extensibility\JsonSchemaSelector\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\_Definitions\VB.vstemplate" />
     <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\Definitions\vb.vstemplate" />
     <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\icon.png" />
@@ -104,6 +106,7 @@
     <None Include="ItemTemplates\PowerShell\DscResourceProvider\icon.png" />
     <None Include="ItemTemplates\PowerShell\DscResourceProvider\powershell-file-icon.png" />
     <None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\vb.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
     <Content Include="ItemTemplates\Web\Bower\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>
@@ -429,8 +432,6 @@
     </None>
     <None Include="ProjectTemplates\Cloud\readme.md" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
-    <None Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
-    <None Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
     <None Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\_Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\file-icon.png" />

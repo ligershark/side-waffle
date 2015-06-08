@@ -1,12 +1,12 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <ProjectType>CSharp</ProjectType>
-    
+    <ProjectType>VisualBasic</ProjectType>
+
     <DefaultName>TemplateName</DefaultName>
     <Name>SideWaffle Item Template</Name>
     <Description>This will create a folder with the name that you specify as the file name below.
       In that folder you will have all the files you need for a SideWaffle Item Template.
-    </Description>    
+    </Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>$guid1$</TemplateID>
