@@ -12,7 +12,7 @@
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>sw-file-icon.png</Icon>
-    <TemplateID>$guid1$</TemplateID>
+    <TemplateID>A6819828-DEC5-4F54-9294-7A88CDF718D6</TemplateID>
     <!-- Indicates how many parent folders this item template should appear in -->
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
