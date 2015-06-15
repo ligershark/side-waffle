@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('$safeitemname$', [
-        // Angular modules 
+        // Angular modules
         'ngAnimate',
         'ngRoute'
 
-        // Custom modules 
+        // Custom modules
 
         // 3rd Party Modules
         
