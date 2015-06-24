@@ -3,7 +3,6 @@
     <ProjectType>Web</ProjectType>
     <ProjectSubType>VisualBasic</ProjectSubType>
 
-    <DefaultName>$fileinputname$</DefaultName>
     <DefaultName>$fileinputname$.txt</DefaultName>
     <Description>Long description here</Description>
     <Icon>icon.png</Icon>
