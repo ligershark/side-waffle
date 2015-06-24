@@ -8,7 +8,7 @@
     <Description>Long description here</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-    <TemplateID>440EE605-0D59-4429-852B-581864AA4B82</TemplateID>
+    <TemplateID>$guid1$</TemplateID>
   </TemplateData>
   <TemplateContent>
     <References />
