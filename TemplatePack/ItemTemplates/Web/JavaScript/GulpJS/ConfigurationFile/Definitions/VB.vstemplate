@@ -7,6 +7,7 @@
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>8e8ca819-a712-48d4-a4d6-f21ce433db21</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />

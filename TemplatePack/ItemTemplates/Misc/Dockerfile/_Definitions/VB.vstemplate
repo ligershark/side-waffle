@@ -8,6 +8,7 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>1c4fdde8-849b-484f-a118-1b379534cebd</TemplateID>
     <AppliesTo>!CSharp</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />

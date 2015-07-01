@@ -7,6 +7,7 @@
     <Icon>file-icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>8f6acfaf-63fa-45dc-88d2-469104a3add4</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="_preprocess.xml" OpenInEditor="true">_preprocess.xml</ProjectItem>

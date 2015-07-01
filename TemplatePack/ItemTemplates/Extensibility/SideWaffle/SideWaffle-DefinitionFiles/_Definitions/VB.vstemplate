@@ -1,13 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <ProjectType>VisualBasic</ProjectType>
-
     <DefaultName>SideWaffleDefinitions</DefaultName>
     <Name>SideWaffle Definitions Folder</Name>
     <Description>This will create the .vstemplate- files that are needed for SideWaffle Item Templates and Project Templates.</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>00AD0268-7F4D-494F-892F-5F7B7BB830F0</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />

@@ -8,6 +8,7 @@
     <Icon>fsharp-logo-32x32.png</Icon>
     <TemplateID>b8c1d0ed-bba2-44f6-bae0-264a2a992621</TemplateID>
     <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References>

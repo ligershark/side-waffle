@@ -8,6 +8,7 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>f6f34d54-0f11-4192-8ab0-f19683a46254</TemplateID>
     <AppliesTo>!VB</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.cs">NinjectControllerFactory.cs</ProjectItem>

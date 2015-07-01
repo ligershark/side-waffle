@@ -1,7 +1,6 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <ProjectType>VisualBasic</ProjectType>
-
     <DefaultName>TemplateName</DefaultName>
     <Name>SideWaffle Item Template</Name>
     <Description>This will create a folder with the name that you specify as the file name below.
@@ -10,6 +9,7 @@
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>103015D5-A9A3-433C-A14A-0D9651E62928</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />

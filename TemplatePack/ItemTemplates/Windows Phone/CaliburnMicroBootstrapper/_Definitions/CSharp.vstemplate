@@ -7,6 +7,7 @@
     <Icon>caliburn-icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>6370f0c8-8423-4a4b-879e-2aa78356848b</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.cs">Bootstrapper.cs</ProjectItem>

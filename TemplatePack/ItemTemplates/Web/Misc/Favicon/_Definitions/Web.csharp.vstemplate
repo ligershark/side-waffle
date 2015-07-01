@@ -9,6 +9,7 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>f4546872-45d4-4d6b-9c0a-fd2cfc2a6fde</TemplateID>
     <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />

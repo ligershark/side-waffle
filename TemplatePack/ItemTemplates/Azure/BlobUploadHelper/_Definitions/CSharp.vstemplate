@@ -7,6 +7,7 @@
     <Icon>azure-icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>7d861199-4bba-43e5-92f9-768186d5d77e</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.cs">BlobUploadHelper.cs</ProjectItem>

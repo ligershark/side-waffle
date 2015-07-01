@@ -7,6 +7,7 @@
     <Icon>icon.png</Icon>
     <TemplateID>952e3097-d5f7-4266-8a09-d9023817196d</TemplateID>
     <AppliesTo>!CSharp</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
