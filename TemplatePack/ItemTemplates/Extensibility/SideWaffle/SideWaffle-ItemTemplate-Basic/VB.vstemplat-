@@ -8,6 +8,7 @@
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>$guid3$</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
