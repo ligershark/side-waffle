@@ -8,6 +8,7 @@
     <Icon>icon.png</Icon>
     <TemplateID>449161b9-ed2d-4656-9b6b-b1de42820453</TemplateID>
     <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />

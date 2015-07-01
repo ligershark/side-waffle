@@ -7,6 +7,7 @@
     <Icon>aspnet.ico</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>365cc56c-c7e4-442c-8ed1-87f4bb13069d</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References>

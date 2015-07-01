@@ -7,6 +7,7 @@
     <Icon>azure-icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>84267075-d2ee-49d7-9e6e-528fc32f54dc</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.csplugin">CloudServicePlugin.csplugin</ProjectItem>

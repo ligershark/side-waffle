@@ -1,13 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <ProjectType>CSharp</ProjectType>
-
     <DefaultName>_project.vstemplate</DefaultName>
     <Name>SideWaffle Project Template Files</Name>
     <Description>This will add the files required to create a project template using SideWaffle. The files that will be added include; _preprocess.xml, _Definitions\_project.vstemplate.xml and  file-icon.png.</Description>
     <Icon>sw-file-icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>12E1C43B-7161-41B5-AC26-274AF9EB3C2C</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="_Definitions\_project.vstemplate.xml" OpenInEditor="true">_project.vstemplate.xml</ProjectItem>
