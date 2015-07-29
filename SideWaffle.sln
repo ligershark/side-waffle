@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplatePack", "TemplatePack\TemplatePack.csproj", "{66E5E42A-2905-4A93-A3F7-FD26DA48A25F}"
 EndProject
@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "html5up", "Project Template
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorV3WebApplication", "Project Templates\RazorV3WebApplication\RazorV3WebApplication.csproj", "{2D22AA48-5183-4FF2-B846-DF72E699E45E}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "UnitTestProject", "Project Templates\xUnitTestProject\UnitTestProject.xproj", "{650A5A85-5956-491E-9312-5E25A27D1108}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,8 @@ Global
 		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D22AA48-5183-4FF2-B846-DF72E699E45E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D22AA48-5183-4FF2-B846-DF72E699E45E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{650A5A85-5956-491E-9312-5E25A27D1108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{650A5A85-5956-491E-9312-5E25A27D1108}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,5 +114,6 @@ Global
 		{80D7D5EF-F856-4A55-840B-0D07E7FD1718} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
 		{785C93D7-0D1F-4A13-BDC7-6917A5F8288F} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
 		{2D22AA48-5183-4FF2-B846-DF72E699E45E} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
+		{650A5A85-5956-491E-9312-5E25A27D1108} = {30C5F3FE-3003-4BC0-9AC7-F084270A43DC}
 	EndGlobalSection
 EndGlobal

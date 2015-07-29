@@ -201,11 +201,8 @@
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Gulpfile.js" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\icon.png" />
-    <Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451.mdf" />
     <Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Durandal451.mdf</DependentUpon>
     </Content>
     <Content Include="resources\Package.ico" />
@@ -960,6 +957,9 @@
     </TemplateReference>
     <TemplateReference Include="RazorV3WebApplication.csproj">
       <PathToProject>../Project%20Templates/RazorV3WebApplication/RazorV3WebApplication.csproj</PathToProject>
+    </TemplateReference>
+    <TemplateReference Include="UnitTestProject.xproj">
+      <PathToProject>../Project%20Templates/xUnitTestProject/UnitTestProject.xproj</PathToProject>
     </TemplateReference>
     <TemplateReference Include="WebJobsHelloWorld.csproj">
       <PathToProject>..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\WebJobsHelloWorld.csproj</PathToProject>
