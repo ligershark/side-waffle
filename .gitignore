@@ -3,6 +3,7 @@ OutputRoot/
 packages/
 PrecompiledWeb/
 .tools/
+project.lock.json
 #################
 ## Visual Studio
 #################
