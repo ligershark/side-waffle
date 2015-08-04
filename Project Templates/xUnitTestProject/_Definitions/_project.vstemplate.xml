@@ -18,8 +18,8 @@
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="UnitTestProject.xproj" File="UnitTestProject.xproj" ReplaceParameters="true">
-      <ProjectItem ReplaceParameters="true">project.json</ProjectItem>
-      <ProjectItem ReplaceParameters="true">Class1.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="project.json">project.json"</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Class1.cs">Class1.cs</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>
