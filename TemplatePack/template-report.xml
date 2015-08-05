@@ -251,7 +251,7 @@
     <ProjectTemplate Path="..\Project Templates\html5up\_Definitions\_project.vstemplate.xml" Name="Template from html5up.net" Description="html5up" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\_Definitions\_project.vstemplate.xml" Name="Windows Azure WebJobs Console Application" Description="Windows Azure WebJobs Console Application" ProjectType="CSharp" ProjectSubType="" />
     <ProjectTemplate Path="..\Project Templates\RazorV3WebApplication\_Definitions\_project.vstemplate.xml" Name="ASP.NET Web Application (Razor v3)" Description="A project template for creating an ASP.NET web site using Razor syntax (CSHTML)" ProjectType="CSharp" ProjectSubType="Web" />
-    <ProjectTemplate Path="..\Project Templates\xUnitTestProject\_Definitions\_project.vstemplate.xml" Name="xUnit Test Project - DNX" Description="xUnit Project Template for DNX" ProjectType="CSharp" ProjectSubType="Web" />
+    <ProjectTemplate Path="..\Project Templates\xUnitTestProject\_Definitions\_project.vstemplate.xml" Name="xUnit Test Project (DNX)" Description="This will create an xUnit test project which uses DNX, and can be executed cross-platform." ProjectType="CSharp" ProjectSubType="Web" />
     <ProjectTemplate Path="ProjectTemplates\Windows Store\TypeScript Blank\_Definitions\CSharp.vstemplate" Name="Blank App" Description="A single-page project for a Windows Store app using TypeScript" ProjectType="TypeScript" ProjectSubType="Windows Store" />
   </ProjectTemplates>
   <Snippets>
