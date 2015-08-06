@@ -14,3 +14,7 @@ environment:
 
 build_script:
   - ps: .\appveyor.ps1
+
+artifacts:
+ - TemplatePack\template-report.xml
+ - release-notes.html
