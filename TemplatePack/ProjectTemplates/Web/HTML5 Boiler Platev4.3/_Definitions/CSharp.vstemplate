@@ -62,5 +62,13 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="HTML5 Boiler Plate v4.3" />
+      <CustomParameter Name="$TemplateID$" Value="a02593d1-4461-4b77-9821-43190de662ab" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

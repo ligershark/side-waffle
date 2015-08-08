@@ -14,5 +14,13 @@
   <TemplateContent>
     <References />
     <ProjectItem>tslint.json</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="TSLint Rules File (tslint.json)" />
+      <CustomParameter Name="$TemplateID$" Value="6f169b67-e1c0-40d1-9ced-0306fe665529" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

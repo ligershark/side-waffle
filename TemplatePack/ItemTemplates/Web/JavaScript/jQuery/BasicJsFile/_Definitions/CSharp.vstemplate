@@ -13,5 +13,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">jQueryJSFile.js</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Basic jQuery JS File" />
+      <CustomParameter Name="$TemplateID$" Value="444e51e0-b733-4692-957c-3ea463ff195a" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

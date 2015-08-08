@@ -13,5 +13,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">binding.js</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Knockout Custom Binding" />
+      <CustomParameter Name="$TemplateID$" Value="50f0caa7-de39-4b2a-bfea-ba0428550a4d" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

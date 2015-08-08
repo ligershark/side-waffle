@@ -14,5 +14,13 @@
     <References />
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Specs.js">JasmineTestSpecs.js</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Runner.html">JasmineTestRunner.html</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Jasmine Spec and HTML files" />
+      <CustomParameter Name="$TemplateID$" Value="abc43ddb-1615-4364-9874-2194447b334f" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

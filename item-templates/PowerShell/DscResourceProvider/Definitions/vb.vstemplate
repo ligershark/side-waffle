@@ -11,5 +11,13 @@
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.ps1">dsc-resource-provider.ps1</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="DSC Resource provider" />
+      <CustomParameter Name="$TemplateID$" Value="9fad1fa1-a176-4940-a813-a43d3dbf2e6d" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

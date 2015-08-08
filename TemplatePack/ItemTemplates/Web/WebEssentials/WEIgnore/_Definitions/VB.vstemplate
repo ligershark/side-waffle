@@ -13,5 +13,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true" TargetFileName=".weignore">weignore.txt</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="WEIgnore Ignore File (.weignore)" />
+      <CustomParameter Name="$TemplateID$" Value="4227bbab-382e-4553-8b78-548020e781fc" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

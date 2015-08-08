@@ -13,5 +13,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">CSharpSnippet.snippet</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Code Snippet" />
+      <CustomParameter Name="$TemplateID$" Value="ed5ff1cf-b13d-4d51-8850-063eb3eac48b" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

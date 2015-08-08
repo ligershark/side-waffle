@@ -13,5 +13,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">site.appcache</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Offline Application Cache Manifest" />
+      <CustomParameter Name="$TemplateID$" Value="b8073d88-51af-4061-89f6-c07894d52ac1" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

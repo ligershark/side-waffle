@@ -12,5 +12,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">factory.ts</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="AngularJs TypeScript Factory" />
+      <CustomParameter Name="$TemplateID$" Value="ace599a0-d377-4bdd-af7e-c32217207a80" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

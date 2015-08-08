@@ -12,5 +12,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">Gulpfile.js</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="GulpJS configuration file " />
+      <CustomParameter Name="$TemplateID$" Value="8e458b25-515b-4286-86c5-ac651be785a5" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

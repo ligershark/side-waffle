@@ -14,5 +14,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">schema.json</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="JSON Schema File" />
+      <CustomParameter Name="$TemplateID$" Value="e45f6e43-9a31-46b6-aa17-16db19f751a6" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

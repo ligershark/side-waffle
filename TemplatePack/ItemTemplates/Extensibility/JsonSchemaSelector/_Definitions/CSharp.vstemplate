@@ -19,5 +19,13 @@
       </Reference>
     </References>
     <ProjectItem ReplaceParameters="true">JsonSchemaSelector.cs</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="JSON Schema Selector Extension" />
+      <CustomParameter Name="$TemplateID$" Value="c5a01f60-2a43-4d4d-b693-5445071e60c6" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

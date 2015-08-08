@@ -46,5 +46,13 @@
     <ProjectItem TargetFileName="\CodeTemplates\MvcViewWithoutModel\Empty.vb.t4" ReplaceParameters="true">MvcViewWithoutModel\Empty.vb.t4</ProjectItem>
     <ProjectItem TargetFileName="\CodeTemplates\MvcViewWithoutModel\Imports.include.t4" ReplaceParameters="true">MvcViewWithoutModel\Imports.include.t4</ProjectItem>
     <ProjectItem TargetFileName="\CodeTemplates\ODataControllerWithContext\Controller.vb.t4" ReplaceParameters="true">ODataControllerWithContext\Controller.vb.t4</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Customize ASP.NET T4 Files" />
+      <CustomParameter Name="$TemplateID$" Value="dc09bbe2-9d47-4705-820b-c7aa03144d8e" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

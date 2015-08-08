@@ -13,5 +13,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true" TargetFileName=".jscsrc">.jscsrc</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="JSCS Rules File (.jscsrc)" />
+      <CustomParameter Name="$TemplateID$" Value="e6c23105-ad42-473b-a729-c7e8f64ce8e4" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

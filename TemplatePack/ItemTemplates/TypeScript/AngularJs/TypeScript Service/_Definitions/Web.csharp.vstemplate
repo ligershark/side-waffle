@@ -13,5 +13,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">service.ts</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="AngularJs TypeScript Service" />
+      <CustomParameter Name="$TemplateID$" Value="32cdb211-b830-4a61-ba36-5f25391d0d1e" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

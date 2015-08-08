@@ -14,5 +14,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">controller.js</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="AngularJs Controller" />
+      <CustomParameter Name="$TemplateID$" Value="22a61781-d53c-476d-a146-7626f4983b64" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

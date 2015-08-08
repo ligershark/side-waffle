@@ -12,5 +12,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">controller.ts</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="AngularJs TypeScript Controller using $scope" />
+      <CustomParameter Name="$TemplateID$" Value="7cc195ca-7cba-4be6-9973-7f247f231e57" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

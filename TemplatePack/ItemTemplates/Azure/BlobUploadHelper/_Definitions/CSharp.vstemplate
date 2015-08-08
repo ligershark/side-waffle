@@ -11,5 +11,13 @@
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.cs">BlobUploadHelper.cs</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Windows Azure Blob Upload Helper" />
+      <CustomParameter Name="$TemplateID$" Value="7361535b-f602-40b0-a5c2-3e49f8cae5a9" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>
