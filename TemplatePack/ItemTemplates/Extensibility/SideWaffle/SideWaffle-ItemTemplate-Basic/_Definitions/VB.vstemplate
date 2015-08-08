@@ -19,5 +19,13 @@
     <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\Web.VB.vstemplat-" ItemType="None">Web.VB.vstemplat-</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\icon.png">file-icon.png</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\readme.txt" ItemType="None">readme.txt</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="SideWaffle Item Template" />
+      <CustomParameter Name="$TemplateID$" Value="34e35d76-f898-40a9-8246-bd8b355f678b" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

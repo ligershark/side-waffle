@@ -29,9 +29,17 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
 	  -->
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Multi project sample" />
+      <CustomParameter Name="$TemplateID$" Value="1d28e296-5d19-47d7-9bea-036903a10ee3" />
+    </CustomParameters>
   </TemplateContent>
   <WizardExtension>
     <Assembly>TemplateBuilder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
     <FullClassName>TemplateBuilder.ChildWizard</FullClassName>
+  </WizardExtension>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>

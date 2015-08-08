@@ -13,5 +13,13 @@
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.cs">HitCounterHub.cs</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Client.html">HitCounterHubClient.html</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Basic SignalR Hub and HTML Client Page" />
+      <CustomParameter Name="$TemplateID$" Value="01649c85-d0f8-4006-bd28-875975ca2088" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

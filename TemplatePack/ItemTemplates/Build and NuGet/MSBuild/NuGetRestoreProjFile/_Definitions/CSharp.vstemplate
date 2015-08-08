@@ -12,5 +12,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">build.proj</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Build script with NuGet automatic package restore." />
+      <CustomParameter Name="$TemplateID$" Value="3fe0247c-7875-4428-bcd8-3d458431e58e" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

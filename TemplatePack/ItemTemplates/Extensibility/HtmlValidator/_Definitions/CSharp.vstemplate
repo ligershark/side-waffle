@@ -46,5 +46,13 @@
       </Reference>
     </References>
     <ProjectItem ReplaceParameters="true">validator.cs</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="HTML Validator Class (VS2013 only)" />
+      <CustomParameter Name="$TemplateID$" Value="d9f2cae4-9eb7-4039-9ed6-9810713825da" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

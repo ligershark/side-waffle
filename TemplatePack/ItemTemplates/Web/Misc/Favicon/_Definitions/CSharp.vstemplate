@@ -13,5 +13,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">favicon.ico</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Favicon .ico File" />
+      <CustomParameter Name="$TemplateID$" Value="56ccde29-dd44-414b-b17f-f9820ead5306" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

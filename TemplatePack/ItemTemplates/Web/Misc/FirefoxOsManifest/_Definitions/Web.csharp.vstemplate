@@ -14,5 +14,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">app.manifest</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="FirefoxOS manifest" />
+      <CustomParameter Name="$TemplateID$" Value="3783743d-27ca-44b7-bb08-323ddb3343d3" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>
