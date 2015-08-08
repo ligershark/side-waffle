@@ -342,28 +342,33 @@
         {
             if (!IsBuildingDynamicTemplates())
             {
-                // Delete the folder where the templates are built (i.e. C:\Users\<Username>\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\<Version>
-                if (Directory.Exists(RootDirectory))
-                {
-                    // Reset the attributes for all subdirectories and their files
-                    DirectoryInfo parentDirectoryInfo = new DirectoryInfo(RootDirectory);
-                    ResetDirectoryAttributes(parentDirectoryInfo);
+                try {
+                    // Delete the folder where the templates are built (i.e. C:\Users\<Username>\AppData\Local\LigerShark\SideWaffle\DynamicTemplates\<Version>
+                    if (Directory.Exists(RootDirectory)) {
+                        // Reset the attributes for all subdirectories and their files
+                        DirectoryInfo parentDirectoryInfo = new DirectoryInfo(RootDirectory);
+                        ResetDirectoryAttributes(parentDirectoryInfo);
 
-                    Directory.Delete(RootDirectory, true);
+                        Directory.Delete(RootDirectory, true);
+                    }
+
+                    // Delete the Output folder from the Extension directory
+                    if (Directory.Exists(OutputPath))
+                    {
+                        // Reset the attributes for all subdirectories and their files
+                        DirectoryInfo parentDirectoryInfo = new DirectoryInfo(OutputPath);
+                        ResetDirectoryAttributes(parentDirectoryInfo);
+
+                        Directory.Delete(OutputPath, true);
+                    }
+
+                    // Download and build the latest templates from their source
+                    ProcessTemplates();
                 }
-
-                // Delete the Output folder from the Extension directory
-                if (Directory.Exists(OutputPath))
-                {
-                    // Reset the attributes for all subdirectories and their files
-                    DirectoryInfo parentDirectoryInfo = new DirectoryInfo(OutputPath);
-                    ResetDirectoryAttributes(parentDirectoryInfo);
-
-                    Directory.Delete(OutputPath, true);
+                catch (Exception ex) {
+                    LogError(ex.ToString());
+                    UpdateStatusBar(@"An error occurred during template creation, see the activity log for more info");
                 }
-
-                // Download and build the latest templates from their source
-                ProcessTemplates();
             }
         }
 

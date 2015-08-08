@@ -179,8 +179,19 @@ namespace TemplatePack
             SetupRadioButtons(templateBuilder.GetTemplateSettingsFromJson().UpdateInterval.ToString());
         }
 
+        private void DisableControls() {
+            foreach (Control ctrl in this.Controls) {
+                ctrl.Enabled = false;
+            }
+        }
         private async void OkBtn_Click(object sender, EventArgs e)
         {
+            DisableControls();
+            LoadingImage.Enabled = true;
+            LoadingLabel.Enabled = true;
+            LoadingImage.Visible = true;
+            LoadingLabel.Visible = true;
+
             List<TemplateSource> sources = new List<TemplateSource>();
 
             foreach (ListViewItem row in remoteSourceListView.Items)
