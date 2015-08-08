@@ -11,5 +11,13 @@
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.cs">Bootstrapper.cs</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Caliburn Micro Bootstrapper" />
+      <CustomParameter Name="$TemplateID$" Value="c9898d0d-e3e2-4a0f-9871-48bc03cb4156" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

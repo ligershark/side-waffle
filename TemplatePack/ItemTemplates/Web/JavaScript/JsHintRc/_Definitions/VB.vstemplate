@@ -13,5 +13,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true" TargetFileName=".jshintrc">jshintrc.txt</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="JSHint Rules File (.jshintrc)" />
+      <CustomParameter Name="$TemplateID$" Value="bb729e93-9119-425c-bd72-dee53f123617" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

@@ -43,5 +43,13 @@
       </Reference>
     </References>
     <ProjectItem ReplaceParameters="true">MyDropHandler.cs</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Editor Drop Handler class" />
+      <CustomParameter Name="$TemplateID$" Value="27d6907b-371f-47ea-ae0a-3997f43c5d10" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

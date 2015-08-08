@@ -12,5 +12,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">build.proj</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Basic build script" />
+      <CustomParameter Name="$TemplateID$" Value="76e05b87-c5c1-4b22-8329-196e08241a40" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

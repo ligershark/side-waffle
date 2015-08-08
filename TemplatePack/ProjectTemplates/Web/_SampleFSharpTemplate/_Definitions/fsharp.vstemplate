@@ -19,5 +19,13 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Program.fs">Program.fs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="App.config">App.config</ProjectItem>
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="FSharpSample" />
+      <CustomParameter Name="$TemplateID$" Value="00fdb2dc-d425-4449-a83e-dd6a283d13a7" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

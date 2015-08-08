@@ -30,5 +30,13 @@
     <ProjectItem ReplaceParameters="true" TargetFileName="API\$safeitemname$Controller.cs">EmptyController.cs</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Web API 2 Empty Controller" />
+      <CustomParameter Name="$TemplateID$" Value="84ac4f5b-88d5-4e01-ab55-beeeb4db0a5f" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

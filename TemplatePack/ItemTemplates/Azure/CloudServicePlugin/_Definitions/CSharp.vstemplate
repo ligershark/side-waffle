@@ -11,5 +11,13 @@
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.csplugin">CloudServicePlugin.csplugin</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Windows Azure Cloud Service Plugin" />
+      <CustomParameter Name="$TemplateID$" Value="fa60804d-24ba-4888-9523-c632a247c476" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

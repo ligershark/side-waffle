@@ -12,5 +12,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">bower.json</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Bower JSON Configuration file" />
+      <CustomParameter Name="$TemplateID$" Value="b48ec28c-780a-409f-bc13-9708d8d3a59d" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

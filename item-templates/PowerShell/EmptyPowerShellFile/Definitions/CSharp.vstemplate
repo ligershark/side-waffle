@@ -11,5 +11,13 @@
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.ps1">empty.ps1</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Empty PowerShell file" />
+      <CustomParameter Name="$TemplateID$" Value="01b40eb4-80eb-4f3c-a8fb-d4631a4a6e54" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

@@ -12,5 +12,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">project.nuspec</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="An advanced NuGet .nuspec file" />
+      <CustomParameter Name="$TemplateID$" Value="4f90c61a-82d2-44c5-9641-ce86165db0d2" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>
