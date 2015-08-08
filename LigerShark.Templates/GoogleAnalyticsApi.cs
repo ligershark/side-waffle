@@ -1,6 +1,4 @@
-﻿/* see https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,45 +10,66 @@ namespace LigerShark.Templates
 {
     public class GoogleAnalyticsApi
     {
-        public static void TrackEvent(string category, string action, string label, int? value = null)
+        /*
+        *   Author: Tyler Hughes
+        *   Credit for the Track function and the Enum HitType goes to 0liver (https://gist.github.com/0liver/11229128)
+        *   Credit goes to spyriadis (http://www.spyriadis.net/2014/07/google-analytics-measurement-protocol-track-events-c/)
+        *       for the idea of putting the values for each tracking method in its own function
+        *
+        *   Documentation of the Google Analytics Measurement Protocol can be found at:
+        *   https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide
+        */
+
+        private string endpoint = "http://www.google-analytics.com/collect";
+        private string googleVersion = "1";
+        private string googleTrackingID = "UA-XXXX-Y";
+        private string googleClientID = "555";
+
+        public GoogleAnalyticsApi(string trackingID, string clientID)
         {
-            Track(HitType.@event, category, action, label, value);
+            this.googleTrackingID = trackingID;
+            this.googleClientID = clientID;
         }
 
-        public static void TrackPageview(string category, string action, string label, int? value = null)
-        {
-            Track(HitType.@pageview, category, action, label, value);
-        }
-
-        private static void Track(HitType type, string category, string action, string label,
-                                  int? value = null)
+        public void TrackEvent(string category, string action, string label, int? value = null)
         {
             if (string.IsNullOrEmpty(category)) throw new ArgumentNullException("category");
             if (string.IsNullOrEmpty(action)) throw new ArgumentNullException("action");
 
-            var request = (HttpWebRequest)WebRequest.Create("http://www.google-analytics.com/collect");
+            var values = DefaultValues;
+
+            values.Add("t", HitType.@event.ToString());             // Event hit type
+            values.Add("ec", category);                             // Event Category. Required.
+            values.Add("ea", action);                               // Event Action. Required.
+            if (label != null) values.Add("el", label);             // Event label.
+            if (value != null) values.Add("ev", value.ToString());  // Event value.
+
+            Track(values);
+        }
+
+        public void TrackPageview(string category, string action, string label, int? value = null)
+        {
+            if (string.IsNullOrEmpty(category)) throw new ArgumentNullException("category");
+            if (string.IsNullOrEmpty(action)) throw new ArgumentNullException("action");
+
+            var values = DefaultValues;
+
+            values.Add("t", HitType.@pageview.ToString());          // Event hit type
+            values.Add("ec", category);                             // Event Category. Required.
+            values.Add("ea", action);                               // Event Action. Required.
+            if (label != null) values.Add("el", label);             // Event label.
+            if (value != null) values.Add("ev", value.ToString());  // Event value.
+
+            Track(values);
+        }
+
+        private void Track(Dictionary<string, string> values)
+        {
+            var request = (HttpWebRequest)WebRequest.Create(endpoint);
             request.Method = "POST";
+            request.KeepAlive = false;
 
-            // the request body we want to send
-            var postData = new Dictionary<string, string>
-                           {
-                               { "v", "1" },
-                               { "tid", "UA-XXXXXX-XX" },
-                               { "cid", "555" },
-                               { "t", type.ToString() },
-                               { "ec", category },
-                               { "ea", action },
-                           };
-            if (!string.IsNullOrEmpty(label))
-            {
-                postData.Add("el", label);
-            }
-            if (value.HasValue)
-            {
-                postData.Add("ev", value.ToString());
-            }
-
-            var postDataString = postData
+            var postDataString = values
                 .Aggregate("", (data, next) => string.Format("{0}&{1}={2}", data, next.Key,
                                                              HttpUtility.UrlEncode(next.Value)))
                 .TrimEnd('&');
@@ -66,17 +85,19 @@ namespace LigerShark.Templates
 
             try
             {
+                // Send the response to the server
                 var webResponse = (HttpWebResponse)request.GetResponse();
+
                 if (webResponse.StatusCode != HttpStatusCode.OK)
                 {
-                    throw new HttpException((int)webResponse.StatusCode,
-                                            "Google Analytics tracking did not return OK 200");
+                    throw new HttpException((int)webResponse.StatusCode, "Google Analytics tracking did not return OK 200");
                 }
+
+                webResponse.Close();
             }
             catch (Exception ex)
             {
-                // do what you like here, we log to Elmah
-                // ElmahLog.LogError(ex, "Google Analytics tracking failed");
+                throw new Exception(ex.Message);
             }
         }
 
@@ -86,6 +107,18 @@ namespace LigerShark.Templates
             @event,
             @pageview,
             // ReSharper restore InconsistentNaming
+        }
+
+        private Dictionary<string, string> DefaultValues
+        {
+            get
+            {
+                var data = new Dictionary<string, string>();
+                data.Add("v", googleVersion);         // The protocol version. The value should be 1.
+                data.Add("tid", googleTrackingID);    // Tracking ID / Web property / Property ID.
+                data.Add("cid", googleClientID);      // Anonymous Client ID (must be unique).
+                return data;
+            }
         }
     }
 }
