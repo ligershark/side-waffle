@@ -18,5 +18,13 @@
     <ProjectItem TargetFileName="Views\readme.txt" ReplaceParameters="true">Views\readme.txt</ProjectItem>
     <ProjectItem TargetFileName="ViewModels\readme.txt" ReplaceParameters="true">ViewModels\readme.txt</ProjectItem>
     <ProjectItem TargetFileName="InputModels\$safeitemname$\$safeitemname$.txt" ReplaceParameters="true">InputModels\Search\readme.txt</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Multi file template sample" />
+      <CustomParameter Name="$TemplateID$" Value="a255ad24-0c6d-4452-9ac7-f34aac2b5453" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

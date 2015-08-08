@@ -38,5 +38,13 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="source.extension.vsixmanifest">_source.extension.vsixmanifest</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="VSPackage.resx">VSPackage.resx</ProjectItem>
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Browser Link Extension" />
+      <CustomParameter Name="$TemplateID$" Value="976d7a6f-f3c0-4848-965c-39d3ed0e147d" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>
