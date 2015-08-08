@@ -15,10 +15,12 @@ namespace LigerShark.Templates
         // After the project template is created, send template ID to Google
         public void ProjectFinishedGenerating(Project project)
         {
+            sendTrackingCode("$TemplateID", "$TemplateName");
         }
         // After the item template is created, send template ID to Google
         public void ProjectItemFinishedGenerating(ProjectItem projectItem)
         {
+            sendTrackingCode("$TemplateID", "$TemplateName");
         }
         public void RunFinished()
         {
@@ -32,6 +34,8 @@ namespace LigerShark.Templates
         }
         private void sendTrackingCode(string templateID, string templateName)
         {
+            Console.WriteLine("Template Name: " + templateName);
+            Console.WriteLine("Template ID: " + templateID);
         }
     }
 }
