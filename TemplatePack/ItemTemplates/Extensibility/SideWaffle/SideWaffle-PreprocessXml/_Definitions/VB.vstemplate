@@ -11,5 +11,13 @@
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="false" TargetFileName="_preprocess.xml" OpenInEditor="true">_preprocess.xml</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="_preprocess.xml" />
+      <CustomParameter Name="$TemplateID$" Value="87bdc190-ebaa-487c-ad52-b85b4bb69d41" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

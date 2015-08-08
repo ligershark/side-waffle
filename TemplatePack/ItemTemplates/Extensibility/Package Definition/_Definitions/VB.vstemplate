@@ -12,5 +12,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">project.pkgdef</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Package Definition (.pkgdef)" />
+      <CustomParameter Name="$TemplateID$" Value="fac6705e-44d1-4422-b36d-11a17b46fbc3" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

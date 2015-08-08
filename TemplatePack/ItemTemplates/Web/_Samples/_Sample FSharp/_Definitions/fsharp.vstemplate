@@ -29,5 +29,13 @@
       </Reference>
     </References>
     <ProjectItem SubType="" TargetFileName="$fileinputname$.fs" ReplaceParameters="true">Sayed.fs</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="FSharp sample item template" />
+      <CustomParameter Name="$TemplateID$" Value="ee4eacbb-adaf-4a6e-9284-fdb27712a9ea" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

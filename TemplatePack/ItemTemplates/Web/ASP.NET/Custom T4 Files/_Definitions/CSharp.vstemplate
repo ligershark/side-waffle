@@ -46,5 +46,13 @@
     <ProjectItem TargetFileName="\CodeTemplates\MvcViewWithoutModel\Empty.cs.t4" ReplaceParameters="true">MvcViewWithoutModel\Empty.cs.t4</ProjectItem>
     <ProjectItem TargetFileName="\CodeTemplates\MvcViewWithoutModel\Imports.include.t4" ReplaceParameters="true">MvcViewWithoutModel\Imports.include.t4</ProjectItem>
     <ProjectItem TargetFileName="\CodeTemplates\ODataControllerWithContext\Controller.cs.t4" ReplaceParameters="true">ODataControllerWithContext\Controller.cs.t4</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="ASP.NET Scaffolding T4 files." />
+      <CustomParameter Name="$TemplateID$" Value="1684ae2b-9e99-4014-846b-7e8ad7d1089b" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

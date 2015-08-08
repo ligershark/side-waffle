@@ -12,5 +12,13 @@
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true">WhitespaceModule.cs</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="HTML Whitespace Removal HttpModule" />
+      <CustomParameter Name="$TemplateID$" Value="bac55d22-84fd-4668-bdb2-eb99bcb4b66a" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

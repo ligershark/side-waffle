@@ -12,5 +12,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">file.svg</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="SVG File" />
+      <CustomParameter Name="$TemplateID$" Value="64b9e6fa-2d5d-4425-960b-a4c1f40322d2" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

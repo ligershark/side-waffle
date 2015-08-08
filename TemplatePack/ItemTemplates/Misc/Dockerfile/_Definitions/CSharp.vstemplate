@@ -13,5 +13,13 @@
   <TemplateContent>
     <References />
     <ProjectItem>Dockerfile</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Dockerfile" />
+      <CustomParameter Name="$TemplateID$" Value="fcdc9ef0-af57-4774-95ed-97594061bb16" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

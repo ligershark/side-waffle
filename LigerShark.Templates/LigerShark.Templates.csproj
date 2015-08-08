@@ -111,6 +111,7 @@
     <Compile Include="DynamicBuilder\TemplateFolderBuilder.cs" />
     <Compile Include="DynamicBuilder\TemplateSource.cs" />
     <Compile Include="Extensions\HttpContentExtensions.cs" />
+    <Compile Include="GoogleAnalyticsWizard.cs" />
     <Compile Include="Html5UpProjectWizard.cs" />
   </ItemGroup>
   <ItemGroup>

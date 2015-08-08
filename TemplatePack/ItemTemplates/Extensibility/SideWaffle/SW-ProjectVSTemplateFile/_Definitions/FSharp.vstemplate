@@ -13,5 +13,13 @@
     <ProjectItem ReplaceParameters="true" TargetFileName="_Definitions\_project.vstemplate.xml" OpenInEditor="true">fsharp._project.vstemplate.xml</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="_preprocess.xml" OpenInEditor="true">_preprocess-template.xml</ProjectItem>
     <ProjectItem ReplaceParameters="false" TargetFileName="sw-file-icon.png" OpenInEditor="false">sw-file-icon.png</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="SideWaffle Project Template Files" />
+      <CustomParameter Name="$TemplateID$" Value="6b79282a-384f-498d-8822-06b69ac60846" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>
