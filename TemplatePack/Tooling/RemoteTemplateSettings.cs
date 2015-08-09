@@ -28,7 +28,7 @@
 
         [JsonProperty("sources")]
         public List<TemplateSource> Sources { get; set; }
-        
+
         public static RemoteTemplateSettings ReadFromJson(string filePath) {
             if (string.IsNullOrEmpty(filePath)) { throw new ArgumentNullException("filePath"); }
 
