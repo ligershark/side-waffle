@@ -14,11 +14,7 @@
             : this(new List<TemplateSource>(),UpdateFrequency.OnceAWeek) {
         }
         public RemoteTemplateSettings(List<TemplateSource> sources,UpdateFrequency updateInterval) {
-<<<<<<< HEAD
             this.Schema = "http://json.schemastore.org/templatesources.json";
-=======
-            this.Schema = "http://json.schemastore.org/templatesources.json",
->>>>>>> e962650e7ce71542f0e9b0db40c94dcaf03345a0
             this.Sources = sources;
             this.UpdateInterval = updateInterval;
         }
