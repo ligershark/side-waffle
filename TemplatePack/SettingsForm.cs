@@ -192,8 +192,6 @@ namespace TemplatePack
             LoadingImage.Visible = true;
             LoadingLabel.Visible = true;
 
-            templateSettings.Schema = "http://json.schemastore.org/templatesources.json";
-
             List<TemplateSource> sources = new List<TemplateSource>();
 
             foreach (ListViewItem row in remoteSourceListView.Items)
