@@ -268,7 +268,6 @@
 
             if (results == null || results.Sources == null || results.Sources.Count <= 0) {
                 results = new RemoteTemplateSettings {
-                    Schema = "http://json.schemastore.org/templatesources.json",
                     UpdateInterval = UpdateFrequency.OnceAWeek,
                     Sources = new List<TemplateSource>{
                         new TemplateSource{
