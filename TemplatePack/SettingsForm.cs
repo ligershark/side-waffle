@@ -129,7 +129,7 @@ namespace TemplatePack
             {
                 Console.WriteLine("Error Removing List Item: " + ex.Message);
             }
-            
+
         }
 
         private void BranchTextbox_Validated(object sender, EventArgs e)
@@ -138,7 +138,7 @@ namespace TemplatePack
 
             Regex regex = new Regex(".{1,}/.{1,}");
             Match match = regex.Match(branch);
-            
+
             if (!match.Success)
             {
                 MessageBox.Show("Sorry, the branch you entered is not in the correct format.");
@@ -152,7 +152,7 @@ namespace TemplatePack
                 LoadingImage.Visible = true;
                 LoadingLabel.Visible = true;
 
-                await startRebuildingTemplates();                
+                await startRebuildingTemplates();
             }
             catch (Exception ex)
             {
@@ -208,12 +208,11 @@ namespace TemplatePack
                 }
 
                 source.Name = row.SubItems[1].Text;
-                
+
                 Uri uri = new Uri(row.SubItems[2].Text);
                 Uri url = uri;
                 if (uri.IsFile)
                 {
-                    
                     url = new Uri(uri.AbsoluteUri);
                 }
 
@@ -302,7 +301,7 @@ namespace TemplatePack
             await System.Threading.Tasks.Task.Run(() =>
             {
                 templateBuilder.RebuildAllTemplates();
-            });            
+            });
         }
 
         public void SetupRadioButtons(string interval)

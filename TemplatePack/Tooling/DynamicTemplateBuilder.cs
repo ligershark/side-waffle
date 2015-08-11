@@ -19,7 +19,7 @@
         private int UpdatePeriod { get; set; }
         private DTE2 Dte { get; set; }
         private ActivityLogger ActivityLog { get; set; }
-        
+
         /// <summary>
         /// If dte is null it will be ignored
         /// If activityLogger is null it will be ignored.
@@ -226,7 +226,7 @@
                         break;
                 }
 
-                // Otherwise we check to see if it is time to update 
+                // Otherwise we check to see if it is time to update
                 if (UpdatePeriod == elapsedTime)
                 {
                     return true;
@@ -285,6 +285,7 @@
         {
             var results = new RemoteTemplateSettings
             {
+                Schema = "http://json.schemastore.org/templatesources.json",
                 UpdateInterval = UpdateFrequency.OnceAWeek,
                 Sources = new List<TemplateSource>{
                     new TemplateSource{
