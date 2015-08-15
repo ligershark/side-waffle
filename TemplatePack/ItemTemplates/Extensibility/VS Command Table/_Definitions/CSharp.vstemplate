@@ -1,11 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <ProjectType>CSharp</ProjectType>    
+    <ProjectType>CSharp</ProjectType>
     <DefaultName>Package.vsct</DefaultName>
     <Name>VS Command Table (.vsct)</Name>
-    <Description>A standard .vsct file with a button. Also includes Guids.cs and PkgCmdID.cs</Description>    
+    <Description>A standard .vsct file with a button. Also includes Guids.cs and PkgCmdID.cs</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>a39b11ad-6d1b-4cdc-b683-54682af765b3</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References>

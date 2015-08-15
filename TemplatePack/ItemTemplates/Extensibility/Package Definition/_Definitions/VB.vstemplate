@@ -1,0 +1,16 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>VisualBasic</ProjectType>
+    <DefaultName>project.pkgdef</DefaultName>
+    <Name>Package Definition (.pkgdef)</Name>
+    <Description>Package Definition files lets you add registry keys to the VS hive.</Description>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>22AAB468-EB41-43DB-B76D-8CE14ED7A936</TemplateID>
+    <SortOrder>1000</SortOrder>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">project.pkgdef</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

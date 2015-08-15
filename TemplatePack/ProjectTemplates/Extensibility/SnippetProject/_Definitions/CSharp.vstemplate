@@ -11,6 +11,7 @@
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>logo.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>23d02026-39d1-4c5e-b040-343ffea4810a</TemplateID>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="$projectname$.csproj" File="MySnippets.csproj" ReplaceParameters="true">

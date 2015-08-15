@@ -3,7 +3,8 @@
     <Name>Sample New Web Project</Name>
     <Description>Sample new web project here</Description>
     <ProjectType>CSharp</ProjectType>
-    <ProjectSubType></ProjectSubType>
+    <ProjectSubType>
+    </ProjectSubType>
     <SortOrder>1000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>SamplNewWeb</DefaultName>
@@ -11,12 +12,12 @@
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>file-icon.png</Icon>
-    
     <!-- Indicates how many parent folders this item template should appear in -->
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>2a2f1f03-4872-4419-9e51-a9c86cb4cb88</TemplateID>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="$projectname$.csproj" File="WebApplication1.csproj" ReplaceParameters="true">      
+    <Project TargetFileName="$projectname$.csproj" File="WebApplication1.csproj" ReplaceParameters="true">
     </Project>
   </TemplateContent>
 </VSTemplate>

@@ -1,30 +1,43 @@
 <!--
-    HTML snippet for release notes. This file will be merged and added to sidewaffle.com home page
+	HTML snippet for release notes. This file will be merged and added to sidewaffle.com home page
 -->
 
 <ul>
-    <li class="version">1.17</li>
+    <li class="version">1.19</li>
     <!-- add new entries here, on release the version number will be added-->
-    <li class="item-template">Added Item Template - Docker file for ASP.NET 5</li>
+    
+    <li>Added SortOrder and set it to 1000 for all ItemTemplates that didn't already have a SortOrder element</li>
+    <li>Added xUnit test project</li>
+</ul>
+<ul>
+    <li class="version">1.18</li>
+    <li class="project-template">Added Project Template - Razor v3 Web Application</li>
+    <li class="project-template">Added Project Template -AngularJS And Web API - Empty</li>
+    <li class="project-template">Updated Project Template - Added missing files for Durandal451 project template per <a href="https://github.com/ligershark/side-waffle/issues/256">issue #256</a></li>
 
-    <li class="item-template">Added Item Template - AngularJS Provider</li>
-	
-	<li class="item-template">Updated Item Template - AngularJS TypeScript templates updated to be Typescript 1.0 and Angular 1.3 compatible</li>
-	<li class="item-template">Updated Item Templates - AngularJS TypeScript templates updated to more closely match the AngularJs JavaScript templates, and to follow best practices</li>
-	<li class="item-template">Added Item Template - AngularJs TypeScript Service file</li>
+    <li class="item-template">Added Item Template - Added basic and expanded Gulp configuration files</li>
+    <li class="item-template">Added Item Template - Bower manifest file</li>
+    <li class="item-template">Added Item Template - AngularJS Filter</li>
     <li class="item-template">Updated Item Template - Template Reference updated to add TemplateBuilder NuGet package and the SideWaffle Project Template Files</li>
-	
+
+    <li>Simplified Add Template Reference to automatically add the TemplateBuilder NuGet package and project files item template</li>
+    <li>Changed the Web Templates Definition files to resolve a conflict with the Add Class context menu option <a href="https://github.com/ligershark/side-waffle/issues/251">issue #251</a></li>
+</ul>
+<ul>
+    <li class="version">1.17</li>
+    <li class="item-template">Added Item Template - Docker file for ASP.NET 5</li>
+    <li class="item-template">Added Item Template - AngularJS Provider</li>
+    <li class="item-template">Updated Item Template - AngularJS TypeScript templates updated to be Typescript 1.0 and Angular 1.3 compatible</li>
+    <li class="item-template">Updated Item Templates - AngularJS TypeScript templates updated to more closely match the AngularJs JavaScript templates, and to follow best practices</li>
+    <li class="item-template">Added Item Template - AngularJs TypeScript Service file</li>
+
     <li class="project-template">Chrome extension: Updated JavaScript IntelliSense for the Chrome API</li>
-	<li>Simplified Add Template Reference to automatically add the TemplateBuilder NuGet package and project files item template</li>
-    <li>Removed sample F# item template due to a conflict with the Add Class context menu option <a href="https://github.com/ligershark/side-waffle/issues/251">issue #251</a></li>
 </ul>
 <ul>
     <li class="version">1.16</li>
-
     <li class="item-template">Added Item Template - Empty AppVeyor.yml file</li>
     <li class="item-template">Added Item Template - Full AppVeyor.yml file for appveyor.com</li>
     <li class="item-template">Added Item Template - JSCS Rules File (.jscsrc)</li>
-
     <li class="item-template">Added Item Template - PowerShell Empty PowerShell file</li>
     <li class="item-template">Added Item Template - PowerShell Cmdlet (advanced function)</li>
     <li class="item-template">Added Item Template - PowerShell Cmdlet (advanced function) complete</li>
@@ -52,7 +65,7 @@
 
     <li class="project-template">Chrome templates: Copy files only when 'Copy to Output Directory' is set</li>
     <li class="project-template">Chrome templates: Copy files from scripts folder, not only app</li>
-    <li class="project-template">Chrome templates: Added unpacked folder for the Chrome extensions to make debugging easier</li>    
+    <li class="project-template">Chrome templates: Added unpacked folder for the Chrome extensions to make debugging easier</li>
 
     <!--<li class="project-template"></li>-->
 </ul>

@@ -13,6 +13,7 @@
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>__TemplateIcon.png</Icon>
     <PreviewImage>__PreviewImage.png</PreviewImage>
+    <TemplateID>379e2a2a-8bcd-451b-a9b5-ce8089aa10f6</TemplateID>
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="$saferootprojectname$.csproj" File="CustomScaffolder.csproj" ReplaceParameters="true">

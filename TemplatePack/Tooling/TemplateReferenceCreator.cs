@@ -66,7 +66,7 @@ namespace TemplatePack {
                     dte.StatusBar.Text = @"Installing TemplateBuilder NuGet package, this may take a minute...";
 
                     var installer = componentModel.GetService<IVsPackageInstaller>();
-                    installer.InstallPackage("All", project, "TemplateBuilder", (System.Version)null, false);
+                    installer.InstallPackage(null, project, "TemplateBuilder", (System.Version)null, false);
 
                     dte.StatusBar.Text = @"Finished installing the TemplateBuilder NuGet package";
                 }

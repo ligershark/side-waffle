@@ -7,7 +7,8 @@
     <Icon>scaffolding-file-icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>50a7933f-3903-4a89-8d2c-65f77ba0a5ff</TemplateID>
-    <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <AppliesTo>!CSharp</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <!-- Use .\update.ps1 to re-generate the content here-->

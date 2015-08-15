@@ -1,8 +1,5 @@
-<VSTemplate Version="2.0.0" Type="ProjectGroup"
-    xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
-  
+<VSTemplate Version="2.0.0" Type="ProjectGroup" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
   <!-- Fore more info on multi project templates visit: http://msdn.microsoft.com/en-us/library/ms185308(v=vs.90).aspx -->
-  
   <TemplateData>
     <Name>Basic Scaffolder</Name>
     <Description>Basic Scaffolder</Description>
@@ -12,11 +9,12 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>BasicScaffolder</DefaultName>
     <SortOrder>5000</SortOrder>
+    <TemplateID>4dd2ee82-7b59-4efe-beb3-3e67f2942a4a</TemplateID>
   </TemplateData>
   <TemplateContent>
     <ProjectCollection>
       <ProjectTemplateLink ProjectName="$safeprojectname$Extension">CustomScaffolderExtension\MyTemplate.vstemplate</ProjectTemplateLink>
-      <ProjectTemplateLink ProjectName="$safeprojectname$">CustomScaffolder\MyTemplate.vstemplate</ProjectTemplateLink>      
+      <ProjectTemplateLink ProjectName="$safeprojectname$">CustomScaffolder\MyTemplate.vstemplate</ProjectTemplateLink>
     </ProjectCollection>
     <!--<CustomParameters>
       <CustomParameter Name="$slnname$" Value="$safeprojectname$Orig"/>

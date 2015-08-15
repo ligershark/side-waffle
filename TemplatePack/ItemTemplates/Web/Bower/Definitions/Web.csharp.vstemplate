@@ -1,0 +1,17 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <DefaultName>bower.json</DefaultName>
+    <Name>Bower JSON Configuration file</Name>
+    <Description>JSON Configuration file for Bower</Description>
+    <Icon>bower-logo.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>4618F1AD-B2CC-4D80-86D4-14DB2B2D300B</TemplateID>
+    <SortOrder>1000</SortOrder>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">bower.json</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

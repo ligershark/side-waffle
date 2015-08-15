@@ -2,12 +2,13 @@
   <TemplateData>
     <ProjectType>Web</ProjectType>
     <ProjectSubType>CSharp</ProjectSubType>
-
     <DefaultName>project.nuspec</DefaultName>
     <Name>A basic NuGet .nuspec file</Name>
     <Description>A basic NuGet .nuspec file</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>f7b28a72-0a7f-407f-a13f-8eec88f7b13d</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
