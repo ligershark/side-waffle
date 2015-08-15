@@ -33,7 +33,6 @@ namespace LigerShark.Templates
 
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
-
             TemplateName = replacementsDictionary["$TemplateName$"];
             TemplateID = replacementsDictionary["$TemplateID$"];
         }
