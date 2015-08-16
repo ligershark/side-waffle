@@ -1,12 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <ProjectType>CSharp</ProjectType>
-    
     <DefaultName>custom.props</DefaultName>
     <Name>Basic props file</Name>
-    <Description>A basic MSBuild properties file</Description>    
+    <Description>A basic MSBuild properties file</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>a7918d82-efab-4622-a0fb-eb43e9cf76d6</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />

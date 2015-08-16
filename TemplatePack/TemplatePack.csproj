@@ -61,6 +61,7 @@
     </Content>
     <Content Include="loading.gif" />
     <Content Include="logo.ico" />
+    <None Include="app.config" />
     <None Include="ItemTemplates\AppVeyor\Empty\Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\AppVeyor\Empty\Definitions\vb.vstemplate" />
     <None Include="ItemTemplates\AppVeyor\Empty\appveyor-icon.png" />
@@ -92,6 +93,51 @@
     <None Include="ItemTemplates\Extensibility\BrowserLink\_Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Extensibility\JsonSchemaSelector\icon.png" />
     <None Include="ItemTemplates\Extensibility\JsonSchemaSelector\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\_Definitions\VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Extensibility\Package Definition\_Definitions\VB.vstemplate" />
+    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\Definitions\vb.vstemplate" />
+    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\icon.png" />
+    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\powershell-file-icon.png" />
+    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\Definitions\vb.vstemplate" />
+    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\icon.png" />
+    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\powershell-file-icon.png" />
+    <None Include="ItemTemplates\PowerShell\DscConfigurationSimple\Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\PowerShell\DscConfigurationSimple\Definitions\vb.vstemplate" />
+    <None Include="ItemTemplates\PowerShell\DscConfigurationSimple\icon.png" />
+    <None Include="ItemTemplates\PowerShell\DscConfigurationSimple\powershell-file-icon.png" />
+    <None Include="ItemTemplates\PowerShell\DscResourceProvider\Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\PowerShell\DscResourceProvider\Definitions\vb.vstemplate" />
+    <None Include="ItemTemplates\PowerShell\DscResourceProvider\icon.png" />
+    <None Include="ItemTemplates\PowerShell\DscResourceProvider\powershell-file-icon.png" />
+    <None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\vb.vstemplate" />
+    <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
+    <Content Include="ItemTemplates\Web\Bower\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Web\Bower\Definitions\VB.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Web\Bower\Definitions\Web.csharp.vstemplate" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\VB.vstemplate" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\Web.csharp.vstemplate" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\filter.js" />
+    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\icon.png" />
+    <Content Include="ItemTemplates\Web\Bower\bower-logo.png" />
+    <None Include="ItemTemplates\Web\Bower\bower.json" />
+    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Definitions\Web.csharp.vstemplate" />
     <None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\icon.png" />
     <None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\jQueryJSFile.js" />
     <None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\_Definitions\CSharp.vstemplate" />
@@ -136,6 +182,9 @@
     <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\MyTemplate.vstemplate" />
     <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\_preprocess.xml" />
     <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\_Definitions\CSharp.vstemplate" />
+    <None Include="ProjectTemplates\Web\Durandal451\Web.config.install.Debug.xdt" />
+    <None Include="ProjectTemplates\Web\Durandal451\Web.config.install.Release.xdt" />
+    <None Include="ProjectTemplates\Web\Durandal451\Web.config.install.xdt" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Caliburn.Micro WPF Application.csproj" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\_Definitions\CSharp.vstemplate" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\__TemplateIcon.png" />
@@ -148,6 +197,20 @@
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\_Definitions\Web.csharp.vstemplate" />
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\provider.js" />
     <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\icon.png" />
+    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\AngularJSWebApiEmpty.csproj" />
+    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\template-icon.png" />
+    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\_Definitions\_project.vstemplate.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\_preprocess.xml" />
+    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Gulpfile.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\icon.png" />
+    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Gulpfile.js" />
+    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\icon.png" />
+    <Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451.mdf" />
+    <Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451_log.ldf">
+      <DependentUpon>Durandal451.mdf</DependentUpon>
+    </Content>
     <Content Include="resources\Package.ico" />
     <None Include="ItemTemplates\Azure\CloudServicePlugin\CloudServicePlugin.csplugin" />
     <None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\build.proj" />
@@ -375,10 +438,10 @@
     </None>
     <None Include="ProjectTemplates\Cloud\readme.md" />
     <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
-    <None Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
-    <None Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
     <None Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\_Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\_Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\file-icon.png" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\icon.png" />
     <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\readme.txt" />
@@ -408,6 +471,10 @@
     <None Include="ItemTemplates\Web\Nancy\NancyModule\icon.png" />
     <None Include="ItemTemplates\Web\Nancy\NancyModule\_Definitions\CSharp.vstemplate" />
     <None Include="ItemTemplates\Web\Nancy\NancyModule\_Definitions\Web.csharp.vstemplate" />
+    <None Include="ItemTemplates\Web\_Samples\_Sample FSharp\fsharp-logo-32x32.png" />
+    <None Include="ItemTemplates\Web\_Samples\_Sample FSharp\icon.png" />
+    <None Include="ItemTemplates\Web\_Samples\_Sample FSharp\Sayed.fs" />
+    <None Include="ItemTemplates\Web\_Samples\_Sample FSharp\_Definitions\fsharp.vstemplate" />
     <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\icon.png" />
     <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\InputModels\Search\readme.txt" />
     <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ViewModels\readme.txt" />
@@ -891,6 +958,8 @@
     <Reference Include="TemplateBuilder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\TemplateBuilder.1.1.3\lib\TemplateBuilder.dll</HintPath>
+      <HintPath>..\packages\TemplateBuilder.1.1.4.3-beta\lib\TemplateBuilder.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -911,6 +980,15 @@
     <Folder Include="Snippets\XML\SideWaffle\" />
   </ItemGroup>
   <ItemGroup>
+    <TemplateReference Include="ConsoleApplicationAsync.csproj">
+      <PathToProject>../Project%20Templates/Windows%20Desktop/ConsoleApplicationAsync/ConsoleApplicationAsync.csproj</PathToProject>
+    </TemplateReference>
+    <TemplateReference Include="RazorV3WebApplication.csproj">
+      <PathToProject>../Project%20Templates/RazorV3WebApplication/RazorV3WebApplication.csproj</PathToProject>
+    </TemplateReference>
+    <TemplateReference Include="UnitTestProject.xproj">
+      <PathToProject>../Project%20Templates/xUnitTestProject/UnitTestProject.xproj</PathToProject>
+    </TemplateReference>
     <TemplateReference Include="WebJobsHelloWorld.csproj">
       <PathToProject>..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\WebJobsHelloWorld.csproj</PathToProject>
     </TemplateReference>
@@ -1030,7 +1108,7 @@
     <EnableIncludeLibGit2SharpInVsix Condition=" '$(EnableIncludeLibGit2SharpInVsix)'=='' ">true</EnableIncludeLibGit2SharpInVsix>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.1.3\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.1.4.3-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup Condition=" '$(EnableIncludeLibGit2SharpInVsix)'=='true' ">
     <Content Include="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.*" Exclude="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.pdb">

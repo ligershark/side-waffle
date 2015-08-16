@@ -1,22 +1,21 @@
-﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>Nancy with ASP.NET host</Name>
     <Description>Nancy with ASP.NET hoste</Description>
     <DefaultName>NancyAspNetHost</DefaultName>
-    
     <ProjectType>CSharp</ProjectType>
     <SortOrder>1000</SortOrder>
-    <CreateNewFolder>true</CreateNewFolder>    
+    <CreateNewFolder>true</CreateNewFolder>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>icon.png</Icon>
-    
     <!-- Indicates how many parent folders this item template should appear in -->
     <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+    <TemplateID>79065e9a-1030-443a-b800-e23986721559</TemplateID>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="Nancy.CSharp.AspNetHost.csproj" File="Nancy.CSharp.AspNetHost.csproj" ReplaceParameters="true">      
+    <Project TargetFileName="Nancy.CSharp.AspNetHost.csproj" File="Nancy.CSharp.AspNetHost.csproj" ReplaceParameters="true">
     </Project>
   </TemplateContent>
 </VSTemplate>

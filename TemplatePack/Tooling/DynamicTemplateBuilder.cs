@@ -264,7 +264,16 @@
         }
 
         public RemoteTemplateSettings GetTemplateSettingsFromJson() {
-            var results = RemoteTemplateSettings.ReadFromJson(Path.Combine(this.SideWaffleInstallDir, "templatesources.json"));
+            var rootPath = Path.Combine(this.RootDirectory, "templatesources.json");
+            var installPath = Path.Combine(this.SideWaffleInstallDir, "templatesources.json");
+            var results = new RemoteTemplateSettings();
+
+            if (File.Exists(rootPath)) {
+                results = RemoteTemplateSettings.ReadFromJson(rootPath);
+            }
+            else {
+                results = RemoteTemplateSettings.ReadFromJson(installPath);
+            }
 
             if (results == null || results.Sources == null || results.Sources.Count <= 0) {
                 results = new RemoteTemplateSettings {
@@ -285,7 +294,6 @@
         {
             var results = new RemoteTemplateSettings
             {
-                Schema = "http://json.schemastore.org/templatesources.json",
                 UpdateInterval = UpdateFrequency.OnceAWeek,
                 Sources = new List<TemplateSource>{
                     new TemplateSource{
@@ -305,9 +313,14 @@
 
         public void WriteJsonTemplateSettings(RemoteTemplateSettings settings)
         {
-            var filePath = Path.Combine(this.SideWaffleInstallDir, "templatesources.json");
+            var filePath = Path.Combine(this.RootDirectory, "templatesources.json");
 
             var json = JsonConvert.SerializeObject(settings, Formatting.Indented);
+
+            if (!Directory.Exists(RootDirectory)) {
+                Directory.CreateDirectory(RootDirectory);
+            }
+
             File.WriteAllText(filePath, json);
         }
 
@@ -350,7 +363,7 @@
                         DirectoryInfo parentDirectoryInfo = new DirectoryInfo(RootDirectory);
                         ResetDirectoryAttributes(parentDirectoryInfo);
 
-                        Directory.Delete(RootDirectory, true);
+                        DeleteTemplateSourceFiles(RootDirectory);
                     }
 
                     // Delete the Output folder from the Extension directory
@@ -360,7 +373,7 @@
                         DirectoryInfo parentDirectoryInfo = new DirectoryInfo(OutputPath);
                         ResetDirectoryAttributes(parentDirectoryInfo);
 
-                        Directory.Delete(OutputPath, true);
+                        DeleteTemplateSourceFiles(OutputPath);
                     }
 
                     // Download and build the latest templates from their source
@@ -369,6 +382,19 @@
                 catch (Exception ex) {
                     LogError(ex.ToString());
                     UpdateStatusBar(@"An error occurred during template creation, see the activity log for more info");
+                }
+            }
+        }
+
+        private void DeleteTemplateSourceFiles(string filePath)
+        {
+            string[] filePaths = Directory.GetFiles(filePath);
+            foreach (string path in filePaths)
+            {
+                var fileName = new FileInfo(path).Name;
+                if (fileName != "templatesources.json")
+                {
+                    File.Delete(path);
                 }
             }
         }

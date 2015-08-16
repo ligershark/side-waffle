@@ -1,22 +1,21 @@
-﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>Nancy empty project with ASP.NET host and Razor</Name>
     <Description>Nancy empty project with ASP.NET host and Razor</Description>
     <DefaultName>NancyEmptyAspNetRazor</DefaultName>
-    
     <ProjectType>CSharp</ProjectType>
     <SortOrder>1000</SortOrder>
-    <CreateNewFolder>true</CreateNewFolder>    
+    <CreateNewFolder>true</CreateNewFolder>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>icon.png</Icon>
-    
     <!-- Indicates how many parent folders this item template should appear in -->
     <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
+    <TemplateID>6f6d7464-13d7-4c20-9d2a-2aeb3985d816</TemplateID>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="Nancy.CSharp.EmptyAspNetHostWithRazor.csproj" File="Nancy.CSharp.EmptyAspNetHostWithRazor.csproj" ReplaceParameters="true">      
+    <Project TargetFileName="Nancy.CSharp.EmptyAspNetHostWithRazor.csproj" File="Nancy.CSharp.EmptyAspNetHostWithRazor.csproj" ReplaceParameters="true">
     </Project>
   </TemplateContent>
 </VSTemplate>

@@ -1,7 +1,9 @@
+.vs/
 OutputRoot/
 packages/
 PrecompiledWeb/
 .tools/
+project.lock.json
 #################
 ## Visual Studio
 #################
@@ -56,7 +58,6 @@ ipch/
 *.aps
 *.ncb
 *.opensdf
-*.sdf
 *.cachefile
 
 # Visual Studio profiler
