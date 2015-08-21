@@ -277,13 +277,7 @@
 
             if (results == null || results.Sources == null || results.Sources.Count <= 0) {
                 results = new RemoteTemplateSettings {
-                    UpdateInterval = UpdateFrequency.OnceAWeek,
-                    Sources = new List<TemplateSource>{
-                        new TemplateSource{
-                            Name="sidewaffleremote",
-                            Location = new Uri(@"https://github.com/ligershark/side-waffle.git"),
-                            Branch="origin/autoupdate",
-                            Enabled=false }}
+                    UpdateInterval = UpdateFrequency.OnceAWeek
                 };
             }
 
@@ -294,18 +288,7 @@
         {
             var results = new RemoteTemplateSettings
             {
-                UpdateInterval = UpdateFrequency.OnceAWeek,
-                Sources = new List<TemplateSource>{
-                    new TemplateSource{
-                        Name="sidewaffleremote",
-                        Location = new Uri(@"https://github.com/ligershark/side-waffle.git"),
-                        Branch="origin/autoupdate",
-                        Enabled = false },
-                    new TemplateSource{
-                        Name="contoso",
-                        Location = new Uri(@"https://github.com/sayedihashimi/contoso-templatepack.git"),
-                        Branch="origin/autoupdate",
-                        Enabled = false}}
+                UpdateInterval = UpdateFrequency.OnceAWeek
             };
 
             return results;
