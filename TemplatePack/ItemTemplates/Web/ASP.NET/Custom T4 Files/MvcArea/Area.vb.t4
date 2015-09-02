@@ -2,9 +2,10 @@
 <#@ output extension="vb" #>
 <#@ parameter type="System.String" name="AreaName" #>
 <#@ parameter type="System.String" name="AreaClassName" #>
+<#@ parameter type="System.String" name="Namespace" #>
 Imports System.Web.Mvc
 
-Namespace Areas.<#= AreaName #>
+Namespace <#= Namespace #>
     Public Class <#= AreaClassName #>
         Inherits AreaRegistration
 

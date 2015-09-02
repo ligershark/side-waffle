@@ -54,7 +54,8 @@ For Each modelProperty As PropertyMetadata In properties
     If (modelProperty.Scaffold) AndAlso (Not modelProperty.IsPrimaryKey) AndAlso (Not modelProperty.IsForeignKey) Then
 #>
 <#
-        ' This is a temporary work around until core scaffolding provides support for independent associations.
+        ' We do not want to show any association properties for which there is
+        ' no associated foreign key.
         If (modelProperty.IsAssociation) AndAlso (GetRelatedModelMetadata(modelProperty) Is Nothing)  Then
             Continue For
         End If
@@ -76,7 +77,8 @@ For Each modelProperty As PropertyMetadata In properties
     If (modelProperty.Scaffold) AndAlso (Not modelProperty.IsPrimaryKey) AndAlso (Not modelProperty.IsForeignKey) Then
 #>
 <#
-        ' This is a temporary work around until core scaffolding provides support for independent associations.
+        ' We do not want to show any association properties for which there is
+        ' no associated foreign key.
         If (modelProperty.IsAssociation) AndAlso (GetRelatedModelMetadata(modelProperty) Is Nothing)  Then
             Continue For
         End If

@@ -1,17 +1,18 @@
 ﻿<#@ template language="C#" HostSpecific="True" Debug="True" #>
 <#@ output extension="cs" #>
-<#@ assembly name="System.ComponentModel.DataAnnotations" #>
 <#@ assembly name="System.Core" #>
-<#@ assembly name="System.Data.Entity" #>
 <#@ assembly name="System.Data.Linq" #>
-<#@ assembly name="EnvDTE" #>
 <#@ ScaffoldingAssembly Processor="ScaffoldingAssemblyLoader" #>
 <#
-var routePrefix = String.Empty;
-if (!String.IsNullOrWhiteSpace(AreaName)) {
-    routePrefix = "/" + AreaName;
+string routePrefix;
+if (String.IsNullOrEmpty(AreaName)) 
+{
+    routePrefix = ControllerRootName;
 }
-routePrefix += "/" + ControllerRootName + "/";
+else
+{
+    routePrefix = AreaName + "/" + ControllerRootName;
+}
 #>
 <#@ import namespace="System.Collections" #>
 <#@ import namespace="System.Collections.Generic" #>
@@ -25,6 +26,7 @@ routePrefix += "/" + ControllerRootName + "/";
 <#@ parameter type="System.String" name="ModelTypeName" #>
 <#@ parameter type="System.String" name="ModelVariable" #>
 <#@ parameter type="Microsoft.AspNet.Scaffolding.Core.Metadata.ModelMetadata" name="ModelMetadata" #>
+<#@ parameter type="System.String" name="EntitySetVariable" #>
 <#@ parameter type="System.Boolean" name="UseAsync" #>
 <#@ parameter type="System.Boolean" name="IsOverpostingProtectionRequired" #>
 <#@ parameter type="System.String" name="BindAttributeIncludeText" #>
@@ -50,7 +52,7 @@ namespace <#= Namespace #>
 <#
     var contextTypeName = ContextTypeName;
     var entitySetName = ModelMetadata.EntitySetName;
-    var entitySetVariable = entitySetName.ToLowerInvariant();
+    var entitySetVar = EntitySetVariable ?? (String.IsNullOrEmpty(entitySetName) ? entitySetName : (entitySetName.Substring(0, length:1).ToLowerInvariant() + entitySetName.Substring(1)));
     var primaryKeyName = ModelMetadata.PrimaryKeys[0].PropertyName;
     var primaryKeyShortTypeName = ModelMetadata.PrimaryKeys[0].ShortTypeName;
     var primaryKeyDefaultValue = ModelMetadata.PrimaryKeys[0].DefaultValue;
@@ -62,7 +64,7 @@ namespace <#= Namespace #>
     string bindAttribute;
     if (IsOverpostingProtectionRequired)
     {
-        bindAttribute = String.Format("[Bind(Include=\"{0}\")] ", BindAttributeIncludeText);
+        bindAttribute = String.Format("[Bind(Include = \"{0}\")] ", BindAttributeIncludeText);
     }
     else
     {
@@ -84,11 +86,11 @@ namespace <#= Namespace #>
         includeExpressions = String.Join("", relatedProperties.Values.Select(property => String.Format(".Include({0} => {0}.{1})", lambdaVar, property.AssociationPropertyName)));
 #>
 <# if(!String.IsNullOrEmpty(includeExpressions)) { #>
-            var <#= entitySetVariable #> = db.<#= entitySetName #><#= includeExpressions #>;
+            var <#= entitySetVar #> = db.<#= entitySetName #><#= includeExpressions #>;
 <#		if (UseAsync) { #>
-            return View(await <#= entitySetVariable #>.ToListAsync());
+            return View(await <#= entitySetVar #>.ToListAsync());
 <#		} else { #>
-            return View(<#= entitySetVariable #>.ToList());
+            return View(<#= entitySetVar #>.ToList());
 <#		} #>
 <# } else { #>
 <#		if (UseAsync) { #>
@@ -99,7 +101,7 @@ namespace <#= Namespace #>
 <# } #>
         }
 
-        // GET: <#= routePrefix #>Details/5
+        // GET: <#= routePrefix #>/Details/5
 <# if (UseAsync) { #>
         public async Task<ActionResult> Details(<#= primaryKeyNullableTypeName #> id)
 <# } else { #>
@@ -122,7 +124,7 @@ namespace <#= Namespace #>
             return View(<#= ModelVariable #>);
         }
 
-        // GET: <#= routePrefix #>Create
+        // GET: <#= routePrefix #>/Create
         public ActionResult Create()
         {
 <# foreach (var property in relatedProperties.Values) { #>
@@ -131,7 +133,7 @@ namespace <#= Namespace #>
             return View();
         }
 
-        // POST: <#= routePrefix #>Create
+        // POST: <#= routePrefix #>/Create
 <# if (IsOverpostingProtectionRequired) {
     foreach (var line in OverpostingWarningMessage.Split(new string[] { Environment.NewLine }, StringSplitOptions.None)) { 
 #>
@@ -165,7 +167,7 @@ namespace <#= Namespace #>
             return View(<#= ModelVariable #>);
         }
 
-        // GET: <#= routePrefix #>Edit/5
+        // GET: <#= routePrefix #>/Edit/5
 <# if (UseAsync) { #>
         public async Task<ActionResult> Edit(<#= primaryKeyNullableTypeName #> id)
 <# } else { #>
@@ -191,7 +193,7 @@ namespace <#= Namespace #>
             return View(<#= ModelVariable #>);
         }
 
-        // POST: <#= routePrefix #>Edit/5
+        // POST: <#= routePrefix #>/Edit/5
 <# if (IsOverpostingProtectionRequired) {
     foreach (var line in OverpostingWarningMessage.Split(new string[] { Environment.NewLine }, StringSplitOptions.None)) { 
 #>
@@ -221,7 +223,7 @@ namespace <#= Namespace #>
             return View(<#= ModelVariable #>);
         }
 
-        // GET: <#= routePrefix #>Delete/5
+        // GET: <#= routePrefix #>/Delete/5
 <# if (UseAsync) { #>
         public async Task<ActionResult> Delete(<#= primaryKeyNullableTypeName #> id)
 <# } else { #>
@@ -244,7 +246,7 @@ namespace <#= Namespace #>
             return View(<#= ModelVariable #>);
         }
 
-        // POST: <#= routePrefix #>Delete/5
+        // POST: <#= routePrefix #>/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
 <# if (UseAsync) { #>
