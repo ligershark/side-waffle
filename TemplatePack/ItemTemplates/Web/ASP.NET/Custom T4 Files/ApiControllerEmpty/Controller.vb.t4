@@ -1,9 +1,12 @@
 ﻿<#@ template language="VB" HostSpecific="True" #>
 <#@ output extension="vb" #>
 <#@ parameter type="System.String" name="ControllerName" #>
+<#@ parameter type="System.String" name="Namespace" #>
 Imports System.Net
 Imports System.Web.Http
 
-Public Class <#= ControllerName #>
-    Inherits ApiController
-End Class
+Namespace <#= Namespace #>
+    Public Class <#= ControllerName #>
+        Inherits ApiController
+    End Class
+End Namespace

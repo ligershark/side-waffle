@@ -4,7 +4,7 @@
 <#@ parameter type="System.String" name="ControllerRootName" #>
 <#@ parameter type="System.String" name="Namespace" #>
 <#
-string pathFragment = ControllerRootName.ToLowerInvariant();
+string routePrefix = "api/" + ControllerRootName;
 #>
 using System;
 using System.Collections.Generic;
@@ -17,29 +17,29 @@ namespace <#= Namespace #>
 {
     public class <#= ControllerName #> : ApiController
     {
-        // GET api/<#= pathFragment #>
+        // GET: <#= routePrefix #>
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<#= pathFragment #>/5
+        // GET: <#= routePrefix #>/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/<#= pathFragment #>
+        // POST: <#= routePrefix #>
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT api/<#= pathFragment #>/5
+        // PUT: <#= routePrefix #>/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/<#= pathFragment #>/5
+        // DELETE: <#= routePrefix #>/5
         public void Delete(int id)
         {
         }
