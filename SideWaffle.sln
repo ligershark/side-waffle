@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		tools\Install.ps1 = tools\Install.ps1
 		LICENSE.md = LICENSE.md
 		README.md = README.md
+		release-notes.xml = release-notes.xml
 		screenshot.png = screenshot.png
 		side-waffle.nuspec = side-waffle.nuspec
 	EndProjectSection

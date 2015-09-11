@@ -51,10 +51,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="checkmark.png" />
-    <Content Include="..\release-notes.html">
-      <Link>release-notes.html</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="feed.pkgdef">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
