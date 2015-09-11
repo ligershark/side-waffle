@@ -412,10 +412,6 @@ function DoBuild{
                 RestoreNugetPackages
             }
 
-            if(-not $preventOverridingMsbuildPath){
-                Set-MSBuild "$env:windir\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe"
-            }
-
             # msbuild ".\TemplatePack\TemplatePack.csproj" 
             #    /p:VisualStudioVersion=11.0 
             #    /p:TemplateBuilderTargets="($env:TemplateBuilderDevRoot)tools\ligershark.templates.targets" 
