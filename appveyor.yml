@@ -19,5 +19,5 @@ artifacts:
  - path: TemplatePack\template-report.xml
    name: template-report.xml
 
- - path: release-notes.html
-   name: release-notes.html
+ - path: release-notes.xml
+   name: release-notes.xml
