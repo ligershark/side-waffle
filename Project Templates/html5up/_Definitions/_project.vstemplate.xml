@@ -4,21 +4,19 @@
     <Description>html5up</Description>
     <DefaultName>html5up</DefaultName>
     <ProjectType>CSharp</ProjectType>
-    <ProjectSubType>
-    </ProjectSubType>
-    <SortOrder>10</SortOrder>
+    <ProjectSubType></ProjectSubType>
+    <SortOrder>1000</SortOrder>
     <CreateNewFolder>true</CreateNewFolder>
+    <TemplateID>da046bc9-5ed2-4dff-bacb-29e7c0ff0fb0</TemplateID>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>sw-file-icon.png</Icon>
     <!-- Indicates how many parent folders this item template should appear in -->
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-    <TemplateID>da046bc9-5ed2-4dff-bacb-29e7c0ff0fb0</TemplateID>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="html5up.csproj" File="html5up.csproj" ReplaceParameters="true">
-    </Project>
+    <Project TargetFileName="html5up.csproj" File="html5up.csproj" ReplaceParameters="true"></Project>
   </TemplateContent>
   <WizardExtension>
     <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>

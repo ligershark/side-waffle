@@ -4,6 +4,17 @@
 <#@ parameter type="System.String" name="ControllerRootName" #>
 <#@ parameter type="System.String" name="Namespace" #>
 <#@ parameter type="System.String" name="AreaName" #>
+<#
+string routePrefix;
+if (String.IsNullOrEmpty(AreaName)) 
+{
+    routePrefix = ControllerRootName;
+}
+else
+{
+    routePrefix = AreaName + "/" + ControllerRootName;
+}
+#>
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +25,10 @@ namespace <#= Namespace #>
 {
     public class <#= ControllerName #> : Controller
     {
-        //
-        // GET: <#= (!String.IsNullOrEmpty(AreaName)) ? ("/" + AreaName) : String.Empty #>/<#= ControllerRootName #>/
+        // GET: <#= routePrefix #>
         public ActionResult Index()
         {
             return View();
         }
-	}
+    }
 }

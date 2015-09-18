@@ -2,22 +2,25 @@
 <#@ output extension="vb" #>
 <#@ parameter type="System.String" name="ControllerName" #>
 <#@ parameter type="System.String" name="ControllerRootName" #>
+<#@ parameter type="System.String" name="Namespace" #>
 <#@ parameter type="System.String" name="AreaName" #>
 <#
-Dim routeComment As String
+Dim routePrefix As String
 If String.IsNullOrEmpty(AreaName) Then
-    routeComment = "/" + ControllerRootName
+    routePrefix = ControllerRootName
 Else
-    routeComment = "/" + AreaName + "/" + ControllerRootName + "/"
+    routePrefix = AreaName + "/" + ControllerRootName
 End If
 #>
 Imports System.Web.Mvc
 
-Public Class <#= ControllerName #>
-    Inherits Controller
+Namespace <#= Namespace #>
+    Public Class <#= ControllerName #>
+        Inherits Controller
 
-    ' GET: <#= routeComment #>
-    Function Index() As ActionResult
-        Return View()
-    End Function
-End Class
+        ' GET: <#= routePrefix #>
+        Function Index() As ActionResult
+            Return View()
+        End Function
+    End Class
+End Namespace

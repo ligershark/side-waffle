@@ -1,6 +1,7 @@
 ﻿
 <#+
-// These functionalities needs to move to core.
+// Gets the related entity information for an association property where there is an associated foreign key property.
+// Note: ModelMetadata.RelatedEntities contains only the related entities associated through a foreign key property.
 
 RelatedModelMetadata GetRelatedModelMetadata(PropertyMetadata property){
     RelatedModelMetadata propertyModel;
