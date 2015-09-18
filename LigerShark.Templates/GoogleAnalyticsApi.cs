@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -122,4 +122,3 @@ namespace LigerShark.Templates
         }
     }
 }
->>>>>>> WIP - adding implementation to upload data to GA
