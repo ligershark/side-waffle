@@ -83,6 +83,7 @@
       <DependentUpon>DownloadZipWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Extensions\HttpContentExtensions.cs" />
+    <Compile Include="GoogleAnalyticsApi.cs" />
     <Compile Include="GoogleAnalyticsWizard.cs" />
     <Compile Include="Html5UpProjectWizard.cs" />
   </ItemGroup>
