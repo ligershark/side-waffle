@@ -122,3 +122,4 @@ namespace LigerShark.Templates
         }
     }
 }
+>>>>>>> WIP - adding implementation to upload data to GA
