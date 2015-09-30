@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Preprocess>
+  <TemplateInfo Path="CSharp\Custom\NuGet\Advanced"/>
+  <Replacements Include="*.*" Exclude="*.vstemplate;*.csproj*.jpg;*.png;*.ico;_preprocess.xml">
+    <add key="WebApplication1" value="$safeprojectname$"/>
+  </Replacements>
+</Preprocess>
