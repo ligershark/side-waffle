@@ -6,7 +6,7 @@ Vsix-IncrementVsixVersion | Vsix-UpdateBuildVersion
 nuget restore sidewaffle.sln
 # install psbuild
 (new-object Net.WebClient).DownloadString("https://raw.github.com/ligershark/psbuild/master/src/GetPSBuild.ps1") | iex
-if($env:APPVEYOR_REPO_BRANCH -eq 'release'){
+if($env:APPVEYOR_REPO_BRANCH -eq 'release' -and ([string]::IsNullOrWhiteSpace($env:APPVEYOR_PULL_REQUEST_NUMBER) )) {
     .\build-main.ps1 -publish
 }
 else{
