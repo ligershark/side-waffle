@@ -351,9 +351,17 @@ function Publish{
             'path' = (join-path $outputpath 'extension.vsixmanifest')
             'dest' = 'feed/web/extension.vsixmanifest'
         }
-        $filesToPublish += @{
-            'path' = (join-path $outputpath 'release-notes.html')
-            'dest' = 'release-notes.html'
+        if(Test-Path (join-path $outputpath 'release-notes.html')){
+            $filesToPublish += @{
+                'path' = (join-path $outputpath 'release-notes.html')
+                'dest' = 'release-notes.html'
+            }
+        }
+        if(Test-Path (join-path $outputpath 'release-notes.xml')){
+            $filesToPublish += @{
+                'path' = (join-path $outputpath 'release-notes.xml')
+                'dest' = 'release-notes.html'
+            }
         }
 
         # call msdeploy once for each of these files
