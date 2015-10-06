@@ -33,6 +33,10 @@ namespace LigerShark.Templates
 
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 924ff16fc5449220f223fcc501a0db0ee9411103
             TemplateName = replacementsDictionary["$TemplateName$"];
             TemplateID = replacementsDictionary["$TemplateID$"];
         }
@@ -44,8 +48,12 @@ namespace LigerShark.Templates
 
         private void TrackTemplate(string templateID, string templateName)
         {
+<<<<<<< HEAD
             GoogleAnalyticsApi tracker = new GoogleAnalyticsApi("UA-62483606-3", "1092810121650");
             tracker.TrackEvent("template", "add", templateName);
+=======
+            GoogleAnalyticsApi.TrackEvent("template", "add", templateName + templateID);
+>>>>>>> 924ff16fc5449220f223fcc501a0db0ee9411103
         }
     }
 }
