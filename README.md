@@ -19,7 +19,7 @@ The result of a search for "angular" in the "Add new item" dialog
 2. Clone it to your computer
 3. Install the [Visual Studio 2012 SDK](http://www.microsoft.com/en-us/download/details.aspx?id=30668), 
 [Visual Studio 2013 SDK](http://www.microsoft.com/en-us/download/details.aspx?id=40758), or 
-[Visual Studio 2015 SDK RC](http://go.microsoft.com/?linkid=9877247).
+[Visual Studio 2015 SDK](https://msdn.microsoft.com/en-us/library/bb166441(v=vs.140).aspx).
 4. Open the solution in Visual Studio
 5. Watch [this video tutorial](http://youtu.be/h4VaORKgrOw)
 6. After adding your templates, send us a pull request
