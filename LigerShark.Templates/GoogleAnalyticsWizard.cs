@@ -45,7 +45,8 @@ namespace LigerShark.Templates
         private void TrackTemplate(string templateID, string templateName)
         {
             GoogleAnalyticsApi tracker = new GoogleAnalyticsApi("UA-62483606-3", "1092810121650");
-            tracker.TrackEvent("template", "add", templateName);
+            //tracker.TrackEvent("template", "add", templateName);
+            tracker.TrackEvent("Project Template", "Test", templateName);
         }
     }
 }

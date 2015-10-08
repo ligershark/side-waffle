@@ -19,5 +19,13 @@
     <Project TargetFileName="ConsoleApplicationAsync.csproj" File="ConsoleApplicationAsync.csproj" ReplaceParameters="true">
       <!--<ProjectItem ReplaceParameters="true" TargetFileName="Program.cs" OpenInEditor="true">Program.cs</ProjectItem>-->
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Console Application Async" />
+      <CustomParameter Name="$TemplateID$" Value="bf3f1e42-fdb7-43c5-9130-5f7bf5326a63" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>
