@@ -3,15 +3,13 @@
     <Name>xUnit Test Project (DNX)</Name>
     <Description>This will create an xUnit test project which uses DNX, and can be executed cross-platform.</Description>
     <DefaultName>UnitTestProject</DefaultName>
-    
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>Web</ProjectSubType>
     <RequiredFrameworkVersion>4.5</RequiredFrameworkVersion>
     <CreateInPlace>true</CreateInPlace>
     <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
-    
     <SortOrder>1000</SortOrder>
-    <CreateNewFolder>true</CreateNewFolder>    
+    <CreateNewFolder>true</CreateNewFolder>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
@@ -26,5 +24,13 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="project.json">project.json</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Class1.cs">Class1.cs</ProjectItem>
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="xUnit Test Project (DNX)" />
+      <CustomParameter Name="$TemplateID$" Value="98669676-8c1b-4ccc-9602-3539b21e6380" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>
