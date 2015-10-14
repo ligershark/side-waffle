@@ -111,6 +111,8 @@ namespace TemplatePack
                 sourceBranchTextBox.Enabled = false;
                 sourceBranchTextBox.Text = "origin/master";
             }
+            // Enable the newly created template (default setting)
+            CurrentItemSelected.Checked = true;
 
             applyBtn.Visible = true;
         }
