@@ -103,20 +103,21 @@ namespace LigerShark.Templates
 
         private enum HitType
         {
-            // ReSharper disable InconsistentNaming
             @event,
             @pageview,
-            // ReSharper restore InconsistentNaming
         }
 
         private Dictionary<string, string> DefaultValues
         {
             get
             {
-                var data = new Dictionary<string, string>();
-                data.Add("v", googleVersion);         // The protocol version. The value should be 1.
-                data.Add("tid", googleTrackingID);    // Tracking ID / Web property / Property ID.
-                data.Add("cid", googleClientID);      // Anonymous Client ID (must be unique).
+                var data = new Dictionary<string, string>()
+                {
+                    { "v", googleVersion },         // The protocol version. The value should be 1.
+                    { "tid", googleTrackingID },    // Tracking ID / Web property / Property ID.
+                    { "cid", googleClientID }       // Anonymous Client ID (must be unique).
+                };
+
                 return data;
             }
         }

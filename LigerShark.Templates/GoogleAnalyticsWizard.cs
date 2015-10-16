@@ -1,6 +1,9 @@
 ﻿using EnvDTE;
 using Microsoft.VisualStudio.TemplateWizard;
+using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace LigerShark.Templates
 {
@@ -28,7 +31,18 @@ namespace LigerShark.Templates
 
         public void RunFinished()
         {
-            TrackTemplate(TemplateID, TemplateName);
+            System.Threading.Tasks.Task.Run(async () => {
+                await System.Threading.Tasks.Task.Delay(100);
+
+                try
+                {
+                    TrackTemplate(TemplateID, TemplateName);
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.MessageBox.Show(ex.ToString());
+                }
+            });
         }
 
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
@@ -44,8 +58,19 @@ namespace LigerShark.Templates
 
         private void TrackTemplate(string templateID, string templateName)
         {
-            GoogleAnalyticsApi tracker = new GoogleAnalyticsApi("UA-62483606-4", "1092810121650");
+            var result = GetHashString(Environment.UserDomainName + Environment.MachineName);
+
+            GoogleAnalyticsApi tracker = new GoogleAnalyticsApi("UA-62483606-4", result);
             tracker.TrackEvent("template", "add", templateName);
+        }
+
+        public string GetHashString(string data)
+        {
+            var hashType = new MD5CryptoServiceProvider();
+            var hashBytes = Encoding.UTF8.GetBytes(data);
+            var hash = hashType.ComputeHash(hashBytes);
+            
+            return Convert.ToBase64String(hash);
         }
     }
 }
