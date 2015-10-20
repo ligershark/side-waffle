@@ -83,22 +83,15 @@ namespace LigerShark.Templates
                 writer.Write(postDataString);
             }
 
-            try
-            {
-                // Send the response to the server
-                var webResponse = (HttpWebResponse)request.GetResponse();
+            // Send the response to the server
+            var webResponse = (HttpWebResponse)request.GetResponse();
 
-                if (webResponse.StatusCode != HttpStatusCode.OK)
-                {
-                    throw new HttpException((int)webResponse.StatusCode, "Google Analytics tracking did not return OK 200");
-                }
-
-                webResponse.Close();
-            }
-            catch (Exception ex)
+            if (webResponse.StatusCode != HttpStatusCode.OK)
             {
-                throw new Exception(ex.Message);
+                throw new HttpException((int)webResponse.StatusCode, "Google Analytics tracking did not return OK 200");
             }
+
+            webResponse.Close();
         }
 
         private enum HitType
