@@ -67,13 +67,13 @@ namespace LigerShark.Templates
             tracker.TrackEvent("template", "add", templateName);
         }
 
-        public string GetHashString(string data)
+        public string GetHashString(string text)
         {
             var hashType = new MD5CryptoServiceProvider();
-            var hashBytes = Encoding.UTF8.GetBytes(data);
+            var hashBytes = Encoding.UTF8.GetBytes(text);
             var hash = hashType.ComputeHash(hashBytes);
-            
-            return Convert.ToBase64String(hash);
+
+            return BitConverter.ToString(hash).Replace("-", "");
         }
 
         private void LogError(string message)
