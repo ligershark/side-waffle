@@ -1,13 +1,16 @@
 ﻿using EnvDTE;
+using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TemplateWizard;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
+using System.ComponentModel;
 
 namespace LigerShark.Templates
 {
-    public class GoogleAnalyticsWizard : IWizard
+    public class GoogleAnalyticsWizard : Component, IWizard
     {
         private string TemplateID { get; set; }
         private string TemplateName { get; set; }
@@ -40,7 +43,7 @@ namespace LigerShark.Templates
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.MessageBox.Show(ex.ToString());
+                    LogError(ex.Message);
                 }
             });
         }
@@ -71,6 +74,16 @@ namespace LigerShark.Templates
             var hash = hashType.ComputeHash(hashBytes);
             
             return Convert.ToBase64String(hash);
+        }
+
+        private void LogError(string message)
+        {            
+            IVsActivityLog _log = GetService(typeof(SVsActivityLog)) as IVsActivityLog;
+
+            _log.LogEntry(
+            (UInt32)__ACTIVITYLOG_ENTRYTYPE.ALE_ERROR,
+            this.ToString(),
+            string.Format(CultureInfo.CurrentCulture, "{0}", message));
         }
     }
 }
