@@ -12,5 +12,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">custom.props</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Basic props file" />
+      <CustomParameter Name="$TemplateID$" Value="f4d8d4a9-c002-4b41-be99-c204ad64645f" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

@@ -3,21 +3,28 @@
     <Name>AngularJS And Web API - Empty</Name>
     <Description>Creates an empty project that is preloaded with AngularJs and Web API</Description>
     <DefaultName>AngularJSWebApiEmpty</DefaultName>
-    
     <ProjectType>CSharp</ProjectType>
-    <ProjectSubType></ProjectSubType>
+    <ProjectSubType>
+    </ProjectSubType>
     <SortOrder>1000</SortOrder>
-    <CreateNewFolder>true</CreateNewFolder>    
+    <CreateNewFolder>true</CreateNewFolder>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
     <Icon>template-icon.png</Icon>
-    
     <!-- Indicates how many parent folders this item template should appear in -->
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="AngularJSWebApiEmpty.csproj" File="AngularJSWebApiEmpty.csproj" ReplaceParameters="true">      
+    <Project TargetFileName="AngularJSWebApiEmpty.csproj" File="AngularJSWebApiEmpty.csproj" ReplaceParameters="true">
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="AngularJS And Web API - Empty" />
+      <CustomParameter Name="$TemplateID$" Value="c4338e77-8bb5-433d-baa8-d4d6ab5cfd42" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

@@ -13,5 +13,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">subtitles.vtt</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="WebVTT File" />
+      <CustomParameter Name="$TemplateID$" Value="d77ea1c0-089f-44eb-a777-6b2cba095aad" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

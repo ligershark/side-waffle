@@ -18,5 +18,13 @@
   <TemplateContent>
     <Project TargetFileName="RazorV3WebApplication.csproj" File="RazorV3WebApplication.csproj" ReplaceParameters="true">
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="ASP.NET Web Application (Razor v3)" />
+      <CustomParameter Name="$TemplateID$" Value="c4a6d0e6-213a-46e9-9e5e-27e7d1fe6fc6" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

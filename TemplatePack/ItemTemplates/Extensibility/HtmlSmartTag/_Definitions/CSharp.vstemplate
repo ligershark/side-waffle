@@ -46,5 +46,13 @@
       </Reference>
     </References>
     <ProjectItem ReplaceParameters="true">AddClassSmartTag.cs</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="HTML Smart Tag (VS2013 only)" />
+      <CustomParameter Name="$TemplateID$" Value="ce767f61-54b4-4813-808c-0fc068faa575" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

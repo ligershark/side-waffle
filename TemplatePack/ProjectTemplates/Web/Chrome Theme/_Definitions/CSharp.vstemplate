@@ -36,5 +36,13 @@
         </Folder>
       </Folder>
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Google Chrome Theme" />
+      <CustomParameter Name="$TemplateID$" Value="a9401f8f-01ec-4e42-9612-25894560e0b9" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

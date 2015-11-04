@@ -228,5 +228,13 @@
       <ProjectItem ReplaceParameters="false" TargetFileName="Web.config.install.Release.xdt">Web.config.install.Release.xdt</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="weyland-config.js">weyland-config.js</ProjectItem>
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Durandal451" />
+      <CustomParameter Name="$TemplateID$" Value="f6a0116c-79a9-44f8-aa2b-f37239c1b4fe" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

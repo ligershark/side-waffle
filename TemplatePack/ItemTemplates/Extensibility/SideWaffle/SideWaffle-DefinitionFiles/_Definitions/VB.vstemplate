@@ -15,5 +15,13 @@
     <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\VB.vstemplat-" ItemType="None" OpenInEditor="true">VB.vstemplat-</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\Web.csharp.vstemplat-" ItemType="None" OpenInEditor="true">Web.csharp.vstemplat-</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\Web.VB.vstemplat-" ItemType="None" OpenInEditor="true">Web.VB.vstemplat-</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="SideWaffle Definitions Folder" />
+      <CustomParameter Name="$TemplateID$" Value="3b42ff4e-2255-4309-9cd6-62f053557726" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

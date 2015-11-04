@@ -14,5 +14,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">readme.md</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Readme.md File" />
+      <CustomParameter Name="$TemplateID$" Value="6b711472-68cc-4708-b20e-b307da63536f" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

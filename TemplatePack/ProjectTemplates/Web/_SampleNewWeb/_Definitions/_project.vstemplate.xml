@@ -19,5 +19,13 @@
   <TemplateContent>
     <Project TargetFileName="$projectname$.csproj" File="WebApplication1.csproj" ReplaceParameters="true">
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Sample New Web Project" />
+      <CustomParameter Name="$TemplateID$" Value="1fcd5687-c506-40e6-8c11-9986d320bae0" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

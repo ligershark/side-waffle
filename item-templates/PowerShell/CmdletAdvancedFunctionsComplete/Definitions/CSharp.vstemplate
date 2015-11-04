@@ -11,5 +11,13 @@
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.ps1">cmdlet-adv-function-complete.ps1</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Cmdlet (advanced function) complete" />
+      <CustomParameter Name="$TemplateID$" Value="65aa635d-355c-4cd5-b0d0-3379bfd92e69" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

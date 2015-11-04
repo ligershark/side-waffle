@@ -13,5 +13,13 @@
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">package.json</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Package.json for NodeJS" />
+      <CustomParameter Name="$TemplateID$" Value="982548de-7dfb-447d-be39-436a47878848" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>
