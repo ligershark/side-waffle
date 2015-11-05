@@ -155,6 +155,7 @@
             // 
             // sourceUrlTextBox
             // 
+            this.sourceUrlTextBox.Enabled = false;
             this.sourceUrlTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sourceUrlTextBox.Location = new System.Drawing.Point(88, 252);
             this.sourceUrlTextBox.Name = "sourceUrlTextBox";
@@ -164,6 +165,7 @@
             // 
             // sourceNameTextBox
             // 
+            this.sourceNameTextBox.Enabled = false;
             this.sourceNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sourceNameTextBox.Location = new System.Drawing.Point(88, 224);
             this.sourceNameTextBox.Name = "sourceNameTextBox";

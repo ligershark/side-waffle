@@ -58,6 +58,12 @@ namespace TemplatePack
                 sourceNameTextBox.Text = CurrentItemSelected.SubItems[1].Text;
                 sourceUrlTextBox.Text = CurrentItemSelected.SubItems[2].Text;
 
+                if (sourceNameTextBox.Enabled == false && sourceUrlTextBox.Enabled == false)
+                {
+                    sourceNameTextBox.Enabled = true;
+                    sourceUrlTextBox.Enabled = true;
+                }
+
                 if (CurrentItemSelected.SubItems[3].Text != "")
                 {
                     sourceBranchTextBox.Enabled = true;
@@ -92,6 +98,12 @@ namespace TemplatePack
 
         private void newSourceBtn_Click(object sender, EventArgs e)
         {
+            if (sourceNameTextBox.Enabled == false && sourceUrlTextBox.Enabled == false)
+            {
+                sourceNameTextBox.Enabled = true;
+                sourceUrlTextBox.Enabled = true;
+            }
+
             // Add new row to the ListView
             ListViewItem row = new ListViewItem();
             row.SubItems.Add(String.Empty);
