@@ -132,6 +132,9 @@ namespace TemplatePack
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             // Delete the selected item
+            if (remoteSourceListView.SelectedItems.Count == 0)
+                return;
+
             CurrentItemSelected = remoteSourceListView.SelectedItems[0];
 
             try
