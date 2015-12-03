@@ -43,15 +43,20 @@ namespace LigerShark.Templates
                 }
                 catch (Exception ex)
                 {
-                    LogError(ex.Message);
+                    LogError(ex.ToString());
                 }
             });
         }
 
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
-            TemplateName = replacementsDictionary["$TemplateName$"];
-            TemplateID = replacementsDictionary["$TemplateID$"];
+            try {
+                TemplateName = replacementsDictionary["$TemplateName$"];
+                TemplateID = replacementsDictionary["$TemplateID$"];
+            }
+            catch(Exception ex) {
+                LogError(ex.ToString());
+            }
         }
 
         public bool ShouldAddProjectItem(string filePath)
