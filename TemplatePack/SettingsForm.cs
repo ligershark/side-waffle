@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TemplatePack.Tooling;
 
@@ -52,13 +51,13 @@ namespace TemplatePack
             ListView.SelectedListViewItemCollection selectedRows = remoteSourceListView.SelectedItems;
 
             // Load the selected row into the textboxes
-            if (remoteSourceListView.SelectedItems.Count > 0)
+            if (selectedRows.Count > 0)
             {
-                CurrentItemSelected = remoteSourceListView.SelectedItems[0];
+                CurrentItemSelected = selectedRows[0];
                 sourceNameTextBox.Text = CurrentItemSelected.SubItems[1].Text;
                 sourceUrlTextBox.Text = CurrentItemSelected.SubItems[2].Text;
 
-                if (sourceNameTextBox.Enabled == false && sourceUrlTextBox.Enabled == false)
+                if (!sourceNameTextBox.Enabled && !sourceUrlTextBox.Enabled)
                 {
                     sourceNameTextBox.Enabled = true;
                     sourceUrlTextBox.Enabled = true;
@@ -69,9 +68,9 @@ namespace TemplatePack
                     sourceBranchTextBox.Enabled = true;
                     sourceBranchTextBox.Text = CurrentItemSelected.SubItems[3].Text;
                 }
+                applyBtn.Visible = true;
             }
 
-            applyBtn.Visible = true;
         }
 
         private void applyBtn_Click(object sender, EventArgs e)
@@ -82,7 +81,7 @@ namespace TemplatePack
                 CurrentItemSelected.SubItems[1].Text = sourceNameTextBox.Text;
                 CurrentItemSelected.SubItems[2].Text = sourceUrlTextBox.Text;
 
-                if (sourceBranchTextBox.Enabled == true)
+                if (sourceBranchTextBox.Enabled)
                 {
                     // Update the selected item's branch if and only if the branch textbox is enabled
                     CurrentItemSelected.SubItems[3].Text = sourceBranchTextBox.Text;
@@ -98,7 +97,7 @@ namespace TemplatePack
 
         private void newSourceBtn_Click(object sender, EventArgs e)
         {
-            if (sourceNameTextBox.Enabled == false && sourceUrlTextBox.Enabled == false)
+            if (!sourceNameTextBox.Enabled && !sourceUrlTextBox.Enabled)
             {
                 sourceNameTextBox.Enabled = true;
                 sourceUrlTextBox.Enabled = true;
@@ -117,7 +116,7 @@ namespace TemplatePack
             sourceNameTextBox.Text = "new";
             sourceUrlTextBox.Clear();
 
-            if (sourceBranchTextBox.Enabled == true)
+            if (sourceBranchTextBox.Enabled)
             {
                 // Reset the branch textbox
                 sourceBranchTextBox.Enabled = false;
@@ -132,6 +131,9 @@ namespace TemplatePack
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             // Delete the selected item
+            if (remoteSourceListView.SelectedItems.Count == 0)
+                return;
+
             CurrentItemSelected = remoteSourceListView.SelectedItems[0];
 
             try
@@ -210,18 +212,12 @@ namespace TemplatePack
 
             foreach (ListViewItem row in remoteSourceListView.Items)
             {
-                TemplateSource source = new TemplateSource();
-                if (row.Checked == true)
+                TemplateSource source = new TemplateSource
                 {
-                    source.Enabled = true;
-                }
+                    Enabled = row.Checked,
+                    Name = row.SubItems[1].Text
+                };
 
-                else
-                {
-                    source.Enabled = false;
-                }
-
-                source.Name = row.SubItems[1].Text;
 
                 Uri uri = new Uri(row.SubItems[2].Text);
                 Uri url = uri;
@@ -288,17 +284,8 @@ namespace TemplatePack
         {
             foreach (var template in rts.Sources)
             {
-                ListViewItem row = new ListViewItem();
+                ListViewItem row = new ListViewItem {Checked = template.Enabled};
 
-                if (template.Enabled)
-                {
-                    row.Checked = true;
-                }
-
-                else
-                {
-                    row.Checked = false;
-                }
 
                 row.SubItems.Add(template.Name);
                 row.SubItems.Add(template.Location.ToString());
