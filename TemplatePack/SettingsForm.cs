@@ -68,6 +68,7 @@ namespace TemplatePack
                     sourceBranchTextBox.Enabled = true;
                     sourceBranchTextBox.Text = CurrentItemSelected.SubItems[3].Text;
                 }
+
                 applyBtn.Visible = true;
             }
 
@@ -132,7 +133,9 @@ namespace TemplatePack
         {
             // Delete the selected item
             if (remoteSourceListView.SelectedItems.Count == 0)
+            {
                 return;
+            }
 
             CurrentItemSelected = remoteSourceListView.SelectedItems[0];
 
@@ -218,7 +221,6 @@ namespace TemplatePack
                     Name = row.SubItems[1].Text
                 };
 
-
                 Uri uri = new Uri(row.SubItems[2].Text);
                 Uri url = uri;
                 if (uri.IsFile)
@@ -285,7 +287,6 @@ namespace TemplatePack
             foreach (var template in rts.Sources)
             {
                 ListViewItem row = new ListViewItem {Checked = template.Enabled};
-
 
                 row.SubItems.Add(template.Name);
                 row.SubItems.Add(template.Location.ToString());
