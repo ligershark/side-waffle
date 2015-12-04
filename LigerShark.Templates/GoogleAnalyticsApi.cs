@@ -38,11 +38,11 @@ namespace LigerShark.Templates
 
             var values = DefaultValues;
 
-            values.Add("t", HitType.@event.ToString());                                 // Event hit type
+            values.Add("t", HitType.@event.ToString());                                 // Event hit type.
             values.Add("ec", category);                                                 // Event Category. Required.
             values.Add("ea", action);                                                   // Event Action. Required.
-            if (string.IsNullOrWhiteSpace(label)) values.Add("el", label);              // Event label.
-            if (value != null) values.Add("ev", value.ToString());                      // Event value.
+            if (!string.IsNullOrWhiteSpace(label)) values.Add("el", label);             // Event label.
+            if (value.HasValue) values.Add("ev", value.ToString());                     // Event value.
 
             Track(values);
         }
@@ -54,11 +54,11 @@ namespace LigerShark.Templates
 
             var values = DefaultValues;
 
-            values.Add("t", HitType.@pageview.ToString());                              // Event hit type
+            values.Add("t", HitType.@pageview.ToString());                              // Event hit type.
             values.Add("ec", category);                                                 // Event Category. Required.
             values.Add("ea", action);                                                   // Event Action. Required.
-            if (string.IsNullOrWhiteSpace(label)) values.Add("el", label);              // Event label.
-            if (value != null) values.Add("ev", value.ToString());                      // Event value.
+            if (!string.IsNullOrWhiteSpace(label)) values.Add("el", label);             // Event label.
+            if (value.HasValue) values.Add("ev", value.ToString());                     // Event value.
 
             Track(values);
         }
