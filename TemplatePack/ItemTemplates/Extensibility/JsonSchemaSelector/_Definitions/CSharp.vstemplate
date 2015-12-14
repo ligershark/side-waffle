@@ -22,6 +22,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="JSON Schema Selector Extension" />
       <CustomParameter Name="$TemplateID$" Value="c5a01f60-2a43-4d4d-b693-5445071e60c6" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

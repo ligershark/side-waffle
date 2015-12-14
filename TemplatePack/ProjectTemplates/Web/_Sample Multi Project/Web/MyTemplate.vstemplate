@@ -32,6 +32,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Multi project sample" />
       <CustomParameter Name="$TemplateID$" Value="1d28e296-5d19-47d7-9bea-036903a10ee3" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

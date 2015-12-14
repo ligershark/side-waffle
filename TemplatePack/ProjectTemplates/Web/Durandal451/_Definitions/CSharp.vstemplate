@@ -231,6 +231,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Durandal451" />
       <CustomParameter Name="$TemplateID$" Value="f6a0116c-79a9-44f8-aa2b-f37239c1b4fe" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

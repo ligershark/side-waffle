@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="DurandalJs main.js" />
       <CustomParameter Name="$TemplateID$" Value="cc214491-7827-4f8a-82a1-251441230ea7" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

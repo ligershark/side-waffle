@@ -33,6 +33,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Google Chrome Web Store App" />
       <CustomParameter Name="$TemplateID$" Value="41baa6eb-5ed7-400f-af7d-1721e0aef104" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

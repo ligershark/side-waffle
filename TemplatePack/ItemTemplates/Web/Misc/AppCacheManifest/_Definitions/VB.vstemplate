@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Offline Application Cache Manifest" />
       <CustomParameter Name="$TemplateID$" Value="3710eafb-5e69-4073-8f7b-f351c1f0fe2d" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

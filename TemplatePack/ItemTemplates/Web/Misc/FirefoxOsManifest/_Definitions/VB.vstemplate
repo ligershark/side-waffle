@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="FirefoxOS manifest" />
       <CustomParameter Name="$TemplateID$" Value="55be3ad4-f1b9-4211-8c1b-594e86be2403" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

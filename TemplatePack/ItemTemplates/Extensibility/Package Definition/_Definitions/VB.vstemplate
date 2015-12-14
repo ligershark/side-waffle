@@ -15,6 +15,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Package Definition (.pkgdef)" />
       <CustomParameter Name="$TemplateID$" Value="fac6705e-44d1-4422-b36d-11a17b46fbc3" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

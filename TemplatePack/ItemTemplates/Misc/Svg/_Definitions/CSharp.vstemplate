@@ -15,6 +15,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="SVG File" />
       <CustomParameter Name="$TemplateID$" Value="64b9e6fa-2d5d-4425-960b-a4c1f40322d2" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

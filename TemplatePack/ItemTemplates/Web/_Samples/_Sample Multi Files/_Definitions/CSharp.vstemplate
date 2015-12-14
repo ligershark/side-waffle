@@ -21,6 +21,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Multi file template sample" />
       <CustomParameter Name="$TemplateID$" Value="a255ad24-0c6d-4452-9ac7-f34aac2b5453" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

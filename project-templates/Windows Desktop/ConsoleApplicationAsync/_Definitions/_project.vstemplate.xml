@@ -22,6 +22,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Console Application Async" />
       <CustomParameter Name="$TemplateID$" Value="bf3f1e42-fdb7-43c5-9130-5f7bf5326a63" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

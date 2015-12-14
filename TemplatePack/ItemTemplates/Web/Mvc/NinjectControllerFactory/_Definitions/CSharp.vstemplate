@@ -15,6 +15,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Ninject Controller Factory" />
       <CustomParameter Name="$TemplateID$" Value="595dc63c-a4f6-4239-8d99-66596d28b545" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

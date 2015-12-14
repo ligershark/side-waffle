@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Readme.md File" />
       <CustomParameter Name="$TemplateID$" Value="3d268e3e-6ff3-4e98-ae39-bede1b6dfdf3" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

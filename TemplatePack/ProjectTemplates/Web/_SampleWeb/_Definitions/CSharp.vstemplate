@@ -28,6 +28,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Sample Web Project" />
       <CustomParameter Name="$TemplateID$" Value="54642009-09f0-444e-9204-78525c7ad0fe" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

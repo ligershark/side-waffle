@@ -39,6 +39,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Google Chrome Theme" />
       <CustomParameter Name="$TemplateID$" Value="a9401f8f-01ec-4e42-9612-25894560e0b9" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

@@ -21,6 +21,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="ASP.NET Web Application (Razor v3)" />
       <CustomParameter Name="$TemplateID$" Value="c4a6d0e6-213a-46e9-9e5e-27e7d1fe6fc6" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

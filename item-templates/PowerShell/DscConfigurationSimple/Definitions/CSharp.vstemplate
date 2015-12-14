@@ -14,6 +14,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="DSC Configuration (simple)" />
       <CustomParameter Name="$TemplateID$" Value="7d34103b-3af7-4d76-baad-c6c729e5704a" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

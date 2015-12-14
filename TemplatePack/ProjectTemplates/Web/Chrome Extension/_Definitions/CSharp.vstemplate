@@ -48,6 +48,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Google Chrome Extension" />
       <CustomParameter Name="$TemplateID$" Value="6ea76282-7fee-4846-8c27-8c3ce75a0494" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Humans.txt File" />
       <CustomParameter Name="$TemplateID$" Value="5c8c4f4d-bd72-47e6-84ef-87e0850692ba" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

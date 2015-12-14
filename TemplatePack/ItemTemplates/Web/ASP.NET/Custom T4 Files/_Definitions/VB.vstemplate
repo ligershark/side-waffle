@@ -49,6 +49,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Customize ASP.NET T4 Files" />
       <CustomParameter Name="$TemplateID$" Value="dc09bbe2-9d47-4705-820b-c7aa03144d8e" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

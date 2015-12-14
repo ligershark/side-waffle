@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="AngularJs Filter" />
       <CustomParameter Name="$TemplateID$" Value="32299356-e66a-4489-8177-79ac2945ac63" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

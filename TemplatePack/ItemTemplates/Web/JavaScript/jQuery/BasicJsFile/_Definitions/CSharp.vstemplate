@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Basic jQuery JS File" />
       <CustomParameter Name="$TemplateID$" Value="444e51e0-b733-4692-957c-3ea463ff195a" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

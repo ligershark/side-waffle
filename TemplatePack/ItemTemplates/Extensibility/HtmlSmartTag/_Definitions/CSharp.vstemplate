@@ -49,6 +49,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="HTML Smart Tag (VS2013 only)" />
       <CustomParameter Name="$TemplateID$" Value="ce767f61-54b4-4813-808c-0fc068faa575" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

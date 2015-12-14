@@ -14,6 +14,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="_preprocess.xml" />
       <CustomParameter Name="$TemplateID$" Value="3c6bb549-bcaf-4a9f-abc2-f9c15bafd123" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

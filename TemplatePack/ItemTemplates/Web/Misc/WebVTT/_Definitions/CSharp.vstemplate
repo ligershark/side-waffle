@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="WebVTT File" />
       <CustomParameter Name="$TemplateID$" Value="d77ea1c0-089f-44eb-a777-6b2cba095aad" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

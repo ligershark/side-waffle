@@ -17,6 +17,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Favicon .ico File" />
       <CustomParameter Name="$TemplateID$" Value="f45174b1-70c2-417a-93f7-e571ab581778" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

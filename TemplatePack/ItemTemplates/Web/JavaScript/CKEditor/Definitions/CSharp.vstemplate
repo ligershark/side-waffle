@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="CKEditor plugin" />
       <CustomParameter Name="$TemplateID$" Value="7b4a95c3-9f16-4234-be09-bc1a4cf7f8b1" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

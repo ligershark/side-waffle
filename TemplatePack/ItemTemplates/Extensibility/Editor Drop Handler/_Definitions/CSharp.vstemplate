@@ -46,6 +46,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Editor Drop Handler class" />
       <CustomParameter Name="$TemplateID$" Value="27d6907b-371f-47ea-ae0a-3997f43c5d10" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

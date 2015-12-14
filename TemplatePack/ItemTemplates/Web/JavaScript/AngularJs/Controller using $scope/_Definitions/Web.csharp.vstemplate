@@ -17,6 +17,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="AngularJs Controller using $scope" />
       <CustomParameter Name="$TemplateID$" Value="cad129cd-2bc1-4b40-88e7-302e9a1a8af1" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

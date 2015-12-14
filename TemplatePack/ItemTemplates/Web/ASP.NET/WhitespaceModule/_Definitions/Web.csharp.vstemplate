@@ -17,6 +17,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="HTML Whitespace Removal HttpModule" />
       <CustomParameter Name="$TemplateID$" Value="50356772-bccd-4102-bb73-3706bd1cf557" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

@@ -23,6 +23,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Browser Link extension (VS2013 only)" />
       <CustomParameter Name="$TemplateID$" Value="7eebee7c-fae2-49bf-87f3-4d43afc79da3" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

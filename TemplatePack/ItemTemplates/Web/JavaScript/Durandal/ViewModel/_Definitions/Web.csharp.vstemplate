@@ -17,6 +17,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="DurandalJs ViewModel" />
       <CustomParameter Name="$TemplateID$" Value="f5a7931c-736b-4bc2-8a8a-93ff0c9ba8f8" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

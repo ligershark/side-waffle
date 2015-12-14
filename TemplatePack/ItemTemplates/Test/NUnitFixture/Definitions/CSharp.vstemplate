@@ -15,6 +15,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="NUnit Fixture" />
       <CustomParameter Name="$TemplateID$" Value="8bff26fe-b75c-4a37-91e4-85b3db154be6" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

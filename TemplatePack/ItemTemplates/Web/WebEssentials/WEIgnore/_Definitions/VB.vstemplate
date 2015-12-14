@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="WEIgnore Ignore File (.weignore)" />
       <CustomParameter Name="$TemplateID$" Value="4227bbab-382e-4553-8b78-548020e781fc" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

@@ -14,6 +14,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Windows Azure Blob Upload Helper" />
       <CustomParameter Name="$TemplateID$" Value="7361535b-f602-40b0-a5c2-3e49f8cae5a9" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

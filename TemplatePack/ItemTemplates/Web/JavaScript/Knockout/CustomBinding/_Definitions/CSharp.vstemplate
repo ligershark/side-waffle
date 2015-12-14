@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Knockout Custom Binding" />
       <CustomParameter Name="$TemplateID$" Value="50f0caa7-de39-4b2a-bfea-ba0428550a4d" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

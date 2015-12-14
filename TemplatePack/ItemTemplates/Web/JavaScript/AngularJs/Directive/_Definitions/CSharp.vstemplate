@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="AngularJs Directive" />
       <CustomParameter Name="$TemplateID$" Value="f70ba175-4c94-4f12-bc5e-4183af25547e" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

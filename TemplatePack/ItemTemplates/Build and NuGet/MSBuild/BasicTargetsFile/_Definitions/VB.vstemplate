@@ -15,6 +15,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Basic targets script" />
       <CustomParameter Name="$TemplateID$" Value="224f5e08-76da-4afd-a318-89387208166d" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

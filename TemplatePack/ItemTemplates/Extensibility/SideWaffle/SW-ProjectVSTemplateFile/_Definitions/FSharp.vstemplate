@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="SideWaffle Project Template Files" />
       <CustomParameter Name="$TemplateID$" Value="6b79282a-384f-498d-8822-06b69ac60846" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

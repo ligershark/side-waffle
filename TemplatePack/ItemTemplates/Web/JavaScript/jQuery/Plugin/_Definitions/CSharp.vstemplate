@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="jQuery Plugin" />
       <CustomParameter Name="$TemplateID$" Value="6df39c3a-884a-471e-b60b-f1bcb7dd2002" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

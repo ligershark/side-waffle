@@ -14,6 +14,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Full AppVeyor.yml file" />
       <CustomParameter Name="$TemplateID$" Value="011d153b-d516-4149-943b-b346ed792080" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

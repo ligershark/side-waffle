@@ -14,6 +14,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Windows Azure Table Storage Entity" />
       <CustomParameter Name="$TemplateID$" Value="0b51f5e0-680a-48b9-a77c-f4efd3ea0fe3" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>
