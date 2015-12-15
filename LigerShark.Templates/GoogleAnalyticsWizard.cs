@@ -70,13 +70,17 @@ namespace LigerShark.Templates
         {
             var result = GetHashString(Environment.UserDomainName + Environment.MachineName);
             var category = "";
-            if (templateType.Equals("Project"))
+            if (string.Compare("Project", templateType, StringComparison.OrdinalIgnoreCase) == 0)
             {
                 category = "project-template";
             }
-            else
+            else if (string.Compare("Item", templateType, StringComparison.OrdinalIgnoreCase) == 0)
             {
                 category = "item-template";
+            }
+            else
+            {
+                category = templateType;
             }
 
             GoogleAnalyticsApi tracker = new GoogleAnalyticsApi("UA-62483606-4", result);
