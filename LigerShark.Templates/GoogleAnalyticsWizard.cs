@@ -69,7 +69,7 @@ namespace LigerShark.Templates
         private void TrackTemplate(string templateID, string templateName, string templateType)
         {
             var result = GetHashString(Environment.UserDomainName + Environment.MachineName);
-            var category = "";
+            var category = templateType;
             if (string.Compare("Project", templateType, StringComparison.OrdinalIgnoreCase) == 0)
             {
                 category = "project-template";
@@ -77,10 +77,6 @@ namespace LigerShark.Templates
             else if (string.Compare("Item", templateType, StringComparison.OrdinalIgnoreCase) == 0)
             {
                 category = "item-template";
-            }
-            else
-            {
-                category = templateType;
             }
 
             GoogleAnalyticsApi tracker = new GoogleAnalyticsApi("UA-62483606-4", result);
