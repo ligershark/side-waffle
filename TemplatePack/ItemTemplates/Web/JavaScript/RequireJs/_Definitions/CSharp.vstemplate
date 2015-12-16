@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="RequireJs File" />
       <CustomParameter Name="$TemplateID$" Value="2a651c5b-bad4-44ac-8d27-d6187c9ab523" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

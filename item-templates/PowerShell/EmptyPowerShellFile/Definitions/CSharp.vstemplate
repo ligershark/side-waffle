@@ -14,6 +14,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Empty PowerShell file" />
       <CustomParameter Name="$TemplateID$" Value="01b40eb4-80eb-4f3c-a8fb-d4631a4a6e54" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

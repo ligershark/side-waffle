@@ -15,6 +15,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Basic build script" />
       <CustomParameter Name="$TemplateID$" Value="76e05b87-c5c1-4b22-8329-196e08241a40" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

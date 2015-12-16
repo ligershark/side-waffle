@@ -20,6 +20,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Nancy with self host with Razor" />
       <CustomParameter Name="$TemplateID$" Value="d56c71e9-5384-466c-996e-84d298961102" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

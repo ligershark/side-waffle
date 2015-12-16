@@ -15,6 +15,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Code Snippet" />
       <CustomParameter Name="$TemplateID$" Value="215889f3-98db-48d8-86bb-3b7f1a1037fe" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

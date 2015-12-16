@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="JSHint Rules File (.jshintrc)" />
       <CustomParameter Name="$TemplateID$" Value="20583b2f-1479-4476-a50b-ddf3cdc5d5cf" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

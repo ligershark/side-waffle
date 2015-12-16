@@ -17,6 +17,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Karma Configuration File" />
       <CustomParameter Name="$TemplateID$" Value="804de32b-8ddc-4844-b59d-16cddab37930" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

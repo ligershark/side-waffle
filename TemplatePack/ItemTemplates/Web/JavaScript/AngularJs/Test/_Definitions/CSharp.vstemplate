@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="AngularJs Test Spec" />
       <CustomParameter Name="$TemplateID$" Value="1b291cb7-d23a-44bc-9759-8de8193992da" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

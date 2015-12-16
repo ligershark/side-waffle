@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="JavaScript IIFE" />
       <CustomParameter Name="$TemplateID$" Value="402a53ce-1d47-4012-b312-c957bc1d098a" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

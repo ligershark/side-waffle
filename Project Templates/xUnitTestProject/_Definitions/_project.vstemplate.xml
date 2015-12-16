@@ -27,6 +27,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="xUnit Test Project (DNX)" />
       <CustomParameter Name="$TemplateID$" Value="98669676-8c1b-4ccc-9602-3539b21e6380" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

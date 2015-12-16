@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Mocha Test Framework" />
       <CustomParameter Name="$TemplateID$" Value="d400ba9b-0583-4e9c-aff5-98deee1d5f15" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

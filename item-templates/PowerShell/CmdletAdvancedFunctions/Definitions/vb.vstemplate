@@ -14,6 +14,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Cmdlet (advanced function)" />
       <CustomParameter Name="$TemplateID$" Value="c1103b86-4720-4060-b3c9-de6a6ef9b1fc" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

@@ -15,6 +15,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="A basic NuGet .nuspec file" />
       <CustomParameter Name="$TemplateID$" Value="7ad4a4f8-728b-4188-b575-c4cbb3d2515f" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

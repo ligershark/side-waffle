@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="JSON Schema File" />
       <CustomParameter Name="$TemplateID$" Value="3bd443ff-3485-43d6-a783-1177eda337b1" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

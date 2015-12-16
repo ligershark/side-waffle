@@ -19,6 +19,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="SideWaffle Definitions Folder" />
       <CustomParameter Name="$TemplateID$" Value="bc4d3014-1806-41bb-8ae5-d75e8cca00c3" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

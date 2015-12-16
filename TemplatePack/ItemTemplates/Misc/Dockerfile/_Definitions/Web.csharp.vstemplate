@@ -17,6 +17,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Dockerfile" />
       <CustomParameter Name="$TemplateID$" Value="d4357afa-16ba-4048-b0c6-34ebe2349da2" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

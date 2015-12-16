@@ -18,6 +18,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Jasmine Spec and HTML files" />
       <CustomParameter Name="$TemplateID$" Value="7dd6896a-85b8-43fd-b7a7-dd7d92ead8bc" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

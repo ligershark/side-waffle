@@ -15,6 +15,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Basic props file" />
       <CustomParameter Name="$TemplateID$" Value="6266d73b-fc27-4696-8e2c-fe178fd2e453" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

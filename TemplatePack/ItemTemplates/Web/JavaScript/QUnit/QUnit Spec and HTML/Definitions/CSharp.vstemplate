@@ -17,6 +17,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="QUnit Spec and HTML files" />
       <CustomParameter Name="$TemplateID$" Value="a3584ee7-6d05-474e-b271-770aee0bfd40" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

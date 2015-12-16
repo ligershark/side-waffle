@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Basic SignalR Hub and HTML Client Page" />
       <CustomParameter Name="$TemplateID$" Value="01649c85-d0f8-4006-bd28-875975ca2088" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

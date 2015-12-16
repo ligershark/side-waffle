@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Robots.txt File" />
       <CustomParameter Name="$TemplateID$" Value="3631674f-7a6c-40a5-9184-28ffd1e43ca7" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

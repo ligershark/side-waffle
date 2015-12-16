@@ -15,6 +15,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="AngularJs TypeScript Module" />
       <CustomParameter Name="$TemplateID$" Value="a2e74b97-c76c-4b5b-abb3-3ef516cb63d3" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

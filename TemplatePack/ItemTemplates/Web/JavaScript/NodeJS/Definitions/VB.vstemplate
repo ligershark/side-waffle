@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Package.json for NodeJS" />
       <CustomParameter Name="$TemplateID$" Value="c953e44d-67e7-43c7-9a66-564660f8f015" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

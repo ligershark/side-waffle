@@ -14,6 +14,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Windows Azure Cloud Service Plugin" />
       <CustomParameter Name="$TemplateID$" Value="fa60804d-24ba-4888-9523-c632a247c476" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

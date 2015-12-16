@@ -41,6 +41,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Browser Link Extension" />
       <CustomParameter Name="$TemplateID$" Value="976d7a6f-f3c0-4848-965c-39d3ed0e147d" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

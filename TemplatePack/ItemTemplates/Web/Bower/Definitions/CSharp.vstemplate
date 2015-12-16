@@ -15,6 +15,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Bower JSON Configuration file" />
       <CustomParameter Name="$TemplateID$" Value="b48ec28c-780a-409f-bc13-9708d8d3a59d" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

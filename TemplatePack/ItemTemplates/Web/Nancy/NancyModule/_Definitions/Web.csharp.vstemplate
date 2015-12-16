@@ -17,6 +17,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Nancy module" />
       <CustomParameter Name="$TemplateID$" Value="23d4ea43-aaf1-4460-bc94-b7ce2564d8d6" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

@@ -21,6 +21,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Basic Scaffolder" />
       <CustomParameter Name="$TemplateID$" Value="72e299d5-8ab4-45da-96c5-a39411329c86" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

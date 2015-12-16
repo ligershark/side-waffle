@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="GulpJS basic configuration file" />
       <CustomParameter Name="$TemplateID$" Value="189bf10a-b42c-4ed9-b0d5-97929787216b" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

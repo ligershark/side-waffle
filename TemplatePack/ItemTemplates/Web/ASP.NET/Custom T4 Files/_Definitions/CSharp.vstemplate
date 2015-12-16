@@ -49,6 +49,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="ASP.NET Scaffolding T4 files." />
       <CustomParameter Name="$TemplateID$" Value="1684ae2b-9e99-4014-846b-7e8ad7d1089b" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

@@ -17,6 +17,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Nancy bootstrapper" />
       <CustomParameter Name="$TemplateID$" Value="a1192613-133c-4de5-813f-e4dcbd9000e5" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

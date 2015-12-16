@@ -17,6 +17,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="JSCS Rules File (.jscsrc)" />
       <CustomParameter Name="$TemplateID$" Value="87cf26e1-f67f-41db-84e4-f52b49efab75" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

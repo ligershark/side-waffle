@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="TinyMCE plugin" />
       <CustomParameter Name="$TemplateID$" Value="2fbc0aa5-828a-41cf-8538-d5b065105bbe" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

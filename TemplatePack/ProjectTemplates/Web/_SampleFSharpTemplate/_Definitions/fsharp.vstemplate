@@ -22,6 +22,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="FSharpSample" />
       <CustomParameter Name="$TemplateID$" Value="00fdb2dc-d425-4449-a83e-dd6a283d13a7" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

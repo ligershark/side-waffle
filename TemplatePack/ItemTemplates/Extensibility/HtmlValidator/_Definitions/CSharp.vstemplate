@@ -49,6 +49,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="HTML Validator Class (VS2013 only)" />
       <CustomParameter Name="$TemplateID$" Value="d9f2cae4-9eb7-4039-9ed6-9810713825da" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

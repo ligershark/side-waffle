@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="JSHint Ignore File (.jshintignore)" />
       <CustomParameter Name="$TemplateID$" Value="7e0c7938-526f-404a-a313-7e09bf01c644" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

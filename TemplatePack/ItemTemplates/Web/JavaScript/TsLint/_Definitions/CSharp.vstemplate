@@ -16,6 +16,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="TSLint Rules File (tslint.json)" />
       <CustomParameter Name="$TemplateID$" Value="0e631a4a-c9d6-4263-a722-8be0e647af64" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

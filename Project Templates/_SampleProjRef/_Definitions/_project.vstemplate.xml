@@ -22,6 +22,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Sample proj from ref" />
       <CustomParameter Name="$TemplateID$" Value="3fc0db66-b43d-4257-9571-52e694c89645" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

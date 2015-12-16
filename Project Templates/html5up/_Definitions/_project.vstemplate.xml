@@ -22,6 +22,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Template from html5up.net" />
       <CustomParameter Name="$TemplateID$" Value="772e6fb6-1ba1-42bd-a27a-a3449dbc1dd0" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

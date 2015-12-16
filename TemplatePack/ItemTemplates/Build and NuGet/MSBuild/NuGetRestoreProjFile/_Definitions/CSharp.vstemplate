@@ -15,6 +15,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Build script with NuGet automatic package restore." />
       <CustomParameter Name="$TemplateID$" Value="3fe0247c-7875-4428-bcd8-3d458431e58e" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

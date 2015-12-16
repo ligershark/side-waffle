@@ -65,6 +65,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="HTML5 Boiler Plate v4.3" />
       <CustomParameter Name="$TemplateID$" Value="a02593d1-4461-4b77-9821-43190de662ab" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>
