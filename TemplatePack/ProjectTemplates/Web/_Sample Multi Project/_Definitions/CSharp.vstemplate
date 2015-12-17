@@ -6,6 +6,7 @@
     <Icon>logo.png</Icon>
     <ProjectType>CSharp</ProjectType>
     <TemplateID>2599ffe4-4344-462e-b904-a932e0d80df1</TemplateID>
+	<SortOrder>2005</SortOrder>
   </TemplateData>
   <TemplateContent>
     <ProjectCollection>

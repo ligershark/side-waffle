@@ -21,6 +21,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="AngularJS And Web API - Empty" />
       <CustomParameter Name="$TemplateID$" Value="c4338e77-8bb5-433d-baa8-d4d6ab5cfd42" />
+	  <CustomParameter Name="$TemplateType$" Value="Project" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>

@@ -21,6 +21,9 @@ param(
     [Parameter(ParameterSetName='build')]
     [switch]$publish,
 
+    [Parameter(ParameterSetName='build')]
+    [switch]$disableTemplateValidation,
+
     [Parameter(ParameterSetName='optimizeImages')]
     [switch]$optimizeImages
     )
@@ -117,7 +120,7 @@ function OptimizeImages(){
 
         'Starting image optimizer on folder [{0}]' -f $foldersToDelete | Write-Host
         # .\.tools\AzureImageOptimizer.0.0.10-beta\tools\ImageCompressor.Job.exe --folder M:\temp\images\opt\to-optimize
-        $cmdArgs = @('--folder', $folderToOptimize)
+        $cmdArgs = @('--dir', $folderToOptimize,'--force')
 
         'Calling img optimizer with the following args [{0}]' -f ($cmdArgs -join ' ') | Write-Host
         &$imgOptExe $cmdArgs
@@ -397,6 +400,13 @@ function DoBuild{
 
         EnsurePsbuildInstalled
 
+        if(-not ($disableTemplateValidation)){
+            ValidateTemplates
+        }
+        else{
+            'Not validating templates based on "disableTemplateValidation" switch' | Write-Warning
+        }
+
         if($optimizeImages){
             # delete the bin & obj folder before starting
             $foldersToDelete = @( (Join-Path $script:scriptDir 'TemplatePack\bin\'), (Join-Path $script:scriptDir 'TemplatePack\obj'))
@@ -490,6 +500,74 @@ function DoBuild{
                 Publish
             }
         }
+    }
+}
+
+function ValidateTemplates{
+    [cmdletbinding()]
+    param(
+        [Parameter(Position=0,ValueFromPipeline=$true)]
+        [array]$templateFiles = (GetTemplateFiles -templateRoot $script:scriptDir)
+    )
+    process{
+        [array]$errors = @()
+        $ns = 'http://schemas.microsoft.com/developer/vstemplate/2005'
+        [array]$xpathtotest = @(
+                '/dft:VSTemplate/dft:TemplateData/dft:Name'
+                '/dft:VSTemplate/dft:TemplateData/dft:Description'
+                '/dft:VSTemplate/dft:TemplateData/dft:SortOrder'
+                '/dft:VSTemplate/dft:TemplateContent/dft:CustomParameters/dft:CustomParameter[1][@Name="$TemplateName$"]'
+                '/dft:VSTemplate/dft:TemplateContent/dft:CustomParameters/dft:CustomParameter[@Name="$TemplateName$"]'
+                '/dft:VSTemplate/dft:TemplateContent/dft:CustomParameters/dft:CustomParameter[@Name="$TemplateID$"]'
+                '/dft:VSTemplate/dft:TemplateContent/dft:CustomParameters/dft:CustomParameter[@Name="$TemplateType$"]'
+                '/dft:VSTemplate/dft:WizardExtension/dft:Assembly[text()="LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"]'
+                '/dft:VSTemplate/dft:WizardExtension/dft:FullClassName[text()="LigerShark.Templates.GoogleAnalyticsWizard"]'
+            )
+
+        foreach($template in $templateFiles){
+            if(-not (Test-Path $template.FullName)){
+                $errors += ('Template not found at [{0}]' -f $template.FullName)
+                continue
+            }
+
+            foreach($xpath in $xpathtotest){
+                if( (Select-Xml -Path $template.fullname -Namespace @{'dft'=$ns} -XPath $xpath) -eq $null){
+                    $errors += ('Template file [{0}] is missing a requried xml value at [{1}]' -f $template.FullName,$xpath)
+                }
+            }
+        }
+
+        if($errors.Count -gt 0){
+            Write-Error -Message ($errors -join [System.Environment]::NewLine)
+            throw ('Missing required template values')
+        }
+    }
+}
+
+function GetTemplateFiles{
+    [cmdletbinding()]
+    param(
+        [Parameter(Position=0,Mandatory=$true)]
+        [ValidateScript({Test-Path $_})]
+        [System.IO.DirectoryInfo]$templateRoot = $script:scriptDir
+    )
+    process{
+        # find template files to process
+        # [array]$templatefiles = Get-ChildItem $templateRoot
+        [array]$folderswithtemplates = @( (Get-Item -Path (Join-Path $templateRoot 'TemplatePack')),(Get-Item -Path (Join-Path $templateRoot 'item-templates')), (Get-Item -Path (Join-Path $templateRoot 'project-templates')), (Get-Item -Path (Join-Path $templateRoot 'Project Templates')))
+
+        [array]$templatefiles = @()
+
+        foreach($f in $folderswithtemplates){
+            if(-not (Test-Path $f.FullName)){
+                throw ('Did not find templates folder at {0}' -f $f.FullName)
+            }
+
+            $templatefiles += (Get-ChildItem -Path $f.FullName -Filter _project.vstemplate.xml -Recurse -File)
+            $templatefiles += (Get-ChildItem -Path $f.FullName -Filter *.vstemplate -Recurse -File)
+        }
+
+        $templatefiles
     }
 }
 

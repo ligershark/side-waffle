@@ -22,6 +22,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Your name here" />
       <CustomParameter Name="$TemplateID$" Value="f292d270-4e1c-416b-9434-1e3a6bb9b7a6" />
+	  <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
   <WizardExtension>
