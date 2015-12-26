@@ -1,19 +1,14 @@
 ﻿using System;
 using System.Linq;
-using System.Diagnostics;
-using System.Globalization;
 using System.Runtime.InteropServices;
 using System.ComponentModel.Design;
-using Microsoft.Win32;
-using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell.Interop;
-using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Shell;
 using System.Collections.Generic;
 using EnvDTE;
 using EnvDTE80;
-using LigerShark.Templates.DynamicBuilder;
 using TemplatePack.Tooling;
+using System.ComponentModel;
 
 namespace TemplatePack
 {
@@ -21,6 +16,7 @@ namespace TemplatePack
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(GuidList.guidTemplatePackPkgString)]
+    [ProvideOptionPage(typeof(OptionPageGrid), "SideWaffle", "General", 0, 0, true)]
     [ProvideAutoLoad(UIContextGuids80.NoSolution)]
     [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
     public sealed class TemplatePackPackage : Package
@@ -114,6 +110,29 @@ namespace TemplatePack
                     yield return item;
                 }
             }
+        }
+
+        public bool SendTelemetry
+        {
+            get
+            {
+                OptionPageGrid page = (OptionPageGrid)GetDialogPage(typeof(OptionPageGrid));
+                return page.SendAnonymousData;
+            }
+        }
+    }
+
+    public class OptionPageGrid : DialogPage
+    {
+        private bool _sendData = true;
+
+        [Category("Telemetry")]
+        [DisplayName("Send Anonymous Data")]
+        [Description("By selecting true, you agree to send anonymous data to Google Analytics. This data will be used by the SideWaffle team to see how templates are being used.")]
+        public bool SendAnonymousData
+        {
+            get { return _sendData; }
+            set { _sendData = value; }
         }
     }
 }
