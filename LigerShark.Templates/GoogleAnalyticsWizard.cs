@@ -93,13 +93,18 @@ namespace LigerShark.Templates
         }
 
         private void LogError(string message)
-        {            
-            IVsActivityLog _log = GetService(typeof(SVsActivityLog)) as IVsActivityLog;
+        {
+            try {
+                IVsActivityLog _log = GetService(typeof(SVsActivityLog)) as IVsActivityLog;
 
-            _log.LogEntry(
-            (UInt32)__ACTIVITYLOG_ENTRYTYPE.ALE_ERROR,
-            this.ToString(),
-            string.Format(CultureInfo.CurrentCulture, "{0}", message));
+                _log.LogEntry(
+                (UInt32)__ACTIVITYLOG_ENTRYTYPE.ALE_ERROR,
+                this.ToString(),
+                string.Format(CultureInfo.CurrentCulture, "{0}", message));
+            }
+            catch (Exception) {
+                // there was likely an error getting the activity service, ignore it so it won't throw
+            }
         }
     }
 }
