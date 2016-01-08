@@ -7,6 +7,8 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 using System.ComponentModel;
+using LigerShark.Templates.DynamicBuilder;
+using System.IO;
 
 namespace LigerShark.Templates
 {
@@ -69,18 +71,27 @@ namespace LigerShark.Templates
         private void TrackTemplate(string templateID, string templateName, string templateType)
         {
             var result = GetHashString(Environment.UserDomainName + Environment.MachineName);
-            var category = templateType;
-            if (string.Compare("Project", templateType, StringComparison.OrdinalIgnoreCase) == 0)
-            {
-                category = "project-template";
-            }
-            else if (string.Compare("Item", templateType, StringComparison.OrdinalIgnoreCase) == 0)
-            {
-                category = "item-template";
-            }
 
-            GoogleAnalyticsApi tracker = new GoogleAnalyticsApi("UA-62483606-4", result);
-            tracker.TrackEvent(category, "add", templateName);
+            // Get the file path where the settings are being stored.
+            var rootDir = Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\");
+            var filePath = Path.Combine(rootDir, "SideWaffle-Settings.json");
+            bool telemetry = SettingsStore.ReadJsonFile(filePath).SendTelemetry;
+
+            if (telemetry)
+            {
+                var category = templateType;
+                if (string.Compare("Project", templateType, StringComparison.OrdinalIgnoreCase) == 0)
+                {
+                    category = "project-template";
+                }
+                else if (string.Compare("Item", templateType, StringComparison.OrdinalIgnoreCase) == 0)
+                {
+                    category = "item-template";
+                }
+
+                GoogleAnalyticsApi tracker = new GoogleAnalyticsApi("UA-62483606-4", result);
+                tracker.TrackEvent(category, "add", templateName);
+            }
         }
 
         public string GetHashString(string text)
