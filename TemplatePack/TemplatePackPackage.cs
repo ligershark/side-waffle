@@ -1,14 +1,18 @@
-﻿using System;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.ComponentModel.Design;
-using Microsoft.VisualStudio.Shell.Interop;
-using Microsoft.VisualStudio.Shell;
-using System.Collections.Generic;
-using EnvDTE;
+﻿using EnvDTE;
 using EnvDTE80;
-using TemplatePack.Tooling;
+using LigerShark.Templates.DynamicBuilder;
+using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using TemplatePack.Tooling;
 
 namespace TemplatePack
 {
@@ -124,15 +128,30 @@ namespace TemplatePack
 
     public class OptionPageGrid : DialogPage
     {
-        private bool _sendData = true;
-
         [Category("Telemetry")]
         [DisplayName("Send Anonymous Data")]
         [Description("By selecting true, you agree to send anonymous data to Google Analytics. This data will be used by the SideWaffle team to see how templates are being used.")]
-        public bool SendAnonymousData
+        [DefaultValue(true)]
+        public bool SendAnonymousData { get; set; }
+
+        // When the user clicks the OK button in the Options window
+        // save the settings in the JSON file.
+        protected override void OnApply(PageApplyEventArgs e)
         {
-            get { return _sendData; }
-            set { _sendData = value; }
+            if (e.ApplyBehavior == ApplyKind.Apply)
+            {
+                // TODO: Add save settings feature here
+                SettingsStore userSettings = new SettingsStore { SendTelemetry = SendAnonymousData };
+                string json = JsonConvert.SerializeObject(userSettings, Formatting.Indented);
+
+                // Get the file path where the settings will be stored.
+                var rootDir = Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\");
+                var filePath = Path.Combine(rootDir, "SideWaffle-Settings.json");
+
+                // Save the settings to the JSON file
+                userSettings.WriteJsonFile(rootDir, filePath, json);
+            }
+            base.OnApply(e);
         }
     }
 }

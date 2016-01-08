@@ -7,6 +7,10 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 using System.ComponentModel;
+using Newtonsoft.Json;
+using LigerShark.Templates.DynamicBuilder;
+using System.IO;
+using System.Diagnostics;
 
 namespace LigerShark.Templates
 {
@@ -14,6 +18,7 @@ namespace LigerShark.Templates
     {
         private string TemplateID { get; set; }
         private string TemplateName { get; set; }
+        private string TemplateType { get; set; }
 
         public void BeforeOpeningFile(ProjectItem projectItem)
         {
@@ -39,7 +44,7 @@ namespace LigerShark.Templates
 
                 try
                 {
-                    TrackTemplate(TemplateID, TemplateName);
+                    TrackTemplate(TemplateID, TemplateName, TemplateType);
                 }
                 catch (Exception ex)
                 {
@@ -53,6 +58,7 @@ namespace LigerShark.Templates
             try {
                 TemplateName = replacementsDictionary["$TemplateName$"];
                 TemplateID = replacementsDictionary["$TemplateID$"];
+                TemplateType = replacementsDictionary["$TemplateType$"];
             }
             catch(Exception ex) {
                 LogError(ex.ToString());
@@ -64,12 +70,30 @@ namespace LigerShark.Templates
             return true;
         }
 
-        private void TrackTemplate(string templateID, string templateName)
+        private void TrackTemplate(string templateID, string templateName, string templateType)
         {
-            var result = GetHashString(Environment.UserDomainName + Environment.MachineName);
+            // Get the file path where the settings are being stored.
+            var rootDir = Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\");
+            var filePath = Path.Combine(rootDir, "SideWaffle-Settings.json");
+            bool telemetry = SettingsStore.ReadJsonFile(filePath).SendTelemetry;
 
-            GoogleAnalyticsApi tracker = new GoogleAnalyticsApi("UA-62483606-4", result);
-            tracker.TrackEvent("template", "add", templateName);
+            if (telemetry)
+            {
+                var category = templateType;
+                if (string.Compare("Project", templateType, StringComparison.OrdinalIgnoreCase) == 0)
+                {
+                    category = "project-template";
+                }
+                else if (string.Compare("Item", templateType, StringComparison.OrdinalIgnoreCase) == 0)
+                {
+                    category = "item-template";
+                }
+
+                var result = GetHashString(Environment.UserDomainName + Environment.MachineName);
+
+                GoogleAnalyticsApi tracker = new GoogleAnalyticsApi("UA-62483606-4", result);
+                tracker.TrackEvent(category, "add", templateName);
+            }
         }
 
         public string GetHashString(string text)
