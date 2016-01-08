@@ -1,14 +1,14 @@
 ﻿using EnvDTE;
+using LigerShark.Templates.DynamicBuilder;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TemplateWizard;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using System.ComponentModel;
-using LigerShark.Templates.DynamicBuilder;
-using System.IO;
 
 namespace LigerShark.Templates
 {
@@ -70,8 +70,6 @@ namespace LigerShark.Templates
 
         private void TrackTemplate(string templateID, string templateName, string templateType)
         {
-            var result = GetHashString(Environment.UserDomainName + Environment.MachineName);
-
             // Get the file path where the settings are being stored.
             var rootDir = Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\");
             var filePath = Path.Combine(rootDir, "SideWaffle-Settings.json");
@@ -88,6 +86,8 @@ namespace LigerShark.Templates
                 {
                     category = "item-template";
                 }
+
+                var result = GetHashString(Environment.UserDomainName + Environment.MachineName);
 
                 GoogleAnalyticsApi tracker = new GoogleAnalyticsApi("UA-62483606-4", result);
                 tracker.TrackEvent(category, "add", templateName);
