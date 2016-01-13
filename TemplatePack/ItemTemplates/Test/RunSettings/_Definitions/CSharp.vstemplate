@@ -1,0 +1,16 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>CSharp</ProjectType>
+    <DefaultName>default.runsettings</DefaultName>
+    <Name>Run Settings</Name>
+    <Description>Default runsettings file.</Description>
+    <Icon>STAR10.ico</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>5714f070-f077-47ef-9da8-b52951b1c8df</TemplateID>
+    <SortOrder>1000</SortOrder>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem TargetFileName="$fileinputname$.runsettings" ReplaceParameters="false">default.runsettings</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
