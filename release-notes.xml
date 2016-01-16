@@ -3,6 +3,9 @@
   <Version Name="1.20">
     <note type="extension">Added support for dynamic templates</note>
 	<note type="project-template">Updated xUnit template for ASP.NET 5 RC1</note>
+    <note type="item-template">
+        Changed the AnularJs directive templates to fix a bug with the usage comments <a href="https://github.com/ligershark/side-waffle/issues/285">issue #285</a>
+    </note>
   </Version>
   <Version Name="1.19">
     <note type="item-template">Added SortOrder and set it to 1000 for all ItemTemplates that didn't already have a SortOrder element</note>
