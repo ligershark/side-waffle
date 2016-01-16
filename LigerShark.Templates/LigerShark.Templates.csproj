@@ -105,6 +105,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="AngularDirectiveUsageWizard.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DirectoryHelper.cs" />
     <Compile Include="Downloader.cs" />
     <Compile Include="DownloadZipWindow.xaml.cs">
