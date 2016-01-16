@@ -8,9 +8,19 @@
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>1e339d94-3a66-4092-ae8f-39c6bf05cf1e</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">readme.md</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Readme.md Markdown File" />
+      <CustomParameter Name="$TemplateID$" Value="983ff674-4e9d-4e7c-a159-72681587af57" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

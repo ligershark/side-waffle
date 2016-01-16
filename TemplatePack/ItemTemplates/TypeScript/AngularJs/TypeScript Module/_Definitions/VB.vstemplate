@@ -7,9 +7,19 @@
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>7b396d02-1910-420e-9d79-55ec1fc0b7b0</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">module.ts</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="AngularJs TypeScript Module" />
+      <CustomParameter Name="$TemplateID$" Value="09925c2d-6dac-4aa8-b062-d42dd1f1272f" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

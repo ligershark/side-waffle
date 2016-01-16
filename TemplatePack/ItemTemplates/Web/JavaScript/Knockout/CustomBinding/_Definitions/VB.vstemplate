@@ -8,9 +8,19 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>80f7ce9f-43b2-4f9a-b21e-60c46b5f0e58</TemplateID>
     <AppliesTo>!CSharp</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">binding.js</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Knockout Custom Binding" />
+      <CustomParameter Name="$TemplateID$" Value="f377a60e-27f0-48e1-91db-5d2c145e9c67" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

@@ -8,9 +8,19 @@
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>33ecc573-4f3b-4d6a-a947-2204583336af</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">file.svg</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="SVG File" />
+      <CustomParameter Name="$TemplateID$" Value="83ec3885-15a1-4cd2-ae00-d90c2cd51464" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

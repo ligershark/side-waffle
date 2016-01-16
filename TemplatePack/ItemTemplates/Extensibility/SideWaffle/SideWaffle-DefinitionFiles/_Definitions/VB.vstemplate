@@ -1,13 +1,13 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
     <ProjectType>VisualBasic</ProjectType>
-
     <DefaultName>SideWaffleDefinitions</DefaultName>
     <Name>SideWaffle Definitions Folder</Name>
     <Description>This will create the .vstemplate- files that are needed for SideWaffle Item Templates and Project Templates.</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>00AD0268-7F4D-494F-892F-5F7B7BB830F0</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
@@ -15,5 +15,14 @@
     <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\VB.vstemplat-" ItemType="None" OpenInEditor="true">VB.vstemplat-</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\Web.csharp.vstemplat-" ItemType="None" OpenInEditor="true">Web.csharp.vstemplat-</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\Definitions\Web.VB.vstemplat-" ItemType="None" OpenInEditor="true">Web.VB.vstemplat-</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="SideWaffle Definitions Folder" />
+      <CustomParameter Name="$TemplateID$" Value="3b42ff4e-2255-4309-9cd6-62f053557726" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

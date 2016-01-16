@@ -46,14 +46,15 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 #>
 <div>
     <h4><#= ViewDataTypeShortName #></h4>
-	<hr />
+    <hr />
     <dl class="dl-horizontal">
 <#
 foreach (PropertyMetadata property in ModelMetadata.Properties) {
     if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
 #>
 <#
-        // This is a temporary work around until core scaffolding provides support for independent associations.
+        // We do not want to show any association properties for which there is
+        // no associated foreign key.
         if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
             continue;
         }

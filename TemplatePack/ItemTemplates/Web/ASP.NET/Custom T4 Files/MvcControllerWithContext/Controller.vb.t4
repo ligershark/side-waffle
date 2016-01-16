@@ -1,10 +1,7 @@
 ﻿<#@ template language="VB" HostSpecific="True" #>
 <#@ output extension="vb" #>
-<#@ assembly name="System.ComponentModel.DataAnnotations" #>
 <#@ assembly name="System.Core" #>
-<#@ assembly name="System.Data.Entity" #>
 <#@ assembly name="System.Data.Linq" #>
-<#@ assembly name="EnvDTE" #>
 <#@ ScaffoldingAssembly Processor="ScaffoldingAssemblyLoader" #>
 <#@ import namespace="System" #>
 <#@ import namespace="System.Collections" #>
@@ -19,11 +16,20 @@
 <#@ parameter type="System.String" name="ModelTypeName" #>
 <#@ parameter type="System.String" name="ModelVariable" #>
 <#@ parameter type="Microsoft.AspNet.Scaffolding.Core.Metadata.ModelMetadata" name="ModelMetadata" #>
+<#@ parameter type="System.String" name="EntitySetVariable" #>
 <#@ parameter type="System.Boolean" name="UseAsync" #>
 <#@ parameter type="System.Boolean" name="IsOverpostingProtectionRequired" #>
 <#@ parameter type="System.String" name="BindAttributeIncludeText" #>
 <#@ parameter type="System.String" name ="OverpostingWarningMessage" #>
 <#@ parameter type="System.Collections.Generic.HashSet(Of System.String)" name="RequiredNamespaces" #>
+<#
+    Dim routePrefix As String
+    If String.IsNullOrEmpty(AreaName) Then
+        routePrefix = ControllerRootName
+    Else
+        routePrefix = AreaName + "/" + ControllerRootName
+    End If
+#>
 Imports System
 Imports System.Collections.Generic
 Imports System.Data
@@ -39,13 +45,8 @@ Imports System.Web.Mvc
 Imports <#= namespaceName #>
 <# Next #>
 <#
-    Dim routePrefix As String = String.Empty
-    If Not String.IsNullOrEmpty(AreaName) Then
-        routePrefix = "/" + AreaName
-    End If
-    routePrefix = routePrefix + "/" + ControllerRootName + "/"
     Dim entitySetName = ModelMetadata.EntitySetName
-    Dim entitySetVariable = ModelMetadata.EntitySetName.ToLowerInvariant()
+    Dim entitySetVar = If (EntitySetVariable, If (String.IsNullOrEmpty(entitySetName), entitySetName, entitySetName.Substring(0, 1).ToLowerInvariant() + entitySetName.Substring(1)))
     Dim primaryKeyName = ModelMetadata.PrimaryKeys(0).PropertyName
     Dim primaryKeyShortTypeName = ModelMetadata.PrimaryKeys(0).ShortTypeName
     Dim primaryKeyDefaultValue = ModelMetadata.PrimaryKeys(0).DefaultValue
@@ -57,7 +58,7 @@ Imports <#= namespaceName #>
 
     Dim bindAttribute As String
     If (IsOverpostingProtectionRequired) Then
-        bindAttribute = String.Format("<Bind(Include := ""{0}"")> ", BindAttributeIncludeText)
+        bindAttribute = String.Format("<Bind(Include:=""{0}"")> ", BindAttributeIncludeText)
     Else
         bindAttribute = String.Empty
     End If
@@ -79,11 +80,11 @@ Namespace <#= Namespace #>
     includeExpressions = String.Join("", relatedProperties.Values.Select(Function(propertyModel) String.Format(".Include(Function({0}) {0}.{1})", lambdaVar, propertyModel.AssociationPropertyName)))
 #>
 <# If (Not String.IsNullOrEmpty(includeExpressions)) Then #>
-            Dim <#= entitySetVariable #> = db.<#= entitySetName #><#= includeExpressions #>
+            Dim <#= entitySetVar #> = db.<#= entitySetName #><#= includeExpressions #>
 <#		If (UseAsync) Then #>
-            Return View(Await <#= entitySetVariable #>.ToListAsync())
+            Return View(Await <#= entitySetVar #>.ToListAsync())
 <#		Else #>
-            Return View(<#= entitySetVariable #>.ToList())
+            Return View(<#= entitySetVar #>.ToList())
 <#		End If #>
 <# Else #>
 <#		If (UseAsync) Then #>
@@ -94,7 +95,7 @@ Namespace <#= Namespace #>
 <# End If #>
         End Function
 
-        ' GET: <#= routePrefix #>Details/5
+        ' GET: <#= routePrefix #>/Details/5
 <# If (UseAsync) Then #>
         Async Function Details(ByVal id As <#= primaryKeyNullableTypeName #>) As Task(Of ActionResult)
 <# Else #>
@@ -114,7 +115,7 @@ Namespace <#= Namespace #>
             Return View(<#= ModelVariable #>)
         End Function
 
-        ' GET: <#= routePrefix #>Create
+        ' GET: <#= routePrefix #>/Create
         Function Create() As ActionResult
 <# For Each propertyModel As RelatedModelMetadata In relatedProperties.Values #>
             ViewBag.<#= propertyModel.ForeignKeyPropertyNames(0) #> = New SelectList(db.<#= propertyModel.EntitySetName #>, "<#= propertyModel.PrimaryKeyNames(0) #>", "<#= propertyModel.DisplayPropertyName #>")
@@ -122,7 +123,7 @@ Namespace <#= Namespace #>
             Return View()
         End Function
 
-        ' POST: <#= routePrefix #>Create
+        ' POST: <#= routePrefix #>/Create
 <#	If (IsOverpostingProtectionRequired) Then #>
 <#		For Each line As String In OverpostingWarningMessage.Split(New string() { Environment.NewLine }, StringSplitOptions.None) #>
         '<#= line #>
@@ -146,14 +147,14 @@ Namespace <#= Namespace #>
                 db.SaveChanges()
 <# End If #>
                 Return RedirectToAction("Index")
-            End If 
+            End If
 <# For Each propertyModel As RelatedModelMetadata In relatedProperties.Values #>
             ViewBag.<#= propertyModel.ForeignKeyPropertyNames(0) #> = New SelectList(db.<#= propertyModel.EntitySetName #>, "<#= propertyModel.PrimaryKeyNames(0) #>", "<#= propertyModel.DisplayPropertyName #>", <#= ModelVariable #>.<#= propertyModel.ForeignKeyPropertyNames(0) #>)
 <# Next #>
             Return View(<#= ModelVariable #>)
         End Function
 
-        ' GET: <#= routePrefix #>Edit/5
+        ' GET: <#= routePrefix #>/Edit/5
 <# If (UseAsync) Then #>
         Async Function Edit(ByVal id As <#= primaryKeyNullableTypeName #>) As Task(Of ActionResult)
 <# Else #>
@@ -176,7 +177,7 @@ Namespace <#= Namespace #>
             Return View(<#= ModelVariable #>)
         End Function
 
-        ' POST: <#= routePrefix #>Edit/5
+        ' POST: <#= routePrefix #>/Edit/5
 <#	If (IsOverpostingProtectionRequired) Then #>
 <#		For Each line As String In OverpostingWarningMessage.Split(New string() { Environment.NewLine }, StringSplitOptions.None) #>
         '<#= line #>
@@ -204,7 +205,7 @@ Namespace <#= Namespace #>
             Return View(<#= ModelVariable #>)
         End Function
 
-        ' GET: <#= routePrefix #>Delete/5
+        ' GET: <#= routePrefix #>/Delete/5
 <# If (UseAsync) Then #>
         Async Function Delete(ByVal id As <#= primaryKeyNullableTypeName #>) As Task(Of ActionResult)
 <# Else #>
@@ -224,7 +225,7 @@ Namespace <#= Namespace #>
             Return View(<#= ModelVariable #>)
         End Function
 
-        ' POST: <#= routePrefix #>Delete/5
+        ' POST: <#= routePrefix #>/Delete/5
         <HttpPost()>
         <ActionName("Delete")>
         <ValidateAntiForgeryToken()>

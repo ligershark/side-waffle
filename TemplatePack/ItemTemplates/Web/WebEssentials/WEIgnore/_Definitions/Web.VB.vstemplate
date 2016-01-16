@@ -9,9 +9,19 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>2bd26b88-470f-4566-8120-a93d67bc2d01</TemplateID>
     <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true" TargetFileName=".weignore">weignore.txt</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="WEIgnore Ignore File (.weignore)" />
+      <CustomParameter Name="$TemplateID$" Value="286b8e52-da33-453a-a207-acc482946217" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

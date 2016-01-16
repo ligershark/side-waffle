@@ -1,7 +1,10 @@
+.vs/
 OutputRoot/
 packages/
 PrecompiledWeb/
 .tools/
+project.lock.json
+launchSettings.json
 #################
 ## Visual Studio
 #################

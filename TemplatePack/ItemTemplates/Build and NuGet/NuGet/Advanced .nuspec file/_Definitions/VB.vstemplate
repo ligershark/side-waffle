@@ -7,9 +7,19 @@
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>87431fc3-02b5-4247-9911-3c35686ec693</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">project.nuspec</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="A basic NuGet .nuspec file" />
+      <CustomParameter Name="$TemplateID$" Value="7ad4a4f8-728b-4188-b575-c4cbb3d2515f" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

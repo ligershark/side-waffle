@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\LibGit2Sharp.0.20.1.0\build\net40\LibGit2Sharp.props" Condition="Exists('..\packages\LibGit2Sharp.0.20.1.0\build\net40\LibGit2Sharp.props')" />
   <PropertyGroup>
     <MinimumVisualStudioVersion>$(VisualStudioVersion)</MinimumVisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -10,6 +11,7 @@
     <ZipPackageCompressionLevel>Normal</ZipPackageCompressionLevel>
     <RestorePackages>true</RestorePackages>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>96ee856a</NuGetPackageImportStamp>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -48,15 +50,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="..\release-notes.html">
-      <Link>release-notes.html</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="checkmark.png" />
     <Content Include="feed.pkgdef">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <None Include="ItemTemplates\AppVeyor\Empty\Definitions\CSharp.vstemplate" />
+    <Content Include="loading.gif" />
+    <Content Include="logo.ico" />
+    <None Include="app.config" />
+    <None Include="ItemTemplates\AppVeyor\Empty\Definitions\CSharp.vstemplate">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ItemTemplates\AppVeyor\Empty\Definitions\vb.vstemplate" />
     <None Include="ItemTemplates\AppVeyor\Empty\appveyor-icon.png" />
     <None Include="ItemTemplates\AppVeyor\Full\appveyor-icon.png" />
@@ -201,11 +205,8 @@
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\icon.png" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Gulpfile.js" />
     <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\icon.png" />
-    <Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451.mdf" />
     <Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Durandal451.mdf</DependentUpon>
     </Content>
     <Content Include="resources\Package.ico" />
@@ -801,6 +802,10 @@
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="resources\SideWaffle16blue.png" />
+    <Content Include="templatesources.json">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="ProjectTemplates\Windows Store\TypeScript Blank\js\default.ts" />
     <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\jquery.d.ts" />
     <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\lib.d.ts" />
@@ -867,6 +872,12 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
+    <Reference Include="EnvDTE100, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="LibGit2Sharp">
+      <HintPath>..\packages\LibGit2Sharp.0.20.1.0\lib\net40\LibGit2Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Build" />
     <Reference Include="Microsoft.Build.Tasks.v4.0" />
     <Reference Include="Microsoft.Build.Utilities.v4.0" />
@@ -918,6 +929,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\assemblies\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.XmlTransform">
       <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
     </Reference>
@@ -928,13 +943,19 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.XML" />
-    <Reference Include="TemplateBuilder">
-      <HintPath>..\packages\TemplateBuilder.1.1.3\lib\TemplateBuilder.dll</HintPath>
+    <Reference Include="TemplateBuilder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TemplateBuilder.1.1.4.6-beta\lib\TemplateBuilder.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -960,6 +981,9 @@
     </TemplateReference>
     <TemplateReference Include="RazorV3WebApplication.csproj">
       <PathToProject>../Project%20Templates/RazorV3WebApplication/RazorV3WebApplication.csproj</PathToProject>
+    </TemplateReference>
+    <TemplateReference Include="UnitTestProject.xproj">
+      <PathToProject>../Project%20Templates/xUnitTestProject/UnitTestProject.xproj</PathToProject>
     </TemplateReference>
     <TemplateReference Include="WebJobsHelloWorld.csproj">
       <PathToProject>..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\WebJobsHelloWorld.csproj</PathToProject>
@@ -1006,6 +1030,13 @@
     <None Include="ItemTemplates\Web\Nancy\NancyBootstrapper\bootstrapper.cs" />
     <None Include="ItemTemplates\Web\Nancy\NancyModule\module.cs" />
     <Compile Include="PackageConstants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.xaml.cs" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\AppBootstrapper.cs" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\AssemblyInfo.cs" />
@@ -1014,11 +1045,21 @@
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\ViewModels\MainViewModel.cs" />
     <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml.cs" />
     <Compile Include="TemplatePackPackage.cs" />
+    <Compile Include="Tooling\ActivityLogger.cs" />
+    <Compile Include="Tooling\DynamicTemplateBuilder.cs" />
     <Compile Include="Tooling\ProjectSelector2.xaml.cs">
       <DependentUpon>ProjectSelector2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tooling\RemoteTemplateSettings.cs" />
     <Compile Include="Tooling\SolutionHelper.cs" />
+    <Compile Include="Tooling\TemplateLocalInfo.cs" />
     <Compile Include="Tooling\TemplateReferenceCreator.cs" />
+    <Compile Include="Tooling\UpdateFrequency.cs" />
+    <Compile Include="VSPackage.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VSPackage.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <VSCTCompile Include="TemplatePack.vsct">
@@ -1027,11 +1068,15 @@
     </VSCTCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Resources.resx" />
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VSPackage.resx">
       <MergeWithCTO>true</MergeWithCTO>
       <ManifestResourceName>VSPackage</ManifestResourceName>
       <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>VSPackage.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -1045,9 +1090,29 @@
   <PropertyGroup>
     <UseCodebase>true</UseCodebase>
   </PropertyGroup>
-  <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.1.3\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+  <ItemGroup>
+    <ProjectReference Include="..\LigerShark.Templates\LigerShark.Templates.csproj">
+      <Project>{a2a92f75-3703-4326-a474-1569979ec875}</Project>
+      <Name>LigerShark.Templates</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <!--
+  Include libgit2sharp NativeBinaries folder in vsix.
+  Modified version of http://chrisparnin.github.io/articles/2013/09/deploying-native-binaries-with-visual-studio-extensions/
+  -->
+  <PropertyGroup>
+    <EnableIncludeLibGit2SharpInVsix Condition=" '$(EnableIncludeLibGit2SharpInVsix)'=='' ">true</EnableIncludeLibGit2SharpInVsix>
   </PropertyGroup>
+  <PropertyGroup Label="TemplateBuilder">
+    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.1.4.6-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(EnableIncludeLibGit2SharpInVsix)'=='true' ">
+    <Content Include="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.*" Exclude="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.pdb">
+      <Link>NativeBinaries\%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <None Include="ProjectTemplates\Web\Durandal451\App_Start\BundleConfig.cs" />
     <None Include="ProjectTemplates\Web\Durandal451\App_Start\DurandalBundleConfig.cs" />
@@ -1096,6 +1161,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\LibGit2Sharp.0.20.1.0\build\net40\LibGit2Sharp.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LibGit2Sharp.0.20.1.0\build\net40\LibGit2Sharp.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

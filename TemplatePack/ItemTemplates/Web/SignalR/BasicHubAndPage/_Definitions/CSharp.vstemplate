@@ -8,9 +8,19 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>bd6f757d-89ee-4714-b62a-e72a091d421e</TemplateID>
     <AppliesTo>!VB</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.cs">HitCounterHub.cs</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Client.html">HitCounterHubClient.html</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Basic SignalR Hub and HTML Client Page" />
+      <CustomParameter Name="$TemplateID$" Value="01649c85-d0f8-4006-bd28-875975ca2088" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

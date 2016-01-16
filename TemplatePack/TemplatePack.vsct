@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
- <Extern href="stdidcmd.h"/>
+  <Extern href="stdidcmd.h"/>
   <Extern href="vsshlids.h"/>
 
   <Commands package="guidTemplatePackPkg">
@@ -8,10 +8,12 @@
       <Group guid="guidTemplatePackCmdSet" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
       </Group>
+      <Group guid="guidMenuOptionsCmdSet" id="SWMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+      </Group>
     </Groups>
-    
-    <Buttons>
 
+    <Buttons>
       <Button guid="guidTemplatePackCmdSet" id="cmdidMyCommand" priority="0x2000" type="Button">
         <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_ADD_ITEMS" />
         <CommandFlag>DynamicVisibility</CommandFlag>
@@ -21,16 +23,53 @@
           <ButtonText>Add Template Reference (SideWaffle project)</ButtonText>
         </Strings>
       </Button>
-    </Buttons> 
+
+      <Button guid="guidMenuOptionsCmdSet" id="cmdidOpenSWMenu" priority="0x0100" type="Button">
+        <Parent guid="guidMenuOptionsCmdSet" id="SWMenuGroup" />
+        <Icon guid="logoImages" id="bmpSWLogo" />
+        <Strings>
+          <ButtonText>SideWaffle Settings</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\Images.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows"/>
+      <Bitmap guid="logoImages" href="resources\SideWaffle16blue.png"/>
+    </Bitmaps>
   </Commands>
+
 
   <Symbols>
     <GuidSymbol name="guidTemplatePackPkg" value="{e6e2a48e-387d-4af2-9072-86a5276da6d4}" />
-    
+
     <GuidSymbol name="guidTemplatePackCmdSet" value="{a94bef1a-053e-4066-a851-16e5f6c915f1}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="cmdidMyCommand" value="0x0100" />
     </GuidSymbol>
+
+    <!-- SideWaffle Menu Options -->
+    <GuidSymbol name="guidMenuOptionsPkg" value="{796B8CBC-3010-4A76-872B-56775129765F}" />
+    <GuidSymbol name="guidMenuOptionsCmdSet" value="{13EE92AE-B8B5-4728-8AF6-F53D8DD9C391}">
+      <IDSymbol name="SWMenuGroup" value="0x1020" />
+      <IDSymbol name="cmdidOpenSWMenu" value="0x0100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{900524C9-8677-4F84-AF97-3A1B5B45E3B2}" >
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+    
+    <GuidSymbol name="logoImages" value="{4B6AB8D6-0116-418B-B69B-6721499D947E}">
+      <IDSymbol name="bmpSWLogo" value="1"/>
+    </GuidSymbol>
+    <!-- End SideWaffle Menu Options -->
   </Symbols>
+
+
 
 </CommandTable>

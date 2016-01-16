@@ -7,9 +7,19 @@
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>2ffb3cfb-2ea5-44eb-ba71-8b35eccb386b</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true">project.pkgdef</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Package Definition (.pkgdef)" />
+      <CustomParameter Name="$TemplateID$" Value="2a1eca95-7746-45a5-885c-a414056416ba" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

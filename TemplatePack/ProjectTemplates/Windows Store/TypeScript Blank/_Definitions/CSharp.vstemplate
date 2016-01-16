@@ -40,5 +40,14 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="default.html">default.html</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="package.appxmanifest">package.appxmanifest</ProjectItem>
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Blank App" />
+      <CustomParameter Name="$TemplateID$" Value="cb69cb17-ea8f-4e3c-893b-cf87437ba2d7" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

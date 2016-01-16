@@ -17,5 +17,14 @@
   <TemplateContent>
     <Project TargetFileName="Nancy.CSharp.AspNetHostWithRazor.csproj" File="Nancy.CSharp.AspNetHostWithRazor.csproj" ReplaceParameters="true">
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Nancy with ASP.NET host with Razor" />
+      <CustomParameter Name="$TemplateID$" Value="8ea52ead-4f33-4d95-8df3-5eab1f562706" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

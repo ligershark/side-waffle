@@ -3,6 +3,10 @@
 <#@ include file="Imports.include.t4" #>
 @ModelType <#= ViewDataTypeName #>
 <#
+' "form-control" attribute is only supported for all EditorFor() in System.Web.Mvc 5.1.0.0 or later versions, except for checkbox, which uses a div in Bootstrap
+Dim boolType As New String("System.Boolean")
+Dim requiredMvcVersion As New Version("5.1.0.0")
+Dim isControlHtmlAttributesSupported = MvcVersion >= requiredMvcVersion
 ' The following chained if-statement outputs the file header code and markup for a partial view, a view using a layout page, or a regular view.
 If (IsPartialView) Then
 #>
@@ -68,7 +72,17 @@ End If
     @<div class="form-horizontal">
         <h4><#= ViewDataTypeShortName #></h4>
         <hr />
-        @Html.ValidationSummary(true)
+<# 
+    if (isControlHtmlAttributesSupported) Then
+#>
+        @Html.ValidationSummary(True, "", New With { .class = "text-danger" })
+<#        
+    Else
+#>
+        @Html.ValidationSummary(True)
+<#      
+    End If
+#>
 <#
 For Each modelProperty As PropertyMetadata in ModelMetadata.Properties
     If (modelProperty.Scaffold) AndAlso (Not modelProperty.IsAssociation) Then
@@ -83,27 +97,74 @@ For Each modelProperty As PropertyMetadata in ModelMetadata.Properties
 <#
             If (modelProperty.IsForeignKey) Then
 #>
-            @Html.LabelFor(Function(model) model.<#= modelProperty.PropertyName #>, "<#= GetAssociationName(modelProperty) #>", New With { .class = "control-label col-md-2" })
+            @Html.LabelFor(Function(model) model.<#= modelProperty.PropertyName #>, "<#= GetAssociationName(modelProperty) #>", htmlAttributes:= New With { .class = "control-label col-md-2" })
 <#
             Else
 #>
-            @Html.LabelFor(Function(model) model.<#= modelProperty.PropertyName #>, New With { .class = "control-label col-md-2" })
+            @Html.LabelFor(Function(model) model.<#= modelProperty.PropertyName #>, htmlAttributes:= New With { .class = "control-label col-md-2" })
 <#
             End If
 #>
             <div class="col-md-10">
 <#
+            Dim isCheckbox = modelProperty.TypeName.Equals(boolType)
             If (modelProperty.IsForeignKey) Then
+#>
+<#
+                If (isControlHtmlAttributesSupported) Then
+#>
+                @Html.DropDownList("<#= modelProperty.PropertyName #>", Nothing, htmlAttributes:= New With { .class = "form-control" })
+<#
+                Else
 #>
                 @Html.DropDownList("<#= modelProperty.PropertyName #>", String.Empty)
 <#
+                End If
+#>
+<#
+            Else If (isControlHtmlAttributesSupported)
+                If (isCheckbox) Then
+#>
+                <div class="checkbox">
+<#
+                    PushIndent("    ")
+#>
+                @Html.EditorFor(Function(model) model.<#= modelProperty.PropertyName #>)
+<#
+                Else If (modelProperty.IsEnum AndAlso Not modelProperty.IsEnumFlags) Then
+#>
+                @Html.EnumDropDownListFor(Function(model) model.<#= modelproperty.PropertyName #>, htmlAttributes:= New With { .class = "form-control" })
+<#
+                Else
+#>
+                @Html.EditorFor(Function(model) model.<#= modelproperty.PropertyName #>, New With { .htmlAttributes = New With { .class = "form-control" } })
+<#
+                End If
             Else
 #>
                 @Html.EditorFor(Function(model) model.<#= modelProperty.PropertyName #>)
 <#
             End If
 #>
+<# 
+            If (isControlHtmlAttributesSupported) Then
+#>
+                @Html.ValidationMessageFor(Function(model) model.<#= modelProperty.PropertyName #>, "", New With { .class = "text-danger" })
+<#        
+            Else
+#>
                 @Html.ValidationMessageFor(Function(model) model.<#= modelProperty.PropertyName #>)
+<#      
+            End If
+#>
+<#
+            If (isCheckbox AndAlso isControlHtmlAttributesSupported) Then
+                PopIndent()
+#>
+                </div>
+<#
+            End If
+#>
             </div>
         </div>
 

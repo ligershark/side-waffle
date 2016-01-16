@@ -8,6 +8,7 @@
     <Icon>fsharp-logo-32x32.png</Icon>
     <TemplateID>b8c1d0ed-bba2-44f6-bae0-264a2a992621</TemplateID>
     <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References>
@@ -28,5 +29,14 @@
       </Reference>
     </References>
     <ProjectItem SubType="" TargetFileName="$fileinputname$.fs" ReplaceParameters="true">Sayed.fs</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="FSharp sample item template" />
+      <CustomParameter Name="$TemplateID$" Value="ee4eacbb-adaf-4a6e-9284-fdb27712a9ea" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

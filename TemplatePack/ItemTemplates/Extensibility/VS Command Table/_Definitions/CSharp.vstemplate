@@ -7,6 +7,7 @@
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>a39b11ad-6d1b-4cdc-b683-54682af765b3</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References>
@@ -72,5 +73,14 @@
     <ProjectItem ReplaceParameters="true" TargetFileName="$rootnamespace$Package.cs">VSPackagePackage.cs</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="Guids.cs">Guids.cs</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="PkgCmdID.cs">PkgCmdID.cs</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="VS Command Table (.vsct)" />
+      <CustomParameter Name="$TemplateID$" Value="94537de7-457a-4bdd-9fc2-06675f0e3c04" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

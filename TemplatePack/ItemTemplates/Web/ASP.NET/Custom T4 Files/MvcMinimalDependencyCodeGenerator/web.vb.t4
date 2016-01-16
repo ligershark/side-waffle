@@ -2,6 +2,7 @@
 <#@ output extension="config" #>
 <#@ assembly name="System.Core" #>
 <#@ parameter type="System.Collections.Generic.HashSet(Of System.String)" name="RequiredNamespaces" #>
+<#@ parameter type="System.Version" name="MvcVersion" #>
 <?xml version="1.0"?>
 
 <configuration>
@@ -13,7 +14,7 @@
   </configSections>
 
   <system.web.webPages.razor>
-    <host factoryType="System.Web.Mvc.MvcWebRazorHostFactory, System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+    <host factoryType="System.Web.Mvc.MvcWebRazorHostFactory, System.Web.Mvc, Version=<#= MvcVersion #>, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
     <pages pageBaseType="System.Web.Mvc.WebViewPage">
       <namespaces>
         <add namespace="System.Web.Mvc" />

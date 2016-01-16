@@ -8,9 +8,19 @@
     <Icon>icon.png</Icon>
     <TemplateID>bc46b93c-c09d-4261-9f2b-85e1015fcead</TemplateID>
     <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\plugin.js">plugin.js</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="CKEditor plugin" />
+      <CustomParameter Name="$TemplateID$" Value="5b2959b4-48fd-4102-a7a8-be3ea3cc2ec8" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

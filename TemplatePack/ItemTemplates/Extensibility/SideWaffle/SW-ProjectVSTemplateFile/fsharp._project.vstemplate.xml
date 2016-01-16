@@ -3,11 +3,11 @@
     <Name>Your name here</Name>
     <Description>Project description here</Description>
     <DefaultName>$rootnamespace$</DefaultName>
-    
     <ProjectType>FSharp</ProjectType>
-    <ProjectSubType></ProjectSubType>
+    <ProjectSubType>
+    </ProjectSubType>
     <SortOrder>1000</SortOrder>
-    <CreateNewFolder>true</CreateNewFolder>    
+    <CreateNewFolder>true</CreateNewFolder>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
@@ -17,7 +17,15 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
   </TemplateData>
   <TemplateContent>
-    <Project TargetFileName="$rootnamespace$.fsproj" File="$rootnamespace$.fsproj" ReplaceParameters="true">      
+    <Project TargetFileName="$rootnamespace$.fsproj" File="$rootnamespace$.fsproj" ReplaceParameters="true">
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Your name here" />
+      <CustomParameter Name="$TemplateID$" Value="78b4cb27-ff3e-438a-8e74-5b3d4cc6b75c" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

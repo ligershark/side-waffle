@@ -9,10 +9,20 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>769cffee-5a22-4d01-b3dd-cef52859d342</TemplateID>
     <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Specs.js">JasmineTestSpecs.js</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Runner.html">JasmineTestRunner.html</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Jasmine Spec and HTML files" />
+      <CustomParameter Name="$TemplateID$" Value="7dd6896a-85b8-43fd-b7a7-dd7d92ead8bc" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

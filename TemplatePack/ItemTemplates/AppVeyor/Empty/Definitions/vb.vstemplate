@@ -11,5 +11,14 @@
   </TemplateData>
   <TemplateContent>
     <ProjectItem ReplaceParameters="true" TargetFileName="appveyor.yml">appveyor.yml</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Empty AppVeyor.yml file" />
+      <CustomParameter Name="$TemplateID$" Value="bd74c4da-2b24-4ba8-8a68-8050ef0ce1cd" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

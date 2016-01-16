@@ -19,9 +19,18 @@
     <!--<CustomParameters>
       <CustomParameter Name="$slnname$" Value="$safeprojectname$Orig"/>
     </CustomParameters>-->
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Basic Scaffolder" />
+      <CustomParameter Name="$TemplateID$" Value="09d13bc3-078b-4834-8fcd-e6eb69b0229c" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
+    </CustomParameters>
   </TemplateContent>
   <WizardExtension>
     <Assembly>TemplateBuilder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
     <FullClassName>TemplateBuilder.RootWizard</FullClassName>
+  </WizardExtension>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>

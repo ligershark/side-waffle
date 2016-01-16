@@ -1,0 +1,24 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>CSharp</ProjectType>
+    <DefaultName>dsc-resource-provider.ps1</DefaultName>
+    <Name>DSC Resource provider</Name>
+    <Description>PowerShell Desierd State Configuration simple resource provider with functions for Get-TargetResource Set-TargetResource and Test-TargetResource</Description>
+    <Icon>powershell-file-icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <SortOrder>20010</SortOrder>
+    <TemplateID>561eb164-5805-4f0c-a3d2-80e590498ed0</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$.ps1">dsc-resource-provider.ps1</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="DSC Resource provider" />
+      <CustomParameter Name="$TemplateID$" Value="40842a14-0d04-48c4-b0a5-3cc28c57f5ab" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

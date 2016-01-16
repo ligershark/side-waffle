@@ -18,9 +18,18 @@
   <TemplateContent>
     <Project TargetFileName="$saferootprojectname$Extension.csproj" File="CustomScaffolderExtension.csproj" ReplaceParameters="true">
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Basic Scaffolder" />
+      <CustomParameter Name="$TemplateID$" Value="3d541238-e8f3-4ec9-a523-63520acb938e" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
+    </CustomParameters>
   </TemplateContent>
   <WizardExtension>
     <Assembly>TemplateBuilder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
     <FullClassName>TemplateBuilder.ChildWizard</FullClassName>
+  </WizardExtension>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>

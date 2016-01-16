@@ -9,10 +9,20 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>a43f30a4-bf8d-4b6e-94fe-64e2da74e62d</TemplateID>
     <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Specs.js">QUnitTestSpecs.js</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="$safeitemname$Runner.html">QUnitTestRunner.html</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="QUnit Spec and HTML files" />
+      <CustomParameter Name="$TemplateID$" Value="0d26a8de-6459-463c-aa4a-ecf7c84e315c" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

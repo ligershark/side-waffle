@@ -17,5 +17,14 @@
   <TemplateContent>
     <Project TargetFileName="Nancy.CSharp.EmptySelfHost.csproj" File="Nancy.CSharp.EmptySelfHost.csproj" ReplaceParameters="true">
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Nancy empty self hosted" />
+      <CustomParameter Name="$TemplateID$" Value="a0018b2e-deb9-4ee6-9cdc-3bfc48738d91" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

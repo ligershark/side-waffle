@@ -8,6 +8,7 @@
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>b4200913-7fe3-4b89-b631-905243649c67</TemplateID>
     <AppliesTo>!VB</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <!-- Use .\update.ps1 to re-generate the content here-->
@@ -45,5 +46,14 @@
     <ProjectItem TargetFileName="\CodeTemplates\MvcViewWithoutModel\Empty.cs.t4" ReplaceParameters="true">MvcViewWithoutModel\Empty.cs.t4</ProjectItem>
     <ProjectItem TargetFileName="\CodeTemplates\MvcViewWithoutModel\Imports.include.t4" ReplaceParameters="true">MvcViewWithoutModel\Imports.include.t4</ProjectItem>
     <ProjectItem TargetFileName="\CodeTemplates\ODataControllerWithContext\Controller.cs.t4" ReplaceParameters="true">ODataControllerWithContext\Controller.cs.t4</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="ASP.NET Scaffolding T4 files." />
+      <CustomParameter Name="$TemplateID$" Value="1684ae2b-9e99-4014-846b-7e8ad7d1089b" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

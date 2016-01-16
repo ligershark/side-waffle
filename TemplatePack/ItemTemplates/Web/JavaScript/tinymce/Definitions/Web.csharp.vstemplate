@@ -8,9 +8,19 @@
     <Icon>icon.png</Icon>
     <TemplateID>449161b9-ed2d-4656-9b6b-b1de42820453</TemplateID>
     <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
     <ProjectItem ReplaceParameters="true" TargetFileName="$fileinputname$\plugin.js">plugin.js</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="TinyMCE plugin" />
+      <CustomParameter Name="$TemplateID$" Value="1e148b59-d69b-412f-8123-d38ddecc51a8" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

@@ -36,5 +36,14 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="ShellView.xaml.cs">ShellView.xaml.cs</ProjectItem>
       </Folder>
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Caliburn.Micro WPF Application" />
+      <CustomParameter Name="$TemplateID$" Value="ddad945d-483a-4e2e-a482-3946ac9f64f7" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

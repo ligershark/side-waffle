@@ -20,5 +20,14 @@
   <TemplateContent>
     <Project TargetFileName="WebJobsHelloWorld.csproj" File="WebJobsHelloWorld.csproj" ReplaceParameters="true">
     </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Windows Azure WebJobs Console Application" />
+      <CustomParameter Name="$TemplateID$" Value="852cf592-6159-4ea4-b66d-32b2bfbbd7cf" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

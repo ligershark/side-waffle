@@ -2,18 +2,25 @@
   <TemplateData>
     <ProjectType>Web</ProjectType>
     <ProjectSubType>CSharp</ProjectSubType>
-
     <DefaultName>bower.json</DefaultName>
     <Name>Bower JSON Configuration file</Name>
     <Description>JSON Configuration file for Bower</Description>
     <Icon>bower-logo.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>4618F1AD-B2CC-4D80-86D4-14DB2B2D300B</TemplateID>
+    <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
-
     <ProjectItem ReplaceParameters="true">bower.json</ProjectItem>
-    
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Bower JSON Configuration file" />
+      <CustomParameter Name="$TemplateID$" Value="7bc0db07-d59c-438b-82fe-0d6ea68640f2" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

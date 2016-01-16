@@ -1,10 +1,7 @@
 ﻿<#@ template language="C#" HostSpecific="True" #>
 <#@ output extension="cs" #>
-<#@ assembly name="System.ComponentModel.DataAnnotations" #>
 <#@ assembly name="System.Core" #>
-<#@ assembly name="System.Data.Entity" #>
 <#@ assembly name="System.Data.Linq" #>
-<#@ assembly name="EnvDTE" #>
 <#@ ScaffoldingAssembly Processor="ScaffoldingAssemblyLoader" #>
 <#@ import namespace="Microsoft.AspNet.Scaffolding.Core.Metadata" #>
 <#@ import namespace="System.Collections" #>
@@ -20,7 +17,7 @@
 <#@ parameter type="System.Boolean" name="UseAsync" #>
 <#@ parameter type="System.Collections.Generic.HashSet<System.String>" name="RequiredNamespaces" #>
 <#
-var routePrefix = "api/" + ControllerRootName;
+string routePrefix = "api/" + ControllerRootName;
 #>
 using System;
 using System.Collections.Generic;
@@ -43,7 +40,6 @@ namespace <#= Namespace #>
 {
 <#
     var entitySetName = ModelMetadata.EntitySetName;
-    var entitySetVariable = ModelMetadata.EntitySetName.ToLowerInvariant();
     var primaryKeyName = ModelMetadata.PrimaryKeys[0].PropertyName;
     var primaryKeyShortTypeName = ModelMetadata.PrimaryKeys[0].ShortTypeName;
     var primaryKeyDefaultValue = ModelMetadata.PrimaryKeys[0].DefaultValue;
@@ -54,13 +50,13 @@ namespace <#= Namespace #>
     {
         private <#= ContextTypeName #> db = new <#= ContextTypeName #>();
 
-        // GET <#= routePrefix #>
+        // GET: <#= routePrefix #>
         public IQueryable<<#= ModelTypeName #>> Get<#= entitySetName #>()
         {
             return db.<#= entitySetName #>;
         }
 
-        // GET <#= routePrefix #>/5
+        // GET: <#= routePrefix #>/5
         [ResponseType(typeof(<#= ModelTypeName #>))]
 <# if (UseAsync) { #>
         public async Task<IHttpActionResult> Get<#= ModelTypeName #>(<#= primaryKeyShortTypeName #> id)
@@ -81,7 +77,8 @@ namespace <#= Namespace #>
             return Ok(<#= ModelVariable #>);
         }
 
-        // PUT <#= routePrefix #>/5
+        // PUT: <#= routePrefix #>/5
+        [ResponseType(typeof(void))]
 <# if (UseAsync) { #>
         public async Task<IHttpActionResult> Put<#= ModelTypeName #>(<#= primaryKeyShortTypeName #> id, <#= ModelTypeName #> <#= ModelVariable #>)
 <# } else { #>
@@ -123,7 +120,7 @@ namespace <#= Namespace #>
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST <#= routePrefix #>
+        // POST: <#= routePrefix #>
         [ResponseType(typeof(<#= ModelTypeName #>))]
 <# if (UseAsync) { #>
         public async Task<IHttpActionResult> Post<#= ModelTypeName #>(<#= ModelTypeName #> <#= ModelVariable #>)
@@ -169,7 +166,7 @@ namespace <#= Namespace #>
             return CreatedAtRoute("DefaultApi", new { id = <#= ModelVariable #>.<#= primaryKeyName #> }, <#= ModelVariable #>);
         }
 
-        // DELETE <#= routePrefix #>/5
+        // DELETE: <#= routePrefix #>/5
         [ResponseType(typeof(<#= ModelTypeName #>))]
 <# if (UseAsync) { #>
         public async Task<IHttpActionResult> Delete<#= ModelTypeName #>(<#= primaryKeyShortTypeName #> id)
