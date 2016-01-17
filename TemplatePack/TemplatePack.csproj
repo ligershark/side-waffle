@@ -56,6 +56,10 @@
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
     <None Include="ItemTemplates\Web\TypeScript\Angular2\Component\icon.png" />
+    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\Definitions\Web.csharp.vstemplate" />
+    <None Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\icon.png" />
     <Content Include="ItemTemplates\Web\TypeScript\Angular2\Service\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\TypeScript\Angular2\Service\Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\TypeScript\Angular2\Service\Definitions\Web.csharp.vstemplate" />
@@ -1167,6 +1171,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ItemTemplates\Web\TypeScript\Angular2\Service\service.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\pipe.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
