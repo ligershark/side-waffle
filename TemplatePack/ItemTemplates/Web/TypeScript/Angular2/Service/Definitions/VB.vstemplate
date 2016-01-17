@@ -2,9 +2,9 @@
   <TemplateData>
     <ProjectType>VisualBasic</ProjectType>
 
-    <DefaultName>my.component.ts</DefaultName>
-    <Name>Angular2 TypeScript Component</Name>
-    <Description>Angular2 TypeScript Component class. By Kent Cooper @kcdevnc</Description>
+    <DefaultName>my.service.ts</DefaultName>
+    <Name>Angular2 TypeScript Service</Name>
+    <Description>Angular2 TypeScript Service class. By Kent Cooper @kcdevnc</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <TemplateID>b167bc7e-f338-4e2e-bf03-74f06862a3e5</TemplateID>
@@ -13,9 +13,9 @@
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem ReplaceParameters="true">component.ts</ProjectItem>
+    <ProjectItem ReplaceParameters="true">service.ts</ProjectItem>
     <CustomParameters>
-      <CustomParameter Name="$TemplateName$" Value="Angular2 TypeScript Component" />
+      <CustomParameter Name="$TemplateName$" Value="Angular2 TypeScript Service" />
       <CustomParameter Name="$TemplateID$" Value="b167bc7e-f338-4e2e-bf03-74f06862a3e5" />
       <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>

@@ -5,6 +5,7 @@
 	<note type="project-template">Updated xUnit template for ASP.NET 5 RC1</note>
     <note type="item-template">Added Angular 2 TypeScript Service template</note>
     <note type="item-template">Added Angular 2 TypeScript Component template</note>
+    <note type="item-template">Added Angular 2 TypeScript Pipe template</note>
   </Version>
   <Version Name="1.19">
     <note type="item-template">Added SortOrder and set it to 1000 for all ItemTemplates that didn't already have a SortOrder element</note>

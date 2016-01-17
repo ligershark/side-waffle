@@ -1,23 +1,22 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <ProjectType>Web</ProjectType>
-    <ProjectSubType>CSharp</ProjectSubType>
+    <ProjectType>VisualBasic</ProjectType>
 
-    <DefaultName>my.service.ts</DefaultName>
-    <Name>Angular2 TypeScript Service</Name>
-    <Description>Angular2 TypeScript Service class. By Kent Cooper @kcdevnc</Description>
+    <DefaultName>my.pipe.ts</DefaultName>
+    <Name>Angular2 TypeScript Pipe</Name>
+    <Description>Angular2 TypeScript Pipe class. By Kent Cooper @kcdevnc</Description>
     <Icon>icon.png</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-    <TemplateID>67d35ded-5872-415b-84dc-fc8d84ef5ed1</TemplateID>
-    <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <TemplateID>8d9c83f7-5fe5-4899-a263-bca34f2950f9</TemplateID>
+    <AppliesTo>!CSharp</AppliesTo>
     <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
     <References />
-    <ProjectItem ReplaceParameters="true">service.ts</ProjectItem>
+    <ProjectItem ReplaceParameters="true">pipe.ts</ProjectItem>
     <CustomParameters>
-      <CustomParameter Name="$TemplateName$" Value="Angular2 TypeScript Service" />
-      <CustomParameter Name="$TemplateID$" Value="67d35ded-5872-415b-84dc-fc8d84ef5ed1" />
+      <CustomParameter Name="$TemplateName$" Value="Angular2 TypeScript Pipe" />
+      <CustomParameter Name="$TemplateID$" Value="8d9c83f7-5fe5-4899-a263-bca34f2950f9" />
       <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
