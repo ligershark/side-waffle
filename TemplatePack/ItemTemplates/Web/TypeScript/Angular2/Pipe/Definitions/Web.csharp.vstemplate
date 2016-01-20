@@ -1,0 +1,32 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+
+    <DefaultName>my.pipe.ts</DefaultName>
+    <Name>Angular2 TypeScript Pipe</Name>
+    <Description>Angular2 TypeScript Pipe class. By Kent Cooper @kcdevnc</Description>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>dd967489-3804-442e-8ed9-28a9a9260cdf</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <SortOrder>1000</SortOrder>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">pipe.ts</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Angular2 TypeScript Pipe" />
+      <CustomParameter Name="$TemplateID$" Value="dd967489-3804-442e-8ed9-28a9a9260cdf" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.Angular2RenameWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
