@@ -22,4 +22,8 @@
     <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
     <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
   </WizardExtension>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.AngularDirectiveUsageWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>
