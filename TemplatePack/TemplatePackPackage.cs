@@ -73,12 +73,10 @@ namespace TemplatePack
         void button_BeforeQueryStatus(object sender, EventArgs e)
         {
             var button = (OleMenuCommand)sender;
-            var project = GetSelectedProjects().ElementAt(0);
 
             // TODO: We should only show this if the target project has the TemplateBuilder NuGet pkg installed
             //       or something similar to that.
             button.Visible = true;
-            // button.Visible = project.IsWebProject();
         }
 
         private void ButtonClicked(object sender, EventArgs e)

@@ -106,6 +106,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="AngularDirectiveUsageWizard.cs">
+    <Compile Include="Angular2RenameWizard.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DirectoryHelper.cs" />

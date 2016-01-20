@@ -1,0 +1,31 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>VisualBasic</ProjectType>
+
+    <DefaultName>my.service.ts</DefaultName>
+    <Name>Angular2 TypeScript Service</Name>
+    <Description>Angular2 TypeScript Service class. By Kent Cooper @kcdevnc</Description>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>b167bc7e-f338-4e2e-bf03-74f06862a3e5</TemplateID>
+    <AppliesTo>!CSharp</AppliesTo>
+    <SortOrder>1000</SortOrder>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">service.ts</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Angular2 TypeScript Service" />
+      <CustomParameter Name="$TemplateID$" Value="b167bc7e-f338-4e2e-bf03-74f06862a3e5" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.Angular2RenameWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
