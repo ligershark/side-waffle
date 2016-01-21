@@ -1,12 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System.IO;
 using System;
+using System.ComponentModel;
 
 namespace LigerShark.Templates.DynamicBuilder
 {
     public class SettingsStore
     {
-        [JsonProperty]
+        [DefaultValue(true)]
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Populate)]
         public bool SendTelemetry { get; set; }
 
         public static SettingsStore ReadJsonFile(string filePath)
@@ -21,11 +23,13 @@ namespace LigerShark.Templates.DynamicBuilder
             return JsonConvert.DeserializeObject<SettingsStore>(File.ReadAllText(filePath));
         }
 
-        public void WriteJsonFile(string fileDirectory, string filePath, string json)
+        public void WriteJsonFile(string filePath, string json)
         {
-            if (!Directory.Exists(fileDirectory))
+            var fileInfo = new FileInfo(filePath);
+            
+            if (!fileInfo.Directory.Exists)
             {
-                Directory.CreateDirectory(fileDirectory);
+                fileInfo.Directory.Create();
             }
 
             File.WriteAllText(filePath, json);

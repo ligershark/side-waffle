@@ -145,11 +145,10 @@ namespace TemplatePack
                 string json = JsonConvert.SerializeObject(userSettings, Formatting.Indented);
 
                 // Get the file path where the settings will be stored.
-                var rootDir = Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\");
-                var filePath = Path.Combine(rootDir, "SideWaffle-Settings.json");
+                var filePath = Path.Combine(Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\"), "SideWaffle-Settings.json");
 
                 // Save the settings to the JSON file
-                userSettings.WriteJsonFile(rootDir, filePath, json);
+                userSettings.WriteJsonFile(filePath, json);
             }
             base.OnApply(e);
         }
