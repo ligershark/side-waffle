@@ -1,18 +1,17 @@
-﻿using System;
-using System.Linq;
-using System.Diagnostics;
-using System.Globalization;
-using System.Runtime.InteropServices;
-using System.ComponentModel.Design;
-using Microsoft.Win32;
-using Microsoft.VisualStudio;
-using Microsoft.VisualStudio.Shell.Interop;
-using Microsoft.VisualStudio.OLE.Interop;
-using Microsoft.VisualStudio.Shell;
-using System.Collections.Generic;
-using EnvDTE;
+﻿using EnvDTE;
 using EnvDTE80;
 using LigerShark.Templates.DynamicBuilder;
+using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using TemplatePack.Tooling;
 
 namespace TemplatePack
@@ -21,6 +20,7 @@ namespace TemplatePack
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(GuidList.guidTemplatePackPkgString)]
+    [ProvideOptionPage(typeof(OptionPageGrid), "SideWaffle", "General", 0, 0, true)]
     [ProvideAutoLoad(UIContextGuids80.NoSolution)]
     [ProvideAutoLoad(UIContextGuids80.SolutionExists)]
     public sealed class TemplatePackPackage : Package
@@ -112,6 +112,43 @@ namespace TemplatePack
                     yield return item;
                 }
             }
+        }
+
+        public bool SendTelemetry
+        {
+            get
+            {
+                OptionPageGrid page = (OptionPageGrid)GetDialogPage(typeof(OptionPageGrid));
+                return page.SendAnonymousData;
+            }
+        }
+    }
+
+    public class OptionPageGrid : DialogPage
+    {
+        [Category("Telemetry")]
+        [DisplayName("Send Anonymous Data")]
+        [Description("By selecting true, you agree to send anonymous data to Google Analytics. This data will be used by the SideWaffle team to see how templates are being used.")]
+        [DefaultValue(true)]
+        public bool SendAnonymousData { get; set; }
+
+        // When the user clicks the OK button in the Options window
+        // save the settings in the JSON file.
+        protected override void OnApply(PageApplyEventArgs e)
+        {
+            if (e.ApplyBehavior == ApplyKind.Apply)
+            {
+                // TODO: Add save settings feature here
+                SettingsStore userSettings = new SettingsStore { SendTelemetry = SendAnonymousData };
+                string json = JsonConvert.SerializeObject(userSettings, Formatting.Indented);
+
+                // Get the file path where the settings will be stored.
+                var filePath = Path.Combine(Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\"), "SideWaffle-Settings.json");
+
+                // Save the settings to the JSON file
+                userSettings.WriteJsonFile(filePath, json);
+            }
+            base.OnApply(e);
         }
     }
 }
