@@ -13,6 +13,10 @@ module App {
 
     $safeitemname$.$inject = ["$window"];
     function $safeitemname$($window: ng.IWindowService): I$safeitemname$ {
+        // Usage:
+        //     <$directiveUsage$></$directiveUsage$>
+        // Creates:
+        // 
         return {
             restrict: "EA",
             link: link
