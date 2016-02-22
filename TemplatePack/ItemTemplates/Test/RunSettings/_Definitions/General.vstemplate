@@ -1,6 +1,6 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <ProjectType>CSharp</ProjectType>
+    <ProjectType>General</ProjectType>
     <DefaultName>default.runsettings</DefaultName>
     <Name>Test Run Settings (.runsettings)</Name>
     <Description>Default runsettings file.</Description>
