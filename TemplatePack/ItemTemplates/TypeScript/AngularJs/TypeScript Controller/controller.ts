@@ -12,7 +12,7 @@ module App {
 
         static $inject: string[] = ["$location"];
 
-        constructor(private $location: ng.ILocationService) {
+        constructor(private $location: angular.ILocationService) {
             this.activate();
         }
 
