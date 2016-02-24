@@ -8,7 +8,7 @@ module App {
 
     $safeitemname$.$inject = ["$http"];
 
-    function $safeitemname$($http: ng.IHttpService): I$safeitemname$ {
+    function $safeitemname$($http: angular.IHttpService): I$safeitemname$ {
         var service: I$safeitemname$ = {
             getData: getData
         };

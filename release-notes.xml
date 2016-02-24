@@ -7,6 +7,7 @@
     <note type="item-template">
         Changed the AngularJs directive templates to fix a bug with the usage comments <a href="https://github.com/ligershark/side-waffle/issues/285">issue #285</a>
     </note>
+    <note type="item-template">Updated Angular TypeScript templates to reflect changes made to the Angular type definitions</note>
 	  <note type="project-template">Updated Project Template - The packages of Nancy project templates</note>
 	  <note type="project-template">Updated Project Template - The framework versions of Nancy project templates are set to 4.6.1</note>
   </Version>

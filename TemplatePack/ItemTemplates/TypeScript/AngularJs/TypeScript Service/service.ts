@@ -9,7 +9,7 @@ module App {
     class $safeitemname$ implements I$safeitemname$ {
         static $inject: string[] = ["$http"];
 
-        constructor(private $http: ng.IHttpService) {
+        constructor(private $http: angular.IHttpService) {
         }
 
         getData() {
