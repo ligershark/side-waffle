@@ -10,7 +10,7 @@
     <SortOrder>1000</SortOrder>
   </TemplateData>
   <TemplateContent>
-    <ProjectItem ReplaceParameters="true" TargetFileName="_Definitions\_project.vstemplate.xml" OpenInEditor="true">fsharp._project.vstemplate.xml</ProjectItem>
+    <ProjectItem ReplaceParameters="false" TargetFileName="_Definitions\_project.vstemplate.xml" OpenInEditor="true">fsharp._project.vstemplate.xml</ProjectItem>
     <ProjectItem ReplaceParameters="true" TargetFileName="_preprocess.xml" OpenInEditor="true">_preprocess-template.xml</ProjectItem>
     <ProjectItem ReplaceParameters="false" TargetFileName="sw-file-icon.png" OpenInEditor="false">sw-file-icon.png</ProjectItem>
     <CustomParameters>
