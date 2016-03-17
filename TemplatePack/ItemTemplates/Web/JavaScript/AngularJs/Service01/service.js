@@ -8,6 +8,7 @@
     $safeitemname$.$inject = ['$http'];
 
     function $safeitemname$($http) {
+	    /* jshint validthis:true */
         this.getData = getData;
 
         function getData() { }
