@@ -23,7 +23,7 @@
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Add template name here" />
       <CustomParameter Name="$TemplateID$" Value="Add GUID here" />
-	  <CustomParameter Name="$TemplateType$" Value="Item" />
+	    <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
     -->
   </TemplateContent>
