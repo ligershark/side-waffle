@@ -563,7 +563,10 @@ function GetTemplateFiles{
                 throw ('Did not find templates folder at {0}' -f $f.FullName)
             }
 
-            $templatefiles += (Get-ChildItem -Path $f.FullName -Filter _project.vstemplate.xml -Recurse -File)
+			Write-Host($f.FullName)
+
+            $templatefiles += Get-ChildItem -Path $f.FullName -Filter _project.vstemplate.xml -Recurse -File | Where-Object { $_.Directory.Name -ne 'SW-ProjectVSTemplateFile' }
+
             $templatefiles += (Get-ChildItem -Path $f.FullName -Filter *.vstemplate -Recurse -File)
         }
 
