@@ -2,7 +2,7 @@
   <TemplateData>
     <ProjectType>General</ProjectType>
     <DefaultName>default.runsettings</DefaultName>
-    <Name>Test Run Settings (.runsettings)</Name>
+    <Name>Run Settings (.runsettings)</Name>
     <Description>Default runsettings file.</Description>
     <Icon>STAR10.ico</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>

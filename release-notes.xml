@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReleaseReport>
   <Version Name="1.22">
-    <note type="item-template">Added Unit Test Run Settings template</note>
+    
   </Version>
   <Version Name="1.21">
     <note type="item-template">Added Angular 2 TypeScript Service template</note>
@@ -11,6 +11,7 @@
         Changed the AngularJs directive templates to fix a bug with the usage comments <a href="https://github.com/ligershark/side-waffle/issues/285">issue #285</a>
     </note>
     <note type="item-template">Updated Angular TypeScript templates to reflect changes made to the Angular type definitions</note>
+    <note type="item-template">Added Unit Test Run Settings template</note>
 	  <note type="project-template">Updated Project Template - The packages of Nancy project templates</note>
 	  <note type="project-template">Updated Project Template - The framework versions of Nancy project templates are set to 4.6.1</note>
   </Version>
