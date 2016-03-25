@@ -127,6 +127,9 @@
     <None Include="ItemTemplates\PowerShell\DscResourceProvider\powershell-file-icon.png" />
     <None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\vb.vstemplate" />
     <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
+    <None Include="ItemTemplates\Test\RunSettings\default.runsettings" />
+    <None Include="ItemTemplates\Test\RunSettings\_Definitions\csharp.vstemplate" />
+    <None Include="ItemTemplates\Test\RunSettings\STAR10.ico" />
     <Content Include="ItemTemplates\Web\Bower\Definitions\CSharp.vstemplate">
       <SubType>Designer</SubType>
     </Content>

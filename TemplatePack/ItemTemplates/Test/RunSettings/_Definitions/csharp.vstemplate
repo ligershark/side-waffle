@@ -1,0 +1,26 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <ProjectType>General</ProjectType>
+    <DefaultName>default.runsettings</DefaultName>
+    <Name>Run Settings (.runsettings)</Name>
+    <Description>Default runsettings file.</Description>
+    <Icon>STAR10.ico</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>5714f070-f077-47ef-9da8-b52951b1c8df</TemplateID>
+    <SortOrder>1000</SortOrder>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem TargetFileName="$fileinputname$.runsettings" ReplaceParameters="false">default.runsettings</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Test Run Settings (.runsettings)" />
+      <CustomParameter Name="$TemplateID$" Value="16e8341c-aa88-4158-9c4d-849f89103811" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
