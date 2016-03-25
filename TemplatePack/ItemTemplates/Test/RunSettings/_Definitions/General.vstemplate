@@ -1,12 +1,12 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
   <TemplateData>
-    <ProjectType>VisualBasic</ProjectType>
+    <ProjectType>General</ProjectType>
     <DefaultName>default.runsettings</DefaultName>
     <Name>Test Run Settings (.runsettings)</Name>
     <Description>Default runsettings file.</Description>
     <Icon>STAR10.ico</Icon>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-    <TemplateID>41e6eb5e-ed95-44a2-b1e7-37adafab4517</TemplateID>
+    <TemplateID>5714f070-f077-47ef-9da8-b52951b1c8df</TemplateID>
     <SortOrder>1000</SortOrder>
     <AppliesTo>ABC | (!ABC)</AppliesTo>
   </TemplateData>
@@ -15,7 +15,7 @@
     <ProjectItem TargetFileName="$fileinputname$.runsettings" ReplaceParameters="false">default.runsettings</ProjectItem>
     <CustomParameters>
       <CustomParameter Name="$TemplateName$" Value="Test Run Settings (.runsettings)" />
-      <CustomParameter Name="$TemplateID$" Value="1b09d78e-09c4-4b70-83a3-066d2975e8e3" />
+      <CustomParameter Name="$TemplateID$" Value="16e8341c-aa88-4158-9c4d-849f89103811" />
       <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
   </TemplateContent>
