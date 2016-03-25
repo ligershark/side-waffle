@@ -6,7 +6,7 @@
     <!-- Path relative to solution directory -->
     <ResultsDirectory>.\TestResults</ResultsDirectory>
 
-    <!-- [x86] | x64  
+    <!-- [x86] | x64
       - You can also change it from menu Test, Test Settings, Default Processor Architecture -->
     <TargetPlatform>x86</TargetPlatform>
 
@@ -23,8 +23,8 @@ Additional paths to search for .pdb (symbol) files. Symbols must be found for mo
 If .pdb files are in the same folder as the .dll or .exe files, they are automatically found. Otherwise, specify them here.
 Note that searching for symbols increases code coverage runtime. So keep this small and local.
 -->
-            <!--           
-            <SymbolSearchPaths>              
+            <!--
+            <SymbolSearchPaths>
                    <Path>C:\Users\User\Documents\Visual Studio 2013\Projects\ProjectX\bin\Debug</Path>
                    <Path>\\mybuildshare\builds\ProjectX</Path>
             </SymbolSearchPaths>
@@ -122,12 +122,12 @@ Included items must then not match any entries in the exclude list to remain inc
       </DataCollector>
     </DataCollectors>
   </DataCollectionRunSettings>
-  
+
   <TestRunParameters>
     <Parameter name="webAppUrl" value="http://localhost" />
     <Parameter name="webAppUserName" value="Admin" />
   </TestRunParameters>
-  
+
   <!-- Adapter Specific sections -->
 
   <!-- MSTest adapter -->
