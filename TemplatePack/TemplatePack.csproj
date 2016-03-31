@@ -1000,6 +1000,9 @@
     <TemplateReference Include="AureliaES2016vNext.xproj">
       <PathToProject>../Project%20Templates/AureliaES2016vNext/AureliaES2016vNext.xproj</PathToProject>
     </TemplateReference>
+    <TemplateReference Include="AureliaTypeScriptvNext.xproj">
+      <PathToProject>../Project%20Templates/AureliaTypeScriptvNext/AureliaTypeScriptvNext.xproj</PathToProject>
+    </TemplateReference>
     <TemplateReference Include="ConsoleApplicationAsync.csproj">
       <PathToProject>../Project%20Templates/Windows%20Desktop/ConsoleApplicationAsync/ConsoleApplicationAsync.csproj</PathToProject>
     </TemplateReference>

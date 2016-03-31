@@ -1,0 +1,31 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Aurelia TypeScript for ASP.NET Core</Name>
+    <Description>This will create an Aurelia TypeScript project, built on top of ASP.NET Core.</Description>
+    <DefaultName>AureliaTypeScriptvNext</DefaultName>
+    <ProjectType>JavaScript</ProjectType>
+    <ProjectSubType>Web</ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <CreateInPlace>true</CreateInPlace>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>aurelia-icon-96x96.png</Icon>
+    <TemplateID>b8541d50-bc61-478b-9a6d-08a575d684e8</TemplateID>
+    <!-- Indicates how many parent folders this item template should appear in -->
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="AureliaTypeScriptvNext.xproj" ReplaceParameters="true"></Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Aurelia TypeScript for ASP.NET Core" />
+      <CustomParameter Name="$TemplateID$" Value="8AD6195E-C23A-49C7-89D4-5AE943DACBA7" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
