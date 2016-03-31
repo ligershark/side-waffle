@@ -60,6 +60,11 @@
     <Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\_Definitions\Web.csharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\jscsrc\icon.png" />
+    <None Include="ItemTemplates\Web\JavaScript\jscsrc\.jscsrc" />
+    <Content Include="ItemTemplates\Web\JavaScript\jscsrc\_Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\jscsrc\_Definitions\VB.vstemplate" />
+    <Content Include="ItemTemplates\Web\JavaScript\jscsrc\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\Definitions\Web.csharp.vstemplate" />

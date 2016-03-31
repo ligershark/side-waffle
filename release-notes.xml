@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReleaseReport>
   <Version Name="1.21">
+    <note type="item-template">Updated jscsrc item template to use the correct file</note>
     <note type="item-template">Added Angular 2 TypeScript Service template</note>
     <note type="item-template">Added Angular 2 TypeScript Component template</note>
     <note type="item-template">Added Angular 2 TypeScript Pipe template</note>
