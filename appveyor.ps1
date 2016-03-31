@@ -15,6 +15,6 @@ else{
 
 Vsix-PushArtifacts
 
-if ($env:APPVEYOR_REPO_NAME -eq "ligershark/side-waffle") {
-	Vsix-PublishToGallery
+if ( ($env:APPVEYOR_REPO_NAME -eq "ligershark/side-waffle") -and ( $env:APPVEYOR_REPO_BRANCH -eq "master" ) ) {
+		Vsix-PublishToGallery
 }
