@@ -11,6 +11,8 @@
     <note type="item-template">Added Unit Test Run Settings template</note>
 	  <note type="project-template">Updated Project Template - The packages of Nancy project templates</note>
 	  <note type="project-template">Updated Project Template - The framework versions of Nancy project templates are set to 4.6.1</note>
+    <note type="project-template">Added Project Template - Aurelia ES2016 for ASP.NET Core</note>
+    <note type="project-template">Added Project Template - Aurelia TypeScript for ASP.NET Core</note>
   </Version>
   <Version Name="1.20">
     <note type="extension">Added support for dynamic templates</note>
