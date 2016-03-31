@@ -61,7 +61,7 @@
     <Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\_Definitions\Web.csharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\jscsrc\icon.png" />
-    <Content Include="ItemTemplates\Web\JavaScript\jscsrc\jscsrc.txt" />
+    <None Include="ItemTemplates\Web\JavaScript\jscsrc\.jscsrc" />
     <Content Include="ItemTemplates\Web\JavaScript\jscsrc\_Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\jscsrc\_Definitions\VB.vstemplate" />
     <Content Include="ItemTemplates\Web\JavaScript\jscsrc\_Definitions\Web.csharp.vstemplate" />
