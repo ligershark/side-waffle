@@ -19,10 +19,13 @@
   <TemplateContent>
     <Project TargetFileName="$rootnamespace$.fsproj" File="$rootnamespace$.fsproj" ReplaceParameters="true">
     </Project>
+    <!--
     <CustomParameters>
-      <CustomParameter Name="$TemplateName$" Value="Your name here" />
-      <CustomParameter Name="$TemplateID$" Value="78b4cb27-ff3e-438a-8e74-5b3d4cc6b75c" />
+      <CustomParameter Name="$TemplateName$" Value="Add template name here" />
+      <CustomParameter Name="$TemplateID$" Value="Add GUID here" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
+    -->
   </TemplateContent>
   <WizardExtension>
     <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>

@@ -2,7 +2,7 @@
 module App {
     "use strict";
 
-    interface I$safeitemname$Scope extends ng.IScope {
+    interface I$safeitemname$Scope extends angular.IScope {
         title: string;
     }
 

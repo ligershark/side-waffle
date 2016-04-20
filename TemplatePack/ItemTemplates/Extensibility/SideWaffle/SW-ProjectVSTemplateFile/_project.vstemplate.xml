@@ -1,6 +1,6 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
-    <Name>Your name here</Name>
+    <Name>Template name here</Name>
     <Description>Project description here</Description>
     <DefaultName>$rootnamespace$</DefaultName>
     <ProjectType>CSharp</ProjectType>
@@ -19,11 +19,13 @@
   <TemplateContent>
     <Project TargetFileName="$rootnamespace$.csproj" File="$rootnamespace$.csproj" ReplaceParameters="true">
     </Project>
+    <!--
     <CustomParameters>
-      <CustomParameter Name="$TemplateName$" Value="Your name here" />
-      <CustomParameter Name="$TemplateID$" Value="f292d270-4e1c-416b-9434-1e3a6bb9b7a6" />
-	  <CustomParameter Name="$TemplateType$" Value="Item" />
+      <CustomParameter Name="$TemplateName$" Value="Add template name here" />
+      <CustomParameter Name="$TemplateID$" Value="Add GUID here" />
+	    <CustomParameter Name="$TemplateType$" Value="Item" />
     </CustomParameters>
+    -->
   </TemplateContent>
   <WizardExtension>
     <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>

@@ -13,4 +13,8 @@ else{
     .\build-main.ps1
 }
 
-Vsix-PushArtifacts | Vsix-PublishToGallery
+Vsix-PushArtifacts
+
+if ( ($env:APPVEYOR_REPO_NAME -eq "ligershark/side-waffle") -and ( $env:APPVEYOR_REPO_BRANCH -eq "master" ) ) {
+		Vsix-PublishToGallery
+}

@@ -9,7 +9,7 @@
     
     function $safeitemname$ ($window) {
         // Usage:
-        //     <$safeitemname$></$safeitemname$>
+        //     <$directiveUsage$></$directiveUsage$>
         // Creates:
         // 
         var directive = {

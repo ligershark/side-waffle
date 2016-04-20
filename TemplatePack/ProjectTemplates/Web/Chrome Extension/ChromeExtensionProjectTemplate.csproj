@@ -79,6 +79,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties app_4manifest_1json__JSONSchema="http://json.schemastore.org/chrome-manifest" />
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
