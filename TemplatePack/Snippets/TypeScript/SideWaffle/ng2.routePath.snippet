@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+	  <Header>
+		  <Title>AngularJs 2 TypeScript Route Path Snippet</Title>
+		  <Shortcut>ng2-route-path</Shortcut>
+		  <Description>AngularJs 2 TypeScript Route Path Snippet: By Matt Kruczek, http://www.tallan.com, inspired by John Papa, http://johnpapa.net</Description>
+		  <Author>Matt Kruczek</Author>
+		  <SnippetTypes>
+			  <SnippetType>Expansion</SnippetType>
+		  </SnippetTypes>
+	  </Header>
+	<Snippet>
+	  <Declarations>
+		<Literal Editable="true">
+		  <ID>path</ID>
+		  <ToolTip>Replace with a variable to hold the path name.</ToolTip>
+		  <Default>path</Default>
+		  <Function />
+		</Literal>
+		<Literal Editable="true">
+		  <ID>Component</ID>
+		  <ToolTip>Replace with a variable to hold the component name.</ToolTip>
+		  <Default>Component</Default>
+		  <Function />
+		</Literal>
+	  </Declarations>
+	  <Code Language="JavaScript" Kind="method body" Delimiter="$">
+		  <![CDATA[{ path: '/$path$', component: $Component$ } ]]>
+	  </Code>
+	</Snippet>
+  </CodeSnippet>
+</CodeSnippets>

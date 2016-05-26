@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+	  <Header>
+		  <Title>AngularJs 2 TypeScript Subscribe Snippet</Title>
+		  <Shortcut>ng2-subscribe</Shortcut>
+		  <Description>AngularJs 2 TypeScript Subscribe Snippet: By Matt Kruczek, http://www.tallan.com, inspired by John Papa, http://johnpapa.net</Description>
+		  <Author>Matt Kruczek</Author>
+		  <SnippetTypes>
+			  <SnippetType>Expansion</SnippetType>
+		  </SnippetTypes>
+	  </Header>
+	<Snippet>
+	  <Declarations>
+		<Literal Editable="true">
+		  <ID>service</ID>
+		  <ToolTip>Replace with a variable to hold the service name.</ToolTip>
+		  <Default>service</Default>
+		  <Function />
+		</Literal>
+		<Literal Editable="true">
+		  <ID>function</ID>
+		  <ToolTip>Replace with a variable to hold the function name.</ToolTip>
+		  <Default>function</Default>
+		  <Function />
+		</Literal>
+		<Literal Editable="true">
+			<ID>arg</ID>
+			<ToolTip>Replace with a variable to hold the arg name.</ToolTip>
+			<Default>arg</Default>
+			<Function />
+		</Literal>
+		<Literal Editable="true">
+			<ID>property</ID>
+			<ToolTip>Replace with a variable to hold the property name.</ToolTip>
+			<Default>property</Default>
+			<Function />
+		</Literal>
+	  </Declarations>
+	  <Code Language="JavaScript" Kind="method body" Delimiter="$">
+		  <![CDATA[this.$service$.$function$
+	.subscribe($arg$ => this.$property$ = $arg$);
+ ]]>
+	  </Code>
+	</Snippet>
+  </CodeSnippet>
+</CodeSnippets>

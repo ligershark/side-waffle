@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+	  <Header>
+		  <Title>AngularJs 2 TypeScript Http Get Snippet</Title>
+		  <Shortcut>ng2-http-get</Shortcut>
+		  <Description>AngularJs 2 TypeScript Http Get Snippet: By Matt Kruczek, http://www.tallan.com, inspired by John Papa, http://johnpapa.net</Description>
+		  <Author>Matt Kruczek</Author>
+		  <SnippetTypes>
+			  <SnippetType>Expansion</SnippetType>
+		  </SnippetTypes>
+	  </Header>
+	<Snippet>
+	  <Declarations>
+		<Literal Editable="true">
+		  <ID>url</ID>
+		  <ToolTip>Replace with a variable to hold the url.</ToolTip>
+		  <Default>url</Default>
+		  <Function />
+		</Literal>
+	  </Declarations>
+	  <Code Language="JavaScript" Kind="method body" Delimiter="$">
+		  <![CDATA[return this.http.get('$url$')
+	.map((res: Response) => res.json()); ]]>
+	  </Code>
+	</Snippet>
+  </CodeSnippet>
+</CodeSnippets>
