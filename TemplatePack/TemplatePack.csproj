@@ -1,1259 +1,1227 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.VSSDK.BuildTools.14.2.25123\build\Microsoft.VSSDK.BuildTools.props" Condition="Exists('..\packages\Microsoft.VSSDK.BuildTools.14.2.25123\build\Microsoft.VSSDK.BuildTools.props')" />
   <Import Project="..\packages\LibGit2Sharp.0.20.1.0\build\net40\LibGit2Sharp.props" Condition="Exists('..\packages\LibGit2Sharp.0.20.1.0\build\net40\LibGit2Sharp.props')" />
   <PropertyGroup>
-    <MinimumVisualStudioVersion>$(VisualStudioVersion)</MinimumVisualStudioVersion>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <StartAction>Program</StartAction>
-    <StartProgram>$(DevEnvDir)\devenv.exe</StartProgram>
-    <StartArguments>/rootsuffix Exp</StartArguments>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <ZipPackageCompressionLevel>Normal</ZipPackageCompressionLevel>
-    <RestorePackages>true</RestorePackages>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+	<MinimumVisualStudioVersion>$(VisualStudioVersion)</MinimumVisualStudioVersion>
+	<VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+	<StartAction>Program</StartAction>
+	<StartProgram>$(DevEnvDir)\devenv.exe</StartProgram>
+	<StartArguments>/rootsuffix Exp</StartArguments>
+	<SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+	<ZipPackageCompressionLevel>Normal</ZipPackageCompressionLevel>
+	<RestorePackages>true</RestorePackages>
+	<TargetFrameworkProfile />
+	<NuGetPackageImportStamp>96ee856a</NuGetPackageImportStamp>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{66E5E42A-2905-4A93-A3F7-FD26DA48A25F}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TemplatePack</RootNamespace>
-    <AssemblyName>TemplatePack</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
-    <!--<GeneratePkgDefFile>false</GeneratePkgDefFile>
-    <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
-    <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
-    <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
-    <CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
-    <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>-->
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+	<ProjectGuid>{66E5E42A-2905-4A93-A3F7-FD26DA48A25F}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace>TemplatePack</RootNamespace>
+	<AssemblyName>TemplatePack</AssemblyName>
+	<TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+	<!--<GeneratePkgDefFile>false</GeneratePkgDefFile>
+	<IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
+	<IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
+	<IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
+	<CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
+	<CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>-->
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="checkmark.png" />
-    <Content Include="feed.pkgdef">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <None Include="ItemTemplates\Web\TypeScript\Angular2\Bootstrap\icon.png" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Root\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Root\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Root\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Bootstrap\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Bootstrap\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Bootstrap\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\TypeScript\Angular2\Component\icon.png" />
-    <None Include="ItemTemplates\Web\TypeScript\Angular2\Root\icon.png" />
-    <Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\icon.png" />
-    <Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\_Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\_Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\_Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\jscsrc\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\jscsrc\.jscsrc" />
-    <Content Include="ItemTemplates\Web\JavaScript\jscsrc\_Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\jscsrc\_Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\jscsrc\_Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\icon.png" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Service\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Service\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Service\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\TypeScript\Angular2\Service\icon.png" />
-    <Content Include="loading.gif" />
-    <Content Include="logo.ico" />
-    <None Include="app.config" />
-    <None Include="ItemTemplates\AppVeyor\Empty\Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ItemTemplates\AppVeyor\Empty\Definitions\vb.vstemplate" />
-    <None Include="ItemTemplates\AppVeyor\Empty\appveyor-icon.png" />
-    <None Include="ItemTemplates\AppVeyor\Full\appveyor-icon.png" />
-    <None Include="ItemTemplates\AppVeyor\Full\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\AppVeyor\Full\Definitions\vb.vstemplate" />
-    <None Include="ItemTemplates\Azure\CloudServicePlugin\azure-icon.png" />
-    <None Include="ItemTemplates\Azure\CloudServicePlugin\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\icon.png" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\icon.png" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\icon.png" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\icon.png" />
-    <None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\icon.png" />
-    <None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\icon.png" />
-    <None Include="ItemTemplates\Extensibility\BrowserLink\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\JsonSchemaSelector\icon.png" />
-    <None Include="ItemTemplates\Extensibility\JsonSchemaSelector\_Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\_Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\_Definitions\VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Extensibility\Package Definition\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\Definitions\vb.vstemplate" />
-    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\icon.png" />
-    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\powershell-file-icon.png" />
-    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\Definitions\vb.vstemplate" />
-    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\icon.png" />
-    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\powershell-file-icon.png" />
-    <None Include="ItemTemplates\PowerShell\DscConfigurationSimple\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\PowerShell\DscConfigurationSimple\Definitions\vb.vstemplate" />
-    <None Include="ItemTemplates\PowerShell\DscConfigurationSimple\icon.png" />
-    <None Include="ItemTemplates\PowerShell\DscConfigurationSimple\powershell-file-icon.png" />
-    <None Include="ItemTemplates\PowerShell\DscResourceProvider\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\PowerShell\DscResourceProvider\Definitions\vb.vstemplate" />
-    <None Include="ItemTemplates\PowerShell\DscResourceProvider\icon.png" />
-    <None Include="ItemTemplates\PowerShell\DscResourceProvider\powershell-file-icon.png" />
-    <None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\vb.vstemplate" />
-    <Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
-    <None Include="ItemTemplates\Test\RunSettings\default.runsettings" />
-    <None Include="ItemTemplates\Test\RunSettings\_Definitions\csharp.vstemplate" />
-    <None Include="ItemTemplates\Test\RunSettings\STAR10.ico" />
-    <Content Include="ItemTemplates\Web\Bower\Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Web\Bower\Definitions\VB.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Web\Bower\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\filter.js" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\icon.png" />
-    <Content Include="ItemTemplates\Web\Bower\bower-logo.png" />
-    <None Include="ItemTemplates\Web\Bower\bower.json" />
-    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\jQueryJSFile.js" />
-    <None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\service.js" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Test\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Test\spec.js" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Test\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Test\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Test\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Mocha\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\Mocha\template.js" />
-    <None Include="ItemTemplates\Web\JavaScript\Mocha\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Mocha\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Mocha\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\RequireJs\template.js" />
-    <None Include="ItemTemplates\AppVeyor\Empty\appveyor.yml" />
-    <None Include="ItemTemplates\AppVeyor\Full\appveyor.yml" />
-    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\cmdlet-adv-function-complete.ps1" />
-    <None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\cmdlet-adv-function.ps1" />
-    <None Include="ItemTemplates\PowerShell\DscConfigurationSimple\dsc-configuration-simple.ps1" />
-    <None Include="ItemTemplates\PowerShell\DscResourceProvider\dsc-resource-provider.ps1" />
-    <None Include="ItemTemplates\Web\Misc\JsonSchema\schema.json" />
-    <None Include="ItemTemplates\Web\Misc\JsonSchema\icon.png" />
-    <None Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\Web.csharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Component\Definitions\CSharp.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Component\Definitions\VB.vstemplate" />
-    <Content Include="ItemTemplates\Web\TypeScript\Angular2\Component\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\WebEssentials\WEIgnore\icon.png" />
-    <None Include="ItemTemplates\Web\WebEssentials\WEIgnore\weignore.txt" />
-    <None Include="ItemTemplates\Web\WebEssentials\WEIgnore\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\WebEssentials\WEIgnore\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\WebEssentials\WEIgnore\_Definitions\Web.VB.vstemplate" />
-    <None Include="ItemTemplates\Web\WebEssentials\WEIgnore\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\CustomScaffolderExtension.csproj" />
-    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\MyTemplate.vstemplate" />
-    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\_preprocess.xml" />
-    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\MyTemplate.vstemplate" />
-    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\_preprocess.xml" />
-    <None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Web\Durandal451\Web.config.install.Debug.xdt" />
-    <None Include="ProjectTemplates\Web\Durandal451\Web.config.install.Release.xdt" />
-    <None Include="ProjectTemplates\Web\Durandal451\Web.config.install.xdt" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Caliburn.Micro WPF Application.csproj" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\__TemplateIcon.png" />
-    <None Include="ItemTemplates\Misc\Dockerfile\Dockerfile" />
-    <None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\provider.js" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\icon.png" />
-    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\AngularJSWebApiEmpty.csproj" />
-    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\template-icon.png" />
-    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\_Definitions\_project.vstemplate.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\_preprocess.xml" />
-    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Gulpfile.js" />
-    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\icon.png" />
-    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Gulpfile.js" />
-    <Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\icon.png" />
-    <Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451.mdf" />
-    <Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451_log.ldf">
-      <DependentUpon>Durandal451.mdf</DependentUpon>
-    </Content>
-    <Content Include="resources\Package.ico" />
-    <None Include="ItemTemplates\Azure\CloudServicePlugin\CloudServicePlugin.csplugin" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\build.proj" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\custom.targets" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\custom.props" />
-    <None Include="ItemTemplates\Extensibility\BrowserLink\icon.png" />
-    <None Include="ItemTemplates\Extensibility\BrowserLink\MyExtension.js" />
-    <None Include="ItemTemplates\Extensibility\CodeSnippet\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\CodeSnippet\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\CodeSnippet\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\CodeSnippet\icon.png" />
-    <None Include="ItemTemplates\Extensibility\HtmlValidator\icon.png" />
-    <None Include="ItemTemplates\Extensibility\HtmlValidator\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\Editor Drop Handler\icon.png" />
-    <None Include="ItemTemplates\Extensibility\Editor Drop Handler\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\Editor Drop Handler\MyDropHandler.cs" />
-    <None Include="ItemTemplates\Extensibility\Editor Drop Handler\MyDropHandler.cs" />
-    <None Include="ItemTemplates\Extensibility\HtmlSmartTag\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\HtmlSmartTag\icon.png" />
-    <None Include="ItemTemplates\Extensibility\Package Definition\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\CSharp.vstemplat-" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\VB.vstemplat-" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\Web.csharp.vstemplat-" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\Web.VB.vstemplat-" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\CSharp.vstemplat-" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\VB.vstemplat-" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\Web.csharp.vstemplat-" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\Web.VB.vstemplat-" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\file-icon.png" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\icon.png" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\readme.txt" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-PreprocessXml\file-icon.png" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-PreprocessXml\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-PreprocessXml\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-PreprocessXml\_preprocess.xml" />
-    <None Include="ItemTemplates\Extensibility\VS Command Table\VSPackage.vsct" />
-    <None Include="ItemTemplates\Extensibility\VS Command Table\icon.png" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\fsharp._project.vstemplate.xml" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\sw-file-icon.png" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_Definitions\fsharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_preprocess-template.xml" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_project.vstemplate.xml" />
-    <None Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Global.asax" />
-    <None Include="ItemTemplates\Misc\Svg\icon.png" />
-    <None Include="ItemTemplates\Misc\Svg\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Misc\Svg\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Misc\Svg\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\icon.png" />
-    <None Include="ItemTemplates\Test\NUnitFixture\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Test\NUnitFixture\icon.png" />
-    <None Include="ItemTemplates\TypeScript\TS watermark.png" />
-    <None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\empty.ps1" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Site.css" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\scaffolding-file-icon.png" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\aspnet.ico" />
-    <None Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\directive.js" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\JasmineTestSpecs.js" />
-    <None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\QUnitTestSpecs.js" />
-    <None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\QUnitTestRunner.html" />
-    <None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\QUnitTestSpecs.js" />
-    <None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\JasmineTestSpecs.js" />
-    <None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\JasmineTestRunner.html" />
-    <None Include="ItemTemplates\Web\JavaScript\CKEditor\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\CKEditor\Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\CKEditor\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\CKEditor\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\CKEditor\plugin.js" />
-    <None Include="ItemTemplates\Web\JavaScript\tinymce\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\tinymce\plugin.js" />
-    <None Include="ItemTemplates\Web\JavaScript\TsLint\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\tinymce\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\tinymce\Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\tinymce\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\TsLint\tslint.json" />
-    <None Include="ItemTemplates\Web\JavaScript\TsLint\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\TsLint\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\TsLint\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\JsHintRc\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\JsHintRc\jshintrc.txt" />
-    <None Include="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\GruntJS\Gruntfile.js" />
-    <None Include="ItemTemplates\Web\JavaScript\GruntJS\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\JsHintIgnore\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\JsHintIgnore\jshintignore.txt" />
-    <None Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Karma\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\Karma\karma.conf.js" />
-    <None Include="ItemTemplates\Web\JavaScript\NodeJS\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\Karma\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Karma\Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Karma\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Misc\Svg\file.svg" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiControllerEmpty\Controller.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiControllerEmpty\Controller.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiControllerWithActions\Controller.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiControllerWithActions\Controller.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiControllerWithContext\Controller.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiControllerWithContext\Controller.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiDependencyCodeGenerator\Global.asax.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiDependencyCodeGenerator\Global.asax.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiDependencyCodeGenerator\Global.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiDependencyCodeGenerator\Global.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiDependencyCodeGenerator\WebApiConfig.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiDependencyCodeGenerator\WebApiConfig.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcArea\Area.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcArea\Area.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcArea\web.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcArea\web.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcControllerEmpty\Controller.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcControllerEmpty\Controller.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcControllerWithActions\Controller.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcControllerWithActions\Controller.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcControllerWithContext\Controller.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcControllerWithContext\Controller.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\BundleConfig.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\BundleConfig.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Error.cshtml" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Error.vbhtml" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\FilterConfig.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\FilterConfig.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Global.asax.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Global.asax.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Global.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Global.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\RouteConfig.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\RouteConfig.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\web.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\web.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\_Layout.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\_Layout.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\_ViewStart.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\_ViewStart.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\Global.asax.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\Global.asax.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\Global.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\Global.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\RouteConfig.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\RouteConfig.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\web.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\web.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcViewWithoutModel\Empty.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcViewWithoutModel\Empty.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcViewWithoutModel\Imports.include.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Create.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Create.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Delete.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Delete.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Details.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Details.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Edit.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Edit.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Empty.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Empty.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Imports.include.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\List.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\List.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\ModelMetadataFunctions.cs.include.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\ModelMetadataFunctions.vb.include.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ODataControllerWithContext\Controller.cs.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ODataControllerWithContext\Controller.vb.t4" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\scaffolding-file-icon.pdn" />
-    <None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\update.ps1" />
-    <None Include="ItemTemplates\Web\JavaScript\NodeJS\package.json" />
-    <None Include="ItemTemplates\Web\Misc\AppCacheManifest\icon.png" />
-    <None Include="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\WebVTT\icon.png" />
-    <None Include="ItemTemplates\Web\Misc\AppCacheManifest\site.appcache" />
-    <None Include="ItemTemplates\Web\Misc\WebVTT\subtitles.vtt" />
-    <None Include="ItemTemplates\Web\Misc\WebVTT\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\WebVTT\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\WebVTT\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\icon.png" />
-    <None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\app.manifest" />
-    <None Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\aspnet.ico" />
-    <None Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Windows Phone\readme.md" />
-    <None Include="ItemTemplates\Windows Store\readme.md" />
-    <None Include="ItemTemplates\WPF\readme.md" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ProjectTemplates\Cloud\readme.md" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
-    <None Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\_Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\file-icon.png" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\icon.png" />
-    <None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\readme.txt" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Factory\factory.ts" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Factory\icon.png" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Factory\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Factory\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Factory\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller using %24scope\controller.ts" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller using %24scope\icon.png" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller using %24scope\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller using %24scope\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller using %24scope\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller\icon.png" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller\controller.ts" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\icon.png" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\module.ts" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Nancy\NancyBootstrapper\icon.png" />
-    <None Include="ItemTemplates\Web\Nancy\NancyBootstrapper\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Nancy\NancyBootstrapper\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Nancy\NancyModule\icon.png" />
-    <None Include="ItemTemplates\Web\Nancy\NancyModule\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Nancy\NancyModule\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample FSharp\fsharp-logo-32x32.png" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample FSharp\icon.png" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample FSharp\Sayed.fs" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample FSharp\_Definitions\fsharp.vstemplate" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\icon.png" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\InputModels\Search\readme.txt" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ViewModels\readme.txt" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\Views\readme.txt" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\aspnet.ico" />
-    <None Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\SignalR\BasicHubAndPage\aspnet.ico" />
-    <None Include="ItemTemplates\Web\SignalR\BasicHubAndPage\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\SignalR\BasicHubAndPage\HitCounterHubClient.html" />
-    <None Include="ItemTemplates\Azure\BlobUploadHelper\azure-icon.png" />
-    <None Include="ItemTemplates\Azure\BlobUploadHelper\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Azure\TableStorageEntity\azure-icon.png" />
-    <None Include="ItemTemplates\Azure\TableStorageEntity\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Windows Phone\CaliburnMicroBootstrapper\caliburn-icon.png" />
-    <None Include="ItemTemplates\Windows Phone\CaliburnMicroBootstrapper\_Definitions\CSharp.vstemplate" />
-    <Content Include="logo_big.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <Content Include="logo_small.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\BrowserLinkExtensionTemplate.csproj" />
-    <None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Extensibility\SnippetProject\MySnippets.csproj" />
-    <None Include="ProjectTemplates\Extensibility\SnippetProject\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Web\Chrome Extension\ChromeExtensionProjectTemplate.csproj" />
-    <None Include="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Web\Chrome Theme\ChromeTheme.csproj" />
-    <None Include="ProjectTemplates\Web\Chrome Theme\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\global\session.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\main-built.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\main.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\services\logger.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\services\security.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\flickr.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\login.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\manage.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\register.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\registerExternal.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\shell.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\start.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\welcome.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\views\detail.html" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\views\flickr.html" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\views\login.html" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\views\manage.html" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\views\register.html" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\views\registerExternal.html" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\views\shell.html" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\views\start.html" />
-    <None Include="ProjectTemplates\Web\Durandal451\App\views\welcome.html" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\HelpPage.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\bootstrap-theme.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\bootstrap-theme.min.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\bootstrap.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\bootstrap.min.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\durandal.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\font-awesome.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\font-awesome.min.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\ie10mobile.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\images\icon.png" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\images\ios-startup-image-landscape.png" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\images\ios-startup-image-portrait.png" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\Site.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\starterkit.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\toastr.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\toastr.min.css" />
-    <None Include="ProjectTemplates\Web\Durandal451\Durandal451.csproj" />
-    <None Include="ProjectTemplates\Web\Durandal451\favicon.ico" />
-    <None Include="ProjectTemplates\Web\Durandal451\fonts\fontawesome-webfont.svg" />
-    <None Include="ProjectTemplates\Web\Durandal451\fonts\glyphicons-halflings-regular.svg" />
-    <None Include="ProjectTemplates\Web\Durandal451\Global.asax" />
-    <None Include="ProjectTemplates\Web\Durandal451\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Web\Durandal451\Project_Readme.html" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\almond-custom.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\bootstrap.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\bootstrap.min.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\activator.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\app.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\binder.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\composition.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\events.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\dialog.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\history.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\http.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\observable.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\router.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\serializer.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\widget.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\system.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\transitions\entrance.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\viewEngine.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\viewLocator.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\jquery-1.10.2.intellisense.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\jquery-1.10.2.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\jquery-1.10.2.min.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\jquery.utilities.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\knockout-2.3.0.debug.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\knockout-2.3.0.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\knockout.validation.debug.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\knockout.validation.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\modernizr-2.6.2.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\r.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\require.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\respond.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\respond.min.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\text.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\toastr.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\toastr.min.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\_references.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\weyland-config.js" />
-    <None Include="ProjectTemplates\Web\Durandal451\__TemplateIcon.png" />
-    <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\HTML5 Boiler Plate v4.3.csproj" />
-    <None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Web\Chrome Web Store App\ChromeApp.csproj" />
-    <None Include="ProjectTemplates\Web\Chrome Web Store App\Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\CodeSnippet\CSharpSnippet.snippet" />
-    <None Include="ItemTemplates\Extensibility\CodeSnippet\VBSnippet.snippet" />
-    <None Include="ItemTemplates\Extensibility\HtmlSmartTag\AddClassSmartTag.cs" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\controller.js" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller As\controller.js" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller As\_Definitions\CSharp.vstemplate">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller As\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller As\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller As\icon.png" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Directive\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Directive\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Directive\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Directive\directive.ts" />
-    <None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Directive\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\factory.js" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Module\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Module\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Module\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Module\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\AngularJs\Module\module.js" />
-    <None Include="ItemTemplates\Web\JavaScript\Common\IIFE\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Common\IIFE\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Common\IIFE\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Common\IIFE\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\Common\IIFE\iife.js" />
-    <None Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\iifem.js" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\Main\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\Main\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\Main\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\Main\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\Main\main.js" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\Service\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\Service\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\Service\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\Service\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\Service\service.js" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\viewmodel.js" />
-    <None Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\jqueryPlugin.js" />
-    <None Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\binding.js" />
-    <None Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\icon.png" />
-    <None Include="ItemTemplates\Web\JavaScript\RequireJs\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\RequireJs\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\RequireJs\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\RequireJs\icon.png" />
-    <None Include="ItemTemplates\Web\Misc\Favicon\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\Favicon\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\Favicon\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\Favicon\favicon.ico" />
-    <None Include="ItemTemplates\Web\Misc\Favicon\icon.ico" />
-    <None Include="ItemTemplates\Web\Misc\HumansTxt\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\HumansTxt\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\HumansTxt\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\HumansTxt\humans.txt" />
-    <None Include="ItemTemplates\Web\Misc\HumansTxt\icon.png" />
-    <None Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.png" />
-    <None Include="ItemTemplates\Misc\Dockerfile\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Misc\Dockerfile\_Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Misc\Dockerfile\_Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\RobotsTxt\icon.png" />
-    <None Include="ItemTemplates\Web\Misc\RobotsTxt\robots.txt" />
-    <None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\build.proj" />
-    <None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\project.nuspec" />
-    <None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\project.nuspec" />
-    <None Include="ItemTemplates\Extensibility\VS Command Table\_Definitions\CSharp.vstemplate" />
-    <None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.pdn" />
-    <None Include="ItemTemplates\Web\Misc\ReadmeMd\readme.md" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\Api.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\Index.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Shared\_Layout.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Web.config" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\_ViewStart.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Content\toastr.less" />
-    <None Include="ProjectTemplates\Web\Durandal451\fonts\fontawesome-webfont.eot" />
-    <None Include="ProjectTemplates\Web\Durandal451\fonts\fontawesome-webfont.ttf" />
-    <None Include="ProjectTemplates\Web\Durandal451\fonts\fontawesome-webfont.woff" />
-    <None Include="ProjectTemplates\Web\Durandal451\fonts\FontAwesome.otf" />
-    <None Include="ProjectTemplates\Web\Durandal451\fonts\glyphicons-halflings-regular.eot" />
-    <None Include="ProjectTemplates\Web\Durandal451\fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="ProjectTemplates\Web\Durandal451\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="ProjectTemplates\Web\Durandal451\packages.config" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\jquery-1.10.2.min.map" />
-    <None Include="ProjectTemplates\Web\Durandal451\Scripts\toastr.min.js.map" />
-    <None Include="ProjectTemplates\Web\Durandal451\Views\Durandal\Index.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Views\Durandal\_splash.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Views\Shared\Error.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Views\Shared\_Layout.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Views\Web.config" />
-    <None Include="ProjectTemplates\Web\Durandal451\Views\_ViewStart.cshtml" />
-    <None Include="ProjectTemplates\Web\Durandal451\Web.config" />
-    <None Include="ProjectTemplates\Web\Durandal451\Web.Debug.config" />
-    <None Include="ProjectTemplates\Web\Durandal451\Web.Release.config" />
-    <None Include="ProjectTemplates\Web\_SampleFSharpTemplate\SayedFSharpSample.fsproj" />
-    <None Include="ProjectTemplates\Windows Phone\readme.md" />
-    <None Include="ProjectTemplates\Windows Store\readme.md" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\package.appxmanifest" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\WSaTypeScript.jsproj" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\WSaTypeScript_TemporaryKey.pfx" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.config" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\packages.config" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Settings.settings" />
-    <None Include="Properties\template-builder.props" />
-    <None Include="ProjectTemplates\Web\_Sample Multi Project\Shared\My.Cool.Company.SharedLibrary.csproj" />
-    <None Include="ProjectTemplates\Web\_Sample Multi Project\Shared\MyTemplate.vstemplate" />
-    <None Include="ProjectTemplates\Web\_Sample Multi Project\Web\My.Cool.Company.WebFrontEnd.csproj" />
-    <None Include="ProjectTemplates\Web\_Sample Multi Project\Web\MyTemplate.vstemplate" />
-    <None Include="ProjectTemplates\Web\_Sample Multi Project\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Web\_SampleFSharpTemplate\_Definitions\fsharp.vstemplate" />
-    <None Include="ProjectTemplates\Web\_SampleNewWeb\WebApplication1.csproj" />
-    <None Include="ProjectTemplates\Web\_SampleNewWeb\_Definitions\_project.vstemplate.xml" />
-    <None Include="ProjectTemplates\Web\_SampleNewWeb\_preprocess.xml" />
-    <None Include="ProjectTemplates\Web\_SampleWeb\SampleWeb.csproj" />
-    <None Include="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Web\_SampleWeb\_Definitions\templateinfo.xml" />
-    <None Include="ProjectTemplates\Web\_SampleWeb\__TemplateIcon.ico" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\css\default.css" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\default.html" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\images\logo.scale-100.png" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\images\smalllogo.scale-100.png" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\images\splashscreen.scale-100.png" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\images\storelogo.scale-100.png" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\js\default.js" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\_Definitions\CSharp.vstemplate" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\__TemplateIcon.ico" />
-    <None Include="Snippets\JavaScript\SideWaffle\ng.controller.snippet" />
-    <None Include="Snippets\JavaScript\SideWaffle\ng.directive.snippet">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </None>
-    <None Include="Snippets\JavaScript\SideWaffle\ng.service.snippet">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </None>
-    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactlyTimes.Snippet">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappened.Snippet">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactlyTwice.Snippet">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustNotHaveHappened.Snippet">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactlyOnce.Snippet">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallTo.Snippet">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyAFakeStrict.Snippet">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Snippets\CSharp\SideWaffle\NancyModuleDelete.Snippet" />
-    <None Include="Snippets\CSharp\SideWaffle\FakeItEasyAFake.Snippet">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Snippets\CSharp\SideWaffle\NancyModuleGet.Snippet">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Snippets\CSharp\SideWaffle\Dispose.Snippet">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Snippets\CSharp\SideWaffle\NancyModuleHead.Snippet" />
-    <None Include="Snippets\CSharp\SideWaffle\NancyModuleOptions.Snippet" />
-    <None Include="Snippets\CSharp\SideWaffle\NancyModulePatch.Snippet" />
-    <None Include="Snippets\CSharp\SideWaffle\NancyModulePost.Snippet" />
-    <None Include="Snippets\CSharp\SideWaffle\NancyModulePut.Snippet" />
-    <None Include="Snippets\CSharp\SideWaffle\WCFUsing.Snippet" />
-    <None Include="Snippets\CSS\SideWaffle\css-linear-gradient.snippet" />
-    <None Include="Snippets\CSS\SideWaffle\css-radial-gradient.snippet" />
-    <None Include="Snippets\JavaScript\SideWaffle\ng.module.snippet" />
-    <None Include="Snippets\JavaScript\SideWaffle\ng.testSpec.snippet" />
-    <None Include="Snippets\TypeScript\SideWaffle\ng2.service.snippet" />
-    <None Include="Snippets\TypeScript\SideWaffle\ng2.pipe.snippet" />
-    <None Include="Snippets\TypeScript\SideWaffle\ng2.httpGet.snippet" />
-    <None Include="Snippets\TypeScript\SideWaffle\ng2.subscribe.snippet" />
-    <None Include="Snippets\TypeScript\SideWaffle\ng2.routes.snippet" />
-    <None Include="Snippets\TypeScript\SideWaffle\ng2.routePath.snippet" />
-    <None Include="Snippets\TypeScript\SideWaffle\ng2.component.bootstrap.snippet" />
-    <None Include="Snippets\TypeScript\SideWaffle\ng2.component.root.snippet" />
-    <None Include="Snippets\TypeScript\SideWaffle\ng2.component.snippet" />
-    <None Include="source.extension.vsixmanifest">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="resources\SideWaffle16blue.png" />
-    <Content Include="templatesources.json">
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\js\default.ts" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\jquery.d.ts" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\lib.d.ts" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\winjs.d.ts" />
-    <None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\winrt.d.ts" />
+	<Content Include="checkmark.png" />
+	<Content Include="feed.pkgdef">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <IncludeInVSIX>true</IncludeInVSIX>
+	</Content>
+	<None Include="ItemTemplates\Web\TypeScript\Angular2\Bootstrap\icon.png" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Root\Definitions\CSharp.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Root\Definitions\VB.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Root\Definitions\Web.csharp.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Bootstrap\Definitions\CSharp.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Bootstrap\Definitions\VB.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Bootstrap\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\TypeScript\Angular2\Component\icon.png" />
+	<None Include="ItemTemplates\Web\TypeScript\Angular2\Root\icon.png" />
+	<Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\icon.png" />
+	<Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\_Definitions\CSharp.vstemplate" />
+	<Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\_Definitions\VB.vstemplate" />
+	<Content Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\_Definitions\Web.csharp.vstemplate" />
+	<Content Include="ItemTemplates\Web\JavaScript\jscsrc\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\jscsrc\.jscsrc" />
+	<Content Include="ItemTemplates\Web\JavaScript\jscsrc\_Definitions\CSharp.vstemplate" />
+	<Content Include="ItemTemplates\Web\JavaScript\jscsrc\_Definitions\VB.vstemplate" />
+	<Content Include="ItemTemplates\Web\JavaScript\jscsrc\_Definitions\Web.csharp.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\Definitions\CSharp.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\Definitions\VB.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\icon.png" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Service\Definitions\CSharp.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Service\Definitions\VB.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Service\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\TypeScript\Angular2\Service\icon.png" />
+	<Content Include="loading.gif" />
+	<Content Include="logo.ico" />
+	<None Include="app.config" />
+	<None Include="ItemTemplates\AppVeyor\Empty\Definitions\CSharp.vstemplate">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="ItemTemplates\AppVeyor\Empty\Definitions\vb.vstemplate" />
+	<None Include="ItemTemplates\AppVeyor\Empty\appveyor-icon.png" />
+	<None Include="ItemTemplates\AppVeyor\Full\appveyor-icon.png" />
+	<None Include="ItemTemplates\AppVeyor\Full\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\AppVeyor\Full\Definitions\vb.vstemplate" />
+	<None Include="ItemTemplates\Azure\CloudServicePlugin\azure-icon.png" />
+	<None Include="ItemTemplates\Azure\CloudServicePlugin\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\icon.png" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\icon.png" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\icon.png" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\icon.png" />
+	<None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\icon.png" />
+	<None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\icon.png" />
+	<None Include="ItemTemplates\Extensibility\BrowserLink\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\JsonSchemaSelector\icon.png" />
+	<None Include="ItemTemplates\Extensibility\JsonSchemaSelector\_Definitions\CSharp.vstemplate" />
+	<Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\_Definitions\VB.vstemplate" />
+	<Content Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\_Definitions\VB.vstemplate">
+	  <SubType>Designer</SubType>
+	</Content>
+	<Content Include="ItemTemplates\Extensibility\Package Definition\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\Definitions\vb.vstemplate" />
+	<None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\icon.png" />
+	<None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\powershell-file-icon.png" />
+	<None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\Definitions\vb.vstemplate" />
+	<None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\icon.png" />
+	<None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\powershell-file-icon.png" />
+	<None Include="ItemTemplates\PowerShell\DscConfigurationSimple\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\PowerShell\DscConfigurationSimple\Definitions\vb.vstemplate" />
+	<None Include="ItemTemplates\PowerShell\DscConfigurationSimple\icon.png" />
+	<None Include="ItemTemplates\PowerShell\DscConfigurationSimple\powershell-file-icon.png" />
+	<None Include="ItemTemplates\PowerShell\DscResourceProvider\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\PowerShell\DscResourceProvider\Definitions\vb.vstemplate" />
+	<None Include="ItemTemplates\PowerShell\DscResourceProvider\icon.png" />
+	<None Include="ItemTemplates\PowerShell\DscResourceProvider\powershell-file-icon.png" />
+	<None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\vb.vstemplate" />
+	<Content Include="ItemTemplates\Extensibility\Package Definition\project.pkgdef" />
+	<None Include="ItemTemplates\Test\RunSettings\default.runsettings" />
+	<None Include="ItemTemplates\Test\RunSettings\_Definitions\csharp.vstemplate" />
+	<None Include="ItemTemplates\Test\RunSettings\STAR10.ico" />
+	<Content Include="ItemTemplates\Web\Bower\Definitions\CSharp.vstemplate">
+	  <SubType>Designer</SubType>
+	</Content>
+	<Content Include="ItemTemplates\Web\Bower\Definitions\VB.vstemplate">
+	  <SubType>Designer</SubType>
+	</Content>
+	<Content Include="ItemTemplates\Web\Bower\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\filter.js" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Filter\icon.png" />
+	<Content Include="ItemTemplates\Web\Bower\bower-logo.png" />
+	<None Include="ItemTemplates\Web\Bower\bower.json" />
+	<Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\CSharp.vstemplate" />
+	<Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\VB.vstemplate" />
+	<Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Definitions\Web.csharp.vstemplate" />
+	<Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Definitions\CSharp.vstemplate">
+	  <SubType>Designer</SubType>
+	</Content>
+	<Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Definitions\VB.vstemplate" />
+	<Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\jQueryJSFile.js" />
+	<None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\jQuery\BasicJsFile\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\service.js" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Service01\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Test\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Test\spec.js" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Test\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Test\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Test\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Mocha\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\Mocha\template.js" />
+	<None Include="ItemTemplates\Web\JavaScript\Mocha\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Mocha\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Mocha\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\RequireJs\template.js" />
+	<None Include="ItemTemplates\AppVeyor\Empty\appveyor.yml" />
+	<None Include="ItemTemplates\AppVeyor\Full\appveyor.yml" />
+	<None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctionsComplete\cmdlet-adv-function-complete.ps1" />
+	<None Include="ItemTemplates\PowerShell\CmdletAdvancedFunctions\cmdlet-adv-function.ps1" />
+	<None Include="ItemTemplates\PowerShell\DscConfigurationSimple\dsc-configuration-simple.ps1" />
+	<None Include="ItemTemplates\PowerShell\DscResourceProvider\dsc-resource-provider.ps1" />
+	<None Include="ItemTemplates\Web\Misc\JsonSchema\schema.json" />
+	<None Include="ItemTemplates\Web\Misc\JsonSchema\icon.png" />
+	<None Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\JsonSchema\_Definitions\Web.csharp.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Component\Definitions\CSharp.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Component\Definitions\VB.vstemplate" />
+	<Content Include="ItemTemplates\Web\TypeScript\Angular2\Component\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\WebEssentials\WEIgnore\icon.png" />
+	<None Include="ItemTemplates\Web\WebEssentials\WEIgnore\weignore.txt" />
+	<None Include="ItemTemplates\Web\WebEssentials\WEIgnore\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\WebEssentials\WEIgnore\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\WebEssentials\WEIgnore\_Definitions\Web.VB.vstemplate" />
+	<None Include="ItemTemplates\Web\WebEssentials\WEIgnore\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\CustomScaffolderExtension.csproj" />
+	<None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\MyTemplate.vstemplate" />
+	<None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolderExtension\_preprocess.xml" />
+	<None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\MyTemplate.vstemplate" />
+	<None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\CustomScaffolder\_preprocess.xml" />
+	<None Include="ProjectTemplates\Extensibility\AspNetScaffolding\Basic\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Web\Durandal451\Web.config.install.Debug.xdt" />
+	<None Include="ProjectTemplates\Web\Durandal451\Web.config.install.Release.xdt" />
+	<None Include="ProjectTemplates\Web\Durandal451\Web.config.install.xdt" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Caliburn.Micro WPF Application.csproj" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\__TemplateIcon.png" />
+	<None Include="ItemTemplates\Misc\Dockerfile\Dockerfile" />
+	<None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\RobotsTxt\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\provider.js" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Provider\icon.png" />
+	<Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\AngularJSWebApiEmpty.csproj" />
+	<Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\template-icon.png" />
+	<Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\_Definitions\_project.vstemplate.xml">
+	  <SubType>Designer</SubType>
+	</Content>
+	<Content Include="ProjectTemplates\Web\AngularJSWebApiEmpty\_preprocess.xml" />
+	<Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\Gulpfile.js" />
+	<Content Include="ItemTemplates\Web\JavaScript\GulpJS\BasicFile\icon.png" />
+	<Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\Gulpfile.js" />
+	<Content Include="ItemTemplates\Web\JavaScript\GulpJS\ConfigurationFile\icon.png" />
+	<Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451.mdf" />
+	<Content Include="ProjectTemplates\Web\Durandal451\App_Data\Durandal451_log.ldf">
+	  <DependentUpon>Durandal451.mdf</DependentUpon>
+	</Content>
+	<Content Include="resources\Package.ico" />
+	<None Include="ItemTemplates\Azure\CloudServicePlugin\CloudServicePlugin.csplugin" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\NuGetRestoreProjFile\build.proj" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\BasicTargetsFile\custom.targets" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\BasicPropsFile\custom.props" />
+	<None Include="ItemTemplates\Extensibility\BrowserLink\icon.png" />
+	<None Include="ItemTemplates\Extensibility\BrowserLink\MyExtension.js" />
+	<None Include="ItemTemplates\Extensibility\CodeSnippet\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\CodeSnippet\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\CodeSnippet\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\CodeSnippet\icon.png" />
+	<None Include="ItemTemplates\Extensibility\HtmlValidator\icon.png" />
+	<None Include="ItemTemplates\Extensibility\HtmlValidator\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\Editor Drop Handler\icon.png" />
+	<None Include="ItemTemplates\Extensibility\Editor Drop Handler\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\Editor Drop Handler\MyDropHandler.cs" />
+	<None Include="ItemTemplates\Extensibility\Editor Drop Handler\MyDropHandler.cs" />
+	<None Include="ItemTemplates\Extensibility\HtmlSmartTag\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\HtmlSmartTag\icon.png" />
+	<None Include="ItemTemplates\Extensibility\Package Definition\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\CSharp.vstemplat-" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\VB.vstemplat-" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\Web.csharp.vstemplat-" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\Web.VB.vstemplat-" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\CSharp.vstemplat-" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\VB.vstemplat-" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\Web.csharp.vstemplat-" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\Web.VB.vstemplat-" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\file-icon.png" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\icon.png" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\readme.txt" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-DefinitionFiles\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-PreprocessXml\file-icon.png" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-PreprocessXml\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-PreprocessXml\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-PreprocessXml\_preprocess.xml" />
+	<None Include="ItemTemplates\Extensibility\VS Command Table\VSPackage.vsct" />
+	<None Include="ItemTemplates\Extensibility\VS Command Table\icon.png" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\fsharp._project.vstemplate.xml" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\sw-file-icon.png" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_Definitions\fsharp.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_preprocess-template.xml" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SW-ProjectVSTemplateFile\_project.vstemplate.xml" />
+	<None Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Global.asax" />
+	<None Include="ItemTemplates\Misc\Svg\icon.png" />
+	<None Include="ItemTemplates\Misc\Svg\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Misc\Svg\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Misc\Svg\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\icon.png" />
+	<None Include="ItemTemplates\Test\NUnitFixture\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Misc\ReadmeMd\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Misc\ReadmeMd\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Misc\ReadmeMd\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Test\NUnitFixture\icon.png" />
+	<None Include="ItemTemplates\TypeScript\TS watermark.png" />
+	<None Include="ItemTemplates\PowerShell\EmptyPowerShellFile\empty.ps1" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Site.css" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\scaffolding-file-icon.png" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\aspnet.ico" />
+	<None Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\directive.js" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Directive\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec\JasmineTestSpecs.js" />
+	<None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec\QUnitTestSpecs.js" />
+	<None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\QUnitTestRunner.html" />
+	<None Include="ItemTemplates\Web\JavaScript\QUnit\QUnit Spec and HTML\QUnitTestSpecs.js" />
+	<None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\JasmineTestSpecs.js" />
+	<None Include="ItemTemplates\Web\JavaScript\Jasmine\Jasmine Spec and HTML\JasmineTestRunner.html" />
+	<None Include="ItemTemplates\Web\JavaScript\CKEditor\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\CKEditor\Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\CKEditor\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\CKEditor\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\CKEditor\plugin.js" />
+	<None Include="ItemTemplates\Web\JavaScript\tinymce\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\tinymce\plugin.js" />
+	<None Include="ItemTemplates\Web\JavaScript\TsLint\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\tinymce\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\tinymce\Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\tinymce\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\TsLint\tslint.json" />
+	<None Include="ItemTemplates\Web\JavaScript\TsLint\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\TsLint\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\TsLint\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\JsHintRc\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\JsHintRc\jshintrc.txt" />
+	<None Include="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\JsHintRc\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\GruntJS\Gruntfile.js" />
+	<None Include="ItemTemplates\Web\JavaScript\GruntJS\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\JsHintIgnore\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\JsHintIgnore\jshintignore.txt" />
+	<None Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\JsHintIgnore\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Karma\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\Karma\karma.conf.js" />
+	<None Include="ItemTemplates\Web\JavaScript\NodeJS\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\Karma\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Karma\Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Karma\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\GruntJS\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Misc\Svg\file.svg" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiControllerEmpty\Controller.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiControllerEmpty\Controller.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiControllerWithActions\Controller.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiControllerWithActions\Controller.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiControllerWithContext\Controller.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiControllerWithContext\Controller.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiDependencyCodeGenerator\Global.asax.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiDependencyCodeGenerator\Global.asax.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiDependencyCodeGenerator\Global.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiDependencyCodeGenerator\Global.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiDependencyCodeGenerator\WebApiConfig.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ApiDependencyCodeGenerator\WebApiConfig.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcArea\Area.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcArea\Area.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcArea\web.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcArea\web.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcControllerEmpty\Controller.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcControllerEmpty\Controller.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcControllerWithActions\Controller.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcControllerWithActions\Controller.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcControllerWithContext\Controller.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcControllerWithContext\Controller.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\BundleConfig.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\BundleConfig.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Error.cshtml" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Error.vbhtml" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\FilterConfig.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\FilterConfig.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Global.asax.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Global.asax.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Global.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\Global.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\RouteConfig.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\RouteConfig.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\web.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\web.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\_Layout.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\_Layout.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\_ViewStart.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcFullDependencyCodeGenerator\_ViewStart.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\Global.asax.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\Global.asax.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\Global.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\Global.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\RouteConfig.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\RouteConfig.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\web.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcMinimalDependencyCodeGenerator\web.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcViewWithoutModel\Empty.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcViewWithoutModel\Empty.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcViewWithoutModel\Imports.include.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Create.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Create.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Delete.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Delete.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Details.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Details.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Edit.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Edit.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Empty.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Empty.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\Imports.include.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\List.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\List.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\ModelMetadataFunctions.cs.include.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\MvcView\ModelMetadataFunctions.vb.include.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ODataControllerWithContext\Controller.cs.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\ODataControllerWithContext\Controller.vb.t4" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\scaffolding-file-icon.pdn" />
+	<None Include="ItemTemplates\Web\ASP.NET\Custom T4 Files\update.ps1" />
+	<None Include="ItemTemplates\Web\JavaScript\NodeJS\package.json" />
+	<None Include="ItemTemplates\Web\Misc\AppCacheManifest\icon.png" />
+	<None Include="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\AppCacheManifest\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\WebVTT\icon.png" />
+	<None Include="ItemTemplates\Web\Misc\AppCacheManifest\site.appcache" />
+	<None Include="ItemTemplates\Web\Misc\WebVTT\subtitles.vtt" />
+	<None Include="ItemTemplates\Web\Misc\WebVTT\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\WebVTT\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\WebVTT\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\icon.png" />
+	<None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\FirefoxOsManifest\app.manifest" />
+	<None Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\aspnet.ico" />
+	<None Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Windows Phone\readme.md" />
+	<None Include="ItemTemplates\Windows Store\readme.md" />
+	<None Include="ItemTemplates\WPF\readme.md" />
+	<None Include="packages.config">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="ProjectTemplates\Cloud\readme.md" />
+	<None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\BrowserLinkExtensionTemplate.csproj" />
+	<None Include="ItemTemplates\Extensibility\Package Definition\icon.png" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\_Definitions\CSharp.vstemplate">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\file-icon.png" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\icon.png" />
+	<None Include="ItemTemplates\Extensibility\SideWaffle\SideWaffle-ItemTemplate-Basic\readme.txt" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Factory\factory.ts" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Factory\icon.png" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Factory\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Factory\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Factory\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller using %24scope\controller.ts" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller using %24scope\icon.png" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller using %24scope\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller using %24scope\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller using %24scope\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller\icon.png" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller\controller.ts" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Controller\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\icon.png" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\module.ts" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Module\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Nancy\NancyBootstrapper\icon.png" />
+	<None Include="ItemTemplates\Web\Nancy\NancyBootstrapper\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Nancy\NancyBootstrapper\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Nancy\NancyModule\icon.png" />
+	<None Include="ItemTemplates\Web\Nancy\NancyModule\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Nancy\NancyModule\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample FSharp\fsharp-logo-32x32.png" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample FSharp\icon.png" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample FSharp\Sayed.fs" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample FSharp\_Definitions\fsharp.vstemplate" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\icon.png" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\InputModels\Search\readme.txt" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ViewModels\readme.txt" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\Views\readme.txt" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\aspnet.ico" />
+	<None Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\SignalR\BasicHubAndPage\aspnet.ico" />
+	<None Include="ItemTemplates\Web\SignalR\BasicHubAndPage\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\SignalR\BasicHubAndPage\HitCounterHubClient.html" />
+	<None Include="ItemTemplates\Azure\BlobUploadHelper\azure-icon.png" />
+	<None Include="ItemTemplates\Azure\BlobUploadHelper\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Azure\TableStorageEntity\azure-icon.png" />
+	<None Include="ItemTemplates\Azure\TableStorageEntity\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Windows Phone\CaliburnMicroBootstrapper\caliburn-icon.png" />
+	<None Include="ItemTemplates\Windows Phone\CaliburnMicroBootstrapper\_Definitions\CSharp.vstemplate" />
+	<Content Include="logo_big.png">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <IncludeInVSIX>true</IncludeInVSIX>
+	</Content>
+	<Content Include="logo_small.png">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <IncludeInVSIX>true</IncludeInVSIX>
+	</Content>
+	<None Include="ProjectTemplates\Extensibility\BrowserLinkExtension\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\BrowserLinkExtensionTemplate.csproj" />
+	<None Include="ProjectTemplates\Extensibility\BrowserLinkExtensionSimple\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Extensibility\SnippetProject\MySnippets.csproj" />
+	<None Include="ProjectTemplates\Extensibility\SnippetProject\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Web\Chrome Extension\ChromeExtensionProjectTemplate.csproj" />
+	<None Include="ProjectTemplates\Web\Chrome Extension\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Web\Chrome Theme\ChromeTheme.csproj" />
+	<None Include="ProjectTemplates\Web\Chrome Theme\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\global\session.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\main-built.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\main.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\services\logger.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\services\security.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\flickr.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\login.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\manage.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\register.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\registerExternal.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\shell.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\start.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\viewmodels\welcome.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\views\detail.html" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\views\flickr.html" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\views\login.html" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\views\manage.html" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\views\register.html" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\views\registerExternal.html" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\views\shell.html" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\views\start.html" />
+	<None Include="ProjectTemplates\Web\Durandal451\App\views\welcome.html" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\HelpPage.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\bootstrap-theme.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\bootstrap-theme.min.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\bootstrap.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\bootstrap.min.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\durandal.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\font-awesome.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\font-awesome.min.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\ie10mobile.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\images\icon.png" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\images\ios-startup-image-landscape.png" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\images\ios-startup-image-portrait.png" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\Site.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\starterkit.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\toastr.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\toastr.min.css" />
+	<None Include="ProjectTemplates\Web\Durandal451\Durandal451.csproj" />
+	<None Include="ProjectTemplates\Web\Durandal451\favicon.ico" />
+	<None Include="ProjectTemplates\Web\Durandal451\fonts\fontawesome-webfont.svg" />
+	<None Include="ProjectTemplates\Web\Durandal451\fonts\glyphicons-halflings-regular.svg" />
+	<None Include="ProjectTemplates\Web\Durandal451\Global.asax" />
+	<None Include="ProjectTemplates\Web\Durandal451\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Web\Durandal451\Project_Readme.html" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\almond-custom.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\bootstrap.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\bootstrap.min.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\activator.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\app.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\binder.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\composition.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\events.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\dialog.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\history.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\http.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\observable.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\router.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\serializer.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\plugins\widget.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\system.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\transitions\entrance.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\viewEngine.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\durandal\viewLocator.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\jquery-1.10.2.intellisense.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\jquery-1.10.2.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\jquery-1.10.2.min.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\jquery.utilities.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\knockout-2.3.0.debug.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\knockout-2.3.0.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\knockout.validation.debug.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\knockout.validation.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\modernizr-2.6.2.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\r.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\require.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\respond.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\respond.min.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\text.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\toastr.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\toastr.min.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\_references.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\weyland-config.js" />
+	<None Include="ProjectTemplates\Web\Durandal451\__TemplateIcon.png" />
+	<None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\HTML5 Boiler Plate v4.3.csproj" />
+	<None Include="ProjectTemplates\Web\HTML5 Boiler Platev4.3\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Web\Chrome Web Store App\ChromeApp.csproj" />
+	<None Include="ProjectTemplates\Web\Chrome Web Store App\Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\CodeSnippet\CSharpSnippet.snippet" />
+	<None Include="ItemTemplates\Extensibility\CodeSnippet\VBSnippet.snippet" />
+	<None Include="ItemTemplates\Extensibility\HtmlSmartTag\AddClassSmartTag.cs" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\controller.js" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller using %24scope\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller As\controller.js" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller As\_Definitions\CSharp.vstemplate">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller As\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller As\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Controller As\icon.png" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Directive\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Directive\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Directive\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Directive\directive.ts" />
+	<None Include="ItemTemplates\TypeScript\AngularJs\TypeScript Directive\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\factory.js" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Factory\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Module\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Module\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Module\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Module\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\AngularJs\Module\module.js" />
+	<None Include="ItemTemplates\Web\JavaScript\Common\IIFE\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Common\IIFE\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Common\IIFE\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Common\IIFE\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\Common\IIFE\iife.js" />
+	<None Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\Common\IIFE Module\iifem.js" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\Main\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\Main\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\Main\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\Main\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\Main\main.js" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\Service\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\Service\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\Service\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\Service\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\Service\service.js" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\Durandal\ViewModel\viewmodel.js" />
+	<None Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\jQuery\Plugin\jqueryPlugin.js" />
+	<None Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\binding.js" />
+	<None Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\Knockout\CustomBinding\icon.png" />
+	<None Include="ItemTemplates\Web\JavaScript\RequireJs\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\RequireJs\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\RequireJs\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\RequireJs\icon.png" />
+	<None Include="ItemTemplates\Web\Misc\Favicon\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\Favicon\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\Favicon\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\Favicon\favicon.ico" />
+	<None Include="ItemTemplates\Web\Misc\Favicon\icon.ico" />
+	<None Include="ItemTemplates\Web\Misc\HumansTxt\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\HumansTxt\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\HumansTxt\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\HumansTxt\humans.txt" />
+	<None Include="ItemTemplates\Web\Misc\HumansTxt\icon.png" />
+	<None Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\ReadmeMd\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.png" />
+	<None Include="ItemTemplates\Misc\Dockerfile\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Misc\Dockerfile\_Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Misc\Dockerfile\_Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\RobotsTxt\icon.png" />
+	<None Include="ItemTemplates\Web\Misc\RobotsTxt\robots.txt" />
+	<None Include="ItemTemplates\Build and NuGet\MSBuild\BasicProjFile\build.proj" />
+	<None Include="ItemTemplates\Build and NuGet\NuGet\Advanced .nuspec file\project.nuspec" />
+	<None Include="ItemTemplates\Build and NuGet\NuGet\Basic .nuspec file\project.nuspec" />
+	<None Include="ItemTemplates\Extensibility\VS Command Table\_Definitions\CSharp.vstemplate" />
+	<None Include="ItemTemplates\Web\Misc\ReadmeMd\icon.pdn" />
+	<None Include="ItemTemplates\Web\Misc\ReadmeMd\readme.md" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\Api.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Help\Index.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\Web.config" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Views\_ViewStart.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Content\toastr.less" />
+	<None Include="ProjectTemplates\Web\Durandal451\fonts\fontawesome-webfont.eot" />
+	<None Include="ProjectTemplates\Web\Durandal451\fonts\fontawesome-webfont.ttf" />
+	<None Include="ProjectTemplates\Web\Durandal451\fonts\fontawesome-webfont.woff" />
+	<None Include="ProjectTemplates\Web\Durandal451\fonts\FontAwesome.otf" />
+	<None Include="ProjectTemplates\Web\Durandal451\fonts\glyphicons-halflings-regular.eot" />
+	<None Include="ProjectTemplates\Web\Durandal451\fonts\glyphicons-halflings-regular.ttf" />
+	<None Include="ProjectTemplates\Web\Durandal451\fonts\glyphicons-halflings-regular.woff" />
+	<None Include="ProjectTemplates\Web\Durandal451\packages.config" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\jquery-1.10.2.min.map" />
+	<None Include="ProjectTemplates\Web\Durandal451\Scripts\toastr.min.js.map" />
+	<None Include="ProjectTemplates\Web\Durandal451\Views\Durandal\Index.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Views\Durandal\_splash.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Views\Shared\Error.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Views\Shared\_Layout.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Views\Web.config" />
+	<None Include="ProjectTemplates\Web\Durandal451\Views\_ViewStart.cshtml" />
+	<None Include="ProjectTemplates\Web\Durandal451\Web.config" />
+	<None Include="ProjectTemplates\Web\Durandal451\Web.Debug.config" />
+	<None Include="ProjectTemplates\Web\Durandal451\Web.Release.config" />
+	<None Include="ProjectTemplates\Web\_SampleFSharpTemplate\SayedFSharpSample.fsproj" />
+	<None Include="ProjectTemplates\Windows Phone\readme.md" />
+	<None Include="ProjectTemplates\Windows Store\readme.md" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\package.appxmanifest" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\WSaTypeScript.jsproj" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\WSaTypeScript_TemporaryKey.pfx" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.config" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\packages.config" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Settings.settings" />
+	<None Include="Properties\template-builder.props" />
+	<None Include="ProjectTemplates\Web\_Sample Multi Project\Shared\My.Cool.Company.SharedLibrary.csproj" />
+	<None Include="ProjectTemplates\Web\_Sample Multi Project\Shared\MyTemplate.vstemplate" />
+	<None Include="ProjectTemplates\Web\_Sample Multi Project\Web\My.Cool.Company.WebFrontEnd.csproj" />
+	<None Include="ProjectTemplates\Web\_Sample Multi Project\Web\MyTemplate.vstemplate" />
+	<None Include="ProjectTemplates\Web\_Sample Multi Project\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Web\_SampleFSharpTemplate\_Definitions\fsharp.vstemplate" />
+	<None Include="ProjectTemplates\Web\_SampleNewWeb\WebApplication1.csproj" />
+	<None Include="ProjectTemplates\Web\_SampleNewWeb\_Definitions\_project.vstemplate.xml" />
+	<None Include="ProjectTemplates\Web\_SampleNewWeb\_preprocess.xml" />
+	<None Include="ProjectTemplates\Web\_SampleWeb\SampleWeb.csproj" />
+	<None Include="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Web\_SampleWeb\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Web\_SampleWeb\_Definitions\templateinfo.xml" />
+	<None Include="ProjectTemplates\Web\_SampleWeb\__TemplateIcon.ico" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\css\default.css" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\default.html" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\images\logo.scale-100.png" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\images\smalllogo.scale-100.png" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\images\splashscreen.scale-100.png" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\images\storelogo.scale-100.png" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\js\default.js" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\_Definitions\CSharp.vstemplate" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\__TemplateIcon.ico" />
+	<None Include="Snippets\JavaScript\SideWaffle\ng.controller.snippet" />
+	<None Include="Snippets\JavaScript\SideWaffle\ng.directive.snippet">
+	  <IncludeInVSIX>true</IncludeInVSIX>
+	</None>
+	<None Include="Snippets\JavaScript\SideWaffle\ng.service.snippet">
+	  <IncludeInVSIX>true</IncludeInVSIX>
+	</None>
+	<None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactlyTimes.Snippet">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappened.Snippet">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactlyTwice.Snippet">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustNotHaveHappened.Snippet">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallToMustHaveHappenedExactlyOnce.Snippet">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="Snippets\CSharp\SideWaffle\FakeItEasyACallTo.Snippet">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="Snippets\CSharp\SideWaffle\FakeItEasyAFakeStrict.Snippet">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="Snippets\CSharp\SideWaffle\NancyModuleDelete.Snippet" />
+	<None Include="Snippets\CSharp\SideWaffle\FakeItEasyAFake.Snippet">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="Snippets\CSharp\SideWaffle\NancyModuleGet.Snippet">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="Snippets\CSharp\SideWaffle\Dispose.Snippet">
+	  <SubType>Designer</SubType>
+	</None>
+	<None Include="Snippets\CSharp\SideWaffle\NancyModuleHead.Snippet" />
+	<None Include="Snippets\CSharp\SideWaffle\NancyModuleOptions.Snippet" />
+	<None Include="Snippets\CSharp\SideWaffle\NancyModulePatch.Snippet" />
+	<None Include="Snippets\CSharp\SideWaffle\NancyModulePost.Snippet" />
+	<None Include="Snippets\CSharp\SideWaffle\NancyModulePut.Snippet" />
+	<None Include="Snippets\CSharp\SideWaffle\WCFUsing.Snippet" />
+	<None Include="Snippets\CSS\SideWaffle\css-linear-gradient.snippet" />
+	<None Include="Snippets\CSS\SideWaffle\css-radial-gradient.snippet" />
+	<None Include="Snippets\JavaScript\SideWaffle\ng.module.snippet" />
+	<None Include="Snippets\JavaScript\SideWaffle\ng.testSpec.snippet" />
+	<None Include="Snippets\TypeScript\SideWaffle\ng2.service.snippet" />
+	<None Include="Snippets\TypeScript\SideWaffle\ng2.pipe.snippet" />
+	<None Include="Snippets\TypeScript\SideWaffle\ng2.httpGet.snippet" />
+	<None Include="Snippets\TypeScript\SideWaffle\ng2.subscribe.snippet" />
+	<None Include="Snippets\TypeScript\SideWaffle\ng2.routes.snippet" />
+	<None Include="Snippets\TypeScript\SideWaffle\ng2.routePath.snippet" />
+	<None Include="Snippets\TypeScript\SideWaffle\ng2.component.bootstrap.snippet" />
+	<None Include="Snippets\TypeScript\SideWaffle\ng2.component.root.snippet" />
+	<None Include="Snippets\TypeScript\SideWaffle\ng2.component.snippet" />
+	<None Include="source.extension.vsixmanifest">
+	  <SubType>Designer</SubType>
+	</None>
+	<Content Include="resources\SideWaffle16blue.png" />
+	<Content Include="templatesources.json">
+	  <IncludeInVSIX>true</IncludeInVSIX>
+	</Content>
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\js\default.ts" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\jquery.d.ts" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\lib.d.ts" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\winjs.d.ts" />
+	<None Include="ProjectTemplates\Windows Store\TypeScript Blank\Scripts\typings\winrt.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\Web.csharp.vstemplate" />
-    <None Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\VB.vstemplate" />
-    <None Include="ItemTemplates\Extensibility\HtmlValidator\validator.cs" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ISearchController.cs" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\SearchController.cs" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\WorkerService\ISearchWorkerService.cs" />
-    <None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\WorkerService\SearchWorkerService.cs" />
-    <None Include="ItemTemplates\Extensibility\VS Command Table\Guids.cs" />
-    <None Include="ItemTemplates\Extensibility\VS Command Table\PkgCmdID.cs" />
-    <None Include="ItemTemplates\Extensibility\VS Command Table\VSPackagePackage.cs" />
-    <None Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\NinjectControllerFactory.cs" />
-    <None Include="ItemTemplates\Web\SignalR\BasicHubAndPage\HitCounterHub.cs" />
-    <None Include="ItemTemplates\Azure\BlobUploadHelper\BlobUploadHelper.cs" />
-    <None Include="ItemTemplates\Azure\TableStorageEntity\TableStorageEntity.cs" />
-    <None Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\WhitespaceModule.cs" />
-    <None Include="ItemTemplates\Test\NUnitFixture\NUnitFixture.cs" />
-    <None Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\EmptyController.cs" />
-    <None Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Global.asax.cs" />
+	<None Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\Web.csharp.vstemplate" />
+	<None Include="ItemTemplates\Web\JavaScript\NodeJS\Definitions\VB.vstemplate" />
+	<None Include="ItemTemplates\Extensibility\HtmlValidator\validator.cs" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\ISearchController.cs" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\SearchController.cs" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\WorkerService\ISearchWorkerService.cs" />
+	<None Include="ItemTemplates\Web\_Samples\_Sample Multi Files\WorkerService\SearchWorkerService.cs" />
+	<None Include="ItemTemplates\Extensibility\VS Command Table\Guids.cs" />
+	<None Include="ItemTemplates\Extensibility\VS Command Table\PkgCmdID.cs" />
+	<None Include="ItemTemplates\Extensibility\VS Command Table\VSPackagePackage.cs" />
+	<None Include="ItemTemplates\Web\Mvc\NinjectControllerFactory\NinjectControllerFactory.cs" />
+	<None Include="ItemTemplates\Web\SignalR\BasicHubAndPage\HitCounterHub.cs" />
+	<None Include="ItemTemplates\Azure\BlobUploadHelper\BlobUploadHelper.cs" />
+	<None Include="ItemTemplates\Azure\TableStorageEntity\TableStorageEntity.cs" />
+	<None Include="ItemTemplates\Web\ASP.NET\WhitespaceModule\WhitespaceModule.cs" />
+	<None Include="ItemTemplates\Test\NUnitFixture\NUnitFixture.cs" />
+	<None Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\EmptyController.cs" />
+	<None Include="ItemTemplates\LightSwitch\WebAPI2EmptyController\Global.asax.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ItemTemplates\Extensibility\BrowserLink\MyExtension.cs" />
+	<None Include="ItemTemplates\Extensibility\BrowserLink\MyExtension.cs" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="EnvDTE">
-      <Guid>{80CC9F66-E7D8-4DDD-85B6-D9E6CD0E93E2}</Guid>
-      <VersionMajor>8</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="EnvDTE80">
-      <Guid>{1A31287A-4D7D-413E-8E32-3B374931BD89}</Guid>
-      <VersionMajor>8</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="EnvDTE90">
-      <Guid>{2CE2370E-D744-4936-A090-3FFFE667B0E1}</Guid>
-      <VersionMajor>9</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="stdole">
-      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </COMReference>
-    <Reference Include="EnvDTE100, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="LibGit2Sharp">
-      <HintPath>..\packages\LibGit2Sharp.0.20.1.0\lib\net40\LibGit2Sharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Build" />
-    <Reference Include="Microsoft.Build.Framework" />
-    <Reference Include="Microsoft.Build.Tasks.v4.0" />
-    <Reference Include="Microsoft.Build.Utilities.v4.0" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.VisualStudio.CommandBars, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>..\assemblies\Microsoft.VisualStudio.CommandBars.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.ComponentModelHost, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.VisualStudio.CoreUtility, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.VisualStudio.CoreUtility.14.2.25123\lib\net45\Microsoft.VisualStudio.CoreUtility.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\assemblies\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Shell.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.11.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Immutable.10.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Immutable.11.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Interop.10.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Shell.Interop.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Interop.11.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Interop.9.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Text.Data, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.VisualStudio.Text.Data.14.2.25123\lib\net45\Microsoft.VisualStudio.Text.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Text.Logic, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.VisualStudio.Text.Logic.14.2.25123\lib\net45\Microsoft.VisualStudio.Text.Logic.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Text.UI, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.VisualStudio.Text.UI.14.2.25123\lib\net45\Microsoft.VisualStudio.Text.UI.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.Text.UI.Wpf, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.VisualStudio.Text.UI.Wpf.14.2.25123\lib\net45\Microsoft.VisualStudio.Text.UI.Wpf.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\assemblies\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.XmlTransform">
-      <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="NuGet.VisualStudio">
-      <HintPath>..\packages\NuGet.VisualStudio.2.8.3\lib\net40\NuGet.VisualStudio.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.WebRequest" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.XML" />
-    <Reference Include="TemplateBuilder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TemplateBuilder.1.1.4.6-beta\lib\TemplateBuilder.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="VsWebSite.Interop, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="VsWebSite.Interop90, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="WindowsBase" />
+	<COMReference Include="EnvDTE">
+	  <Guid>{80CC9F66-E7D8-4DDD-85B6-D9E6CD0E93E2}</Guid>
+	  <VersionMajor>8</VersionMajor>
+	  <VersionMinor>0</VersionMinor>
+	  <Lcid>0</Lcid>
+	  <WrapperTool>primary</WrapperTool>
+	  <Isolated>False</Isolated>
+	  <EmbedInteropTypes>False</EmbedInteropTypes>
+	</COMReference>
+	<COMReference Include="EnvDTE80">
+	  <Guid>{1A31287A-4D7D-413E-8E32-3B374931BD89}</Guid>
+	  <VersionMajor>8</VersionMajor>
+	  <VersionMinor>0</VersionMinor>
+	  <Lcid>0</Lcid>
+	  <WrapperTool>primary</WrapperTool>
+	  <Isolated>False</Isolated>
+	  <EmbedInteropTypes>False</EmbedInteropTypes>
+	</COMReference>
+	<COMReference Include="EnvDTE90">
+	  <Guid>{2CE2370E-D744-4936-A090-3FFFE667B0E1}</Guid>
+	  <VersionMajor>9</VersionMajor>
+	  <VersionMinor>0</VersionMinor>
+	  <Lcid>0</Lcid>
+	  <WrapperTool>primary</WrapperTool>
+	  <Isolated>False</Isolated>
+	  <EmbedInteropTypes>False</EmbedInteropTypes>
+	</COMReference>
+	<COMReference Include="stdole">
+	  <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+	  <VersionMajor>2</VersionMajor>
+	  <VersionMinor>0</VersionMinor>
+	  <Lcid>0</Lcid>
+	  <WrapperTool>primary</WrapperTool>
+	  <Isolated>False</Isolated>
+	  <EmbedInteropTypes>False</EmbedInteropTypes>
+	</COMReference>
+	<Reference Include="EnvDTE100, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+	  <EmbedInteropTypes>True</EmbedInteropTypes>
+	</Reference>
+	<Reference Include="LibGit2Sharp">
+	  <HintPath>..\packages\LibGit2Sharp.0.20.1.0\lib\net40\LibGit2Sharp.dll</HintPath>
+	</Reference>
+	<Reference Include="Microsoft.Build" />
+	<Reference Include="Microsoft.Build.Tasks.v4.0" />
+	<Reference Include="Microsoft.Build.Utilities.v4.0" />
+	<Reference Include="Microsoft.VisualStudio.CommandBars, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+	  <SpecificVersion>False</SpecificVersion>
+	  <EmbedInteropTypes>True</EmbedInteropTypes>
+	  <HintPath>..\assemblies\Microsoft.VisualStudio.CommandBars.dll</HintPath>
+	</Reference>
+	<Reference Include="Microsoft.VisualStudio.ComponentModelHost, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+	<Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\assemblies\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+	</Reference>
+	<Reference Include="Microsoft.VisualStudio.Shell.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.11.0.dll</HintPath>
+	</Reference>
+	<Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Immutable.10.0.dll</HintPath>
+	</Reference>
+	<Reference Include="Microsoft.VisualStudio.Shell.Immutable.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Immutable.11.0.dll</HintPath>
+	</Reference>
+	<Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+	</Reference>
+	<Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
+	  <EmbedInteropTypes>True</EmbedInteropTypes>
+	  <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Interop.10.0.dll</HintPath>
+	</Reference>
+	<Reference Include="Microsoft.VisualStudio.Shell.Interop.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+	  <SpecificVersion>False</SpecificVersion>
+	  <EmbedInteropTypes>True</EmbedInteropTypes>
+	  <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Interop.11.0.dll</HintPath>
+	</Reference>
+	<Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
+	</Reference>
+	<Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\assemblies\Microsoft.VisualStudio.Shell.Interop.9.0.dll</HintPath>
+	</Reference>
+	<Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+	  <SpecificVersion>False</SpecificVersion>
+	  <HintPath>..\assemblies\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+	</Reference>
+	<Reference Include="Microsoft.Web.XmlTransform">
+	  <HintPath>..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+	</Reference>
+	<Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+	  <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+	  <Private>True</Private>
+	</Reference>
+	<Reference Include="NuGet.VisualStudio">
+	  <HintPath>..\packages\NuGet.VisualStudio.2.8.3\lib\net40\NuGet.VisualStudio.dll</HintPath>
+	  <EmbedInteropTypes>True</EmbedInteropTypes>
+	</Reference>
+	<Reference Include="PresentationCore" />
+	<Reference Include="PresentationFramework" />
+	<Reference Include="System" />
+	<Reference Include="System.Data" />
+	<Reference Include="System.Design" />
+	<Reference Include="System.Drawing" />
+	<Reference Include="System.IO.Compression" />
+	<Reference Include="System.IO.Compression.FileSystem" />
+	<Reference Include="System.Net.Http" />
+	<Reference Include="System.Net.Http.WebRequest" />
+	<Reference Include="System.Windows.Forms" />
+	<Reference Include="System.Xaml" />
+	<Reference Include="System.XML" />
+	<Reference Include="TemplateBuilder, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+	  <HintPath>..\packages\TemplateBuilder.1.1.4.6-beta\lib\TemplateBuilder.dll</HintPath>
+	  <Private>True</Private>
+	</Reference>
+	<Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+	  <EmbedInteropTypes>True</EmbedInteropTypes>
+	</Reference>
+	<Reference Include="VsWebSite.Interop, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+	  <EmbedInteropTypes>True</EmbedInteropTypes>
+	</Reference>
+	<Reference Include="VsWebSite.Interop90, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+	  <EmbedInteropTypes>True</EmbedInteropTypes>
+	</Reference>
+	<Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Snippets\C++\SideWaffle\" />
-    <Folder Include="Snippets\HTML\SideWaffle\" />
-    <Folder Include="Snippets\SQL\SideWaffle\" />
-    <Folder Include="Snippets\VisualBasic\SideWaffle\" />
-    <Folder Include="Snippets\XML\SideWaffle\" />
+	<Folder Include="Snippets\C++\SideWaffle\" />
+	<Folder Include="Snippets\HTML\SideWaffle\" />
+	<Folder Include="Snippets\SQL\SideWaffle\" />
+	<Folder Include="Snippets\VisualBasic\SideWaffle\" />
+	<Folder Include="Snippets\XML\SideWaffle\" />
   </ItemGroup>
   <ItemGroup>
-    <TemplateReference Include="ConsoleApplicationAsync.csproj">
-      <PathToProject>../Project%20Templates/Windows%20Desktop/ConsoleApplicationAsync/ConsoleApplicationAsync.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="RazorV3WebApplication.csproj">
-      <PathToProject>../Project%20Templates/RazorV3WebApplication/RazorV3WebApplication.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="UnitTestProject.xproj">
-      <PathToProject>../Project%20Templates/xUnitTestProject/UnitTestProject.xproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="WebJobsHelloWorld.csproj">
-      <PathToProject>..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\WebJobsHelloWorld.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="_SampleProjRef.csproj">
-      <PathToProject>..\Project Templates\_SampleProjRef\_SampleProjRef.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="Nancy.CSharp.AspNetHost.csproj">
-      <PathToProject>..\Project Templates\Nancy.CSharp.AspNetHost\Nancy.CSharp.AspNetHost.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="Nancy.CSharp.AspNetHostWithRazor.csproj">
-      <PathToProject>..\Project Templates\Nancy.CSharp.AspNetHostWithRazor\Nancy.CSharp.AspNetHostWithRazor.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="Nancy.CSharp.Demo.csproj">
-      <PathToProject>..\Project Templates\Nancy.CSharp.Demo\Nancy.CSharp.Demo.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="Nancy.CSharp.EmptyAspNetHost.csproj">
-      <PathToProject>..\Project Templates\Nancy.CSharp.EmptyAspNetHost\Nancy.CSharp.EmptyAspNetHost.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="Nancy.CSharp.EmptyAspNetHostWithRazor.csproj">
-      <PathToProject>..\Project Templates\Nancy.CSharp.EmptyAspNetHostingWithRazor\Nancy.CSharp.EmptyAspNetHostWithRazor.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="Nancy.CSharp.EmptySelfHost.csproj">
-      <PathToProject>..\Project Templates\Nancy.CSharp.EmptySelfHost\Nancy.CSharp.EmptySelfHost.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="Nancy.CSharp.EmptySelfHostWithRazor.csproj">
-      <PathToProject>..\Project Templates\Nancy.CSharp.EmptySelfHostWithRazor\Nancy.CSharp.EmptySelfHostWithRazor.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="Nancy.CSharp.SelfHost.csproj">
-      <PathToProject>..\Project Templates\Nancy.CSharp.SelfHost\Nancy.CSharp.SelfHost.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="Nancy.CSharp.SelfHostWithRazor.csproj">
-      <PathToProject>..\Project Templates\Nancy.CSharp.SelfHostWithRazor\Nancy.CSharp.SelfHostWithRazor.csproj</PathToProject>
-    </TemplateReference>
-    <TemplateReference Include="html5up.csproj">
-      <PathToProject>../Project%20Templates/html5up/html5up.csproj</PathToProject>
-    </TemplateReference>
+	<TemplateReference Include="ConsoleApplicationAsync.csproj">
+	  <PathToProject>../Project%20Templates/Windows%20Desktop/ConsoleApplicationAsync/ConsoleApplicationAsync.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="RazorV3WebApplication.csproj">
+	  <PathToProject>../Project%20Templates/RazorV3WebApplication/RazorV3WebApplication.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="UnitTestProject.xproj">
+	  <PathToProject>../Project%20Templates/xUnitTestProject/UnitTestProject.xproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="WebJobsHelloWorld.csproj">
+	  <PathToProject>..\Project Templates\Azure\WebJobs\WebJobsHelloWorld\WebJobsHelloWorld.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="_SampleProjRef.csproj">
+	  <PathToProject>..\Project Templates\_SampleProjRef\_SampleProjRef.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="Nancy.CSharp.AspNetHost.csproj">
+	  <PathToProject>..\Project Templates\Nancy.CSharp.AspNetHost\Nancy.CSharp.AspNetHost.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="Nancy.CSharp.AspNetHostWithRazor.csproj">
+	  <PathToProject>..\Project Templates\Nancy.CSharp.AspNetHostWithRazor\Nancy.CSharp.AspNetHostWithRazor.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="Nancy.CSharp.Demo.csproj">
+	  <PathToProject>..\Project Templates\Nancy.CSharp.Demo\Nancy.CSharp.Demo.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="Nancy.CSharp.EmptyAspNetHost.csproj">
+	  <PathToProject>..\Project Templates\Nancy.CSharp.EmptyAspNetHost\Nancy.CSharp.EmptyAspNetHost.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="Nancy.CSharp.EmptyAspNetHostWithRazor.csproj">
+	  <PathToProject>..\Project Templates\Nancy.CSharp.EmptyAspNetHostingWithRazor\Nancy.CSharp.EmptyAspNetHostWithRazor.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="Nancy.CSharp.EmptySelfHost.csproj">
+	  <PathToProject>..\Project Templates\Nancy.CSharp.EmptySelfHost\Nancy.CSharp.EmptySelfHost.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="Nancy.CSharp.EmptySelfHostWithRazor.csproj">
+	  <PathToProject>..\Project Templates\Nancy.CSharp.EmptySelfHostWithRazor\Nancy.CSharp.EmptySelfHostWithRazor.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="Nancy.CSharp.SelfHost.csproj">
+	  <PathToProject>..\Project Templates\Nancy.CSharp.SelfHost\Nancy.CSharp.SelfHost.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="Nancy.CSharp.SelfHostWithRazor.csproj">
+	  <PathToProject>..\Project Templates\Nancy.CSharp.SelfHostWithRazor\Nancy.CSharp.SelfHostWithRazor.csproj</PathToProject>
+	</TemplateReference>
+	<TemplateReference Include="html5up.csproj">
+	  <PathToProject>../Project%20Templates/html5up/html5up.csproj</PathToProject>
+	</TemplateReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ItemTemplates\Windows Phone\CaliburnMicroBootstrapper\Bootstrapper.cs" />
+	<None Include="ItemTemplates\Windows Phone\CaliburnMicroBootstrapper\Bootstrapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ItemTemplates\Extensibility\JsonSchemaSelector\JsonSchemaSelector.cs" />
-    <None Include="ItemTemplates\Web\Nancy\NancyBootstrapper\bootstrapper.cs" />
-    <None Include="ItemTemplates\Web\Nancy\NancyModule\module.cs" />
-    <Compile Include="PackageConstants.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingsForm.Designer.cs">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </Compile>
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.xaml.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\AppBootstrapper.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\AssemblyInfo.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Resources.Designer.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Settings.Designer.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\ViewModels\MainViewModel.cs" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml.cs" />
-    <Compile Include="TemplatePackPackage.cs" />
-    <Compile Include="Tooling\ActivityLogger.cs" />
-    <Compile Include="Tooling\DynamicTemplateBuilder.cs" />
-    <Compile Include="Tooling\ProjectSelector2.xaml.cs">
-      <DependentUpon>ProjectSelector2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Tooling\RemoteTemplateSettings.cs" />
-    <Compile Include="Tooling\SolutionHelper.cs" />
-    <Compile Include="Tooling\TemplateLocalInfo.cs" />
-    <Compile Include="Tooling\TemplateReferenceCreator.cs" />
-    <Compile Include="Tooling\UpdateFrequency.cs" />
-    <Compile Include="VSPackage.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VSPackage.resx</DependentUpon>
-    </Compile>
+	<None Include="ItemTemplates\Extensibility\JsonSchemaSelector\JsonSchemaSelector.cs" />
+	<None Include="ItemTemplates\Web\Nancy\NancyBootstrapper\bootstrapper.cs" />
+	<None Include="ItemTemplates\Web\Nancy\NancyModule\module.cs" />
+	<Compile Include="PackageConstants.cs" />
+	<Compile Include="Properties\AssemblyInfo.cs" />
+	<Compile Include="SettingsForm.cs">
+	  <SubType>Form</SubType>
+	</Compile>
+	<Compile Include="SettingsForm.Designer.cs">
+	  <DependentUpon>SettingsForm.cs</DependentUpon>
+	</Compile>
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.xaml.cs" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\AppBootstrapper.cs" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\AssemblyInfo.cs" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Resources.Designer.cs" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Properties\Settings.Designer.cs" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\ViewModels\MainViewModel.cs" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml.cs" />
+	<Compile Include="TemplatePackPackage.cs" />
+	<Compile Include="Tooling\ActivityLogger.cs" />
+	<Compile Include="Tooling\DynamicTemplateBuilder.cs" />
+	<Compile Include="Tooling\ProjectSelector2.xaml.cs">
+	  <DependentUpon>ProjectSelector2.xaml</DependentUpon>
+	</Compile>
+	<Compile Include="Tooling\RemoteTemplateSettings.cs" />
+	<Compile Include="Tooling\SolutionHelper.cs" />
+	<Compile Include="Tooling\TemplateLocalInfo.cs" />
+	<Compile Include="Tooling\TemplateReferenceCreator.cs" />
+	<Compile Include="Tooling\UpdateFrequency.cs" />
+	<Compile Include="VSPackage.Designer.cs">
+	  <AutoGen>True</AutoGen>
+	  <DesignTime>True</DesignTime>
+	  <DependentUpon>VSPackage.resx</DependentUpon>
+	</Compile>
   </ItemGroup>
   <ItemGroup>
-    <VSCTCompile Include="TemplatePack.vsct">
-      <ResourceName>Menus.ctmenu</ResourceName>
-      <SubType>Designer</SubType>
-    </VSCTCompile>
+	<VSCTCompile Include="TemplatePack.vsct">
+	  <ResourceName>Menus.ctmenu</ResourceName>
+	  <SubType>Designer</SubType>
+	</VSCTCompile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="SettingsForm.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VSPackage.resx">
-      <MergeWithCTO>true</MergeWithCTO>
-      <ManifestResourceName>VSPackage</ManifestResourceName>
-      <SubType>Designer</SubType>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>VSPackage.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+	<EmbeddedResource Include="SettingsForm.resx">
+	  <DependentUpon>SettingsForm.cs</DependentUpon>
+	</EmbeddedResource>
+	<EmbeddedResource Include="VSPackage.resx">
+	  <MergeWithCTO>true</MergeWithCTO>
+	  <ManifestResourceName>VSPackage</ManifestResourceName>
+	  <SubType>Designer</SubType>
+	  <Generator>ResXFileCodeGenerator</Generator>
+	  <LastGenOutput>VSPackage.Designer.cs</LastGenOutput>
+	</EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.xaml" />
-    <None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml" />
-    <Page Include="Tooling\ProjectSelector2.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\App.xaml" />
+	<None Include="ProjectTemplates\Windows\Caliburn.Micro WPF Application\Views\MainView.xaml" />
+	<Page Include="Tooling\ProjectSelector2.xaml">
+	  <Generator>MSBuild:Compile</Generator>
+	  <SubType>Designer</SubType>
+	</Page>
   </ItemGroup>
   <PropertyGroup>
-    <UseCodebase>true</UseCodebase>
+	<UseCodebase>true</UseCodebase>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LigerShark.Templates\LigerShark.Templates.csproj">
-      <Project>{a2a92f75-3703-4326-a474-1569979ec875}</Project>
-      <Name>LigerShark.Templates</Name>
-    </ProjectReference>
+	<ProjectReference Include="..\LigerShark.Templates\LigerShark.Templates.csproj">
+	  <Project>{a2a92f75-3703-4326-a474-1569979ec875}</Project>
+	  <Name>LigerShark.Templates</Name>
+	</ProjectReference>
   </ItemGroup>
   <!--
   Include libgit2sharp NativeBinaries folder in vsix.
   Modified version of http://chrisparnin.github.io/articles/2013/09/deploying-native-binaries-with-visual-studio-extensions/
   -->
   <PropertyGroup>
-    <EnableIncludeLibGit2SharpInVsix Condition=" '$(EnableIncludeLibGit2SharpInVsix)'=='' ">true</EnableIncludeLibGit2SharpInVsix>
+	<EnableIncludeLibGit2SharpInVsix Condition=" '$(EnableIncludeLibGit2SharpInVsix)'=='' ">true</EnableIncludeLibGit2SharpInVsix>
   </PropertyGroup>
   <PropertyGroup Label="TemplateBuilder">
-    <TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.1.4.6-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
+	<TemplateBuilderTargets Condition=" '$(TemplateBuilderTargets)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\TemplateBuilder.1.1.4.6-beta\tools\ligershark.templates.targets ))</TemplateBuilderTargets>
   </PropertyGroup>
   <ItemGroup Condition=" '$(EnableIncludeLibGit2SharpInVsix)'=='true' ">
-    <Content Include="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.*" Exclude="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.pdb">
-      <Link>NativeBinaries\%(RecursiveDir)%(Filename)%(Extension)</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
+	<Content Include="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.*" Exclude="$(MSBuildThisFileDirectory)..\packages\LibGit2Sharp.0.20.1.0\lib\net40\NativeBinaries\**\*.pdb">
+	  <Link>NativeBinaries\%(RecursiveDir)%(Filename)%(Extension)</Link>
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  <IncludeInVSIX>true</IncludeInVSIX>
+	</Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\BundleConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\DurandalBundleConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\DurandalConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\FilterConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\RouteConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\Startup.Auth.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\App_Start\WebApiConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\ApiDescriptionExtensions.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\App_Start\HelpPageConfig.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Controllers\HelpController.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\HelpPageAreaRegistration.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Models\HelpPageApiModel.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\ImageSample.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\TextSample.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Controllers\AccountController.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Controllers\DurandalController.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Global.asax.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Models\AccountBindingModels.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Models\AccountViewModels.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Models\IdentityDbInitializer.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Properties\AssemblyInfo.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Providers\ApplicationOAuthProvider.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Results\ChallengeResult.cs" />
-    <None Include="ProjectTemplates\Web\Durandal451\Startup.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\App_Start\BundleConfig.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\App_Start\DurandalBundleConfig.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\App_Start\DurandalConfig.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\App_Start\FilterConfig.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\App_Start\RouteConfig.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\App_Start\Startup.Auth.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\App_Start\WebApiConfig.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\ApiDescriptionExtensions.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Controllers\HelpController.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\HelpPageAreaRegistration.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\Models\HelpPageApiModel.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\SampleGeneration\TextSample.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Areas\HelpPage\XmlDocumentationProvider.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Controllers\AccountController.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Controllers\DurandalController.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Global.asax.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Models\AccountBindingModels.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Models\AccountViewModels.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Models\IdentityDbInitializer.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Properties\AssemblyInfo.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Providers\ApplicationOAuthProvider.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Results\ChallengeResult.cs" />
+	<None Include="ProjectTemplates\Web\Durandal451\Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LigerShark.Templates\LigerShark.Templates.csproj">
-      <Project>{a2a92f75-3703-4326-a474-1569979ec875}</Project>
-      <Name>LigerShark.Templates</Name>
-    </ProjectReference>
+	<ProjectReference Include="..\LigerShark.Templates\LigerShark.Templates.csproj">
+	  <Project>{a2a92f75-3703-4326-a474-1569979ec875}</Project>
+	  <Name>LigerShark.Templates</Name>
+	</ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ItemTemplates\Web\TypeScript\Angular2\Component\component.ts" />
+	<None Include="ItemTemplates\Web\TypeScript\Angular2\Component\component.ts" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ItemTemplates\Web\TypeScript\Angular2\Service\service.ts" />
+	<None Include="ItemTemplates\Web\TypeScript\Angular2\Service\service.ts" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\pipe.ts" />
+	<None Include="ItemTemplates\Web\TypeScript\Angular2\Pipe\pipe.ts" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="ItemTemplates\Web\TypeScript\Angular2\Bootstrap\bootstrap.ts" />
-    <TypeScriptCompile Include="ItemTemplates\Web\TypeScript\Angular2\Root\root.ts" />
-    <TypeScriptCompile Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\service.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+	<TypeScriptCompile Include="ItemTemplates\Web\TypeScript\Angular2\Bootstrap\bootstrap.ts" />
+	<TypeScriptCompile Include="ItemTemplates\Web\TypeScript\Angular2\Root\root.ts" />
+	<TypeScriptCompile Include="ItemTemplates\TypeScript\AngularJs\TypeScript Service\service.ts" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(TemplateBuilderTargets)" Condition="Exists('$(TemplateBuilderTargets)')" Label="TemplateBuilder" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\packages\LibGit2Sharp.0.20.1.0\build\net40\LibGit2Sharp.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LibGit2Sharp.0.20.1.0\build\net40\LibGit2Sharp.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.VSSDK.BuildTools.14.2.25123\build\Microsoft.VSSDK.BuildTools.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VSSDK.BuildTools.14.2.25123\build\Microsoft.VSSDK.BuildTools.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.VSSDK.BuildTools.14.2.25123\build\Microsoft.VSSDK.BuildTools.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VSSDK.BuildTools.14.2.25123\build\Microsoft.VSSDK.BuildTools.targets'))" />
+	<PropertyGroup>
+	  <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+	</PropertyGroup>
+	<Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+	<Error Condition="!Exists('..\packages\LibGit2Sharp.0.20.1.0\build\net40\LibGit2Sharp.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LibGit2Sharp.0.20.1.0\build\net40\LibGit2Sharp.props'))" />
   </Target>
-  <Import Project="..\packages\Microsoft.VSSDK.BuildTools.14.2.25123\build\Microsoft.VSSDK.BuildTools.targets" Condition="Exists('..\packages\Microsoft.VSSDK.BuildTools.14.2.25123\build\Microsoft.VSSDK.BuildTools.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
+	   Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
