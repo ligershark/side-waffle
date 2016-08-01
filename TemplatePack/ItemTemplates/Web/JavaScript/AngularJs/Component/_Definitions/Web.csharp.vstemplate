@@ -1,0 +1,27 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>component.js</DefaultName>
+    <Name>AngularJs Component</Name>
+    <Description>AngularJs Component: minification ready, starter dependencies.  https://docs.angularjs.org/guide/component</Description>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <Icon>icon.png</Icon>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>95203c8c-a2fa-402b-922a-620f903fe952</TemplateID>
+    <AppliesTo>ABC | (!ABC)</AppliesTo>
+    <SortOrder>1000</SortOrder>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem ReplaceParameters="true">component.js</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="AngularJs Component" />
+      <CustomParameter Name="$TemplateID$" Value="22a61781-d53c-476d-a146-7626f4983b64" />
+      <CustomParameter Name="$TemplateType$" Value="Item" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
