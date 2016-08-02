@@ -3,15 +3,18 @@
 
     angular
         .module('app')
-        .component('$safeitemname$', $safeitemname$Component);
+        .component('$safeitemname$', {
+            template: '<h1>$saveitemname$</h1>',
+            controller: $safeItemname$Controller
+        });
 
-    $safeitemname$Component.$inject = ['$http']; 
+    $safeitemname$Controller.$inject = ['$http']; 
 
-    function $safeitemname$Component($http) {
-        var $ctrl = this;
+    function $safeitemname$Controller($http) {
+        var ctrl = this;
 
-        $ctrl.$onInit = function(){
-            $ctrl.title = $safeitemname$;
+        ctrl.$onInit = function(){
+            ctrl.title = $safeitemname$;
         }
     }
 })();
