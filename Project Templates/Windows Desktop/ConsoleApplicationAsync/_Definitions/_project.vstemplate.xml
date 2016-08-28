@@ -1,0 +1,32 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Console Application Async</Name>
+    <Description>Console Application that supports async</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Console Application Async</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon Package="{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}" ID="4548" />
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <TemplateID>51fac454-216d-4b2b-a5aa-2127e7b0976b</TemplateID>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="ConsoleApplicationAsync.csproj" File="ConsoleApplicationAsync.csproj" ReplaceParameters="true">
+      <!--<ProjectItem ReplaceParameters="true" TargetFileName="Program.cs" OpenInEditor="true">Program.cs</ProjectItem>-->
+    </Project>
+    <CustomParameters>
+      <CustomParameter Name="$TemplateName$" Value="Console Application Async" />
+      <CustomParameter Name="$TemplateID$" Value="bf3f1e42-fdb7-43c5-9130-5f7bf5326a63" />
+      <CustomParameter Name="$TemplateType$" Value="Project" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
