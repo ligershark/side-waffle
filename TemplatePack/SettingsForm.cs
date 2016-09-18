@@ -3,8 +3,10 @@ using EnvDTE80;
 using LigerShark.Templates.DynamicBuilder;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -20,6 +22,8 @@ namespace TemplatePack
         private bool buildingTemplates = false;
         private bool newSourceAdded = false;
         private int _numSources;
+        private string swRootDir;
+        private string swFilePath;
 
         public SettingsForm()
         {
@@ -43,6 +47,46 @@ namespace TemplatePack
             onceAWeekRadioBtn.Tag = UpdateFrequency.OnceAWeek;
             onceAMonthRadioBtn.Tag = UpdateFrequency.OnceAMonth;
             neverRadioBtn.Tag = UpdateFrequency.Never;
+
+            // Load the Google Analytics settings from it's JSON source
+            // telemetryCheckBox
+            swRootDir = Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\");
+            swFilePath = Path.Combine(swRootDir, "SideWaffle-Settings.json");
+
+            if (!File.Exists(swFilePath))
+            {
+                try
+                {
+                    var telemetryDefaults = new SettingsStore { SendTelemetry = true };
+                    var json = JsonConvert.SerializeObject(telemetryDefaults, Formatting.Indented);
+                    File.WriteAllText(swFilePath, json);
+
+                    telemetryCheckBox.Checked = true;
+                }
+                catch (IOException ioe)
+                {
+                    MessageBox.Show(ioe.Message, "Error Trying to Create Default Telemetry JSON File");
+                }
+            }
+            else
+            {
+                try
+                {
+                    var telemetry = SettingsStore.ReadJsonFile(swFilePath).SendTelemetry;
+
+                    if (telemetry)
+                    {
+                        telemetryCheckBox.Checked = true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error Trying to Read From Telemetry JSON File");
+                }
+                
+            }
+
+            
         }
 
         private void editBtn_click(object sender, EventArgs e)
@@ -246,6 +290,17 @@ namespace TemplatePack
 
             // Here is where the .json file needs to be saved before calling ProcessTemplates
             templateBuilder.WriteJsonTemplateSettings(templateSettings);
+
+            // Update the JSON file on the Google Analytics setting.
+            var telemetry = telemetryCheckBox.Checked;
+            var data = new SettingsStore { SendTelemetry = telemetry };
+            var json = JsonConvert.SerializeObject(data, Formatting.Indented);
+            if (!Directory.Exists(swRootDir))
+            {
+                Directory.CreateDirectory(swRootDir);
+            }
+            File.WriteAllText(swFilePath, json);
+
 
             // Rebuild all templates before notifying the user
             await startRebuildingTemplates();
