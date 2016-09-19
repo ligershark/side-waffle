@@ -61,6 +61,9 @@
             this.onceAMonthRadioBtn = new System.Windows.Forms.RadioButton();
             this.alwaysRadioBtn = new System.Windows.Forms.RadioButton();
             this.onceAWeekRadioBtn = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.telemetryCheckBox = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LoadingImage)).BeginInit();
             this.scheduleGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -237,7 +240,7 @@
             // 
             // OkBtn
             // 
-            this.OkBtn.Location = new System.Drawing.Point(576, 515);
+            this.OkBtn.Location = new System.Drawing.Point(574, 592);
             this.OkBtn.Name = "OkBtn";
             this.OkBtn.Size = new System.Drawing.Size(75, 25);
             this.OkBtn.TabIndex = 18;
@@ -247,7 +250,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(657, 515);
+            this.cancelBtn.Location = new System.Drawing.Point(657, 592);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 25);
             this.cancelBtn.TabIndex = 19;
@@ -313,7 +316,7 @@
             // ResetDefaultsBtn
             // 
             this.ResetDefaultsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResetDefaultsBtn.Location = new System.Drawing.Point(416, 515);
+            this.ResetDefaultsBtn.Location = new System.Drawing.Point(414, 592);
             this.ResetDefaultsBtn.Name = "ResetDefaultsBtn";
             this.ResetDefaultsBtn.Size = new System.Drawing.Size(154, 25);
             this.ResetDefaultsBtn.TabIndex = 209;
@@ -395,11 +398,45 @@
             this.onceAWeekRadioBtn.Text = "Once A Week";
             this.onceAWeekRadioBtn.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(29, 503);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(123, 16);
+            this.label10.TabIndex = 212;
+            this.label10.Text = "Telemetry Opt-In";
+            // 
+            // telemetryCheckBox
+            // 
+            this.telemetryCheckBox.AutoSize = true;
+            this.telemetryCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.telemetryCheckBox.Location = new System.Drawing.Point(32, 522);
+            this.telemetryCheckBox.Name = "telemetryCheckBox";
+            this.telemetryCheckBox.Size = new System.Drawing.Size(260, 20);
+            this.telemetryCheckBox.TabIndex = 213;
+            this.telemetryCheckBox.Text = "Send feature usage data to SideWaffle.\r\n";
+            this.telemetryCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(29, 545);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(552, 37);
+            this.label9.TabIndex = 214;
+            this.label9.Text = "Feature usage data includes information about what SideWaffle templates you use. " +
+    "It helps us prioritize which templates to keep up to-date.";
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 552);
+            this.ClientSize = new System.Drawing.Size(744, 629);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.telemetryCheckBox);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.scheduleGroupBox);
             this.Controls.Add(this.ResetDefaultsBtn);
             this.Controls.Add(this.deleteBtn);
@@ -468,5 +505,8 @@
         private System.Windows.Forms.RadioButton alwaysRadioBtn;
         private System.Windows.Forms.RadioButton onceAWeekRadioBtn;
         private System.Windows.Forms.RadioButton neverRadioBtn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox telemetryCheckBox;
+        private System.Windows.Forms.Label label9;
     }
 }

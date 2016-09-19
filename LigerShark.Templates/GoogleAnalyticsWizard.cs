@@ -73,6 +73,7 @@ namespace LigerShark.Templates
             // Get the file path where the settings are being stored.
             var rootDir = Environment.ExpandEnvironmentVariables(@"%localappdata%\LigerShark\SideWaffle\");
             var filePath = Path.Combine(rootDir, "SideWaffle-Settings.json");
+
             bool telemetry = SettingsStore.ReadJsonFile(filePath).SendTelemetry;
 
             if (telemetry)
