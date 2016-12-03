@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+	<Header>
+	  <Title>AngularJs 2 TypeScript Bootstrap Component Snippet</Title>
+	  <Shortcut>ng2-component-bootstrap</Shortcut>
+	  <Description>AngularJs 2 TypeScript Bootstrap Component Snippet: By Matt Kruczek, http://www.tallan.com, inspired by John Papa, http://johnpapa.net</Description>
+	  <Author>Matt Kruczek</Author>
+	  <SnippetTypes>
+		<SnippetType>Expansion</SnippetType>
+	  </SnippetTypes>
+	</Header>
+	<Snippet>
+		<Declarations>
+			<Literal Editable="true">
+				<ID>AppComponent</ID>
+				<ToolTip>Replace with a variable to hold the app component name.</ToolTip>
+				<Default>AppComponent</Default>
+				<Function />
+			</Literal>
+			<Literal Editable="true">
+				<ID>name</ID>
+				<ToolTip>Replace with a variable to hold the app component file name.</ToolTip>
+				<Default>name</Default>
+				<Function />
+			</Literal>
+		</Declarations>
+		  <Code Language="JavaScript" Kind="method body" Delimiter="$">
+			  <![CDATA[import { enableProdMode } from '@angular/core';
+import { bootstrap } from '@angular/platform-browser-dynamic';
+
+import { $AppComponent$} from './$name$.component';
+
+// enableProdMode();
+
+bootstrap($AppComponent$)
+	.then(success => console.log(`Bootstrap success`))
+	.catch(error => console.log(error));
+
+
+]]>
+		  </Code>
+	  </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+	<Header>
+		<Title>AngularJs 2 TypeScript Root Component Snippet</Title>
+		<Shortcut>ng2-component-root</Shortcut>
+		<Description>AngularJs 2 TypeScript Root Component Snippet: By Matt Kruczek, http://www.tallan.com, inspired by John Papa, http://johnpapa.net</Description>
+		<Author>Matt Kruczek</Author>
+		<SnippetTypes>
+			<SnippetType>Expansion</SnippetType>
+		</SnippetTypes>
+	</Header>
+	<Snippet>
+	  <Declarations>
+		<Literal Editable="true">
+		  <ID>selector</ID>
+		  <ToolTip>Replace with a variable to hold the selector name.</ToolTip>
+		  <Default>selector</Default>
+		  <Function />
+		</Literal>
+		<Literal Editable="true">
+		  <ID>name</ID>
+		  <ToolTip>Replace with a variable to hold the app component file name.</ToolTip>
+		  <Default>name</Default>
+		  <Function />
+		</Literal>
+	  </Declarations>
+	  <Code Language="JavaScript" Kind="method body" Delimiter="$"><![CDATA[import { Component } from '@angular/core';
+import { HTTP_PROVIDERS } from '@angular/http';
+import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router';
+import 'rxjs/Rx'; // load the full rxjs
+
+@Component({
+	moduleId: module.id,
+	$selector$: '$selector$',
+	templateUrl: '$name$.component.html',
+	directives: [ROUTER_DIRECTIVES],
+	providers: [
+		HTTP_PROVIDERS,
+		ROUTER_PROVIDERS
+	]
+})
+@Routes([
+
+])
+export class AppComponent { }
+]]></Code>
+	</Snippet>
+  </CodeSnippet>
+</CodeSnippets>

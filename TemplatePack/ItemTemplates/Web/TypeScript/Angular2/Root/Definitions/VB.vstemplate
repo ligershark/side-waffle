@@ -1,0 +1,30 @@
+
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>root.component.ts</DefaultName>
+		<Name>AngularJs 2 TypeScript Root Component Template</Name>
+		<Description>AngularJs 2 TypeScript Root Component File: minification ready, starter dependencies. By Matt Kruczek, http://www.tallan.com, inspired by John Papa, http://johnpapa.net</Description>
+		<ProjectType>VisualBasic</ProjectType>
+		<Icon>icon.png</Icon>
+		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+		<TemplateID>e461d235-998c-43d0-a8ba-8109c52131d5</TemplateID>
+		<SortOrder>1000</SortOrder>
+	</TemplateData>
+	<TemplateContent>
+		<References />
+		<ProjectItem ReplaceParameters="true">root.ts</ProjectItem>
+		<CustomParameters>
+			<CustomParameter Name="$TemplateName$" Value="AngularJs 2 TypeScript Root Component Template" />
+			<CustomParameter Name="$TemplateID$" Value="bf4319a4-d694-45da-9swf-863b3d976eba" />
+			<CustomParameter Name="$TemplateType$" Value="Item" />
+		</CustomParameters>
+	</TemplateContent>
+	<WizardExtension>
+		<Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+		<FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+	</WizardExtension>
+	<WizardExtension>
+		<Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+		<FullClassName>LigerShark.Templates.Angular2RenameWizard</FullClassName>
+	</WizardExtension>
+</VSTemplate>
