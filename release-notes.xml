@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReleaseReport>
+  <Version Name="1.22">
+    <note type="project-template">Added Angular 2 TypeScript Bootstrap Component project template</note>
+    <note type="project-template">Added Angular 2 TypeScript Root Component project template</note>
+    <note type="item-template">Added Angular 2 Typescript Bootstrap Component snippet</note>
+    <note type="item-template">Added Angular 2 Typescript Component snippet</note>
+    <note type="item-template">Added Angular 2 Typescript Root Component snippet</note>
+    <note type="item-template">Added Angular 2 Typescript HTTP GET snippet</note>
+    <note type="item-template">Added Angular 2 Typescript Pipe snippet</note>
+    <note type="item-template">Added Angular 2 Typescript Route Path snippet</note>
+    <note type="item-template">Added Angular 2 Typescript Routes snippet</note>
+    <note type="item-template">Added Angular 2 Typescript Service snippet</note>
+    <note type="item-template">Added Angular 2 Typescript Subscribe snippet</note>
+    <note type="project-template">Updated Project Template - Fixed a typo in the "Nancy with ASP.NET" project template</note>
+    <note type="extension">Added the ability to opt-out of sending telemetry</note>
+    <note type="project-template">Updated Project Template - Async Console Application now shows up in the New Project dialog</note>
+    <note type="project-template">Updated Project Template - Updated the T4 project template</note>
+  </Version>
   <Version Name="1.21">
     <note type="item-template">Updated jscsrc item template to use the correct file</note>
     <note type="item-template">Added Angular 2 TypeScript Service template</note>
