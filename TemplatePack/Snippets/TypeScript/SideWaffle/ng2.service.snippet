@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+	<Header>
+	  <Title>AngularJs 2 TypeScript Service Snippet</Title>
+	  <Shortcut>ng2-service</Shortcut>
+	  <Description>AngularJs 2 TypeScript Service Snippet: By Matt Kruczek, http://www.tallan.com, inspired by John Papa, http://johnpapa.net</Description>
+	  <Author>Matt Kruczek</Author>
+	  <SnippetTypes>
+		<SnippetType>Expansion</SnippetType>
+	  </SnippetTypes>
+	</Header>
+	<Snippet>
+		<Declarations>
+			<Literal Editable="true">
+				<ID>ServiceName</ID>
+				<ToolTip>Replace with a variable to hold the service name.</ToolTip>
+				<Default>ServiceName</Default>
+				<Function />
+			</Literal>
+		</Declarations>
+		  <Code Language="JavaScript" Kind="method body" Delimiter="$">
+			  <![CDATA[import { Injectable } from '@angular/core';
+
+@Injectable()
+export class $ServiceName$Service {
+
+	constructor() { }
+
+}
+]]>
+		  </Code>
+	  </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

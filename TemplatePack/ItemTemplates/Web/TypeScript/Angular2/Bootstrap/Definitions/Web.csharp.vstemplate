@@ -1,0 +1,30 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+	<TemplateData>
+		<DefaultName>bootstrap.component.ts</DefaultName>
+		<Name>AngularJs 2 Typescript Bootstrap Component Template</Name>
+		<Description>AngularJs 2 Bootstrap Component File: minification ready, starter dependencies. By Matt Kruczek, http://www.tallan.com, inspired by John Papa, http://johnpapa.net</Description>
+		<ProjectType>Web</ProjectType>
+		<ProjectSubType>CSharp</ProjectSubType>
+		<Icon>icon.png</Icon>
+		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+		<TemplateID>23d8fcb6-66c2-437b-bf59-7eb9ccba5f20</TemplateID>
+		<SortOrder>1000</SortOrder>
+	</TemplateData>
+	<TemplateContent>
+		<References />
+		<ProjectItem ReplaceParameters="true">bootstrap.ts</ProjectItem>
+		<CustomParameters>
+			<CustomParameter Name="$TemplateName$" Value="AngularJs 2 Typescript Bootstrap Component Template" />
+			<CustomParameter Name="$TemplateID$" Value="bf4319g4-z694-45da-9cwf-863b3d976eba" />
+			<CustomParameter Name="$TemplateType$" Value="Item" />
+		</CustomParameters>
+	</TemplateContent>
+	<WizardExtension>
+		<Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+		<FullClassName>LigerShark.Templates.GoogleAnalyticsWizard</FullClassName>
+	</WizardExtension>
+	<WizardExtension>
+		<Assembly>LigerShark.Templates, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+		<FullClassName>LigerShark.Templates.Angular2RenameWizard</FullClassName>
+	</WizardExtension>
+</VSTemplate>
