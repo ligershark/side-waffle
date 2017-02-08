@@ -33,17 +33,7 @@
         <Literal>
           <ID>filePath</ID>
           <ToolTip>The source of the HTML file template.</ToolTip>
-          <Default>app/myDirective/myDirective.html</Default>
-        </Literal>
-        <Literal>
-          <ID>controller</ID>
-          <ToolTip>The name of the controller of the directive.</ToolTip>
-          <Default>customController</Default>
-        </Literal>
-        <Literal>
-          <ID>controllerAlias</ID>
-          <ToolTip>The variable of the controller to be used in the template.</ToolTip>
-          <Default>custom</Default>
+          <Default>app/customDirective/customDirective.html</Default>
         </Literal>
       </Declarations>
       <Code Language="JavaScript">
@@ -64,8 +54,8 @@
                     restrict: 'EA',
                     replace : $replace$,
                     templateUrl : '$filePath$',
-                    controller : '$controller$',
-                    controllerAs : '$controllerAlias$'
+                    controller : '$directive$Controller', // name of Angular controller
+                    controllerAs : '$directive$Ctrl' // name of instance of controller in View
                 };
                 return directive;
 
